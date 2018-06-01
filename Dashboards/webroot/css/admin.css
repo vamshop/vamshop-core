@@ -1,0 +1,21 @@
+.move-handle {
+	cursor: move;
+}
+
+.box-placeholder {
+	outline: 1px dotted black;
+	background: #efefef;
+	margin-bottom: 10px;
+}
+
+.sorting {
+	outline: 1px dotted black;
+}
+
+.sorting:empty {
+	min-height: 100px;
+}
+
+.dashboard-card {
+	margin-bottom: 10px;
+}
