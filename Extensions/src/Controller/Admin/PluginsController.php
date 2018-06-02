@@ -87,7 +87,7 @@ class PluginsController extends AppController
  *
  * @return void
  */
-    public function delete($id)
+    public function delete($id = 0)
     {
         $plugin = $this->request->query('name');
         if (!$plugin) {
