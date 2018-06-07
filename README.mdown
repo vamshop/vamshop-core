@@ -22,6 +22,8 @@ The preferred way to install Croogo is by using [composer](http://getcomposer.or
     composer create-project vamshop/vamshop-app myapp
     cd myapp
     composer install
+    
+    bin/cake Croogo/Install.install -u dbuser -p dbpass -d Mysql -n dbname -h host -t 3306 admin pass
 
 If you want hack on croogo, you can use the `--prefer-source` flag, ie:
 
