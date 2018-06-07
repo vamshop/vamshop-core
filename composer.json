@@ -1,6 +1,6 @@
 {
     "name": "vamshop/vamshop-core",
-    "description": "Croogo - Open Source CMS built for everyone",
+    "description": "VamShop - Open Source CMS built for everyone",
     "type": "cakephp-plugin",
     "homepage": "http://github.com/vamshop/vamshop-core",
     "license": "MIT",
