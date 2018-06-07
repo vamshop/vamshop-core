@@ -23,7 +23,9 @@ The preferred way to install Croogo is by using [composer](http://getcomposer.or
     cd myapp
     composer install
     
-    bin/cake Croogo/Install.install -u dbuser -p dbpass -d Mysql -n dbname -h host -t 3306 admin pass
+    bin/cake Croogo/Install.install
+
+!!!! Empty MySQL database must be created before installation.
 
 If you want hack on croogo, you can use the `--prefer-source` flag, ie:
 
