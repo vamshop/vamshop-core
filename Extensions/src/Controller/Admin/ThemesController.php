@@ -66,7 +66,7 @@ class ThemesController extends AppController
     public function activate($theme = null)
     {
     	
-    	$theme = urldecode($this->request->query('name'));
+        $theme = urldecode($this->request->query('name'));
     	
         try {
             $this->_CroogoTheme->activate($theme);
