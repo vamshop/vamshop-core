@@ -22,7 +22,7 @@ class ContactsSeed extends AbstractSeed
             'fax' => '',
             'email' => 'you@your-site.com',
             'message_status' => '1',
-            'message_archive' => '0',
+            'message_archive' => '1',
             'message_count' => '0',
             'message_spam_protection' => '0',
             'message_captcha' => '0',
