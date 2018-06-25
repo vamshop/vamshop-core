@@ -15,4 +15,8 @@ class NodesController extends AppController
         return $this->Crud->execute();
     }
 
+    public function getName()
+    {
+    }
+
 }
