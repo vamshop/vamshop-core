@@ -26,6 +26,10 @@ class UsersController extends AppController
         return $this->Crud->execute();
     }
 
+    public function getName()
+    {
+    }
+
     protected function generateToken($user)
     {
         $payload = [
