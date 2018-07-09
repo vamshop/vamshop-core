@@ -1,6 +1,6 @@
 <?php
 /**
- * Default Theme for Croogo CMS
+ * Default Theme for VamShop CMS
  *
  * @author Fahad Ibnay Heylaal <contact@fahad19.com>
  * @link http://www.croogo.org
