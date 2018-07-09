@@ -20,7 +20,7 @@ $siteTagline = Configure::read('Site.tagline');
 
     <title><?= $this->fetch('title'); ?> - <?= $siteTitle; ?></title>
     <?php
-//    echo $this->Meta->meta();
+    echo $this->Meta->meta();
     echo $this->Layout->feed();
     $this->element('stylesheets');
     echo $this->Layout->js();
@@ -28,6 +28,7 @@ $siteTagline = Configure::read('Site.tagline');
     echo $this->Blocks->get('script');
     ?>
 </head>
+
 <body id="page-top">
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
