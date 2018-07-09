@@ -1,6 +1,6 @@
 <?php
 /**
- * Default Theme for VamShop CMS
+ * Default Theme for Croogo CMS
  *
  * @author Fahad Ibnay Heylaal <contact@fahad19.com>
  * @link http://www.croogo.org
@@ -21,6 +21,7 @@ $siteTagline = Configure::read('Site.tagline');
     <title><?= $this->fetch('title'); ?> - <?= $siteTitle; ?></title>
     <?php
     echo $this->Meta->meta();
+    //echo $this->Seo->canonical();
     echo $this->Layout->feed();
     $this->element('stylesheets');
     echo $this->Layout->js();
@@ -28,7 +29,6 @@ $siteTagline = Configure::read('Site.tagline');
     echo $this->Blocks->get('script');
     ?>
 </head>
-
 <body id="page-top">
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
