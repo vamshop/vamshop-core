@@ -13,6 +13,34 @@ $this->Nodes->set($node);
     ?>
 </div>
 
+
+<h1>Assets</h1>
+
+    <?php
+        foreach ($this->Nodes->field('linked_assets.DefaultAsset') as $assets):
+    ?>
+
+
+    <div id="node-<?= $this->Nodes->field('id') ?>" class="node node-type-<?= $this->Nodes->field('type') ?>">
+
+        <?php
+            echo $this->Html->image($assets['path']);
+        ?>
+    </div>
+
+    <?php
+        endforeach;
+    ?>
+    
+<h1>Featured Assets</h1>
+
+    <div id="node-<?= $this->Nodes->field('id') ?>" class="node node-type-<?= $this->Nodes->field('type') ?>">
+
+        <?php
+            echo $this->Html->image($this->Nodes->field('linked_assets.FeaturedImage.path'));
+        ?>
+    </div>
+
 <?php if (Plugin::loaded('Croogo/Comments')): ?>
 <div id="comments" class="node-comments">
 <?php
