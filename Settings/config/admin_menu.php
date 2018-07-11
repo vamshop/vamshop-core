@@ -6,7 +6,7 @@ use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'settings', [
     'icon' => 'cog',
-    'title' => __d('croogo', 'Settings'),
+    'title' => __d('vamshop', 'Settings'),
     'url' => [
         'prefix' => 'admin',
         'plugin' => 'Vamshop/Settings',
@@ -17,7 +17,7 @@ Nav::add('sidebar', 'settings', [
     'weight' => 60,
     'children' => [
         'site' => [
-            'title' => __d('croogo', 'Site'),
+            'title' => __d('vamshop', 'Site'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Settings',
@@ -29,7 +29,7 @@ Nav::add('sidebar', 'settings', [
         ],
 
         'theme' => [
-            'title' => __d('croogo', 'Theme'),
+            'title' => __d('vamshop', 'Theme'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Settings',
@@ -41,7 +41,7 @@ Nav::add('sidebar', 'settings', [
         ],
 
         'reading' => [
-            'title' => __d('croogo', 'Reading'),
+            'title' => __d('vamshop', 'Reading'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Settings',
@@ -53,7 +53,7 @@ Nav::add('sidebar', 'settings', [
         ],
 
         'writing' => [
-            'title' => __d('croogo', 'Writing'),
+            'title' => __d('vamshop', 'Writing'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Settings',
@@ -65,7 +65,7 @@ Nav::add('sidebar', 'settings', [
         ],
 
         'comment' => [
-            'title' => __d('croogo', 'Comment'),
+            'title' => __d('vamshop', 'Comment'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Settings',
@@ -77,7 +77,7 @@ Nav::add('sidebar', 'settings', [
         ],
 
         'service' => [
-            'title' => __d('croogo', 'Service'),
+            'title' => __d('vamshop', 'Service'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Settings',
@@ -89,7 +89,7 @@ Nav::add('sidebar', 'settings', [
         ],
 
         'languages' => [
-            'title' => __d('croogo', 'Languages'),
+            'title' => __d('vamshop', 'Languages'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Settings',
@@ -100,7 +100,7 @@ Nav::add('sidebar', 'settings', [
         ],
 
         'cache' => [
-            'title' => __d('croogo', 'Cache'),
+            'title' => __d('vamshop', 'Cache'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Settings',

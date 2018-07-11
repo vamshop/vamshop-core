@@ -85,7 +85,7 @@ class EventManager extends CakeEventManager
                     if (class_exists($class)) {
                         $cached[] = compact('plugin', 'class', 'eventKey', 'eventOptions');
                     } else {
-                        Log::error(__d('croogo', 'EventHandler %s not found in plugin %s', $class, $plugin));
+                        Log::error(__d('vamshop', 'EventHandler %s not found in plugin %s', $class, $plugin));
                     }
                 }
                 Cache::write('EventHandlers', $cached, 'cached_settings');

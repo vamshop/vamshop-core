@@ -42,6 +42,6 @@ class MenusEventHandler implements EventListenerInterface
  */
     public function onAfterBulkProcess(Event $event)
     {
-        Cache::clearGroup('menus', 'croogo_menus');
+        Cache::clearGroup('menus', 'vamshop_menus');
     }
 }

@@ -50,7 +50,7 @@ class PluginsController extends AppController
  */
     public function index()
     {
-        $this->set('title_for_layout', __d('croogo', 'Plugins'));
+        $this->set('title_for_layout', __d('vamshop', 'Plugins'));
 
         $plugins = $this->_VamshopPlugin->plugins(false);
         $this->set('corePlugins', Plugin::$corePlugins);
@@ -65,7 +65,7 @@ class PluginsController extends AppController
  */
     public function add()
     {
-        $this->set('title_for_layout', __d('croogo', 'Upload a new plugin'));
+        $this->set('title_for_layout', __d('vamshop', 'Upload a new plugin'));
 
         if (!empty($this->request->data)) {
             $file = $this->request->data['Plugin']['file'];
@@ -91,21 +91,21 @@ class PluginsController extends AppController
     {
         $plugin = $this->request->query('name');
         if (!$plugin) {
-            $this->Flash->error(__d('croogo', 'Invalid plugin'));
+            $this->Flash->error(__d('vamshop', 'Invalid plugin'));
             return $this->redirect(['action' => 'index']);
         }
         if ($this->_VamshopPlugin->isActive($plugin)) {
-            $this->Flash->error(__d('croogo', 'You cannot delete a plugin that is currently active.'));
+            $this->Flash->error(__d('vamshop', 'You cannot delete a plugin that is currently active.'));
             return $this->redirect(['action' => 'index']);
         }
 
         $result = $this->_VamshopPlugin->delete($plugin);
         if ($result === true) {
-            $this->Flash->success(__d('croogo', 'Plugin "%s" deleted successfully.', $plugin));
+            $this->Flash->success(__d('vamshop', 'Plugin "%s" deleted successfully.', $plugin));
         } elseif (!empty($result[0])) {
             $this->Flash->error($result[0]);
         } else {
-            $this->Flash->error(__d('croogo', 'Plugin could not be deleted.'));
+            $this->Flash->error(__d('vamshop', 'Plugin could not be deleted.'));
         }
 
         return $this->redirect(['action' => 'index']);
@@ -120,32 +120,32 @@ class PluginsController extends AppController
     {
         $plugin = $this->request->query('name');
         if (!$plugin) {
-            $this->Flash->error(__d('croogo', 'Invalid plugin'));
+            $this->Flash->error(__d('vamshop', 'Invalid plugin'));
             return $this->redirect(['action' => 'index']);
         }
 
         if ($this->_VamshopPlugin->isActive($plugin)) {
             $usedBy = $this->_VamshopPlugin->usedBy($plugin);
             if ($usedBy !== false) {
-                $this->Flash->error(__d('croogo', 'Plugin "%s" could not be deactivated since "%s" depends on it.', $plugin, implode(', ', $usedBy)));
+                $this->Flash->error(__d('vamshop', 'Plugin "%s" could not be deactivated since "%s" depends on it.', $plugin, implode(', ', $usedBy)));
                 return $this->redirect(['action' => 'index']);
             }
             $result = $this->_VamshopPlugin->deactivate($plugin);
             if ($result === true) {
-                $this->Flash->success(__d('croogo', 'Plugin "%s" deactivated successfully.', $plugin));
+                $this->Flash->success(__d('vamshop', 'Plugin "%s" deactivated successfully.', $plugin));
             } elseif (is_string($result)) {
                 $this->Flash->error($result);
             } else {
-                $this->Flash->error(__d('croogo', 'Plugin could not be deactivated. Please, try again.'));
+                $this->Flash->error(__d('vamshop', 'Plugin could not be deactivated. Please, try again.'));
             }
         } else {
             $result = $this->_VamshopPlugin->activate($plugin);
             if ($result === true) {
-                $this->Flash->success(__d('croogo', 'Plugin "%s" activated successfully.', $plugin));
+                $this->Flash->success(__d('vamshop', 'Plugin "%s" activated successfully.', $plugin));
             } elseif (is_string($result)) {
                 $this->Flash->error($result);
             } else {
-                $this->Flash->error(__d('croogo', 'Plugin could not be activated. Please, try again.'));
+                $this->Flash->error(__d('vamshop', 'Plugin could not be activated. Please, try again.'));
             }
         }
         return $this->redirect(['action' => 'index']);
@@ -160,12 +160,12 @@ class PluginsController extends AppController
     {
         $plugin = $this->request->query('name');
         if (!$plugin) {
-            $this->Flash->error(__d('croogo', 'Invalid plugin'));
+            $this->Flash->error(__d('vamshop', 'Invalid plugin'));
         } elseif ($this->_VamshopPlugin->migrate($plugin)) {
-            $this->Flash->success(__d('croogo', 'Plugin "%s" migrated successfully.', $plugin));
+            $this->Flash->success(__d('vamshop', 'Plugin "%s" migrated successfully.', $plugin));
         } else {
             $this->Flash->error(
-                __d('croogo', 'Plugin "%s" could not be migrated. Error: %s', $plugin, implode('<br />', $this->_VamshopPlugin->migrationErrors))
+                __d('vamshop', 'Plugin "%s" could not be migrated. Error: %s', $plugin, implode('<br />', $this->_VamshopPlugin->migrationErrors))
             );
         }
         return $this->redirect(['action' => 'index']);
@@ -182,13 +182,13 @@ class PluginsController extends AppController
         $this->request->allowMethod('post');
 
         if ($plugin === null) {
-            throw new Exception(__d('croogo', 'Invalid plugin'));
+            throw new Exception(__d('vamshop', 'Invalid plugin'));
         }
 
         $class = 'success';
         $result = $this->_VamshopPlugin->move('up', $plugin);
         if ($result === true) {
-            $message = __d('croogo', 'Plugin %s has been moved up', $plugin);
+            $message = __d('vamshop', 'Plugin %s has been moved up', $plugin);
             $this->Flash->success($message);
         } else {
             $message = $result;
@@ -209,13 +209,13 @@ class PluginsController extends AppController
         $this->request->allowMethod('post');
 
         if ($plugin === null) {
-            throw new Exception(__d('croogo', 'Invalid plugin'));
+            throw new Exception(__d('vamshop', 'Invalid plugin'));
         }
 
         $class = 'success';
         $result = $this->_VamshopPlugin->move('down', $plugin);
         if ($result === true) {
-            $message = __d('croogo', 'Plugin %s has been moved down', $plugin);
+            $message = __d('vamshop', 'Plugin %s has been moved down', $plugin);
         } else {
             $message = $result;
             $class = 'error';

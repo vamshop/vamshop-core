@@ -73,10 +73,10 @@ class ActionsController extends AppController
             }
 
             if ($this->Acos->save($aco)) {
-                $this->Flash->success(sprintf(__d('croogo', 'The %s has been saved'), $acoType));
+                $this->Flash->success(sprintf(__d('vamshop', 'The %s has been saved'), $acoType));
                 return $this->Vamshop->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(sprintf(__d('croogo', 'The %s could not be saved. Please, try again.'), $acoType));
+                $this->Flash->error(sprintf(__d('vamshop', 'The %s could not be saved. Please, try again.'), $acoType));
             }
         }
 
@@ -103,14 +103,14 @@ class ActionsController extends AppController
             }
 
             if ($this->Acos->save($aco)) {
-                $this->Flash->success(sprintf(__d('croogo', 'The %s has been saved'), $acoType));
+                $this->Flash->success(sprintf(__d('vamshop', 'The %s has been saved'), $acoType));
                 if (isset($this->request->data['_apply'])) {
                     return $this->redirect(['action' => 'edit', $id]);
                 } else {
                     return $this->redirect(['action' => 'index']);
                 }
             } else {
-                $this->Flash->error(sprintf(__d('croogo', 'The %s could not be saved. Please, try again.'), $acoType));
+                $this->Flash->error(sprintf(__d('vamshop', 'The %s could not be saved. Please, try again.'), $acoType));
             }
         }
 
@@ -128,7 +128,7 @@ class ActionsController extends AppController
         $aco = $this->Acos->get($id);
 
         if ($this->Acos->delete($aco)) {
-            $this->Flash->success(__d('croogo', 'Action deleted'));
+            $this->Flash->success(__d('vamshop', 'Action deleted'));
             return $this->redirect(['action' => 'index']);
         }
     }
@@ -146,12 +146,12 @@ class ActionsController extends AppController
 
         if ($direction == 'up') {
             if ($this->Acos->moveUp($aco)) {
-                $this->Flash->success(__d('croogo', 'Action moved up'));
+                $this->Flash->success(__d('vamshop', 'Action moved up'));
                 return $this->redirect(['action' => 'index']);
             }
         } else {
             if ($this->Acos->moveDown($aco)) {
-                $this->Flash->success(__d('croogo', 'Action moved down'));
+                $this->Flash->success(__d('vamshop', 'Action moved down'));
                 return $this->redirect(['action' => 'index']);
             }
         }

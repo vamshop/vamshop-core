@@ -67,7 +67,7 @@ class ExtensionsInstaller
     public function getPluginName($path = null)
     {
         if (empty($path)) {
-            throw new Exception(__d('croogo', 'Invalid plugin path'));
+            throw new Exception(__d('vamshop', 'Invalid plugin path'));
         }
         if (isset($this->_pluginName[$path])) {
             return $this->_pluginName[$path];
@@ -77,13 +77,13 @@ class ExtensionsInstaller
             $search = 'config/plugin.json';
             $indexJson = $Zip->locateName('plugin.json', ZIPARCHIVE::FL_NODIR);
             if ($indexJson === false) {
-                throw new Exception(__d('croogo', 'Invalid zip archive'));
+                throw new Exception(__d('vamshop', 'Invalid zip archive'));
             } else {
                 $fileName = $Zip->getNameIndex($indexJson);
                 $fileJson = json_decode($Zip->getFromIndex($indexJson));
 
                 if (empty($fileJson->name)) {
-                    throw new Exception(__d('croogo', 'Invalid plugin.json or missing plugin name'));
+                    throw new Exception(__d('vamshop', 'Invalid plugin.json or missing plugin name'));
                 }
 
                 $this->_rootPath[$path] = str_replace($search, '', $fileName);
@@ -104,18 +104,18 @@ class ExtensionsInstaller
                     }
                 }
                 if (!$hasFile) {
-                    Log::critical(__d('croogo', 'Missing expected files: %s in: %s', implode(',', $searches), $path));
-                    throw new Exception(__d('croogo', 'Invalid plugin or missing expected files'));
+                    Log::critical(__d('vamshop', 'Missing expected files: %s in: %s', implode(',', $searches), $path));
+                    throw new Exception(__d('vamshop', 'Invalid plugin or missing expected files'));
                 }
             }
             $Zip->close();
             if (!$plugin) {
-                throw new Exception(__d('croogo', 'Invalid plugin'));
+                throw new Exception(__d('vamshop', 'Invalid plugin'));
             }
             $this->_pluginName[$path] = $plugin;
             return $plugin;
         } else {
-            throw new Exception(__d('croogo', 'Invalid zip archive'));
+            throw new Exception(__d('vamshop', 'Invalid zip archive'));
         }
         return false;
     }
@@ -131,7 +131,7 @@ class ExtensionsInstaller
     public function extractPlugin($path = null, $plugin = null)
     {
         if (!file_exists($path)) {
-            throw new Exception(__d('croogo', 'Invalid plugin file path'));
+            throw new Exception(__d('vamshop', 'Invalid plugin file path'));
         }
 
         if (empty($plugin)) {
@@ -142,7 +142,7 @@ class ExtensionsInstaller
         $pluginHome = reset($pluginHome);
         $pluginPath = $pluginHome . $plugin . DS;
         if (is_dir($pluginPath)) {
-            throw new Exception(__d('croogo', 'Plugin already exists'));
+            throw new Exception(__d('vamshop', 'Plugin already exists'));
         }
 
         $Zip = new ZipArchive;
@@ -158,7 +158,7 @@ class ExtensionsInstaller
             $Zip->close();
             return true;
         } else {
-            throw new Exception(__d('croogo', 'Failed to extract plugin'));
+            throw new Exception(__d('vamshop', 'Failed to extract plugin'));
         }
         return false;
     }
@@ -172,7 +172,7 @@ class ExtensionsInstaller
     public function getThemeName($path = null)
     {
         if (empty($path)) {
-            throw new Exception(__d('croogo', 'Invalid theme path'));
+            throw new Exception(__d('vamshop', 'Invalid theme path'));
         }
 
         if (isset($this->_themeName[$path])) {
@@ -193,12 +193,12 @@ class ExtensionsInstaller
             }
             $Zip->close();
             if (!$theme) {
-                throw new Exception(__d('croogo', 'Invalid theme'));
+                throw new Exception(__d('vamshop', 'Invalid theme'));
             }
             $this->_themeName[$path] = $theme;
             return $theme;
         } else {
-            throw new Exception(__d('croogo', 'Invalid zip archive'));
+            throw new Exception(__d('vamshop', 'Invalid zip archive'));
         }
         return false;
     }
@@ -214,7 +214,7 @@ class ExtensionsInstaller
     public function extractTheme($path = null, $theme = null)
     {
         if (!file_exists($path)) {
-            throw new Exception(__d('croogo', 'Invalid theme file path'));
+            throw new Exception(__d('vamshop', 'Invalid theme file path'));
         }
 
         if (empty($theme)) {
@@ -225,7 +225,7 @@ class ExtensionsInstaller
         $themeHome = reset($themeHome);
         $themePath = $themeHome . $theme . DS;
         if (is_dir($themePath)) {
-            throw new Exception(__d('croogo', 'Theme already exists'));
+            throw new Exception(__d('vamshop', 'Theme already exists'));
         }
 
         $Zip = new ZipArchive;
@@ -241,7 +241,7 @@ class ExtensionsInstaller
             $Zip->close();
             return true;
         } else {
-            throw new Exception(__d('croogo', 'Failed to extract theme'));
+            throw new Exception(__d('vamshop', 'Failed to extract theme'));
         }
         return false;
     }
@@ -261,10 +261,10 @@ class ExtensionsInstaller
             'type' => 'plugin',
         ], $data);
         if (empty($data['package']) || strpos($data['package'], '/') === false) {
-            throw new Exception(__d('croogo', 'Must specify a valid package name: vendor/name.'));
+            throw new Exception(__d('vamshop', 'Must specify a valid package name: vendor/name.'));
         }
         if ($data['type'] == 'theme') {
-            throw new Exception(__d('croogo', 'Themes installed via composer are not yet supported.'));
+            throw new Exception(__d('vamshop', 'Themes installed via composer are not yet supported.'));
         }
         $this->_VamshopComposer->getComposer();
         $this->_VamshopComposer->setConfig([

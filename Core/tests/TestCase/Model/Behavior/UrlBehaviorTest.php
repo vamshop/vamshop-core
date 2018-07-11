@@ -10,7 +10,7 @@ class UrlBehaviorTest extends VamshopTestCase
 {
 
     public $fixtures = [
-        'plugin.croogo\core.things'
+        'plugin.vamshop\core.things'
     ];
 
 /**

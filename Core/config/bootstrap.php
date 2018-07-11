@@ -53,7 +53,7 @@ Vamshop::hookComponent('*', 'Flash');
 Vamshop::hookComponent('*', 'RequestHandler');
 Vamshop::hookComponent('*', 'Vamshop/Core.Theme');
 
-require_once __DIR__ . DS . 'croogo_bootstrap.php';
+require_once __DIR__ . DS . 'vamshop_bootstrap.php';
 
 Vamshop::hookHelper('*', 'Vamshop/Core.Js');
 Vamshop::hookHelper('*', 'Vamshop/Core.Layout');

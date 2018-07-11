@@ -41,8 +41,8 @@ class RegionsTable extends VamshopTable
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->notBlank('title', __d('croogo', 'Title cannot be empty.'))
-            ->notBlank('alias', __d('croogo', 'Alias cannot be empty.'));
+            ->notBlank('title', __d('vamshop', 'Title cannot be empty.'))
+            ->notBlank('alias', __d('vamshop', 'Alias cannot be empty.'));
         return $validator;
     }
 
@@ -50,7 +50,7 @@ class RegionsTable extends VamshopTable
     {
         $rules
             ->add($rules->isUnique( ['alias'],
-                __d('croogo', 'That alias is already taken')
+                __d('vamshop', 'That alias is already taken')
             ));
         return $rules;
     }

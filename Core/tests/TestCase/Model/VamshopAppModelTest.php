@@ -30,12 +30,12 @@ class VamshopAppModelTest extends VamshopTestCase
  * @var array
  */
     public $fixtures = [
-//		'plugin.croogo\users.aco',
-//		'plugin.croogo\users.aro',
-//		'plugin.croogo\users.aros_aco',
-//		'plugin.croogo\users.role',
-//		'plugin.croogo\users.user',
-//		'plugin.croogo\settings.setting',
+//		'plugin.vamshop\users.aco',
+//		'plugin.vamshop\users.aro',
+//		'plugin.vamshop\users.aros_aco',
+//		'plugin.vamshop\users.role',
+//		'plugin.vamshop\users.user',
+//		'plugin.vamshop\settings.setting',
     ];
 
 /**

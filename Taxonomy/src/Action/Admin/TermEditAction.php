@@ -54,12 +54,12 @@ class TermEditAction extends BaseAction
             ])
             ->first();
 
-        $controller->set('title_for_layout', __d('croogo', '%s: Edit Term', $vocabulary->title));
+        $controller->set('title_for_layout', __d('vamshop', '%s: Edit Term', $vocabulary->title));
 
         if ($request->is('post') || $request->is('put')) {
             $term = $controller->Terms->patchEntity($term, $request->data);
             if ($controller->Terms->edit($term, $vocabularyId)) {
-                $controller->Flash->success(__d('croogo', 'Term saved successfuly.'));
+                $controller->Flash->success(__d('vamshop', 'Term saved successfuly.'));
                 if (isset($request->data['_apply'])) {
                     return $controller->redirect([
                         'action' => 'edit',
@@ -73,7 +73,7 @@ class TermEditAction extends BaseAction
                     ]);
                 }
             } else {
-                $controller->Flash->error(__d('croogo', 'Term could not be added to the vocabulary. Please try again.'));
+                $controller->Flash->error(__d('vamshop', 'Term could not be added to the vocabulary. Please try again.'));
             }
         }
         $parentTree = $controller->Terms->Taxonomies->getTree($vocabulary->alias, ['taxonomyId' => true]);

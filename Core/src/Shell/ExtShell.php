@@ -17,10 +17,10 @@ use Vamshop\Extensions\VamshopTheme;
  * Ext Shell
  *
  * Activate/Deactivate Plugins/Themes
- *  ./Console/croogo ext activate plugin Example
- *  ./Console/croogo ext activate theme minimal
- *  ./Console/croogo ext deactivate plugin Example
- *  ./Console/croogo ext deactivate theme
+ *  ./Console/vamshop ext activate plugin Example
+ *  ./Console/vamshop ext activate theme minimal
+ *  ./Console/vamshop ext deactivate plugin Example
+ *  ./Console/vamshop ext deactivate theme
  *
  * @category Shell
  * @package  Vamshop.Vamshop.Console.Command
@@ -107,11 +107,11 @@ class ExtShell extends AppShell
             $active = Plugin::loaded($ext);
         }
         if ($type == 'theme' && $method == 'deactivate') {
-            $this->err(__d('croogo', 'Theme cannot be deactivated, instead activate another theme.'));
+            $this->err(__d('vamshop', 'Theme cannot be deactivated, instead activate another theme.'));
             return false;
         }
         if (!empty($ext) && !isset($extensions[$ext]) && !$active && !$force) {
-            $this->err(__d('croogo', '%s "%s" not found.', ucfirst($type), $ext));
+            $this->err(__d('vamshop', '%s "%s" not found.', ucfirst($type), $ext));
             return false;
         }
         switch ($method) {
@@ -120,7 +120,7 @@ class ExtShell extends AppShell
                 return $this->{$call}($ext);
             default:
                 if (empty($ext)) {
-                    $this->err(__d('croogo', '%s name must be provided.', ucfirst($type)));
+                    $this->err(__d('vamshop', '%s name must be provided.', ucfirst($type)));
                     return false;
                 }
                 return $this->{'_' . $method . ucfirst($type)}($ext);
@@ -133,20 +133,20 @@ class ExtShell extends AppShell
     public function getOptionParser()
     {
         return parent::getOptionParser()
-            ->description(__d('croogo', 'Activate Plugins & Themes'))
+            ->description(__d('vamshop', 'Activate Plugins & Themes'))
             ->addArguments([
                 'method' => [
-                    'help' => __d('croogo', 'Method to perform'),
+                    'help' => __d('vamshop', 'Method to perform'),
                     'required' => true,
                     'choices' => ['list', 'activate', 'deactivate'],
                 ],
                 'type' => [
-                    'help' => __d('croogo', 'Extension type'),
+                    'help' => __d('vamshop', 'Extension type'),
                     'required' => true,
                     'choices' => ['plugin', 'theme'],
                 ],
                 'extension' => [
-                    'help' => __d('croogo', 'Name of extension'),
+                    'help' => __d('vamshop', 'Name of extension'),
                 ],
             ])
             ->addOption('all', [
@@ -171,12 +171,12 @@ class ExtShell extends AppShell
     {
         $result = $this->_VamshopPlugin->activate($plugin);
         if ($result === true) {
-            $this->out(__d('croogo', 'Plugin "%s" activated successfully.', $plugin));
+            $this->out(__d('vamshop', 'Plugin "%s" activated successfully.', $plugin));
             return true;
         } elseif (is_string($result)) {
             $this->err($result);
         } else {
-            $this->err(__d('croogo', 'Plugin "%s" could not be activated. Please, try again.', $plugin));
+            $this->err(__d('vamshop', 'Plugin "%s" could not be activated. Please, try again.', $plugin));
         }
         return false;
     }
@@ -193,7 +193,7 @@ class ExtShell extends AppShell
         if ($usedBy === false) {
             $result = $this->_VamshopPlugin->deactivate($plugin);
             if ($result === false) {
-                $this->err(__d('croogo', 'Plugin "%s" could not be deactivated. Please, try again.', $plugin));
+                $this->err(__d('vamshop', 'Plugin "%s" could not be deactivated. Please, try again.', $plugin));
             } elseif (is_string($result)) {
                 $this->err($result);
             }
@@ -201,7 +201,7 @@ class ExtShell extends AppShell
             $result = false;
             if ($usedBy !== false) {
                 if ($this->params['force'] === false) {
-                    $this->err(__d('croogo', 'Plugin "%s" could not be deactivated since "%s" depends on it.', $plugin, implode(', ', $usedBy)));
+                    $this->err(__d('vamshop', 'Plugin "%s" could not be deactivated since "%s" depends on it.', $plugin, implode(', ', $usedBy)));
                 } else {
                     $result = true;
                 }
@@ -212,7 +212,7 @@ class ExtShell extends AppShell
             $result = true;
         }
         if ($result === true) {
-            $this->out(__d('croogo', 'Plugin "%s" deactivated successfully.', $plugin));
+            $this->out(__d('vamshop', 'Plugin "%s" deactivated successfully.', $plugin));
             return true;
         }
         return false;
@@ -227,9 +227,9 @@ class ExtShell extends AppShell
     protected function _activateTheme($theme)
     {
         if ($this->_VamshopTheme->activate($theme)) {
-            $this->out(__d('croogo', 'Theme "%s" activated successfully.', $theme));
+            $this->out(__d('vamshop', 'Theme "%s" activated successfully.', $theme));
         } else {
-            $this->err(__d('croogo', 'Theme "%s" activation failed.', $theme));
+            $this->err(__d('vamshop', 'Theme "%s" activation failed.', $theme));
         }
         return true;
     }
@@ -243,8 +243,8 @@ class ExtShell extends AppShell
         $plugins = $plugin == null ? array_keys(Configure::read('plugins')) : [$plugin];
         $loaded = Plugin::loaded();
         $VamshopPlugin = new VamshopPlugin();
-        $this->out(__d('croogo', 'Plugins:'), 2);
-        $this->out(__d('croogo', '%-20s%-50s%s', __d('croogo', 'Plugin'), __d('croogo', 'Author'), __d('croogo', 'Status')));
+        $this->out(__d('vamshop', 'Plugins:'), 2);
+        $this->out(__d('vamshop', '%-20s%-50s%s', __d('vamshop', 'Plugin'), __d('vamshop', 'Author'), __d('vamshop', 'Status')));
         $this->out(str_repeat('-', 80));
         foreach ($plugins as $plugin) {
             $status = '<info>inactive</info>';
@@ -256,7 +256,7 @@ class ExtShell extends AppShell
             }
             $data = $VamshopPlugin->getPluginData($plugin);
             $author = isset($data['author']) ? $data['author'] : '';
-            $this->out(__d('croogo', '%-20s%-50s%s', $plugin, $author, $status));
+            $this->out(__d('vamshop', '%-20s%-50s%s', $plugin, $author, $status));
         }
     }
 
@@ -271,7 +271,7 @@ class ExtShell extends AppShell
         $themes = $theme == null ? $VamshopTheme->getThemes() : [$theme];
         $this->out("Themes:", 2);
         $default = empty($current) || $current == 'default';
-        $this->out(__d('croogo', '%-20s%-50s%s', __d('croogo', 'Theme'), __d('croogo', 'Author'), __d('croogo', 'Status')));
+        $this->out(__d('vamshop', '%-20s%-50s%s', __d('vamshop', 'Theme'), __d('vamshop', 'Author'), __d('vamshop', 'Status')));
         $this->out(str_repeat('-', 80));
         foreach ($themes as $theme) {
             $active = $theme == $current || $default && $theme == 'default';
@@ -281,7 +281,7 @@ class ExtShell extends AppShell
             }
             $data = $VamshopTheme->getThemeData($theme);
             $author = isset($data['author']) ? $data['author'] : '';
-            $this->out(__d('croogo', '%-20s%-50s%s', $theme, $author, $status));
+            $this->out(__d('vamshop', '%-20s%-50s%s', $theme, $author, $status));
         }
     }
 }

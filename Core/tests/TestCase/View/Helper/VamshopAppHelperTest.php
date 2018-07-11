@@ -27,7 +27,7 @@ class VamshopAppHelperTest extends VamshopTestCase
     public $AppHelper;
 
     public $fixtures = [
-//		'plugin.croogo\settings.setting',
+//		'plugin.vamshop\settings.setting',
 //		'plugin.taxonomy.type',
 //		'plugin.taxonomy.vocabulary',
 //		'plugin.taxonomy.types_vocabulary',

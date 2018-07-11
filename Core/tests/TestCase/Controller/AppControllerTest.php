@@ -39,9 +39,9 @@ class VamshopAppControllerTest extends IntegrationTestCase
 {
 
     public $fixtures = [
-//		'plugin.croogo/settings.setting',
+//		'plugin.vamshop/settings.setting',
 //		'plugin.taxonomy.type',
-//		'plugin.croogo/nodes.node',
+//		'plugin.vamshop/nodes.node',
     ];
 
     public function setUp()

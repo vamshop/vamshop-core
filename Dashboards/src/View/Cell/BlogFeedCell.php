@@ -20,7 +20,7 @@ class BlogFeedCell extends Cell
 
     protected function getPosts()
     {
-        $posts = Cache::read('croogo_blog_feed_posts');
+        $posts = Cache::read('vamshop_blog_feed_posts');
         if ($posts === false) {
             $xml = Xml::build(file_get_contents('http://support.vamshop.com/modules/news/backendt.php?topicid=1'));
 
@@ -37,7 +37,7 @@ class BlogFeedCell extends Cell
             }
         }
 
-        Cache::write('croogo_blog_feed_posts', $posts);
+        Cache::write('vamshop_blog_feed_posts', $posts);
 
         return $posts;
     }

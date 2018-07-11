@@ -15,9 +15,9 @@ class LayoutHelperTest extends VamshopTestCase
 {
 
     public $fixtures = [
-//		'plugin.croogo\users.user',
-//		'plugin.croogo\users.role',
-//		'plugin.croogo\settings.setting',
+//		'plugin.vamshop\users.user',
+//		'plugin.vamshop\users.role',
+//		'plugin.vamshop\settings.setting',
 //		'plugin.taxonomy.type',
 //		'plugin.taxonomy.vocabulary',
 //		'plugin.taxonomy.types_vocabulary',

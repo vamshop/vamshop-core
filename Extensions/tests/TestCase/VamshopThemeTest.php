@@ -76,6 +76,6 @@ class VamshopThemeTest extends VamshopTestCase
         $this->assertEquals($expected, $keys);
 
         $this->assertEquals('MixedManifest', $data['name']);
-        $this->assertEquals('croogo/mixed-manifest-theme', $data['vendor']);
+        $this->assertEquals('vamshop/mixed-manifest-theme', $data['vendor']);
     }
 }

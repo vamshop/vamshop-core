@@ -88,7 +88,7 @@ class NodesComponent extends Component
                 ->limit($options['limit'])
                 ->applyOptions([
                     'prefix' => 'nodes_' . $alias,
-                    'config' => 'croogo_nodes',
+                    'config' => 'vamshop_nodes',
                 ])->find('byAccess', [
                     'roleId' => $roleId
                 ])->find('published');

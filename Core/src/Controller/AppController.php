@@ -174,7 +174,7 @@ class AppController extends \App\Controller\AppController implements HookableCom
             ) {
                 $this->viewBuilder()->setLayout('maintenance');
                 $this->response->statusCode(503);
-                $this->set('title_for_layout', __d('croogo', 'Site down for maintenance'));
+                $this->set('title_for_layout', __d('vamshop', 'Site down for maintenance'));
                 $this->viewBuilder()->templatePath('Maintenance');
                 $this->render('Vamshop/Core.blank');
             }

@@ -155,7 +155,7 @@ class AcosTable extends \Acl\Model\Table\AcosTable
 
         $apiCount = count($versionRoots);
 
-        $api = __d('croogo', 'API');
+        $api = __d('vamshop', 'API');
         foreach ($versionRoots as &$versionRoot) {
             $alias = strtolower(str_replace('_', '.', $versionRoot->alias));
             $versionRoot->alias = $alias;

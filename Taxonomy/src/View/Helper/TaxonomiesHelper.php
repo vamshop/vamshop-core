@@ -50,7 +50,7 @@ class TaxonomiesHelper extends Helper
         if (empty($this->_View->viewVars['taxonomies']) || $controller == 'Terms') {
             return;
         }
-        $title = __d('croogo', 'Terms');
+        $title = __d('vamshop', 'Terms');
         $element = 'Vamshop/Taxonomy.terms_tab';
         Vamshop::hookAdminTab('Admin/' . $controller . '/add', $title, $element);
         Vamshop::hookAdminTab('Admin/' . $controller . '/edit', $title, $element);

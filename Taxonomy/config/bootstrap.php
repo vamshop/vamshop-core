@@ -8,8 +8,8 @@ $cacheConfig = array_merge(
     Configure::read('Vamshop.Cache.defaultConfig'),
     ['groups' => ['taxonomy']]
 );
-Cache::config('croogo_types', $cacheConfig);
-Cache::config('croogo_vocabularies', $cacheConfig);
+Cache::config('vamshop_types', $cacheConfig);
+Cache::config('vamshop_vocabularies', $cacheConfig);
 
 Vamshop::hookComponent('*', 'Vamshop/Taxonomy.Taxonomies');
 

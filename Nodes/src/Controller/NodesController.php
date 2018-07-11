@@ -267,7 +267,7 @@ class NodesController extends AppController
         if ($typeAlias) {
             $type = $Node->Taxonomy->Vocabulary->Type->findByAlias($typeAlias);
             if (!isset($type['Type']['id'])) {
-                $this->Flash->error(__d('croogo', 'Invalid content type.'));
+                $this->Flash->error(__d('vamshop', 'Invalid content type.'));
 
                 return $this->redirect('/');
             }

@@ -60,7 +60,7 @@ class ContactsController extends AppController
 
             if ($continue === true) {
                 Vamshop::dispatchEvent('Controller.Contacts.afterMessage', $this);
-                $this->Flash->success(__d('croogo', 'Your message has been received...'));
+                $this->Flash->success(__d('vamshop', 'Your message has been received...'));
 
                 return $this->Vamshop->redirect('/');
             }
@@ -112,7 +112,7 @@ class ContactsController extends AppController
         $this->Akismet->setCommentAuthorEmail($message->email);
         $this->Akismet->setCommentContent($message->body);
         if ($this->Akismet->isCommentSpam()) {
-            $this->Flash->error(__d('croogo', 'Sorry, the message appears to be spam.'));
+            $this->Flash->error(__d('vamshop', 'Sorry, the message appears to be spam.'));
             return false;
         }
 
@@ -134,7 +134,7 @@ class ContactsController extends AppController
         }
 
         if (!$this->Recaptcha->verify()) {
-            $this->Flash->error(__d('croogo', 'Invalid captcha entry'));
+            $this->Flash->error(__d('vamshop', 'Invalid captcha entry'));
             return false;
         }
 
@@ -160,7 +160,7 @@ class ContactsController extends AppController
         try {
             $email->from($message->email)
                 ->to($contact->email)
-                ->subject(__d('croogo', '[%s] %s', $siteTitle, $contact->title))
+                ->subject(__d('vamshop', '[%s] %s', $siteTitle, $contact->title))
                 ->template('Vamshop/Contacts.contact')
                 ->viewVars([
                     'contact' => $contact,

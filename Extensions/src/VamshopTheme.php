@@ -245,7 +245,7 @@ class VamshopTheme
     public function delete($alias)
     {
         if (empty($alias)) {
-            throw new InvalidArgumentException(__d('croogo', 'Invalid theme'));
+            throw new InvalidArgumentException(__d('vamshop', 'Invalid theme'));
         }
         $paths = [
             APP . 'webroot' . DS . 'theme' . DS . $alias,
@@ -266,7 +266,7 @@ class VamshopTheme
                 }
             }
         }
-        throw new UnexpectedValueException(__d('croogo', 'Theme %s not found', $alias));
+        throw new UnexpectedValueException(__d('vamshop', 'Theme %s not found', $alias));
     }
 
     /**
@@ -277,14 +277,14 @@ class VamshopTheme
      */
     public static function config($theme = null)
     {
-        static $croogoTheme = null;
+        static $vamshopTheme = null;
         static $themeData = [];
-        if ($croogoTheme === null) {
-            $croogoTheme = new VamshopTheme();
+        if ($vamshopTheme === null) {
+            $vamshopTheme = new VamshopTheme();
         }
 
         if (empty($themeData[$theme])) {
-            $data = $croogoTheme->getData($theme);
+            $data = $vamshopTheme->getData($theme);
             $request = Router::getRequest();
             if ($request) {
                 $prefix = $request->param('prefix');

@@ -134,7 +134,7 @@ class UsersControllerTest extends VamshopControllerTestCase
     public function testAddInvalidPassword()
     {
         $this->_setupAuthUser();
-        $_SERVER['SERVER_NAME'] = 'croogo.dev';
+        $_SERVER['SERVER_NAME'] = 'vamshop.dev';
         $this->UsersController->Session
             ->expects($this->once())
             ->method('setFlash')
@@ -148,7 +148,7 @@ class UsersControllerTest extends VamshopControllerTestCase
                 'User' => [
                     'username' => 'new_user',
                     'password' => '',
-                    'email' => 'new_user@croogo.dev',
+                    'email' => 'new_user@vamshop.dev',
                     'name' => 'New User',
                     'website' => '',
                     'role_id' => 3,
@@ -167,7 +167,7 @@ class UsersControllerTest extends VamshopControllerTestCase
     public function testAddtestAddOtherErrors()
     {
         $this->_setupAuthUser();
-        $_SERVER['SERVER_NAME'] = 'croogo.dev';
+        $_SERVER['SERVER_NAME'] = 'vamshop.dev';
         $this->UsersController->Session
             ->expects($this->once())
             ->method('setFlash')
@@ -209,7 +209,7 @@ class UsersControllerTest extends VamshopControllerTestCase
                 'User' => [
                     'username' => 'new_user',
                     'password' => uniqid(),
-                    'email' => 'new_user@croogo.dev',
+                    'email' => 'new_user@vamshop.dev',
                     'name' => 'New User',
                     'role_id' => 3,
                 ],

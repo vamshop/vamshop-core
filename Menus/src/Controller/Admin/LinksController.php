@@ -41,7 +41,7 @@ class LinksController extends AppController
     {
         $menuId = $this->request->query('menu_id');
         $menu = $this->Links->Menus->get($menuId);
-        $this->set('title_for_layout', __d('croogo', 'Links: %s', $menu->title));
+        $this->set('title_for_layout', __d('vamshop', 'Links: %s', $menu->title));
         $linksTree = $this->Links->find('treeList')
             ->where([
                 'Links.menu_id' => $menuId,
@@ -73,7 +73,7 @@ class LinksController extends AppController
             return;
         }
 
-        $this->Flash->success(__d('croogo', 'Link deleted'));
+        $this->Flash->success(__d('vamshop', 'Link deleted'));
 
         return $this->redirect([
             'action' => 'index',
@@ -96,7 +96,7 @@ class LinksController extends AppController
         try {
             $link = $this->Links->get($id);
         } catch (RecordNotFoundException $e) {
-            $this->Flash->error(__d('croogo', 'Invalid id for Link'));
+            $this->Flash->error(__d('vamshop', 'Invalid id for Link'));
 
             return $this->redirect([
                 'controller' => 'menus',
@@ -106,10 +106,10 @@ class LinksController extends AppController
 
         $this->Links->setTreeScope($link->menu_id);
         if ($this->Links->moveUp($link, $step)) {
-            Cache::clearGroup('menus', 'croogo_menus');
-            $this->Flash->success(__d('croogo', 'Moved up successfully'));
+            Cache::clearGroup('menus', 'vamshop_menus');
+            $this->Flash->success(__d('vamshop', 'Moved up successfully'));
         } else {
-            $this->Flash->error(__d('croogo', 'Could not move up'));
+            $this->Flash->error(__d('vamshop', 'Could not move up'));
         }
 
         return $this->redirect([
@@ -133,7 +133,7 @@ class LinksController extends AppController
         try {
             $link = $this->Links->get($id);
         } catch (RecordNotFoundException $e) {
-            $this->Flash->error(__d('croogo', 'Invalid id for Link'));
+            $this->Flash->error(__d('vamshop', 'Invalid id for Link'));
 
             return $this->redirect([
                 'controller' => 'menus',
@@ -143,10 +143,10 @@ class LinksController extends AppController
 
         $this->Links->setTreeScope($link->menu_id);
         if ($this->Links->moveDown($link, $step)) {
-            Cache::clearGroup('menus', 'croogo_menus');
-            $this->Flash->success(__d('croogo', 'Moved down successfully'));
+            Cache::clearGroup('menus', 'vamshop_menus');
+            $this->Flash->success(__d('vamshop', 'Moved down successfully'));
         } else {
-            $this->Flash->error(__d('croogo', 'Could not move down'));
+            $this->Flash->error(__d('vamshop', 'Could not move down'));
         }
 
         return $this->redirect([
@@ -179,9 +179,9 @@ class LinksController extends AppController
 
         $multiple = ['copy' => false];
         $messageMap = [
-            'delete' => __d('croogo', 'Links deleted'),
-            'publish' => __d('croogo', 'Links published'),
-            'unpublish' => __d('croogo', 'Links unpublished'),
+            'delete' => __d('vamshop', 'Links deleted'),
+            'publish' => __d('vamshop', 'Links published'),
+            'unpublish' => __d('vamshop', 'Links unpublished'),
         ];
         $options = compact('multiple', 'redirect', 'messageMap');
 

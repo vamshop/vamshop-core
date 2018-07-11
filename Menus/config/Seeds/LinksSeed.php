@@ -137,7 +137,7 @@ class LinksSeed extends AbstractSeed
             'parent_id' => null,
             'menu_id' => '6',
             'title' => 'Vamshop',
-            'class' => 'croogo',
+            'class' => 'vamshop',
             'description' => '',
             'link' => 'http://www.vamshop.com',
             'target' => '',

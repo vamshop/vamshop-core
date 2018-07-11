@@ -14,9 +14,9 @@ class VamshopRouterTest extends TestCase
 {
 
     public $fixtures = [
-//		'plugin.croogo/settings.setting',
+//		'plugin.vamshop/settings.setting',
 //		'plugin.taxonomy.vocabulary',
-        'plugin.croogo/taxonomy.type',
+        'plugin.vamshop/taxonomy.type',
 //		'plugin.taxonomy.types_vocabulary',
     ];
 
@@ -117,7 +117,7 @@ class VamshopRouterTest extends TestCase
             'description' => '',
         ]));
         $table->save($type);
-        Cache::clear(false, 'croogo_types');
+        Cache::clear(false, 'vamshop_types');
         $type = $table->findByAlias('press-release')->first();
         Router::routableContentTypes();
 
@@ -135,7 +135,7 @@ class VamshopRouterTest extends TestCase
             'routes' => true
         ];
         $table->save($type);
-        Cache::clear(false, 'croogo_types');
+        Cache::clear(false, 'vamshop_types');
         Router::reload();
         Router::routableContentTypes();
 

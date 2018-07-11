@@ -5,7 +5,7 @@ namespace Vamshop\Taxonomy\Config;
 use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'content.children.content_types', [
-    'title' => __d('croogo', 'Content Types'),
+    'title' => __d('vamshop', 'Content Types'),
     'url' => [
         'prefix' => 'admin',
         'plugin' => 'Vamshop/Taxonomy',
@@ -16,7 +16,7 @@ Nav::add('sidebar', 'content.children.content_types', [
 ]);
 
 Nav::add('sidebar', 'content.children.taxonomy', [
-    'title' => __d('croogo', 'Taxonomy'),
+    'title' => __d('vamshop', 'Taxonomy'),
     'url' => [
         'prefix' => 'admin',
         'plugin' => 'Vamshop/Taxonomy',
@@ -26,7 +26,7 @@ Nav::add('sidebar', 'content.children.taxonomy', [
     'weight' => 40,
     'children' => [
         'list' => [
-            'title' => __d('croogo', 'List'),
+            'title' => __d('vamshop', 'List'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Taxonomy',
@@ -36,7 +36,7 @@ Nav::add('sidebar', 'content.children.taxonomy', [
             'weight' => 10,
         ],
         'add_new' => [
-            'title' => __d('croogo', 'Add new'),
+            'title' => __d('vamshop', 'Add new'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Taxonomy',

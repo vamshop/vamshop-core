@@ -24,7 +24,7 @@ class UserMailer extends Mailer
         return $this
             ->profile('default')
             ->to($user->email)
-            ->subject(__d('croogo', '[%s] Reset Password', Configure::read('Site.title')))
+            ->subject(__d('vamshop', '[%s] Reset Password', Configure::read('Site.title')))
             ->template('Vamshop/Users.forgot_password')
             ->emailFormat('both')
             ->set([
@@ -37,7 +37,7 @@ class UserMailer extends Mailer
         return $this
             ->profile('default')
             ->to($user->email)
-            ->subject(__d('croogo', '[%s] Please activate your account', Configure::read('Site.title')))
+            ->subject(__d('vamshop', '[%s] Please activate your account', Configure::read('Site.title')))
             ->template('Vamshop/Users.register')
             ->emailFormat('both')
             ->set([

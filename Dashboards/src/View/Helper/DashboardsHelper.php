@@ -155,13 +155,13 @@ class DashboardsHelper extends Helper
     {
         switch ($id) {
             case VamshopDashboard::LEFT:
-                return __d('croogo', 'Left');
+                return __d('vamshop', 'Left');
             break;
             case VamshopDashboard::RIGHT:
-                return __d('croogo', 'Right');
+                return __d('vamshop', 'Right');
             break;
             case VamshopDashboard::FULL:
-                return __d('croogo', 'Full');
+                return __d('vamshop', 'Full');
             break;
         }
         return null;

@@ -9,7 +9,7 @@ class VamshopModelsTest extends PHPUnit_Framework_TestSuite
     public static function suite()
     {
         $suite = new CakeTestSuite('Vamshop model tests');
-        $path = APP . 'Vendor' . DS . 'croogo' . DS . 'croogo' . DS . 'Vamshop' . DS . 'Test' . DS . 'Case' . DS . 'Model' . DS;
+        $path = APP . 'Vendor' . DS . 'vamshop' . DS . 'vamshop' . DS . 'Vamshop' . DS . 'Test' . DS . 'Case' . DS . 'Model' . DS;
         $suite->addTestDirectory($path);
         return $suite;
     }

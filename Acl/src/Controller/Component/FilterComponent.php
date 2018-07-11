@@ -101,7 +101,7 @@ class FilterComponent extends Component
         ]);
         if ($this->_config('autoLoginDuration')) {
             if (!function_exists('mcrypt_encrypt')) {
-                $notice = __d('croogo', '"AutoLogin" (Remember Me) disabled since mcrypt_encrypt is not available');
+                $notice = __d('vamshop', '"AutoLogin" (Remember Me) disabled since mcrypt_encrypt is not available');
                 $this->log($notice, LOG_CRIT);
                 if (isset($this->_controller->request->params['admin'])) {
                     $this->_controller->Flash->error($notice);

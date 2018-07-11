@@ -67,9 +67,9 @@ class MessagesTable extends VamshopTable
 
     public function validationDefault(Validator $validator)
     {
-        $notBlankMessage = __d('croogo', 'This field cannot be left blank.');
+        $notBlankMessage = __d('vamshop', 'This field cannot be left blank.');
         $validator->notBlank('name', $notBlankMessage);
-        $validator->email('email', __d('croogo', 'Please provide a valid email address.'));
+        $validator->email('email', __d('vamshop', 'Please provide a valid email address.'));
         $validator->notBlank('title', $notBlankMessage);
         $validator->notBlank('body', $notBlankMessage);
         return $validator;

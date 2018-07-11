@@ -113,11 +113,11 @@ class MetaHelper extends Helper
     {
         $_options = [
             'key' => [
-                'label' => __d('croogo', 'Key'),
+                'label' => __d('vamshop', 'Key'),
                 'value' => $key,
             ],
             'value' => [
-                'label' => __d('croogo', 'Value'),
+                'label' => __d('vamshop', 'Value'),
                 'value' => $value,
                 'type' => 'textarea',
                 'rows' => 2,
@@ -153,7 +153,7 @@ class MetaHelper extends Helper
             $deleteUrl = $this->settings['deleteUrl'];
             $deleteUrl[] = $id;
             $actions = $this->Html->link(
-                __d('croogo', 'Remove'),
+                __d('vamshop', 'Remove'),
                 $deleteUrl,
                 ['class' => 'btn btn-danger-outline remove-meta', 'rel' => $id]
             );

@@ -66,7 +66,7 @@ class SettingsController extends AppController
                 $setting->value = $value;
                 $this->Settings->save($setting);
             }
-            $this->Flash->success(__d('croogo', 'Settings updated successfully'));
+            $this->Flash->success(__d('vamshop', 'Settings updated successfully'));
             return $this->redirect(['action' => 'prefix', $prefix]);
         }
 
@@ -79,7 +79,7 @@ class SettingsController extends AppController
         ]);
 
         if ($settings->count() == 0) {
-            $this->Flash->error(__d('croogo', 'Invalid Setting key'));
+            $this->Flash->error(__d('vamshop', 'Invalid Setting key'));
         }
 
         $this->set(compact('prefix', 'settings'));
@@ -122,9 +122,9 @@ class SettingsController extends AppController
     public function moveup($id, $step = 1)
     {
         if ($this->Setting->moveUp($id, $step)) {
-            $this->Flash->success(__d('croogo', 'Moved up successfully'));
+            $this->Flash->success(__d('vamshop', 'Moved up successfully'));
         } else {
-            $this->Flash->error(__d('croogo', 'Could not move up'));
+            $this->Flash->error(__d('vamshop', 'Could not move up'));
         }
 
         if (!$redirect = $this->referer()) {
@@ -149,9 +149,9 @@ class SettingsController extends AppController
     public function movedown($id, $step = 1)
     {
         if ($this->Setting->moveDown($id, $step)) {
-            $this->Flash->success(__d('croogo', 'Moved down successfully'));
+            $this->Flash->success(__d('vamshop', 'Moved down successfully'));
         } else {
-            $this->Flash->error(__d('croogo', 'Could not move down'));
+            $this->Flash->error(__d('vamshop', 'Could not move down'));
         }
 
         return $this->redirect(['admin' => true, 'controller' => 'settings', 'action' => 'index']);

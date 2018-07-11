@@ -60,10 +60,10 @@ class BlocksController extends AppController
 
         $options = [
             'messageMap' => [
-                'delete' => __d('croogo', 'Successfully deleted blocks'),
-                'publish' => __d('croogo', 'Successfully published blocks'),
-                'unpublish' => __d('croogo', 'Successfully unpublished blocks'),
-                'copy' => __d('croogo', 'Successfully copied blocks'),
+                'delete' => __d('vamshop', 'Successfully deleted blocks'),
+                'publish' => __d('vamshop', 'Successfully published blocks'),
+                'unpublish' => __d('vamshop', 'Successfully unpublished blocks'),
+                'copy' => __d('vamshop', 'Successfully copied blocks'),
             ],
         ];
 

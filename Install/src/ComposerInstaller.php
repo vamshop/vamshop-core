@@ -14,7 +14,7 @@ class ComposerInstaller extends PluginInstaller
         $composer = $event->getComposer();
         $config = $composer->getConfig();
         $vendorDir = realpath($config->get('vendor-dir'));
-        $croogoDir = dirname(dirname(__DIR__));
+        $vamshopDir = dirname(dirname(__DIR__));
         $packages = $composer->getRepositoryManager()->getLocalRepository()->getPackages();
         $pluginsDir = dirname($vendorDir) . DIRECTORY_SEPARATOR . 'plugins';
         $plugins = static::determinePlugins($packages, $pluginsDir, $vendorDir);
@@ -25,7 +25,7 @@ class ComposerInstaller extends PluginInstaller
             'Wysiwyg',
         ];
         foreach ($corePlugins as $plugin) {
-            $plugins['Vamshop\\' . $plugin] = $croogoDir . DIRECTORY_SEPARATOR . $plugin;
+            $plugins['Vamshop\\' . $plugin] = $vamshopDir . DIRECTORY_SEPARATOR . $plugin;
         }
         $configFile = static::_configFile($vendorDir);
         static::writeConfigFile($configFile, $plugins);
@@ -46,7 +46,7 @@ class ComposerInstaller extends PluginInstaller
         $plugins = [];
 
         foreach ($packages as $package) {
-            if (!in_array($package->getType(), ['cakephp-plugin', 'croogo-plugin', 'croogo-theme'])) {
+            if (!in_array($package->getType(), ['cakephp-plugin', 'vamshop-plugin', 'vamshop-theme'])) {
                 continue;
             }
 

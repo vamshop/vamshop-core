@@ -30,13 +30,13 @@ class Translations
             $action = str_replace('.', '.Admin/', $model . '/index');
             $url = str_replace('{{model}}', urlencode($model), $path);
             Vamshop::hookAdminRowAction($action,
-                __d('croogo', 'Translate'),
+                __d('vamshop', 'Translate'),
                 [
                 $url => [
                     'title' => false,
                     'options' => [
                         'icon' => 'translate',
-                        'data-title' => __d('croogo', 'Translate'),
+                        'data-title' => __d('vamshop', 'Translate'),
                     ],
                 ]]
             );

@@ -45,7 +45,7 @@ class InstallShell extends Shell
     {
         $drivers = ['Mysql', 'Postgres', 'Sqlite', 'Sqlserver'];
         $parser = parent::getOptionParser();
-        $parser->description(__d('croogo', 'Install Utilities'))
+        $parser->description(__d('vamshop', 'Install Utilities'))
             ->addSubcommand('main', [
                 'help' => 'Generate database.php and create admin user.',
                 'parser' => [
@@ -130,19 +130,19 @@ class InstallShell extends Shell
         Installer::setSecuritySalt(ROOT, new BufferIO());
         $this->out();
         $this->out('Database settings:');
-        $install['datasource'] = $this->_in(__d('croogo', 'DataSource'), [
+        $install['datasource'] = $this->_in(__d('vamshop', 'DataSource'), [
             'Mysql',
             'Sqlite',
             'Postgres',
             'Sqlserver'
         ], 'Mysql', 'datasource');
         $install['driver'] = 'Cake\Database\Driver\\' . $install['datasource'];
-        $install['host'] = $this->_in(__d('croogo', 'Host'), null, 'localhost', 'host');
-        $install['username'] = $this->_in(__d('croogo', 'Login'), null, 'root', 'username');
-        $install['password'] = $this->_in(__d('croogo', 'Password'), null, '', 'password');
-        $install['database'] = $this->_in(__d('croogo', 'Database'), null, 'croogo', 'database-name');
-        //$install['prefix'] = $this->_in(__d('croogo', 'Prefix'), null, '', 'prefix');
-        $install['port'] = $this->_in(__d('croogo', 'Port'), null, null, 'port');
+        $install['host'] = $this->_in(__d('vamshop', 'Host'), null, 'localhost', 'host');
+        $install['username'] = $this->_in(__d('vamshop', 'Login'), null, 'root', 'username');
+        $install['password'] = $this->_in(__d('vamshop', 'Password'), null, '', 'password');
+        $install['database'] = $this->_in(__d('vamshop', 'Database'), null, 'vamshop', 'database-name');
+        //$install['prefix'] = $this->_in(__d('vamshop', 'Prefix'), null, '', 'prefix');
+        $install['port'] = $this->_in(__d('vamshop', 'Port'), null, null, 'port');
 
         $InstallManager = new InstallManager();
         $InstallManager->createDatabaseFile($install);
@@ -179,16 +179,16 @@ class InstallShell extends Shell
         }
 
         do {
-            $username = $this->_args(__d('croogo', 'Username'), null, null, 0);
+            $username = $this->_args(__d('vamshop', 'Username'), null, null, 0);
             if (empty($username)) {
                 $this->err('Username must not be empty');
             }
         } while (empty($username));
 
         do {
-            $password = $this->_args(__d('croogo', 'Password'), null, null, 1);
+            $password = $this->_args(__d('vamshop', 'Password'), null, null, 1);
             if (empty($this->args)) {
-                $verify = $this->_in(__d('croogo', 'Verify Password'), null, null, 1);
+                $verify = $this->_in(__d('vamshop', 'Verify Password'), null, null, 1);
                 $passwordsMatched = $password == $verify;
 
                 if (!$passwordsMatched) {

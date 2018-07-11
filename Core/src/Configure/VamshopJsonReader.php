@@ -45,7 +45,7 @@ class VamshopJsonReader implements ConfigEngineInterface
     public function read($key)
     {
         if (strpos($key, '..') !== false) {
-            throw new Exception(__d('croogo', 'Cannot load configuration files with ../ in them.'));
+            throw new Exception(__d('vamshop', 'Cannot load configuration files with ../ in them.'));
         }
         if (substr($key, -5) === '.json') {
             $key = substr($key, 0, -5);
@@ -60,7 +60,7 @@ class VamshopJsonReader implements ConfigEngineInterface
         $file .= '.json';
         if (!is_file($file)) {
             if (!is_file(substr($file, 0, -4))) {
-                throw new Exception(__d('croogo', 'Could not load configuration files: {0) or {1}', $file, substr($file, 0, -4)));
+                throw new Exception(__d('vamshop', 'Could not load configuration files: {0) or {1}', $file, substr($file, 0, -4)));
             }
         }
         $config = json_decode(file_get_contents($file), true);

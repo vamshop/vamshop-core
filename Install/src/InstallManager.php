@@ -34,7 +34,7 @@ class InstallManager
         'host' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'database' => 'croogo',
+        'database' => 'vamshop',
         'port' => null,
         'schema' => null,
         'prefix' => null,
@@ -49,7 +49,7 @@ class InstallManager
      *
      * @var \Vamshop\Core\Plugin
      */
-    protected $_croogoPlugin;
+    protected $_vamshopPlugin;
 
     public static function versionCheck()
     {
@@ -93,11 +93,11 @@ class InstallManager
             $db->connect();
         } catch (MissingConnectionException $e) {
             ConnectionManager::drop('default');
-            return __d('croogo', 'Could not connect to database: ') . $e->getMessage();
+            return __d('vamshop', 'Could not connect to database: ') . $e->getMessage();
         }
         if (!$db->isConnected()) {
             ConnectionManager::drop('default');
-            return __d('croogo', 'Could not connect to database.');
+            return __d('vamshop', 'Could not connect to database.');
         }
 
         $configPath = ROOT . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'app.php';
@@ -175,17 +175,17 @@ class InstallManager
 
     protected function _getVamshopPlugin()
     {
-        if (!($this->_croogoPlugin instanceof Plugin)) {
+        if (!($this->_vamshopPlugin instanceof Plugin)) {
             $this->_setVamshopPlugin(new Plugin());
         }
 
-        return $this->_croogoPlugin;
+        return $this->_vamshopPlugin;
     }
 
-    protected function _setVamshopPlugin($croogoPlugin)
+    protected function _setVamshopPlugin($vamshopPlugin)
     {
-        unset($this->_croogoPlugin);
-        $this->_croogoPlugin = $croogoPlugin;
+        unset($this->_vamshopPlugin);
+        $this->_vamshopPlugin = $vamshopPlugin;
     }
 
     public function runMigrations($plugin)
@@ -193,10 +193,10 @@ class InstallManager
         if (!Plugin::loaded($plugin)) {
             Plugin::load($plugin);
         }
-        $croogoPlugin = $this->_getVamshopPlugin();
-        $result = $croogoPlugin->migrate($plugin);
+        $vamshopPlugin = $this->_getVamshopPlugin();
+        $result = $vamshopPlugin->migrate($plugin);
         if (!$result) {
-            $this->log($croogoPlugin->migrationErrors);
+            $this->log($vamshopPlugin->migrationErrors);
         }
 
         return $result;
@@ -207,9 +207,9 @@ class InstallManager
         if (!Plugin::loaded($plugin)) {
             Plugin::load($plugin);
         }
-        $croogoPlugin = $this->_getVamshopPlugin();
+        $vamshopPlugin = $this->_getVamshopPlugin();
 
-        return $croogoPlugin->seed($plugin);
+        return $vamshopPlugin->seed($plugin);
     }
 
     /**
@@ -235,7 +235,7 @@ class InstallManager
         $user->status = true;
         $user->activation_key = md5(uniqid());
         if ($user->errors()) {
-            return __d('croogo', 'Unable to create administrative user. Validation errors:');
+            return __d('vamshop', 'Unable to create administrative user. Validation errors:');
         }
 
         return $Users->save($user) !== false;
@@ -309,7 +309,7 @@ class InstallManager
                 try {
                     $result = $Permission->allow($aro, $aco);
                     if ($result) {
-                        $success(__d('croogo', 'Permission %s granted to %s', $aco, $aro));
+                        $success(__d('vamshop', 'Permission %s granted to %s', $aco, $aro));
                     }
                 } catch (\Exception $e) {
                     $error($e->getMessage());

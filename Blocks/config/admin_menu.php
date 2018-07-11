@@ -6,7 +6,7 @@ use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'blocks', [
     'icon' => 'columns',
-    'title' => __d('croogo', 'Blocks'),
+    'title' => __d('vamshop', 'Blocks'),
     'url' => [
         'prefix' => 'admin',
         'plugin' => 'Vamshop/Blocks',
@@ -16,7 +16,7 @@ Nav::add('sidebar', 'blocks', [
     'weight' => 30,
     'children' => [
         'blocks' => [
-            'title' => __d('croogo', 'Blocks'),
+            'title' => __d('vamshop', 'Blocks'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Blocks',
@@ -25,7 +25,7 @@ Nav::add('sidebar', 'blocks', [
             ],
         ],
         'regions' => [
-            'title' => __d('croogo', 'Regions'),
+            'title' => __d('vamshop', 'Regions'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Blocks',

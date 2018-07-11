@@ -118,6 +118,6 @@ class BlocksEventHandler implements EventListenerInterface
  */
     public function onAfterBulkProcess($event)
     {
-        Cache::clearGroup('blocks', 'croogo_blocks');
+        Cache::clearGroup('blocks', 'vamshop_blocks');
     }
 }

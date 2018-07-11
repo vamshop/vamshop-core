@@ -57,14 +57,14 @@ $cache = [
 	],
 	'_cake_core_' => [
 		'className' => 'File',
-		'prefix' => 'croogo_core_myapp_cake_core_',
+		'prefix' => 'vamshop_core_myapp_cake_core_',
 		'path' => CACHE . 'persistent/',
 		'serialize' => true,
 		'duration' => '+10 seconds'
 	],
 	'_cake_model_' => [
 		'className' => 'File',
-		'prefix' => 'croogo_core_my_app_cake_model_',
+		'prefix' => 'vamshop_core_my_app_cake_model_',
 		'path' => CACHE . 'models/',
 		'serialize' => 'File',
 		'duration' => '+10 seconds'

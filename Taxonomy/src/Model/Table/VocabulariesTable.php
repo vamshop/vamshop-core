@@ -46,8 +46,8 @@ class VocabulariesTable extends VamshopTable
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->notBlank('title', __d('croogo', 'The title cannot be empty'))
-            ->notBlank('alias', __d('croogo', 'The alias cannot be empty'));
+            ->notBlank('title', __d('vamshop', 'The title cannot be empty'))
+            ->notBlank('alias', __d('vamshop', 'The alias cannot be empty'));
 
         return parent::validationDefault($validator);
     }
@@ -60,7 +60,7 @@ class VocabulariesTable extends VamshopTable
     {
         $rules->add($rules->isUnique(
             ['alias'],
-            __d('croogo', 'That alias is already taken')
+            __d('vamshop', 'That alias is already taken')
         ));
         return parent::buildRules($rules);
     }

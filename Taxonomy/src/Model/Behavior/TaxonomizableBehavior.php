@@ -136,8 +136,8 @@ class TaxonomizableBehavior extends Behavior
 
         $selectedTerms = $this->_getSelectedTerms($entity);
 
-        $requiredError = __d('croogo', 'Please select at least 1 value');
-        $multipleError = __d('croogo', 'Please select at most 1 value');
+        $requiredError = __d('vamshop', 'Please select at least 1 value');
+        $multipleError = __d('vamshop', 'Please select at most 1 value');
         foreach ($type->vocabularies as $vocabulary) {
             $fieldName = 'taxonomy_data.' . $vocabulary->id;
             $terms = Hash::extract($vocabulary, 'taxonomies.{n}.id');
@@ -164,7 +164,7 @@ class TaxonomizableBehavior extends Behavior
         $type = $this->_table->Taxonomies->Vocabularies->Types->findByAlias($typeAlias)
             ->first();
         if (empty($type)) {
-            throw new InvalidArgumentException(__d('croogo', 'Invalid Content Type'));
+            throw new InvalidArgumentException(__d('vamshop', 'Invalid Content Type'));
         }
         $entity->type = $type->alias;
         if (!$this->_table->behaviors()

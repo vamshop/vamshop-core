@@ -38,7 +38,7 @@ class CommentsHelper extends Helper
         if ($controller === 'Types' || empty($this->_View->viewVars['type']->comment_status)) {
             return;
         }
-        $title = __d('croogo', 'Comments');
+        $title = __d('vamshop', 'Comments');
         $element = 'Vamshop/Comments.comments_tab';
         Vamshop::hookAdminTab('Admin/' . $controller . '/add', $title, $element);
         Vamshop::hookAdminTab('Admin/' . $controller . '/edit', $title, $element);

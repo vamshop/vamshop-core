@@ -42,7 +42,7 @@ class ThemesController extends AppController
      */
     public function index()
     {
-        $this->set('title_for_layout', __d('croogo', 'Themes'));
+        $this->set('title_for_layout', __d('vamshop', 'Themes'));
 
         $themes = $this->_VamshopTheme->getThemes();
         $themesData = [];
@@ -71,9 +71,9 @@ class ThemesController extends AppController
         try {
             $this->_VamshopTheme->activate($theme);
 
-            $this->Flash->success(__d('croogo', 'Theme activated.'));
+            $this->Flash->success(__d('vamshop', 'Theme activated.'));
         } catch (MissingThemeException $exception) {
-            $this->Flash->error(__d('croogo', 'Theme activation failed: %s', $exception->getMessage()));
+            $this->Flash->error(__d('vamshop', 'Theme activation failed: %s', $exception->getMessage()));
         }
 
         return $this->redirect(['action' => 'index']);
@@ -86,7 +86,7 @@ class ThemesController extends AppController
      */
     public function add()
     {
-        $this->set('title_for_layout', __d('croogo', 'Upload a new theme'));
+        $this->set('title_for_layout', __d('vamshop', 'Upload a new theme'));
 
         if (!empty($this->request->data)) {
             $file = $this->request->data['Theme']['file'];
@@ -95,7 +95,7 @@ class ThemesController extends AppController
             $Installer = new ExtensionsInstaller;
             try {
                 $Installer->extractTheme($file['tmp_name']);
-                $this->Flash->success(__d('croogo', 'Theme uploaded successfully.'));
+                $this->Flash->success(__d('vamshop', 'Theme uploaded successfully.'));
             } catch (CakeException $e) {
                 $this->Flash->error($e->getMessage());
             }
@@ -111,7 +111,7 @@ class ThemesController extends AppController
      */
     public function editor()
     {
-        $this->set('title_for_layout', __d('croogo', 'Theme Editor'));
+        $this->set('title_for_layout', __d('vamshop', 'Theme Editor'));
     }
 
     /**
@@ -132,17 +132,17 @@ class ThemesController extends AppController
     public function delete($alias = null)
     {
         if ($alias == null) {
-            $this->Flash->error(__d('croogo', 'Invalid Theme.'));
+            $this->Flash->error(__d('vamshop', 'Invalid Theme.'));
 
             return $this->redirect(['action' => 'index']);
         }
 
         if ($alias == 'Vamshop/Core') {
-            $this->Flash->error(__d('croogo', 'Default theme cannot be deleted.'));
+            $this->Flash->error(__d('vamshop', 'Default theme cannot be deleted.'));
 
             return $this->redirect(['action' => 'index']);
         } elseif ($alias == Configure::read('Site.theme')) {
-            $this->Flash->error(__d('croogo', 'You cannot delete a theme that is currently active.'));
+            $this->Flash->error(__d('vamshop', 'You cannot delete a theme that is currently active.'));
 
             return $this->redirect(['action' => 'index']);
         }
@@ -150,11 +150,11 @@ class ThemesController extends AppController
         $result = $this->_VamshopTheme->delete($alias);
 
         if ($result === true) {
-            $this->Flash->success(__d('croogo', 'Theme deleted successfully.'));
+            $this->Flash->success(__d('vamshop', 'Theme deleted successfully.'));
         } elseif (!empty($result[0])) {
             $this->Flash->error($result[0]);
         } else {
-            $this->Flash->error(__d('croogo', 'An error occurred.'));
+            $this->Flash->error(__d('vamshop', 'An error occurred.'));
         }
 
         return $this->redirect(['action' => 'index']);

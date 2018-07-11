@@ -64,17 +64,17 @@ class BulkProcessBehavior extends Behavior
         $actionsMap = $this->config('actionsMap');
 
         if (empty($actionsMap[$action])) {
-            throw new InvalidArgumentException(__d('croogo', 'Invalid action to perform'));
+            throw new InvalidArgumentException(__d('vamshop', 'Invalid action to perform'));
         }
 
         if (empty($ids)) {
-            throw new InvalidArgumentException(__d('croogo', 'No target to process action upon'));
+            throw new InvalidArgumentException(__d('vamshop', 'No target to process action upon'));
         }
 
         $mappedAction = $actionsMap[$action];
 
         if ($mappedAction === false) {
-            throw new InvalidArgumentException(__d('croogo', 'Action %s is disabled'), $action);
+            throw new InvalidArgumentException(__d('vamshop', 'Action %s is disabled'), $action);
         }
 
         if (in_array($mappedAction, get_class_methods($table))) {

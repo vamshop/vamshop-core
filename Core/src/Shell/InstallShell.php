@@ -13,8 +13,8 @@ use Vamshop\Extensions\ExtensionsInstaller;
  * Install Shell
  *
  * Usage:
- *  ./Console/croogo install plugin https://github.com/shama/myplugin/zipball/master
- *  ./Console/croogo install plugin shama myplugin
+ *  ./Console/vamshop install plugin https://github.com/shama/myplugin/zipball/master
+ *  ./Console/vamshop install plugin shama myplugin
  *
  * @category Shell
  * @package  Vamshop.Vamshop.Console.Command
@@ -85,7 +85,7 @@ class InstallShell extends AppShell
         if (strpos($this->args[1], '/') !== false && preg_match('/http[s]*:\/\//i', $this->args[1]) === 0) {
             // Composer Install
             $ver = isset($this->args[2]) ? $this->args[2] : '*';
-            $this->out(__d('croogo', 'Installing with Composer...'));
+            $this->out(__d('vamshop', 'Installing with Composer...'));
             try {
                 $result = $this->_ExtensionsInstaller->composerInstall([
                     'package' => $this->args[1],
@@ -93,7 +93,7 @@ class InstallShell extends AppShell
                     'type' => $type,
                 ]);
                 if (!is_array($result)) {
-                    $this->err(__d('croogo', 'Unexpected composerInstall return value'));
+                    $this->err(__d('vamshop', 'Unexpected composerInstall return value'));
                     return false;
                 }
                 if ($result['returnValue'] <> 0) {
@@ -106,9 +106,9 @@ class InstallShell extends AppShell
                 if ($shouldActivate !== false) {
                     $result = $this->dispatchShell('ext', 'activate', $type, $ext, '--quiet');
                     if ($result) {
-                        $this->out(__d('croogo', 'Package installed and activated.'));
+                        $this->out(__d('vamshop', 'Package installed and activated.'));
                     } else {
-                        $this->err(__d('croogo', 'Package installed but not activated.'));
+                        $this->err(__d('vamshop', 'Package installed but not activated.'));
                     }
                 }
             } catch (CakeException $e) {
@@ -125,7 +125,7 @@ class InstallShell extends AppShell
             if ($zip = $this->_download($url)) {
                 if ($this->_install($type, $zip)) {
                     if ($this->_activate($type, $zip)) {
-                        $this->out(__d('croogo', 'Extension installed and activated.'));
+                        $this->out(__d('vamshop', 'Extension installed and activated.'));
                     }
                 }
             }
@@ -138,19 +138,19 @@ class InstallShell extends AppShell
     public function getOptionParser()
     {
         return parent::getOptionParser()
-            ->description(__d('croogo', 'Download, Install & Activate Plugins & Themes'))
+            ->description(__d('vamshop', 'Download, Install & Activate Plugins & Themes'))
             ->addArguments([
                 'type' => [
-                    'help' => __d('croogo', 'Extension type'),
+                    'help' => __d('vamshop', 'Extension type'),
                     'required' => true,
                     'choices' => ['plugin', 'theme'],
                 ],
                 'zip_url' => [
-                    'help' => __d('croogo', 'URL to zip file OR github user name'),
+                    'help' => __d('vamshop', 'URL to zip file OR github user name'),
                     'required' => true,
                 ],
                 'github_package' => [
-                    'help' => __d('croogo', 'Github repo name'),
+                    'help' => __d('vamshop', 'Github repo name'),
                 ],
             ]);
     }
@@ -183,7 +183,7 @@ class InstallShell extends AppShell
  */
     protected function _install($type = null, $zip = null)
     {
-        $this->out(__d('croogo', 'Installing extension...'));
+        $this->out(__d('vamshop', 'Installing extension...'));
         try {
             $this->_ExtensionsInstaller->{'extract' . ucfirst($type)}($zip);
             return true;
@@ -203,12 +203,12 @@ class InstallShell extends AppShell
     protected function _download($url = null)
     {
         if (empty($url)) {
-            throw new ConsoleException(__d('croogo', 'Please specify a URL to a zipball extension'));
+            throw new ConsoleException(__d('vamshop', 'Please specify a URL to a zipball extension'));
         }
         $url = $this->_githubUrl($url);
-        $filename = uniqid('croogo_') . '.zip';
+        $filename = uniqid('vamshop_') . '.zip';
         $zip = $this->tmpPath . $filename;
-        $this->out(__d('croogo', 'Downloading extension to %s...', $zip));
+        $this->out(__d('vamshop', 'Downloading extension to %s...', $zip));
         $res = $this->_shellExec('curl -L ' . $url . ' -o ' . $zip . ' 2>&1');
         return $res ? $zip : false;
     }

@@ -17,11 +17,11 @@ class VamshopHelperTest extends VamshopTestCase
 {
 
     public $fixtures = [
-//		'plugin.croogo\users.aco',
-//		'plugin.croogo\users.aro',
-//		'plugin.croogo\users.aros_aco',
-//		'plugin.croogo\settings.setting',
-//		'plugin.croogo\users.role',
+//		'plugin.vamshop\users.aco',
+//		'plugin.vamshop\users.aro',
+//		'plugin.vamshop\users.aros_aco',
+//		'plugin.vamshop\settings.setting',
+//		'plugin.vamshop\users.role',
 //		'plugin.taxonomy.type',
     ];
 
@@ -43,8 +43,8 @@ class VamshopHelperTest extends VamshopTestCase
             'named' => [],
         ];
         $view = new View($request, new Response());
-        $croogoTheme = new VamshopTheme();
-        $data = $croogoTheme->getData();
+        $vamshopTheme = new VamshopTheme();
+        $data = $vamshopTheme->getData();
         $settings = $data['settings'];
         $view->set('themeSettings', $settings);
 

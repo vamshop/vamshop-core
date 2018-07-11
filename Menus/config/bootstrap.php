@@ -4,7 +4,7 @@ use Cake\Core\Configure;
 use Cake\Cache\Cache;
 use Vamshop\Core\Vamshop;
 
-Cache::config('croogo_menus', array_merge(
+Cache::config('vamshop_menus', array_merge(
     Configure::read('Vamshop.Cache.defaultConfig'),
     ['groups' => ['menus']]
 ));

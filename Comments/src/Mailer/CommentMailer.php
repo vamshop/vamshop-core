@@ -32,7 +32,7 @@ class CommentMailer extends Mailer
     {
         $this->to(Configure::read('Site.email'))
             ->subject('[' . Configure::read('Site.title') . '] ' .
-                __d('croogo', 'New comment posted'))
+                __d('vamshop', 'New comment posted'))
             ->viewVars([
                 'comment' => $comment
             ])

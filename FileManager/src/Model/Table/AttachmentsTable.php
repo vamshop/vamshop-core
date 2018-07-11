@@ -124,7 +124,7 @@ class AttachmentsTable extends NodesTable
             $data = $this->_saveUploadedFile($entity);
         }
         if (!$data) {
-            return $entity->errors(['file' => __d('croogo', 'Error during file upload')]);
+            return $entity->errors(['file' => __d('vamshop', 'Error during file upload')]);
         }
         return parent::save($entity, $options);
     }

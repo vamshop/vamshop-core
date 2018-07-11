@@ -152,7 +152,7 @@ class Router extends CakeRouter
             $types = TableRegistry::get('Vamshop/Taxonomy.Types')->find('all', [
                 'cache' => [
                     'name' => 'types',
-                    'config' => 'croogo_types',
+                    'config' => 'vamshop_types',
                 ],
             ]);
             foreach ($types as $type) {
@@ -161,7 +161,7 @@ class Router extends CakeRouter
                 }
             }
         } catch (MissingConnectionException $e) {
-            Log::write('critical', __d('croogo', 'Unable to get routeable content types: %s', $e->getMessage()));
+            Log::write('critical', __d('vamshop', 'Unable to get routeable content types: %s', $e->getMessage()));
         }
     }
 

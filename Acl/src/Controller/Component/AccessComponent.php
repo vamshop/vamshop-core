@@ -55,7 +55,7 @@ class AccessComponent extends Component
  */
     protected function _setupRole()
     {
-        $title = __d('croogo', 'Parent Role');
+        $title = __d('vamshop', 'Parent Role');
         $element = 'Vamshop/Acl.admin/parent_role';
         Vamshop::hookAdminTab('Admin/Roles/add', $title, $element);
         Vamshop::hookAdminTab('Admin/Roles/edit', $title, $element);

@@ -23,7 +23,7 @@ class ToggleAction extends BaseAction
     protected function _post($id = null, $status = null)
     {
         if (empty($id) || $status === null) {
-            throw new Exception(__d('croogo', 'Invalid content'));
+            throw new Exception(__d('vamshop', 'Invalid content'));
         }
 
         $status = (int)!$status;
@@ -34,7 +34,7 @@ class ToggleAction extends BaseAction
         $entity = $this->_table()->get($id);
         $entity->set($this->config('field'), $status);
         if (!$this->_table()->save($entity)) {
-            throw new Exception(__d('croogo', 'Failed toggling field %s to %s', $this->config('field'), $status));
+            throw new Exception(__d('vamshop', 'Failed toggling field %s to %s', $this->config('field'), $status));
         }
 
         $this->_controller()->set(compact('id', 'status'));

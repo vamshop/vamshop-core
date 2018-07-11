@@ -29,7 +29,7 @@ Vamshop::hookAdminRowAction('Vamshop/Users.Admin/Users/index', 'Reset Password',
         'options' => [
             'icon' => 'unlock',
             'tooltip' => [
-                'data-title' => __d('croogo', 'Reset password'),
+                'data-title' => __d('vamshop', 'Reset password'),
             ],
         ],
     ],

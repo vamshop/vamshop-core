@@ -4,7 +4,7 @@ use Cake\Core\Configure;
 use Cake\Cache\Cache;
 use Vamshop\Core\Vamshop;
 
-Cache::config('croogo_comments', array_merge(
+Cache::config('vamshop_comments', array_merge(
     Configure::read('Vamshop.Cache.defaultConfig'),
     ['groups' => ['comments']]
 ));

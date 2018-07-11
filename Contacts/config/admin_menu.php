@@ -6,7 +6,7 @@ use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'contacts', [
     'icon' => 'comments',
-    'title' => __d('croogo', 'Contacts'),
+    'title' => __d('vamshop', 'Contacts'),
     'url' => [
         'prefix' => 'admin',
         'plugin' => 'Vamshop/Contacts',
@@ -16,7 +16,7 @@ Nav::add('sidebar', 'contacts', [
     'weight' => 50,
     'children' => [
         'contacts' => [
-            'title' => __d('croogo', 'Contacts'),
+            'title' => __d('vamshop', 'Contacts'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Contacts',
@@ -25,7 +25,7 @@ Nav::add('sidebar', 'contacts', [
             ],
         ],
         'messages' => [
-            'title' => __d('croogo', 'Messages'),
+            'title' => __d('vamshop', 'Messages'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Contacts',

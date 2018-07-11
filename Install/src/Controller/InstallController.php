@@ -147,7 +147,7 @@ class InstallController extends Controller
                 'driver' => 'Cake\Database\Driver\Mysql',
                 'host' => 'localhost',
                 'username' => 'root',
-                'database' => 'croogo',
+                'database' => 'vamshop',
             ],
         ];
         try {
@@ -180,7 +180,7 @@ class InstallController extends Controller
         $schemaCollection = $connection->schemaCollection();
         if (!empty($schemaCollection->listTables())) {
             $this->Flash->error(
-                __d('croogo', 'Warning: Database "%s" is not empty.', $connection->config()['database'])
+                __d('vamshop', 'Warning: Database "%s" is not empty.', $connection->config()['database'])
             );
 
             $this->set('onStep', 2);
@@ -192,7 +192,7 @@ class InstallController extends Controller
         $result = $install->setupDatabase();
 
         if ($result !== true) {
-            $this->Flash->error($result === false ? __d('croogo', 'There was a problem installing Vamshop') : $result);
+            $this->Flash->error($result === false ? __d('vamshop', 'There was a problem installing Vamshop') : $result);
 
             return $this->redirect(['action' => 'undo']);
         }
@@ -210,7 +210,7 @@ class InstallController extends Controller
 
             return $this->redirect(['action' => 'adminUser']);
         } catch (\Exception $e) {
-            $this->Flash->error(__d('croogo', 'Error installing access control objects'));
+            $this->Flash->error(__d('vamshop', 'Error installing access control objects'));
             $this->Flash->error($e->getMessage());
 
             return $this->redirect(['action' => 'undo']);

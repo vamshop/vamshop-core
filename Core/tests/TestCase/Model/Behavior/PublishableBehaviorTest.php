@@ -8,7 +8,7 @@ class PublishableBehaviorTest extends VamshopTestCase
 {
 
     public $fixtures = [
-//		'plugin.croogo\settings.setting',
+//		'plugin.vamshop\settings.setting',
 //		'plugin.Vamshop\Core.order_record',
     ];
 

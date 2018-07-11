@@ -37,9 +37,9 @@ class CommentsController extends AppController
 
         $options = [
             'messageMap' => [
-                'delete' => __d('croogo', 'Comments deleted'),
-                'publish' => __d('croogo', 'Comments published'),
-                'unpublish' => __d('croogo', 'Comments unpublished'),
+                'delete' => __d('vamshop', 'Comments deleted'),
+                'publish' => __d('vamshop', 'Comments published'),
+                'unpublish' => __d('vamshop', 'Comments unpublished'),
             ]
         ];
 

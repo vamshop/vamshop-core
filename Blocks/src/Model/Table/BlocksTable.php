@@ -33,8 +33,8 @@ class BlocksTable extends VamshopTable
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->notBlank('title', __d('croogo', 'Title cannot be empty.'))
-            ->notBlank('alias', __d('croogo', 'Alias cannot be empty.'));
+            ->notBlank('title', __d('vamshop', 'Title cannot be empty.'))
+            ->notBlank('alias', __d('vamshop', 'Alias cannot be empty.'));
         return $validator;
     }
 
@@ -42,7 +42,7 @@ class BlocksTable extends VamshopTable
     {
         $rules
             ->add($rules->isUnique( ['alias'],
-                __d('croogo', 'That alias is already taken')
+                __d('vamshop', 'That alias is already taken')
             ));
         return $rules;
     }
@@ -105,7 +105,7 @@ class BlocksTable extends VamshopTable
 
     public function afterSave()
     {
-        Cache::clear(false, 'croogo_blocks');
+        Cache::clear(false, 'vamshop_blocks');
     }
 
     public function findPublished(Query $query, array $options = [])

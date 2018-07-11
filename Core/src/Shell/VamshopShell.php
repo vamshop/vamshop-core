@@ -31,9 +31,9 @@ class VamshopShell extends AppShell
     public function getOptionParser()
     {
         $parser = parent::getOptionParser();
-        $parser->description(__d('croogo', 'Vamshop Utilities'))
+        $parser->description(__d('vamshop', 'Vamshop Utilities'))
             ->addSubCommand('upgrade', [
-                'help' => __d('croogo', 'Upgrade Vamshop'),
+                'help' => __d('vamshop', 'Upgrade Vamshop'),
                 'parser' => $this->Upgrade->getOptionParser(),
             ])
             ->addSubcommand('password', [
@@ -59,7 +59,7 @@ class VamshopShell extends AppShell
 /**
  * Get hashed password
  *
- * Usage: ./Console/cake croogo password myPasswordHere
+ * Usage: ./Console/cake vamshop password myPasswordHere
  */
     public function password()
     {

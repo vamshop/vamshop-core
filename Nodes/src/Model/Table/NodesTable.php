@@ -142,16 +142,16 @@ class NodesTable extends VamshopTable
      */
     public function validationDefault(Validator $validator)
     {
-        $validator->notBlank('title', __d('croogo', 'Please supply a title.'));
+        $validator->notBlank('title', __d('vamshop', 'Please supply a title.'));
 
-        $validator->minLength('slug', 1, __d('croogo', 'Slug cannot be empty.'));
+        $validator->minLength('slug', 1, __d('vamshop', 'Slug cannot be empty.'));
 
         return $validator;
     }
 
     public function buildRules(RulesChecker $rules)
     {
-        $rules->isUnique(['slug', 'type'], __d('croogo', 'The slug has already been taken.'));
+        $rules->isUnique(['slug', 'type'], __d('vamshop', 'The slug has already been taken.'));
         $rules->add(function (Node $node) {
             if (($node->type === '') || ($node->type === null)) {
                 $node->type = 'node';

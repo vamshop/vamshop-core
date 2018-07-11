@@ -127,10 +127,10 @@ class TermsController extends AppController
         $this->_ensureVocabularyIdExists($vocabularyId, $redirectUrl);
 
         if ($this->Terms->remove($id, $vocabularyId)) {
-            $messageFlash = __d('croogo', 'Term deleted');
+            $messageFlash = __d('vamshop', 'Term deleted');
             $flashMethod = 'success';
         } else {
-            $messageFlash = __d('croogo', 'Term could not be deleted. Please, try again.');
+            $messageFlash = __d('vamshop', 'Term could not be deleted. Please, try again.');
             $flashMethod = 'error';
         }
 
@@ -197,10 +197,10 @@ class TermsController extends AppController
 
         $taxonomy = $this->Terms->Taxonomies->get($taxonomyId);
         if ($this->Terms->Taxonomies->{'move' . ucfirst($direction)}($taxonomy, $step)) {
-            $messageFlash = __d('croogo', 'Moved %s successfully', $direction);
+            $messageFlash = __d('vamshop', 'Moved %s successfully', $direction);
             $cssClass = ['class' => 'success'];
         } else {
-            $messageFlash = __d('croogo', 'Could not move %s', $direction);
+            $messageFlash = __d('vamshop', 'Could not move %s', $direction);
             $cssClass = ['class' => 'error'];
         }
         $this->Flash->{$cssClass['class']}($messageFlash);
@@ -240,7 +240,7 @@ class TermsController extends AppController
         try {
             $this->Terms->get($id);
         } catch (RecordNotFoundException $exception) {
-            $this->Flash->error(__d('croogo', 'Invalid Term ID.'));
+            $this->Flash->error(__d('vamshop', 'Invalid Term ID.'));
 
             return $this->redirect($redirectUrl);
         }
@@ -261,7 +261,7 @@ class TermsController extends AppController
             ->where(['term_id' => $id, 'vocabulary_id' => $vocabularyId])
             ->count();
         if (!$count) {
-            $this->Flash->error(__d('croogo', 'Invalid Taxonomy.'));
+            $this->Flash->error(__d('vamshop', 'Invalid Taxonomy.'));
 
             return $this->redirect($redirectUrl);
         }
@@ -284,7 +284,7 @@ class TermsController extends AppController
         try {
             $this->Terms->Vocabularies->get($vocabularyId);
         } catch (RecordNotFoundException $recordNotFoundException) {
-            $this->Flash->error(__d('croogo', 'Invalid Vocabulary ID.'));
+            $this->Flash->error(__d('vamshop', 'Invalid Vocabulary ID.'));
 
             return $this->redirect($redirectUrl);
         }

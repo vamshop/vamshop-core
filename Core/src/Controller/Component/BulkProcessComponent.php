@@ -106,8 +106,8 @@ class BulkProcessComponent extends Component
     public function process(Table $table, $action, $ids, $options = [])
     {
         $Controller = $this->_controller;
-        $emptyMessage = __d('croogo', 'No item selected');
-        $noMultipleMessage = __d('croogo', 'Please choose only one item for this operation');
+        $emptyMessage = __d('vamshop', 'No item selected');
+        $noMultipleMessage = __d('vamshop', 'Please choose only one item for this operation');
         $options = Hash::merge([
             'multiple' => [],
             'redirect' => [
@@ -144,12 +144,12 @@ class BulkProcessComponent extends Component
             if (!empty($messageMap[$action])) {
                 $message = $messageMap[$action];
             } else {
-                $message = __d('croogo', '%s processed', Inflector::humanize($table->alias()));
+                $message = __d('vamshop', '%s processed', Inflector::humanize($table->alias()));
             }
             $flashMethod = 'success';
             Vamshop::dispatchEvent($eventName, $Controller, compact($ids));
         } else {
-            $message = __d('croogo', 'An error occured');
+            $message = __d('vamshop', 'An error occured');
             $flashMethod = 'error';
         }
         $this->Flash->{$flashMethod}($message);

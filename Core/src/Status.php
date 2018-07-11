@@ -42,13 +42,13 @@ class Status implements ArrayAccess
     {
         $this->_statuses = [
             'publishing' => [
-                self::UNPUBLISHED => __d('croogo', 'Unpublished'),
-                self::PUBLISHED => __d('croogo', 'Published'),
-                self::PREVIEW => __d('croogo', 'Preview'),
+                self::UNPUBLISHED => __d('vamshop', 'Unpublished'),
+                self::PUBLISHED => __d('vamshop', 'Published'),
+                self::PREVIEW => __d('vamshop', 'Preview'),
             ],
             'approval' => [
-                self::APPROVED => __d('croogo', 'Approved'),
-                self::PENDING => __d('croogo', 'Pending'),
+                self::APPROVED => __d('vamshop', 'Approved'),
+                self::PENDING => __d('vamshop', 'Pending'),
             ],
         ];
         $event = Vamshop::dispatchEvent('Vamshop.Status.setup', null, $this);

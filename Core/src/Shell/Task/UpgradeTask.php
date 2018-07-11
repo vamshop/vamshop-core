@@ -67,10 +67,10 @@ class UpgradeTask extends VamshopAppShell
     {
         return parent::getOptionParser()
             ->addSubCommand('acl', [
-                'help' => __d('croogo', 'Upgrade ACL database for core controllers.'),
+                'help' => __d('vamshop', 'Upgrade ACL database for core controllers.'),
                 'parser' => [
                     'description' => __d(
-                        'croogo',
+                        'vamshop',
                         'Upgrades the ACO hierarchy from 1.3/1.4 so it follows the default ' .
                         'behavior in normal CakePHP applications. The primary difference is ' .
                         'plugin controllers now are stored underneath its own Plugin ACO record, ' .
@@ -83,22 +83,22 @@ class UpgradeTask extends VamshopAppShell
                 ],
             ])
             ->addSubCommand('settings', [
-                'help' => __d('croogo', 'Create settings.json from database'),
+                'help' => __d('vamshop', 'Create settings.json from database'),
             ])
             ->addSubCommand('bootstraps', [
-                'help' => __d('croogo', 'Update Hook.bootstrap settings'),
+                'help' => __d('vamshop', 'Update Hook.bootstrap settings'),
             ])
             ->addSubCommand('links', [
-                'help' => __d('croogo', 'Update Links in database'),
+                'help' => __d('vamshop', 'Update Links in database'),
             ])
             ->addSubCommand('first_migrations', [
-                'help' => __d('croogo', 'Create first migration records'),
+                'help' => __d('vamshop', 'Create first migration records'),
             ])
             ->addSubCommand('migrations', [
-                'help' => __d('croogo', 'Run all pending migrations for core plugins'),
+                'help' => __d('vamshop', 'Run all pending migrations for core plugins'),
             ])
             ->addSubCommand('all', [
-                'help' => __d('croogo', 'Run all upgrade tasks'),
+                'help' => __d('vamshop', 'Run all upgrade tasks'),
             ]);
     }
 
@@ -109,7 +109,7 @@ class UpgradeTask extends VamshopAppShell
     {
         $this->_loadSettingsPlugin();
         if (file_exists(APP . 'config' . DS . 'settings.json')) {
-            $this->err(__d('croogo', '<warning>config/settings.json already exist</warning>'));
+            $this->err(__d('vamshop', '<warning>config/settings.json already exist</warning>'));
         } else {
             $defaultPlugins = [
                 'Settings', 'Comments', 'Contacts', 'Nodes', 'Meta', 'Menus',
@@ -150,7 +150,7 @@ class UpgradeTask extends VamshopAppShell
                 'input_type' => 'text',
                 'editable' => true,
             ]);
-            $this->out(__d('croogo', '<success>Config/settings.yml created based on `settings` table</success>'));
+            $this->out(__d('vamshop', '<success>Config/settings.yml created based on `settings` table</success>'));
         }
     }
 
@@ -193,14 +193,14 @@ class UpgradeTask extends VamshopAppShell
                 $url['plugin'] = $this->_controllerMap[$url['controller']];
                 $linkString = $Menus->urlToLinkString($url);
                 $Link->id = $link['Link']['id'];
-                $this->out(__d('croogo', 'Updating Link %s', $Link->id));
-                $this->warn(__d('croogo', '- %s', $link['Link']['link']));
-                $this->success(__d('croogo', '+ %s', $linkString), 2);
+                $this->out(__d('vamshop', 'Updating Link %s', $Link->id));
+                $this->warn(__d('vamshop', '- %s', $link['Link']['link']));
+                $this->success(__d('vamshop', '+ %s', $linkString), 2);
                 $Link->saveField('link', $linkString, false);
                 $count++;
             }
         }
-        $this->out(__d('croogo', 'Links updated: %d rows', $count));
+        $this->out(__d('vamshop', 'Links updated: %d rows', $count));
     }
 
 /**
@@ -217,7 +217,7 @@ class UpgradeTask extends VamshopAppShell
         $plugins = $this->_bootstrapSetupEditor($plugins);
 
         $this->Setting->write('Hook.bootstraps', join(',', $plugins));
-        $this->out(__d('croogo', 'Hook.bootstraps updated'));
+        $this->out(__d('vamshop', 'Hook.bootstraps updated'));
     }
 
 /**
@@ -310,7 +310,7 @@ class UpgradeTask extends VamshopAppShell
     }
 
 /**
- * Create default FirstMigration records for installations using croogo_data.sql
+ * Create default FirstMigration records for installations using vamshop_data.sql
  */
     public function first_migrations()
     {
@@ -347,7 +347,7 @@ class UpgradeTask extends VamshopAppShell
             if ($name === 'all') {
                 continue;
             }
-            $this->out(__d('croogo', 'Upgrade "%s"', $name));
+            $this->out(__d('vamshop', 'Upgrade "%s"', $name));
             $this->$name();
         }
     }
@@ -357,12 +357,12 @@ class UpgradeTask extends VamshopAppShell
         if (empty($this->args)) {
             return $this->out($this->OptionParser->help());
         }
-        $commands = array_keys($this->OptionParser->subcommands('croogo'));
+        $commands = array_keys($this->OptionParser->subcommands('vamshop'));
         $command = $this->args[0];
         if ($command[0] != '_' && in_array($command, $commands)) {
             return $this->{$command}();
         } else {
-            $this->out(__d('croogo', 'Command not recognized'));
+            $this->out(__d('vamshop', 'Command not recognized'));
         }
     }
 }

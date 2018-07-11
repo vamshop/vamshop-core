@@ -25,9 +25,9 @@ class TrackableBehaviorTest extends VamshopTestCase
 
     public $fixtures = [
 //		'plugin.Vamshop/Core.trackable',
-//		'plugin.croogo/users.user',
-//		'plugin.croogo/users.role',
-//		'plugin.croogo/settings.setting',
+//		'plugin.vamshop/users.user',
+//		'plugin.vamshop/users.role',
+//		'plugin.vamshop/settings.setting',
     ];
 
     public function setUp()

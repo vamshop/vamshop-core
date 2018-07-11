@@ -69,7 +69,7 @@ class LayoutHelper extends Helper
 /**
  * Javascript variables
  *
- * Shows croogo.js file along with useful information like the applications's basePath, etc.
+ * Shows vamshop.js file along with useful information like the applications's basePath, etc.
  *
  * Also merges Configure::read('Js') with the Vamshop js variable.
  * So you can set javascript info anywhere like Configure::write('Js.my_var', 'my value'),
@@ -79,11 +79,11 @@ class LayoutHelper extends Helper
  */
     public function js()
     {
-        $croogo = $this->_mergeThemeSettings();
+        $vamshop = $this->_mergeThemeSettings();
         if ($this->request->param('locale')) {
-            $croogo['basePath'] = Router::url('/' . $this->request->param('locale') . '/');
+            $vamshop['basePath'] = Router::url('/' . $this->request->param('locale') . '/');
         } else {
-            $croogo['basePath'] = Router::url('/');
+            $vamshop['basePath'] = Router::url('/');
         }
         $validKeys = [
             'plugin' => null,
@@ -92,49 +92,49 @@ class LayoutHelper extends Helper
             'prefix' => null,
             'named' => null,
         ];
-        $croogo['params'] = array_intersect_key(
+        $vamshop['params'] = array_intersect_key(
             array_merge($validKeys, $this->request->params),
             $validKeys
         );
         if (is_array(Configure::read('Js'))) {
-            $croogo = Hash::merge($croogo, Configure::read('Js'));
+            $vamshop = Hash::merge($vamshop, Configure::read('Js'));
         }
-        return $this->Html->scriptBlock('var Vamshop = ' . json_encode($croogo) . ';');
+        return $this->Html->scriptBlock('var Vamshop = ' . json_encode($vamshop) . ';');
     }
 
 /**
  * Merge helper and prefix specific settings
  *
- * @param array $croogoSetting Vamshop JS settings
+ * @param array $vamshopSetting Vamshop JS settings
  * @return array Merged settings
  */
-    protected function _mergeThemeSettings($croogoSetting = [])
+    protected function _mergeThemeSettings($vamshopSetting = [])
     {
         $themeSettings = $this->Theme->settings();
         if (empty($themeSettings)) {
-            return $croogoSetting;
+            return $vamshopSetting;
         }
         $validKeys = [
             'css' => null,
             'icons' => null,
             'iconDefaults' => null,
         ];
-        $croogoSetting['themeSettings'] = array_intersect_key(
+        $vamshopSetting['themeSettings'] = array_intersect_key(
             array_merge($validKeys, $themeSettings),
             $validKeys
         );
 
         if ($this->_View->helpers()->has('VamshopHtml')) {
             unset($validKeys['css']);
-            $croogoSetting['themeSettings'] = Hash::merge(
-                $croogoSetting['themeSettings'],
+            $vamshopSetting['themeSettings'] = Hash::merge(
+                $vamshopSetting['themeSettings'],
                 array_intersect_key(
                     array_merge($validKeys, $this->_View->Html->config()),
                     $validKeys
                 )
             );
         }
-        return $croogoSetting;
+        return $vamshopSetting;
     }
 
 /**

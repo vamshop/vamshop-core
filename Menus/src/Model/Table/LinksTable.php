@@ -24,14 +24,14 @@ class LinksTable extends VamshopTable
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->notBlank('title', __d('croogo', 'Title cannot be empty.'));
+            ->notBlank('title', __d('vamshop', 'Title cannot be empty.'));
 
         $validator
             ->add('link', 'custom', [
                 'rule' => function($value, $context) {
                     return !empty($value);
                 },
-                'message' => __d('croogo', 'Link cannot be empty.')
+                'message' => __d('vamshop', 'Link cannot be empty.')
             ]);
 
         return $validator;

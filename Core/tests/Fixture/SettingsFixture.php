@@ -82,7 +82,7 @@ class SettingsFixture extends VamshopTestFixture
         [
             'id' => 13,
             'key' => 'Meta.keywords',
-            'value' => 'croogo, Vamshop',
+            'value' => 'vamshop, Vamshop',
             'title' => '',
             'description' => '',
             'input_type' => 'textarea',

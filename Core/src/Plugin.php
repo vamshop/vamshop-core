@@ -139,7 +139,7 @@ class Plugin extends CakePlugin
         $this->folder = new Folder;
         $registered = Configure::read('plugins');
         $pluginPaths = Hash::merge(App::path('Plugin'), $registered);
-        unset($pluginPaths['Vamshop']); //Otherwise we get croogo plugins twice!
+        unset($pluginPaths['Vamshop']); //Otherwise we get vamshop plugins twice!
         foreach ($pluginPaths as $pluginName => $pluginPath) {
             $this->folder->path = $pluginPath;
             if (!file_exists($this->folder->path)) {
@@ -197,7 +197,7 @@ class Plugin extends CakePlugin
         if (file_exists($composerFile)) {
             $json = json_decode(file_get_contents($composerFile));
 
-            if ($json->type === 'croogo-theme') {
+            if ($json->type === 'vamshop-theme') {
                 return true;
             }
         }
@@ -229,8 +229,8 @@ class Plugin extends CakePlugin
         }
         if (file_exists($composerFile) && !$this->_isVamshopTheme($pluginDir, $path)) {
             $pluginData = json_decode(file_get_contents($composerFile), true);
-            if (isset($pluginData['require']['croogo/core']) ||
-                isset($pluginData['require']['croogo/croogo'])
+            if (isset($pluginData['require']['vamshop/core']) ||
+                isset($pluginData['require']['vamshop/vamshop'])
             ) {
                 return true;
             }
@@ -300,7 +300,7 @@ class Plugin extends CakePlugin
             if ($hasComposer) {
                 $composerData = json_decode(file_get_contents($composerFile), true);
                 $type = isset($composerData['type']) ? $composerData['type'] : null;
-                $isVamshopPlugin = isset($composerData['require']['Vamshop/Core']) || $type == 'croogo-plugin';
+                $isVamshopPlugin = isset($composerData['require']['Vamshop/Core']) || $type == 'vamshop-plugin';
 
                 if ($isVamshopPlugin) {
                     if (isset($composerData['name'])) {
@@ -678,7 +678,7 @@ class Plugin extends CakePlugin
 
             $registered = Configure::read('plugins');
             $pluginPaths = Hash::merge(App::path('Plugin'), $registered);
-            unset($pluginPaths['Vamshop']); //Otherwise we get croogo plugins twice!
+            unset($pluginPaths['Vamshop']); //Otherwise we get vamshop plugins twice!
 
             if (isset($pluginPaths[$plugin])) {
                 $configFile = $pluginPaths[$plugin] . 'config' . DS . $className . '.php';
@@ -743,7 +743,7 @@ class Plugin extends CakePlugin
             }
             if (!empty($missingPlugins)) {
                 return __dn(
-                    'croogo',
+                    'vamshop',
                     'Plugin "%2$s" requires the "%3$s" plugin to be installed.',
                     'Plugin "%2$s" requires the %3$s plugins to be installed.',
                     count($missingPlugins),
@@ -763,7 +763,7 @@ class Plugin extends CakePlugin
                 $pluginActivation->onActivation($this->_Controller);
             }
 
-            Cache::clear(false, 'croogo_menus');
+            Cache::clear(false, 'vamshop_menus');
             Cache::delete('file_map', '_cake_core_');
 
             return true;
@@ -798,7 +798,7 @@ class Plugin extends CakePlugin
     public function deactivate($plugin)
     {
         if (!Plugin::loaded($plugin)) {
-            return __d('croogo', 'Plugin "%s" is not active.', $plugin);
+            return __d('vamshop', 'Plugin "%s" is not active.', $plugin);
         }
         $pluginActivation = $this->getActivator($plugin);
         if (!isset($pluginActivation) ||
@@ -812,12 +812,12 @@ class Plugin extends CakePlugin
             }
             static::unload($plugin);
 
-            Cache::clear(false, 'croogo_menus');
+            Cache::clear(false, 'vamshop_menus');
             Cache::delete('file_map', '_cake_core_');
 
             return true;
         } else {
-            return __d('croogo', 'Plugin could not be deactivated. Please, try again.');
+            return __d('vamshop', 'Plugin could not be deactivated. Please, try again.');
         }
     }
 
@@ -919,7 +919,7 @@ class Plugin extends CakePlugin
     public function delete($plugin)
     {
         if (empty($plugin)) {
-            throw new InvalidArgumentException(__d('croogo', 'Invalid plugin'));
+            throw new InvalidArgumentException(__d('vamshop', 'Invalid plugin'));
         }
         $pluginPath = ROOT . DS . 'plugins' . DS . $plugin;
         if (is_link($pluginPath)) {
@@ -951,34 +951,34 @@ class Plugin extends CakePlugin
                 $swap = $bootstraps[$index - 1];
             }
             if ($index == 0 || $this->_isBuiltin($swap)) {
-                return __d('croogo', '%s is already at the first position', $plugin);
+                return __d('vamshop', '%s is already at the first position', $plugin);
             }
             $before = array_slice($bootstraps, 0, $index - 1);
             $after = array_slice($bootstraps, $index + 1);
             $dependencies = $this->getDependencies($plugin);
             if (in_array($swap, $dependencies)) {
-                return __d('croogo', 'Plugin %s depends on %s', $plugin, $swap);
+                return __d('vamshop', 'Plugin %s depends on %s', $plugin, $swap);
             }
             $reordered = array_merge($before, (array)$plugin, (array)$swap);
         } elseif ($dir === 'down') {
             if ($index >= count($bootstraps) - 1) {
-                return __d('croogo', '%s is already at the last position', $plugin);
+                return __d('vamshop', '%s is already at the last position', $plugin);
             }
             $swap = $bootstraps[$index + 1];
             $before = array_slice($bootstraps, 0, $index);
             $after = array_slice($bootstraps, $index + 2);
             $dependencies = $this->getDependencies($swap);
             if (in_array($plugin, $dependencies)) {
-                return __d('croogo', 'Plugin %s depends on %s', $swap, $plugin);
+                return __d('vamshop', 'Plugin %s depends on %s', $swap, $plugin);
             }
             $reordered = array_merge($before, (array)$swap, (array)$plugin);
         } else {
-            return __d('croogo', 'Invalid direction');
+            return __d('vamshop', 'Invalid direction');
         }
         $reordered = array_merge($reordered, $after);
 
         if ($this->_isBuiltin($swap)) {
-            return __d('croogo', 'Plugin %s cannot be reordered', $swap);
+            return __d('vamshop', 'Plugin %s cannot be reordered', $swap);
         }
 
         return $reordered;

@@ -6,7 +6,7 @@ use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'extensions', [
     'icon' => 'magic',
-    'title' => __d('croogo', 'Extensions'),
+    'title' => __d('vamshop', 'Extensions'),
     'url' => [
         'prefix' => 'admin',
         'plugin' => 'Vamshop/Extensions',
@@ -16,7 +16,7 @@ Nav::add('sidebar', 'extensions', [
     'weight' => 35,
     'children' => [
         'themes' => [
-            'title' => __d('croogo', 'Themes'),
+            'title' => __d('vamshop', 'Themes'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Extensions',
@@ -26,7 +26,7 @@ Nav::add('sidebar', 'extensions', [
             'weight' => 10,
         ],
         'locales' => [
-            'title' => __d('croogo', 'Locales'),
+            'title' => __d('vamshop', 'Locales'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Extensions',
@@ -36,7 +36,7 @@ Nav::add('sidebar', 'extensions', [
             'weight' => 20,
         ],
         'plugins' => [
-            'title' => __d('croogo', 'Plugins'),
+            'title' => __d('vamshop', 'Plugins'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Extensions',

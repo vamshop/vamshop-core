@@ -55,7 +55,7 @@ class InstallShellTest extends VamshopTestCase
  * @var array
  */
     public $fixtures = [
-//		'plugin.croogo\settings.setting',
+//		'plugin.vamshop\settings.setting',
     ];
 
 /**
@@ -84,7 +84,7 @@ class InstallShellTest extends VamshopTestCase
     {
         parent::tearDown();
         $Folder = new Folder(TMP);
-        $files = $Folder->find('croogo_.*');
+        $files = $Folder->find('vamshop_.*');
         foreach ($files as $file) {
             unlink(TMP . $file);
         }
@@ -116,7 +116,7 @@ class InstallShellTest extends VamshopTestCase
                 $this->equalTo('Example')
             )
             ->will($this->returnValue(true));
-        $Shell->args = ['plugin', 'shama', 'croogo'];
+        $Shell->args = ['plugin', 'shama', 'vamshop'];
         $Shell->main();
     }
 

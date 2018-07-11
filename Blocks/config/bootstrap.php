@@ -4,7 +4,7 @@ use Cake\Core\Configure;
 use Cake\Cache\Cache;
 use Vamshop\Core\Vamshop;
 
-Cache::config('croogo_blocks', array_merge(
+Cache::config('vamshop_blocks', array_merge(
     Cache::config('default'),
     ['groups' => ['blocks']]
 ));

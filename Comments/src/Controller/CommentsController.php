@@ -47,7 +47,7 @@ class CommentsController extends AppController
  */
     public function index()
     {
-        $this->set('title_for_layout', __d('croogo', 'Comments'));
+        $this->set('title_for_layout', __d('vamshop', 'Comments'));
 
         if (!isset($this->request['_ext']) ||
             $this->request['_ext'] != 'rss') {
@@ -81,7 +81,7 @@ class CommentsController extends AppController
     public function add($model, $foreignKey = null, $parentId = null)
     {
         if (!$foreignKey) {
-            $this->Flash->error(__d('croogo', 'Invalid id'));
+            $this->Flash->error(__d('vamshop', 'Invalid id'));
             return $this->redirect('/');
         }
 
@@ -107,7 +107,7 @@ class CommentsController extends AppController
         }
 
         if (!is_null($parentId) && !$this->Comments->isValidLevel($parentId)) {
-            $this->Flash->error(__d('croogo', 'Maximum level reached. You cannot reply to that comment.'));
+            $this->Flash->error(__d('vamshop', 'Maximum level reached. You cannot reply to that comment.'));
             return $this->redirect($redirectUrl);
         }
 
@@ -121,7 +121,7 @@ class CommentsController extends AppController
         $continue = $commentable && $entity->comment_status;
 
         if (!$continue) {
-            $this->Flash->error(__d('croogo', 'Comments are not allowed.'));
+            $this->Flash->error(__d('vamshop', 'Comments are not allowed.'));
             return $this->redirect($redirectUrl);
         }
 
@@ -147,9 +147,9 @@ class CommentsController extends AppController
             $success = $this->Comments->add($comment, $model, $foreignKey, $options);
             if ($success) {
                 if ($autoApprove) {
-                    $messageFlash = __d('croogo', 'Your comment has been added successfully.');
+                    $messageFlash = __d('vamshop', 'Your comment has been added successfully.');
                 } else {
-                    $messageFlash = __d('croogo', 'Your comment will appear after moderation.');
+                    $messageFlash = __d('vamshop', 'Your comment will appear after moderation.');
                 }
                 $this->Flash->success($messageFlash);
 
@@ -181,7 +181,7 @@ class CommentsController extends AppController
             $this->Akismet->setCommentContent($this->request->data['Comment']['body']);
             if ($this->Akismet->isCommentSpam()) {
                 $continue = false;
-                $this->Flash->error(__d('croogo', 'Sorry, the comment appears to be spam.'));
+                $this->Flash->error(__d('vamshop', 'Sorry, the comment appears to be spam.'));
             }
         }
 
@@ -204,7 +204,7 @@ class CommentsController extends AppController
             $continue === true &&
             !$this->Recaptcha->verify($this->request)) {
             $continue = false;
-            $this->Flash->error(__d('croogo', 'Sorry, the comment did not pass the security challenge'));
+            $this->Flash->error(__d('vamshop', 'Sorry, the comment did not pass the security challenge'));
         }
 
         return $continue;

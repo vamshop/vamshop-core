@@ -51,7 +51,7 @@ class TranslateEventHandler implements EventListenerInterface
         if ($entity->isNew()) {
             return;
         }
-        $title = __d('croogo', 'Translate');
+        $title = __d('vamshop', 'Translate');
         $View->append('action-buttons');
             echo $event->subject->Vamshop->adminAction($title, [
                 'plugin' => 'Vamshop/Translate',

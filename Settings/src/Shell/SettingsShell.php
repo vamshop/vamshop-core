@@ -9,10 +9,10 @@ use Vamshop\Core\Plugin;
  * Settings Shell
  *
  * Manipulates Settings via CLI
- *  ./Console/croogo settings.settings read -a
- *  ./Console/croogo settings.settings delete Some.key
- *  ./Console/croogo settings.settings write Some.key newvalue
- *  ./Console/croogo settings.settings write Some.key newvalue -create
+ *  ./Console/vamshop settings.settings read -a
+ *  ./Console/vamshop settings.settings delete Some.key
+ *  ./Console/vamshop settings.settings write Some.key newvalue
+ *  ./Console/vamshop settings.settings write Some.key newvalue -create
  *
  * @category Shell
  * @package  Vamshop.Settings.Console.Command
@@ -40,17 +40,17 @@ class SettingsShell extends Shell
         return parent::getOptionParser()
             ->description('Vamshop Settings utility')
             ->addSubCommand('read', [
-                'help' => __d('croogo', 'Displays setting values'),
+                'help' => __d('vamshop', 'Displays setting values'),
                 'parser' => [
                     'arguments' => [
                         'key' => [
-                            'help' => __d('croogo', 'Setting key'),
+                            'help' => __d('vamshop', 'Setting key'),
                             'required' => false,
                         ],
                     ],
                     'options' => [
                         'all' => [
-                            'help' => __d('croogo', 'List all settings'),
+                            'help' => __d('vamshop', 'List all settings'),
                             'short' => 'a',
                             'boolean' => true,
                         ]
@@ -58,15 +58,15 @@ class SettingsShell extends Shell
                 ],
             ])
             ->addSubcommand('write', [
-                'help' => __d('croogo', 'Write setting value for a given key'),
+                'help' => __d('vamshop', 'Write setting value for a given key'),
                 'parser' => [
                     'arguments' => [
                         'key' => [
-                            'help' => __d('croogo', 'Setting key'),
+                            'help' => __d('vamshop', 'Setting key'),
                             'required' => true,
                         ],
                         'value' => [
-                            'help' => __d('croogo', 'Setting value'),
+                            'help' => __d('vamshop', 'Setting value'),
                             'required' => true,
                         ],
                     ],
@@ -99,21 +99,21 @@ class SettingsShell extends Shell
                 ]
             ])
             ->addSubcommand('delete', [
-                'help' => __d('croogo', 'Delete setting based on key'),
+                'help' => __d('vamshop', 'Delete setting based on key'),
                 'parser' => [
                     'arguments' => [
                         'key' => [
-                            'help' => __d('croogo', 'Setting key'),
+                            'help' => __d('vamshop', 'Setting key'),
                             'required' => true,
                         ],
                     ],
                 ]
             ])
             ->addSubcommand('update_app_version_info', [
-                'help' => __d('croogo', 'Update app version string from git tag information'),
+                'help' => __d('vamshop', 'Update app version string from git tag information'),
             ])
             ->addSubcommand('update_version_info', [
-                'help' => __d('croogo', 'Update version string from git tag information'),
+                'help' => __d('vamshop', 'Update version string from git tag information'),
             ]);
     }
 
@@ -143,7 +143,7 @@ class SettingsShell extends Shell
         ]);
         $this->out("Settings: ", 2);
         foreach ($settings as $data) {
-            $this->out(__d('croogo', "    %-30s: %s", $data->key, $data->value));
+            $this->out(__d('vamshop', "    %-30s: %s", $data->key, $data->value));
         }
         $this->out();
     }
@@ -165,15 +165,15 @@ class SettingsShell extends Shell
                 'Settings.key' => $key,
             ])
             ->first();
-        $this->out(__d('croogo', 'Updating %s', $key), 2);
-        $ask = __d('croogo', "Confirm update");
+        $this->out(__d('vamshop', 'Updating %s', $key), 2);
+        $ask = __d('vamshop', "Confirm update");
         if ($setting || $this->params['create']) {
             $text = '-';
             if ($setting) {
-                $text = __d('croogo', '- %s', $setting->value);
+                $text = __d('vamshop', '- %s', $setting->value);
             }
             $this->warn($text);
-            $this->success(__d('croogo', '+ %s', $val));
+            $this->success(__d('vamshop', '+ %s', $val));
 
             if ('y' == $this->in($ask, ['y', 'n'], 'n')) {
                 $keys = [
@@ -189,12 +189,12 @@ class SettingsShell extends Shell
                 }
 
                 $this->Settings->write($key, $val, $options);
-                $this->success(__d('croogo', 'Setting updated'));
+                $this->success(__d('vamshop', 'Setting updated'));
             } else {
-                $this->warn(__d('croogo', 'Cancelled'));
+                $this->warn(__d('vamshop', 'Cancelled'));
             }
         } else {
-            $this->warn(__d('croogo', 'Key: %s not found', $key));
+            $this->warn(__d('vamshop', 'Key: %s not found', $key));
         }
     }
 
@@ -213,17 +213,17 @@ class SettingsShell extends Shell
                 'Settings.key' => $key,
             ])
             ->first();
-        $this->out(__d('croogo', 'Deleting %s', $key), 2);
-        $ask = __d('croogo', 'Delete?');
+        $this->out(__d('vamshop', 'Deleting %s', $key), 2);
+        $ask = __d('vamshop', 'Delete?');
         if ($setting) {
             if ('y' == $this->in($ask, ['y', 'n'], 'n')) {
                 $this->Settings->deleteKey($setting->key);
-                $this->success(__d('croogo', 'Setting deleted'));
+                $this->success(__d('vamshop', 'Setting deleted'));
             } else {
-                $this->warn(__d('croogo', 'Cancelled'));
+                $this->warn(__d('vamshop', 'Cancelled'));
             }
         } else {
-            $this->warn(__d('croogo', 'Key: %s not found', $key));
+            $this->warn(__d('vamshop', 'Key: %s not found', $key));
         }
     }
 

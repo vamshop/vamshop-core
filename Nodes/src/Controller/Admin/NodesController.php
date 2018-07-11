@@ -74,10 +74,10 @@ class NodesController extends AppController
     {
         $Node = $this->{$this->modelClass};
         if ($Node->updateAllNodesPaths()) {
-            $messageFlash = __d('croogo', 'Paths updated.');
+            $messageFlash = __d('vamshop', 'Paths updated.');
             $class = 'success';
         } else {
-            $messageFlash = __d('croogo', 'Something went wrong while updating paths.' . "\n" . 'Please try again');
+            $messageFlash = __d('vamshop', 'Something went wrong while updating paths.' . "\n" . 'Please try again');
             $class = 'error';
         }
 
@@ -135,12 +135,12 @@ class NodesController extends AppController
         $options = array(
             'multiple' => array('copy' => false),
             'messageMap' => array(
-                'delete' => __d('croogo', 'Nodes deleted'),
-                'publish' => __d('croogo', 'Nodes published'),
-                'unpublish' => __d('croogo', 'Nodes unpublished'),
-                'promote' => __d('croogo', 'Nodes promoted'),
-                'unpromote' => __d('croogo', 'Nodes unpromoted'),
-                'copy' => __d('croogo', 'Nodes copied'),
+                'delete' => __d('vamshop', 'Nodes deleted'),
+                'publish' => __d('vamshop', 'Nodes published'),
+                'unpublish' => __d('vamshop', 'Nodes unpublished'),
+                'promote' => __d('vamshop', 'Nodes promoted'),
+                'unpromote' => __d('vamshop', 'Nodes unpromoted'),
+                'copy' => __d('vamshop', 'Nodes copied'),
             ),
         );
         $this->BulkProcess->process($this->Nodes, $action, $ids, $options);
@@ -332,12 +332,12 @@ class NodesController extends AppController
         $node = $this->Nodes->get($id);
         if ($direction == 'up') {
             if ($this->Nodes->moveUp($node)) {
-                $this->Flash->success(__d('croogo', 'Content moved up'));
+                $this->Flash->success(__d('vamshop', 'Content moved up'));
                 return $this->redirect($this->referer());
             }
         } else {
             if ($this->Nodes->moveDown($node)) {
-                $this->Flash->success(__d('croogo', 'Content moved down'));
+                $this->Flash->success(__d('vamshop', 'Content moved down'));
                 return $this->redirect($this->referer());
             }
         }

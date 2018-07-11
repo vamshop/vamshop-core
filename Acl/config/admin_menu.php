@@ -5,7 +5,7 @@ namespace Vamshop\Acl\Config;
 use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'users.children.permissions', [
-    'title' => __d('croogo', 'Permissions'),
+    'title' => __d('vamshop', 'Permissions'),
     'url' => [
         'prefix' => 'admin',
         'plugin' => 'Vamshop/Acl',
@@ -16,7 +16,7 @@ Nav::add('sidebar', 'users.children.permissions', [
 ]);
 
 Nav::add('sidebar', 'settings.children.acl', [
-    'title' => __d('croogo', 'Access Control'),
+    'title' => __d('vamshop', 'Access Control'),
     'url' => [
         'prefix' => 'admin',
         'plugin' => 'Vamshop/Settings',

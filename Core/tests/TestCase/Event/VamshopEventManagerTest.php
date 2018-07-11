@@ -27,7 +27,7 @@ class EventManagerTest extends TestCase
 {
 
     public $fixtures = [
-        'plugin.croogo/core.settings',
+        'plugin.vamshop/core.settings',
     ];
 
     public function setUp()

@@ -55,7 +55,7 @@ class LanguagesController extends AppController
             return $this->redirect(['action' => 'index']);
         }
 
-        $this->set('title_for_layout', __d('croogo', 'Select a language'));
+        $this->set('title_for_layout', __d('vamshop', 'Select a language'));
         $languages = $this->Languages->find('all', [
             'conditions' => [
                 'status' => 1,

@@ -71,7 +71,7 @@ class RowLevelAclComponent extends Component
             $adminTabActions += $this->_config['adminTabActions'];
         }
         foreach ($adminTabActions as $action) {
-            Vamshop::hookAdminTab("Admin/$name/$action", __d('croogo', 'Permissions'), $element);
+            Vamshop::hookAdminTab("Admin/$name/$action", __d('vamshop', 'Permissions'), $element);
         }
     }
 

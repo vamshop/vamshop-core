@@ -37,7 +37,7 @@ class TermAddAction extends BaseAction
 
             $taxonomy = $controller->Terms->add($term, $vocabularyId);
             if ($taxonomy) {
-                $controller->Flash->success(__d('croogo', 'Term saved successfuly.'));
+                $controller->Flash->success(__d('vamshop', 'Term saved successfuly.'));
 
                 $redirectUrl = [
                     'action' => 'edit',
@@ -52,7 +52,7 @@ class TermAddAction extends BaseAction
                 }
                 return $controller->redirect($redirectUrl);
             } else {
-                $controller->Flash->error(__d('croogo', 'Term could not be added to the vocabulary. Please try again.'));
+                $controller->Flash->error(__d('vamshop', 'Term could not be added to the vocabulary. Please try again.'));
             }
         }
         $parentTree = $controller->Terms->Taxonomies->getTree($vocabulary->alias, ['taxonomyId' => true]);

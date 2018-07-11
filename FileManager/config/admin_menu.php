@@ -6,7 +6,7 @@ use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'media', [
     'icon' => 'picture-o',
-    'title' => __d('croogo', 'Media'),
+    'title' => __d('vamshop', 'Media'),
     'url' => [
         'prefix' => 'admin',
         'plugin' => 'Vamshop/FileManager',
@@ -16,7 +16,7 @@ Nav::add('sidebar', 'media', [
     'weight' => 40,
     'children' => [
         'attachments' => [
-            'title' => __d('croogo', 'Attachments'),
+            'title' => __d('vamshop', 'Attachments'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/FileManager',
@@ -25,7 +25,7 @@ Nav::add('sidebar', 'media', [
             ],
         ],
         'file_manager' => [
-            'title' => __d('croogo', 'File Manager'),
+            'title' => __d('vamshop', 'File Manager'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/FileManager',

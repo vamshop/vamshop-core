@@ -100,9 +100,9 @@ class PluginTest extends TestCase
         Configure::write('Hook.bootstraps', 'suppliers');
 
         $migrationVersion = $this->_getMockMigrationVersion();
-        $croogoPlugin = new Plugin($migrationVersion);
+        $vamshopPlugin = new Plugin($migrationVersion);
 
-        $suppliers = $croogoPlugin->getData('Suppliers');
+        $suppliers = $vamshopPlugin->getData('Suppliers');
 
         $needed = [
             'name' => 'Suppliers',
@@ -143,7 +143,7 @@ class PluginTest extends TestCase
 
         $this->assertEquals($expected, $keys);
         $this->assertContains('test plugin with mixed', $data['description']);
-        $this->assertEquals('croogo-plugin', $data['type']);
+        $this->assertEquals('vamshop-plugin', $data['type']);
         $this->assertEquals('MixedManifest', $data['name']);
     }
 
@@ -154,14 +154,14 @@ class PluginTest extends TestCase
         $migrationVersion->expects($this->any())
             ->method('getMapping')
             ->will($this->returnValue(false));
-        $croogoPlugin = new Plugin($migrationVersion);
-        $this->assertEquals(false, $croogoPlugin->needMigration('Anything', true));
+        $vamshopPlugin = new Plugin($migrationVersion);
+        $this->assertEquals(false, $vamshopPlugin->needMigration('Anything', true));
     }
 
     public function testNeedMigrationPluginNotActive()
     {
-        $croogoPlugin = new Plugin();
-        $this->assertEquals(false, $croogoPlugin->needMigration('Anything', false));
+        $vamshopPlugin = new Plugin();
+        $this->assertEquals(false, $vamshopPlugin->needMigration('Anything', false));
     }
 
     public function testNeedMigrationPluginNoMigration()
@@ -175,8 +175,8 @@ class PluginTest extends TestCase
         $migrationVersion->expects($this->any())
             ->method('getVersion')
             ->will($this->returnValue(1346748933));
-        $croogoPlugin = new Plugin($migrationVersion);
-        $this->assertEquals(false, $croogoPlugin->needMigration('app', true));
+        $vamshopPlugin = new Plugin($migrationVersion);
+        $this->assertEquals(false, $vamshopPlugin->needMigration('app', true));
     }
 
     public function testNeedMigrationPluginWithMigration()
@@ -190,8 +190,8 @@ class PluginTest extends TestCase
         $migrationVersion->expects($this->any())
             ->method('getVersion')
             ->will($this->returnValue(1346748762));
-        $croogoPlugin = new Plugin($migrationVersion);
-        $this->assertEquals(true, $croogoPlugin->needMigration('app', true));
+        $vamshopPlugin = new Plugin($migrationVersion);
+        $this->assertEquals(true, $vamshopPlugin->needMigration('app', true));
     }
 
     public function testMigratePluginNotNeedMigration()
@@ -205,9 +205,9 @@ class PluginTest extends TestCase
         $migrationVersion->expects($this->any())
             ->method('getMapping')
             ->will($this->returnValue($this->_mapping));
-        $croogoPlugin = new Plugin($migrationVersion);
+        $vamshopPlugin = new Plugin($migrationVersion);
 
-        $this->assertEquals(false, $croogoPlugin->migrate('Suppliers'));
+        $this->assertEquals(false, $vamshopPlugin->migrate('Suppliers'));
 
         Configure::read('Hook.bootstraps', $actives);
     }
@@ -228,9 +228,9 @@ class PluginTest extends TestCase
             ->with($this->logicalAnd($this->arrayHasKey('version'), $this->arrayHasKey('type')))
             ->will($this->returnValue(true));
 
-        $croogoPlugin = new Plugin($migrationVersion);
+        $vamshopPlugin = new Plugin($migrationVersion);
 
-        $this->assertEquals(true, $croogoPlugin->migrate('Suppliers'));
+        $this->assertEquals(true, $vamshopPlugin->migrate('Suppliers'));
 
         Configure::read('Hook.bootstraps', $actives);
     }
@@ -250,11 +250,11 @@ class PluginTest extends TestCase
             ->method('run')
             ->will($this->returnValue('An error message'));
 
-        $croogoPlugin = new Plugin($migrationVersion);
+        $vamshopPlugin = new Plugin($migrationVersion);
 
         $expectedErrors = ['An error message'];
-        $this->assertEquals(false, $croogoPlugin->migrate('Suppliers'));
-        $this->assertEquals($expectedErrors, $croogoPlugin->migrationErrors);
+        $this->assertEquals(false, $vamshopPlugin->migrate('Suppliers'));
+        $this->assertEquals($expectedErrors, $vamshopPlugin->migrationErrors);
 
         Configure::read('Hook.bootstraps', $actives);
     }
@@ -275,9 +275,9 @@ class PluginTest extends TestCase
             ->with($this->arrayHasKey('version', 'type', 'direction'))
             ->will($this->returnValue(true));
 
-        $croogoPlugin = new Plugin($migrationVersion);
+        $vamshopPlugin = new Plugin($migrationVersion);
 
-        $this->assertEquals(true, $croogoPlugin->unmigrate('Suppliers'));
+        $this->assertEquals(true, $vamshopPlugin->unmigrate('Suppliers'));
 
         Configure::read('Hook.bootstraps', $actives);
     }
@@ -297,9 +297,9 @@ class PluginTest extends TestCase
             ->method('run')
             ->will($this->returnValue(false));
 
-        $croogoPlugin = new Plugin($migrationVersion);
+        $vamshopPlugin = new Plugin($migrationVersion);
 
-        $this->assertEquals(false, $croogoPlugin->unmigrate('Suppliers'));
+        $this->assertEquals(false, $vamshopPlugin->unmigrate('Suppliers'));
 
         Configure::read('Hook.bootstraps', $actives);
     }

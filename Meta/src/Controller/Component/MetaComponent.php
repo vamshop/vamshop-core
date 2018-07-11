@@ -49,7 +49,7 @@ class MetaComponent extends Component
         ) {
             return;
         }
-        $title = __d('croogo', 'Custom Fields');
+        $title = __d('vamshop', 'Custom Fields');
         $element = 'Vamshop/Meta.admin/meta_tab';
         $controllerName = $this->request->param('controller');
         Vamshop::hookAdminBox("Admin/$controllerName/add", $title, $element);

@@ -18,7 +18,7 @@ class TypeRoute extends Route
     {
         $typeCount = TableRegistry::get('Vamshop/Taxonomy.Types')
             ->findByAlias($type)
-            ->cache(sprintf('%s_count', $type), 'croogo_types')
+            ->cache(sprintf('%s_count', $type), 'vamshop_types')
             ->count();
 
         return $typeCount !== 0;

@@ -6,7 +6,7 @@ use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'menus', [
     'icon' => 'sitemap',
-    'title' => __d('croogo', 'Menus'),
+    'title' => __d('vamshop', 'Menus'),
     'url' => [
         'prefix' => 'admin',
         'plugin' => 'Vamshop/Menus',
@@ -16,7 +16,7 @@ Nav::add('sidebar', 'menus', [
     'weight' => 20,
     'children' => [
         'menus' => [
-            'title' => __d('croogo', 'Menus'),
+            'title' => __d('vamshop', 'Menus'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Menus',

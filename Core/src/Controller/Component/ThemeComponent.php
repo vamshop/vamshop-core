@@ -48,8 +48,8 @@ class ThemeComponent extends Component
     public function loadThemeSettings($theme)
     {
         $prefix = $this->request->param('prefix');
-        $croogoTheme = new VamshopTheme();
-        $settings = $croogoTheme->getData($theme)['settings'];
+        $vamshopTheme = new VamshopTheme();
+        $settings = $vamshopTheme->getData($theme)['settings'];
 
         $themePrefix = ($prefix) ? $prefix : '';
 

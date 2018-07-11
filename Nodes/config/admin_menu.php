@@ -6,7 +6,7 @@ use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'content', [
     'icon' => 'edit',
-    'title' => __d('croogo', 'Content'),
+    'title' => __d('vamshop', 'Content'),
     'url' => [
         'prefix' => 'admin',
         'plugin' => 'Vamshop/Nodes',
@@ -16,7 +16,7 @@ Nav::add('sidebar', 'content', [
     'weight' => 10,
     'children' => [
         'list' => [
-            'title' => __d('croogo', 'List'),
+            'title' => __d('vamshop', 'List'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Nodes',
@@ -26,7 +26,7 @@ Nav::add('sidebar', 'content', [
             'weight' => 10,
         ],
         'create' => [
-            'title' => __d('croogo', 'Create'),
+            'title' => __d('vamshop', 'Create'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Nodes',

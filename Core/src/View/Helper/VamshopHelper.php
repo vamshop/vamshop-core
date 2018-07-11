@@ -484,7 +484,7 @@ class VamshopHelper extends Helper
                         $output .= $this->_View->element($tab['element'], $tab['options']['elementData'], $tab['options']['elementOptions']);
                         $output .= $this->Html->tabEnd();
                     } else {
-                        $output .= $this->adminTab(__d('croogo', $title), '#' . $domId, $tab['options']['linkOptions']);
+                        $output .= $this->adminTab(__d('vamshop', $title), '#' . $domId, $tab['options']['linkOptions']);
                     }
                 }
             }

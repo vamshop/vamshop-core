@@ -13,7 +13,7 @@ class VamshopTest extends TestCase
 {
 
     public $fixtures = [
-//		'plugin.croogo/settings.setting',
+//		'plugin.vamshop/settings.setting',
     ];
 
     public function testCrossPluginHooks()

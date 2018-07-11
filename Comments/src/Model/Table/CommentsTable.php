@@ -188,7 +188,7 @@ class CommentsTable extends VamshopTable
     public function isValidLevel($commentId)
     {
         if (!$this->exists(['id' => $commentId])) {
-            throw new NotFoundException(__d('croogo', 'Invalid Comment id'));
+            throw new NotFoundException(__d('vamshop', 'Invalid Comment id'));
         }
 
         $level = $this->find('path', ['for' => $commentId])

@@ -44,9 +44,9 @@ class CachesController extends AppController
             $result = Cache::clear(false, $config);
         }
         if ($result) {
-            $this->Flash->success(__d('croogo', "Cache '%s' cleared", $config));
+            $this->Flash->success(__d('vamshop', "Cache '%s' cleared", $config));
         } else {
-            $this->Flash->warning(__d('croogo', 'Failed clearing cache'));
+            $this->Flash->warning(__d('vamshop', 'Failed clearing cache'));
         }
         return $this->redirect($this->request->referer());
     }

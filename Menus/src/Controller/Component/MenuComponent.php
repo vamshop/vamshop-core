@@ -108,7 +108,7 @@ class MenuComponent extends Component
             $menu = $this->Links->Menus->find('all', [
                 'cache' => [
                     'name' => $menuAlias,
-                    'config' => 'croogo_menus',
+                    'config' => 'vamshop_menus',
                 ],
             ])->where([
                 'Menus.status IN' => $status,
@@ -120,7 +120,7 @@ class MenuComponent extends Component
                 $links = $this->Links->find('threaded', [
                     'cache' => [
                         'name' => $menu->alias . '_links_' . $roleId,
-                        'config' => 'croogo_menus',
+                        'config' => 'vamshop_menus',
                     ]
                 ])->find('byAccess', ['roleId' => $roleId])->where([
                     'Links.menu_id' => $menu->id,

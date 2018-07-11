@@ -26,17 +26,17 @@ class VamshopComponentTest extends TestCase
 {
 
     public $fixtures = [
-//		'plugin.croogo/users.aco',
-//		'plugin.croogo/users.aro',
-//		'plugin.croogo/users.aros_aco',
-//		'plugin.croogo/settings.setting',
-//		'plugin.croogo/menus.menu',
-//		'plugin.croogo/menus.link',
-//		'plugin.croogo/users.role',
-//		'plugin.croogo/taxonomy.type',n
-//		'plugin.croogo/taxonomy.vocabulary',
-//		'plugin.croogo/taxonomy.types_vocabulary',
-//		'plugin.croogo/nodes.node',
+//		'plugin.vamshop/users.aco',
+//		'plugin.vamshop/users.aro',
+//		'plugin.vamshop/users.aros_aco',
+//		'plugin.vamshop/settings.setting',
+//		'plugin.vamshop/menus.menu',
+//		'plugin.vamshop/menus.link',
+//		'plugin.vamshop/users.role',
+//		'plugin.vamshop/taxonomy.type',n
+//		'plugin.vamshop/taxonomy.vocabulary',
+//		'plugin.vamshop/taxonomy.types_vocabulary',
+//		'plugin.vamshop/nodes.node',
     ];
 
     public $component = null;

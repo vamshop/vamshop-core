@@ -43,9 +43,9 @@ class MessagesController extends AppController
         list($action, $ids) = $this->BulkProcess->getRequestVars($Messages->alias());
 
         $messageMap = [
-            'delete' => __d('croogo', 'Messages deleted'),
-            'read' => __d('croogo', 'Messages marked as read'),
-            'unread' => __d('croogo', 'Messages marked as unread'),
+            'delete' => __d('vamshop', 'Messages deleted'),
+            'read' => __d('vamshop', 'Messages marked as read'),
+            'unread' => __d('vamshop', 'Messages marked as unread'),
         ];
         return $this->BulkProcess->process($Messages, $action, $ids, [
             'messageMap' => $messageMap,

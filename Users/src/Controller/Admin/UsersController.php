@@ -130,7 +130,7 @@ class UsersController extends AppController
         $cacheName = 'auth_failed_' . $this->request->data[$field];
         $cacheValue = Cache::read($cacheName, 'users_login');
         if ($cacheValue >= Configure::read('User.failed_login_limit')) {
-            $this->Flash->error(__d('croogo', 'You have reached maximum limit for failed login attempts. Please try again after a few minutes.'));
+            $this->Flash->error(__d('vamshop', 'You have reached maximum limit for failed login attempts. Please try again after a few minutes.'));
             return $this->redirect(['action' => $this->request->param('action')]);
         }
         return true;
@@ -201,10 +201,10 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->data());
 
             if ($this->Users->save($user)) {
-                $this->Flash->success(__d('croogo', 'Password has been reset.'));
+                $this->Flash->success(__d('vamshop', 'Password has been reset.'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__d('croogo', 'Password could not be reset. Please, try again.'));
+                $this->Flash->error(__d('vamshop', 'Password could not be reset. Please, try again.'));
             }
         }
 
@@ -225,7 +225,7 @@ class UsersController extends AppController
             if (!$this->request->session()->check('Flash.auth') &&
                 !$this->request->session()->check('Flash.flash')
             ) {
-                $this->Flash->error(__d('croogo', 'You are already logged in'), ['key' => 'auth']);
+                $this->Flash->error(__d('vamshop', 'You are already logged in'), ['key' => 'auth']);
             }
             return $this->redirect($this->Auth->redirectUrl());
         }
@@ -250,7 +250,7 @@ class UsersController extends AppController
 
                 if (!$this->Access->isUrlAuthorized($user, $redirectUrl)) {
                     Vamshop::dispatchEvent('Controller.Users.adminLoginFailure', $this);
-                    $this->Auth->authError = __d('croogo', 'Authorization error');
+                    $this->Auth->authError = __d('vamshop', 'Authorization error');
                     $this->Flash->error($this->Auth->authError, ['key' => 'auth']);
                     return $this->redirect($this->Auth->loginAction);
                 }
@@ -267,7 +267,7 @@ class UsersController extends AppController
                 return $this->redirect($redirectUrl);
             } else {
                 Vamshop::dispatchEvent('Controller.Users.adminLoginFailure', $this);
-                $this->Auth->authError = __d('croogo', 'Incorrect username or password');
+                $this->Auth->authError = __d('vamshop', 'Incorrect username or password');
                 $this->Flash->error($this->Auth->authError, ['key' => 'auth']);
                 return $this->redirect($this->Auth->config('loginAction'));
             }
@@ -283,7 +283,7 @@ class UsersController extends AppController
     public function logout()
     {
         Vamshop::dispatchEvent('Controller.Users.adminLogoutSuccessful', $this);
-        $this->Flash->success(__d('croogo', 'Log out successful.'), ['key' => 'auth']);
+        $this->Flash->success(__d('vamshop', 'Log out successful.'), ['key' => 'auth']);
         return $this->redirect($this->Auth->logout());
     }
 
@@ -342,7 +342,7 @@ class UsersController extends AppController
 
     protected function _getSenderEmail()
     {
-        return 'croogo@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME']));
+        return 'vamshop@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME']));
     }
 
 /**
@@ -357,7 +357,7 @@ class UsersController extends AppController
             if (!$this->request->session()->check('Flash.auth') &&
                 !$this->request->session()->check('Flash.flash')
             ) {
-                $this->Flash->error(__d('croogo', 'You are already logged in'));
+                $this->Flash->error(__d('vamshop', 'You are already logged in'));
             }
             return $this->redirect($this->referer());
         }
@@ -371,12 +371,12 @@ class UsersController extends AppController
 
         $user = $this->Users->register($user, $this->request->data());
         if (!$user) {
-            $this->Flash->error(__d('croogo', 'The User could not be saved. Please, try again.'));
+            $this->Flash->error(__d('vamshop', 'The User could not be saved. Please, try again.'));
 
             return;
         }
 
-        $this->Flash->success(__d('croogo', 'You have successfully registered an account. An email has been sent with further instructions.'));
+        $this->Flash->success(__d('vamshop', 'You have successfully registered an account. An email has been sent with further instructions.'));
 
         return $this->redirect(['action' => 'login']);
     }
@@ -395,7 +395,7 @@ class UsersController extends AppController
 
         $username = $this->request->data('username');
         if (!$username) {
-            $this->Flash->error(__d('croogo', 'Invalid username.'));
+            $this->Flash->error(__d('vamshop', 'Invalid username.'));
             return $this->redirect(['action' => 'forgot']);
         }
 
@@ -405,17 +405,17 @@ class UsersController extends AppController
             ->orWhere(['email' => $username])
             ->first();
         if (!$user) {
-            $this->Flash->error(__d('croogo', 'Invalid username.'));
+            $this->Flash->error(__d('vamshop', 'Invalid username.'));
             return $this->redirect(['action' => 'forgot']);
         }
 
         $success = $this->Users->resetPassword($user);
         if (!$success) {
-            $this->Flash->error(__d('croogo', 'An error occurred. Please try again.'));
+            $this->Flash->error(__d('vamshop', 'An error occurred. Please try again.'));
             return;
         }
 
-        $this->Flash->success(__d('croogo', 'An email has been sent with instructions for resetting your password.'));
+        $this->Flash->success(__d('vamshop', 'An email has been sent with instructions for resetting your password.'));
 
         return $this->redirect(['action' => 'login']);
     }
@@ -436,7 +436,7 @@ class UsersController extends AppController
             'activation_key' => $activationKey
         ])->first();
         if (!$user) {
-            $this->Flash->error(__d('croogo', 'An error occurred.'));
+            $this->Flash->error(__d('vamshop', 'An error occurred.'));
 
             return $this->redirect(['action' => 'login']);
         }
@@ -453,12 +453,12 @@ class UsersController extends AppController
         // Save the user with changed password
         $user = $this->Users->save($user);
         if (!$user) {
-            $this->Flash->error(__d('croogo', 'An error occurred. Please try again.'));
+            $this->Flash->error(__d('vamshop', 'An error occurred. Please try again.'));
 
             return;
         }
 
-        $this->Flash->success(__d('croogo', 'Your password has been reset successfully.'));
+        $this->Flash->success(__d('vamshop', 'Your password has been reset successfully.'));
 
         return $this->redirect(['action' => 'login']);
     }

@@ -41,7 +41,7 @@ class LocalesController extends AppController
  */
     public function index()
     {
-        $this->set('title_for_layout', __d('croogo', 'Locales'));
+        $this->set('title_for_layout', __d('vamshop', 'Locales'));
 
         $locales = [];
         $folder = new Folder;
@@ -54,7 +54,7 @@ class LocalesController extends AppController
                 if (strstr($locale, '.') !== false) {
                     continue;
                 }
-                $fullpath = $path . $locale . DS . 'croogo.po';
+                $fullpath = $path . $locale . DS . 'vamshop.po';
                 if (!file_exists($fullpath)) {
                     continue;
                 }
@@ -82,17 +82,17 @@ class LocalesController extends AppController
     {
         $poFile = $this->__getPoFile($locale);
         if ($locale == null || !$poFile) {
-            $this->Flash->error(__d('croogo', 'Locale does not exist.'));
+            $this->Flash->error(__d('vamshop', 'Locale does not exist.'));
             return $this->redirect(['action' => 'index']);
         }
 
         $result = $this->Settings->write('Site.locale', $locale);
         if ($result) {
             Cache::clear(false, '_cake_core_');
-            Cache::clear(false, 'croogo_menus');
-            $this->Flash->success(__d('croogo', "Locale '%s' set as default", $locale));
+            Cache::clear(false, 'vamshop_menus');
+            $this->Flash->success(__d('vamshop', "Locale '%s' set as default", $locale));
         } else {
-            $this->Flash->error(__d('croogo', 'Could not save Locale setting.'));
+            $this->Flash->error(__d('vamshop', 'Could not save Locale setting.'));
         }
         return $this->redirect(['action' => 'index']);
     }
@@ -106,16 +106,16 @@ class LocalesController extends AppController
     public function deactivate($locale = null)
     {
         if ($locale == null) {
-            $this->Flash->error(__d('croogo', 'Invalid locale.'));
+            $this->Flash->error(__d('vamshop', 'Invalid locale.'));
             return $this->redirect(['action' => 'index']);
         }
         $result = $this->Settings->write('Site.locale', '');
         if ($result) {
             Cache::clear(false, '_cake_core_');
-            Cache::clear(false, 'croogo_menus');
-            $this->Flash->success(__d('croogo', "Locale '%s' deactivated", $locale));
+            Cache::clear(false, 'vamshop_menus');
+            $this->Flash->success(__d('vamshop', "Locale '%s' deactivated", $locale));
         } else {
-            $this->Flash->error(__d('croogo', 'Could not save Locale setting.'));
+            $this->Flash->error(__d('vamshop', 'Could not save Locale setting.'));
         }
         return $this->redirect(['action' => 'index']);
     }
@@ -127,7 +127,7 @@ class LocalesController extends AppController
  */
     public function add()
     {
-        $this->set('title_for_layout', __d('croogo', 'Upload a new locale'));
+        $this->set('title_for_layout', __d('vamshop', 'Upload a new locale'));
 
         if ($this->request->is('post') && !empty($this->request->data)) {
             $file = $this->request->data['Locale']['file'];
@@ -153,12 +153,12 @@ class LocalesController extends AppController
             zip_close($zip);
 
             if (!$locale) {
-                $this->Flash->error(__d('croogo', 'Invalid locale.'));
+                $this->Flash->error(__d('vamshop', 'Invalid locale.'));
                 return $this->redirect(['action' => 'add']);
             }
 
             if (is_dir(APP . 'Locale' . DS . $locale)) {
-                $this->Flash->error(__d('croogo', 'Locale already exists.'));
+                $this->Flash->error(__d('vamshop', 'Locale already exists.'));
                 return $this->redirect(['action' => 'add']);
             }
 
@@ -206,17 +206,17 @@ class LocalesController extends AppController
  */
     public function edit($locale = null)
     {
-        $this->set('title_for_layout', sprintf(__d('croogo', 'Edit locale: %s'), $locale));
+        $this->set('title_for_layout', sprintf(__d('vamshop', 'Edit locale: %s'), $locale));
 
         if (!$locale) {
-            $this->Flash->error(__d('croogo', 'Invalid locale.'));
+            $this->Flash->error(__d('vamshop', 'Invalid locale.'));
             return $this->redirect(['action' => 'index']);
         }
 
         $poFile = $this->__getPoFile($locale);
 
         if (!$poFile) {
-            $this->Flash->error(__d('croogo', 'The file %s does not exist.', 'croogo.po'));
+            $this->Flash->error(__d('vamshop', 'The file %s does not exist.', 'vamshop.po'));
             return $this->redirect(['action' => 'index']);
         }
 
@@ -232,7 +232,7 @@ class LocalesController extends AppController
         if (!empty($this->request->data)) {
             // save
             if ($file->write($this->request->data('content'))) {
-                $this->Flash->success(__d('croogo', 'Locale updated successfully'));
+                $this->Flash->success(__d('vamshop', 'Locale updated successfully'));
                 return $this->redirect(['action' => 'index']);
             }
         }
@@ -251,22 +251,22 @@ class LocalesController extends AppController
         $poFile = $this->__getPoFile($locale);
 
         if (!$poFile) {
-            $this->Flash->error(__d('croogo', 'The file %s does not exist.', 'croogo.po'));
+            $this->Flash->error(__d('vamshop', 'The file %s does not exist.', 'vamshop.po'));
             return $this->redirect(['action' => 'index']);
         }
 
         $file = new File($poFile, true);
         if ($file->delete()) {
-            $this->Flash->success(__d('croogo', 'Locale deleted successfully.'));
+            $this->Flash->success(__d('vamshop', 'Locale deleted successfully.'));
         } else {
-            $this->Flash->error(__d('croogo', 'Local could not be deleted.'));
+            $this->Flash->error(__d('vamshop', 'Local could not be deleted.'));
         }
 
         return $this->redirect(['action' => 'index']);
     }
 
     /**
-     * Returns the path to the croogo.po file
+     * Returns the path to the vamshop.po file
      *
      * @param $locale
      */
@@ -274,7 +274,7 @@ class LocalesController extends AppController
     {
         $paths = App::path('Locale');
         foreach ($paths as $path) {
-            $poFile = $path . $locale . DS . 'croogo.po';
+            $poFile = $path . $locale . DS . 'vamshop.po';
 
             if (file_exists($poFile)) {
                 return $poFile;

@@ -160,7 +160,7 @@ class TaxonomiesComponent extends Component
                 ->applyOptions(
                     [
                         'name' => 'vocabulary_' . $vocabularyAlias,
-                        'config' => 'croogo_vocabularies',
+                        'config' => 'vamshop_vocabularies',
                     ]
                 )
                 ->first();
@@ -179,7 +179,7 @@ class TaxonomiesComponent extends Component
                     ->applyOptions(
                         [
                             'name' => 'vocabulary_threaded_' . $vocabularyAlias,
-                            'config' => 'croogo_vocabularies',
+                            'config' => 'vamshop_vocabularies',
                         ]
                     )
                     ->contain(

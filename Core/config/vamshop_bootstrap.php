@@ -107,10 +107,10 @@ EventManager::instance();
 }, 'Setting base configuration');
 
 /**
- * Use old translation format for the croogo domain
+ * Use old translation format for the vamshop domain
  */
 $siteLocale = Configure::read('App.defaultLocale');
-I18n::config('croogo', function ($domain, $locale) {
+I18n::config('vamshop', function ($domain, $locale) {
     $loader = new MessagesFileLoader($domain, $locale, 'po');
     $package = new Package('sprintf', 'default');
     $localePackage = $loader();

@@ -214,7 +214,7 @@ class AclCachedAuthorize extends BaseAuthorize
     protected function _authorizeByContent($user, Request $request, $id)
     {
         if (!isset($this->config('actionMap')[$request->params['action']])) {
-            $message = __d('croogo',
+            $message = __d('vamshop',
                 '_authorizeByContent() - Access of un-mapped action "%1$s" in controller "%2$s"',
                 $request->action,
                 $request->controller

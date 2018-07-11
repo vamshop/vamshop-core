@@ -8,17 +8,17 @@ use Vamshop\Core\TestSuite\IntegrationTestCase;
 class LanguagesControllerTest extends IntegrationTestCase
 {
     public $fixtures = [
-        'plugin.croogo/blocks.block',
-        'plugin.croogo/comments.comment',
-        'plugin.croogo/core.settings',
-        'plugin.croogo/settings.language',
-        'plugin.croogo/menus.menu',
-        'plugin.croogo/meta.meta',
-        'plugin.croogo/nodes.node',
-        'plugin.croogo/users.user',
-        'plugin.croogo/users.role',
-        'plugin.croogo/taxonomy.type',
-        'plugin.croogo/taxonomy.vocabulary',
+        'plugin.vamshop/blocks.block',
+        'plugin.vamshop/comments.comment',
+        'plugin.vamshop/core.settings',
+        'plugin.vamshop/settings.language',
+        'plugin.vamshop/menus.menu',
+        'plugin.vamshop/meta.meta',
+        'plugin.vamshop/nodes.node',
+        'plugin.vamshop/users.user',
+        'plugin.vamshop/users.role',
+        'plugin.vamshop/taxonomy.type',
+        'plugin.vamshop/taxonomy.vocabulary',
     ];
 
     public function setUp()

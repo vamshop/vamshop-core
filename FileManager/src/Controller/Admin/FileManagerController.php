@@ -139,14 +139,14 @@ class FileManagerController extends AppController
         $path = realpath($path) . DS;
         $regex = '/^' . preg_quote(realpath(ROOT), '/') . '/';
         if (preg_match($regex, $path) == false) {
-            $this->Flash->error(__d('croogo', 'Path %s is restricted', $path));
+            $this->Flash->error(__d('vamshop', 'Path %s is restricted', $path));
             $path = APP;
         }
 
         $blacklist = ['.git', '.svn', '.CVS'];
         $regex = '/(' . preg_quote(implode('|', $blacklist), '.') . ')/';
         if (in_array(basename($path), $blacklist) || preg_match($regex, $path)) {
-            $this->Flash->error(__d('croogo', sprintf('Path %s is restricted', $path)));
+            $this->Flash->error(__d('vamshop', sprintf('Path %s is restricted', $path)));
             $path = dirname($path);
         }
 
@@ -172,7 +172,7 @@ class FileManagerController extends AppController
             return $this->redirect(['controller' => 'FileManager', 'action' => 'browse']);
         }
         if (!$this->FileManager->isEditable($path)) {
-            $this->Flash->error(__d('croogo', 'Path %s is restricted', $path));
+            $this->Flash->error(__d('vamshop', 'Path %s is restricted', $path));
 
             return $this->redirect(['controller' => 'FileManager', 'action' => 'browse']);
         }
@@ -185,7 +185,7 @@ class FileManagerController extends AppController
 
         if (!empty($this->request->data)) {
             if ($this->file->write($this->request->data['content'])) {
-                $this->Flash->success(__d('croogo', 'File saved successfully'));
+                $this->Flash->success(__d('vamshop', 'File saved successfully'));
             }
         }
 
@@ -202,7 +202,7 @@ class FileManagerController extends AppController
      */
     public function upload()
     {
-        $this->set('title_for_layout', __d('croogo', 'Upload'));
+        $this->set('title_for_layout', __d('vamshop', 'Upload'));
 
         if (isset($this->request->query['path'])) {
             $path = $this->request->query['path'];
@@ -212,7 +212,7 @@ class FileManagerController extends AppController
         $this->set(compact('path'));
 
         if (isset($path) && !$this->FileManager->isDeletable($path)) {
-            $this->Flash->error(__d('croogo', 'Path %s is restricted', $path));
+            $this->Flash->error(__d('vamshop', 'Path %s is restricted', $path));
 
             return $this->redirect($this->referer());
         }
@@ -222,7 +222,7 @@ class FileManagerController extends AppController
         ) {
             $destination = $path . $this->request->data['file']['name'];
             move_uploaded_file($this->request->data['file']['tmp_name'], $destination);
-            $this->Flash->success(__d('croogo', 'File uploaded successfully.'));
+            $this->Flash->success(__d('vamshop', 'File uploaded successfully.'));
             $redirectUrl = $this->_browsePathUrl($path);
 
             return $this->redirect($redirectUrl);
@@ -244,15 +244,15 @@ class FileManagerController extends AppController
         }
 
         if (!$this->FileManager->isDeletable($path)) {
-            $this->Flash->error(__d('croogo', 'Path %s is restricted', $path));
+            $this->Flash->error(__d('vamshop', 'Path %s is restricted', $path));
 
             return $this->redirect(['controller' => 'FileManager', 'action' => 'browse']);
         }
 
         if (file_exists($path) && unlink($path)) {
-            $this->Flash->success(__d('croogo', 'File deleted'));
+            $this->Flash->success(__d('vamshop', 'File deleted'));
         } else {
-            $this->Flash->error(__d('croogo', 'An error occured'));
+            $this->Flash->error(__d('vamshop', 'An error occured'));
         }
 
         if (isset($_SERVER['HTTP_REFERER'])) {
@@ -279,15 +279,15 @@ class FileManagerController extends AppController
         }
 
         if (isset($path) && !$this->FileManager->isDeletable($path)) {
-            $this->Flash->error(__d('croogo', 'Path %s is restricted', $path));
+            $this->Flash->error(__d('vamshop', 'Path %s is restricted', $path));
 
             return $this->redirect(['controller' => 'FileManager', 'action' => 'browse']);
         }
 
         if (is_dir($path) && rmdir($path)) {
-            $this->Flash->success(__d('croogo', 'Directory deleted'));
+            $this->Flash->success(__d('vamshop', 'Directory deleted'));
         } else {
-            $this->Flash->error(__d('croogo', 'An error occured'));
+            $this->Flash->error(__d('vamshop', 'An error occured'));
         }
 
         if (isset($_SERVER['HTTP_REFERER'])) {
@@ -311,7 +311,7 @@ class FileManagerController extends AppController
         $pathFragments = array_filter(explode(DIRECTORY_SEPARATOR, $path));
 
         if (!$this->FileManager->isEditable($path)) {
-            $this->Flash->error(__d('croogo', 'Path "%s" cannot be renamed', $path));
+            $this->Flash->error(__d('vamshop', 'Path "%s" cannot be renamed', $path));
 
             return $this->redirect(['controller' => 'FileManager', 'action' => 'browse']);
         }
@@ -330,19 +330,19 @@ class FileManagerController extends AppController
                 $fileExists = file_exists($newPath);
                 if ($oldName !== $newName) {
                     if ($fileExists) {
-                        $message = __d('croogo', '%s already exists', $newName);
+                        $message = __d('vamshop', '%s already exists', $newName);
                         $alertType = 'error';
                     } else {
                         if ($this->FileManager->rename($path, $newPath)) {
-                            $message = __d('croogo', '"%s" has been renamed to "%s"', $oldName, $newName);
+                            $message = __d('vamshop', '"%s" has been renamed to "%s"', $oldName, $newName);
                             $alertType = 'success';
                         } else {
-                            $message = __d('croogo', 'Could not rename "%s" to "%s"', $oldName, $newName);
+                            $message = __d('vamshop', 'Could not rename "%s" to "%s"', $oldName, $newName);
                             $alertType = 'error';
                         }
                     }
                 } else {
-                    $message = __d('croogo', 'Name has not changed');
+                    $message = __d('vamshop', 'Name has not changed');
                     $alertType = 'alert';
                 }
                 $this->Flash->set($message, [
@@ -376,7 +376,7 @@ class FileManagerController extends AppController
         }
 
         if (isset($path) && !$this->FileManager->isDeletable($path)) {
-            $this->Flash->error(__d('croogo', 'Path %s is restricted', $path));
+            $this->Flash->error(__d('vamshop', 'Path %s is restricted', $path));
 
             return $this->redirect($this->referer());
         }
@@ -384,12 +384,12 @@ class FileManagerController extends AppController
         if (!empty($this->request->data)) {
             $this->folder = new Folder;
             if ($this->folder->create($path . $this->request->data['name'])) {
-                $this->Flash->success(__d('croogo', 'Directory created successfully.'));
+                $this->Flash->success(__d('vamshop', 'Directory created successfully.'));
                 $redirectUrl = $this->_browsePathUrl($path);
 
                 return $this->redirect($redirectUrl);
             } else {
-                $this->Flash->error(__d('croogo', 'An error occured'));
+                $this->Flash->error(__d('vamshop', 'An error occured'));
             }
         }
 
@@ -411,19 +411,19 @@ class FileManagerController extends AppController
         }
 
         if (isset($path) && !$this->FileManager->isEditable($path)) {
-            $this->Flash->error(__d('croogo', 'Path %s is restricted', $path));
+            $this->Flash->error(__d('vamshop', 'Path %s is restricted', $path));
 
             return $this->redirect($this->referer());
         }
 
         if (!empty($this->request->data)) {
             if (file_put_contents($path . $this->request->data['name'], $this->request->data['content'])) {
-                $this->Flash->success(__d('croogo', 'File created successfully.'));
+                $this->Flash->success(__d('vamshop', 'File created successfully.'));
                 $redirectUrl = $this->_browsePathUrl($path);
 
                 return $this->redirect($redirectUrl);
             } else {
-                $this->Flash->error(__d('croogo', 'An error occured'));
+                $this->Flash->error(__d('vamshop', 'An error occured'));
             }
         }
 

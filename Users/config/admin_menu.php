@@ -6,7 +6,7 @@ use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'users', [
     'icon' => 'user',
-    'title' => __d('croogo', 'Users'),
+    'title' => __d('vamshop', 'Users'),
     'url' => [
         'prefix' => 'admin',
         'plugin' => 'Vamshop/Users',
@@ -16,7 +16,7 @@ Nav::add('sidebar', 'users', [
     'weight' => 50,
     'children' => [
         'users' => [
-            'title' => __d('croogo', 'Users'),
+            'title' => __d('vamshop', 'Users'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Users',
@@ -26,7 +26,7 @@ Nav::add('sidebar', 'users', [
             'weight' => 10,
         ],
         'roles' => [
-            'title' => __d('croogo', 'Roles'),
+            'title' => __d('vamshop', 'Roles'),
             'url' => [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Users',

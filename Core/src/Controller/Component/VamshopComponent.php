@@ -133,7 +133,7 @@ class VamshopComponent extends Component
     {
         Nav::add('top-left', 'site', [
             'icon' => false,
-            'title' => __d('croogo', 'Visit website'),
+            'title' => __d('vamshop', 'Visit website'),
             'url' => '/',
             'weight' => 0,
             'htmlAttributes' => [
@@ -150,7 +150,7 @@ class VamshopComponent extends Component
             'url' => '#',
             'children' => [
                 'profile' => [
-                    'title' => __d('croogo', 'Profile'),
+                    'title' => __d('vamshop', 'Profile'),
                     'icon' => 'user',
                     'url' => [
                         'prefix' => 'admin',
@@ -165,7 +165,7 @@ class VamshopComponent extends Component
                 ],
                 'logout' => [
                     'icon' => 'power-off',
-                    'title' => __d('croogo', 'Logout'),
+                    'title' => __d('vamshop', 'Logout'),
                     'url' => [
                         'prefix' => 'admin',
                         'plugin' => 'Vamshop/Users',
@@ -307,7 +307,7 @@ class VamshopComponent extends Component
     public function fieldToggle(Table $table, $id, $status, $field = 'status')
     {
         if (empty($id) || $status === null) {
-            throw new Exception(__d('croogo', 'Invalid content'));
+            throw new Exception(__d('vamshop', 'Invalid content'));
         }
 
         $status = (int)!$status;
@@ -319,7 +319,7 @@ class VamshopComponent extends Component
             $this->_controller->set(compact('id', 'status'));
             $this->_controller->render('Vamshop/Core./Common/admin_toggle');
         } else {
-            throw new Exception(__d('croogo', 'Failed toggling field %s to %s', $field, $status));
+            throw new Exception(__d('vamshop', 'Failed toggling field %s to %s', $field, $status));
         }
     }
 
@@ -418,7 +418,7 @@ class VamshopComponent extends Component
  *   - APP/Themed/<Theme>/<Controller>
  *   - APP/Themed/<Theme>/Plugin/<Plugin>/<Controller>
  *   - APP/Plugin/<Plugin/View/<Controller>
- *   - APP/Vendor/croogo/croogo/Vamshop/View
+ *   - APP/Vendor/vamshop/vamshop/Vamshop/View
  *
  * @param Controller $controller
  * @return array A list of view paths

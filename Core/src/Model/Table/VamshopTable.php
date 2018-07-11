@@ -121,7 +121,7 @@ class VamshopTable extends Table
  */
     public function invalidate($field, $value = true)
     {
-        return parent::invalidate($field, __d('croogo', $value));
+        return parent::invalidate($field, __d('vamshop', $value));
     }
 
 /**

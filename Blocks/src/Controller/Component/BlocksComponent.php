@@ -114,7 +114,7 @@ class BlocksComponent extends Component
             $this->blocksForLayout[$regionAlias] = [];
 
             $visibilityCachePrefix = 'visibility_' .  $slug . '_' . $cacheKey;
-            $blocks = Cache::read($visibilityCachePrefix, 'croogo_blocks');
+            $blocks = Cache::read($visibilityCachePrefix, 'vamshop_blocks');
             if ($blocks === false) {
                 $blocks = $this->Blocks->find('regionPublished', [
                     'regionId' => $regionId,
@@ -126,11 +126,11 @@ class BlocksComponent extends Component
                     'field' => 'visibility_paths',
                     'cache' => [
                         'prefix' => $visibilityCachePrefix,
-                        'config' => 'croogo_blocks',
+                        'config' => 'vamshop_blocks',
                     ],
                 ]);
 
-                Cache::write($visibilityCachePrefix, $blocks->toArray(), 'croogo_blocks');
+                Cache::write($visibilityCachePrefix, $blocks->toArray(), 'vamshop_blocks');
             }
             /** @var Collection $blocks */
             $blocks = collection($blocks);

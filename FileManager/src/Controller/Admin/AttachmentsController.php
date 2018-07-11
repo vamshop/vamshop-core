@@ -127,7 +127,7 @@ class AttachmentsController extends AppController
         $options = [
             'multiple' => ['copy' => false],
             'messageMap' => [
-                'delete' => __d('croogo', 'Attachments deleted'),
+                'delete' => __d('vamshop', 'Attachments deleted'),
             ],
         ];
         $this->BulkProcess->process($this->Attachments, $action, $ids, $options);

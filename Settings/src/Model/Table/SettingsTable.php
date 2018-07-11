@@ -31,7 +31,7 @@ class SettingsTable extends VamshopTable
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->notBlank('key', __d('croogo', 'Key cannot be empty.'));
+            ->notBlank('key', __d('vamshop', 'Key cannot be empty.'));
         return $validator;
     }
 
@@ -39,7 +39,7 @@ class SettingsTable extends VamshopTable
     {
         $rules
             ->add($rules->isUnique( ['key'],
-                __d('croogo', 'That key is already taken')
+                __d('vamshop', 'That key is already taken')
             ));
         return $rules;
     }

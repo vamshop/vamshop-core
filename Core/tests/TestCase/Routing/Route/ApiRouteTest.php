@@ -10,7 +10,7 @@ class ApiRouteTest extends VamshopTestCase
 {
 
     public $fixtures = [
-//		'plugin.croogo\settings.setting',
+//		'plugin.vamshop\settings.setting',
     ];
 
     public function testParse()

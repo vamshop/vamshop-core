@@ -24,21 +24,21 @@ class InstallTest extends VamshopTestCase
 
     public function testRunMigrationsOk()
     {
-        $croogoPlugin = $this->getMock('VamshopPlugin');
-        $croogoPlugin->expects($this->any())
+        $vamshopPlugin = $this->getMock('VamshopPlugin');
+        $vamshopPlugin->expects($this->any())
                 ->method('migrate')
                 ->will($this->returnValue(true));
-        $this->_runProtectedMethod('_setVamshopPlugin', [$croogoPlugin]);
+        $this->_runProtectedMethod('_setVamshopPlugin', [$vamshopPlugin]);
         $this->assertEquals(true, $this->Install->runMigrations('Users'));
     }
 
     public function testRunMigrationsFailed()
     {
-        $croogoPlugin = $this->getMock('VamshopPlugin');
-        $croogoPlugin->expects($this->any())
+        $vamshopPlugin = $this->getMock('VamshopPlugin');
+        $vamshopPlugin->expects($this->any())
                 ->method('migrate')
                 ->will($this->returnValue(false));
-        $this->_runProtectedMethod('_setVamshopPlugin', [$croogoPlugin]);
+        $this->_runProtectedMethod('_setVamshopPlugin', [$vamshopPlugin]);
         $this->assertEquals(false, $this->Install->runMigrations('Users'));
     }
 

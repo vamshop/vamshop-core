@@ -117,12 +117,12 @@ class DashboardsController extends AppController
     public function delete($id = null)
     {
         if (!$id) {
-            $this->Flash->error(__d('croogo', 'Invalid id for Dashboard'));
+            $this->Flash->error(__d('vamshop', 'Invalid id for Dashboard'));
             return $this->redirect(['action' => 'index']);
         }
         $entity = $this->Dashboards->get($id);
         if ($this->Dashboards->delete($entity)) {
-            $this->Flash->success(__d('croogo', 'Dashboard deleted'));
+            $this->Flash->success(__d('vamshop', 'Dashboard deleted'));
             return $this->redirect($this->referer());
         }
     }
@@ -151,9 +151,9 @@ class DashboardsController extends AppController
         $dashboard = $this->Dashboards->get($id);
         $dashboard->weight = $dashboard->weight - $step;
         if ($this->Dashboards->save($dashboard)) {
-            $this->Flash->success(__d('croogo', 'Moved up successfully'));
+            $this->Flash->success(__d('vamshop', 'Moved up successfully'));
         } else {
-            $this->Flash->error(__d('croogo', 'Could not move up'));
+            $this->Flash->error(__d('vamshop', 'Could not move up'));
         }
         return $this->redirect(['action' => 'index']);
     }
@@ -170,9 +170,9 @@ class DashboardsController extends AppController
         $dashboard = $this->Dashboards->get($id);
         $dashboard->weight = $dashboard->weight + $step;
         if ($this->Dashboards->save($dashboard)) {
-            $this->Flash->success(__d('croogo', 'Moved down successfully'));
+            $this->Flash->success(__d('vamshop', 'Moved down successfully'));
         } else {
-            $this->Flash->error(__d('croogo', 'Could not move down'));
+            $this->Flash->error(__d('vamshop', 'Could not move down'));
         }
 
         return $this->redirect(['action' => 'index']);

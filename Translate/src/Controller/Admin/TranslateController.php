@@ -40,7 +40,7 @@ class TranslateController extends AppController
         $id = $this->request->query('id');
         $modelAlias = $this->request->query('model');
         if ($id == null) {
-            $this->Flash->error(__d('croogo', 'Invalid ID.'));
+            $this->Flash->error(__d('vamshop', 'Invalid ID.'));
             return $this->redirect([
                 'plugin' => null,
                 'controller' => Inflector::pluralize($modelAlias),
@@ -53,7 +53,7 @@ class TranslateController extends AppController
         list($plugin, $model) = pluginSplit($modelAlias);
 
         if (!is_array($config)) {
-            $this->Flash->error(__d('croogo', 'Invalid model.'));
+            $this->Flash->error(__d('vamshop', 'Invalid model.'));
             return $this->redirect([
                 'plugin' => $plugin,
                 'controller' => Inflector::pluralize($modelAlias),
@@ -65,14 +65,14 @@ class TranslateController extends AppController
         $displayField = $Model->displayField();
         $record = $Model->get($id);
         if (!isset($record->id)) {
-            $this->Flash->error(__d('croogo', 'Invalid record.'));
+            $this->Flash->error(__d('vamshop', 'Invalid record.'));
             return $this->redirect([
                 'plugin' => $plugin,
                 'controller' => $model,
                 'action' => 'index',
             ]);
         }
-        $this->set('title_for_layout', sprintf(__d('croogo', 'Translations: %s'), $record->get($displayField)));
+        $this->set('title_for_layout', sprintf(__d('vamshop', 'Translations: %s'), $record->get($displayField)));
 
         $translations = $Model->find('translations')
             ->where([
@@ -106,7 +106,7 @@ class TranslateController extends AppController
         $locale = $this->request->query('locale');
 
         if (!$id && empty($this->request->data)) {
-            $this->Flash->error(__d('croogo', 'Invalid ID.'));
+            $this->Flash->error(__d('vamshop', 'Invalid ID.'));
             return $this->redirect([
                 'plugin' => null,
                 'controller' => Inflector::pluralize($modelAlias),
@@ -115,7 +115,7 @@ class TranslateController extends AppController
         }
 
         if (!$this->request->query('locale')) {
-            $this->Flash->error(__d('croogo', 'Invalid locale'));
+            $this->Flash->error(__d('vamshop', 'Invalid locale'));
             return $this->redirect([
                 'plugin' => null,
                 'controller' => Inflector::pluralize($modelAlias),
@@ -133,7 +133,7 @@ class TranslateController extends AppController
                 'status' => 1,
             ])->first();
         if (!$language->id) {
-            $this->Flash->error(__d('croogo', 'Invalid Language'));
+            $this->Flash->error(__d('vamshop', 'Invalid Language'));
             return $this->redirect([
                 'plugin' => $plugin,
                 'controller' => $model,
@@ -145,7 +145,7 @@ class TranslateController extends AppController
         $displayField = $Model->displayField();
         $record = $Model->get($id);
         if (!$record->id) {
-            $this->Flash->error(__d('croogo', 'Invalid record.'));
+            $this->Flash->error(__d('vamshop', 'Invalid record.'));
             return $this->redirect([
                 'plugin' => $plugin,
                 'controller' => $model,
@@ -169,7 +169,7 @@ class TranslateController extends AppController
                 'translations' => true,
             ]);
             if ($Model->save($entity)) {
-                $this->Flash->success(__d('croogo', 'Record has been translated'));
+                $this->Flash->success(__d('vamshop', 'Record has been translated'));
                 $redirect = [
                     'controller' => 'Translate',
                     'action' => 'index',
@@ -184,7 +184,7 @@ class TranslateController extends AppController
                 }
                 return $this->redirect($redirect);
             } else {
-                $this->Flash->error(__d('croogo', 'Record could not be translated. Please, try again.'));
+                $this->Flash->error(__d('vamshop', 'Record could not be translated. Please, try again.'));
             }
         }
         $this->set(compact(
@@ -204,7 +204,7 @@ class TranslateController extends AppController
     public function delete($id = null, $modelAlias = null, $locale = null)
     {
         if ($locale == null || $id == null) {
-            $this->Flash->error(__d('croogo', 'Invalid Locale or ID'));
+            $this->Flash->error(__d('vamshop', 'Invalid Locale or ID'));
             return $this->redirect([
                 'plugin' => null,
                 'controller' => Inflector::pluralize($modelAlias),
@@ -217,7 +217,7 @@ class TranslateController extends AppController
         list($plugin, $model) = pluginSplit($modelAlias);
 
         if (!is_array($config)) {
-            $this->Flash->error(__d('croogo', 'Invalid model.'));
+            $this->Flash->error(__d('vamshop', 'Invalid model.'));
             return $this->redirect([
                 'plugin' => $plugin,
                 'controller' => $model,
@@ -228,7 +228,7 @@ class TranslateController extends AppController
         $Model = TableRegistry::get($modelAlias);
         $record = $Model->get($id);
         if (!isset($record->id)) {
-            $this->Flash->error(__d('croogo', 'Invalid record.'));
+            $this->Flash->error(__d('vamshop', 'Invalid record.'));
             return $this->redirect([
                 'plugin' => $plugin,
                 'controller' => $model,
@@ -243,9 +243,9 @@ class TranslateController extends AppController
                 $runtimeModelAlias . '.foreign_key' => $id,
                 $runtimeModelAlias . '.locale' => $locale,
             ])) {
-            $this->Flash->success(__d('croogo', 'Translation for the locale deleted successfully.'));
+            $this->Flash->success(__d('vamshop', 'Translation for the locale deleted successfully.'));
         } else {
-            $this->Flash->error(__d('croogo', 'Translation for the locale could not be deleted.'));
+            $this->Flash->error(__d('vamshop', 'Translation for the locale could not be deleted.'));
         }
 
         return $this->redirect([

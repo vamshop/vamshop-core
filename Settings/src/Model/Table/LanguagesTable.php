@@ -48,10 +48,10 @@ class LanguagesTable extends VamshopTable
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->notBlank('title', __d('croogo', 'Title cannot be empty.'))
-            ->notBlank('native', __d('croogo', 'Native cannot be empty.'))
-            ->notBlank('alias', __d('croogo', 'Alias cannot be empty.'))
-            ->notBlank('locale', __d('croogo', 'Locale cannot be empty.'));
+            ->notBlank('title', __d('vamshop', 'Title cannot be empty.'))
+            ->notBlank('native', __d('vamshop', 'Native cannot be empty.'))
+            ->notBlank('alias', __d('vamshop', 'Alias cannot be empty.'))
+            ->notBlank('locale', __d('vamshop', 'Locale cannot be empty.'));
         return $validator;
     }
 
@@ -59,10 +59,10 @@ class LanguagesTable extends VamshopTable
     {
         $rules
             ->add($rules->isUnique(['locale'],
-                __d('croogo', 'That locale is already taken')
+                __d('vamshop', 'That locale is already taken')
             ))
             ->add($rules->isUnique( ['alias'],
-                __d('croogo', 'That alias is already taken')
+                __d('vamshop', 'That alias is already taken')
             ));
         return $rules;
     }

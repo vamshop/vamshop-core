@@ -105,7 +105,7 @@ class PermissionsController extends AppController
         foreach ($roots as $id => $root) {
             Vamshop::hookAdminTab(
                 'Admin/Permissions/index',
-                __d('croogo', $root->title),
+                __d('vamshop', $root->title),
                 'Vamshop/Core.blank',
                 [
                     'linkOptions' => [
