@@ -22,7 +22,7 @@ $siteTagline = Configure::read('Site.tagline');
     <title><?= $this->fetch('title'); ?> - <?= $siteTitle; ?></title>
     <?php
     echo $this->Meta->meta();
-    if (Plugin::loaded('Seolite')) echo $this->SeoLite->canonical();
+    if (Plugin::loaded('Seo')) echo $this->Seo->canonical();
     echo $this->Layout->feed();
     $this->element('stylesheets');
     echo $this->Layout->js();
