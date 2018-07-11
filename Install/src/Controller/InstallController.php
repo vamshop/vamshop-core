@@ -87,7 +87,7 @@ class InstallController extends Controller
     protected function _check()
     {
         if (Configure::read('Vamshop.installed') && Configure::read('Install.secured')) {
-            $this->Flash->error('Already Installed');
+            $this->Flash->error(__d('vamshop','Already Installed'));
             return $this->redirect('/');
         }
     }

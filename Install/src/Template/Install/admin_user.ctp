@@ -1,4 +1,6 @@
 <?php
+$this->assign('title', __d('vamshop', 'Admin user'));
+
 $this->assign('before', $this->Form->create($user, [
     'align' => ['left' => 4, 'middle' => 8, 'right' => 0],
 ]));

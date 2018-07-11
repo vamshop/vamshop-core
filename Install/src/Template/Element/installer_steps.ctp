@@ -12,8 +12,10 @@ foreach (\Vamshop\Install\Controller\InstallController::STEPS as $key => $step) 
     }
 
     $stepButton = $this->Html->tag('span', $key + 1, $options);
-    $step = $this->Html->para('', $step);
-    $steps[] = $this->Html->div('wizard-step', $stepButton . $step);
+    $step = $this->Html->para('', __d('vamshop', $step));
+    //$steps[] = $this->Html->div('wizard-step', $stepButton . $step);
+    $steps[] = $this->Html->div('wizard-step', $stepButton);
 }
 
 echo $this->Html->div('wizard-row', implode('', $steps));
+echo "<br />";

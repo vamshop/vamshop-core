@@ -25,7 +25,7 @@ $this->end();
             <?php
             echo $this->Html->link(__d('vamshop', 'Reuse this configuration and proceed'), ['action' => 'data']);
             ?>
-            or complete the form below to replace it.
+            <?= __d('vamshop', 'or complete the form below to replace it.'); ?>
         <?php else: ?>
             <?= __d('vamshop', 'This configuration will be replaced.') ?>
         <?php endif ?>
@@ -35,6 +35,7 @@ $this->end();
 <?php
 echo $this->Form->input('driver', [
     'placeholder' => __d('vamshop', 'Database'),
+    'label' => __d('vamshop', 'Database'),
     'empty' => false,
     'options' => [
         Cake\Database\Driver\Mysql::class => 'MySQL',
@@ -62,10 +63,10 @@ echo $this->Form->input('password', [
     'label' => __d('vamshop', 'Password'),
 ]);
 echo $this->Form->input('database', [
-    'placeholder' => __d('vamshop', 'Name'),
+    'placeholder' => __d('vamshop', 'Database name'),
     'tooltip' => __d('vamshop', 'Database name'),
     'prepend' => $this->Html->icon('briefcase'),
-    'label' => __d('vamshop', 'Name'),
+    'label' => __d('vamshop', 'Database name'),
 ]);
 echo $this->Form->input('port', [
     'placeholder' => __d('vamshop', 'Port'),
@@ -75,6 +76,6 @@ echo $this->Form->input('port', [
 ]);
 ?>
 <?php
-$this->assign('buttons', $this->Form->button('Next step', ['class' => 'success']));
+$this->assign('buttons', $this->Form->button(__d('vamshop','Next step'), ['class' => 'success']));
 
 $this->assign('after', $this->Form->end());
