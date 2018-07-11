@@ -7,6 +7,7 @@
  */
 
 use Cake\Core\Configure;
+use Cake\Core\Plugin;
 
 $siteTitle = Configure::read('Site.title');
 $siteTagline = Configure::read('Site.tagline');
@@ -21,7 +22,7 @@ $siteTagline = Configure::read('Site.tagline');
     <title><?= $this->fetch('title'); ?> - <?= $siteTitle; ?></title>
     <?php
     echo $this->Meta->meta();
-    //echo $this->Seo->canonical();
+    if (Plugin::loaded('Seolite')) echo $this->SeoLite->canonical();
     echo $this->Layout->feed();
     $this->element('stylesheets');
     echo $this->Layout->js();

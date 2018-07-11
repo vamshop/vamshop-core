@@ -13,7 +13,7 @@ $this->Nodes->set($node);
     ?>
 </div>
 
-
+<?php if (Plugin::loaded('Assets')): ?>
 <h1>Assets</h1>
 
     <?php
@@ -40,6 +40,7 @@ $this->Nodes->set($node);
             echo $this->Html->image($this->Nodes->field('linked_assets.FeaturedImage.path'));
         ?>
     </div>
+<?php endif ?>    
 
 <?php if (Plugin::loaded('Croogo/Comments')): ?>
 <div id="comments" class="node-comments">
