@@ -221,5 +221,3 @@ DispatcherFactory::add('Vamshop/Core.HomePage');
 \Vamshop\Core\time(function () {
     Vamshop::dispatchEvent('Vamshop.bootstrapComplete');
 }, 'event-Vamshop.bootstrapComplete', 'Event: Vamshop.bootstrapComplete');
-
-//echo 'test'.var_dump($siteLocale).'::'.Configure::read('Site.locale');
