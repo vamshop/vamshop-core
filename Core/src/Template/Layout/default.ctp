@@ -3,7 +3,7 @@
  * Default Theme for Croogo CMS
  *
  * @author Fahad Ibnay Heylaal <contact@fahad19.com>
- * @link http://www.croogo.org
+ * @link http://www.vamshop.com
  */
 
 use Cake\Core\Configure;
@@ -87,7 +87,7 @@ $siteTagline = Configure::read('Site.tagline');
                 <div class="col-md-4">
                     <ul class="list-inline">
                         <li class="list-inline-item">
-                            Powered by <a href="http://www.croogo.org">Croogo</a>.
+                            Powered by <a href="http://www.vamshop.com">Croogo</a>.
                         </li>
                         <li class="list-inline-item">
                             <a href="http://www.cakephp.org"><?= $this->Html->image('/img/cake.power.gif'); ?></a>

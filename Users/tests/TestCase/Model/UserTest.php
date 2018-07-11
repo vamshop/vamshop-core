@@ -66,9 +66,9 @@ class UserTest extends CroogoTestCase
             'username' => 'new_user',
             'name' => 'New User',
             'role_id' => 3,
-            'email' => 'contact@croogo.org',
+            'email' => 'contact@vamshop.com',
             'password' => 'password',
-            'website' => 'http://croogo.org',
+            'website' => 'http://vamshop.com',
             'activation_key' => md5(uniqid()),
         ]);
         $this->User->save();
@@ -119,9 +119,9 @@ class UserTest extends CroogoTestCase
             'username' => 'new_user',
             'name' => 'Admin User',
             'role_id' => 1,
-            'email' => 'contact@croogo.org',
+            'email' => 'contact@vamshop.com',
             'password' => 'password',
-            'website' => 'http://croogo.org',
+            'website' => 'http://vamshop.com',
             'activation_key' => md5(uniqid()),
             'status' => true,
         ]);
@@ -142,9 +142,9 @@ class UserTest extends CroogoTestCase
             'username' => 'admin_user',
             'name' => 'Admin User',
             'role_id' => 1,
-            'email' => 'contact@croogo.org',
+            'email' => 'contact@vamshop.com',
             'password' => 'password',
-            'website' => 'http://croogo.org',
+            'website' => 'http://vamshop.com',
             'activation_key' => md5(uniqid()),
             'status' => true,
         ]);
@@ -154,9 +154,9 @@ class UserTest extends CroogoTestCase
             'username' => 'another_adm',
             'name' => 'Another Admin',
             'role_id' => 1,
-            'email' => 'another_adm@croogo.org',
+            'email' => 'another_adm@vamshop.com',
             'password' => 'password',
-            'website' => 'http://croogo.org',
+            'website' => 'http://vamshop.com',
             'activation_key' => md5(uniqid()),
             'status' => true,
         ]);

@@ -356,7 +356,7 @@ class CroogoFormHelperTest extends CroogoTestCase
         $result = $this->Form->autocomplete('user_id', [
             'autocomplete' => [
                 'data-relatedField' => '#user_id',
-                'data-url' => 'http://croogo.org',
+                'data-url' => 'http://vamshop.com',
             ],
         ]);
         $expected = [
@@ -377,7 +377,7 @@ class CroogoFormHelperTest extends CroogoTestCase
                 'input' => [
                     'name' => 'data[autocomplete_user_id]',
                     'data-relatedField' => '#user_id',
-                    'data-url' => 'http://croogo.org',
+                    'data-url' => 'http://vamshop.com',
                     'class' => 'typeahead-autocomplete',
                     'autocomplete' => 'off',
                     'type' => 'text',
@@ -402,7 +402,7 @@ class CroogoFormHelperTest extends CroogoTestCase
             'autocomplete' => [
                 'default' => 'yvonne',
                 'data-relatedField' => '#user_id',
-                'data-url' => 'http://croogo.org',
+                'data-url' => 'http://vamshop.com',
             ],
         ]);
         $expected = [
@@ -424,7 +424,7 @@ class CroogoFormHelperTest extends CroogoTestCase
                 'input' => [
                     'name' => 'data[autocomplete_user_id]',
                     'data-relatedField' => '#user_id',
-                    'data-url' => 'http://croogo.org',
+                    'data-url' => 'http://vamshop.com',
                     'class' => 'typeahead-autocomplete',
                     'autocomplete' => 'off',
                     'type' => 'text',
@@ -459,7 +459,7 @@ class CroogoFormHelperTest extends CroogoTestCase
             'autocomplete' => [
                 'data-relatedField' => '#NodeUserId',
                 'data-displayField' => 'username',
-                'data-url' => 'http://croogo.org',
+                'data-url' => 'http://vamshop.com',
             ],
         ]);
         $expected = [
@@ -482,7 +482,7 @@ class CroogoFormHelperTest extends CroogoTestCase
                     'name' => 'data[autocomplete_user_id]',
                     'value' => 'yvonne',
                     'data-displayField' => 'username',
-                    'data-url' => 'http://croogo.org',
+                    'data-url' => 'http://vamshop.com',
                     'data-relatedField',
                     'class',
                     'autocomplete',

@@ -34,8 +34,8 @@ $this->assign('title', __d('croogo', 'Successful'));
 <blockquote>
     <h3><?= __d('croogo', 'Resources') ?></h3>
     <ul class="bullet">
-        <li><?= $this->Html->link('http://croogo.org') ?></li>
-        <li><?= $this->Html->link('http://wiki.croogo.org/') ?></li>
+        <li><?= $this->Html->link('http://vamshop.com') ?></li>
+        <li><?= $this->Html->link('http://wiki.vamshop.com/') ?></li>
         <li><?= $this->Html->link('http://github.com/croogo/croogo') ?></li>
         <li><?= $this->Html->link('Croogo Google Group',
                 'https://groups.google.com/forum/#!forum/croogo') ?></li>

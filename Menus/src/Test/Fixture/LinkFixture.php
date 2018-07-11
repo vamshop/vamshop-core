@@ -168,7 +168,7 @@ class LinkFixture extends CroogoTestFixture
             'title' => 'Croogo',
             'class' => 'croogo',
             'description' => '',
-            'link' => 'http://www.croogo.org',
+            'link' => 'http://www.vamshop.com',
             'target' => '',
             'rel' => '',
             'status' => 1,

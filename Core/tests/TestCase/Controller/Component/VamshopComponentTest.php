@@ -112,7 +112,7 @@ class CroogoComponentTest extends TestCase
     public function redirectData()
     {
         return [
-            ['croogo.org', 'croogo.org'],
+            ['vamshop.com', 'vamshop.com'],
             [['action' => 'index'], ['action' => 'edit', 1]],
             [['action' => 'edit', 1], ['action' => 'edit', 1], ['apply' => 'Apply']],
             [['action' => 'index', 1], ['action' => 'edit', 1], [], ['action' => 'index', 1]],

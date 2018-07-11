@@ -20,7 +20,7 @@ use Croogo\Core\Status;
  * @package  Croogo.Croogo.Model.Behavior
  * @author   Rachman Chavik <rchavik@gmail.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.croogo.org
+ * @link     http://www.vamshop.com
  * @see      CroogoStatus
  */
 class PublishableBehavior extends Behavior

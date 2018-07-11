@@ -10,7 +10,7 @@ namespace Croogo\Acl\Model\Entity;
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.croogo.org
+ * @link     http://www.vamshop.com
  */
 class Aro extends \Acl\Model\Entity\Aro
 {

@@ -12,7 +12,7 @@ use PDO;
  *
  * @package  Croogo.Core.Database.Type
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.croogo.org
+ * @link     http://www.vamshop.com
  */
 class ParamsType extends Type
 {

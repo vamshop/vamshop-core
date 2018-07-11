@@ -18,7 +18,7 @@ use Cake\Utility\Hash;
  * @since    1.5
  * @author   Rachman Chavik <rchavik@xintesa.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.croogo.org
+ * @link     http://www.vamshop.com
  */
 class AutoLoginComponent extends Component
 {

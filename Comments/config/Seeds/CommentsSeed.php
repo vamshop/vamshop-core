@@ -14,7 +14,7 @@ class CommentsSeed extends AbstractSeed
             'user_id' => '0',
             'name' => 'Mr Croogo',
             'email' => 'email@example.com',
-            'website' => 'http://www.croogo.org',
+            'website' => 'http://www.vamshop.com',
             'ip' => '127.0.0.1',
             'title' => '',
             'body' => 'Hi, this is the first comment.',

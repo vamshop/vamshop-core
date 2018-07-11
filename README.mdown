@@ -45,11 +45,11 @@ If you want hack on croogo, you can use the `--prefer-source` flag, ie:
 
 ## Links
 
-  * **Official website**: [http://croogo.org](http://croogo.org)
-  * **Blog**: [http://blog.croogo.org](http://blog.croogo.org)
-  * **Downloads**: [http://downloads.croogo.org](http://downloads.croogo.org)
+  * **Official website**: [http://vamshop.com](http://vamshop.com)
+  * **Blog**: [http://blog.vamshop.com](http://blog.vamshop.com)
+  * **Downloads**: [http://downloads.vamshop.com](http://downloads.vamshop.com)
   * **Issue Tracker**: [http://github.com/croogo/croogo/issues](http://github.com/croogo/croogo/issues)
-  * **Documentation**: [http://docs.croogo.org](http://docs.croogo.org)
+  * **Documentation**: [http://docs.vamshop.com](http://docs.vamshop.com)
   * **Google Group**: [http://groups.google.com/group/croogo](http://groups.google.com/group/croogo)
   * **IRC Channel**: [#croogo](irc://irc.freenode.net/croogo) on irc.freenode.net
 

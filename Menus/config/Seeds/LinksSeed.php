@@ -139,7 +139,7 @@ class LinksSeed extends AbstractSeed
             'title' => 'Croogo',
             'class' => 'croogo',
             'description' => '',
-            'link' => 'http://www.croogo.org',
+            'link' => 'http://www.vamshop.com',
             'target' => '',
             'rel' => '',
             'status' => '1',

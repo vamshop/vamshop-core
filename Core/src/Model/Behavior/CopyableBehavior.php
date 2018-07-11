@@ -29,7 +29,7 @@ use Croogo\Core\Croogo;
  * @copyright Jamie Nay
  * @license     http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link http://github.com/jamienay/copyable_behavior
- * @link http://www.croogo.org
+ * @link http://www.vamshop.com
  */
 class CopyableBehavior extends Behavior
 {

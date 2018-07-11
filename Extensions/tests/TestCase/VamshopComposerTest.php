@@ -13,7 +13,7 @@ use Extensions\Lib\CroogoComposer;
  * @version  1.4
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     http://www.croogo.org
+ * @link     http://www.vamshop.com
  */
 class CroogoComposerTest extends CroogoTestCase
 {
