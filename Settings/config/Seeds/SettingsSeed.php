@@ -2,6 +2,16 @@
 
 use Phinx\Seed\AbstractSeed;
 
+use Sinergi\BrowserDetector\Language;
+
+// Detect browser language
+$language = new Language();
+$locale = "en_US";
+
+if ($language->getLanguage() != 'en') {
+$locale = $language->getLanguage();
+}
+    
 class SettingsSeed extends AbstractSeed
 {
 
@@ -207,7 +217,7 @@ class SettingsSeed extends AbstractSeed
         [
             'id' => '26',
             'key' => 'Site.locale',
-            'value' => 'en_US',
+            'value' => $locale,
             'title' => '',
             'description' => '',
             'input_type' => 'text',
