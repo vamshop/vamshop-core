@@ -22,6 +22,8 @@ use Vamshop\Settings\Configure\Engine\DatabaseConfig;
 use function Vamshop\Core\timerStart;
 use function Vamshop\Core\timerStop;
 
+use Sinergi\BrowserDetector\Language;
+
 // Make sure that the Vamshop event manager is the global one
 EventManager::instance();
 
@@ -80,7 +82,16 @@ EventManager::instance();
     /**
      * Locale
      */
+     
+     
+    if (Configure::check('Site.locale')) {     
     $siteLocale = Configure::read('Site.locale');
+    } else {
+    // Detect browser language
+    $language = new Language();
+    $siteLocale = $language->getLanguage();
+    }    
+
     Configure::write('App.defaultLocale', $siteLocale);
     I18n::setLocale($siteLocale);
 
@@ -210,3 +221,5 @@ DispatcherFactory::add('Vamshop/Core.HomePage');
 \Vamshop\Core\time(function () {
     Vamshop::dispatchEvent('Vamshop.bootstrapComplete');
 }, 'event-Vamshop.bootstrapComplete', 'Event: Vamshop.bootstrapComplete');
+
+//echo 'test'.var_dump($siteLocale).'::'.Configure::read('Site.locale');

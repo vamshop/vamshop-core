@@ -4,14 +4,6 @@ use Phinx\Seed\AbstractSeed;
 
 use Sinergi\BrowserDetector\Language;
 
-// Detect browser language
-$language = new Language();
-$locale = "en_US";
-
-if ($language->getLanguage() != 'en') {
-$locale = $language->getLanguage();
-}
-    
 class SettingsSeed extends AbstractSeed
 {
 
@@ -215,17 +207,6 @@ class SettingsSeed extends AbstractSeed
             'params' => ''
         ],
         [
-            'id' => '26',
-            'key' => 'Site.locale',
-            'value' => $locale,
-            'title' => '',
-            'description' => '',
-            'input_type' => 'text',
-            'editable' => '1',
-            'weight' => '20',
-            'params' => ''
-        ],
-        [
             'id' => '27',
             'key' => 'Reading.date_time_format',
             'value' => 'EEE, MMM dd yyyy HH:mm:ss',
@@ -411,7 +392,26 @@ options={"Vamshop/Nodes.Nodes": "Nodes", "Vamshop/Blocks.Blocks": "Blocks", "Vam
     public function run()
     {
         $Table = $this->table('settings');
+
+        // Detect browser language
+        $language = new Language();
+        $siteLocale = $language->getLanguage();
+        
+        // Default site locale setting value
+        $defaultLocale = array(
+            'id' => '26',
+            'key' => 'Site.locale',
+            'value' => $siteLocale,
+            'title' => '',
+            'description' => '',
+            'input_type' => 'text',
+            'editable' => '1',
+            'weight' => '20',
+            'params' => ''
+        );
+        
         $Table->insert($this->records)->save();
+        $Table->insert($defaultLocale)->save();
     }
 
 }
