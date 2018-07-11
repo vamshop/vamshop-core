@@ -1,14 +1,14 @@
 <?php
 
-namespace Croogo\Meta\Controller;
+namespace Vamshop\Meta\Controller;
 
-use Croogo\Core\Controller\Admin\AppController as BaseController;
+use Vamshop\Core\Controller\Admin\AppController as BaseController;
 
 /**
  * Meta App Controller
  *
  * @category Meta.Controller
- * @package  Croogo.Meta
+ * @package  Vamshop.Meta
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */

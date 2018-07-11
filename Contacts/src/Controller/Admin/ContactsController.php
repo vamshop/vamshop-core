@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Contacts\Controller\Admin;
+namespace Vamshop\Contacts\Controller\Admin;
 
 use Cake\Event\Event;
 
@@ -8,7 +8,7 @@ use Cake\Event\Event;
  * Contacts Controller
  *
  * @category Controller
- * @package  Croogo.Contacts.Controller
+ * @package  Vamshop.Contacts.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -16,7 +16,7 @@ use Cake\Event\Event;
  */
 class ContactsController extends AppController
 {
-    public $modelClass = 'Croogo/Contacts.Contacts';
+    public $modelClass = 'Vamshop/Contacts.Contacts';
 
     public function initialize()
     {

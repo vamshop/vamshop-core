@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Dashboards\Configure;
+namespace Vamshop\Dashboards\Configure;
 
 use Cake\Core\Configure\ConfigEngineInterface;
 use Cake\Core\Configure\Engine\PhpConfig;
@@ -10,7 +10,7 @@ use Cake\Utility\Inflector;
 /**
  * DashboardsConfigReader
  *
- * @package  Croogo.Dashboards.Lib.Configure
+ * @package  Vamshop.Dashboards.Lib.Configure
  * @since    2.2
  * @author   Rachman Chavik <rchavik@gmail.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

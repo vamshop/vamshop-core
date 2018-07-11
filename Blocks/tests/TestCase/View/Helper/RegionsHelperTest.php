@@ -1,10 +1,10 @@
 <?php
-namespace Croogo\Blocks\Test\TestCase\View\Helper;
+namespace Vamshop\Blocks\Test\TestCase\View\Helper;
 
 use Cake\ORM\TableRegistry;
 use Cake\View\View;
-use Croogo\Blocks\View\Helper\RegionsHelper;
-use Croogo\Core\TestSuite\TestCase;
+use Vamshop\Blocks\View\Helper\RegionsHelper;
+use Vamshop\Core\TestSuite\TestCase;
 
 class RegionsHelperTest extends TestCase
 {
@@ -19,7 +19,7 @@ class RegionsHelperTest extends TestCase
     public $view;
 
     /**
-     * @var \Croogo\Blocks\View\Helper\RegionsHelper
+     * @var \Vamshop\Blocks\View\Helper\RegionsHelper
      */
     public $helper;
 
@@ -65,12 +65,12 @@ class RegionsHelperTest extends TestCase
 
     public function testBlock()
     {
-        $search = TableRegistry::get('Croogo/Blocks.Blocks')->findByAlias('search')->first();
+        $search = TableRegistry::get('Vamshop/Blocks.Blocks')->findByAlias('search')->first();
 
         $this->view
             ->expects($this->once())->method('element')
             ->with(
-                'Croogo/Blocks.block',
+                'Vamshop/Blocks.block',
                 ['block' => $search]
             );
 
@@ -79,7 +79,7 @@ class RegionsHelperTest extends TestCase
 
     public function testBlockOptions()
     {
-        $search = TableRegistry::get('Croogo/Blocks.Blocks')->findByAlias('search')->first();
+        $search = TableRegistry::get('Vamshop/Blocks.Blocks')->findByAlias('search')->first();
 
         $this->view
             ->expects($this->once())
@@ -90,7 +90,7 @@ class RegionsHelperTest extends TestCase
             ->expects($this->once())
             ->method('element')
             ->with(
-                'Croogo/Blocks.block',
+                'Vamshop/Blocks.block',
                 ['block' => $search],
                 ['class' => 'some-class', 'ignoreMissing' => true]
             );
@@ -106,7 +106,7 @@ class RegionsHelperTest extends TestCase
      */
     public function testBlockWithInvalidElement()
     {
-        $search = TableRegistry::get('Croogo/Blocks.Blocks')->findByAlias('search')->first();
+        $search = TableRegistry::get('Vamshop/Blocks.Blocks')->findByAlias('search')->first();
 
         $blocksForLayout = [
             'right' => [
@@ -121,13 +121,13 @@ class RegionsHelperTest extends TestCase
         $this->view
             ->expects($this->once())
             ->method('element')
-            ->with('Croogo/Blocks.block', ['block' => $search]);
+            ->with('Vamshop/Blocks.block', ['block' => $search]);
         $result = $this->helper->block($search);
     }
 
     public function testBlocks()
     {
-        $search = TableRegistry::get('Croogo/Blocks.Blocks')->findByAlias('search')->first();
+        $search = TableRegistry::get('Vamshop/Blocks.Blocks')->findByAlias('search')->first();
 
         $blocksForLayout = [
             'right' => [
@@ -139,7 +139,7 @@ class RegionsHelperTest extends TestCase
             ->expects($this->once())
             ->method('element')
             ->with(
-                'Croogo/Blocks.block',
+                'Vamshop/Blocks.block',
                 ['block' => $search]
             );
         $this->helper->blocks('right');
@@ -147,7 +147,7 @@ class RegionsHelperTest extends TestCase
 
     public function testBlocksOptions()
     {
-        $search = TableRegistry::get('Croogo/Blocks.Blocks')->findByAlias('search')->first();
+        $search = TableRegistry::get('Vamshop/Blocks.Blocks')->findByAlias('search')->first();
         $search->params = [
             'enclosure' => true
         ];
@@ -165,7 +165,7 @@ class RegionsHelperTest extends TestCase
         $this->view->expects($this->once())
             ->method('element')
             ->with(
-                'Croogo/Blocks.block',
+                'Vamshop/Blocks.block',
                 ['block' => $search],
                 ['class' => 'some-class', 'ignoreMissing' => true]
             );
@@ -180,7 +180,7 @@ class RegionsHelperTest extends TestCase
      */
     public function testBlocksWithInvalidElement()
     {
-        $search = TableRegistry::get('Croogo/Blocks.Blocks')->findByAlias('search')->first();
+        $search = TableRegistry::get('Vamshop/Blocks.Blocks')->findByAlias('search')->first();
 
         $blocksForLayout = [
             'right' => [
@@ -195,7 +195,7 @@ class RegionsHelperTest extends TestCase
         $this->view
             ->expects($this->once())
             ->method('element')
-            ->with('Croogo/Blocks.block', ['block' => $search]);
+            ->with('Vamshop/Blocks.block', ['block' => $search]);
         $result = $this->helper->blocks('right');
     }
 }

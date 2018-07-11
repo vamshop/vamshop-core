@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Model\Filter;
+namespace Vamshop\Core\Model\Filter;
 
 use DateTime;
 use DateInterval;

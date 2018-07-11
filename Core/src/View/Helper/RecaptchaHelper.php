@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\View\Helper;
+namespace Vamshop\Core\View\Helper;
 
 use Cake\Core\Configure;
 use Cake\View\Helper;
@@ -8,7 +8,7 @@ use Cake\View\Helper;
 /**
  * Recaptcha Helper
  *
- * @package Croogo.Core.View.Helper
+ * @package Vamshop.Core.View.Helper
  */
 class RecaptchaHelper extends Helper
 {

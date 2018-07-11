@@ -1,20 +1,20 @@
 <?php
 
-namespace Croogo\Acl\Controller\Component;
+namespace Vamshop\Acl\Controller\Component;
 
 use Cake\Controller\Component;
 use Cake\Event\Event;
 use Cake\Http\ServerRequest;
 use Cake\ORM\TableRegistry;
 use Cake\Routing\Router;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 /**
  * AclAccess Component provides various methods to manipulate Aros and Acos,
  * and additionaly setup various settings for backend/admin use.
  *
  * @category Component
- * @package  Croogo.Acl.Controller.Component
+ * @package  Vamshop.Acl.Controller.Component
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -56,9 +56,9 @@ class AccessComponent extends Component
     protected function _setupRole()
     {
         $title = __d('croogo', 'Parent Role');
-        $element = 'Croogo/Acl.admin/parent_role';
-        Croogo::hookAdminTab('Admin/Roles/add', $title, $element);
-        Croogo::hookAdminTab('Admin/Roles/edit', $title, $element);
+        $element = 'Vamshop/Acl.admin/parent_role';
+        Vamshop::hookAdminTab('Admin/Roles/add', $title, $element);
+        Vamshop::hookAdminTab('Admin/Roles/edit', $title, $element);
 
         $id = null;
         if (!empty($this->_controller->request->params['pass'][0])) {
@@ -86,7 +86,7 @@ class AccessComponent extends Component
         if (strpos($action, $actionPath) === false) {
             $action = str_replace('//', '/', $actionPath . '/' . $action);
         }
-        $Aco = TableRegistry::get('Croogo/Acl.Acos');
+        $Aco = TableRegistry::get('Vamshop/Acl.Acos');
         $Aco->addAco($action, $allowRoles);
     }
 
@@ -108,7 +108,7 @@ class AccessComponent extends Component
         if (strpos($action, $actionPath) === false) {
             $action = str_replace('//', '/', $actionPath . '/' . $action);
         }
-        $Aco = TableRegistry::get('Croogo/Acl.Acos');
+        $Aco = TableRegistry::get('Vamshop/Acl.Acos');
         $Aco->removeAco($action);
     }
 

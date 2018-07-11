@@ -63,8 +63,8 @@ Admin.protectForms = function () {
         })
         .on('click', whitelist, function (e) {
           $form.data('dirty', false);
-          if (typeof Croogo.Wysiwyg.resetDirty == 'function') {
-            Croogo.Wysiwyg.resetDirty();
+          if (typeof Vamshop.Wysiwyg.resetDirty == 'function') {
+            Vamshop.Wysiwyg.resetDirty();
           }
         });
     }
@@ -78,7 +78,7 @@ Admin.protectForms = function () {
         }
       }
       if (!dirty) {
-        if (typeof Croogo.Wysiwyg.isDirty == 'function' && !Croogo.Wysiwyg.isDirty()) {
+        if (typeof Vamshop.Wysiwyg.isDirty == 'function' && !Vamshop.Wysiwyg.isDirty()) {
           return;
         } else {
           return;
@@ -240,16 +240,16 @@ Admin.toggleRowSelection = function (selector, checkboxSelector) {
  */
 Admin.iconClass = function (icon, includeDefault) {
   var result = '';
-  if (typeof Croogo.themeSettings.icons[icon] === 'string') {
-    icon = Croogo.themeSettings.icons[icon];
+  if (typeof Vamshop.themeSettings.icons[icon] === 'string') {
+    icon = Vamshop.themeSettings.icons[icon];
   }
   if (typeof includeDefault === 'undefined') {
     includeDefault = true;
   }
   if (includeDefault) {
-    result = Croogo.themeSettings.iconDefaults['iconSet'] + ' ';
+    result = Vamshop.themeSettings.iconDefaults['iconSet'] + ' ';
   }
-  result += Croogo.themeSettings.iconDefaults['iconSet'] + '-' + icon;
+  result += Vamshop.themeSettings.iconDefaults['iconSet'] + '-' + icon;
   return result.trim();
 }
 

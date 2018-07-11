@@ -1,28 +1,28 @@
 <?php
 
-namespace Croogo\Core\Shell;
+namespace Vamshop\Core\Shell;
 
 use Cake\Core\Configure;
 use Cake\ORM\TableRegistry;
 use Cake\Utility\Security;
 
-use Croogo\Acl\AclGenerator;
+use Vamshop\Acl\AclGenerator;
 
 /**
- * Croogo Shell
+ * Vamshop Shell
  *
  * @category Shell
- * @package  Croogo.Croogo.Console.Command
+ * @package  Vamshop.Vamshop.Console.Command
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class CroogoShell extends AppShell
+class VamshopShell extends AppShell
 {
 
     public $tasks = [
-        'Croogo/Core.Upgrade',
+        'Vamshop/Core.Upgrade',
     ];
 
 /**
@@ -31,9 +31,9 @@ class CroogoShell extends AppShell
     public function getOptionParser()
     {
         $parser = parent::getOptionParser();
-        $parser->description(__d('croogo', 'Croogo Utilities'))
+        $parser->description(__d('croogo', 'Vamshop Utilities'))
             ->addSubCommand('upgrade', [
-                'help' => __d('croogo', 'Upgrade Croogo'),
+                'help' => __d('croogo', 'Upgrade Vamshop'),
                 'parser' => $this->Upgrade->getOptionParser(),
             ])
             ->addSubcommand('password', [

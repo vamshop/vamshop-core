@@ -1,17 +1,17 @@
 <?php
 
-namespace Croogo\Wysiwyg\View\Helper;
+namespace Vamshop\Wysiwyg\View\Helper;
 
 use Cake\Core\Configure;
 use Cake\View\Helper;
 use Cake\Core\App;
-use Croogo\Core\Router;
+use Vamshop\Core\Router;
 
 /**
  * Wysiwyg Helper
  *
  * @category Wysiwyg.Helper
- * @package  Croogo.Wysiwyg.View.Helper
+ * @package  Vamshop.Wysiwyg.View.Helper
  * @version  1.5
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -53,7 +53,7 @@ class WysiwygHelper extends Helper
         $currentAction = Router::getActionPath($this->request, true);
         $included = in_array($currentAction, $actions);
         if ($included) {
-            $this->Html->script('Croogo/Wysiwyg.wysiwyg', ['block' => 'script']);
+            $this->Html->script('Vamshop/Wysiwyg.wysiwyg', ['block' => 'script']);
         }
     }
 

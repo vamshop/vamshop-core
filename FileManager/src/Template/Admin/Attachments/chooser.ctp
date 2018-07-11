@@ -8,7 +8,7 @@
         ?>
         </div>
         <button type="button" class="btn btn-primary add-image">Add images</button>
-        <?= $this->element('Croogo/Nodes.admin/nodes_search') ?>
+        <?= $this->element('Vamshop/Nodes.admin/nodes_search') ?>
     </div>
 </div>
 
@@ -44,11 +44,11 @@
     endforeach;
     ?>
 </div>
-<?= $this->element('Croogo/Core.admin/pagination') ?>
+<?= $this->element('Vamshop/Core.admin/pagination') ?>
 
 <?php
 echo $this->Html->script([
-    'Croogo/FileManager.lib/dropzone',
-    'Croogo/FileManager.attachments/chooser'
+    'Vamshop/FileManager.lib/dropzone',
+    'Vamshop/FileManager.attachments/chooser'
 ]);
-echo $this->element('Croogo/FileManager.admin/dropzone_setup', ['type' => 'card']);
+echo $this->element('Vamshop/FileManager.admin/dropzone_setup', ['type' => 'card']);

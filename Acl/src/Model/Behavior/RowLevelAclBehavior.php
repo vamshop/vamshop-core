@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Acl\Model\Behavior;
+namespace Vamshop\Acl\Model\Behavior;
 
 use Cake\ORM\Behavior;
 use Cake\ORM\TableRegistry;
@@ -9,7 +9,7 @@ use Cake\Event\Event;
 /**
  * RowLevelAcl Behavior
  *
- * @package Croogo.Acl.Model.Behavior
+ * @package Vamshop.Acl.Model.Behavior
  * @since 1.5
  */
 class RowLevelAclBehavior extends Behavior

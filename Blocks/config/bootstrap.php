@@ -2,23 +2,23 @@
 
 use Cake\Core\Configure;
 use Cake\Cache\Cache;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 Cache::config('croogo_blocks', array_merge(
     Cache::config('default'),
     ['groups' => ['blocks']]
 ));
 
-Croogo::hookComponent('*', [
+Vamshop::hookComponent('*', [
     'BlocksHook' => [
-        'className' => 'Croogo/Blocks.Blocks',
+        'className' => 'Vamshop/Blocks.Blocks',
         'priority' => 9,
     ]
 ]);
 
-Croogo::hookHelper('*', 'Croogo/Blocks.Regions');
+Vamshop::hookHelper('*', 'Vamshop/Blocks.Regions');
 
-Croogo::translateModel('Croogo/Blocks.Blocks', [
+Vamshop::translateModel('Vamshop/Blocks.Blocks', [
     'fields' => [
         'title',
         'body',

@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Install;
+namespace Vamshop\Install;
 
 use Cake\Core\Configure;
 use Cake\Database\Exception\MissingConnectionException;
 use Cake\Datasource\ConnectionManager;
 use Cake\Log\LogTrait;
 use Cake\ORM\TableRegistry;
-use Croogo\Acl\AclGenerator;
-use Croogo\Core\Plugin;
-use Croogo\Core\Database\SequenceFixer;
+use Vamshop\Acl\AclGenerator;
+use Vamshop\Core\Plugin;
+use Vamshop\Core\Database\SequenceFixer;
 
 class InstallManager
 {
@@ -47,7 +47,7 @@ class InstallManager
 
     /**
      *
-     * @var \Croogo\Core\Plugin
+     * @var \Vamshop\Core\Plugin
      */
     protected $_croogoPlugin;
 
@@ -117,14 +117,14 @@ class InstallManager
      */
     public function installCompleted()
     {
-        Plugin::load('Croogo/Settings', ['routes' => true]);
-        $Setting = TableRegistry::get('Croogo/Settings.Settings');
+        Plugin::load('Vamshop/Settings', ['routes' => true]);
+        $Setting = TableRegistry::get('Vamshop/Settings.Settings');
         $Setting->removeBehavior('Cached');
         if (!function_exists('mcrypt_decrypt')) {
             $Setting->write('Access Control.autoLoginDuration', '');
         }
 
-        return $Setting->write('Croogo.installed', true);
+        return $Setting->write('Vamshop.installed', true);
     }
 
     /**
@@ -135,18 +135,18 @@ class InstallManager
     public function setupDatabase()
     {
         $plugins = [
-            'Croogo/Users',
-            'Croogo/Acl',
-            'Croogo/Blocks',
-            'Croogo/Taxonomy',
-            'Croogo/FileManager',
-            'Croogo/Meta',
-            'Croogo/Nodes',
-            'Croogo/Comments',
-            'Croogo/Contacts',
-            'Croogo/Menus',
-            'Croogo/Dashboards',
-            'Croogo/Settings',
+            'Vamshop/Users',
+            'Vamshop/Acl',
+            'Vamshop/Blocks',
+            'Vamshop/Taxonomy',
+            'Vamshop/FileManager',
+            'Vamshop/Meta',
+            'Vamshop/Nodes',
+            'Vamshop/Comments',
+            'Vamshop/Contacts',
+            'Vamshop/Menus',
+            'Vamshop/Dashboards',
+            'Vamshop/Settings',
         ];
 
         $migrationsSucceed = true;
@@ -173,16 +173,16 @@ class InstallManager
         return $migrationsSucceed;
     }
 
-    protected function _getCroogoPlugin()
+    protected function _getVamshopPlugin()
     {
         if (!($this->_croogoPlugin instanceof Plugin)) {
-            $this->_setCroogoPlugin(new Plugin());
+            $this->_setVamshopPlugin(new Plugin());
         }
 
         return $this->_croogoPlugin;
     }
 
-    protected function _setCroogoPlugin($croogoPlugin)
+    protected function _setVamshopPlugin($croogoPlugin)
     {
         unset($this->_croogoPlugin);
         $this->_croogoPlugin = $croogoPlugin;
@@ -193,7 +193,7 @@ class InstallManager
         if (!Plugin::loaded($plugin)) {
             Plugin::load($plugin);
         }
-        $croogoPlugin = $this->_getCroogoPlugin();
+        $croogoPlugin = $this->_getVamshopPlugin();
         $result = $croogoPlugin->migrate($plugin);
         if (!$result) {
             $this->log($croogoPlugin->migrationErrors);
@@ -207,7 +207,7 @@ class InstallManager
         if (!Plugin::loaded($plugin)) {
             Plugin::load($plugin);
         }
-        $croogoPlugin = $this->_getCroogoPlugin();
+        $croogoPlugin = $this->_getVamshopPlugin();
 
         return $croogoPlugin->seed($plugin);
     }
@@ -220,9 +220,9 @@ class InstallManager
      */
     public function createAdminUser($user)
     {
-        $Users = TableRegistry::get('Croogo/Users.Users');
-        $Roles = TableRegistry::get('Croogo/Users.Roles');
-        $Roles->addBehavior('Croogo/Core.Aliasable');
+        $Users = TableRegistry::get('Vamshop/Users.Users');
+        $Roles = TableRegistry::get('Vamshop/Users.Roles');
+        $Roles->addBehavior('Vamshop/Core.Aliasable');
 
         if (is_array($user)) {
             $user = $Users->newEntity($user);
@@ -262,46 +262,46 @@ class InstallManager
             };
         }
 
-        $Roles = TableRegistry::get('Croogo/Users.Roles');
-        $Roles->addBehavior('Croogo/Core.Aliasable');
+        $Roles = TableRegistry::get('Vamshop/Users.Roles');
+        $Roles->addBehavior('Vamshop/Core.Aliasable');
 
-        $Permission = TableRegistry::get('Croogo/Acl.Permissions');
+        $Permission = TableRegistry::get('Vamshop/Acl.Permissions');
         $admin = 'Role-admin';
         $public = 'Role-public';
         $registered = 'Role-registered';
         $publisher = 'Role-publisher';
 
         $setup = [
-            //            'controllers/Croogo\Comments/Comments/index' => [$public],
-            //            'controllers/Croogo\Comments/Comments/add' => [$public],
-            //            'controllers/Croogo\Comments/Comments/delete' => [$registered],
-            'controllers/Croogo\Contacts/Contacts/view' => [$public],
-            'controllers/Croogo\Nodes/Nodes/index' => [$public],
-            'controllers/Croogo\Nodes/Nodes/term' => [$public],
-            'controllers/Croogo\Nodes/Nodes/promoted' => [$public],
-            'controllers/Croogo\Nodes/Nodes/search' => [$public],
-            'controllers/Croogo\Nodes/Nodes/view' => [$public],
-            'controllers/Croogo\Users/Users/index' => [$registered],
-            'controllers/Croogo\Users/Users/add' => [$public],
-            'controllers/Croogo\Users/Users/activate' => [$public],
-            'controllers/Croogo\Users/Users/edit' => [$registered],
-            'controllers/Croogo\Users/Users/forgot' => [$public],
-            'controllers/Croogo\Users/Users/reset' => [$public],
-            'controllers/Croogo\Users/Users/login' => [$public],
-            'controllers/Croogo\Users/Users/logout' => [$registered],
-            'controllers/Croogo\Users/Admin/Users/logout' => [$registered],
-            'controllers/Croogo\Users/Users/view' => [$registered],
+            //            'controllers/Vamshop\Comments/Comments/index' => [$public],
+            //            'controllers/Vamshop\Comments/Comments/add' => [$public],
+            //            'controllers/Vamshop\Comments/Comments/delete' => [$registered],
+            'controllers/Vamshop\Contacts/Contacts/view' => [$public],
+            'controllers/Vamshop\Nodes/Nodes/index' => [$public],
+            'controllers/Vamshop\Nodes/Nodes/term' => [$public],
+            'controllers/Vamshop\Nodes/Nodes/promoted' => [$public],
+            'controllers/Vamshop\Nodes/Nodes/search' => [$public],
+            'controllers/Vamshop\Nodes/Nodes/view' => [$public],
+            'controllers/Vamshop\Users/Users/index' => [$registered],
+            'controllers/Vamshop\Users/Users/add' => [$public],
+            'controllers/Vamshop\Users/Users/activate' => [$public],
+            'controllers/Vamshop\Users/Users/edit' => [$registered],
+            'controllers/Vamshop\Users/Users/forgot' => [$public],
+            'controllers/Vamshop\Users/Users/reset' => [$public],
+            'controllers/Vamshop\Users/Users/login' => [$public],
+            'controllers/Vamshop\Users/Users/logout' => [$registered],
+            'controllers/Vamshop\Users/Admin/Users/logout' => [$registered],
+            'controllers/Vamshop\Users/Users/view' => [$registered],
 
-            'controllers/Croogo\Dashboards/Admin/Dashboards' => [$admin],
-            'controllers/Croogo\Nodes/Admin/Nodes' => [$publisher],
-            'controllers/Croogo\Menus/Admin/Menus' => [$publisher],
-            'controllers/Croogo\Menus/Admin/Links' => [$publisher],
-            'controllers/Croogo\Blocks/Admin/Blocks' => [$publisher],
-            'controllers/Croogo\FileManager/Admin/Attachments' => [$publisher],
-            'controllers/Croogo\FileManager/Admin/FileManager' => [$publisher],
-            'controllers/Croogo\Contacts/Admin/Contacts' => [$publisher],
-            'controllers/Croogo\Contacts/Admin/Messages' => [$publisher],
-            'controllers/Croogo\Users/Admin/Users/view' => [$admin],
+            'controllers/Vamshop\Dashboards/Admin/Dashboards' => [$admin],
+            'controllers/Vamshop\Nodes/Admin/Nodes' => [$publisher],
+            'controllers/Vamshop\Menus/Admin/Menus' => [$publisher],
+            'controllers/Vamshop\Menus/Admin/Links' => [$publisher],
+            'controllers/Vamshop\Blocks/Admin/Blocks' => [$publisher],
+            'controllers/Vamshop\FileManager/Admin/Attachments' => [$publisher],
+            'controllers/Vamshop\FileManager/Admin/FileManager' => [$publisher],
+            'controllers/Vamshop\Contacts/Admin/Contacts' => [$publisher],
+            'controllers/Vamshop\Contacts/Admin/Messages' => [$publisher],
+            'controllers/Vamshop\Users/Admin/Users/view' => [$admin],
         ];
 
         foreach ($setup as $aco => $roles) {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Croogo\Blocks\Test\TestCase\Controller\Component;
+namespace Vamshop\Blocks\Test\TestCase\Controller\Component;
 
-use Croogo\Core\TestSuite\IntegrationTestCase;
+use Vamshop\Core\TestSuite\IntegrationTestCase;
 
 class BlocksComponentTest extends IntegrationTestCase
 {

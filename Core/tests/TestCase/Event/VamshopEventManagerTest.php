@@ -1,5 +1,5 @@
 <?php
-namespace Croogo\Core\Test\TestCase\Event;
+namespace Vamshop\Core\Test\TestCase\Event;
 
 use Cake\Cache\Cache;
 use Cake\Controller\Component\AuthComponent;
@@ -7,13 +7,13 @@ use Cake\Core\Configure;
 use Cake\Network\Request;
 use Cake\Network\Response;
 use Cake\View\View;
-use Croogo\Core\Croogo;
-use Croogo\Core\Event\EventManager;
-use Croogo\Core\Plugin;
-use Croogo\Core\TestSuite\CroogoTestCase;
-use Croogo\Core\TestSuite\TestCase;
-use Croogo\Nodes\Controller\Admin\NodesController;
-use Croogo\Users\Controller\Admin\UsersController;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\Event\EventManager;
+use Vamshop\Core\Plugin;
+use Vamshop\Core\TestSuite\VamshopTestCase;
+use Vamshop\Core\TestSuite\TestCase;
+use Vamshop\Nodes\Controller\Admin\NodesController;
+use Vamshop\Users\Controller\Admin\UsersController;
 
 class TestUsersEventController extends UsersController
 {
@@ -66,13 +66,13 @@ class EventManagerTest extends TestCase
         $this->assertNotEmpty($loaded);
 
         $eventName = 'Controller.Users.activationFailure';
-        $event = Croogo::dispatchEvent($eventName, $this->Users);
+        $event = Vamshop::dispatchEvent($eventName, $this->Users);
         $this->assertTrue($event->result, sprintf('Event: %s', $eventName));
 
         Plugin::unload('Shops');
 
         $eventName = 'Controller.Users.activationFailure';
-        $event = Croogo::dispatchEvent($eventName, $this->Users);
+        $event = Vamshop::dispatchEvent($eventName, $this->Users);
         $this->assertNull($event->result, sprintf('Event: %s', $eventName));
     }
 
@@ -135,9 +135,9 @@ class EventManagerTest extends TestCase
         ];
         $this->Users->Auth = $Auth;
         foreach ($eventNames as $name) {
-            $event = Croogo::dispatchEvent($name, $this->Users);
+            $event = Vamshop::dispatchEvent($name, $this->Users);
             $this->assertTrue($event->result, sprintf('Event: %s', $name));
-            $this->assertInstanceOf('\\Croogo\\Core\\Test\\TestCase\\Event\\TestUsersEventController', $event->subject());
+            $this->assertInstanceOf('\\Vamshop\\Core\\Test\\TestCase\\Event\\TestUsersEventController', $event->subject());
         }
     }
 
@@ -156,9 +156,9 @@ class EventManagerTest extends TestCase
             'Controller.Nodes.afterUnpublish',
         ];
         foreach ($eventNames as $name) {
-            $event = Croogo::dispatchEvent($name, $this->Nodes);
+            $event = Vamshop::dispatchEvent($name, $this->Nodes);
             $this->assertTrue($event->result, sprintf('Event: %s', $name));
-            $this->assertInstanceOf('\\Croogo\\Core\\Test\\TestCase\\Event\\TestNodesEventController', $event->subject());
+            $this->assertInstanceOf('\\Vamshop\\Core\\Test\\TestCase\\Event\\TestNodesEventController', $event->subject());
         }
     }
 
@@ -173,7 +173,7 @@ class EventManagerTest extends TestCase
         ];
                 $View = new View();
         foreach ($eventNames as $name) {
-            $event = Croogo::dispatchEvent($name, $View);
+            $event = Vamshop::dispatchEvent($name, $View);
             $this->assertTrue($event->result, sprintf('Event: %s', $name));
             $this->assertInstanceOf('\\Cake\\View\\View', $event->subject());
         }

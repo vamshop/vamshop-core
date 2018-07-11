@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Nodes\Controller\Component;
+namespace Vamshop\Nodes\Controller\Component;
 
 use Cake\Controller\Component;
 use Cake\Core\App;
@@ -13,7 +13,7 @@ use Cake\Utility\Hash;
  * Nodes Component
  *
  * @category Component
- * @package  Croogo.Nodes.Controller.Component
+ * @package  Vamshop.Nodes.Controller.Component
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -41,7 +41,7 @@ class NodesComponent extends Component
         if (isset($this->controller->Nodes)) {
             $this->Nodes = $this->controller->Nodes;
         } else {
-            $this->Nodes = TableRegistry::get('Croogo/Nodes.Nodes');
+            $this->Nodes = TableRegistry::get('Vamshop/Nodes.Nodes');
         }
     }
 
@@ -68,7 +68,7 @@ class NodesComponent extends Component
  */
     public function nodes()
     {
-        $roleId = $this->controller->Croogo->roleId();
+        $roleId = $this->controller->Vamshop->roleId();
 
         $nodes = $this->controller->BlocksHook->blocksData['nodes'];
         $_nodeOptions = [

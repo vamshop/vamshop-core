@@ -1,17 +1,17 @@
 <?php
 
-namespace Croogo\Acl\Controller\Admin;
+namespace Vamshop\Acl\Controller\Admin;
 
 use Cake\Cache\Cache;
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 /**
  * AclPermissions Controller
  *
  * @category Controller
- * @package  Croogo.Acl
+ * @package  Vamshop.Acl
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -24,10 +24,10 @@ class PermissionsController extends AppController
     {
         parent::initialize();
 
-        $this->loadModel('Croogo/Acl.Acos');
-        $this->loadModel('Croogo/Acl.Aros');
-        $this->loadModel('Croogo/Users.Roles');
-        $this->loadModel('Croogo/Acl.Permissions');
+        $this->loadModel('Vamshop/Acl.Acos');
+        $this->loadModel('Vamshop/Acl.Aros');
+        $this->loadModel('Vamshop/Users.Roles');
+        $this->loadModel('Vamshop/Acl.Permissions');
     }
 
     /**
@@ -39,7 +39,7 @@ class PermissionsController extends AppController
     {
         parent::beforeFilter($event);
         if ($this->request->action == 'toggle') {
-            $this->Croogo->protectToggleAction();
+            $this->Vamshop->protectToggleAction();
         }
     }
 
@@ -93,7 +93,7 @@ class PermissionsController extends AppController
         $this->set(compact('aros', 'permissions'));
 
         if ($this->request->is('ajax') && isset($query)) {
-            $this->render('Croogo/Acl.acl_permissions_table');
+            $this->render('Vamshop/Acl.acl_permissions_table');
         } else {
             $this->_setPermissionRoots();
         }
@@ -103,10 +103,10 @@ class PermissionsController extends AppController
     {
         $roots = $this->Acos->getPermissionRoots();
         foreach ($roots as $id => $root) {
-            Croogo::hookAdminTab(
+            Vamshop::hookAdminTab(
                 'Admin/Permissions/index',
                 __d('croogo', $root->title),
-                'Croogo/Core.blank',
+                'Vamshop/Core.blank',
                 [
                     'linkOptions' => [
                         'data-alias' => $root->alias,

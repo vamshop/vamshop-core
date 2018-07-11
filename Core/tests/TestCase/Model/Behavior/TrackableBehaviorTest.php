@@ -1,11 +1,11 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase\Model\Behavior;
+namespace Vamshop\Core\Test\TestCase\Model\Behavior;
 
 use Cake\Core\Configure;
 use Cake\Network\Session;
-use Croogo\Core\TestSuite\CroogoTestCase;
-use Croogo\Users\Model\User;
+use Vamshop\Core\TestSuite\VamshopTestCase;
+use Vamshop\Users\Model\User;
 
 //class TrackableUserModel extends User {
 //
@@ -14,17 +14,17 @@ use Croogo\Users\Model\User;
 //	public $order = 'TrackableUserModel.name';
 //
 //	public $actsAs = array(
-//		'Croogo.Trackable' => array(
+//		'Vamshop.Trackable' => array(
 //			'userModel' => 'TrackableUserModel',
 //		),
 //	);
 //}
 
-class TrackableBehaviorTest extends CroogoTestCase
+class TrackableBehaviorTest extends VamshopTestCase
 {
 
     public $fixtures = [
-//		'plugin.Croogo/Core.trackable',
+//		'plugin.Vamshop/Core.trackable',
 //		'plugin.croogo/users.user',
 //		'plugin.croogo/users.role',
 //		'plugin.croogo/settings.setting',
@@ -42,7 +42,7 @@ class TrackableBehaviorTest extends CroogoTestCase
 //			'alias' => 'TestModel',
 //			'table' => 'trackables',
 //		));
-//		$this->model->Behaviors->attach('Croogo.Trackable');
+//		$this->model->Behaviors->attach('Vamshop.Trackable');
     }
 
     public function tearDown()

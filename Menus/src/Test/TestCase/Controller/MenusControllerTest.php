@@ -1,10 +1,10 @@
 <?php
-namespace Croogo\Menus\Test\TestCase\Controller;
+namespace Vamshop\Menus\Test\TestCase\Controller;
 
-use Croogo\TestSuite\CroogoControllerTestCase;
+use Vamshop\TestSuite\VamshopControllerTestCase;
 use Menus\Controller\MenusController;
 
-class MenusControllerTest extends CroogoControllerTestCase
+class MenusControllerTest extends VamshopControllerTestCase
 {
 
     public $fixtures = [

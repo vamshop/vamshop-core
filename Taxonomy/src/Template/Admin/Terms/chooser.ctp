@@ -17,7 +17,7 @@
         $titleCol = $term->title;
         if (isset($defaultType)) {
             $titleCol = $this->Html->link($term->title, [
-                'plugin' => 'Croogo/Nodes',
+                'plugin' => 'Vamshop/Nodes',
                 'controller' => 'Nodes',
                 'action' => 'term',
                 'type' => $defaultType['alias'],
@@ -28,7 +28,7 @@
                 'data-chooser-type' => 'Node',
                 'data-chooser-id' => $term->id,
                 'data-chooser-title' => $term->title,
-                'rel' => sprintf('plugin:%s/controller:%s/action:%s/type:%s/slug:%s', 'Croogo/Nodes', 'Nodes', 'term',
+                'rel' => sprintf('plugin:%s/controller:%s/action:%s/type:%s/slug:%s', 'Vamshop/Nodes', 'Nodes', 'term',
                     $defaultType['alias'], $term->slug),
             ]);
         }

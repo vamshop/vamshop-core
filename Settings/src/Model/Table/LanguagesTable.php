@@ -1,24 +1,24 @@
 <?php
 
-namespace Croogo\Settings\Model\Table;
+namespace Vamshop\Settings\Model\Table;
 
 use Cake\ORM\Entity;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\Validation\Validator;
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Core\Model\Table\VamshopTable;
 
 /**
  * Language
  *
  * @category Model
- * @package  Croogo.Settings.Model
+ * @package  Vamshop.Settings.Model
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class LanguagesTable extends CroogoTable
+class LanguagesTable extends VamshopTable
 {
 
 /**
@@ -28,7 +28,7 @@ class LanguagesTable extends CroogoTable
     {
         parent::initialize($config);
 
-        $this->addBehavior('Croogo/Core.Trackable');
+        $this->addBehavior('Vamshop/Core.Trackable');
         $this->addBehavior('ADmad/Sequence.Sequence', [
             'order' => 'weight',
         ]);

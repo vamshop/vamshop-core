@@ -1,8 +1,8 @@
 <?php
 
-namespace Croogo\Core\Controller\Admin;
+namespace Vamshop\Core\Controller\Admin;
 
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 use Cake\Core\Configure;
 
 class LinkChooserController extends AppController
@@ -10,8 +10,8 @@ class LinkChooserController extends AppController
 
     public function linkChooser()
     {
-        Croogo::dispatchEvent('Controller.Links.setupLinkChooser', $this);
-        $linkChoosers = Configure::read('Croogo.linkChoosers');
+        Vamshop::dispatchEvent('Controller.Links.setupLinkChooser', $this);
+        $linkChoosers = Configure::read('Vamshop.linkChoosers');
         $this->set(compact('linkChoosers'));
     }
 }

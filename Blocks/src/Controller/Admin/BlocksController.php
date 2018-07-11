@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Blocks\Controller\Admin;
+namespace Vamshop\Blocks\Controller\Admin;
 
 use Cake\Event\Event;
-use Croogo\Blocks\Model\Entity\Block;
+use Vamshop\Blocks\Model\Entity\Block;
 
 /**
  * Blocks Controller
  *
  * @category Blocks.Controller
- * @package  Croogo.Blocks.Controller
+ * @package  Vamshop.Blocks.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -27,23 +27,23 @@ class BlocksController extends AppController
     public function initialize()
     {
         parent::initialize();
-        $this->loadModel('Croogo/Users.Roles');
+        $this->loadModel('Vamshop/Users.Roles');
 
-        $this->_loadCroogoComponents(['BulkProcess']);
+        $this->_loadVamshopComponents(['BulkProcess']);
         $this->_setupPrg();
 
         $this->Crud->config('actions.index', [
             'searchFields' => ['region_id', 'title']
         ]);
         $this->Crud->config('actions.moveUp', [
-            'className' => 'Croogo/Core.Admin/MoveUp'
+            'className' => 'Vamshop/Core.Admin/MoveUp'
         ]);
         $this->Crud->config('actions.moveDown', [
-            'className' => 'Croogo/Core.Admin/MoveDown'
+            'className' => 'Vamshop/Core.Admin/MoveDown'
         ]);
 
         if ($this->request->param('action') == 'toggle') {
-            $this->Croogo->protectToggleAction();
+            $this->Vamshop->protectToggleAction();
         }
     }
 

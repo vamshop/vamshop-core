@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Core\View\Cell\Admin;
+namespace Vamshop\Core\View\Cell\Admin;
 
 use Cake\Core\Configure;
 use Cake\View\Cell;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 /**
  * Class LinkChooserCell
@@ -13,8 +13,8 @@ class LinkChooserCell extends Cell
 {
     public function display($target)
     {
-        Croogo::dispatchEvent('Controller.Links.setupLinkChooser', $this);
-        $linkChoosers = Configure::read('Croogo.linkChoosers');
+        Vamshop::dispatchEvent('Controller.Links.setupLinkChooser', $this);
+        $linkChoosers = Configure::read('Vamshop.linkChoosers');
         $this->set(compact('target', 'linkChoosers'));
     }
 }

@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase\Model\Behavior;
+namespace Vamshop\Core\Test\TestCase\Model\Behavior;
 
-use Croogo\Core\TestSuite\CroogoTestCase;
+use Vamshop\Core\TestSuite\VamshopTestCase;
 
-class PublishableBehaviorTest extends CroogoTestCase
+class PublishableBehaviorTest extends VamshopTestCase
 {
 
     public $fixtures = [
 //		'plugin.croogo\settings.setting',
-//		'plugin.Croogo\Core.order_record',
+//		'plugin.Vamshop\Core.order_record',
     ];
 
 /**
@@ -21,7 +21,7 @@ class PublishableBehaviorTest extends CroogoTestCase
     {
         parent::setUp();
 //		$this->OrderRecord = ClassRegistry::init('OrderRecord');
-//		$this->OrderRecord->Behaviors->load('Croogo.Publishable', array(
+//		$this->OrderRecord->Behaviors->load('Vamshop.Publishable', array(
 //			'fields' => array(
 //				'publish_start' => 'start',
 //				'publish_end' => 'end',

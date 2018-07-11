@@ -1,6 +1,6 @@
-# Croogo/Install Plugin
+# Vamshop/Install Plugin
 
-This repository is a **read-only** split of the main Croogo code.
+This repository is a **read-only** split of the main Vamshop code.
 
 # Documentation
 

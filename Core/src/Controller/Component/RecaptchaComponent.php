@@ -1,5 +1,5 @@
 <?php
-namespace Croogo\Core\Controller\Component;
+namespace Vamshop\Core\Controller\Component;
 
 use Cake\Controller\Component;
 use Cake\Controller\ComponentRegistry;
@@ -9,7 +9,7 @@ use Cake\Network\Http\Client;
 /**
  * Recaptcha Component
  *
- * @package Croogo.Croogo.Controller.Component
+ * @package Vamshop.Vamshop.Controller.Component
  * @category Component
  */
 class RecaptchaComponent extends Component
@@ -52,7 +52,7 @@ class RecaptchaComponent extends Component
             $controller->Security->validatePost = false;
         }
 
-        $controller->viewBuilder()->helpers(['Croogo/Core.Recaptcha']);
+        $controller->viewBuilder()->helpers(['Vamshop/Core.Recaptcha']);
     }
 
     /**

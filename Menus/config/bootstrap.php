@@ -2,18 +2,18 @@
 
 use Cake\Core\Configure;
 use Cake\Cache\Cache;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 Cache::config('croogo_menus', array_merge(
-    Configure::read('Croogo.Cache.defaultConfig'),
+    Configure::read('Vamshop.Cache.defaultConfig'),
     ['groups' => ['menus']]
 ));
 
-Croogo::hookComponent('*', 'Croogo/Menus.Menu');
+Vamshop::hookComponent('*', 'Vamshop/Menus.Menu');
 
-Croogo::hookHelper('*', 'Croogo/Menus.Menus');
+Vamshop::hookHelper('*', 'Vamshop/Menus.Menus');
 
-Croogo::translateModel('Croogo/Menus.Links', [
+Vamshop::translateModel('Vamshop/Menus.Links', [
     'fields' => [
         'title',
         'description',

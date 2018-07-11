@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Comments\Model\Entity;
+namespace Vamshop\Comments\Model\Entity;
 
 use Cake\ORM\Entity;
 

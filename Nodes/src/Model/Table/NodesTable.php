@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Nodes\Model\Table;
+namespace Vamshop\Nodes\Model\Table;
 
 use Cake\Database\Schema\TableSchema;
 use Cake\Event\Event;
@@ -10,27 +10,27 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\TableRegistry;
 use Cake\Validation\Validator;
-use Croogo\Core\Croogo;
-use Croogo\Core\Model\Table\CroogoTable;
-use Croogo\Nodes\Model\Entity\Node;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\Model\Table\VamshopTable;
+use Vamshop\Nodes\Model\Entity\Node;
 
-class NodesTable extends CroogoTable
+class NodesTable extends VamshopTable
 {
     public function initialize(array $config)
     {
         parent::initialize($config);
 
         $this->addBehavior('Tree');
-        $this->addBehavior('Croogo/Core.BulkProcess', [
+        $this->addBehavior('Vamshop/Core.BulkProcess', [
             'actionsMap' => [
                 'promote' => 'bulkPromote',
                 'unpromote' => 'bulkUnpromote',
             ],
         ]);
-        $this->addBehavior('Croogo/Core.Publishable');
-        $this->addBehavior('Croogo/Core.Url', [
+        $this->addBehavior('Vamshop/Core.Publishable');
+        $this->addBehavior('Vamshop/Core.Url', [
             'url' => [
-                'plugin' => 'Croogo/Nodes',
+                'plugin' => 'Vamshop/Nodes',
                 'controller' => 'Nodes',
                 'action' => 'view',
             ],
@@ -39,9 +39,9 @@ class NodesTable extends CroogoTable
                 'slug',
             ],
         ]);
-        $this->addBehavior('Croogo/Core.Trackable');
-        $this->addBehavior('Croogo/Core.Visibility');
-        $this->addBehavior('Croogo/Core.Cached', [
+        $this->addBehavior('Vamshop/Core.Trackable');
+        $this->addBehavior('Vamshop/Core.Visibility');
+        $this->addBehavior('Vamshop/Core.Cached', [
             'groups' => ['nodes']
         ]);
         $this->addBehavior('Search.Search');
@@ -54,14 +54,14 @@ class NodesTable extends CroogoTable
             ],
         ]);
 
-        $this->belongsTo('Croogo/Users.Users');
+        $this->belongsTo('Vamshop/Users.Users');
         $this->belongsTo('Parent', [
-            'className' => 'Croogo/Nodes.Nodes',
+            'className' => 'Vamshop/Nodes.Nodes',
             'foreignKey' => 'parent_id',
         ]);
 
         $this->belongsTo('Types', [
-            'className' => 'Croogo/Nodes.Types',
+            'className' => 'Vamshop/Nodes.Types',
             'foreignKey' => 'type',
             'bindingKey' => 'alias',
             'propertyName' => 'node_type',
@@ -160,7 +160,7 @@ class NodesTable extends CroogoTable
                 return true;
             }
 
-            return (bool)TableRegistry::get('Croogo/Taxonomy.Types')
+            return (bool)TableRegistry::get('Vamshop/Taxonomy.Types')
                 ->findByAlias($node->type)
                 ->count();
         }, 'validType', [
@@ -181,13 +181,13 @@ class NodesTable extends CroogoTable
     public function saveNode(Node $node, $typeAlias = self::DEFAULT_TYPE)
     {
         //		$node = $this->formatNode($node, $typeAlias);
-        $event = Croogo::dispatchEvent('Model.Node.beforeSaveNode', $this, compact('node', 'typeAlias'));
+        $event = Vamshop::dispatchEvent('Model.Node.beforeSaveNode', $this, compact('node', 'typeAlias'));
         if ($event->isStopped()) {
             return $event->result;
         }
 
         $result = $this->save($node);
-        Croogo::dispatchEvent('Model.Node.afterSaveNode', $this, $event->data);
+        Vamshop::dispatchEvent('Model.Node.afterSaveNode', $this, $event->data);
 
         return $result;
     }
@@ -338,7 +338,7 @@ class NodesTable extends CroogoTable
     public function beforeSave(Event $event)
     {
         $node = $event->data()['entity'];
-        $event = Croogo::dispatchEvent('Model.Node.beforeSaveNode', $this, [
+        $event = Vamshop::dispatchEvent('Model.Node.beforeSaveNode', $this, [
             'node' => $node,
             'typeAlias' => $node->type
         ]);
@@ -350,7 +350,7 @@ class NodesTable extends CroogoTable
     public function afterSave(Event $event)
     {
         $node = $event->data()['entity'];
-        $event = Croogo::dispatchEvent('Model.Node.afterSaveNode', $this, [
+        $event = Vamshop::dispatchEvent('Model.Node.afterSaveNode', $this, [
             'node' => $node,
             'typeAlias' => $node->type
         ]);

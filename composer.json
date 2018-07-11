@@ -44,26 +44,26 @@
     },
     "autoload": {
         "psr-4": {
-            "Croogo\\": "src",
-            "Croogo\\Acl\\": "Acl/src",
-            "Croogo\\Blocks\\": "Blocks/src",
-            "Croogo\\Comments\\": "Comments/src",
-            "Croogo\\Contacts\\": "Contacts/src",
-            "Croogo\\Contacts\\Test\\": "Contacts/tests",
-            "Croogo\\Core\\": "Core/src",
-            "Croogo\\Dashboards\\": "Dashboards/src",
-            "Croogo\\Example\\": "Example/src",
-            "Croogo\\Extensions\\": "Extensions/src",
-            "Croogo\\FileManager\\": "FileManager/src",
-            "Croogo\\Install\\": "Install/src",
-            "Croogo\\Menus\\": "Menus/src",
-            "Croogo\\Meta\\": "Meta/src",
-            "Croogo\\Nodes\\": "Nodes/src",
-            "Croogo\\Settings\\": "Settings/src",
-            "Croogo\\Taxonomy\\": "Taxonomy/src",
-            "Croogo\\Translate\\": "Translate/src",
-            "Croogo\\Users\\": "Users/src",
-            "Croogo\\Wysiwyg\\": "Wysiwyg/src"
+            "Vamshop\\": "src",
+            "Vamshop\\Acl\\": "Acl/src",
+            "Vamshop\\Blocks\\": "Blocks/src",
+            "Vamshop\\Comments\\": "Comments/src",
+            "Vamshop\\Contacts\\": "Contacts/src",
+            "Vamshop\\Contacts\\Test\\": "Contacts/tests",
+            "Vamshop\\Core\\": "Core/src",
+            "Vamshop\\Dashboards\\": "Dashboards/src",
+            "Vamshop\\Example\\": "Example/src",
+            "Vamshop\\Extensions\\": "Extensions/src",
+            "Vamshop\\FileManager\\": "FileManager/src",
+            "Vamshop\\Install\\": "Install/src",
+            "Vamshop\\Menus\\": "Menus/src",
+            "Vamshop\\Meta\\": "Meta/src",
+            "Vamshop\\Nodes\\": "Nodes/src",
+            "Vamshop\\Settings\\": "Settings/src",
+            "Vamshop\\Taxonomy\\": "Taxonomy/src",
+            "Vamshop\\Translate\\": "Translate/src",
+            "Vamshop\\Users\\": "Users/src",
+            "Vamshop\\Wysiwyg\\": "Wysiwyg/src"
         },
         "files": [
             "Core/src/functions.php"
@@ -71,23 +71,23 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Croogo\\Acl\\Test\\": "Acl/tests",
-            "Croogo\\Blocks\\Test\\": "Blocks/tests",
-            "Croogo\\Comments\\Test\\": "Comments/tests",
-            "Croogo\\Core\\Test\\": "Core/tests",
-            "Croogo\\Dashboards\\Test\\": "Dashboards/tests",
-            "Croogo\\Example\\Test\\": "Example/tests",
-            "Croogo\\Extensions\\Test\\": "Extensions/tests",
-            "Croogo\\FileManager\\Test\\": "FileManager/tests",
-            "Croogo\\Install\\Test\\": "Install/tests",
-            "Croogo\\Menus\\Test\\": "Menus/tests",
-            "Croogo\\Meta\\Test\\": "Meta/tests",
-            "Croogo\\Nodes\\Test\\": "Nodes/tests",
-            "Croogo\\Settings\\Test\\": "Settings/tests",
-            "Croogo\\Taxonomy\\Test\\": "Taxonomy/tests",
-            "Croogo\\Translate\\Test\\": "Translate/tests",
-            "Croogo\\Users\\Test\\": "Users/tests",
-            "Croogo\\Wysiwyg\\Test\\": "Wysiwyg/tests",
+            "Vamshop\\Acl\\Test\\": "Acl/tests",
+            "Vamshop\\Blocks\\Test\\": "Blocks/tests",
+            "Vamshop\\Comments\\Test\\": "Comments/tests",
+            "Vamshop\\Core\\Test\\": "Core/tests",
+            "Vamshop\\Dashboards\\Test\\": "Dashboards/tests",
+            "Vamshop\\Example\\Test\\": "Example/tests",
+            "Vamshop\\Extensions\\Test\\": "Extensions/tests",
+            "Vamshop\\FileManager\\Test\\": "FileManager/tests",
+            "Vamshop\\Install\\Test\\": "Install/tests",
+            "Vamshop\\Menus\\Test\\": "Menus/tests",
+            "Vamshop\\Meta\\Test\\": "Meta/tests",
+            "Vamshop\\Nodes\\Test\\": "Nodes/tests",
+            "Vamshop\\Settings\\Test\\": "Settings/tests",
+            "Vamshop\\Taxonomy\\Test\\": "Taxonomy/tests",
+            "Vamshop\\Translate\\Test\\": "Translate/tests",
+            "Vamshop\\Users\\Test\\": "Users/tests",
+            "Vamshop\\Wysiwyg\\Test\\": "Wysiwyg/tests",
             "App\\": "tests/test_app/src",
             "Nodes\\": "tests/test_app/plugins/Nodes/src",
             "Shops\\": "tests/test_app/plugins/Shops/src",
@@ -98,12 +98,12 @@
     "scripts": {
         "post-autoload-dump": [
             "Cake\\Composer\\Installer\\PluginInstaller::postAutoloadDump",
-            "Croogo\\Install\\ComposerInstaller::postAutoloadDump"
+            "Vamshop\\Install\\ComposerInstaller::postAutoloadDump"
         ]
     },
     "suggest": {
         "admad/cakephp-jwt-auth": "CakePHP JWT Authenticate plugin",
-        "croogo/locale": "Localization for Croogo"
+        "croogo/locale": "Localization for Vamshop"
     },
     "minimum-stability": "dev",
     "replace": {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Dashboards\Event;
+namespace Vamshop\Dashboards\Event;
 
 use Cake\Event\EventListenerInterface;
 use Cake\Core\Plugin;
@@ -9,7 +9,7 @@ use Cake\Core\Configure;
 /**
  * DashboardsEventHandler
  *
- * @package  Croogo.Dashboards.Event
+ * @package  Vamshop.Dashboards.Event
  * @author   Walther Lalk <emailme@waltherlalk.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
@@ -23,7 +23,7 @@ class DashboardsEventHandler implements EventListenerInterface
     public function implementedEvents()
     {
         return [
-            'Croogo.setupAdminDashboardData' => [
+            'Vamshop.setupAdminDashboardData' => [
                 'callable' => 'onSetupAdminDashboardData',
             ],
         ];

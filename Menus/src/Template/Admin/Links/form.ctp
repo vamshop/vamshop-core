@@ -1,9 +1,9 @@
 <?php
 
-use Croogo\Core\Status;
+use Vamshop\Core\Status;
 
-$this->extend('Croogo/Core./Common/admin_edit');
-$this->Croogo->adminScript('Croogo/Menus.admin');
+$this->extend('Vamshop/Core./Common/admin_edit');
+$this->Vamshop->adminScript('Vamshop/Menus.admin');
 
 $this->Breadcrumbs->add(__d('croogo', 'Menus'), ['controller' => 'Menus', 'action' => 'index']);
 
@@ -42,8 +42,8 @@ $inputDefaults = $this->Form->templates();
 $inputClass = isset($inputDefaults['class']) ? $inputDefaults['class'] : null;
 
 $this->append('tab-heading');
-    echo $this->Croogo->adminTab(__d('croogo', 'Link'), '#link-basic');
-    echo $this->Croogo->adminTab(__d('croogo', 'Misc.'), '#link-misc');
+    echo $this->Vamshop->adminTab(__d('croogo', 'Link'), '#link-basic');
+    echo $this->Vamshop->adminTab(__d('croogo', 'Misc.'), '#link-misc');
 $this->end();
 
 $this->append('tab-content');
@@ -119,8 +119,8 @@ $this->end();
 
 $this->start('panels');
     echo $this->Html->beginBox(__d('croogo', 'Publishing'));
-        echo $this->element('Croogo/Core.admin/buttons', ['type' => 'link']);
-        echo $this->element('Croogo/Core.admin/publishable');
+        echo $this->element('Vamshop/Core.admin/buttons', ['type' => 'link']);
+        echo $this->element('Vamshop/Core.admin/publishable');
     echo $this->Html->endBox();
 
     echo $this->Html->beginBox(__d('croogo', 'Access control'));

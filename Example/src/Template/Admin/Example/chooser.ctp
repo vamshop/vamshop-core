@@ -9,7 +9,7 @@ $this->append('form-start', $this->Form->create(null));
 
 $this->append('main');
 
-echo $this->element('Croogo/Core.admin/modal', [
+echo $this->element('Vamshop/Core.admin/modal', [
     'id' => 'link-chooser',
 ]);
 
@@ -18,7 +18,7 @@ echo $this->Form->input('node_id', array(
     'data-attr' => 'data-chooser-id',
     'append' => $this->Html->link('Choose Node',
         array(
-            'plugin' => 'Croogo/Nodes',
+            'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
             'action' => 'index',
             '?' => array(
@@ -42,7 +42,7 @@ echo $this->Form->input('node_url', array(
     'data-attr' => 'rel',
     'append' => $this->Html->link('Choose Node',
         array(
-            'plugin' => 'Croogo/Nodes',
+            'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
             'action' => 'index',
             '?' => array(
@@ -66,7 +66,7 @@ echo $this->Form->input('block_id', array(
     'data-attr' => 'data-chooser-id',
     'append' => $this->Html->link('Choose Block Id',
         array(
-            'plugin' => 'Croogo/Blocks',
+            'plugin' => 'Vamshop/Blocks',
             'controller' => 'Blocks',
             'action' => 'index',
             '?' => array(
@@ -90,7 +90,7 @@ echo $this->Form->input('block_title', array(
     'data-attr' => 'data-chooser-title',
     'append' => $this->Html->link('Choose Block Title',
         array(
-            'plugin' => 'Croogo/Blocks',
+            'plugin' => 'Vamshop/Blocks',
             'controller' => 'Blocks',
             'action' => 'index',
             '?' => array(
@@ -114,7 +114,7 @@ echo $this->Form->input('user_id', array(
     'data-attr' => 'data-chooser-id',
     'append' => $this->Html->link('Choose User Id',
         array(
-            'plugin' => 'Croogo/Users',
+            'plugin' => 'Vamshop/Users',
             'controller' => 'Users',
             'action' => 'index',
             '?' => array(

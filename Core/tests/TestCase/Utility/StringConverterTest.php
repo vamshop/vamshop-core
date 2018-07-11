@@ -1,12 +1,12 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase\Utility;
+namespace Vamshop\Core\Test\TestCase\Utility;
 
 use Cake\Core\Configure;
-use Croogo\Core\TestSuite\CroogoTestCase;
-use Croogo\Core\Utility\StringConverter;
+use Vamshop\Core\TestSuite\VamshopTestCase;
+use Vamshop\Core\Utility\StringConverter;
 
-class StringConverterTest extends CroogoTestCase
+class StringConverterTest extends VamshopTestCase
 {
 
     public $setupSettings = false;

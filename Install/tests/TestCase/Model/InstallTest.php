@@ -1,11 +1,11 @@
 <?php
-namespace Croogo\Install\Test\TestCase\Model;
+namespace Vamshop\Install\Test\TestCase\Model;
 
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 use Migrations\Lib\MigrationVersion;
 use Users\Model\User;
 
-class InstallTest extends CroogoTestCase
+class InstallTest extends VamshopTestCase
 {
 
     public $fixtures = [
@@ -24,21 +24,21 @@ class InstallTest extends CroogoTestCase
 
     public function testRunMigrationsOk()
     {
-        $croogoPlugin = $this->getMock('CroogoPlugin');
+        $croogoPlugin = $this->getMock('VamshopPlugin');
         $croogoPlugin->expects($this->any())
                 ->method('migrate')
                 ->will($this->returnValue(true));
-        $this->_runProtectedMethod('_setCroogoPlugin', [$croogoPlugin]);
+        $this->_runProtectedMethod('_setVamshopPlugin', [$croogoPlugin]);
         $this->assertEquals(true, $this->Install->runMigrations('Users'));
     }
 
     public function testRunMigrationsFailed()
     {
-        $croogoPlugin = $this->getMock('CroogoPlugin');
+        $croogoPlugin = $this->getMock('VamshopPlugin');
         $croogoPlugin->expects($this->any())
                 ->method('migrate')
                 ->will($this->returnValue(false));
-        $this->_runProtectedMethod('_setCroogoPlugin', [$croogoPlugin]);
+        $this->_runProtectedMethod('_setVamshopPlugin', [$croogoPlugin]);
         $this->assertEquals(false, $this->Install->runMigrations('Users'));
     }
 

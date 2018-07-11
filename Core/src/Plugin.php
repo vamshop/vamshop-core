@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core;
+namespace Vamshop\Core;
 
 use App\Controller\AppController;
 use Cake\Cache\Cache;
@@ -17,7 +17,7 @@ use Cake\ORM\TableRegistry;
 use Cake\Utility\Hash;
 use Cake\Utility\Inflector;
 use Cake\Utility\Text;
-use Croogo\Core\Event\EventManager;
+use Vamshop\Core\Event\EventManager;
 use InvalidArgumentException;
 use Migrations\Migrations;
 
@@ -25,7 +25,7 @@ use Migrations\Migrations;
  * Plugin utility class
  *
  * @category Component
- * @package  Croogo.Extensions.Lib
+ * @package  Vamshop.Extensions.Lib
  * @version  1.4
  * @since    1.4
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
@@ -68,11 +68,11 @@ class Plugin extends CakePlugin
      * @access public
      */
     public static $corePlugins = [
-        'Croogo/Acl',
-        'Croogo/Core',
-        'Croogo/Extensions',
-        'Croogo/Install',
-        'Croogo/Settings',
+        'Vamshop/Acl',
+        'Vamshop/Core',
+        'Vamshop/Extensions',
+        'Vamshop/Install',
+        'Vamshop/Settings',
         'Migrations',
         'Search',
     ];
@@ -84,15 +84,15 @@ class Plugin extends CakePlugin
      * @access public
      */
     public static $bundledPlugins = [
-        'Croogo/Blocks',
-        'Croogo/Contacts',
-        'Croogo/Dashboards',
-        'Croogo/FileManager',
-        'Croogo/Meta',
-        'Croogo/Menus',
-        'Croogo/Nodes',
-        'Croogo/Taxonomy',
-        'Croogo/Users',
+        'Vamshop/Blocks',
+        'Vamshop/Contacts',
+        'Vamshop/Dashboards',
+        'Vamshop/FileManager',
+        'Vamshop/Meta',
+        'Vamshop/Menus',
+        'Vamshop/Nodes',
+        'Vamshop/Taxonomy',
+        'Vamshop/Users',
     ];
 
     /**
@@ -139,16 +139,16 @@ class Plugin extends CakePlugin
         $this->folder = new Folder;
         $registered = Configure::read('plugins');
         $pluginPaths = Hash::merge(App::path('Plugin'), $registered);
-        unset($pluginPaths['Croogo']); //Otherwise we get croogo plugins twice!
+        unset($pluginPaths['Vamshop']); //Otherwise we get croogo plugins twice!
         foreach ($pluginPaths as $pluginName => $pluginPath) {
             $this->folder->path = $pluginPath;
             if (!file_exists($this->folder->path)) {
                 continue;
             }
             if ((
-                    $type === 'plugin' && $this->_isCroogoPlugin($pluginPath)
+                    $type === 'plugin' && $this->_isVamshopPlugin($pluginPath)
                 ) || (
-                    $type === 'theme' && $this->_isCroogoTheme($pluginPath)
+                    $type === 'theme' && $this->_isVamshopTheme($pluginPath)
                 )
             ) {
                 $plugins[$pluginName] = $pluginPath;
@@ -158,10 +158,10 @@ class Plugin extends CakePlugin
             $pluginFolders = $this->folder->read();
             foreach ($pluginFolders[0] as $pluginFolder) {
                 if (substr($pluginFolder, 0, 1) != '.') {
-                    if ($type === 'plugin' && !$this->_isCroogoPlugin($pluginPath, $pluginFolder)) {
+                    if ($type === 'plugin' && !$this->_isVamshopPlugin($pluginPath, $pluginFolder)) {
                         continue;
                     }
-                    if ($type === 'theme' && !$this->_isCroogoTheme($pluginPath, $pluginFolder)) {
+                    if ($type === 'theme' && !$this->_isVamshopTheme($pluginPath, $pluginFolder)) {
                         continue;
                     }
 
@@ -179,13 +179,13 @@ class Plugin extends CakePlugin
     }
 
     /**
-     * Checks wether $pluginDir/$path is a Croogo theme
+     * Checks wether $pluginDir/$path is a Vamshop theme
      *
      * @param string $pluginDir plugin directory
      * @param string $path plugin alias
-     * @return bool true if path is a Croogo plugin
+     * @return bool true if path is a Vamshop plugin
      */
-    protected function _isCroogoTheme($pluginDir, $path = '')
+    protected function _isVamshopTheme($pluginDir, $path = '')
     {
         $dir = $pluginDir . $path . DS;
         $themeConfigs = [
@@ -214,20 +214,20 @@ class Plugin extends CakePlugin
     }
 
     /**
-     * Checks wether $pluginDir/$path is a Croogo plugin
+     * Checks wether $pluginDir/$path is a Vamshop plugin
      *
      * @param string $pluginDir plugin directory
      * @param string $path plugin alias
-     * @return bool true if path is a Croogo plugin
+     * @return bool true if path is a Vamshop plugin
      */
-    protected function _isCroogoPlugin($pluginDir, $path = '')
+    protected function _isVamshopPlugin($pluginDir, $path = '')
     {
         $dir = $pluginDir . $path . DS;
         $composerFile = $dir . 'composer.json';
         if (file_exists($dir . 'config' . DS . 'plugin.json')) {
             return true;
         }
-        if (file_exists($composerFile) && !$this->_isCroogoTheme($pluginDir, $path)) {
+        if (file_exists($composerFile) && !$this->_isVamshopTheme($pluginDir, $path)) {
             $pluginData = json_decode(file_get_contents($composerFile), true);
             if (isset($pluginData['require']['croogo/core']) ||
                 isset($pluginData['require']['croogo/croogo'])
@@ -300,9 +300,9 @@ class Plugin extends CakePlugin
             if ($hasComposer) {
                 $composerData = json_decode(file_get_contents($composerFile), true);
                 $type = isset($composerData['type']) ? $composerData['type'] : null;
-                $isCroogoPlugin = isset($composerData['require']['Croogo/Core']) || $type == 'croogo-plugin';
+                $isVamshopPlugin = isset($composerData['require']['Vamshop/Core']) || $type == 'croogo-plugin';
 
-                if ($isCroogoPlugin) {
+                if ($isVamshopPlugin) {
                     if (isset($composerData['name'])) {
                         $composerData['vendor'] = $composerData['name'];
                         unset($composerData['name']);
@@ -320,7 +320,7 @@ class Plugin extends CakePlugin
             if (!$ignoreMigration && $this->needMigration($alias, $active)) {
                 $pluginData = [
                     'name' => $alias,
-                    'description' => "Croogo $alias plugin",
+                    'description' => "Vamshop $alias plugin",
                     'active' => true,
                     'needMigration' => true,
                 ];
@@ -678,7 +678,7 @@ class Plugin extends CakePlugin
 
             $registered = Configure::read('plugins');
             $pluginPaths = Hash::merge(App::path('Plugin'), $registered);
-            unset($pluginPaths['Croogo']); //Otherwise we get croogo plugins twice!
+            unset($pluginPaths['Vamshop']); //Otherwise we get croogo plugins twice!
 
             if (isset($pluginPaths[$plugin])) {
                 $configFile = $pluginPaths[$plugin] . 'config' . DS . $className . '.php';
@@ -781,7 +781,7 @@ class Plugin extends CakePlugin
         if (empty($deps['usedBy'][$plugin])) {
             return false;
         }
-        $usedBy = array_filter($deps['usedBy'][$plugin], ['Croogo\\Core\\Plugin', 'loaded']);
+        $usedBy = array_filter($deps['usedBy'][$plugin], ['Vamshop\\Core\\Plugin', 'loaded']);
         if (!empty($usedBy)) {
             return $usedBy;
         }
@@ -995,10 +995,10 @@ class Plugin extends CakePlugin
     {
         static $Setting = null;
         if (empty($Setting)) {
-            if (!Configure::read('Croogo.installed')) {
-                throw new CakeException('Unable to save Hook.bootstraps when Croogo is not fully installed');
+            if (!Configure::read('Vamshop.installed')) {
+                throw new CakeException('Unable to save Hook.bootstraps when Vamshop is not fully installed');
             }
-            $Settings = TableRegistry::get('Croogo/Settings.Settings');
+            $Settings = TableRegistry::get('Vamshop/Settings.Settings');
         }
 
         return $Settings->write('Hook.bootstraps', implode(',', $bootstraps));
@@ -1035,8 +1035,8 @@ class Plugin extends CakePlugin
      */
     public static function path($plugin)
     {
-        if (strstr($plugin, 'Croogo/')) {
-            return realpath(parent::path('Croogo/Core') . '..' . DS . substr($plugin, 7) . DS) . DS;
+        if (strstr($plugin, 'Vamshop/')) {
+            return realpath(parent::path('Vamshop/Core') . '..' . DS . substr($plugin, 7) . DS) . DS;
         }
 
         $path = Configure::read('plugins.' . $plugin);

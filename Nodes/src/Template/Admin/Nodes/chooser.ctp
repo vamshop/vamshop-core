@@ -8,7 +8,7 @@
         ?>
     </div>
     <div class="float-right">
-        <?= $this->element('Croogo/Nodes.admin/nodes_search') ?>
+        <?= $this->element('Vamshop/Nodes.admin/nodes_search') ?>
     </div>
 </div>
 <hr>
@@ -19,7 +19,7 @@
             <?php
             echo $this->Html->link(__d('croogo', '%s archive/index', $type->title), [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Nodes',
+                'plugin' => 'Vamshop/Nodes',
                 'controller' => 'Nodes',
                 'action' => 'hierarchy',
                 'type' => $type->alias,
@@ -38,7 +38,7 @@
                 <?php
                 echo $this->Html->link($node->title, [
                     'prefix' => 'admin',
-                    'plugin' => 'Croogo/Nodes',
+                    'plugin' => 'Vamshop/Nodes',
                     'controller' => 'Nodes',
                     'action' => 'view',
                     'type' => $node->type,

@@ -1,10 +1,10 @@
 <?php
 
 use Cake\Utility\Inflector;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
-Croogo::hookComponent('*', ['Croogo/Meta.Meta' => ['priority' => 8]]);
+Vamshop::hookComponent('*', ['Vamshop/Meta.Meta' => ['priority' => 8]]);
 
-Croogo::hookHelper('*', 'Croogo/Meta.Meta');
+Vamshop::hookHelper('*', 'Vamshop/Meta.Meta');
 
 Inflector::rules('uninflected', ['meta']);

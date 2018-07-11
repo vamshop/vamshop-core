@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Translate\Test\Fixture;
+namespace Vamshop\Translate\Test\Fixture;
 
-use Croogo\Core\TestSuite\CroogoTestFixture;
+use Vamshop\Core\TestSuite\VamshopTestFixture;
 
-class I18nFixture extends CroogoTestFixture
+class I18nFixture extends VamshopTestFixture
 {
 
     public $name = 'I18n';

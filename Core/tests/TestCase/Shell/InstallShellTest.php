@@ -1,13 +1,13 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase\Shell;
+namespace Vamshop\Core\Test\TestCase\Shell;
 
 use Cake\Console\Shell;
 use Cake\Console\ShellDispatcher;
 use Cake\Core\Plugin;
 use Cake\Filesystem\Folder;
-use Croogo\Core\Shell\InstallShell;
-use Croogo\Core\TestSuite\CroogoTestCase;
+use Vamshop\Core\Shell\InstallShell;
+use Vamshop\Core\TestSuite\VamshopTestCase;
 use ReflectionClass;
 
 /**
@@ -40,13 +40,13 @@ class TestInstallShell extends InstallShell
  * Install Shell Test
  *
  * @category Test
- * @package  Croogo
+ * @package  Vamshop
  * @version  1.4
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class InstallShellTest extends CroogoTestCase
+class InstallShellTest extends VamshopTestCase
 {
 
 /**
@@ -70,8 +70,8 @@ class InstallShellTest extends CroogoTestCase
         $this->markTestIncomplete('This test needs to be ported to CakePHP 3.0');
 
 //		App::build(array(
-//			'Plugin' => array(Plugin::path('Croogo') . 'Test' . DS . 'test_app' . DS . 'Plugin' . DS),
-//			'View' => array(Plugin::path('Croogo') . 'Test' . DS . 'test_app' . DS . 'View' . DS),
+//			'Plugin' => array(Plugin::path('Vamshop') . 'Test' . DS . 'test_app' . DS . 'Plugin' . DS),
+//			'View' => array(Plugin::path('Vamshop') . 'Test' . DS . 'test_app' . DS . 'View' . DS),
 //		), App::PREPEND);
     }
 
@@ -88,9 +88,9 @@ class InstallShellTest extends CroogoTestCase
         foreach ($files as $file) {
             unlink(TMP . $file);
         }
-        $Folder = new Folder(Plugin::path('Croogo/Core') . 'tests' . DS . 'test_app' . DS . 'plugins' . DS . 'Example');
+        $Folder = new Folder(Plugin::path('Vamshop/Core') . 'tests' . DS . 'test_app' . DS . 'plugins' . DS . 'Example');
         $Folder->delete();
-        $Folder = new Folder(Plugin::path('Croogo/Core') . 'tests' . DS . 'test_app' . DS . 'plugins' . DS . 'Minimal');
+        $Folder = new Folder(Plugin::path('Vamshop/Core') . 'tests' . DS . 'test_app' . DS . 'plugins' . DS . 'Minimal');
         $Folder->delete();
     }
 
@@ -103,7 +103,7 @@ class InstallShellTest extends CroogoTestCase
     {
         $this->markTestIncomplete('This test needs to be ported to CakePHP 3.0');
 
-        $Shell = $this->getMock('\\Croogo\\Croogo\\Shell\\InstallShell', ['out', 'err', '_shellExec', 'dispatchShell']);
+        $Shell = $this->getMock('\\Vamshop\\Vamshop\\Shell\\InstallShell', ['out', 'err', '_shellExec', 'dispatchShell']);
         $Shell->expects($this->once())
             ->method('_shellExec')
             ->will($this->returnCallback([$this, 'callbackDownloadPlugin']));
@@ -129,7 +129,7 @@ class InstallShellTest extends CroogoTestCase
     {
         $this->markTestIncomplete('This test needs to be ported to CakePHP 3.0');
 
-        $Shell = $this->getMock('\\Croogo\\Croogo\\Shell\\InstallShell', ['out', 'err', '_shellExec', 'dispatchShell']);
+        $Shell = $this->getMock('\\Vamshop\\Vamshop\\Shell\\InstallShell', ['out', 'err', '_shellExec', 'dispatchShell']);
         $Shell->expects($this->once())
             ->method('_shellExec')
             ->will($this->returnCallback([$this, 'callbackDownloadTheme']));
@@ -174,10 +174,10 @@ class InstallShellTest extends CroogoTestCase
 
         $this->skipIf(version_compare(PHP_VERSION, '5.3.0', '<'), 'PHP >= 5.3.0 required to run this test.');
 
-        $Shell = new ReflectionClass('\\Croogo\\Croogo\\Shell\\InstallShell');
+        $Shell = new ReflectionClass('\\Vamshop\\Vamshop\\Shell\\InstallShell');
         $prop = $Shell->getProperty('_ExtensionsInstaller');
         $prop->setAccessible(true);
-        $ShellMock = $this->getMock('\\Croogo\\Croogo\\Shell\\InstallShell', ['dispatchShell', 'out', 'err']);
+        $ShellMock = $this->getMock('\\Vamshop\\Vamshop\\Shell\\InstallShell', ['dispatchShell', 'out', 'err']);
 
         $ExtensionsInstaller = $this->getMock('ExtensionsInstaller', ['composerInstall']);
         $prop->setValue($ShellMock, $ExtensionsInstaller);
@@ -193,12 +193,12 @@ class InstallShellTest extends CroogoTestCase
             )
             ->will($this->returnValue(['returnValue' => 0]));
 
-        $prop = $Shell->getProperty('_CroogoPlugin');
+        $prop = $Shell->getProperty('_VamshopPlugin');
         $prop->setAccessible(true);
-        $CroogoPlugin = $this->getMock('\\Croogo\Extensions\\CroogoPlugin');
-        $prop->setValue($ShellMock, $CroogoPlugin);
+        $VamshopPlugin = $this->getMock('\\Vamshop\Extensions\\VamshopPlugin');
+        $prop->setValue($ShellMock, $VamshopPlugin);
 
-        $CroogoPlugin->expects($this->once())
+        $VamshopPlugin->expects($this->once())
             ->method('getData')
             ->will($this->returnValue(true));
 
@@ -225,7 +225,7 @@ class InstallShellTest extends CroogoTestCase
         $argOne = func_get_arg(0);
         preg_match('/ -o (.+) /', $argOne, $zip);
         $dest = $zip[1];
-        $src = Plugin::path('Croogo/Extensions') . 'tests' . DS . 'test_files' . DS . 'example_plugin.zip';
+        $src = Plugin::path('Vamshop/Extensions') . 'tests' . DS . 'test_files' . DS . 'example_plugin.zip';
         copy($src, $dest);
         return 'Here is that thing you wanted';
     }
@@ -238,7 +238,7 @@ class InstallShellTest extends CroogoTestCase
         $argOne = func_get_arg(0);
         preg_match('/ -o (.+) /', $argOne, $zip);
         $dest = $zip[1];
-        $src = Plugin::path('Croogo/Extensions') . 'tests' . DS . 'test_files' . DS . 'example_theme.zip';
+        $src = Plugin::path('Vamshop/Extensions') . 'tests' . DS . 'test_files' . DS . 'example_theme.zip';
         copy($src, $dest);
         return 'Here is that thing you wanted';
     }

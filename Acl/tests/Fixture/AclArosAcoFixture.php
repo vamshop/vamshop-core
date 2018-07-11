@@ -16,11 +16,11 @@
  * @since         CakePHP(tm) v 1.2.0.4667
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace Croogo\Acl\Test\Fixture;
+namespace Vamshop\Acl\Test\Fixture;
 
-use Croogo\TestSuite\CroogoTestFixture;
+use Vamshop\TestSuite\VamshopTestFixture;
 
-class AclArosAcoFixture extends CroogoTestFixture
+class AclArosAcoFixture extends VamshopTestFixture
 {
 
     public $name = 'ArosAco';

@@ -1,8 +1,8 @@
 <?php
 
-namespace Croogo\FileManager\Model\Entity;
+namespace Vamshop\FileManager\Model\Entity;
 
-use Croogo\Nodes\Model\Entity\Node;
+use Vamshop\Nodes\Model\Entity\Node;
 
 class Attachment extends Node
 {

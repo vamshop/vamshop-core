@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\TestSuite\Constraint;
+namespace Vamshop\Core\TestSuite\Constraint;
 use Cake\Core\App;
 use Cake\Datasource\EntityInterface;
 use Cake\ORM\Query;

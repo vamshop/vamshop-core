@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Acl\Traits;
+namespace Vamshop\Acl\Traits;
 
 use Cake\ORM\TableRegistry;
 

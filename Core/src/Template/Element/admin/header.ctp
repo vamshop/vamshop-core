@@ -1,8 +1,8 @@
 <?php
 
 use Cake\Core\Configure;
-use Croogo\Core\Nav;
-use Croogo\Core\Utility\StringConverter;
+use Vamshop\Core\Nav;
+use Vamshop\Core\Utility\StringConverter;
 
 $dashboardUrl = (new StringConverter())->linkStringToArray(
     Configure::read('Site.dashboard_url')
@@ -13,7 +13,7 @@ $dashboardUrl = (new StringConverter())->linkStringToArray(
     <?= $this->Html->link(Configure::read('Site.title'), $dashboardUrl,
         ['class' => 'navbar-brand']); ?>
 
-    <?= $this->Croogo->adminMenus(Nav::items('top-left'), [
+    <?= $this->Vamshop->adminMenus(Nav::items('top-left'), [
         'type' => 'dropdown',
         'htmlAttributes' => [
             'id' => 'top-left-menu',
@@ -23,7 +23,7 @@ $dashboardUrl = (new StringConverter())->linkStringToArray(
     ?>
     <?php if ($this->request->session()->read('Auth.User.id')): ?>
     <?php
-        echo $this->Croogo->adminMenus(Nav::items('top-right'), [
+        echo $this->Vamshop->adminMenus(Nav::items('top-right'), [
             'type' => 'dropdown',
             'htmlAttributes' => [
                 'id' => 'top-right-menu',

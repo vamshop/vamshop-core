@@ -1,14 +1,14 @@
 <?php
-namespace Croogo\Core\Test\TestCase\View\Helper;
+namespace Vamshop\Core\Test\TestCase\View\Helper;
 
 use Cake\Controller\Controller;
 use Cake\Network\Request;
 use Cake\View\Helper\HtmlHelper;
 use Cake\View\View;
-use Croogo\Core\TestSuite\CroogoTestCase;
-use Croogo\Core\View\Helper\CroogoPaginatorHelper;
+use Vamshop\Core\TestSuite\VamshopTestCase;
+use Vamshop\Core\View\Helper\VamshopPaginatorHelper;
 
-class CroogoPaginatorHelperTest extends CroogoTestCase
+class VamshopPaginatorHelperTest extends VamshopTestCase
 {
 
     public $fixtures = [
@@ -19,7 +19,7 @@ class CroogoPaginatorHelperTest extends CroogoTestCase
     {
         $controller = null;
         $this->View = new View($controller);
-        $this->Paginator = new CroogoPaginatorHelper($this->View);
+        $this->Paginator = new VamshopPaginatorHelper($this->View);
         $this->Paginator->request = new Request();
         $this->Paginator->Html = new HtmlHelper($this->View);
     }

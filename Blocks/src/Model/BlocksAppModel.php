@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Blocks\Model;
+namespace Vamshop\Blocks\Model;
 
 use App\Model\AppModel;
 
@@ -8,7 +8,7 @@ use App\Model\AppModel;
  * Blocks App Model
  *
  * @category Blocks.Model
- * @package  Croogo.Blocks.Model
+ * @package  Vamshop.Blocks.Model
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

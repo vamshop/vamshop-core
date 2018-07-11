@@ -1,18 +1,18 @@
 <?php
 
-namespace Croogo\Core\View\Helper;
+namespace Vamshop\Core\View\Helper;
 
 use Cake\Log\Log;
 use Cake\Utility\Hash;
 use Cake\View\Helper;
 use Cake\View\View;
-use Croogo\Extensions\CroogoTheme;
+use Vamshop\Extensions\VamshopTheme;
 
 /**
  * Theme Helper
  *
  * @category Helper
- * @package  Croogo.Croogo.View.Helper
+ * @package  Vamshop.Vamshop.View.Helper
  * @author   Rachman Chavik <rchavik@xintesa.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
@@ -35,7 +35,7 @@ class ThemeHelper extends Helper
 
     public function __construct(View $View, $settings = [])
     {
-        $themeConfig = CroogoTheme::config($View->theme);
+        $themeConfig = VamshopTheme::config($View->theme);
         $this->_themeSettings = $themeConfig['settings'];
 
         $this->_iconMap = $this->_themeSettings['icons'];

@@ -1,10 +1,10 @@
 <?php
-namespace Croogo\Comments\Test\TestCase\Model;
+namespace Vamshop\Comments\Test\TestCase\Model;
 
 use Comments\Model\Comment;
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 
-class CommentTest extends CroogoTestCase
+class CommentTest extends VamshopTestCase
 {
 
     public $fixtures = [

@@ -3,13 +3,13 @@
 $this->extend('/Common/admin_edit');
 
 $this->Breadcrumbs
-    ->add(__d('croogo', 'Extensions'), array('plugin' => 'Croogo/Extensions', 'controller' => 'Plugins', 'action' => 'index'))
-    ->add(__d('croogo', 'Locales'), array('plugin' => 'Croogo/Extensions', 'controller' => 'Locales', 'action' => 'index'))
+    ->add(__d('croogo', 'Extensions'), array('plugin' => 'Vamshop/Extensions', 'controller' => 'Plugins', 'action' => 'index'))
+    ->add(__d('croogo', 'Locales'), array('plugin' => 'Vamshop/Extensions', 'controller' => 'Locales', 'action' => 'index'))
     ->add($this->request->params['pass'][0], $this->request->getRequestTarget());
 
 $this->append('form-start', $this->Form->create($locale, array(
     'url' => array(
-        'plugin' => 'Croogo/Extensions',
+        'plugin' => 'Vamshop/Extensions',
         'controller' => 'Locales',
         'action' => 'edit',
         $locale['locale'],
@@ -17,7 +17,7 @@ $this->append('form-start', $this->Form->create($locale, array(
 )));
 
 $this->append('tab-heading');
-    echo $this->Croogo->adminTab(__d('croogo', 'Content'), '#locale-content');
+    echo $this->Vamshop->adminTab(__d('croogo', 'Content'), '#locale-content');
 $this->end();
 
 $this->append('tab-content');
@@ -41,5 +41,5 @@ $this->append('panels');
         );
     echo $this->Html->endBox();
 
-    echo $this->Croogo->adminBoxes();
+    echo $this->Vamshop->adminBoxes();
 $this->end();

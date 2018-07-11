@@ -9,7 +9,7 @@ class SettingsSeed extends AbstractSeed
         [
             'id' => '6',
             'key' => 'Site.title',
-            'value' => 'Croogo',
+            'value' => 'Vamshop',
             'title' => '',
             'description' => '',
             'input_type' => '',
@@ -64,7 +64,7 @@ class SettingsSeed extends AbstractSeed
         [
             'id' => '13',
             'key' => 'Meta.keywords',
-            'value' => 'croogo, Croogo',
+            'value' => 'croogo, Vamshop',
             'title' => '',
             'description' => '',
             'input_type' => 'textarea',
@@ -75,7 +75,7 @@ class SettingsSeed extends AbstractSeed
         [
             'id' => '14',
             'key' => 'Meta.description',
-            'value' => 'Croogo - A CakePHP powered Content Management System',
+            'value' => 'Vamshop - A CakePHP powered Content Management System',
             'title' => '',
             'description' => '',
             'input_type' => 'textarea',
@@ -86,7 +86,7 @@ class SettingsSeed extends AbstractSeed
         [
             'id' => '15',
             'key' => 'Meta.generator',
-            'value' => 'Croogo - Content Management System',
+            'value' => 'Vamshop - Content Management System',
             'title' => '',
             'description' => '',
             'input_type' => '',
@@ -141,7 +141,7 @@ class SettingsSeed extends AbstractSeed
         [
             'id' => '20',
             'key' => 'Site.theme',
-            'value' => 'Croogo/Core',
+            'value' => 'Vamshop/Core',
             'title' => '',
             'description' => '',
             'input_type' => '',
@@ -246,12 +246,12 @@ class SettingsSeed extends AbstractSeed
             'input_type' => 'select',
             'editable' => '1',
             'weight' => '4',
-            'params' => 'optionClass=Croogo/Settings.Timezones'
+            'params' => 'optionClass=Vamshop/Settings.Timezones'
         ],
         [
             'id' => '32',
             'key' => 'Hook.bootstraps',
-            'value' => 'Croogo/Settings,Croogo/Contacts,Croogo/Nodes,Croogo/Meta,Croogo/Menus,Croogo/Users,Croogo/Blocks,Croogo/Taxonomy,Croogo/FileManager,Croogo/Wysiwyg,Croogo/Dashboards',
+            'value' => 'Vamshop/Settings,Vamshop/Contacts,Vamshop/Nodes,Vamshop/Meta,Vamshop/Menus,Vamshop/Users,Vamshop/Blocks,Vamshop/Taxonomy,Vamshop/FileManager,Vamshop/Wysiwyg,Vamshop/Dashboards',
             'title' => '',
             'description' => '',
             'input_type' => '',
@@ -313,7 +313,7 @@ class SettingsSeed extends AbstractSeed
             'editable' => '1',
             'weight' => '26',
             'params' => 'multiple=checkbox
-options={"Croogo/Nodes.Nodes": "Nodes", "Croogo/Blocks.Blocks": "Blocks", "Croogo/Menus.Menus": "Menus", "Croogo/Menus.Links": "Links"}'
+options={"Vamshop/Nodes.Nodes": "Nodes", "Vamshop/Blocks.Blocks": "Blocks", "Vamshop/Menus.Menus": "Menus", "Vamshop/Menus.Links": "Links"}'
         ],
         [
             'id' => '38',
@@ -338,7 +338,7 @@ options={"Croogo/Nodes.Nodes": "Nodes", "Croogo/Blocks.Blocks": "Blocks", "Croog
         ],
         [
             'key' => 'Site.admin_theme',
-            'value' => 'Croogo/Core',
+            'value' => 'Vamshop/Core',
             'title' => 'Administration Theme',
             'description' => '',
             'input_type' => 'text',
@@ -357,9 +357,9 @@ options={"Croogo/Nodes.Nodes": "Nodes", "Croogo/Blocks.Blocks": "Blocks", "Croog
             'params' => ''
         ],
         [
-            'key' => 'Croogo.version',
+            'key' => 'Vamshop.version',
             'value' => '',
-            'title' => 'Croogo Version',
+            'title' => 'Vamshop Version',
             'description' => '',
             'input_type' => 'text',
             'editable' => '0',
@@ -367,7 +367,7 @@ options={"Croogo/Nodes.Nodes": "Nodes", "Croogo/Blocks.Blocks": "Blocks", "Croog
             'params' => ''
         ],
         [
-            'key' => 'Croogo.appVersion',
+            'key' => 'Vamshop.appVersion',
             'value' => '',
             'title' => 'App Version',
             'description' => '',

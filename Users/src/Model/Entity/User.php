@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Users\Model\Entity;
+namespace Vamshop\Users\Model\Entity;
 
 use Cake\Auth\DefaultPasswordHasher;
 use Cake\ORM\Entity;

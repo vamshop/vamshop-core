@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Acl\Test\TestCase\Controller\Component;
+namespace Vamshop\Acl\Test\TestCase\Controller\Component;
 
 use Cake\Controller\ComponentRegistry;
 use Cake\Controller\Controller;
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 
 class AclFilterTestController extends Controller
 {
@@ -13,11 +13,11 @@ class AclFilterTestController extends Controller
         'Auth',
         'Acl',
         'Flash',
-        'Croogo/Acl.AclFilter',
+        'Vamshop/Acl.AclFilter',
     ];
 }
 
-class AclFilterComponentTest extends CroogoTestCase
+class AclFilterComponentTest extends VamshopTestCase
 {
 
     public $fixtures = [

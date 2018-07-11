@@ -4,20 +4,20 @@ use Cake\Routing\Router;
 
 $this->assign('title', __d('croogo', 'Edit file: %s', $path));
 
-$this->extend('Croogo/Core./Common/admin_edit');
+$this->extend('Vamshop/Core./Common/admin_edit');
 
 $this->Breadcrumbs->add(__d('croogo', 'File Manager'),
-        ['plugin' => 'Croogo/FileManager', 'controller' => 'fileManager', 'action' => 'browse'])
+        ['plugin' => 'Vamshop/FileManager', 'controller' => 'fileManager', 'action' => 'browse'])
     ->add(basename($absolutefilepath), $this->request->getRequestTarget());
 
 $this->start('page-heading');
-echo $this->element('Croogo/FileManager.admin/breadcrumbs');
+echo $this->element('Vamshop/FileManager.admin/breadcrumbs');
 $this->end();
 
 $this->append('form-start', $this->Form->create(null));
 
 $this->append('tab-heading');
-echo $this->Croogo->adminTab(__d('croogo', 'Edit'), '#filemanager-edit');
+echo $this->Vamshop->adminTab(__d('croogo', 'Edit'), '#filemanager-edit');
 $this->end();
 
 $this->append('tab-content');
@@ -31,7 +31,7 @@ $this->end();
 
 $this->append('panels');
 echo $this->Html->beginBox(__d('croogo', 'Publishing'));
-echo $this->element('Croogo/Core.admin/buttons', [
+echo $this->element('Vamshop/Core.admin/buttons', [
     'applyText' => false,
 ]);
 echo $this->Html->endBox();

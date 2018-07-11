@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Meta\Test\Fixture;
+namespace Vamshop\Meta\Test\Fixture;
 
-use Croogo\Core\TestSuite\CroogoTestFixture;
+use Vamshop\Core\TestSuite\VamshopTestFixture;
 
-class MetaFixture extends CroogoTestFixture
+class MetaFixture extends VamshopTestFixture
 {
 
     public $name = 'Meta';
@@ -27,7 +27,7 @@ class MetaFixture extends CroogoTestFixture
     public $records = [
         [
             'id' => 1,
-            'model' => 'Croogo/Nodes.Nodes',
+            'model' => 'Vamshop/Nodes.Nodes',
             'foreign_key' => 1,
             'key' => 'meta_keywords',
             'value' => 'key1, key2',

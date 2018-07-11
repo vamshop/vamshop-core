@@ -3,7 +3,7 @@
 use Cake\Core\Configure;
 use Cake\Routing\RouteBuilder;
 use Cake\Routing\Router;
-use Croogo\Core\Utility\StringConverter;
+use Vamshop\Core\Utility\StringConverter;
 
 Router::prefix('admin', function (RouteBuilder $routeBuilder) {
     $dashboardUrl = Configure::read('Site.dashboard_url');
@@ -19,7 +19,7 @@ Router::prefix('admin', function (RouteBuilder $routeBuilder) {
     $routeBuilder->connect('/', $dashboardUrl);
 });
 
-Router::plugin('Croogo/Core', ['path' => '/'], function (RouteBuilder $routeBuilder) {
+Router::plugin('Vamshop/Core', ['path' => '/'], function (RouteBuilder $routeBuilder) {
     $routeBuilder->prefix('admin', function (RouteBuilder $routeBuilder) {
         $routeBuilder->extensions(['json']);
 

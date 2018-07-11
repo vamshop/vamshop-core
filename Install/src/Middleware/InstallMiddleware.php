@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Install\Middleware;
+namespace Vamshop\Install\Middleware;
 
 use Cake\Routing\Router;
 use Psr\Http\Message\ResponseInterface;
@@ -17,7 +17,7 @@ class InstallMiddleware
         if (strpos($request->getUri()->getPath(), 'install') === false &&
             strpos($request->getUri()->getPath(), 'debug_kit') === false
          ) {
-            $url = ['plugin' => 'Croogo/Install', 'controller' => 'Install', 'action' => 'index'];
+            $url = ['plugin' => 'Vamshop/Install', 'controller' => 'Install', 'action' => 'index'];
 
             return new RedirectResponse(Router::url($url), 307);
         }

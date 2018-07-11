@@ -4,7 +4,7 @@
  * InstallRoleFixture
  *
  */
-namespace Croogo\Install\Test\Fixture;
+namespace Vamshop\Install\Test\Fixture;
 
 class InstallRoleFixture extends CakeTestFixture
 {

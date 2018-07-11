@@ -1,9 +1,9 @@
 <?php
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
 $this->Breadcrumbs->add(__d('croogo', 'Content'),
-        ['plugin' => 'Croogo/Nodes', 'controller' => 'Nodes', 'action' => 'index'])
+        ['plugin' => 'Vamshop/Nodes', 'controller' => 'Nodes', 'action' => 'index'])
     ->add(__d('croogo', 'Vocabularies'), $this->request->getRequestTarget());
 
 $this->start('table-heading');
@@ -21,16 +21,16 @@ $this->append('table-body');
 $rows = [];
 foreach ($vocabularies as $vocabulary) :
     $actions = [];
-    $actions[] = $this->Croogo->adminRowAction('', ['controller' => 'Terms', 'action' => 'index', '?' => ['vocabulary_id' => $vocabulary->id]],
+    $actions[] = $this->Vamshop->adminRowAction('', ['controller' => 'Terms', 'action' => 'index', '?' => ['vocabulary_id' => $vocabulary->id]],
         ['icon' => $this->Theme->getIcon('view'), 'tooltip' => __d('croogo', 'View terms')]);
-    $actions[] = $this->Croogo->adminRowAction('', ['action' => 'moveUp', $vocabulary->id],
+    $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'moveUp', $vocabulary->id],
         ['icon' => $this->Theme->getIcon('move-up'), 'tooltip' => __d('croogo', 'Move up'), 'method' => 'post']);
-    $actions[] = $this->Croogo->adminRowAction('', ['action' => 'moveDown', $vocabulary->id],
+    $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'moveDown', $vocabulary->id],
         ['icon' => $this->Theme->getIcon('move-down'), 'tooltip' => __d('croogo', 'Move down'), 'method' => 'post']);
-    $actions[] = $this->Croogo->adminRowActions($vocabulary->id);
-    $actions[] = $this->Croogo->adminRowAction('', ['action' => 'edit', $vocabulary->id],
+    $actions[] = $this->Vamshop->adminRowActions($vocabulary->id);
+    $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'edit', $vocabulary->id],
         ['icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('croogo', 'Edit this item')]);
-    $actions[] = $this->Croogo->adminRowAction('', ['action' => 'delete', $vocabulary->id],
+    $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'delete', $vocabulary->id],
         ['icon' => $this->Theme->getIcon('delete'), 'tooltip' => __d('croogo', 'Remove this item')],
         __d('croogo', 'Are you sure?'));
     $actions = $this->Html->div('item-actions', implode(' ', $actions));

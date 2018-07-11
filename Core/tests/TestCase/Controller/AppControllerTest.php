@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase\Controller;
+namespace Vamshop\Core\Test\TestCase\Controller;
 
 use Cake\Core\App;
 use Cake\Core\Configure;
@@ -8,8 +8,8 @@ use Cake\Filesystem\File;
 use Cake\Network\Request;
 use Cake\TestSuite\IntegrationTestCase;
 use Cake\Utility\Hash;
-use Croogo\Core\Controller\AppController;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Controller\AppController;
+use Vamshop\Core\Vamshop;
 
 class TestAppController extends AppController
 {
@@ -35,7 +35,7 @@ class TestAppController extends AppController
     }
 }
 
-class CroogoAppControllerTest extends IntegrationTestCase
+class VamshopAppControllerTest extends IntegrationTestCase
 {
 
     public $fixtures = [
@@ -250,7 +250,7 @@ class CroogoAppControllerTest extends IntegrationTestCase
 
         $key = 'Hook.controller_properties.TestApp._apiComponents';
         Configure::write($key, ['BogusApi']);
-        Croogo::hookApiComponent('TestApp', 'Example.ImaginaryApi');
+        Vamshop::hookApiComponent('TestApp', 'Example.ImaginaryApi');
 
         $expected = [
             'BogusApi' => [

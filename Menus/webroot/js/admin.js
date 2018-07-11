@@ -19,7 +19,7 @@ Links.slug = function() {
 
 Links.reloadParents = function(event) {
   var query = { menu_id: event.currentTarget.value };
-  var url = Croogo.basePath + 'admin/menus/links/index.json';
+  var url = Vamshop.basePath + 'admin/menus/links/index.json';
   $.getJSON(url, query, function(data, text) {
     if (typeof data.linksTree === 'undefined') {
       return;
@@ -109,8 +109,8 @@ Links.setupSelect2 = function(selector) {
  * @return void
  */
 $(function() {
-  if (Croogo.params.controller == 'links') {
-    if (['admin_add', 'admin_edit'].indexOf(Croogo.params.action) >= 0) {
+  if (Vamshop.params.controller == 'links') {
+    if (['admin_add', 'admin_edit'].indexOf(Vamshop.params.action) >= 0) {
       Links.slug();
     }
   }

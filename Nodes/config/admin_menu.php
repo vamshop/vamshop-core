@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Nodes\Config;
+namespace Vamshop\Nodes\Config;
 
-use Croogo\Core\Nav;
+use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'content', [
     'icon' => 'edit',
     'title' => __d('croogo', 'Content'),
     'url' => [
         'prefix' => 'admin',
-        'plugin' => 'Croogo/Nodes',
+        'plugin' => 'Vamshop/Nodes',
         'controller' => 'Nodes',
         'action' => 'index',
     ],
@@ -19,7 +19,7 @@ Nav::add('sidebar', 'content', [
             'title' => __d('croogo', 'List'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Nodes',
+                'plugin' => 'Vamshop/Nodes',
                 'controller' => 'Nodes',
                 'action' => 'index',
             ],
@@ -29,7 +29,7 @@ Nav::add('sidebar', 'content', [
             'title' => __d('croogo', 'Create'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Nodes',
+                'plugin' => 'Vamshop/Nodes',
                 'controller' => 'Nodes',
                 'action' => 'create',
             ],

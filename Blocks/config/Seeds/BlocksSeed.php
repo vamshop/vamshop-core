@@ -34,7 +34,7 @@ class BlocksSeed extends AbstractSeed
             'class' => '',
             'status' => '1',
             'weight' => '1',
-            'element' => 'Croogo/Nodes.search',
+            'element' => 'Vamshop/Nodes.search',
             'visibility_roles' => '',
             'visibility_paths' => '',
             'visibility_php' => '',

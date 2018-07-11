@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Action\Admin;
+namespace Vamshop\Core\Action\Admin;
 
 use Crud\Action\BaseAction;
 use Exception;
@@ -29,7 +29,7 @@ class ToggleAction extends BaseAction
         $status = (int)!$status;
 
         $this->_controller()->viewBuilder()->setLayout('ajax');
-        $this->_controller()->viewBuilder()->template('Croogo/Core./Common/admin_toggle');
+        $this->_controller()->viewBuilder()->template('Vamshop/Core./Common/admin_toggle');
 
         $entity = $this->_table()->get($id);
         $entity->set($this->config('field'), $status);

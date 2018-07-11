@@ -1,24 +1,24 @@
 <?php
 
-namespace Croogo\Menus\Model\Table;
+namespace Vamshop\Menus\Model\Table;
 
 use Cake\Database\Schema\TableSchema;
 use Cake\Event\Event;
 use Cake\ORM\Entity;
 use Cake\Validation\Validator;
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Core\Model\Table\VamshopTable;
 
 /**
  * Link
  *
  * @category Model
- * @package  Croogo.Menus.Model
+ * @package  Vamshop.Menus.Model
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class LinksTable extends CroogoTable
+class LinksTable extends VamshopTable
 {
 
     public function validationDefault(Validator $validator)
@@ -42,11 +42,11 @@ class LinksTable extends CroogoTable
         parent::initialize($config);
 
         $this->addBehavior('Tree');
-        $this->addBehavior('Croogo/Core.Cached', [
+        $this->addBehavior('Vamshop/Core.Cached', [
             'groups' => ['menus']
         ]);
         $this->belongsTo('Menus', [
-            'className' => 'Croogo/Menus.Menus',
+            'className' => 'Vamshop/Menus.Menus',
         ]);
         $this->addBehavior('CounterCache', [
             'Menus' => ['link_count'],
@@ -61,8 +61,8 @@ class LinksTable extends CroogoTable
             ],
         ]);
 
-        $this->addBehavior('Croogo/Core.Publishable');
-        $this->addBehavior('Croogo/Core.Visibility');
+        $this->addBehavior('Vamshop/Core.Publishable');
+        $this->addBehavior('Vamshop/Core.Visibility');
         $this->addBehavior('Search.Search');
 
         $this->searchManager()

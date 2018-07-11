@@ -22,7 +22,7 @@ Vocabularies.documentReady = function () {
  * @return void
  */
 $(document).ready(function () {
-    if (Croogo.params.controller == 'Vocabularies') {
+    if (Vamshop.params.controller == 'Vocabularies') {
         Vocabularies.documentReady();
     }
 });

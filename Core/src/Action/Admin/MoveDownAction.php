@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Action\Admin;
+namespace Vamshop\Core\Action\Admin;
 
 use Cake\Event\Event;
 use Crud\Action\BaseAction;

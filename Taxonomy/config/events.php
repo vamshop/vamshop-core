@@ -1,9 +1,9 @@
 <?php
 
-namespace Croogo\Taxonomy\Config;
+namespace Vamshop\Taxonomy\Config;
 
 return [
     'EventHandlers' => [
-        'Croogo/Taxonomy.TaxonomiesEventHandler',
+        'Vamshop/Taxonomy.TaxonomiesEventHandler',
     ],
 ];

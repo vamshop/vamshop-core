@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Users\Model\Table;
+namespace Vamshop\Users\Model\Table;
 
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Core\Model\Table\VamshopTable;
 
-class RolesTable extends CroogoTable
+class RolesTable extends VamshopTable
 {
 
     const ROLE_REGISTERED = 2;
@@ -24,7 +24,7 @@ class RolesTable extends CroogoTable
         parent::initialize($config);
 
         $this->addBehavior('Acl.Acl', [
-            'className' => 'Croogo/Core.CroogoAcl',
+            'className' => 'Vamshop/Core.VamshopAcl',
             'type' => 'requester'
         ]);
         $this->addBehavior('Search.Search');

@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Taxonomy\Controller\Admin;
+namespace Vamshop\Taxonomy\Controller\Admin;
 
 use Cake\Event\Event;
 
@@ -8,17 +8,17 @@ use Cake\Event\Event;
  * Types Controller
  *
  * @category Controller
- * @package  Croogo
+ * @package  Vamshop
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  *
- * @property \Croogo\Taxonomy\Model\Table\TypesTable Types
+ * @property \Vamshop\Taxonomy\Model\Table\TypesTable Types
  */
 class TypesController extends AppController
 {
-    public $modelClass = 'Croogo/Taxonomy.Types';
+    public $modelClass = 'Vamshop/Taxonomy.Types';
 
     public function initialize()
     {

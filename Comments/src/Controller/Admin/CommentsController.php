@@ -1,16 +1,16 @@
 <?php
 
-namespace Croogo\Comments\Controller\Admin;
+namespace Vamshop\Comments\Controller\Admin;
 
 use App\Network\Email\Email;
 use Cake\Event\Event;
-use Croogo\Comments\Model\Entity\Comment;
+use Vamshop\Comments\Model\Entity\Comment;
 
 /**
  * Comments Controller
  *
  * @category Controller
- * @package  Croogo.Comments.Controller
+ * @package  Vamshop.Comments.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -22,7 +22,7 @@ class CommentsController extends AppController
     {
         parent::initialize();
 
-        $this->_loadCroogoComponents(['Akismet', 'BulkProcess', 'Recaptcha']);
+        $this->_loadVamshopComponents(['Akismet', 'BulkProcess', 'Recaptcha']);
     }
 
     /**

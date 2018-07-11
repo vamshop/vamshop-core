@@ -1,20 +1,20 @@
 <?php
 
-namespace Croogo\Blocks\View\Helper;
+namespace Vamshop\Blocks\View\Helper;
 
 use Cake\Event\Event;
 use Cake\Log\LogTrait;
 use Cake\Utility\Hash;
 use Cake\View\Helper;
-use Croogo\Blocks\Catalog;
-use Croogo\Blocks\Model\Entity\Block;
-use Croogo\Core\Croogo;
+use Vamshop\Blocks\Catalog;
+use Vamshop\Blocks\Model\Entity\Block;
+use Vamshop\Core\Vamshop;
 
 /**
  * Regions Helper
  *
  * @category Helper
- * @package  Croogo.Blocks.View.Helper
+ * @package  Vamshop.Blocks.View.Helper
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -64,12 +64,12 @@ class RegionsHelper extends Helper
         ], $options);
         $elementOptions = $options['elementOptions'];
 
-        $defaultElement = 'Croogo/Blocks.block';
+        $defaultElement = 'Vamshop/Blocks.block';
 
         $element = $block->element;
         $exists = $this->_View->elementExists($element);
 
-        $event = Croogo::dispatchEvent('Helper.Regions.beforeSetBlock', $this->_View, [
+        $event = Vamshop::dispatchEvent('Helper.Regions.beforeSetBlock', $this->_View, [
             'content' => $block->body,
         ]);
         $block->body = $event->data()['content'];
@@ -97,7 +97,7 @@ class RegionsHelper extends Helper
             $blockOutput = (string)$this->_View->cell($pluginAndCell . '::' . $action, [], $block->params);
         }
 
-        Croogo::dispatchEvent('Helper.Regions.afterSetBlock', $this->_View, [
+        Vamshop::dispatchEvent('Helper.Regions.afterSetBlock', $this->_View, [
             'content' => &$blockOutput,
         ]);
 
@@ -136,7 +136,7 @@ class RegionsHelper extends Helper
             'elementOptions' => [],
         ], $options);
 
-        $defaultElement = 'Croogo/Blocks.block';
+        $defaultElement = 'Vamshop/Blocks.block';
         $blocks = $this->_View->viewVars['blocksForLayout'][$regionAlias];
         foreach ($blocks as $block) {
             $output .= $this->block($block, $regionAlias, $options);

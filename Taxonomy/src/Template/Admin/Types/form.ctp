@@ -1,10 +1,10 @@
 <?php
 
-$this->extend('Croogo/Core./Common/admin_edit');
+$this->extend('Vamshop/Core./Common/admin_edit');
 
 $this->Breadcrumbs
-    ->add(__d('croogo', 'Content'), ['plugin' => 'Croogo/Nodes', 'controller' => 'Nodes', 'action' => 'index'])
-    ->add(__d('croogo', 'Types'), ['plugin' => 'Croogo/Taxonomy', 'controller' => 'Types', 'action' => 'index']);
+    ->add(__d('croogo', 'Content'), ['plugin' => 'Vamshop/Nodes', 'controller' => 'Nodes', 'action' => 'index'])
+    ->add(__d('croogo', 'Types'), ['plugin' => 'Vamshop/Taxonomy', 'controller' => 'Types', 'action' => 'index']);
 
 if ($this->request->params['action'] == 'edit') {
     $this->assign('title', __d('croogo', 'Edit Type'));
@@ -19,10 +19,10 @@ if ($this->request->params['action'] == 'add') {
 $this->append('form-start', $this->Form->create($type));
 
 $this->start('tab-heading');
-    echo $this->Croogo->adminTab(__d('croogo', 'Type'), '#type-main');
-    echo $this->Croogo->adminTab(__d('croogo', 'Taxonomy'), '#type-taxonomy');
-    echo $this->Croogo->adminTab(__d('croogo', 'Comments'), '#type-comments');
-    echo $this->Croogo->adminTab(__d('croogo', 'Params'), '#type-params');
+    echo $this->Vamshop->adminTab(__d('croogo', 'Type'), '#type-main');
+    echo $this->Vamshop->adminTab(__d('croogo', 'Taxonomy'), '#type-taxonomy');
+    echo $this->Vamshop->adminTab(__d('croogo', 'Comments'), '#type-comments');
+    echo $this->Vamshop->adminTab(__d('croogo', 'Params'), '#type-params');
 $this->end();
 
 $this->start('tab-content');
@@ -37,7 +37,7 @@ $this->start('tab-content');
             'label' => __d('croogo', 'Permalink'),
             'prepend' => str_replace('_placeholder', '', $this->Url->build([
                 'prefix' => false,
-                'plugin' => 'Croogo/Nodes',
+                'plugin' => 'Vamshop/Nodes',
                 'controller' => 'Nodes',
                 'action' => 'index',
                 'type' => '_placeholder',
@@ -78,7 +78,7 @@ $this->start('tab-content');
             'class' => false,
         ]);
         echo $this->Html->link(__d('croogo', 'You can manage your API keys here.'), [
-            'plugin' => 'Croogo/Settings',
+            'plugin' => 'Vamshop/Settings',
             'controller' => 'Settings',
             'action' => 'prefix',
             'Service',
@@ -97,7 +97,7 @@ $this->end();
 
 $this->start('panels');
 echo $this->Html->beginBox(__d('croogo', 'Publishing'));
-    echo $this->element('Croogo/Core.admin/buttons', ['type' => 'type']);
+    echo $this->element('Vamshop/Core.admin/buttons', ['type' => 'type']);
     echo $this->Form->input('format_show_author', [
         'label' => __d('croogo', 'Show author\'s name'),
         'class' => false,

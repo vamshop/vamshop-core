@@ -1,12 +1,12 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase\Configure;
+namespace Vamshop\Core\Test\TestCase\Configure;
 
 use Cake\Core\Plugin;
-use Croogo\Core\Configure\CroogoJsonReader;
-use Croogo\Core\TestSuite\TestCase;
+use Vamshop\Core\Configure\VamshopJsonReader;
+use Vamshop\Core\TestSuite\TestCase;
 
-class MockCroogoJsonReader extends CroogoJsonReader
+class MockVamshopJsonReader extends VamshopJsonReader
 {
 
     public $written = null;
@@ -17,13 +17,13 @@ class MockCroogoJsonReader extends CroogoJsonReader
     }
 }
 
-class CroogoJsonReaderTest extends TestCase
+class VamshopJsonReaderTest extends TestCase
 {
 
     /**
-     * @var CroogoJsonReader
+     * @var VamshopJsonReader
      */
-    private $CroogoJsonReader;
+    private $VamshopJsonReader;
 
     /**
      * @var string
@@ -36,13 +36,13 @@ class CroogoJsonReaderTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->CroogoJsonReader = $this->getMockBuilder(MockCroogoJsonReader::class)
+        $this->VamshopJsonReader = $this->getMockBuilder(MockVamshopJsonReader::class)
             ->setMethods(null)
             ->setConstructorArgs([
-                Plugin::path('Croogo/Core') . '..' . DS . 'tests' . DS . 'test_app' . DS . 'config' . DS
+                Plugin::path('Vamshop/Core') . '..' . DS . 'tests' . DS . 'test_app' . DS . 'config' . DS
             ])
             ->getMock();
-        $this->testFile = $this->CroogoJsonReader->getPath() . 'test.json';
+        $this->testFile = $this->VamshopJsonReader->getPath() . 'test.json';
     }
 
 /**
@@ -60,8 +60,8 @@ class CroogoJsonReaderTest extends TestCase
  */
     public function testDefaultPath()
     {
-        $path = $this->CroogoJsonReader->getPath();
-        $this->assertEquals(Plugin::path('Croogo/Core') . '..' . DS . 'tests' . DS . 'test_app' . DS . 'config' . DS, $path);
+        $path = $this->VamshopJsonReader->getPath();
+        $this->assertEquals(Plugin::path('Vamshop/Core') . '..' . DS . 'tests' . DS . 'test_app' . DS . 'config' . DS, $path);
     }
 
 /**
@@ -69,7 +69,7 @@ class CroogoJsonReaderTest extends TestCase
  */
     public function testRead()
     {
-        $settings = $this->CroogoJsonReader->read('settings', 'settings');
+        $settings = $this->VamshopJsonReader->read('settings', 'settings');
         $expected = [
             'acl_plugin' => 'Acl',
             'email' => 'you@your-site.com',
@@ -79,7 +79,7 @@ class CroogoJsonReaderTest extends TestCase
             'tagline' => 'A CakePHP powered Content Management System.',
             'theme' => '',
             'timezone' => 0,
-            'title' => 'Croogo - Test',
+            'title' => 'Vamshop - Test',
         ];
         $this->assertEquals($expected, $settings['Site']);
     }
@@ -91,7 +91,7 @@ class CroogoJsonReaderTest extends TestCase
     {
         $settings = [
             'Site' => [
-                'title' => 'Croogo - Test (Edited)',
+                'title' => 'Vamshop - Test (Edited)',
             ],
             'Reading' => [
                 'date_time_format' => 'Y m d',
@@ -110,11 +110,11 @@ class CroogoJsonReaderTest extends TestCase
                 'controller_properties' => ['ignored', 'to', 'oblivion'],
             ],
         ];
-        $this->CroogoJsonReader->dump(basename($this->testFile), $settings);
+        $this->VamshopJsonReader->dump(basename($this->testFile), $settings);
         $expected = <<<END
 {
 \s+"Site": {
-\s+"title": "Croogo - Test \(Edited\)"
+\s+"title": "Vamshop - Test \(Edited\)"
 \s+},
 \s+"Reading": {
 \s+"date_time_format": "Y m d",

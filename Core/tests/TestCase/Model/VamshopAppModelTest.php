@@ -1,27 +1,27 @@
 <?php
-namespace Croogo\Core\Test\TestCase\Model;
+namespace Vamshop\Core\Test\TestCase\Model;
 
 use App\Controller\Component\AuthComponent;
 use App\Model\Model;
 use App\Model\User;
 use Cake\ORM\TableRegistry;
-use Croogo\Model\CroogoAppModel;
-use Croogo\Core\TestSuite\CroogoTestCase;
-use Croogo\Users\Model\Table\UsersTable;
+use Vamshop\Model\VamshopAppModel;
+use Vamshop\Core\TestSuite\VamshopTestCase;
+use Vamshop\Users\Model\Table\UsersTable;
 
 /**
- * CroogoAppModelTest file
+ * VamshopAppModelTest file
  *
- * This file is to test the CroogoAppModel
+ * This file is to test the VamshopAppModel
  *
  * @category Test
- * @package  Croogo
+ * @package  Vamshop
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class CroogoAppModelTest extends CroogoTestCase
+class VamshopAppModelTest extends VamshopTestCase
 {
 
 /**
@@ -62,7 +62,7 @@ class CroogoAppModelTest extends CroogoTestCase
         $this->markTestIncomplete('This test needs to be ported to CakePHP 3.0');
 
 //		$this->User = ClassRegistry::init('Users.User');
-        $this->usersTable = TableRegistry::get('Croogo/Users.Users');
+        $this->usersTable = TableRegistry::get('Vamshop/Users.Users');
     }
 
 /**

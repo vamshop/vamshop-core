@@ -3,7 +3,7 @@
  *
  * @license MIT
  * @author rchavik@gmail.com
- * @package Croogo
+ * @package Vamshop
  */
 ;(function ($, window, document, undefined ) {
 

@@ -1,7 +1,7 @@
 <?php
-namespace Croogo\Menus\Test\TestCase\Model;
+namespace Vamshop\Menus\Test\TestCase\Model;
 
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 use Menus\Model\Menu;
 use Menus\Model\MenusAppModel;
 
@@ -24,7 +24,7 @@ class TestMenu extends Menu
  * TestUser
  *
  */
-class MenuTest extends CroogoTestCase
+class MenuTest extends VamshopTestCase
 {
 
 /**

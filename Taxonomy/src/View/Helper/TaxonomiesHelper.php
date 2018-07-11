@@ -1,17 +1,17 @@
 <?php
 
-namespace Croogo\Taxonomy\View\Helper;
+namespace Vamshop\Taxonomy\View\Helper;
 
 use Cake\Event\Event;
 use Cake\Utility\Inflector;
 use Cake\View\Helper;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 /**
  * Taxonomies Helper
  *
  * @category Taxonomy.View/Helper
- * @package  Croogo.Taxonomy
+ * @package  Vamshop.Taxonomy
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -51,9 +51,9 @@ class TaxonomiesHelper extends Helper
             return;
         }
         $title = __d('croogo', 'Terms');
-        $element = 'Croogo/Taxonomy.terms_tab';
-        Croogo::hookAdminTab('Admin/' . $controller . '/add', $title, $element);
-        Croogo::hookAdminTab('Admin/' . $controller . '/edit', $title, $element);
+        $element = 'Vamshop/Taxonomy.terms_tab';
+        Vamshop::hookAdminTab('Admin/' . $controller . '/add', $title, $element);
+        Vamshop::hookAdminTab('Admin/' . $controller . '/edit', $title, $element);
     }
 
     /**
@@ -100,10 +100,10 @@ class TaxonomiesHelper extends Helper
             'tagAttributes' => [],
             'type' => null,
             'link' => true,
-            'plugin' => 'Croogo/Nodes',
+            'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
             'action' => 'term',
-            'element' => 'Croogo/Taxonomy.vocabulary',
+            'element' => 'Vamshop/Taxonomy.vocabulary',
         ];
         $options = array_merge($_options, $options);
 
@@ -189,7 +189,7 @@ class TaxonomiesHelper extends Helper
                 $type->title,
                 [
                     'prefix' => false,
-                    'plugin' => 'Croogo/Nodes',
+                    'plugin' => 'Vamshop/Nodes',
                     'controller' => 'Nodes',
                     'action' => 'term',
                     'type' => $type->alias,

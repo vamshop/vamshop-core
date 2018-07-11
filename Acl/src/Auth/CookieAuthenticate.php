@@ -1,5 +1,5 @@
 <?php
-namespace Croogo\Acl\Auth;
+namespace Vamshop\Acl\Auth;
 
 use Cake\Auth\BaseAuthenticate;
 use Cake\Controller\Component\AuthComponent;
@@ -32,7 +32,7 @@ use Cake\ORM\TableRegistry;
  *  )
  * }}}
  *
- * @package     Croogo.Acl.Auth
+ * @package     Vamshop.Acl.Auth
  * @copyright   Copyright (c) 2012 Ceeram
  * @license     http://www.opensource.org/licenses/mit-license.php The MIT License
  * @see AclAutoLoginComponent

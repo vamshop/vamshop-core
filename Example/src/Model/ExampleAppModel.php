@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Example\Model;
+namespace Vamshop\Example\Model;
 
 use App\Model\AppModel;
 
@@ -8,7 +8,7 @@ use App\Model\AppModel;
  * Example App Model
  *
  * @category Example.Model
- * @package  Croogo.Example.Model
+ * @package  Vamshop.Example.Model
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

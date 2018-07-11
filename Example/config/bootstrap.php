@@ -4,39 +4,39 @@
  *
  * example_routes.php will be loaded in main app/config/routes.php file.
  */
-namespace Croogo\Example\Config;
+namespace Vamshop\Example\Config;
 
 use Cake\Core\Configure;
 use Cake\I18n\I18n;
-use Croogo\Core\Croogo;
-use Croogo\Core\Nav as CroogoNav;
-use Croogo\Wysiwyg\Wysiwyg;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\Nav as VamshopNav;
+use Vamshop\Wysiwyg\Wysiwyg;
 
 /**
  * Behavior
  *
  * This plugin's Example behavior will be attached whenever Node model is loaded.
  */
-Croogo::hookBehavior('Croogo/Nodes.Nodes', 'Croogo/Example.Example', []);
+Vamshop::hookBehavior('Vamshop/Nodes.Nodes', 'Vamshop/Example.Example', []);
 
 /**
  * Component
  *
  * This plugin's Example component will be loaded in ALL controllers.
  */
-Croogo::hookComponent('*', 'Croogo/Example.Example');
+Vamshop::hookComponent('*', 'Vamshop/Example.Example');
 
 /**
  * Helper
  *
  * This plugin's Example helper will be loaded via NodesController.
  */
-Croogo::hookHelper('Nodes', 'Example.Example');
+Vamshop::hookHelper('Nodes', 'Example.Example');
 
 /**
  * Admin menu (navigation)
  */
-CroogoNav::add('sidebar', 'extensions.children.example', [
+VamshopNav::add('sidebar', 'extensions.children.example', [
     'title' => 'Example',
     'url' => '#',
     'children' => [
@@ -44,7 +44,7 @@ CroogoNav::add('sidebar', 'extensions.children.example', [
             'title' => 'Example 1',
             'url' => [
                 'admin' => true,
-                'plugin' => 'Croogo/Example',
+                'plugin' => 'Vamshop/Example',
                 'controller' => 'Example',
                 'action' => 'index',
             ],
@@ -74,7 +74,7 @@ CroogoNav::add('sidebar', 'extensions.children.example', [
             'title' => 'Chooser Example',
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Example',
+                'plugin' => 'Vamshop/Example',
                 'controller' => 'Example',
                 'action' => 'chooser',
             ],
@@ -83,7 +83,7 @@ CroogoNav::add('sidebar', 'extensions.children.example', [
             'title' => 'RTE Example',
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Example',
+                'plugin' => 'Vamshop/Example',
                 'controller' => 'Example',
                 'action' => 'rte_example',
             ],
@@ -92,7 +92,7 @@ CroogoNav::add('sidebar', 'extensions.children.example', [
 ]);
 
 Wysiwyg::setActions([
-    'Croogo/Example.Admin/Example/rteExample' => [
+    'Vamshop/Example.Admin/Example/rteExample' => [
         [
             'elements' => 'ExampleBasic',
             'preset' => 'basic',
@@ -125,11 +125,11 @@ Wysiwyg::setActions([
  * When browsing the content list in admin panel (Content > List),
  * an extra link called 'Example' will be placed under 'Actions' column.
  */
-Croogo::hookAdminRowAction('Croogo/Nodes.Admin/Nodes/index', 'Example', 'prefix:admin/plugin:Croogo%2fExample/controller:Example/action:index/:id');
+Vamshop::hookAdminRowAction('Vamshop/Nodes.Admin/Nodes/index', 'Example', 'prefix:admin/plugin:Vamshop%2fExample/controller:Example/action:index/:id');
 
 /* Row action with link options */
-Croogo::hookAdminRowAction('Croogo/Nodes.Admin/Nodes/index', 'Button with Icon', [
-    'plugin:Croogo%2fExample/controller:Example/action:index/:id' => [
+Vamshop::hookAdminRowAction('Vamshop/Nodes.Admin/Nodes/index', 'Button with Icon', [
+    'plugin:Vamshop%2fExample/controller:Example/action:index/:id' => [
         'options' => [
             'icon' => 'key',
             'button' => 'success',
@@ -138,8 +138,8 @@ Croogo::hookAdminRowAction('Croogo/Nodes.Admin/Nodes/index', 'Button with Icon',
 ]);
 
 /* Row action with icon */
-Croogo::hookAdminRowAction('Croogo/Nodes.Admin/Nodes/index', 'Icon Only', [
-    'plugin:Croogo%2fExample/controller:Example/action:index/:id' => [
+Vamshop::hookAdminRowAction('Vamshop/Nodes.Admin/Nodes/index', 'Icon Only', [
+    'plugin:Vamshop%2fExample/controller:Example/action:index/:id' => [
         'title' => false,
         'options' => [
             'icon' => 'picture-o',
@@ -152,8 +152,8 @@ Croogo::hookAdminRowAction('Croogo/Nodes.Admin/Nodes/index', 'Icon Only', [
 ]);
 
 /* Row action with confirm message */
-Croogo::hookAdminRowAction('Croogo/Nodes.Admin/Nodes/index', 'Reload Page', [
-    'prefix:admin/plugin:Croogo%2fNodes/controller:Nodes/action:index' => [
+Vamshop::hookAdminRowAction('Vamshop/Nodes.Admin/Nodes/index', 'Reload Page', [
+    'prefix:admin/plugin:Vamshop%2fNodes/controller:Nodes/action:index' => [
         'title' => false,
         'options' => [
             'icon' => 'refresh',
@@ -171,5 +171,5 @@ Croogo::hookAdminRowAction('Croogo/Nodes.Admin/Nodes/index', 'Reload Page', [
  *
  * Useful for adding form extra form fields if necessary.
  */
-Croogo::hookAdminTab('Admin/Nodes/add', 'Example', 'Croogo/Example.admin_tab_node');
-Croogo::hookAdminTab('Admin/Nodes/edit', 'Example', 'Croogo/Example.admin_tab_node');
+Vamshop::hookAdminTab('Admin/Nodes/add', 'Example', 'Vamshop/Example.admin_tab_node');
+Vamshop::hookAdminTab('Admin/Nodes/edit', 'Example', 'Vamshop/Example.admin_tab_node');

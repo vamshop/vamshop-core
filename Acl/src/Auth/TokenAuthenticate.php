@@ -1,5 +1,5 @@
 <?php
-namespace Croogo\Acl\Controller\Component\Auth;
+namespace Vamshop\Acl\Controller\Component\Auth;
 
 use App\Controller\Component\Auth\BaseAuthenticate;
 
@@ -22,7 +22,7 @@ use App\Controller\Component\Auth\BaseAuthenticate;
  *  )
  * }}}
  *
- * @package     Croogo.Acl.Controller.Component.Auth
+ * @package     Vamshop.Acl.Controller.Component.Auth
  */
 class TokenAuthenticate extends BaseAuthenticate
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Shell;
+namespace Vamshop\Core\Shell;
 
 use App\Controller\AppController;
 use Cake\Controller\Controller;
@@ -10,8 +10,8 @@ use Cake\Core\Plugin;
 use Cake\Network\Request;
 use Cake\Network\Response;
 use Cake\Utility\Inflector;
-use Croogo\Extensions\CroogoPlugin;
-use Croogo\Extensions\CroogoTheme;
+use Vamshop\Extensions\VamshopPlugin;
+use Vamshop\Extensions\VamshopTheme;
 
 /**
  * Ext Shell
@@ -23,7 +23,7 @@ use Croogo\Extensions\CroogoTheme;
  *  ./Console/croogo ext deactivate theme
  *
  * @category Shell
- * @package  Croogo.Croogo.Console.Command
+ * @package  Vamshop.Vamshop.Console.Command
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -40,18 +40,18 @@ class ExtShell extends AppShell
     public $uses = ['Settings.Setting'];
 
 /**
- * CroogoPlugin class
+ * VamshopPlugin class
  *
- * @var CroogoPlugin
+ * @var VamshopPlugin
  */
-    protected $_CroogoPlugin = null;
+    protected $_VamshopPlugin = null;
 
 /**
- * CroogoTheme class
+ * VamshopTheme class
  *
- * @var CroogoTheme
+ * @var VamshopTheme
  */
-    protected $_CroogoTheme = null;
+    protected $_VamshopTheme = null;
 
 /**
  * Controller
@@ -71,13 +71,13 @@ class ExtShell extends AppShell
     public function __construct($stdout = null, $stderr = null, $stdin = null)
     {
         parent::__construct($stdout, $stderr, $stdin);
-        $this->_CroogoPlugin = new CroogoPlugin();
-        $this->_CroogoTheme = new CroogoTheme();
+        $this->_VamshopPlugin = new VamshopPlugin();
+        $this->_VamshopTheme = new VamshopTheme();
         $Request = new Request();
         $Response = new Response();
         $this->_Controller = new AppController($Request, $Response);
         $this->_Controller->startupProcess();
-        $this->_CroogoPlugin->setController($this->_Controller);
+        $this->_VamshopPlugin->setController($this->_Controller);
         $this->initialize();
     }
 
@@ -95,11 +95,11 @@ class ExtShell extends AppShell
         $ext = isset($args[2]) ? $args[2] : null;
         $force = isset($this->params['force']) ? $this->params['force'] : false;
         if ($type == 'theme') {
-            $extensions = $this->_CroogoTheme->getThemes();
+            $extensions = $this->_VamshopTheme->getThemes();
             $theme = Configure::read('Site.theme');
             $active = !empty($theme) ? $theme == 'default' : true;
         } elseif ($type == 'plugin') {
-            $extensions = $this->_CroogoPlugin->getPlugins();
+            $extensions = $this->_VamshopPlugin->getPlugins();
             if ($force) {
                 $plugins = array_combine($p = Plugin::loaded(), $p);
                 $extensions += $plugins;
@@ -169,7 +169,7 @@ class ExtShell extends AppShell
  */
     protected function _activatePlugin($plugin)
     {
-        $result = $this->_CroogoPlugin->activate($plugin);
+        $result = $this->_VamshopPlugin->activate($plugin);
         if ($result === true) {
             $this->out(__d('croogo', 'Plugin "%s" activated successfully.', $plugin));
             return true;
@@ -189,9 +189,9 @@ class ExtShell extends AppShell
  */
     protected function _deactivatePlugin($plugin)
     {
-        $usedBy = $this->_CroogoPlugin->usedBy($plugin);
+        $usedBy = $this->_VamshopPlugin->usedBy($plugin);
         if ($usedBy === false) {
-            $result = $this->_CroogoPlugin->deactivate($plugin);
+            $result = $this->_VamshopPlugin->deactivate($plugin);
             if ($result === false) {
                 $this->err(__d('croogo', 'Plugin "%s" could not be deactivated. Please, try again.', $plugin));
             } elseif (is_string($result)) {
@@ -208,7 +208,7 @@ class ExtShell extends AppShell
             }
         }
         if ($this->params['force'] === true || $result === true) {
-            $this->_CroogoPlugin->removeBootstrap($plugin);
+            $this->_VamshopPlugin->removeBootstrap($plugin);
             $result = true;
         }
         if ($result === true) {
@@ -226,7 +226,7 @@ class ExtShell extends AppShell
  */
     protected function _activateTheme($theme)
     {
-        if ($this->_CroogoTheme->activate($theme)) {
+        if ($this->_VamshopTheme->activate($theme)) {
             $this->out(__d('croogo', 'Theme "%s" activated successfully.', $theme));
         } else {
             $this->err(__d('croogo', 'Theme "%s" activation failed.', $theme));
@@ -242,7 +242,7 @@ class ExtShell extends AppShell
         $all = $this->params['all'];
         $plugins = $plugin == null ? array_keys(Configure::read('plugins')) : [$plugin];
         $loaded = Plugin::loaded();
-        $CroogoPlugin = new CroogoPlugin();
+        $VamshopPlugin = new VamshopPlugin();
         $this->out(__d('croogo', 'Plugins:'), 2);
         $this->out(__d('croogo', '%-20s%-50s%s', __d('croogo', 'Plugin'), __d('croogo', 'Author'), __d('croogo', 'Status')));
         $this->out(str_repeat('-', 80));
@@ -254,7 +254,7 @@ class ExtShell extends AppShell
             if (!$active && !$all) {
                 continue;
             }
-            $data = $CroogoPlugin->getPluginData($plugin);
+            $data = $VamshopPlugin->getPluginData($plugin);
             $author = isset($data['author']) ? $data['author'] : '';
             $this->out(__d('croogo', '%-20s%-50s%s', $plugin, $author, $status));
         }
@@ -265,10 +265,10 @@ class ExtShell extends AppShell
  */
     public function themes($theme = null)
     {
-        $CroogoTheme = new CroogoTheme();
+        $VamshopTheme = new VamshopTheme();
         $all = $this->params['all'];
         $current = Configure::read('Site.theme');
-        $themes = $theme == null ? $CroogoTheme->getThemes() : [$theme];
+        $themes = $theme == null ? $VamshopTheme->getThemes() : [$theme];
         $this->out("Themes:", 2);
         $default = empty($current) || $current == 'default';
         $this->out(__d('croogo', '%-20s%-50s%s', __d('croogo', 'Theme'), __d('croogo', 'Author'), __d('croogo', 'Status')));
@@ -279,7 +279,7 @@ class ExtShell extends AppShell
             if (!$active && !$all) {
                 continue;
             }
-            $data = $CroogoTheme->getThemeData($theme);
+            $data = $VamshopTheme->getThemeData($theme);
             $author = isset($data['author']) ? $data['author'] : '';
             $this->out(__d('croogo', '%-20s%-50s%s', $theme, $author, $status));
         }

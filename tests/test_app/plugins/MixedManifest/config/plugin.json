@@ -1,5 +1,5 @@
 {
-	"description": "MixedManifest Test Croogo plugin",
+	"description": "MixedManifest Test Vamshop plugin",
 	"dependencies": {
 		"plugins": [ "Acl" ]
 	}

@@ -1,6 +1,6 @@
 <?php
 /**
- * @var \Croogo\Core\View\CroogoView $this
+ * @var \Vamshop\Core\View\VamshopView $this
  */
 use Cake\Utility\Hash;
 use Cake\Utility\Inflector;
@@ -56,9 +56,9 @@ $tabId = 'tabitem-' . Inflector::slug(strtolower($modelClass), '-');
 if (!$this->exists('left-column')):
     $tabHeading = $this->fetch('tab-heading');
     if (empty($tabHeading)):
-        $tabHeading = $this->Croogo->adminTab(__d('croogo', $modelClass), "#$tabId");
+        $tabHeading = $this->Vamshop->adminTab(__d('croogo', $modelClass), "#$tabId");
     endif;
-    $tabHeading .= $this->Croogo->adminTabs();
+    $tabHeading .= $this->Vamshop->adminTabs();
 
     $tabContent = trim($this->fetch('tab-content'));
     if (!$tabContent):
@@ -80,7 +80,7 @@ if (!$this->exists('left-column')):
             'id' => $tabId,
         ]);
     endif;
-    $tabContent .= $this->Croogo->adminTabs();
+    $tabContent .= $this->Vamshop->adminTabs();
 
     $this->start('left-column');
     echo $this->Html->tag('ul', $tabHeading, ['class' => 'nav nav-tabs']);
@@ -97,12 +97,12 @@ if (!$this->exists('right-column')):
             echo $buttonsBlock;
         else :
             echo $this->Html->beginBox(__d('croogo', 'Publishing'));
-            echo $this->element('Croogo/Core.admin/buttons', ['type' => $modelClass]);
+            echo $this->element('Vamshop/Core.admin/buttons', ['type' => $modelClass]);
             echo $this->Html->endBox();
         endif;
     endif;
 
-    echo $this->Croogo->adminBoxes();
+    echo $this->Vamshop->adminBoxes();
     $this->end();
 endif;
 

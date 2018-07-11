@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Model\Behavior;
+namespace Vamshop\Core\Model\Behavior;
 
 use Cake\ORM\Behavior\TreeBehavior as CakeTree;
 use Cake\Event\Event;

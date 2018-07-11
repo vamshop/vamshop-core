@@ -1,21 +1,21 @@
 <?php
 
-namespace Croogo\Dashboards\View\Helper;
+namespace Vamshop\Dashboards\View\Helper;
 
 use Cake\View\Helper;
 use Cake\Utility\Hash;
 use Cake\Core\Configure;
 use Cake\Log\Log;
 use Cake\View\View;
-use Croogo\Core\Croogo;
-use Croogo\Dashboards\CroogoDashboard;
+use Vamshop\Core\Vamshop;
+use Vamshop\Dashboards\VamshopDashboard;
 use Cake\ORM\TableRegistry;
 
 /**
  * Dashboards Helper
  *
  * @category Helper
- * @package  Croogo.Dashboards.View.Helper
+ * @package  Vamshop.Dashboards.View.Helper
  * @version  2.2
  * @author   Walther Lalk <emailme@waltherlalk.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -25,9 +25,9 @@ class DashboardsHelper extends Helper
 {
 
     public $helpers = [
-        'Html' => ['className' => 'Croogo/Core.CroogoHtml'],
-        'Croogo/Core.Layout',
-        'Croogo/Core.Theme',
+        'Html' => ['className' => 'Vamshop/Core.VamshopHtml'],
+        'Vamshop/Core.Layout',
+        'Vamshop/Core.Theme',
     ];
 
 /**
@@ -48,7 +48,7 @@ class DashboardsHelper extends Helper
     public function beforeRender($viewFile)
     {
         if ($this->request->param('prefix') === 'admin') {
-            Croogo::dispatchEvent('Croogo.setupAdminDashboardData', $this->_View);
+            Vamshop::dispatchEvent('Vamshop.setupAdminDashboardData', $this->_View);
         }
     }
 
@@ -66,13 +66,13 @@ class DashboardsHelper extends Helper
         }
 
         $columns = [
-            CroogoDashboard::LEFT => [],
-            CroogoDashboard::RIGHT => [],
-            CroogoDashboard::FULL => [],
+            VamshopDashboard::LEFT => [],
+            VamshopDashboard::RIGHT => [],
+            VamshopDashboard::FULL => [],
         ];
         if (empty($this->Roles)) {
-            $this->Roles = TableRegistry::get('Croogo/Users.Roles');
-            $this->Roles->addBehavior('Croogo/Core.Aliasable');
+            $this->Roles = TableRegistry::get('Vamshop/Users.Roles');
+            $this->Roles->addBehavior('Vamshop/Core.Aliasable');
         }
         $currentRole = $this->Roles->byId($this->Layout->getRoleId());
 
@@ -114,12 +114,12 @@ class DashboardsHelper extends Helper
                 'alias' => $alias,
                 'dashboard' => $dashboard,
             ];
-            Croogo::dispatchEvent('Croogo.beforeRenderDashboard', $this->_View, compact('alias', 'dashboard'));
-            $dashboardBox = $this->_View->element('Croogo/Dashboards.admin/dashboard', $opt);
-            Croogo::dispatchEvent('Croogo.afterRenderDashboard', $this->_View, compact('alias', 'dashboard', 'dashboardBox'));
+            Vamshop::dispatchEvent('Vamshop.beforeRenderDashboard', $this->_View, compact('alias', 'dashboard'));
+            $dashboardBox = $this->_View->element('Vamshop/Dashboards.admin/dashboard', $opt);
+            Vamshop::dispatchEvent('Vamshop.afterRenderDashboard', $this->_View, compact('alias', 'dashboard', 'dashboardBox'));
 
             if ($dashboard['column'] === false) {
-                $dashboard['column'] = count($columns[0]) <= count($columns[1]) ? CroogoDashboard::LEFT : CroogoDashboard::RIGHT;
+                $dashboard['column'] = count($columns[0]) <= count($columns[1]) ? VamshopDashboard::LEFT : VamshopDashboard::RIGHT;
             }
 
             $columns[$dashboard['column']][] = $dashboardBox;
@@ -127,16 +127,16 @@ class DashboardsHelper extends Helper
 
         $dashboardTag = $this->settings['dashboardTag'];
         $columnDivs = [
-            0 => $this->Html->tag($dashboardTag, implode('', $columns[CroogoDashboard::LEFT]) . '&nbsp;', [
+            0 => $this->Html->tag($dashboardTag, implode('', $columns[VamshopDashboard::LEFT]) . '&nbsp;', [
                 'class' => $cssSetting['dashboardLeft'] . ' ' . $cssSetting['dashboardClass'],
                 'id' => 'column-0',
             ]),
-            1 => $this->Html->tag($dashboardTag, implode('', $columns[CroogoDashboard::RIGHT]) . '&nbsp;', [
+            1 => $this->Html->tag($dashboardTag, implode('', $columns[VamshopDashboard::RIGHT]) . '&nbsp;', [
                 'class' => $cssSetting['dashboardRight'] . ' ' . $cssSetting['dashboardClass'],
                 'id' => 'column-1'
             ]),
         ];
-        $fullDiv = $this->Html->tag($dashboardTag, implode('', $columns[CroogoDashboard::FULL]) . '&nbsp;', [
+        $fullDiv = $this->Html->tag($dashboardTag, implode('', $columns[VamshopDashboard::FULL]) . '&nbsp;', [
             'class' => $cssSetting['dashboardFull'] . ' ' . $cssSetting['dashboardClass'],
             'id' => 'column-2',
         ]);
@@ -148,19 +148,19 @@ class DashboardsHelper extends Helper
 /**
  * Gets a readable name from constants
  *
- * @param int $id CroogoDashboard position constants
+ * @param int $id VamshopDashboard position constants
  * @return string Readable position name
  */
     public function columnName($id)
     {
         switch ($id) {
-            case CroogoDashboard::LEFT:
+            case VamshopDashboard::LEFT:
                 return __d('croogo', 'Left');
             break;
-            case CroogoDashboard::RIGHT:
+            case VamshopDashboard::RIGHT:
                 return __d('croogo', 'Right');
             break;
-            case CroogoDashboard::FULL:
+            case VamshopDashboard::FULL:
                 return __d('croogo', 'Full');
             break;
         }

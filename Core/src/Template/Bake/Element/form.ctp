@@ -18,7 +18,7 @@ if (isset($modelObject) && $modelObject->behaviors()->has('Tree')) {
 %>
 <?php
 
-$this->extend('Croogo/Core./Common/admin_edit');
+$this->extend('Vamshop/Core./Common/admin_edit');
 
 $this->Breadcrumbs->add(__('<%= $pluralHumanName %>'), ['action' => 'index']);
 $action = $this->request->param('action');
@@ -31,12 +31,12 @@ endif;
 
 $this->append('action-buttons');
 <% if (strpos($action, 'add') === false): %>
-    echo $this->Croogo->adminAction(__('Delete'),
+    echo $this->Vamshop->adminAction(__('Delete'),
         ['action' => 'delete', $<%= $singularVar %>-><%= $primaryKey[0] %>],
         ['confirm' => __('Are you sure you want to delete # {0}?', $<%= $singularVar %>-><%= $primaryKey[0] %>)]
     );
 <% endif; %>
-    echo $this->Croogo->adminAction(__('List <%= $pluralHumanName %>'),
+    echo $this->Vamshop->adminAction(__('List <%= $pluralHumanName %>'),
         ['action' => 'index']
     );
 <%
@@ -45,8 +45,8 @@ $this->append('action-buttons');
         foreach ($data as $alias => $details) {
             if ($details['controller'] !== $this->name && !in_array($details['controller'], $done)) {
 %>
-    echo $this->Croogo->adminAction(__('List <%= $this->_pluralHumanName($alias) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'index']);
-    echo $this->Croogo->adminAction(__('New <%= $this->_singularHumanName($alias) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'add']);
+    echo $this->Vamshop->adminAction(__('List <%= $this->_pluralHumanName($alias) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'index']);
+    echo $this->Vamshop->adminAction(__('New <%= $this->_singularHumanName($alias) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'add']);
 <%
     $done[] = $details['controller'];
             }
@@ -62,7 +62,7 @@ $primaryTab = strtolower(Inflector::slug($singularHumanName, '-'));
 $this->append('form-start', $this->Form->create($<%= $singularVar %>));
 
 $this->append('tab-heading');
-    echo $this->Croogo->adminTab('<%= $singularHumanName %>', '#<%= $primaryTab %>');
+    echo $this->Vamshop->adminTab('<%= $singularHumanName %>', '#<%= $primaryTab %>');
 $this->end();
 
 $this->append('tab-content');

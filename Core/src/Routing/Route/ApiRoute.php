@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Routing\Route;
+namespace Vamshop\Core\Routing\Route;
 
 use Cake\Core\Configure;
 use Cake\Routing\Route\Route;
@@ -9,7 +9,7 @@ use Cake\Utility\Hash;
 /**
  * API Route class
  *
- * @package Croogo.Croogo.Routing.Route
+ * @package Vamshop.Vamshop.Routing.Route
  * @since 1.6
  * @license http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link http://www.vamshop.com
@@ -20,7 +20,7 @@ class ApiRoute extends Route
     public function __construct($template, $defaults = [], $options = [])
     {
         $options = Hash::merge([
-            'api' => Configure::read('Croogo.Api.path'),
+            'api' => Configure::read('Vamshop.Api.path'),
             'prefix' => 'v[0-9.]+',
         ], $options);
         parent::__construct($template, $defaults, $options);

@@ -29,7 +29,7 @@ endif;
 echo $this->Form->button(__d('croogo', 'Log In'), ['class' => 'btn btn-primary']);
 echo $this->Html->link(__d('croogo', 'Forgot password?'), [
     'prefix' => 'admin',
-    'plugin' => 'Croogo/Users',
+    'plugin' => 'Vamshop/Users',
     'controller' => 'Users',
     'action' => 'forgot',
 ], [

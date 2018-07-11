@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Extensions\Controller\Admin;
+namespace Vamshop\Extensions\Controller\Admin;
 
 use Cake\Core\App;
 use Cake\Cache\Cache;
@@ -14,7 +14,7 @@ use Locale;
  * Extensions Locales Controller
  *
  * @category Controller
- * @package  Croogo.Extensions.Controller
+ * @package  Vamshop.Extensions.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -30,8 +30,8 @@ class LocalesController extends AppController
  * @access public
  */
     public $uses = [
-        'Croogo/Settings.Settings',
-        'Croogo/Users.Users',
+        'Vamshop/Settings.Settings',
+        'Vamshop/Users.Users',
     ];
 
 /**

@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Blocks\Config;
+namespace Vamshop\Blocks\Config;
 
-use Croogo\Core\Nav;
+use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'blocks', [
     'icon' => 'columns',
     'title' => __d('croogo', 'Blocks'),
     'url' => [
         'prefix' => 'admin',
-        'plugin' => 'Croogo/Blocks',
+        'plugin' => 'Vamshop/Blocks',
         'controller' => 'Blocks',
         'action' => 'index',
     ],
@@ -19,7 +19,7 @@ Nav::add('sidebar', 'blocks', [
             'title' => __d('croogo', 'Blocks'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Blocks',
+                'plugin' => 'Vamshop/Blocks',
                 'controller' => 'Blocks',
                 'action' => 'index',
             ],
@@ -28,7 +28,7 @@ Nav::add('sidebar', 'blocks', [
             'title' => __d('croogo', 'Regions'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Blocks',
+                'plugin' => 'Vamshop/Blocks',
                 'controller' => 'Regions',
                 'action' => 'index',
             ],

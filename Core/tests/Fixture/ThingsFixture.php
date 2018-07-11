@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Test\Fixture;
+namespace Vamshop\Core\Test\Fixture;
 
 use Cake\TestSuite\Fixture\TestFixture;
 

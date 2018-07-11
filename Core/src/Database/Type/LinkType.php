@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Core\Database\Type;
+namespace Vamshop\Core\Database\Type;
 
 use Cake\Database\Driver;
 use Cake\Database\Type;
-use Croogo\Core\Link;
+use Vamshop\Core\Link;
 
 class LinkType extends Type
 {

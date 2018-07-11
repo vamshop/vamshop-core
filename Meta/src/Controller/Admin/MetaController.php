@@ -1,16 +1,16 @@
 <?php
 
-namespace Croogo\Meta\Controller\Admin;
+namespace Vamshop\Meta\Controller\Admin;
 
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
-use Croogo\Meta\Controller\AppController;
+use Vamshop\Meta\Controller\AppController;
 
 /**
  * Meta Controller
  *
  * @category Meta.Controller
- * @package  Croogo.Meta
+ * @package  Vamshop.Meta
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
@@ -31,7 +31,7 @@ class MetaController extends AppController
 
         $this->components()->unload('Meta');
         unset($this->Meta);
-        $this->loadModel('Croogo/Meta.Meta');
+        $this->loadModel('Vamshop/Meta.Meta');
 
         $this->Crud->config('actions.index', [
             'displayFields' => $this->Meta->displayFields(),
@@ -74,7 +74,7 @@ class MetaController extends AppController
  */
     public function deleteMeta($id = null)
     {
-        $Meta = TableRegistry::get('Croogo/Meta.Meta');
+        $Meta = TableRegistry::get('Vamshop/Meta.Meta');
         $success = false;
         $meta = $Meta->findById($id)->first();
         if ($meta !== null && $Meta->delete($meta)) {

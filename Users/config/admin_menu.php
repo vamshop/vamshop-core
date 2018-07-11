@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Users\Config;
+namespace Vamshop\Users\Config;
 
-use Croogo\Core\Nav;
+use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'users', [
     'icon' => 'user',
     'title' => __d('croogo', 'Users'),
     'url' => [
         'prefix' => 'admin',
-        'plugin' => 'Croogo/Users',
+        'plugin' => 'Vamshop/Users',
         'controller' => 'Users',
         'action' => 'index',
     ],
@@ -19,7 +19,7 @@ Nav::add('sidebar', 'users', [
             'title' => __d('croogo', 'Users'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Users',
+                'plugin' => 'Vamshop/Users',
                 'controller' => 'Users',
                 'action' => 'index',
             ],
@@ -29,7 +29,7 @@ Nav::add('sidebar', 'users', [
             'title' => __d('croogo', 'Roles'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Users',
+                'plugin' => 'Vamshop/Users',
                 'controller' => 'Roles',
                 'action' => 'index',
             ],

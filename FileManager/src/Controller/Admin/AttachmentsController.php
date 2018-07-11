@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\FileManager\Controller\Admin;
+namespace Vamshop\FileManager\Controller\Admin;
 
 use Cake\Event\Event;
 
@@ -10,7 +10,7 @@ use Cake\Event\Event;
  * This file will take care of file uploads (with rich text editor integration).
  *
  * @category FileManager.Controller
- * @package  Croogo.FileManager.Controller
+ * @package  Vamshop.FileManager.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -26,9 +26,9 @@ class AttachmentsController extends AppController
         $this->Crud->addListener('Crud.Api');
 
         $this->loadComponent('Search.Prg', ['actions' => 'index']);
-        $this->loadComponent('Croogo/Core.BulkProcess');
+        $this->loadComponent('Vamshop/Core.BulkProcess');
         $this->viewBuilder()
-            ->helpers(['Croogo/FileManager.FileManager', 'Croogo/Core.Image']);
+            ->helpers(['Vamshop/FileManager.FileManager', 'Vamshop/Core.Image']);
     }
 
     /**

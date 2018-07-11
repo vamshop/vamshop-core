@@ -1,19 +1,19 @@
 <?php
 
-namespace Croogo\Acl;
+namespace Vamshop\Acl;
 
 use Acl\AclExtras;
 use Cake\Core\Configure;
 use Cake\Database\Exception;
 use Cake\Datasource\ConnectionInterface;
 use Cake\ORM\TableRegistry;
-use Croogo\Core\Plugin;
+use Vamshop\Core\Plugin;
 
 class AclGenerator extends AclExtras
 {
     public function __construct()
     {
-        $this->Aco = TableRegistry::get('Croogo/Acl.Acos');
+        $this->Aco = TableRegistry::get('Vamshop/Acl.Acos');
         $this->_buildPrefixes();
     }
 
@@ -54,7 +54,7 @@ class AclGenerator extends AclExtras
         }
         $models = json_decode($models, true);
 
-        $Acos = TableRegistry::get('Croogo/Acl.Acos');
+        $Acos = TableRegistry::get('Vamshop/Acl.Acos');
         $query = $Acos->node('contents');
         if ($query) {
             $parent = $query->first();

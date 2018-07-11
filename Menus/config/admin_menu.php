@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Menus\Config;
+namespace Vamshop\Menus\Config;
 
-use Croogo\Core\Nav;
+use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'menus', [
     'icon' => 'sitemap',
     'title' => __d('croogo', 'Menus'),
     'url' => [
         'prefix' => 'admin',
-        'plugin' => 'Croogo/Menus',
+        'plugin' => 'Vamshop/Menus',
         'controller' => 'Menus',
         'action' => 'index',
     ],
@@ -19,7 +19,7 @@ Nav::add('sidebar', 'menus', [
             'title' => __d('croogo', 'Menus'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Menus',
+                'plugin' => 'Vamshop/Menus',
                 'controller' => 'Menus',
                 'action' => 'index',
             ],

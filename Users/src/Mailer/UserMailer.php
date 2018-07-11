@@ -1,11 +1,11 @@
 <?php
 
-namespace Croogo\Users\Mailer;
+namespace Vamshop\Users\Mailer;
 
 use Cake\Core\Configure;
 use Cake\Event\Event;
 use Cake\Mailer\Mailer;
-use Croogo\Users\Model\Entity\User;
+use Vamshop\Users\Model\Entity\User;
 
 class UserMailer extends Mailer
 {
@@ -25,7 +25,7 @@ class UserMailer extends Mailer
             ->profile('default')
             ->to($user->email)
             ->subject(__d('croogo', '[%s] Reset Password', Configure::read('Site.title')))
-            ->template('Croogo/Users.forgot_password')
+            ->template('Vamshop/Users.forgot_password')
             ->emailFormat('both')
             ->set([
                 'user' => $user
@@ -38,7 +38,7 @@ class UserMailer extends Mailer
             ->profile('default')
             ->to($user->email)
             ->subject(__d('croogo', '[%s] Please activate your account', Configure::read('Site.title')))
-            ->template('Croogo/Users.register')
+            ->template('Vamshop/Users.register')
             ->emailFormat('both')
             ->set([
             'user' => $user

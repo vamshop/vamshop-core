@@ -1,12 +1,12 @@
 <?php
 
-namespace Croogo\Users\Controller\Api\V10;
+namespace Vamshop\Users\Controller\Api\V10;
 
 use Cake\Core\Configure;
 use Cake\Event\Event;
 use Cake\Network\Exception\NotFoundException;
 use Cake\Utility\Security;
-use Croogo\Core\Controller\Api\AppController;
+use Vamshop\Core\Controller\Api\AppController;
 use Firebase\JWT\JWT;
 
 /**

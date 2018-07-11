@@ -5,7 +5,7 @@
             <?php
             use Cake\Core\Configure;
 
-            $link = $this->Html->link(__d('croogo', 'Croogo %s', (string)Configure::read('Croogo.version')),
+            $link = $this->Html->link(__d('croogo', 'Vamshop %s', (string)Configure::read('Vamshop.version')),
                 'http://www.vamshop.com');
             ?>
             <?= __d('croogo', 'Powered by %s', $link) ?>

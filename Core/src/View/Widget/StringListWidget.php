@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\View\Widget;
+namespace Vamshop\Core\View\Widget;
 
 use Cake\Utility\Hash;
 use Cake\View\Form\ContextInterface;

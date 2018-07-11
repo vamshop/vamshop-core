@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Contacts\Controller\Admin;
+namespace Vamshop\Contacts\Controller\Admin;
 
 use Cake\Event\Event;
 
@@ -8,7 +8,7 @@ use Cake\Event\Event;
  * Messages Controller
  *
  * @category Contacts.Controller
- * @package  Croogo.Contacts.Controller
+ * @package  Vamshop.Contacts.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -22,7 +22,7 @@ class MessagesController extends AppController
 
         $this->_setupPrg();
 
-        $this->_loadCroogoComponents(['BulkProcess']);
+        $this->_loadVamshopComponents(['BulkProcess']);
 
         $this->Crud->config('actions.index', [
             'searchFields' => [

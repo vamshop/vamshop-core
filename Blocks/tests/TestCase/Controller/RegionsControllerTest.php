@@ -1,12 +1,12 @@
 <?php
 
-namespace Croogo\Blocks\Test\TestCase\Controller;
+namespace Vamshop\Blocks\Test\TestCase\Controller;
 
 use Cake\ORM\TableRegistry;
-use Croogo\Core\TestSuite\IntegrationTestCase;
+use Vamshop\Core\TestSuite\IntegrationTestCase;
 
 /**
- * @property \Croogo\Blocks\Model\Table\RegionsTable Regions
+ * @property \Vamshop\Blocks\Model\Table\RegionsTable Regions
  */
 class RegionsControllerTest extends IntegrationTestCase
 {
@@ -53,7 +53,7 @@ class RegionsControllerTest extends IntegrationTestCase
             ]
         ]);
 
-        $this->Regions = TableRegistry::get('Croogo/Blocks.Regions');
+        $this->Regions = TableRegistry::get('Vamshop/Blocks.Regions');
     }
 
     public function testAdminIndex()

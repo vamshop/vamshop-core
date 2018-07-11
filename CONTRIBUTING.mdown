@@ -61,7 +61,7 @@ There are several ways to help out:
 
 ## Testcases and codesniffer
 
-* Croogo tests requires [PHPUnit](http://www.phpunit.de/manual/current/en/installation.html)
+* Vamshop tests requires [PHPUnit](http://www.phpunit.de/manual/current/en/installation.html)
 3.5 or higher. To run the testcases locally use the following command:
 
 	`./Console/cake test core AllTests --stderr`

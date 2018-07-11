@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Wysiwyg\Controller\Component;
+namespace Vamshop\Wysiwyg\Controller\Component;
 
 use Cake\Controller\Component;
 
@@ -8,7 +8,7 @@ use Cake\Controller\Component;
  * Wysiwyg Component
  *
  * @category Wysiwyg.Controller.Component
- * @package  Croogo.Wysiwyg.Controller.Component
+ * @package  Vamshop.Wysiwyg.Controller.Component
  * @version  1.5
  * @author   Rachman Chavik <rchavik@xintesa.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

@@ -10,7 +10,7 @@
  *
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace Croogo\Acl\Test\TestCase\Controller\Component\Acl;
+namespace Vamshop\Acl\Test\TestCase\Controller\Component\Acl;
 
 use Acl\Controller\Component\Acl\HabtmDbAcl;
 use Cake\Controller\ComponentRegistry;

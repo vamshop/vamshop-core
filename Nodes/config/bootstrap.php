@@ -3,11 +3,11 @@
 use Cake\Core\Configure;
 use Cake\Routing\Router;
 use Cake\Cache\Cache;
-use Croogo\Core\Croogo;
-use Croogo\Wysiwyg\Wysiwyg;
+use Vamshop\Core\Vamshop;
+use Vamshop\Wysiwyg\Wysiwyg;
 
 $cacheConfig = array_merge(
-    Configure::read('Croogo.Cache.defaultConfig'),
+    Configure::read('Vamshop.Cache.defaultConfig'),
     ['groups' => ['nodes']]
 );
 Cache::config('nodes', $cacheConfig);
@@ -16,35 +16,35 @@ Cache::config('nodes_promoted', $cacheConfig);
 Cache::config('nodes_term', $cacheConfig);
 Cache::config('nodes_index', $cacheConfig);
 
-Croogo::hookApiComponent('Croogo/Nodes.Nodes', 'Nodes.NodeApi');
-Croogo::hookComponent('*', [
+Vamshop::hookApiComponent('Vamshop/Nodes.Nodes', 'Nodes.NodeApi');
+Vamshop::hookComponent('*', [
     'NodesHook' => [
-        'className' => 'Croogo/Nodes.Nodes'
+        'className' => 'Vamshop/Nodes.Nodes'
     ]
 ]);
 
-Croogo::hookHelper('*', 'Croogo/Nodes.Nodes');
+Vamshop::hookHelper('*', 'Vamshop/Nodes.Nodes');
 
 // Configure Wysiwyg
 Wysiwyg::setActions([
-    'Croogo/Nodes.Admin/Nodes/add' => [
+    'Vamshop/Nodes.Admin/Nodes/add' => [
         [
             'elements' => 'NodeBody',
         ],
     ],
-    'Croogo/Nodes.Admin/Nodes/edit' => [
+    'Vamshop/Nodes.Admin/Nodes/edit' => [
         [
             'elements' => 'NodeBody',
         ],
     ],
-    'Croogo/Translate.Admin/Translate/edit' => [
+    'Vamshop/Translate.Admin/Translate/edit' => [
         [
             'elements' => 'NodeBody',
         ],
     ],
 ]);
 
-Croogo::translateModel('Croogo/Nodes.Nodes', [
+Vamshop::translateModel('Vamshop/Nodes.Nodes', [
     'fields' => [
         'title',
         'excerpt',

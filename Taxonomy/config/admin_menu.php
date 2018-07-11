@@ -1,14 +1,14 @@
 <?php
 
-namespace Croogo\Taxonomy\Config;
+namespace Vamshop\Taxonomy\Config;
 
-use Croogo\Core\Nav;
+use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'content.children.content_types', [
     'title' => __d('croogo', 'Content Types'),
     'url' => [
         'prefix' => 'admin',
-        'plugin' => 'Croogo/Taxonomy',
+        'plugin' => 'Vamshop/Taxonomy',
         'controller' => 'Types',
         'action' => 'index',
     ],
@@ -19,7 +19,7 @@ Nav::add('sidebar', 'content.children.taxonomy', [
     'title' => __d('croogo', 'Taxonomy'),
     'url' => [
         'prefix' => 'admin',
-        'plugin' => 'Croogo/Taxonomy',
+        'plugin' => 'Vamshop/Taxonomy',
         'controller' => 'Vocabularies',
         'action' => 'index',
     ],
@@ -29,7 +29,7 @@ Nav::add('sidebar', 'content.children.taxonomy', [
             'title' => __d('croogo', 'List'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Taxonomy',
+                'plugin' => 'Vamshop/Taxonomy',
                 'controller' => 'Vocabularies',
                 'action' => 'index',
             ],
@@ -39,7 +39,7 @@ Nav::add('sidebar', 'content.children.taxonomy', [
             'title' => __d('croogo', 'Add new'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Taxonomy',
+                'plugin' => 'Vamshop/Taxonomy',
                 'controller' => 'Vocabularies',
                 'action' => 'add',
             ],

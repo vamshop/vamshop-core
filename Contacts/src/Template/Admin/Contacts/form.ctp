@@ -1,6 +1,6 @@
 <?php
 
-$this->extend('Croogo/Core./Common/admin_edit');
+$this->extend('Vamshop/Core./Common/admin_edit');
 
 $this->Breadcrumbs->add(__d('croogo', 'Contacts'), ['controller' => 'contacts', 'action' => 'index']);
 
@@ -15,9 +15,9 @@ if ($this->request->params['action'] == 'add') {
 $this->append('form-start', $this->Form->create($contact));
 
 $this->append('tab-heading');
-echo $this->Croogo->adminTab(__d('croogo', 'Contact'), '#contact-basic');
-echo $this->Croogo->adminTab(__d('croogo', 'Details'), '#contact-details');
-echo $this->Croogo->adminTab(__d('croogo', 'Message'), '#contact-message');
+echo $this->Vamshop->adminTab(__d('croogo', 'Contact'), '#contact-basic');
+echo $this->Vamshop->adminTab(__d('croogo', 'Details'), '#contact-details');
+echo $this->Vamshop->adminTab(__d('croogo', 'Message'), '#contact-message');
 $this->end();
 
 $this->append('tab-content');
@@ -68,7 +68,7 @@ echo $this->Html->tabStart('contact-message') . $this->Form->input('message_stat
     ]);
 
 echo $this->Html->link(__d('croogo', 'You can manage your API keys here.'), [
-    'plugin' => 'Croogo/Settings',
+    'plugin' => 'Vamshop/Settings',
     'controller' => 'Settings',
     'action' => 'prefix',
     'Service',
@@ -78,7 +78,7 @@ $this->end();
 
 $this->append('panels');
 echo $this->Html->beginBox(__d('croogo', 'Publishing'));
-echo $this->element('Croogo/Core.admin/buttons', ['type' => 'contact']);
+echo $this->element('Vamshop/Core.admin/buttons', ['type' => 'contact']);
 echo $this->Form->input('status', [
         'label' => __d('croogo', 'Published'),
     ]);

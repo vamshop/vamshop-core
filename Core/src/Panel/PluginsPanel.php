@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Panel;
+namespace Vamshop\Core\Panel;
 
 use Cake\Core\Plugin;
 use DebugKit\DebugPanel;
@@ -8,7 +8,7 @@ use DebugKit\DebugPanel;
 class PluginsPanel extends DebugPanel
 {
 
-    public $plugin = 'Croogo/Core';
+    public $plugin = 'Vamshop/Core';
 
     public function data()
     {

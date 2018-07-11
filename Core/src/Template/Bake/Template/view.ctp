@@ -40,7 +40,7 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
 %>
 <?php
 
-$this->extend('Croogo/Core./Common/admin_view');
+$this->extend('Vamshop/Core./Common/admin_view');
 
 $this->Breadcrumbs
     ->add(__d('croogo', '<%= $pluralHumanName %>'), ['action' => 'index']);
@@ -50,18 +50,18 @@ $this->Breadcrumbs
 <% endif; %>
 
 $this->append('action-buttons');
-    echo $this->Croogo->adminAction(__('Edit <%= $singularHumanName %>'), ['action' => 'edit', <%= $pk %>]);
-    echo $this->Croogo->adminAction(__('Delete <%= $singularHumanName %>'), ['action' => 'delete', <%= $pk %>], ['confirm' => __('Are you sure you want to delete # {0}?', <%= $pk %>)]);
-    echo $this->Croogo->adminAction(__('List <%= $pluralHumanName %>'), ['action' => 'index']);
-    echo $this->Croogo->adminAction(__('New <%= $singularHumanName %>'), ['action' => 'add']);
+    echo $this->Vamshop->adminAction(__('Edit <%= $singularHumanName %>'), ['action' => 'edit', <%= $pk %>]);
+    echo $this->Vamshop->adminAction(__('Delete <%= $singularHumanName %>'), ['action' => 'delete', <%= $pk %>], ['confirm' => __('Are you sure you want to delete # {0}?', <%= $pk %>)]);
+    echo $this->Vamshop->adminAction(__('List <%= $pluralHumanName %>'), ['action' => 'index']);
+    echo $this->Vamshop->adminAction(__('New <%= $singularHumanName %>'), ['action' => 'add']);
 <%
     $done = [];
     foreach ($associations as $type => $data) {
         foreach ($data as $alias => $details) {
             if ($details['controller'] !== $this->name && !in_array($details['controller'], $done)) {
 %>
-        echo $this->Croogo->adminAction(__('List <%= $this->_pluralHumanName($alias) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'index']);
-        echo $this->Croogo->adminAction(__('New <%= Inflector::humanize(Inflector::singularize(Inflector::underscore($alias))) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'add']);
+        echo $this->Vamshop->adminAction(__('List <%= $this->_pluralHumanName($alias) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'index']);
+        echo $this->Vamshop->adminAction(__('New <%= Inflector::humanize(Inflector::singularize(Inflector::underscore($alias))) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'add']);
 <%
                 $done[] = $details['controller'];
             }

@@ -44,7 +44,7 @@ Attachments.confirmProcess = function (event) {
  * @return void
  */
 $(document).ready(function () {
-  if (Croogo.params.controller == 'Attachments') {
+  if (Vamshop.params.controller == 'Attachments') {
     Attachments.documentReady();
   }
 

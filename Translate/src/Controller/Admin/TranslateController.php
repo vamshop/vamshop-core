@@ -1,18 +1,18 @@
 <?php
 
-namespace Croogo\Translate\Controller\Admin;
+namespace Vamshop\Translate\Controller\Admin;
 
 use Cake\Core\Configure;
 use Cake\Utility\Hash;
 use Cake\Utility\Inflector;
 use Cake\ORM\TableRegistry;
-use Croogo\Translate\Controller\Admin\AppController;
+use Vamshop\Translate\Controller\Admin\AppController;
 
 /**
  * Translate Controller
  *
  * @category Translate.Controller
- * @package  Croogo.Translate.Controller
+ * @package  Vamshop.Translate.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -24,8 +24,8 @@ class TranslateController extends AppController
     public function initialize()
     {
         parent::initialize();
-        $this->loadModel('Croogo/Settings.Settings');
-        $this->loadModel('Croogo/Settings.Languages');
+        $this->loadModel('Vamshop/Settings.Settings');
+        $this->loadModel('Vamshop/Settings.Languages');
     }
 
 /**

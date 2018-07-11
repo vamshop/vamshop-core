@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Core;
+namespace Vamshop\Core;
 
-use Croogo\Core\Link;
+use Vamshop\Core\Link;
 use DebugKit\DebugTimer;
 
-if (!function_exists('\Croogo\Core\linkFromLinkString')) {
+if (!function_exists('\Vamshop\Core\linkFromLinkString')) {
     /**
      * @param string $link
      *
-     * @return \Croogo\Core\Link
+     * @return \Vamshop\Core\Link
      */
     function linkFromLinkString($link)
     {
@@ -17,11 +17,11 @@ if (!function_exists('\Croogo\Core\linkFromLinkString')) {
     }
 }
 
-if (!function_exists('\Croogo\Core\link')) {
+if (!function_exists('\Vamshop\Core\link')) {
     /**
      * @param array|string $url
      *
-     * @return \Croogo\Core\Link
+     * @return \Vamshop\Core\Link
      */
     function link($url)
     {
@@ -29,7 +29,7 @@ if (!function_exists('\Croogo\Core\link')) {
     }
 }
 
-if (!function_exists('\Croogo\Core\timerStart')) {
+if (!function_exists('\Vamshop\Core\timerStart')) {
     function timerStart($name, $message = null)
     {
         if (!Plugin::available('DebugKit')) {
@@ -40,7 +40,7 @@ if (!function_exists('\Croogo\Core\timerStart')) {
     }
 }
 
-if (!function_exists('\Croogo\Core\timerStop')) {
+if (!function_exists('\Vamshop\Core\timerStop')) {
     function timerStop($name)
     {
         if (!Plugin::available('DebugKit')) {
@@ -51,7 +51,7 @@ if (!function_exists('\Croogo\Core\timerStop')) {
     }
 }
 
-if (!function_exists('\Croogo\Core\time')) {
+if (!function_exists('\Vamshop\Core\time')) {
     function time(callable $callable, $name, $message = null)
     {
         timerStart($name, $message);

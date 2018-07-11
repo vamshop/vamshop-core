@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\FileManager\Event;
+namespace Vamshop\FileManager\Event;
 
 use Cake\Event\EventListenerInterface;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 /**
  * FileManagerEventHandler
  *
  * @category Event
- * @package  Croogo.FileManager.Event
+ * @package  Vamshop.FileManager.Event
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
@@ -40,7 +40,7 @@ class FileManagerEventHandler implements EventListenerInterface
             'title' => 'Images',
             'description' => 'Attachments with an image mime type.',
             'url' => [
-                'plugin' => 'Croogo/FileManager',
+                'plugin' => 'Vamshop/FileManager',
                 'controller' => 'Attachments',
                 'action' => 'index',
                 '?' => [
@@ -57,7 +57,7 @@ class FileManagerEventHandler implements EventListenerInterface
             'title' => 'Files',
             'description' => 'Attachments with other mime types, ie. pdf, xls, doc, etc.',
             'url' => [
-                'plugin' => 'Croogo/FileManager',
+                'plugin' => 'Vamshop/FileManager',
                 'controller' => 'Attachments',
                 'action' => 'index',
                 '?' => [
@@ -70,6 +70,6 @@ class FileManagerEventHandler implements EventListenerInterface
                 ]
             ]
         ];
-        Croogo::mergeConfig('Croogo.linkChoosers', $linkChoosers);
+        Vamshop::mergeConfig('Vamshop.linkChoosers', $linkChoosers);
     }
 }

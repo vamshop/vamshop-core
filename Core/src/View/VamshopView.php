@@ -1,21 +1,21 @@
 <?php
 
-namespace Croogo\Core\View;
+namespace Vamshop\Core\View;
 
 use App\View\AppView;
 use Cake\Core\App;
 use Cake\Utility\Hash;
 use Cake\Utility\Inflector;
-use Croogo\Core\Croogo;
-use Croogo\Extensions\CroogoTheme;
+use Vamshop\Core\Vamshop;
+use Vamshop\Extensions\VamshopTheme;
 
 /**
- * Class CroogoView
+ * Class VamshopView
  *
- * @property \Croogo\Core\View\Helper\CroogoHelper $Croogo
- * @property \Croogo\Menus\View\Helper\MenusHelper $Menus
+ * @property \Vamshop\Core\View\Helper\VamshopHelper $Vamshop
+ * @property \Vamshop\Menus\View\Helper\MenusHelper $Menus
  */
-class CroogoView extends AppView
+class VamshopView extends AppView
 {
 
     /**
@@ -75,15 +75,15 @@ class CroogoView extends AppView
 
         $prefix = $this->request->param('prefix') ?: '';
         if ($prefix === 'admin') {
-            $this->loadHelper('Croogo/Core.Croogo');
+            $this->loadHelper('Vamshop/Core.Vamshop');
         }
 
-        $themeConfig = CroogoTheme::config($this->theme());
+        $themeConfig = VamshopTheme::config($this->theme());
         if (!empty($themeConfig['settings']['prefixes'][$prefix]['helpers'])) {
             $this->loadHelperList($themeConfig['settings']['prefixes'][$prefix]['helpers']);
         }
 
-        $hookHelpers = Croogo::options('Hook.view_builder_options', $this->request, 'helpers');
+        $hookHelpers = Vamshop::options('Hook.view_builder_options', $this->request, 'helpers');
 
         $this->loadHelperList($hookHelpers);
         $this->loadHelper('Time', [

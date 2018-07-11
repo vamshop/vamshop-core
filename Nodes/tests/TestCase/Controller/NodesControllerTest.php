@@ -1,14 +1,14 @@
 <?php
-namespace Croogo\Nodes\Test\TestCase\Controller;
+namespace Vamshop\Nodes\Test\TestCase\Controller;
 
 use Cake\Core\Configure;
 use Cake\ORM\TableRegistry;
-use Croogo\Core\Event\EventManager;
-use Croogo\Core\Plugin;
-use Croogo\Core\TestSuite\IntegrationTestCase;
+use Vamshop\Core\Event\EventManager;
+use Vamshop\Core\Plugin;
+use Vamshop\Core\TestSuite\IntegrationTestCase;
 
 /**
- * @property \Croogo\Nodes\Model\Table\NodesTable Nodes
+ * @property \Vamshop\Nodes\Model\Table\NodesTable Nodes
  */
 class NodesControllerTest extends IntegrationTestCase
 {
@@ -46,7 +46,7 @@ class NodesControllerTest extends IntegrationTestCase
         Plugin::events();
         EventManager::loadListeners();
 
-        $this->Nodes = TableRegistry::get('Croogo/Nodes.Nodes');
+        $this->Nodes = TableRegistry::get('Vamshop/Nodes.Nodes');
     }
 
     public function testPromotedWithVisibilityRole()
@@ -74,13 +74,13 @@ class NodesControllerTest extends IntegrationTestCase
 
         $this->get('/node');
 
-        $this->_controller->Croogo->viewFallback(['index_blog']);
+        $this->_controller->Vamshop->viewFallback(['index_blog']);
         $this->assertContains('index_blog', $this->_controller->viewBuilder()->template());
         $this->assertContains('Mytheme', $this->_controller->viewBuilder()->template());
 
         $this->get('/blog/hello-world');
 
-        $this->_controller->Croogo->viewFallback(['view_1', 'view_blog']);
+        $this->_controller->Vamshop->viewFallback(['view_1', 'view_blog']);
         $this->assertContains('view_1.ctp', $this->_controller->viewBuilder()->template());
         $this->assertContains('Mytheme', $this->_controller->viewBuilder()->template());
     }
@@ -94,7 +94,7 @@ class NodesControllerTest extends IntegrationTestCase
     {
         $this->get('/');
 
-        $this->_controller->Croogo->viewFallback('index_node');
+        $this->_controller->Vamshop->viewFallback('index_node');
         $this->assertContains('index_node.ctp', $this->_controller->viewBuilder()->template());
     }
 }

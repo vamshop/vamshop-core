@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Menus\View\Helper;
+namespace Vamshop\Menus\View\Helper;
 
 use Cake\Event\Event;
 use Cake\Routing\Exception\MissingRouteException;
@@ -9,14 +9,14 @@ use Cake\Utility\Hash;
 use Cake\Log\LogTrait;
 use Cake\View\Helper;
 use Cake\View\View;
-use Croogo\Core\Nav;
-use Croogo\Core\Utility\StringConverter;
+use Vamshop\Core\Nav;
+use Vamshop\Core\Utility\StringConverter;
 
 /**
  * Menus Helper
  *
  * @category Menus.View/Helper
- * @package  Croogo.Menus.View.Helper
+ * @package  Vamshop.Menus.View.Helper
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -86,7 +86,7 @@ class MenusHelper extends Helper
                 'title' => $menu->title,
                 'url' => [
                     'prefix' => 'admin',
-                    'plugin' => 'Croogo/Menus',
+                    'plugin' => 'Vamshop/Menus',
                     'controller' => 'Links',
                     'action' => 'index',
                     '?' => ['menu_id' => $menu->id]
@@ -185,7 +185,7 @@ class MenusHelper extends Helper
             'selected' => 'selected',
             'dropdown' => false,
             'dropdownClass' => 'navbar-nav ml-auto',
-            'element' => 'Croogo/Menus.menu',
+            'element' => 'Vamshop/Menus.menu',
         ];
         $options = array_merge($_options, $options);
 

@@ -16,7 +16,7 @@
  * @since         CakePHP(tm) v 2.0
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace Croogo\Acl\Test\TestCase\Controller\Component\Auth;
+namespace Vamshop\Acl\Test\TestCase\Controller\Component\Auth;
 
 use Acl\Controller\Component\Auth\TokenAuthenticate;
 use App\Controller\Component\AuthComponent;

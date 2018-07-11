@@ -1,22 +1,22 @@
 <?php
 
-namespace Croogo\Core\TestSuite;
+namespace Vamshop\Core\TestSuite;
 
 use Cake\Core\App;
 use Cake\Core\Configure;
 use Cake\Network\Request;
 use Cake\ORM\Query;
 use Cake\TestSuite\TestCase as CakeTestCase;
-use Croogo\Core\Plugin;
-use Croogo\Core\Event\EventManager;
-use Croogo\Core\TestSuite\Constraint\QueryCount;
+use Vamshop\Core\Plugin;
+use Vamshop\Core\Event\EventManager;
+use Vamshop\Core\TestSuite\Constraint\QueryCount;
 use PHPUnit_Util_InvalidArgumentHelper;
 
 /**
- * CroogoTestCase class
+ * VamshopTestCase class
  *
  * @category TestSuite
- * @package  Croogo
+ * @package  Vamshop
  * @version  1.4
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @author   Rachman Chavik <rchavik@gmail.com>
@@ -49,8 +49,8 @@ class TestCase extends CakeTestCase
         EventManager::instance(new EventManager);
         Configure::write('EventHandlers', []);
 
-        Plugin::unload('Croogo/Install');
-        Plugin::load('Croogo/Example', ['autoload' => true, 'path' => '../Example/']);
+        Plugin::unload('Vamshop/Install');
+        Plugin::load('Vamshop/Example', ['autoload' => true, 'path' => '../Example/']);
         Configure::write('Acl.database', 'test');
 
         $this->previousPlugins = Plugin::loaded();
@@ -83,7 +83,7 @@ class TestCase extends CakeTestCase
         $request = new Request();
         $request->addParams($params);
         $request->addDetector('api', [
-            'callback' => ['Croogo\\Core\\Router', 'isApiRequest'],
+            'callback' => ['Vamshop\\Core\\Router', 'isApiRequest'],
         ]);
         return $request;
     }

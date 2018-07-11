@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Blocks\Controller\Component;
+namespace Vamshop\Blocks\Controller\Component;
 
 use Cake\Cache\Cache;
 use Cake\Collection\Collection;
@@ -12,14 +12,14 @@ use Cake\ORM\TableRegistry;
 use Cake\Utility\Hash;
 use Cake\Utility\Inflector;
 use Cake\Utility\Text;
-use Croogo\Blocks\Model\Entity\Block;
-use Croogo\Core\Utility\StringConverter;
-use Croogo\Core\Utility\VisibilityFilter;
+use Vamshop\Blocks\Model\Entity\Block;
+use Vamshop\Core\Utility\StringConverter;
+use Vamshop\Core\Utility\VisibilityFilter;
 
 /**
  * Blocks Component
  *
- * @package Croogo.Blocks.Controller.Component
+ * @package Vamshop.Blocks.Controller.Component
  */
 class BlocksComponent extends Component
 {
@@ -61,7 +61,7 @@ class BlocksComponent extends Component
         if (isset($this->controller->Blocks)) {
             $this->Blocks = $this->controller->Blocks;
         } else {
-            $this->Blocks = TableRegistry::get('Croogo/Blocks.Blocks');
+            $this->Blocks = TableRegistry::get('Vamshop/Blocks.Blocks');
         }
     }
 
@@ -104,7 +104,7 @@ class BlocksComponent extends Component
         ]);
 
         $alias = $this->Blocks->alias();
-        $roleId = $this->controller->Croogo->roleId();
+        $roleId = $this->controller->Vamshop->roleId();
         $status = $this->Blocks->status();
         $request = $this->controller->request;
         $slug = Text::slug(strtolower($request->url));

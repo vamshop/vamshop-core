@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Menus\Model\Entity;
+namespace Vamshop\Menus\Model\Entity;
 
 use Cake\ORM\Behavior\Translate\TranslateTrait;
 use Cake\ORM\Entity;
-use Croogo\Acl\Traits\RowLevelAclTrait;
+use Vamshop\Acl\Traits\RowLevelAclTrait;
 
 class Link extends Entity
 {

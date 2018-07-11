@@ -1,12 +1,12 @@
 <?php
 
-namespace Croogo\Core\View\Helper;
+namespace Vamshop\Core\View\Helper;
 
 use Cake\View\Helper\HtmlHelper;
 use Cake\Utility\Hash;
 
 /**
- * @package Croogo.Croogo.View.Helper
+ * @package Vamshop.Vamshop.View.Helper
  * @version 1.1
  * @author Josh Hundley
  * @author Jorge Orpinel <jop@levogiro.net> (changes)

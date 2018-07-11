@@ -1,16 +1,16 @@
 <?php
 
 $this->assign('title', __d('croogo', 'Edit Attachment'));
-$this->extend('Croogo/Core./Common/admin_edit');
+$this->extend('Vamshop/Core./Common/admin_edit');
 
 $this->Breadcrumbs->add(__d('croogo', 'Attachments'),
-        ['plugin' => 'Croogo/FileManager', 'controller' => 'attachments', 'action' => 'index'])
+        ['plugin' => 'Vamshop/FileManager', 'controller' => 'attachments', 'action' => 'index'])
     ->add($attachment->title, $this->request->getRequestTarget());
 
 $this->append('form-start', $this->Form->create($attachment));
 
 $this->append('tab-heading');
-echo $this->Croogo->adminTab(__d('croogo', 'Attachment'), '#attachment-main');
+echo $this->Vamshop->adminTab(__d('croogo', 'Attachment'), '#attachment-main');
 $this->end();
 
 $this->append('tab-content');
@@ -38,7 +38,7 @@ if ($session->check('Wysiwyg.redirect')) {
     $redirect = $session->read('Wysiwyg.redirect');
 }
 echo $this->Html->beginBox(__d('croogo', 'Publishing'));
-    echo $this->element('Croogo/Core.admin/buttons', ['cancelUrl' => $redirect]);
+    echo $this->element('Vamshop/Core.admin/buttons', ['cancelUrl' => $redirect]);
 echo $this->Html->endBox();
 
 $fileType = explode('/', $attachment->mime_type);
@@ -46,7 +46,7 @@ $fileType = $fileType['0'];
 if ($fileType == 'image'):
     $imgUrl = $this->Image->resize('/uploads/' . $attachment->slug, 200, 300, true);
 else:
-    $imgUrl = $this->Html->thumbnail('Croogo/Core./img/icons/' .
+    $imgUrl = $this->Html->thumbnail('Vamshop/Core./img/icons/' .
         $this->Filemanager->mimeTypeToImage($attachment->mime_type)) .
         ' ' . $attachment->mime_type;
 endif;

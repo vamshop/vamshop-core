@@ -1,18 +1,18 @@
 <?php
 
 use Cake\Core\Configure;
-use Croogo\Core\Croogo;
-use Croogo\Wysiwyg\Wysiwyg;
+use Vamshop\Core\Vamshop;
+use Vamshop\Wysiwyg\Wysiwyg;
 
 Configure::write('Wysiwyg.attachmentBrowseUrl', [
     'prefix' => 'admin',
-    'plugin' => 'Croogo/FileManager',
+    'plugin' => 'Vamshop/FileManager',
     'controller' => 'Attachments',
     'action' => 'browse',
 ]);
 
 Wysiwyg::setActions([
-    'Croogo/FileManager.Admin/Attachments/browse' => [],
+    'Vamshop/FileManager.Admin/Attachments/browse' => [],
 ]);
 
 Configure::write('FileManager', [

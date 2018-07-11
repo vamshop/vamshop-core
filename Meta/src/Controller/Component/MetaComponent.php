@@ -1,16 +1,16 @@
 <?php
 
-namespace Croogo\Meta\Controller\Component;
+namespace Vamshop\Meta\Controller\Component;
 
 use Cake\Controller\Component;
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 /**
  * Meta Component
  *
- * @package Croogo.Meta.Controller.Component
+ * @package Vamshop.Meta.Controller.Component
  */
 class MetaComponent extends Component
 {
@@ -50,9 +50,9 @@ class MetaComponent extends Component
             return;
         }
         $title = __d('croogo', 'Custom Fields');
-        $element = 'Croogo/Meta.admin/meta_tab';
+        $element = 'Vamshop/Meta.admin/meta_tab';
         $controllerName = $this->request->param('controller');
-        Croogo::hookAdminBox("Admin/$controllerName/add", $title, $element);
-        Croogo::hookAdminBox("Admin/$controllerName/edit", $title, $element);
+        Vamshop::hookAdminBox("Admin/$controllerName/add", $title, $element);
+        Vamshop::hookAdminBox("Admin/$controllerName/edit", $title, $element);
     }
 }

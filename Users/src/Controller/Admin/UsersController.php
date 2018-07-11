@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Users\Controller\Admin;
+namespace Vamshop\Users\Controller\Admin;
 
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
@@ -10,14 +10,14 @@ use Cake\Routing\Router;
 use Cake\Utility\Hash;
 use Cake\Utility\Security;
 use Cake\Utility\Text;
-use Croogo\Core\Croogo;
-use Croogo\Users\Model\Entity\User;
+use Vamshop\Core\Vamshop;
+use Vamshop\Users\Model\Entity\User;
 
 /**
  * Users Controller
  *
  * @category Controller
- * @package  Croogo.Users.Controller
+ * @package  Vamshop.Users.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -26,7 +26,7 @@ use Croogo\Users\Model\Entity\User;
 class UsersController extends AppController
 {
 
-    public $modelClass = 'Croogo/Users.Users';
+    public $modelClass = 'Vamshop/Users.Users';
 
     public $paginate = [
         'limit' => 10,
@@ -69,7 +69,7 @@ class UsersController extends AppController
         ]);
 
         $this->Crud->addListener('Crud.Api');
-        $this->Crud->addListener('Croogo/Core.Chooser');
+        $this->Crud->addListener('Vamshop/Core.Chooser');
 
         $this->_setupPrg();
 
@@ -86,7 +86,7 @@ class UsersController extends AppController
         return parent::implementedEvents() + [
             'Controller.Users.beforeAdminLogin' => 'onBeforeAdminLogin',
             'Controller.Users.adminLoginFailure' => 'onAdminLoginFailure',
-            'Croogo.beforeSetupAdminData' => 'beforeSetupAdminData',
+            'Vamshop.beforeSetupAdminData' => 'beforeSetupAdminData',
             'Crud.beforePaginate' => 'beforePaginate',
             'Crud.beforeLookup' => 'beforeLookup',
             'Crud.beforeRedirect' => 'beforeCrudRedirect',
@@ -161,7 +161,7 @@ class UsersController extends AppController
     public function beforeCrudSave(Event $event)
     {
         /**
-         * @var \Croogo\Users\Model\Entity\User
+         * @var \Vamshop\Users\Model\Entity\User
          */
         $entity = $event->subject()->entity;
         if (!$entity->isNew() && $entity->has('activation_key')) {
@@ -232,24 +232,24 @@ class UsersController extends AppController
 
         $session = $this->request->session();
         $redirectUrl = $this->Auth->redirectUrl();
-        if ($redirectUrl && !$session->check('Croogo.redirect')) {
-            $session->write('Croogo.redirect', $redirectUrl);
+        if ($redirectUrl && !$session->check('Vamshop.redirect')) {
+            $session->write('Vamshop.redirect', $redirectUrl);
         }
 
         if ($this->request->is('post')) {
-            Croogo::dispatchEvent('Controller.Users.beforeAdminLogin', $this);
+            Vamshop::dispatchEvent('Controller.Users.beforeAdminLogin', $this);
             $user = $this->Auth->identify();
             if ($user) {
 
-                if ($session->check('Croogo.redirect')) {
-                    $redirectUrl = $session->read('Croogo.redirect');
-                    $session->delete('Croogo.redirect');
+                if ($session->check('Vamshop.redirect')) {
+                    $redirectUrl = $session->read('Vamshop.redirect');
+                    $session->delete('Vamshop.redirect');
                 } else {
                     $redirectUrl = $this->Auth->redirectUrl();
                 }
 
                 if (!$this->Access->isUrlAuthorized($user, $redirectUrl)) {
-                    Croogo::dispatchEvent('Controller.Users.adminLoginFailure', $this);
+                    Vamshop::dispatchEvent('Controller.Users.adminLoginFailure', $this);
                     $this->Auth->authError = __d('croogo', 'Authorization error');
                     $this->Flash->error($this->Auth->authError, ['key' => 'auth']);
                     return $this->redirect($this->Auth->loginAction);
@@ -263,10 +263,10 @@ class UsersController extends AppController
                     $this->Users->save($user);
                 }
 
-                Croogo::dispatchEvent('Controller.Users.adminLoginSuccessful', $this);
+                Vamshop::dispatchEvent('Controller.Users.adminLoginSuccessful', $this);
                 return $this->redirect($redirectUrl);
             } else {
-                Croogo::dispatchEvent('Controller.Users.adminLoginFailure', $this);
+                Vamshop::dispatchEvent('Controller.Users.adminLoginFailure', $this);
                 $this->Auth->authError = __d('croogo', 'Incorrect username or password');
                 $this->Flash->error($this->Auth->authError, ['key' => 'auth']);
                 return $this->redirect($this->Auth->config('loginAction'));
@@ -282,7 +282,7 @@ class UsersController extends AppController
  */
     public function logout()
     {
-        Croogo::dispatchEvent('Controller.Users.adminLogoutSuccessful', $this);
+        Vamshop::dispatchEvent('Controller.Users.adminLogoutSuccessful', $this);
         $this->Flash->success(__d('croogo', 'Log out successful.'), ['key' => 'auth']);
         return $this->redirect($this->Auth->logout());
     }

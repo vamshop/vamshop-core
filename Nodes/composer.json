@@ -1,25 +1,25 @@
 {
     "name": "croogo/nodes",
-    "description": "Croogo Nodes Plugin",
+    "description": "Vamshop Nodes Plugin",
     "require": {
         "croogo/core": "^3.0.1"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": "Croogo Development Team",
+            "name": "Vamshop Development Team",
             "email": "team@vamshop.com"
         }
     ],
     "type": "cakephp-plugin",
     "autoload": {
         "psr-4": {
-            "Croogo\\Nodes\\": "src"
+            "Vamshop\\Nodes\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Croogo\\Nodes\\Test\\": "tests"
+            "Vamshop\\Nodes\\Test\\": "tests"
         }
     },
     "minimum-stability": "dev"

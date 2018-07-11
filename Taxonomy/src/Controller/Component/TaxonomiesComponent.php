@@ -1,22 +1,22 @@
 <?php
 
-namespace Croogo\Taxonomy\Controller\Component;
+namespace Vamshop\Taxonomy\Controller\Component;
 
 use Cake\Controller\Component;
 use Cake\Core\Configure;
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
 use Cake\Utility\Hash;
-use Croogo\Core\Core\Exception\Exception;
-use Croogo\Taxonomy\Model\Entity\Type;
-use Croogo\Taxonomy\Model\Entity\Vocabulary;
-use Croogo\Taxonomy\Model\Table\TaxonomiesTable;
+use Vamshop\Core\Core\Exception\Exception;
+use Vamshop\Taxonomy\Model\Entity\Type;
+use Vamshop\Taxonomy\Model\Entity\Vocabulary;
+use Vamshop\Taxonomy\Model\Table\TaxonomiesTable;
 
 /**
  * Taxonomies Component
  *
  * @category Component
- * @package  Croogo.Taxonomy.Controller.Component
+ * @package  Vamshop.Taxonomy.Controller.Component
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -32,7 +32,7 @@ class TaxonomiesComponent extends Component
      * @access public
      */
     public $components = [
-        'Croogo/Core.Croogo',
+        'Vamshop/Core.Vamshop',
     ];
 
     /**
@@ -52,7 +52,7 @@ class TaxonomiesComponent extends Component
     public $vocabulariesForLayout = [];
 
     /**
-     * @var \Croogo\Taxonomy\Model\Table\TaxonomiesTable
+     * @var \Vamshop\Taxonomy\Model\Table\TaxonomiesTable
      */
     public $Taxonomies;
 
@@ -68,7 +68,7 @@ class TaxonomiesComponent extends Component
         if ((isset($this->controller->Taxonomies)) && ($this->controller->Taxonomies instanceof TaxonomiesTable)) {
             $this->Taxonomies = $this->controller->Taxonomies;
         } else {
-            $this->Taxonomies = TableRegistry::get('Croogo/Taxonomy.Taxonomies');
+            $this->Taxonomies = TableRegistry::get('Vamshop/Taxonomy.Taxonomies');
         }
 
         if ($this->controller->request->param('prefix') !== 'admin' &&
@@ -139,7 +139,7 @@ class TaxonomiesComponent extends Component
         $vocabularies = [];
 
         if (Configure::read('Site.theme')) {
-            $themeData = $this->Croogo->getThemeData(Configure::read('Site.theme'));
+            $themeData = $this->Vamshop->getThemeData(Configure::read('Site.theme'));
             if (isset($themeData['vocabularies']) && is_array($themeData['vocabularies'])) {
                 $vocabularies = Hash::merge($vocabularies, $themeData['vocabularies']);
             }

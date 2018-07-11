@@ -1,14 +1,14 @@
 <?php
 
-namespace Croogo\Nodes\Model\Entity;
+namespace Vamshop\Nodes\Model\Entity;
 
 use Cake\ORM\Behavior\Translate\TranslateTrait;
 use Cake\ORM\Entity;
-use Croogo\Acl\Traits\RowLevelAclTrait;
+use Vamshop\Acl\Traits\RowLevelAclTrait;
 
 /**
  * @property string type Type of node
- * @property \Croogo\Core\Link url
+ * @property \Vamshop\Core\Link url
  */
 class Node extends Entity
 {

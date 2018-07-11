@@ -1,11 +1,11 @@
 <?php
 
-namespace Croogo\Acl\Controller\Component;
+namespace Vamshop\Acl\Controller\Component;
 
 use Cake\Controller\Component;
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 /**
  * When "Access Control.rowLevel" Setting is active, this component will perform
@@ -19,7 +19,7 @@ use Croogo\Core\Croogo;
  *      class ItemsController extends AppController {
  *          public $components = [
  *              'RowLevelAcl' => [
- *                  'className' => 'Croogo/Acl.RowLevelAcl',
+ *                  'className' => 'Vamshop/Acl.RowLevelAcl',
  *                  'settings' => [
  *                      'actionMap' => [
  *                          'reserve' => 'update', // action map
@@ -31,7 +31,7 @@ use Croogo\Core\Croogo;
  * ```
  *
  * @category Component
- * @package  Croogo.Acl.Controller.Component
+ * @package  Vamshop.Acl.Controller.Component
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -57,12 +57,12 @@ class RowLevelAclComponent extends Component
         $controller = $this->getController();
         $Model = $controller->{$controller->name};
         $Model->addBehavior('Acl', [
-            'className' => 'Croogo/Core.CroogoAcl', 'type' => 'controlled',
+            'className' => 'Vamshop/Core.VamshopAcl', 'type' => 'controlled',
         ]);
-        $Model->addBehavior('Croogo/Acl.RowLevelAcl');
+        $Model->addBehavior('Vamshop/Acl.RowLevelAcl');
 
         $name = $controller->name;
-        $element = 'Croogo/Acl.admin/row_acl';
+        $element = 'Vamshop/Acl.admin/row_acl';
         if (!empty($this->settings['adminTabElement'])) {
             $element = $this->settings['adminTabElement'];
         }
@@ -71,7 +71,7 @@ class RowLevelAclComponent extends Component
             $adminTabActions += $this->_config['adminTabActions'];
         }
         foreach ($adminTabActions as $action) {
-            Croogo::hookAdminTab("Admin/$name/$action", __d('croogo', 'Permissions'), $element);
+            Vamshop::hookAdminTab("Admin/$name/$action", __d('croogo', 'Permissions'), $element);
         }
     }
 
@@ -97,7 +97,7 @@ class RowLevelAclComponent extends Component
     {
         $controller = $this->getController();
         $Permission = $controller->Acl->adapter()->Permission;
-        $Role = TableRegistry::get('Croogo/Users.Roles');
+        $Role = TableRegistry::get('Vamshop/Users.Roles');
         $roles = $Role->find('list', [
             'cache' => ['name' => 'roles', 'config' => 'permissions'],
         ]);

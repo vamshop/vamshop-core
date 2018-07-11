@@ -1,14 +1,14 @@
 <?php
 
-namespace Croogo\Acl\Config;
+namespace Vamshop\Acl\Config;
 
-use Croogo\Core\Nav;
+use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'users.children.permissions', [
     'title' => __d('croogo', 'Permissions'),
     'url' => [
         'prefix' => 'admin',
-        'plugin' => 'Croogo/Acl',
+        'plugin' => 'Vamshop/Acl',
         'controller' => 'Permissions',
         'action' => 'index',
     ],
@@ -19,7 +19,7 @@ Nav::add('sidebar', 'settings.children.acl', [
     'title' => __d('croogo', 'Access Control'),
     'url' => [
         'prefix' => 'admin',
-        'plugin' => 'Croogo/Settings',
+        'plugin' => 'Vamshop/Settings',
         'controller' => 'Settings',
         'action' => 'prefix',
         'Access Control',

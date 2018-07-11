@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Event;
+namespace Vamshop\Core\Event;
 
 use Cake\Cache\Cache;
 use Cake\Core\App;
@@ -10,12 +10,12 @@ use Cake\Event\EventManager as CakeEventManager;
 use Cake\Log\Log;
 
 /**
- * Croogo Event Manager class
+ * Vamshop Event Manager class
  *
  * Descendant of EventManager, customized to map event listener objects
  *
  * @since 1.4
- * @package Croogo.Croogo.Event
+ * @package Vamshop.Vamshop.Event
  * @see EventManager
  * @author   Rachman Chavik <rchavik@xintesa.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

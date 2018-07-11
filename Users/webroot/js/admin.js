@@ -39,10 +39,10 @@ Users.statusControl = function() {
  * @return void
  */
 $(document).ready(function () {
-  if (Croogo.params.controller == 'Users') {
+  if (Vamshop.params.controller == 'Users') {
     Users.documentReady();
 
-    if (Croogo.params.action == 'add' && Croogo.params.prefix == 'admin') {
+    if (Vamshop.params.action == 'add' && Vamshop.params.prefix == 'admin') {
       Users.statusControl();
     }
   }

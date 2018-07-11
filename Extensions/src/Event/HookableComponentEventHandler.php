@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Extensions\Event;
+namespace Vamshop\Extensions\Event;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 use Cake\Event\EventListenerInterface;
 use Cake\Utility\Hash;
 use Cake\Utility\Inflector;
-use Croogo\Core\Croogo;
-use Croogo\Core\Controller\HookableComponentInterface;
-use Croogo\Extensions\Exception\ControllerNotHookableException;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\Controller\HookableComponentInterface;
+use Vamshop\Extensions\Exception\ControllerNotHookableException;
 
 class HookableComponentEventHandler implements EventListenerInterface
 {
@@ -26,7 +26,7 @@ class HookableComponentEventHandler implements EventListenerInterface
 
     public function initialize(Event $event)
     {
-        /* @var \Cake\Controller\Controller|\Croogo\Core\Controller\HookableComponentInterface $controller */
+        /* @var \Cake\Controller\Controller|\Vamshop\Core\Controller\HookableComponentInterface $controller */
         $controller = $event->subject();
 
         if (!$controller instanceof HookableComponentInterface) {
@@ -77,7 +77,7 @@ class HookableComponentEventHandler implements EventListenerInterface
 
     private function _getComponents(Controller $controller)
     {
-        $properties = Croogo::options('Hook.controller_properties', $controller->request);
+        $properties = Vamshop::options('Hook.controller_properties', $controller->request);
 
         $components = [];
         foreach ($properties['_appComponents'] as $component => $config) {

@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Extensions\Config;
+namespace Vamshop\Extensions\Config;
 
 return [
     'EventHandlers' => [
-        'Croogo/Extensions.ExtensionsEventHandler' => [
+        'Vamshop/Extensions.ExtensionsEventHandler' => [
             'options' => [
                 'priority' => 5,
             ],
         ],
-        'Croogo/Extensions.HookableComponentEventHandler' => [
+        'Vamshop/Extensions.HookableComponentEventHandler' => [
             'options' => [
                 'priority' => 5,
             ],

@@ -1,9 +1,9 @@
 <?php
 
-namespace Croogo\Settings\Test\TestCase\Controller\Admin;
+namespace Vamshop\Settings\Test\TestCase\Controller\Admin;
 
 use Cake\ORM\TableRegistry;
-use Croogo\Core\TestSuite\IntegrationTestCase;
+use Vamshop\Core\TestSuite\IntegrationTestCase;
 
 class LanguagesControllerTest extends IntegrationTestCase
 {
@@ -58,7 +58,7 @@ class LanguagesControllerTest extends IntegrationTestCase
         $this->assertRedirect();
         $this->assertFlash('Successfully created language');
 
-        $language = TableRegistry::get('Croogo/Settings.Languages')
+        $language = TableRegistry::get('Vamshop/Settings.Languages')
             ->findByAlias('ben')
             ->first();
         $this->assertEquals('Bengali', $language->title);
@@ -77,7 +77,7 @@ class LanguagesControllerTest extends IntegrationTestCase
         $this->assertRedirect();
         $this->assertFlash('Successfully updated language');
 
-        $language = TableRegistry::get('Croogo/Settings.Languages')
+        $language = TableRegistry::get('Vamshop/Settings.Languages')
             ->findByAlias('eng')
             ->first();
         $this->assertEquals('English [modified]', $language->title);
@@ -92,7 +92,7 @@ class LanguagesControllerTest extends IntegrationTestCase
         $this->assertRedirect();
         $this->assertFlash('Successfully deleted language');
 
-        $language = (bool)TableRegistry::get('Croogo/Settings.Languages')
+        $language = (bool)TableRegistry::get('Vamshop/Settings.Languages')
             ->findByAlias('eng')
             ->count();
         $this->assertFalse($language);
@@ -112,7 +112,7 @@ class LanguagesControllerTest extends IntegrationTestCase
         $this->assertRedirect();
         $this->assertFlash('Successfully moved language up');
 
-        $list = TableRegistry::get('Croogo/Settings.Languages')->find('list')->toArray();
+        $list = TableRegistry::get('Vamshop/Settings.Languages')->find('list')->toArray();
         $this->assertEquals([
             1 => 'English',
             3 => 'German',
@@ -129,7 +129,7 @@ class LanguagesControllerTest extends IntegrationTestCase
         $this->assertRedirect();
         $this->assertFlash('Successfully moved language up');
 
-        $list = TableRegistry::get('Croogo/Settings.Languages')->find('list')->toArray();
+        $list = TableRegistry::get('Vamshop/Settings.Languages')->find('list')->toArray();
         $this->assertEquals([
             3 => 'German',
             2 => 'Bengali',
@@ -146,7 +146,7 @@ class LanguagesControllerTest extends IntegrationTestCase
         $this->assertRedirect();
         $this->assertFlash('Successfully moved language up');
 
-        $list = TableRegistry::get('Croogo/Settings.Languages')->find('list')->toArray();
+        $list = TableRegistry::get('Vamshop/Settings.Languages')->find('list')->toArray();
         $this->assertEquals([
             2 => 'Bengali',
             3 => 'German',
@@ -163,7 +163,7 @@ class LanguagesControllerTest extends IntegrationTestCase
         $this->assertRedirect();
         $this->assertFlash('Successfully moved language up');
 
-        $list = TableRegistry::get('Croogo/Settings.Languages')->find('list')->toArray();
+        $list = TableRegistry::get('Vamshop/Settings.Languages')->find('list')->toArray();
         $this->assertEquals([
             3 => 'German',
             2 => 'Bengali',
@@ -199,7 +199,7 @@ class LanguagesControllerTest extends IntegrationTestCase
      */
     protected function _addLanguages()
     {
-        $languages = TableRegistry::get('Croogo/Settings.Languages');
+        $languages = TableRegistry::get('Vamshop/Settings.Languages');
         $languages->save($languages->newEntity([
             'title' => 'Bengali',
             'alias' => 'ben',

@@ -1,18 +1,18 @@
 <?php
 
-namespace Croogo\Comments\Model\Behavior;
+namespace Vamshop\Comments\Model\Behavior;
 
 use Cake\Core\App;
 use Cake\Core\Plugin;
 use Cake\ORM\Behavior;
 use Cake\ORM\TableRegistry;
-use Croogo\Nodes\Model\Entity\Node;
+use Vamshop\Nodes\Model\Entity\Node;
 
 /**
  * CommentableBehavior
  *
  * @category Comments.Model.Behavior
- * @package  Croogo.Comments.Model.Behavior
+ * @package  Vamshop.Comments.Model.Behavior
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
@@ -23,7 +23,7 @@ class CommentableBehavior extends Behavior
         parent::initialize($config);
 
         $this->_table->hasMany('Comments', [
-            'className' => 'Croogo/Comments.Comments',
+            'className' => 'Vamshop/Comments.Comments',
             'foreignKey' => 'foreign_key',
             'conditions' => [
                 'model' => App::shortName(get_class($this->_table), 'Model/Table', 'Table'),
@@ -33,7 +33,7 @@ class CommentableBehavior extends Behavior
             'cascadeCallbacks' => true
         ]);
         $this->_table->hasMany('AllComments', [
-            'className' => 'Croogo/Comments.Comments',
+            'className' => 'Vamshop/Comments.Comments',
             'foreignKey' => 'foreign_key',
             'conditions' => [
                 'model' => App::shortName(get_class($this->_table), 'Model/Table', 'Table'),
@@ -97,14 +97,14 @@ class CommentableBehavior extends Behavior
             'spamProtection' => false,
             'captchaProtection' => false,
         ];
-        if (!Plugin::loaded('Croogo/Taxonomy')) {
+        if (!Plugin::loaded('Vamshop/Taxonomy')) {
             return $defaultSetting;
         }
         if (empty($node->type)) {
             return $defaultSetting;
         }
 
-        $types = TableRegistry::get('Croogo/Taxonomy.Types');
+        $types = TableRegistry::get('Vamshop/Taxonomy.Types');
         $type = $types->find()->where([
             $types->aliasField('alias') => $node->type,
         ])->first();

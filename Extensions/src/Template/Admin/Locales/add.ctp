@@ -3,14 +3,14 @@
 $this->extend('/Common/admin_edit');
 
 $this->Breadcrumbs->add(__d('croogo', 'Extensions'),
-    ['plugin' => 'Croogo/Extensions', 'controller' => 'Plugins', 'action' => 'index'])
+    ['plugin' => 'Vamshop/Extensions', 'controller' => 'Plugins', 'action' => 'index'])
     ->add(__d('croogo', 'Locales'),
-        ['plugin' => 'Croogo/Extensions', 'controller' => 'Locales', 'action' => 'index'])
+        ['plugin' => 'Vamshop/Extensions', 'controller' => 'Locales', 'action' => 'index'])
     ->add(__d('croogo', 'Upload'), $this->request->getRequestTarget());
 
 $this->append('form-start', $this->Form->create(null, [
     'url' => [
-        'plugin' => 'Croogo/Extensions',
+        'plugin' => 'Vamshop/Extensions',
         'controller' => 'Locales',
         'action' => 'add',
     ],
@@ -18,7 +18,7 @@ $this->append('form-start', $this->Form->create(null, [
 ]));
 
 $this->append('tab-heading');
-echo $this->Croogo->adminTab(__d('croogo', 'Upload'), '#locales-upload');
+echo $this->Vamshop->adminTab(__d('croogo', 'Upload'), '#locales-upload');
 $this->end();
 
 $this->append('tab-content');

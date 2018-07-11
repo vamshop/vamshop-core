@@ -1,8 +1,8 @@
 <?php
 
-use Croogo\Core\Status;
+use Vamshop\Core\Status;
 
-$this->extend('Croogo/Core./Common/admin_edit');
+$this->extend('Vamshop/Core./Common/admin_edit');
 
 $this->Breadcrumbs->add(__d('croogo', 'Menus'), ['action' => 'index']);
 
@@ -21,8 +21,8 @@ if ($this->request->params['action'] == 'add') {
 $this->append('form-start', $this->Form->create($menu));
 
 $this->append('tab-heading');
-echo $this->Croogo->adminTab(__d('croogo', 'Menu'), '#menu-basic');
-echo $this->Croogo->adminTab(__d('croogo', 'Misc.'), '#menu-misc');
+echo $this->Vamshop->adminTab(__d('croogo', 'Menu'), '#menu-basic');
+echo $this->Vamshop->adminTab(__d('croogo', 'Misc.'), '#menu-misc');
 $this->end();
 
 $this->append('tab-content');
@@ -51,7 +51,7 @@ $this->end();
 
 $this->start('panels');
 echo $this->Html->beginBox('Publishing');
-echo $this->element('Croogo/Core.admin/buttons', ['type' => 'menu']);
-echo $this->element('Croogo/Core.admin/publishable');
+echo $this->element('Vamshop/Core.admin/buttons', ['type' => 'menu']);
+echo $this->element('Vamshop/Core.admin/publishable');
 echo $this->Html->endBox();
 $this->end();

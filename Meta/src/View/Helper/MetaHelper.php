@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Meta\View\Helper;
+namespace Vamshop\Meta\View\Helper;
 
 use Cake\Core\Configure;
 use Cake\Utility\Hash;
@@ -12,13 +12,13 @@ use Cake\View\Helper;
  * Meta Helper
  *
  * @category Meta.View/Helper
- * @package  Croogo.Meta
+ * @package  Vamshop.Meta
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  *
- * @property \Croogo\Core\View\Helper\CroogoHtmlHelper $Html
+ * @property \Vamshop\Core\View\Helper\VamshopHtmlHelper $Html
  */
 class MetaHelper extends Helper
 {
@@ -27,19 +27,19 @@ class MetaHelper extends Helper
  * Helpers
  */
     public $helpers = [
-        'Croogo/Core.Layout',
-        'Croogo/Core.Croogo',
+        'Vamshop/Core.Layout',
+        'Vamshop/Core.Vamshop',
         'Html' => [
-            'className' => 'Croogo/Core.CroogoHtml'
+            'className' => 'Vamshop/Core.VamshopHtml'
         ],
         'Form' => [
-            'className' => 'Croogo/Core.CroogoForm'
+            'className' => 'Vamshop/Core.VamshopForm'
         ],
     ];
 
     public $settings = [
         'deleteUrl' => [
-            'prefix' => 'admin', 'plugin' => 'Croogo/Meta',
+            'prefix' => 'admin', 'plugin' => 'Vamshop/Meta',
             'controller' => 'Meta', 'action' => 'deleteMeta',
         ],
     ];
@@ -50,7 +50,7 @@ class MetaHelper extends Helper
     public function beforeRender($viewFile)
     {
         if ($this->Layout->isLoggedIn()) {
-            return $this->Croogo->adminScript('Croogo/Meta.admin');
+            return $this->Vamshop->adminScript('Vamshop/Meta.admin');
         }
     }
 

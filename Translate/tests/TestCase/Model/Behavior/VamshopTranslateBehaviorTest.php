@@ -1,10 +1,10 @@
 <?php
-namespace Croogo\Translate\Test\TestCase\Model\Behavior;
+namespace Vamshop\Translate\Test\TestCase\Model\Behavior;
 
 use App\Model\Node;
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 
-class CroogoTranslateBehaviorTest extends CroogoTestCase
+class VamshopTranslateBehaviorTest extends VamshopTestCase
 {
 
     public $fixtures = [
@@ -48,7 +48,7 @@ class CroogoTranslateBehaviorTest extends CroogoTestCase
         if (!Plugin::loaded('Translate')) {
             Plugin::load('Translate');
         }
-        $this->Node->Behaviors->attach('Translate.CroogoTranslate', [
+        $this->Node->Behaviors->attach('Translate.VamshopTranslate', [
             'fields' => [
                 'title' => 'titleTranslation',
             ],

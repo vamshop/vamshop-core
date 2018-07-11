@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Config;
+namespace Vamshop\Core\Config;
 
 use Aura\Intl\Package;
 
@@ -14,32 +14,32 @@ use Cake\Utility\Hash;
 use Cake\Utility\Inflector;
 use Cake\Routing\DispatcherFactory;
 
-use Croogo\Core\Croogo;
-use Croogo\Core\Event\EventManager;
-use Croogo\Core\Plugin;
-use Croogo\Settings\Configure\Engine\DatabaseConfig;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\Event\EventManager;
+use Vamshop\Core\Plugin;
+use Vamshop\Settings\Configure\Engine\DatabaseConfig;
 
-use function Croogo\Core\timerStart;
-use function Croogo\Core\timerStop;
+use function Vamshop\Core\timerStart;
+use function Vamshop\Core\timerStop;
 
-// Make sure that the Croogo event manager is the global one
+// Make sure that the Vamshop event manager is the global one
 EventManager::instance();
 
-\Croogo\Core\time(function () {
+\Vamshop\Core\time(function () {
     /**
      * Default Acl plugin.  Custom Acl plugin should override this value.
      */
-    Configure::write('Site.acl_plugin', 'Croogo/Acl');
+    Configure::write('Site.acl_plugin', 'Vamshop/Acl');
 
     /**
      * Default API Route Prefix. This can be overriden in settings.
      */
-    Configure::write('Croogo.Api.path', 'api');
+    Configure::write('Vamshop.Api.path', 'api');
 
     /**
      * Admin theme
      */
-    Configure::write('Site.admin_theme', 'Croogo/Core');
+    Configure::write('Site.admin_theme', 'Vamshop/Core');
 
     /**
      * Cache configuration
@@ -53,14 +53,14 @@ EventManager::instance();
         'className' => $defaultEngine,
         'prefix' => $defaultPrefix,
     ] + $defaultCacheConfig;
-    Configure::write('Croogo.Cache.defaultEngine', $defaultEngine);
-    Configure::write('Croogo.Cache.defaultPrefix', $defaultPrefix);
-    Configure::write('Croogo.Cache.defaultConfig', $cacheConfig);
+    Configure::write('Vamshop.Cache.defaultEngine', $defaultEngine);
+    Configure::write('Vamshop.Cache.defaultPrefix', $defaultPrefix);
+    Configure::write('Vamshop.Cache.defaultConfig', $cacheConfig);
 
     $configured = Cache::configured();
     if (!in_array('cached_settings', $configured)) {
         Cache::config('cached_settings', array_merge(
-            Configure::read('Croogo.Cache.defaultConfig'),
+            Configure::read('Vamshop.Cache.defaultConfig'),
             ['groups' => ['settings']]
         ));
     }
@@ -100,8 +100,8 @@ EventManager::instance();
      * List of core plugins
      */
     $corePlugins = [
-        'Croogo/Settings', 'Croogo/Acl', 'Croogo/Blocks', 'Croogo/Comments', 'Croogo/Contacts', 'Croogo/Menus', 'Croogo/Meta',
-        'Croogo/Nodes', 'Croogo/Taxonomy', 'Croogo/Users', 'Croogo/Wysiwyg', 'Croogo/Ckeditor',  'Croogo/Dashboards',
+        'Vamshop/Settings', 'Vamshop/Acl', 'Vamshop/Blocks', 'Vamshop/Comments', 'Vamshop/Contacts', 'Vamshop/Menus', 'Vamshop/Meta',
+        'Vamshop/Nodes', 'Vamshop/Taxonomy', 'Vamshop/Users', 'Vamshop/Wysiwyg', 'Vamshop/Ckeditor',  'Vamshop/Dashboards',
     ];
     Configure::write('Core.corePlugins', $corePlugins);
 }, 'Setting base configuration');
@@ -129,7 +129,7 @@ if (!$timezone) {
 }
 date_default_timezone_set($timezone);
 
-\Croogo\Core\time(function () {
+\Vamshop\Core\time(function () {
     /**
      * Load required plugins
      */
@@ -143,7 +143,7 @@ date_default_timezone_set($timezone);
     /**
      * Extensions
      */
-    Plugin::load(['Croogo/Extensions' => [
+    Plugin::load(['Vamshop/Extensions' => [
         'autoload' => true,
         'bootstrap' => true,
         'routes' => true,
@@ -162,7 +162,7 @@ if (!in_array($aclPlugin, $plugins)) {
     $plugins = Hash::merge((array)$aclPlugin, $plugins);
 }
 $themes = [Configure::read('Site.theme'), Configure::read('Site.admin_theme')];
-\Croogo\Core\time(function () use ($plugins, $themes) {
+\Vamshop\Core\time(function () use ($plugins, $themes) {
     $option = [
         'autoload' => true,
         'bootstrap' => true,
@@ -198,15 +198,15 @@ $themes = [Configure::read('Site.theme'), Configure::read('Site.admin_theme')];
     }
 }, 'plugins-loading-configured', 'Loading configured plugins: ' . implode(', ', $plugins + $themes));
 
-DispatcherFactory::add('Croogo/Core.HomePage');
+DispatcherFactory::add('Vamshop/Core.HomePage');
 
-\Croogo\Core\time(function () {
+\Vamshop\Core\time(function () {
     Plugin::events();
 
     EventManager::loadListeners();
 }, 'Registering plugin listeners');
 
 
-\Croogo\Core\time(function () {
-    Croogo::dispatchEvent('Croogo.bootstrapComplete');
-}, 'event-Croogo.bootstrapComplete', 'Event: Croogo.bootstrapComplete');
+\Vamshop\Core\time(function () {
+    Vamshop::dispatchEvent('Vamshop.bootstrapComplete');
+}, 'event-Vamshop.bootstrapComplete', 'Event: Vamshop.bootstrapComplete');

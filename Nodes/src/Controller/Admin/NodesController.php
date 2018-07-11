@@ -1,25 +1,25 @@
 <?php
 
-namespace Croogo\Nodes\Controller\Admin;
+namespace Vamshop\Nodes\Controller\Admin;
 
 use Cake\Event\Event;
 use Cake\Routing\Router;
 
-use Croogo\Core\Controller\Component\CroogoComponent;
-use Croogo\Core\Croogo;
-use Croogo\Nodes\Model\Entity\Node;
-use Croogo\Nodes\Model\Table\NodesTable;
-use Croogo\Taxonomy\Controller\Component\TaxonomiesComponent;
-use Croogo\Taxonomy\Model\Entity\Type;
+use Vamshop\Core\Controller\Component\VamshopComponent;
+use Vamshop\Core\Vamshop;
+use Vamshop\Nodes\Model\Entity\Node;
+use Vamshop\Nodes\Model\Table\NodesTable;
+use Vamshop\Taxonomy\Controller\Component\TaxonomiesComponent;
+use Vamshop\Taxonomy\Model\Entity\Type;
 
 /**
  * Nodes Controller
  *
  * @property NodesTable Nodes
- * @property CroogoComponent Croogo
+ * @property VamshopComponent Vamshop
  * @property TaxonomiesComponent Taxonomies
  * @category Nodes.Controller
- * @package  Croogo.Nodes
+ * @package  Vamshop.Nodes
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -32,12 +32,12 @@ class NodesController extends AppController
         parent::initialize();
 
         $this->loadComponent('RequestHandler');
-        $this->loadComponent('Croogo/Core.BulkProcess');
-        $this->loadComponent('Croogo/Core.Recaptcha');
-        $this->loadComponent('Croogo/Core.BulkProcess');
+        $this->loadComponent('Vamshop/Core.BulkProcess');
+        $this->loadComponent('Vamshop/Core.Recaptcha');
+        $this->loadComponent('Vamshop/Core.BulkProcess');
 
         if ($this->request->param('action') == 'toggle') {
-            $this->Croogo->protectToggleAction();
+            $this->Vamshop->protectToggleAction();
         }
 
         $this->_setupPrg();
@@ -267,7 +267,7 @@ class NodesController extends AppController
             $entity->type = $this->request->param('pass.0');
             $entity->path = Router::url([
                 'prefix' => false,
-                'plugin' => 'Croogo/Nodes',
+                'plugin' => 'Vamshop/Nodes',
                 'controller' => 'Nodes',
                 'action' => 'view',
                 'type' => $entity->type,

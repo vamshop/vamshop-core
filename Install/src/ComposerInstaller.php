@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Install;
+namespace Vamshop\Install;
 
 use Cake\Composer\Installer\PluginInstaller;
 use Composer\Composer;
@@ -25,7 +25,7 @@ class ComposerInstaller extends PluginInstaller
             'Wysiwyg',
         ];
         foreach ($corePlugins as $plugin) {
-            $plugins['Croogo\\' . $plugin] = $croogoDir . DIRECTORY_SEPARATOR . $plugin;
+            $plugins['Vamshop\\' . $plugin] = $croogoDir . DIRECTORY_SEPARATOR . $plugin;
         }
         $configFile = static::_configFile($vendorDir);
         static::writeConfigFile($configFile, $plugins);

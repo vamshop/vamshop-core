@@ -4,12 +4,12 @@ $this->extend('/Common/admin_index');
 
 $this->Breadcrumbs
     ->add(__d('croogo', 'Settings'), [
-        'plugin' => 'Croogo/Settings',
+        'plugin' => 'Vamshop/Settings',
         'controller' => 'Settings',
         'action' => 'index',
     ])
     ->add(__d('croogo', 'Languages'), [
-        'plugin' => 'Croogo/Settings',
+        'plugin' => 'Vamshop/Settings',
         'controller' => 'Languages',
         'action' => 'index'
     ]);
@@ -19,7 +19,7 @@ $this->append('main');
     foreach ($languages as $language):
         $title = $language->title . ' (' . $language->native . ')';
         $link = $this->Html->link($title, array(
-            'plugin' => 'Croogo/Translate',
+            'plugin' => 'Vamshop/Translate',
             'controller' => 'Translate',
             'action' => 'edit',
             '?' => [

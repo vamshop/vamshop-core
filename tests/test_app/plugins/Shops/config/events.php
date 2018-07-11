@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Shops\Config;
+namespace Vamshop\Shops\Config;
 
 return [
     'EventHandlers' => [

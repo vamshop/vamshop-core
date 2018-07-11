@@ -1,6 +1,6 @@
-# Croogo
+# Vamshop
 
-**Croogo** is a free, open source, content management system for PHP, released under [MIT License](http://github.com/croogo/croogo/blob/master/LICENSE.txt).
+**Vamshop** is a free, open source, content management system for PHP, released under [MIT License](http://github.com/croogo/croogo/blob/master/LICENSE.txt).
 
 It is powered by [CakePHP](http://cakephp.org) MVC framework.
 
@@ -17,11 +17,11 @@ It is powered by [CakePHP](http://cakephp.org) MVC framework.
 
 #### Installation using composer
 
-The preferred way to install Croogo is by using [composer](http://getcomposer.org).
+The preferred way to install Vamshop is by using [composer](http://getcomposer.org).
 
     composer create-project vamshop/vamshop-app ./
     
-    bin/cake Croogo/Install.install
+    bin/cake Vamshop/Install.install
 
 !!!! Empty MySQL database must be created before installation.
 

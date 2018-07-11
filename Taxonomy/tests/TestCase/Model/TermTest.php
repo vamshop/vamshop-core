@@ -1,11 +1,11 @@
 <?php
 
-namespace Croogo\Taxonomy\Test\TestCase\Model;
+namespace Vamshop\Taxonomy\Test\TestCase\Model;
 
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 use Taxonomy\Model\Term;
 
-class TermTest extends CroogoTestCase
+class TermTest extends VamshopTestCase
 {
 
     public $fixtures = [

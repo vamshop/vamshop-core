@@ -1,11 +1,11 @@
 <?php
-namespace Croogo\Core\Test\TestCase\Model\Behavior;
+namespace Vamshop\Core\Test\TestCase\Model\Behavior;
 
 use Cake\ORM\TableRegistry;
-use Croogo\Core\TestSuite\CroogoTestCase;
-use Croogo\Nodes\Model\Table\NodesTable;
+use Vamshop\Core\TestSuite\VamshopTestCase;
+use Vamshop\Nodes\Model\Table\NodesTable;
 
-class EncoderBehaviorTest extends CroogoTestCase
+class EncoderBehaviorTest extends VamshopTestCase
 {
 
     /**
@@ -24,7 +24,7 @@ class EncoderBehaviorTest extends CroogoTestCase
 
         $this->markTestIncomplete('This hasn\'t been ported yet');
 
-        $this->nodesTable = TableRegistry::get('Croogo/Nodes.Nodes');
+        $this->nodesTable = TableRegistry::get('Vamshop/Nodes.Nodes');
     }
 
 /**

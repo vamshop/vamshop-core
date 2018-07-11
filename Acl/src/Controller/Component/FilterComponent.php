@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Acl\Controller\Component;
+namespace Vamshop\Acl\Controller\Component;
 
 use Cake\Cache\Cache;
 use Cake\Core\App;
@@ -11,14 +11,14 @@ use Cake\Datasource\Exception\RecordNotFoundException;
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
 use Cake\Utility\Hash;
-use Croogo\Core\Croogo;
-use Croogo\Core\Utility\StringConverter;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\Utility\StringConverter;
 
 /**
  * AclFilter Component
  *
  * @category Component
- * @package  Croogo.Acl.Controller.Component
+ * @package  Vamshop.Acl.Controller.Component
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -45,8 +45,8 @@ class FilterComponent extends Component
         $this->_controller = $event->subject();
 
         if ($this->_config('multiRole')) {
-            Croogo::hookAdminTab('Admin/Users/add', 'Roles', 'Croogo/Acl.admin/roles');
-            Croogo::hookAdminTab('Admin/Users/edit', 'Roles', 'Croogo/Acl.admin/roles');
+            Vamshop::hookAdminTab('Admin/Users/add', 'Roles', 'Vamshop/Acl.admin/roles');
+            Vamshop::hookAdminTab('Admin/Users/edit', 'Roles', 'Vamshop/Acl.admin/roles');
 
         }
     }
@@ -75,8 +75,8 @@ class FilterComponent extends Component
  */
     protected function _configure()
     {
-        if (!$this->_registry->has('Croogo/Acl.AutoLogin')) {
-            $this->_registry->load('Croogo/Acl.AutoLogin');
+        if (!$this->_registry->has('Vamshop/Acl.AutoLogin')) {
+            $this->_registry->load('Vamshop/Acl.AutoLogin');
             if (!$this->_registry->has('Cookie')) {
                 $this->_registry->load('Cookie');
             }
@@ -85,7 +85,7 @@ class FilterComponent extends Component
         //Configure AuthComponent
         $this->_controller->Auth->config('authenticate', [
             AuthComponent::ALL => [
-                'userModel' => 'Croogo/Users.Users',
+                'userModel' => 'Vamshop/Users.Users',
                 'fields' => [
                     'username' => 'username',
                     'password' => 'password',
@@ -109,14 +109,14 @@ class FilterComponent extends Component
                 if (isset($this->_controller->Settings)) {
                     $Setting = $this->_controller->Settings;
                 } else {
-                    $Setting = TableRegistry::get('Croogo/Settings.Settings');
+                    $Setting = TableRegistry::get('Vamshop/Settings.Settings');
                 }
                 $Setting->write('Access Control.autoLoginDuration', '');
             }
-            $this->_controller->Auth->config('authenticate', ['Croogo/Acl.Cookie']);
+            $this->_controller->Auth->config('authenticate', ['Vamshop/Acl.Cookie']);
         }
         if ($this->_config('multiColumn')) {
-            $this->_controller->Auth->config('authenticate', ['Croogo/Acl.MultiColumn']);
+            $this->_controller->Auth->config('authenticate', ['Vamshop/Acl.MultiColumn']);
         } else {
             $this->_controller->Auth->config('authenticate', ['Form']);
         }
@@ -124,9 +124,9 @@ class FilterComponent extends Component
         $this->_controller->Auth->config('authorize', [
             AuthComponent::ALL => [
                 'actionPath' => 'controllers',
-                'userModel' => 'Croogo/Users.Users',
+                'userModel' => 'Vamshop/Users.Users',
             ],
-            'Croogo/Acl.AclCached' => [
+            'Vamshop/Acl.AclCached' => [
                 'actionPath' => 'controllers',
             ]
         ]);
@@ -148,20 +148,20 @@ class FilterComponent extends Component
     {
         $this->_controller->Auth->config('loginAction', [
             'prefix' => false,
-            'plugin' => 'Croogo/Users',
+            'plugin' => 'Vamshop/Users',
             'controller' => 'Users',
             'action' => 'login',
         ]);
         if ($this->request->param('prefix') === 'admin') {
             $this->_controller->Auth->config('loginAction', [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Users',
+                'plugin' => 'Vamshop/Users',
                 'controller' => 'Users',
                 'action' => 'login',
             ]);
         }
         $this->_controller->Auth->config('logoutRedirect', [
-            'plugin' => 'Croogo/Users',
+            'plugin' => 'Vamshop/Users',
             'controller' => 'Users',
             'action' => 'login',
         ]);
@@ -174,7 +174,7 @@ class FilterComponent extends Component
             $loginRedirect = $dashboardUrl ?: '/admin';
             $this->_controller->Auth->config('loginRedirect', $loginRedirect);
         } else {
-            $loginRedirect = Configure::read('Croogo.homeUrl') ?: '/';
+            $loginRedirect = Configure::read('Vamshop.homeUrl') ?: '/';
             $this->_controller->Auth->config('loginRedirect', $loginRedirect);
         }
 
@@ -182,7 +182,7 @@ class FilterComponent extends Component
             $this->_controller->Auth->config('unauthorizedRedirect', false);
         } else {
             $this->_controller->Auth->config('unauthorizedRedirect', [
-                'plugin' => 'Croogo/Users',
+                'plugin' => 'Vamshop/Users',
                 'controller' => 'Users',
                 'action' => 'login',
             ]);
@@ -221,7 +221,7 @@ class FilterComponent extends Component
             return;
         }
 
-        $authorizer = $this->_controller->Auth->getAuthorize('Croogo/Acl.AclCached');
+        $authorizer = $this->_controller->Auth->getAuthorize('Vamshop/Acl.AclCached');
 
         if ($this->_controller->Acl->check('Role-public', $authorizer->action($this->_controller->request))) {
             $this->_controller->Auth->allow(

@@ -1,24 +1,24 @@
 <?php
 
-namespace Croogo\Core\Model\Table;
+namespace Vamshop\Core\Model\Table;
 
 use Cake\ORM\Table;
 use Cake\Utility\Hash;
 use Cake\Utility\Inflector;
-use Croogo\Core\Croogo;
-use Croogo\Core\PropertyHookTrait;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\PropertyHookTrait;
 
 /**
- * Croogo Base Table class
+ * Vamshop Base Table class
  *
- * @category Croogo.Model
- * @package  Croogo.Croogo.Model.Table
+ * @category Vamshop.Model
+ * @package  Vamshop.Vamshop.Model.Table
  * @version  1.5
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class CroogoTable extends Table
+class VamshopTable extends Table
 {
 
     use PropertyHookTrait;
@@ -64,7 +64,7 @@ class CroogoTable extends Table
  */
     public function __construct($id = false, $table = null, $ds = null)
     {
-        Croogo::applyHookProperties('Hook.table_properties', $this);
+        Vamshop::applyHookProperties('Hook.table_properties', $this);
 
         parent::__construct($id, $table, $ds);
     }

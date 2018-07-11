@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Settings\Controller\Admin;
+namespace Vamshop\Settings\Controller\Admin;
 
 use Cake\Event\Event;
 use Cake\Utility\Inflector;
@@ -9,7 +9,7 @@ use Cake\Utility\Inflector;
  * Settings Controller
  *
  * @category Settings.Controller
- * @package  Croogo.Settings
+ * @package  Vamshop.Settings
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

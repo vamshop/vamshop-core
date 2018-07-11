@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Acl\Model\Table;
+namespace Vamshop\Acl\Model\Table;
 
 use Cake\Utility\Hash;
 use Cake\ORM\TableRegistry;
@@ -9,7 +9,7 @@ use Cake\ORM\TableRegistry;
  * AclAco Model
  *
  * @category Model
- * @package  Croogo.Acl.Model
+ * @package  Vamshop.Acl.Model
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -84,7 +84,7 @@ class AcosTable extends \Acl\Model\Table\AcosTable
         // AROs
         $roles = [];
         if (count($allowRoles) > 0) {
-            $roles = TableRegistry::get('Croogo/Users.Roles')->find('list', [
+            $roles = TableRegistry::get('Vamshop/Users.Roles')->find('list', [
                 'conditions' => [
                     'Roles.alias IN' => $allowRoles,
                 ],
@@ -96,7 +96,7 @@ class AcosTable extends \Acl\Model\Table\AcosTable
         }
 
         $this->createFromPath($action);
-        $Permission = TableRegistry::get('Croogo/Acl.Permissions');
+        $Permission = TableRegistry::get('Vamshop/Acl.Permissions');
         foreach ($roles as $roleId => $roleAlias) {
             $Permission->allow(['model' => 'Roles', 'foreign_key' => $roleId], $action);
         }

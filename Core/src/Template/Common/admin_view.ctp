@@ -40,7 +40,7 @@ if (empty($this->fetch('action-buttons'))) {
         $entityName = __($humanName);
     }
     $actionTitle = __d('croogo', 'New %s', $entityName);
-    $this->assign('action-buttons', $this->Croogo->adminAction(__d('croogo', 'New %s', __d('croogo', Inflector::singularize($this->name))), ['action' => 'add'], ['button' => 'success']));
+    $this->assign('action-buttons', $this->Vamshop->adminAction(__d('croogo', 'New %s', __d('croogo', Inflector::singularize($this->name))), ['action' => 'add'], ['button' => 'success']));
 }
 ?>
 
@@ -60,9 +60,9 @@ if (empty($this->fetch('action-buttons'))) {
                         if ($tabHeading = $this->fetch('tab-heading')):
                             echo $tabHeading;
                         else:
-                            echo $this->Croogo->adminTab(__d('croogo', $modelClass), "#$tabId");
+                            echo $this->Vamshop->adminTab(__d('croogo', $modelClass), "#$tabId");
                         endif;
-                        echo $this->Croogo->adminTabs();
+                        echo $this->Vamshop->adminTabs();
                         ?>
                     </ul>
 
@@ -90,7 +90,7 @@ if (empty($this->fetch('action-buttons'))) {
                         $tabContent = $this->Html->div('tab-pane', $content, [
                             'id' => $tabId,
                         ]);
-                        $tabContent .= $this->Croogo->adminTabs();
+                        $tabContent .= $this->Vamshop->adminTabs();
                     endif;
                     echo $this->Html->div('tab-content', $tabContent);
                     ?>

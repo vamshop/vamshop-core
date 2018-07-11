@@ -1,8 +1,8 @@
 <?php
 
-use Croogo\Core\Status;
+use Vamshop\Core\Status;
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
 $this->Breadcrumbs->add(__d('croogo', 'Menus'), $this->request->getUri()->getPath());
 
@@ -21,13 +21,13 @@ $this->start('table-body');
 $rows = [];
 foreach ($menus as $menu):
     $actions = [];
-    $actions[] = $this->Croogo->adminRowAction('',
+    $actions[] = $this->Vamshop->adminRowAction('',
         ['controller' => 'Links', 'action' => 'index', '?' => ['menu_id' => $menu->id]],
         ['icon' => $this->Theme->getIcon('inspect'), 'tooltip' => __d('croogo', 'View links')]);
-    $actions[] = $this->Croogo->adminRowActions($menu->id);
-    $actions[] = $this->Croogo->adminRowAction('', ['controller' => 'Menus', 'action' => 'edit', $menu->id],
+    $actions[] = $this->Vamshop->adminRowActions($menu->id);
+    $actions[] = $this->Vamshop->adminRowAction('', ['controller' => 'Menus', 'action' => 'edit', $menu->id],
         ['icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('croogo', 'Edit this item')]);
-    $actions[] = $this->Croogo->adminRowAction('', ['controller' => 'Menus', 'action' => 'delete', $menu->id],
+    $actions[] = $this->Vamshop->adminRowAction('', ['controller' => 'Menus', 'action' => 'delete', $menu->id],
         ['icon' => $this->Theme->getIcon('delete'), 'tooltip' => __d('croogo', 'Remove this item')],
         __d('croogo', 'Are you sure?'));
     $actions = $this->Html->div('item-actions', implode(' ', $actions));
@@ -43,7 +43,7 @@ foreach ($menus as $menu):
         $title .= ' ' . $this->Html->tag('span', __d('croogo', 'preview'), ['class' => 'label label-warning']);
     }
 
-    $status = $this->element('Croogo/Core.admin/toggle', [
+    $status = $this->element('Vamshop/Core.admin/toggle', [
         'id' => $menu->id,
         'status' => $menu->status,
     ]);

@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Example\Config;
+namespace Vamshop\Example\Config;
 
 return [
     'EventHandlers' => [
-        'Croogo/Example.ExampleEventHandler' => [
+        'Vamshop/Example.ExampleEventHandler' => [
             'options' => [
                 'priority' => 1,
             ],

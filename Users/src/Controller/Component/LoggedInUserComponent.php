@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Users\Controller\Component;
+namespace Vamshop\Users\Controller\Component;
 
 use Cake\Controller\Component;
 use Cake\Controller\Controller;
@@ -21,7 +21,7 @@ class LoggedInUserComponent extends Component
             return;
         }
 
-        $users = TableRegistry::get('Croogo/Users.Users');
+        $users = TableRegistry::get('Vamshop/Users.Users');
         $controller->set('loggedInUser', $users->get($controller->Auth->user('id')));
     }
 }

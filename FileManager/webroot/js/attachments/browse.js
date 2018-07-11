@@ -3,6 +3,6 @@ $(function() {
     e.preventDefault();
     var slug = $(this).data('slug');
 
-    Croogo.Wysiwyg.choose(slug);
+    Vamshop.Wysiwyg.choose(slug);
   });
 });

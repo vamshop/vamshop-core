@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Panel;
+namespace Vamshop\Core\Panel;
 
 use Cake\Controller\ComponentRegistry;
 use Cake\Core\Configure;
@@ -11,7 +11,7 @@ use DebugKit\DebugPanel;
 class ComponentsPanel extends DebugPanel
 {
 
-    public $plugin = 'Croogo/Core';
+    public $plugin = 'Vamshop/Core';
 
     protected $_loadedComponents = [];
 

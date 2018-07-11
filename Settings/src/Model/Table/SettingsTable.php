@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Settings\Model\Table;
+namespace Vamshop\Settings\Model\Table;
 
 use ArrayObject;
 
@@ -11,21 +11,21 @@ use Cake\Event\Event;
 use Cake\Form\Schema;
 use Cake\ORM\RulesChecker;
 use Cake\Validation\Validator;
-use Croogo\Acl\AclGenerator;
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Acl\AclGenerator;
+use Vamshop\Core\Model\Table\VamshopTable;
 
 /**
  * Setting
  *
  * @category Model
- * @package  Croogo.Settings.Model
+ * @package  Vamshop.Settings.Model
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  * @method \Cake\ORM\Query findByKey(string $key)
  */
-class SettingsTable extends CroogoTable
+class SettingsTable extends VamshopTable
 {
 
     public function validationDefault(Validator $validator)
@@ -51,12 +51,12 @@ class SettingsTable extends CroogoTable
     {
         parent::initialize($config);
 
-        $this->addBehavior('Croogo/Core.Trackable');
-//        $this->addBehavior('Croogo/Core.Ordered', [
+        $this->addBehavior('Vamshop/Core.Trackable');
+//        $this->addBehavior('Vamshop/Core.Ordered', [
 //            'field' => 'weight',
 //            'foreign_key' => false,
 //        ]);
-        $this->addBehavior('Croogo/Core.Cached', [
+        $this->addBehavior('Vamshop/Core.Cached', [
             'groups' => [
                 'settings',
             ],

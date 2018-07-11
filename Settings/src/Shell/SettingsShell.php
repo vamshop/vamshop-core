@@ -1,9 +1,9 @@
 <?php
 
-namespace Croogo\Settings\Shell;
+namespace Vamshop\Settings\Shell;
 
 use Cake\Console\Shell;
-use Croogo\Core\Plugin;
+use Vamshop\Core\Plugin;
 
 /**
  * Settings Shell
@@ -15,7 +15,7 @@ use Croogo\Core\Plugin;
  *  ./Console/croogo settings.settings write Some.key newvalue -create
  *
  * @category Shell
- * @package  Croogo.Settings.Console.Command
+ * @package  Vamshop.Settings.Console.Command
  * @author   Rachman Chavik <rchavik@xintesa.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
@@ -29,7 +29,7 @@ class SettingsShell extends Shell
     public function initialize()
     {
         parent::initialize();
-        $this->loadModel('Croogo/Settings.Settings');
+        $this->loadModel('Vamshop/Settings.Settings');
     }
 
     /**
@@ -38,7 +38,7 @@ class SettingsShell extends Shell
     public function getOptionParser()
     {
         return parent::getOptionParser()
-            ->description('Croogo Settings utility')
+            ->description('Vamshop Settings utility')
             ->addSubCommand('read', [
                 'help' => __d('croogo', 'Displays setting values'),
                 'parser' => [
@@ -228,11 +228,11 @@ class SettingsShell extends Shell
     }
 
 /**
- * Update Croogo.version in settings
+ * Update Vamshop.version in settings
  */
     public function updateVersionInfo()
     {
-        $gitDir = realpath(Plugin::path('Croogo/Core') . '..') . DS . '.git';
+        $gitDir = realpath(Plugin::path('Vamshop/Core') . '..') . DS . '.git';
         if (!file_exists($gitDir)) {
             $this->err('Git repository not found');
             return false;
@@ -250,12 +250,12 @@ class SettingsShell extends Shell
         chdir($gitDir);
         $version = trim(shell_exec('git describe --tags'));
         if ($version) {
-            $this->runCommand(['write', 'Croogo.version', $version]);
+            $this->runCommand(['write', 'Vamshop.version', $version]);
         }
     }
 
 /**
- * Update Croogo.appVersion in settings
+ * Update Vamshop.appVersion in settings
  */
     public function updateAppVersionInfo()
     {
@@ -277,7 +277,7 @@ class SettingsShell extends Shell
         chdir($gitDir);
         $version = trim(shell_exec('git describe --tags'));
         if ($version) {
-            $this->runCommand(['write', 'Croogo.appVersion', $version]);
+            $this->runCommand(['write', 'Vamshop.appVersion', $version]);
         }
     }
 

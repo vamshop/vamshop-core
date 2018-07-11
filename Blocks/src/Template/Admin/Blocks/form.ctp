@@ -1,8 +1,8 @@
 <?php
 
-use Croogo\Core\Status;
+use Vamshop\Core\Status;
 
-$this->extend('Croogo/Core./Common/admin_edit');
+$this->extend('Vamshop/Core./Common/admin_edit');
 
 $this->Breadcrumbs->add(__d('croogo', 'Blocks'), ['action' => 'index']);
 
@@ -18,9 +18,9 @@ $this->append('form-start', $this->Form->create($block, [
 ]));
 
 $this->append('tab-heading');
-echo $this->Croogo->adminTab(__d('croogo', 'Block'), '#block-basic');
-echo $this->Croogo->adminTab(__d('croogo', 'Visibilities'), '#block-visibilities');
-echo $this->Croogo->adminTab(__d('croogo', 'Params'), '#block-params');
+echo $this->Vamshop->adminTab(__d('croogo', 'Block'), '#block-basic');
+echo $this->Vamshop->adminTab(__d('croogo', 'Visibilities'), '#block-visibilities');
+echo $this->Vamshop->adminTab(__d('croogo', 'Params'), '#block-params');
 $this->end();
 
 $this->append('tab-content');
@@ -63,8 +63,8 @@ $this->end();
 
 $this->append('panels');
 echo $this->Html->beginBox(__d('croogo', 'Publishing'));
-echo $this->element('Croogo/Core.admin/buttons', ['type' => 'block']);
-echo $this->element('Croogo/Core.admin/publishable');
+echo $this->element('Vamshop/Core.admin/buttons', ['type' => 'block']);
+echo $this->element('Vamshop/Core.admin/publishable');
 echo $this->Form->input('show_title', [
     'label' => __d('croogo', 'Show title ?'),
 ]);
@@ -79,5 +79,5 @@ echo $this->Form->input('visibility_roles', [
 ]);
 echo $this->Html->endBox();
 
-echo $this->Croogo->adminBoxes();
+echo $this->Vamshop->adminBoxes();
 $this->end();

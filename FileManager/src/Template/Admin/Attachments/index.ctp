@@ -1,21 +1,21 @@
 <?php
 /**
- * @var \Croogo\Core\View\CroogoView $this
+ * @var \Vamshop\Core\View\VamshopView $this
  */
 
 $this->assign('title', __d('croogo', 'Attachments'));
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
 $this->Breadcrumbs->add(__d('croogo', 'Attachments'), $this->request->getUri()->getPath());
 
-$this->Croogo->adminScript('Croogo/FileManager.admin');
+$this->Vamshop->adminScript('Vamshop/FileManager.admin');
 $this->Html->script([
-    'Croogo/FileManager.lib/dropzone',
-    'Croogo/FileManager.attachments/index'
+    'Vamshop/FileManager.lib/dropzone',
+    'Vamshop/FileManager.attachments/index'
 ], ['block' => 'scriptBottom']);
 
 $this->start('body-footer');
-    echo $this->element('Croogo/FileManager.admin/dropzone_setup', ['type' => 'table']);
+    echo $this->element('Vamshop/FileManager.admin/dropzone_setup', ['type' => 'table']);
 $this->end();
 
 $this->append('form-start', $this->Form->create(null, [
@@ -39,10 +39,10 @@ $this->append('table-body');
 $rows = [];
 foreach ($attachments as $attachment) {
     $actions = [];
-    $actions[] = $this->Croogo->adminRowActions($attachment->id);
-    $actions[] = $this->Croogo->adminRowAction('', ['controller' => 'Attachments', 'action' => 'edit', $attachment->id],
+    $actions[] = $this->Vamshop->adminRowActions($attachment->id);
+    $actions[] = $this->Vamshop->adminRowAction('', ['controller' => 'Attachments', 'action' => 'edit', $attachment->id],
         ['icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('croogo', 'Edit this item')]);
-    $actions[] = $this->Croogo->adminRowAction('',
+    $actions[] = $this->Vamshop->adminRowAction('',
         ['controller' => 'attachments', 'action' => 'delete', $attachment->id],
         [
             'icon' => $this->Theme->getIcon('delete'),

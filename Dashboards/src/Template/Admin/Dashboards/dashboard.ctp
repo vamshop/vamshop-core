@@ -1,7 +1,7 @@
 <?php $this->assign('title', __d('croogo', 'Dashboards')) ?>
 <?php
-$this->Croogo->adminScript('Croogo/Dashboards.admin');
-$this->Html->css('Croogo/Dashboards.admin', array('block' => true));
+$this->Vamshop->adminScript('Vamshop/Dashboards.admin');
+$this->Html->css('Vamshop/Dashboards.admin', array('block' => true));
 
 $this->Breadcrumbs  ->add(__d('croogo', 'Dashboard'), $this->request->getRequestTarget());
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Taxonomy\Model\Behavior;
+namespace Vamshop\Taxonomy\Model\Behavior;
 
 use Cake\Event\Event;
 use Cake\I18n\I18n;
@@ -14,7 +14,7 @@ use Cake\Utility\Hash;
  * TaxonomizableBehavior
  *
  * @category Taxonomy.Model.Behavior
- * @package  Croogo.Taxonomy.Model.Behavior
+ * @package  Vamshop.Taxonomy.Model.Behavior
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -50,8 +50,8 @@ class TaxonomizableBehavior extends Behavior
         $this->_table->belongsToMany(
             'Taxonomies',
             [
-                'className' => 'Croogo/Taxonomy.Taxonomies',
-                'through' => 'Croogo/Taxonomy.ModelTaxonomies',
+                'className' => 'Vamshop/Taxonomy.Taxonomies',
+                'through' => 'Vamshop/Taxonomy.ModelTaxonomies',
                 'foreignKey' => 'foreign_key',
                 'associationForeignKey' => 'taxonomy_id',
                 'conditions' => [
@@ -63,7 +63,7 @@ class TaxonomizableBehavior extends Behavior
             $this->_table->alias(),
             [
                 'targetTable' => $this->_table,
-                'through' => 'Croogo/Taxonomy.ModelTaxonomies',
+                'through' => 'Vamshop/Taxonomy.ModelTaxonomies',
                 'foreignKey' => 'foreign_key',
                 'associationForeignKey' => 'taxonomy_id',
                 'conditions' => [

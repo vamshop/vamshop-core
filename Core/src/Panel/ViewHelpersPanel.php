@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Panel;
+namespace Vamshop\Core\Panel;
 
 use Cake\Core\Plugin;
 use Cake\Event\Event;
@@ -10,7 +10,7 @@ use DebugKit\DebugPanel;
 class ViewHelpersPanel extends DebugPanel
 {
 
-    public $plugin = 'Croogo/Core';
+    public $plugin = 'Vamshop/Core';
 
     protected $_loadedViewHelpers = [];
 

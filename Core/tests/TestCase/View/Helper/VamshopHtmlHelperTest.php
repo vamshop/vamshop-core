@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase\View\Helper;
+namespace Vamshop\Core\Test\TestCase\View\Helper;
 
 use Cake\Controller\Controller;
 use Cake\Network\Request;
 use Cake\Network\Response;
 use Cake\View\View;
-use Croogo\Core\TestSuite\CroogoTestCase;
-use Croogo\Core\View\Helper\CroogoHtmlHelper;
+use Vamshop\Core\TestSuite\VamshopTestCase;
+use Vamshop\Core\View\Helper\VamshopHtmlHelper;
 
-class CroogoHtmlHelperTest extends CroogoTestCase
+class VamshopHtmlHelperTest extends VamshopTestCase
 {
 
     public $fixtures = [
@@ -17,9 +17,9 @@ class CroogoHtmlHelperTest extends CroogoTestCase
     ];
 
     /**
-     * @var CroogoHtmlHelper
+     * @var VamshopHtmlHelper
      */
-    private $CroogoHtml;
+    private $VamshopHtml;
 
     public function setUp()
     {
@@ -27,7 +27,7 @@ class CroogoHtmlHelperTest extends CroogoTestCase
 
         $controller = null;
         $this->View = new View(new Request, new Response);
-        $this->Html = new CroogoHtmlHelper($this->View);
+        $this->Html = new VamshopHtmlHelper($this->View);
     }
 
     public function tearDown()
@@ -54,7 +54,7 @@ class CroogoHtmlHelperTest extends CroogoTestCase
 
         $result = $this->Html->status(1, [
             'prefix' => 'admin',
-            'plugin' => 'Croogo/Nodes',
+            'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
             'action' => 'toggle',
         ]);
@@ -81,7 +81,7 @@ class CroogoHtmlHelperTest extends CroogoTestCase
 
         $result = $this->Html->status(0, [
             'prefix' => 'admin',
-            'plugin' => 'Croogo/Nodes',
+            'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
             'action' => 'delete',
         ]);

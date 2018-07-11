@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core;
+namespace Vamshop\Core;
 
 trait PropertyHookTrait
 {

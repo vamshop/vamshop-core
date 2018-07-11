@@ -1,7 +1,7 @@
 <?php
 use Cake\Cache\Cache;
 use Cake\Event\EventManager;
-use Croogo\Install\Middleware\InstallMiddleware;
+use Vamshop\Install\Middleware\InstallMiddleware;
 
 Cache::clearAll();
 $configs = Cache::configured();

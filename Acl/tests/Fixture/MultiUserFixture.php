@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Acl\Test\Fixture;
+namespace Vamshop\Acl\Test\Fixture;
 
-use Croogo\TestSuite\CroogoTestFixture;
+use Vamshop\TestSuite\VamshopTestFixture;
 
-class MultiUserFixture extends CroogoTestFixture
+class MultiUserFixture extends VamshopTestFixture
 {
 
 /**

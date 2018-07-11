@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Contacts\Model\Entity;
+namespace Vamshop\Contacts\Model\Entity;
 
 use Cake\ORM\Entity;
 

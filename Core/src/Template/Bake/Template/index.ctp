@@ -19,11 +19,11 @@ if (!empty($indexColumns)) {
 %>
 <?php
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 $this->Breadcrumbs->add(__('<%= $pluralHumanName %>'), ['action' => 'index']);
 
 $this->append('action-buttons');
-    echo $this->Croogo->adminAction(__('New <%= $singularHumanName %>'), ['action' => 'add']);
+    echo $this->Vamshop->adminAction(__('New <%= $singularHumanName %>'), ['action' => 'add']);
 <%
 
     $done = [];
@@ -31,8 +31,8 @@ $this->append('action-buttons');
         foreach ($data as $alias => $details):
             if (!empty($details['navLink']) && $details['controller'] !== $this->name && !in_array($details['controller'], $done)):
 %>
-        echo $this->Croogo->adminAction(__('List <%= $this->_pluralHumanName($alias) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'index']);
-        echo $this->Croogo->adminAction(__('New <%= $this->_singularHumanName($alias) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'add']);
+        echo $this->Vamshop->adminAction(__('List <%= $this->_pluralHumanName($alias) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'index']);
+        echo $this->Vamshop->adminAction(__('New <%= $this->_singularHumanName($alias) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'add']);
 <%
                 $done[] = $details['controller'];
             endif;
@@ -96,10 +96,10 @@ $this->append('table-body');
     $pk = '$' . $singularVar . '->' . $primaryKey[0];
 %>
 <?php
-        $actions[] = $this->Croogo->adminRowActions(<%= $pk %>);
-        $actions[] = $this->Croogo->adminRowAction('', ['action' => 'view', <%= $pk %>], ['icon' => 'read']);
-        $actions[] = $this->Croogo->adminRowAction('', ['action' => 'edit', <%= $pk %>], ['icon' => 'update']);
-        $actions[] = $this->Croogo->adminRowAction('', ['action' => 'delete', <%= $pk %>], ['icon' => 'delete']);
+        $actions[] = $this->Vamshop->adminRowActions(<%= $pk %>);
+        $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'view', <%= $pk %>], ['icon' => 'read']);
+        $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'edit', <%= $pk %>], ['icon' => 'update']);
+        $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'delete', <%= $pk %>], ['icon' => 'delete']);
 ?>
         <td class="actions">
             <div class="item-actions">

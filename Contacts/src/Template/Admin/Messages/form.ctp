@@ -3,9 +3,9 @@ $this->assign('title', __d('croogo', 'Edit Message'));
 $this->extend('/Common/admin_edit');
 
 $this->Breadcrumbs->add(__d('croogo', 'Contacts'),
-    ['plugin' => 'Croogo/Contacts', 'controller' => 'Contacts', 'action' => 'index'])
+    ['plugin' => 'Vamshop/Contacts', 'controller' => 'Contacts', 'action' => 'index'])
     ->add(__d('croogo', 'Messages'),
-        ['plugin' => 'Croogo/Contacts', 'controller' => 'Messages', 'action' => 'index']);
+        ['plugin' => 'Vamshop/Contacts', 'controller' => 'Messages', 'action' => 'index']);
 
 if ($this->request->params['action'] == 'edit') {
     $this->Breadcrumbs->add($message->title, $this->request->getRequestTarget());
@@ -14,7 +14,7 @@ if ($this->request->params['action'] == 'edit') {
 $this->append('form-start', $this->Form->create($message));
 
 $this->append('tab-heading');
-echo $this->Croogo->adminTab(__d('croogo', 'Message'), '#message-main');
+echo $this->Vamshop->adminTab(__d('croogo', 'Message'), '#message-main');
 $this->end();
 
 $this->append('tab-content');

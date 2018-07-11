@@ -1,18 +1,18 @@
 <?php
 
-namespace Croogo\FileManager\Controller\Admin;
+namespace Vamshop\FileManager\Controller\Admin;
 
 use Cake\Event\Event;
 use Cake\Filesystem\File;
 use Cake\Filesystem\Folder;
 use Cake\Routing\Router;
-use Croogo\FileManager\Utility\FileManager;
+use Vamshop\FileManager\Utility\FileManager;
 
 /**
  * FileManager Controller
  *
  * @category FileManager.Controller
- * @package  Croogo.FileManager.Controller
+ * @package  Vamshop.FileManager.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -34,8 +34,8 @@ class FileManagerController extends AppController
         $this->FileManager = new FileManager();
         $this->viewBuilder()
             ->helpers([
-                'Croogo/Core.Image',
-                'Croogo/FileManager.FileManager',
+                'Vamshop/Core.Image',
+                'Vamshop/FileManager.FileManager',
             ]);
     }
 
@@ -346,16 +346,16 @@ class FileManagerController extends AppController
                     $alertType = 'alert';
                 }
                 $this->Flash->set($message, [
-                    'element' => 'Croogo/Core.flash',
+                    'element' => 'Vamshop/Core.flash',
                     'params' => [
                         'class' => $alertType,
                     ],
                 ]);
             }
 
-            return $this->Croogo->redirect(['controller' => 'FileManager', 'action' => 'browse']);
+            return $this->Vamshop->redirect(['controller' => 'FileManager', 'action' => 'browse']);
         } else {
-            $this->Croogo->setReferer();
+            $this->Vamshop->setReferer();
         }
         $this->request->data('name', array_pop($pathFragments));
         $this->set('path', $path);

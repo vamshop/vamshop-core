@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\FileManager\Utility;
+namespace Vamshop\FileManager\Utility;
 
 use Cake\Core\Configure;
 use Cake\Filesystem\File;
@@ -10,7 +10,7 @@ use Cake\Filesystem\Folder;
  * FileManager Model
  *
  * @category FileManager.Model
- * @package  Croogo.FileManager.Model
+ * @package  Vamshop.FileManager.Model
  * @version  2.1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

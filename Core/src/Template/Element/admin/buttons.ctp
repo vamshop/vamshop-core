@@ -1,6 +1,6 @@
 <?php
 /**
- * @var \Croogo\Core\View\CroogoView $this
+ * @var \Vamshop\Core\View\VamshopView $this
  */
 
 $cancelUrl = isset($cancelUrl) ? $cancelUrl : ['action' => 'index'];

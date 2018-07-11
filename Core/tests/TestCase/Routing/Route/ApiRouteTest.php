@@ -1,12 +1,12 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase\Routing\Route;
+namespace Vamshop\Core\Test\TestCase\Routing\Route;
 
 use Cake\Core\Configure;
-use Croogo\Core\Routing\Route\ApiRoute;
-use Croogo\Core\TestSuite\CroogoTestCase;
+use Vamshop\Core\Routing\Route\ApiRoute;
+use Vamshop\Core\TestSuite\VamshopTestCase;
 
-class ApiRouteTest extends CroogoTestCase
+class ApiRouteTest extends VamshopTestCase
 {
 
     public $fixtures = [
@@ -17,7 +17,7 @@ class ApiRouteTest extends CroogoTestCase
     {
         $this->markTestIncomplete('This test needs to be ported to CakePHP 3.0');
 
-        $apiPath = Configure::read('Croogo.Api.path');
+        $apiPath = Configure::read('Vamshop.Api.path');
         $url = '/' . $apiPath . '/v1.0/users/';
 
         $route = new ApiRoute('/:api/:prefix/users/:action/*', [
@@ -63,7 +63,7 @@ class ApiRouteTest extends CroogoTestCase
     {
         $this->markTestIncomplete('This test needs to be ported to CakePHP 3.0');
 
-        $apiPath = Configure::read('Croogo.Api.path');
+        $apiPath = Configure::read('Vamshop.Api.path');
         $url = '/' . $apiPath . '/v1.0/users/';
 
         $route = new ApiRoute('/:api/:prefix/users/:action/*', [

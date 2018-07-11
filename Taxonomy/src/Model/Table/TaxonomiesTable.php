@@ -1,16 +1,16 @@
 <?php
 
-namespace Croogo\Taxonomy\Model\Table;
+namespace Vamshop\Taxonomy\Model\Table;
 
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Core\Model\Table\VamshopTable;
 
-class TaxonomiesTable extends CroogoTable
+class TaxonomiesTable extends VamshopTable
 {
 
     public function initialize(array $config)
     {
-        $this->belongsTo('Croogo/Taxonomy.Terms');
-        $this->belongsTo('Croogo/Taxonomy.Vocabularies');
+        $this->belongsTo('Vamshop/Taxonomy.Terms');
+        $this->belongsTo('Vamshop/Taxonomy.Vocabularies');
         $this->addBehavior('Tree');
         $this->addBehavior('Timestamp', [
             'events' => [
@@ -20,7 +20,7 @@ class TaxonomiesTable extends CroogoTable
                 ]
             ]
         ]);
-		$this->addBehavior('Croogo/Core.Cached', [
+		$this->addBehavior('Vamshop/Core.Cached', [
 			'groups' => [
 				'nodes',
 				'taxonomy',

@@ -1,6 +1,6 @@
 {
     "name": "croogo/filemanager",
-    "description": "Croogo FileManager Plugin",
+    "description": "Vamshop FileManager Plugin",
     "require": {
         "ext-gd": "*",
         "croogo/core": "^3.0.1"
@@ -8,14 +8,14 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Croogo Development Team",
+            "name": "Vamshop Development Team",
             "email": "team@vamshop.com"
         }
     ],
     "type": "cakephp-plugin",
     "autoload": {
         "psr-4": {
-            "Croogo\\FileManager\\": "src"
+            "Vamshop\\FileManager\\": "src"
         }
     },
     "minimum-stability": "dev"

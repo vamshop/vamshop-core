@@ -1,18 +1,18 @@
 <?php
 
-namespace Croogo\Acl\Test\TestCase\Controller\Component\Auth;
+namespace Vamshop\Acl\Test\TestCase\Controller\Component\Auth;
 
 use Acl\Controller\Component\Auth\AclCachedAuthorize;
 use Cake\Controller\ComponentRegistry;
 use Cake\Controller\Controller;
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 
 class AclCachedAuthorizeController extends Controller
 {
 
 }
 
-class AclCachedAuthorizeTest extends CroogoTestCase
+class AclCachedAuthorizeTest extends VamshopTestCase
 {
 
 /**
@@ -20,7 +20,7 @@ class AclCachedAuthorizeTest extends CroogoTestCase
  */
     public function setUp()
     {
-        $this->apiPath = Configure::read('Croogo.Api.path');
+        $this->apiPath = Configure::read('Vamshop.Api.path');
         $this->actionPath = sprintf(
             '/%s/:prefix/:plugin/:controller/:action',
             $this->apiPath

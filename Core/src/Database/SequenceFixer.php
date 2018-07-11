@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Database;
+namespace Vamshop\Core\Database;
 
 use Cake\Database\Driver\Postgres;
 use Cake\Datasource\ConnectionManager;

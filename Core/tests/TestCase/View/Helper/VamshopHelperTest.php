@@ -1,5 +1,5 @@
 <?php
-namespace Croogo\Core\Test\TestCase\View\Helper;
+namespace Vamshop\Core\Test\TestCase\View\Helper;
 
 use Cake\Controller\ComponentRegistry;
 use Cake\Controller\Controller;
@@ -8,12 +8,12 @@ use Cake\Network\Response;
 use Cake\Network\Request;
 use Cake\Network\Session;
 use Cake\View\View;
-use Croogo\Core\Nav;
-use Croogo\Core\TestSuite\CroogoTestCase;
-use Croogo\Core\View\Helper\CroogoHelper;
-use Croogo\Extensions\CroogoTheme;
+use Vamshop\Core\Nav;
+use Vamshop\Core\TestSuite\VamshopTestCase;
+use Vamshop\Core\View\Helper\VamshopHelper;
+use Vamshop\Extensions\VamshopTheme;
 
-class CroogoHelperTest extends CroogoTestCase
+class VamshopHelperTest extends VamshopTestCase
 {
 
     public $fixtures = [
@@ -43,19 +43,19 @@ class CroogoHelperTest extends CroogoTestCase
             'named' => [],
         ];
         $view = new View($request, new Response());
-        $croogoTheme = new CroogoTheme();
+        $croogoTheme = new VamshopTheme();
         $data = $croogoTheme->getData();
         $settings = $data['settings'];
         $view->set('themeSettings', $settings);
 
-        $this->Croogo = new CroogoHelper($view);
+        $this->Vamshop = new VamshopHelper($view);
         $aclHelper = Configure::read('Site.acl_plugin') . 'Helper';
-        $this->Croogo->Acl = $this->getMock(
+        $this->Vamshop->Acl = $this->getMock(
             $aclHelper,
             ['linkIsAllowedByRoleId']
             //			array($view)
         );
-        $this->Croogo->Acl
+        $this->Vamshop->Acl
             ->expects($this->any())
             ->method('linkIsAllowedByRoleId')
             ->will($this->returnValue(true));
@@ -73,7 +73,7 @@ class CroogoHelperTest extends CroogoTestCase
     {
 //		ClassRegistry::flush();
         Nav::items('sidebar', $this->menus);
-        unset($this->Croogo);
+        unset($this->Vamshop);
     }
 
 /**
@@ -90,7 +90,7 @@ class CroogoHelperTest extends CroogoTestCase
             ]);
         $items = Nav::items();
         $expected = '<ul class="nav nav-stacked"><li><a href="#" class="menu-contents sidebar-item"><i class="icon-white icon-large"></i><span>Contents</span></a></li></ul>';
-        $result = $this->Croogo->adminMenus(Nav::items());
+        $result = $this->Vamshop->adminMenus(Nav::items());
         $this->assertEquals($expected, $result);
     }
 
@@ -101,14 +101,14 @@ class CroogoHelperTest extends CroogoTestCase
     {
         $this->markTestIncomplete('This test needs to be ported to CakePHP 3.0');
 
-        $this->Croogo->request->params = [
+        $this->Vamshop->request->params = [
             'controller' => 'test',
             'action' => 'action',
         ];
         Configure::write('Admin.rowActions.Test/action', [
             'Title' => 'plugin:example/controller:example/action:index/:id',
         ]);
-        $result = $this->Croogo->adminRowActions(1);
+        $result = $this->Vamshop->adminRowActions(1);
         $expected = [
             'a' => [
                 'href' => '/example/example/index/1',
@@ -130,7 +130,7 @@ class CroogoHelperTest extends CroogoTestCase
                 ],
             ]
         ]);
-        $result = $this->Croogo->adminRowActions(1);
+        $result = $this->Vamshop->adminRowActions(1);
         $expected = [
             'a' => [
                 'href' => '/example/example/index/1',
@@ -157,7 +157,7 @@ class CroogoHelperTest extends CroogoTestCase
                 ],
             ]
         ]);
-        $result = $this->Croogo->adminRowActions(1);
+        $result = $this->Vamshop->adminRowActions(1);
         $expected = [
             'a' => [
                 'href' => '/example/example/edit/1',
@@ -179,7 +179,7 @@ class CroogoHelperTest extends CroogoTestCase
     {
         $this->markTestIncomplete('This test needs to be ported to CakePHP 3.0');
 
-        $this->Croogo->request->params = [
+        $this->Vamshop->request->params = [
             'controller' => 'test',
             'action' => 'action',
         ];
@@ -189,11 +189,11 @@ class CroogoHelperTest extends CroogoTestCase
                 'options' => [],
             ],
         ]);
-        $result = $this->Croogo->adminTabs();
+        $result = $this->Vamshop->adminTabs();
         $expected = '<li><a href="#test-title" data-toggle="tab">Title</a></li>';
         $this->assertEquals($expected, $result);
 
-        $result = $this->Croogo->adminTabs(true);
+        $result = $this->Vamshop->adminTabs(true);
         $this->assertContains('test-title', $result);
     }
 
@@ -204,7 +204,7 @@ class CroogoHelperTest extends CroogoTestCase
     {
         $this->markTestIncomplete('This test needs to be ported to CakePHP 3.0');
 
-        $this->Croogo->request->params = [
+        $this->Vamshop->request->params = [
             'controller' => 'test',
             'action' => 'action',
         ];
@@ -222,11 +222,11 @@ class CroogoHelperTest extends CroogoTestCase
                 ],
             ],
         ]);
-        $result = $this->Croogo->adminTabs();
+        $result = $this->Vamshop->adminTabs();
         $expected = '<li><a href="#test-title" data-toggle="tab">Title</a></li>';
         $this->assertEquals($expected, $result);
 
-        $result = $this->Croogo->adminTabs(true);
+        $result = $this->Vamshop->adminTabs(true);
         $this->assertContains($testData, $result);
         $this->assertContains('test-title', $result);
     }
@@ -235,7 +235,7 @@ class CroogoHelperTest extends CroogoTestCase
     {
         $this->markTestIncomplete('This test needs to be ported to CakePHP 3.0');
 
-        $this->Croogo->request->params = [
+        $this->Vamshop->request->params = [
             'controller' => 'test',
             'action' => 'action',
         ];
@@ -246,7 +246,7 @@ class CroogoHelperTest extends CroogoTestCase
             ],
         ]);
 
-        $result = $this->Croogo->adminBoxes('Title');
+        $result = $this->Vamshop->adminBoxes('Title');
         $this->assertContains("class='box'", $result);
     }
 
@@ -254,7 +254,7 @@ class CroogoHelperTest extends CroogoTestCase
     {
         $this->markTestIncomplete('This test needs to be ported to CakePHP 3.0');
 
-        $this->Croogo->params = [
+        $this->Vamshop->params = [
             'controller' => 'test',
             'action' => 'action',
         ];
@@ -265,8 +265,8 @@ class CroogoHelperTest extends CroogoTestCase
             ],
         ]);
 
-        $this->Croogo->adminBoxes('Title');
-        $result = $this->Croogo->adminBoxes('Title');
+        $this->Vamshop->adminBoxes('Title');
+        $result = $this->Vamshop->adminBoxes('Title');
         $this->assertEquals('', $result);
     }
 
@@ -274,7 +274,7 @@ class CroogoHelperTest extends CroogoTestCase
     {
         $this->markTestIncomplete('This test needs to be ported to CakePHP 3.0');
 
-        $this->Croogo->request->params = [
+        $this->Vamshop->request->params = [
             'controller' => 'test',
             'action' => 'action',
         ];
@@ -289,7 +289,7 @@ class CroogoHelperTest extends CroogoTestCase
             ],
         ]);
 
-        $result = $this->Croogo->adminBoxes();
+        $result = $this->Vamshop->adminBoxes();
         $this->assertContains('Title', $result);
         $this->assertContains('Content', $result);
     }
@@ -301,7 +301,7 @@ class CroogoHelperTest extends CroogoTestCase
         $setting['Setting']['input_type'] = 'checkbox';
         $setting['Setting']['value'] = 0;
         $setting['Setting']['description'] = 'A description';
-        $result = $this->Croogo->settingsInput($setting, 'MyLabel', 0);
+        $result = $this->Vamshop->settingsInput($setting, 'MyLabel', 0);
         $this->assertContains('type="checkbox"', $result);
     }
 
@@ -312,7 +312,7 @@ class CroogoHelperTest extends CroogoTestCase
         $setting['Setting']['input_type'] = 'checkbox';
         $setting['Setting']['value'] = 1;
         $setting['Setting']['description'] = 'A description';
-        $result = $this->Croogo->settingsInput($setting, 'MyLabel', 0);
+        $result = $this->Vamshop->settingsInput($setting, 'MyLabel', 0);
         $this->assertContains('type="checkbox"', $result);
         $this->assertContains('checked="checked"', $result);
     }
@@ -324,7 +324,7 @@ class CroogoHelperTest extends CroogoTestCase
         $setting['Setting']['input_type'] = '';
         $setting['Setting']['description'] = 'A description';
         $setting['Setting']['value'] = 'Yes';
-        $result = $this->Croogo->settingsInput($setting, 'MyLabel', 0);
+        $result = $this->Vamshop->settingsInput($setting, 'MyLabel', 0);
         $this->assertContains('type="text"', $result);
     }
 
@@ -335,7 +335,7 @@ class CroogoHelperTest extends CroogoTestCase
         $setting['Setting']['input_type'] = 'textarea';
         $setting['Setting']['description'] = 'A description';
         $setting['Setting']['value'] = 'Yes';
-        $result = $this->Croogo->settingsInput($setting, 'MyLabel', 0);
+        $result = $this->Vamshop->settingsInput($setting, 'MyLabel', 0);
         $this->assertContains('</textarea>', $result);
     }
 
@@ -355,7 +355,7 @@ class CroogoHelperTest extends CroogoTestCase
             'Edit',
             '/a',
         ];
-        $result = $this->Croogo->adminRowAction('Edit', $url);
+        $result = $this->Vamshop->adminRowAction('Edit', $url);
         $this->assertHtml($result, $expected);
 
         $options = ['class' => 'test-class'];
@@ -376,7 +376,7 @@ class CroogoHelperTest extends CroogoTestCase
             'Edit',
             '/a',
         ];
-        $result = $this->Croogo->adminRowAction('Edit', $url, $options, $message);
+        $result = $this->Vamshop->adminRowAction('Edit', $url, $options, $message);
         $this->assertHtml($result, $expected);
     }
 
@@ -414,7 +414,7 @@ class CroogoHelperTest extends CroogoTestCase
             '/span',
             '/a',
         ];
-        $result = $this->Croogo->adminRowAction('<span>Del</span>', $url, [], $sure);
+        $result = $this->Vamshop->adminRowAction('<span>Del</span>', $url, [], $sure);
         $this->assertHtml($result, $expected);
         $quot = '&quot;';
         $this->assertContains($quot . $sure . $quot, $result);
@@ -441,7 +441,7 @@ class CroogoHelperTest extends CroogoTestCase
             'Delete',
             '/a',
         ];
-        $result = $this->Croogo->adminRowAction('Delete', $url, $options, $message);
+        $result = $this->Vamshop->adminRowAction('Delete', $url, $options, $message);
         $this->assertHtml($result, $expected);
     }
 }

@@ -1,22 +1,22 @@
 <?php
 
-namespace Croogo\Extensions\Test\TestCase;
+namespace Vamshop\Extensions\Test\TestCase;
 
 use Cake\Utility\Folder;
-use Croogo\Lib\TestSuite\CroogoTestCase;
+use Vamshop\Lib\TestSuite\VamshopTestCase;
 use Extensions\Lib\ExtensionsInstaller;
 
 /**
  * Extensions Installer Test
  *
  * @category Test
- * @package  Croogo
+ * @package  Vamshop
  * @version  1.4
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class ExtensionsInstallerTest extends CroogoTestCase
+class ExtensionsInstallerTest extends VamshopTestCase
 {
 
 /**
@@ -184,25 +184,25 @@ class ExtensionsInstallerTest extends CroogoTestCase
         $this->skipIf(version_compare(PHP_VERSION, '5.3.0', '<'), 'PHP >= 5.3.0 required to run this test.');
 
         $ExtensionsInstaller = new ReflectionClass('ExtensionsInstaller');
-        $prop = $ExtensionsInstaller->getProperty('_CroogoComposer');
+        $prop = $ExtensionsInstaller->getProperty('_VamshopComposer');
         $prop->setAccessible(true);
         $ExtensionsInstallerMock = new ExtensionsInstaller();
 
-        $CroogoComposer = $this->getMock('CroogoComposer', [
+        $VamshopComposer = $this->getMock('VamshopComposer', [
             'getComposer', 'setConfig', 'runComposer',
         ]);
-        $prop->setValue($ExtensionsInstallerMock, $CroogoComposer);
+        $prop->setValue($ExtensionsInstallerMock, $VamshopComposer);
 
-        $CroogoComposer->expects($this->once())
+        $VamshopComposer->expects($this->once())
             ->method('getComposer')
             ->will($this->returnValue(true));
-        $CroogoComposer->expects($this->once())
+        $VamshopComposer->expects($this->once())
             ->method('setConfig')
             ->with(
                 $this->equalTo(['shama/ftp' => '*'])
             )
             ->will($this->returnValue(true));
-        $CroogoComposer->expects($this->once())
+        $VamshopComposer->expects($this->once())
             ->method('runComposer')
             ->will($this->returnValue(true));
 

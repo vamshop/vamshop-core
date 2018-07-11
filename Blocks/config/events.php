@@ -1,9 +1,9 @@
 <?php
 
-namespace Croogo\Blocks\Config;
+namespace Vamshop\Blocks\Config;
 
 return [
     'EventHandlers' => [
-        'Croogo/Blocks.BlocksEventHandler',
+        'Vamshop/Blocks.BlocksEventHandler',
     ],
 ];

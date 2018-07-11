@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Translate\Model\Behavior;
+namespace Vamshop\Translate\Model\Behavior;
 
 use ArrayObject;
 use Cake\Event\Event;

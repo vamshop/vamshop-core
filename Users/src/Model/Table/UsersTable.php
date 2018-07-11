@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Users\Model\Table;
+namespace Vamshop\Users\Model\Table;
 
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
@@ -10,11 +10,11 @@ use Cake\ORM\Query;
 use Cake\Utility\Security;
 use Cake\Utility\Text;
 use Cake\Validation\Validator;
-use Croogo\Core\Croogo;
-use Croogo\Core\Model\Table\CroogoTable;
-use Croogo\Users\Model\Entity\User;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\Model\Table\VamshopTable;
+use Vamshop\Users\Model\Entity\User;
 
-class UsersTable extends CroogoTable
+class UsersTable extends VamshopTable
 {
 
     use MailerAwareTrait;
@@ -48,17 +48,17 @@ class UsersTable extends CroogoTable
         $multiRole = Configure::read('Access Control.multiRole');
 
         if ($multiRole) {
-            $this->belongsToMany('Croogo/Users.Roles', [
-                'through' => 'Croogo/Users.RolesUsers',
+            $this->belongsToMany('Vamshop/Users.Roles', [
+                'through' => 'Vamshop/Users.RolesUsers',
                 'strategy' => 'subquery',
             ]);
             unset($this->_displayFields['role.title']);
         } else {
-            $this->belongsTo('Croogo/Users.Roles');
+            $this->belongsTo('Vamshop/Users.Roles');
         }
 
         $this->addBehavior('Acl.Acl', [
-            'className' => 'Croogo/Core.CroogoAcl',
+            'className' => 'Vamshop/Core.VamshopAcl',
             'type' => 'requester'
         ]);
         $this->addBehavior('Search.Search');
@@ -70,11 +70,11 @@ class UsersTable extends CroogoTable
                 ]
             ]
         ]);
-        $this->addBehavior('Croogo/Core.Cached', [
+        $this->addBehavior('Vamshop/Core.Cached', [
             'groups' => ['users']
         ]);
 
-        $this->eventManager()->on($this->getMailer('Croogo/Users.User'));
+        $this->eventManager()->on($this->getMailer('Vamshop/Users.User'));
 
         $this->searchManager()
             ->add('name', 'Search.Like', [
@@ -161,7 +161,7 @@ class UsersTable extends CroogoTable
         // Generate a unique activation key
         $user->activation_key = $this->generateActivationKey();
 
-        Croogo::dispatchEvent('Model.Users.beforeResetPassword', $this,
+        Vamshop::dispatchEvent('Model.Users.beforeResetPassword', $this,
             compact('user')
         );
         $user = $this->save($user);
@@ -171,14 +171,14 @@ class UsersTable extends CroogoTable
 
         // Send out an password reset email
         $email = $this
-            ->getMailer('Croogo/Users.User')
+            ->getMailer('Vamshop/Users.User')
             ->viewVars(compact('options'))
             ->send('resetPassword', [$user]);
         if (!$email) {
             return false;
         }
 
-        Croogo::dispatchEvent('Model.Users.afterResetPassword', $this,
+        Vamshop::dispatchEvent('Model.Users.afterResetPassword', $this,
             compact('email', 'user')
         );
         return true;
@@ -186,11 +186,11 @@ class UsersTable extends CroogoTable
 
     public function sendActivationEmail($user)
     {
-        $email = $this->getMailer('Croogo/Users.User')
+        $email = $this->getMailer('Vamshop/Users.User')
             ->viewVars(compact('user'))
             ->send('registrationActivation', [$user]);
 
-        Croogo::dispatchEvent('Model.Users.afterActivationEmail', $this,
+        Vamshop::dispatchEvent('Model.Users.afterActivationEmail', $this,
             compact('email', 'user')
         );
     }
@@ -301,7 +301,7 @@ class UsersTable extends CroogoTable
     public function generateActivationKey($length = null)
     {
         if (!$length) {
-            $length = Configure::read('Croogo.activationKeyLength', 20);
+            $length = Configure::read('Vamshop.activationKeyLength', 20);
         }
         return bin2hex(Security::randomBytes($length));
     }

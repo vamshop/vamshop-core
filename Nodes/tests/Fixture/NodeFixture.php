@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Nodes\Test\Fixture;
+namespace Vamshop\Nodes\Test\Fixture;
 
-use Croogo\Core\TestSuite\CroogoTestFixture;
+use Vamshop\Core\TestSuite\VamshopTestFixture;
 
-class NodeFixture extends CroogoTestFixture
+class NodeFixture extends VamshopTestFixture
 {
 
     public $name = 'Node';
@@ -47,7 +47,7 @@ class NodeFixture extends CroogoTestFixture
             'user_id' => 1,
             'title' => 'Hello World',
             'slug' => 'hello-world',
-            'body' => '<p>Welcome to Croogo. This is your first post. You can edit or delete it from the admin panel.</p>',
+            'body' => '<p>Welcome to Vamshop. This is your first post. You can edit or delete it from the admin panel.</p>',
             'excerpt' => null,
             'status' => 1,
             'mime_type' => null,
@@ -70,7 +70,7 @@ class NodeFixture extends CroogoTestFixture
             'user_id' => 1,
             'title' => 'About',
             'slug' => 'about',
-            'body' => '<p>This is an example of a Croogo page, you could edit this to put information about yourself or your site.</p>',
+            'body' => '<p>This is an example of a Vamshop page, you could edit this to put information about yourself or your site.</p>',
             'excerpt' => null,
             'status' => 1,
             'mime_type' => null,

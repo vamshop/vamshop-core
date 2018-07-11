@@ -5,11 +5,11 @@ use Cake\Routing\DispatcherFactory;
 use Cake\Event\EventManager;
 use Cake\I18n\I18n;
 use Cake\ORM\TableRegistry;
-use Croogo\Translate\Middleware\I18nMiddleware;
+use Vamshop\Translate\Middleware\I18nMiddleware;
 
 // Uncomment if to enable locale detection via Accept-Language header
-// DispatcherFactory::add('Croogo/Translate.LocaleSelector');
-$Languages = TableRegistry::get('Croogo/Settings.Languages');
+// DispatcherFactory::add('Vamshop/Translate.LocaleSelector');
+$Languages = TableRegistry::get('Vamshop/Settings.Languages');
 $languages = $Languages->find('active')->toArray();
 Configure::write('I18n.languages', array_keys($languages));
 $siteLocale = Configure::read('Site.locale');

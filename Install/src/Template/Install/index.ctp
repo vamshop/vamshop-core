@@ -18,15 +18,15 @@ if (is_writable(ROOT . DS . 'config')) {
     echo '<p><span class="badge badge-danger">' . __d('croogo', 'Your config directory is NOT writable.') . '</danger></p>';
 }
 
-$versions = \Croogo\Install\InstallManager::versionCheck();
+$versions = \Vamshop\Install\InstallManager::versionCheck();
 if ($versions['php']) {
     echo '<p><span class="badge badge-success">' .
-        sprintf(__d('croogo', 'PHP version %s >= %s'), phpversion(), \Croogo\Install\InstallManager::PHP_VERSION) .
+        sprintf(__d('croogo', 'PHP version %s >= %s'), phpversion(), \Vamshop\Install\InstallManager::PHP_VERSION) .
         '</span></p>';
 } else {
     $check = false;
     echo '<p><span class="badge badge-danger">' .
-        sprintf(__d('croogo', 'PHP version %s < %s'), phpversion(), \Croogo\Install\InstallManager::PHP_VERSION) .
+        sprintf(__d('croogo', 'PHP version %s < %s'), phpversion(), \Vamshop\Install\InstallManager::PHP_VERSION) .
         '</span></p>';
 }
 
@@ -34,13 +34,13 @@ if ($versions['php']) {
 if ($versions['cake']) {
     echo '<p><span class="badge badge-success">' .
         __d('croogo', 'CakePhp version %s >= %s', \Cake\Core\Configure::version(),
-            \Croogo\Install\InstallManager::CAKE_VERSION) .
+            \Vamshop\Install\InstallManager::CAKE_VERSION) .
         '</span></p>';
 } else {
     $check = false;
     echo '<p><span class="badge badge-danger">' .
         __d('croogo', 'CakePHP version %s < %s', \Cake\Core\Configure::version(),
-            \Croogo\Install\InstallManager::CAKE_VERSION) .
+            \Vamshop\Install\InstallManager::CAKE_VERSION) .
         '</span></p>';
 }
 

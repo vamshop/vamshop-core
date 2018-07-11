@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Translate\Event;
+namespace Vamshop\Translate\Event;
 
 use Cake\Datasource\EntityInterface;
 use Cake\Event\EventListenerInterface;
-use Croogo\Translate\Translations;
+use Vamshop\Translate\Translations;
 
 /**
  * TranslateEventHandler
  *
- * @package  Croogo.Translate.Event
+ * @package  Vamshop.Translate.Event
  * @author   Rachman Chavik <rchavik@gmail.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
@@ -20,8 +20,8 @@ class TranslateEventHandler implements EventListenerInterface
     public function implementedEvents()
     {
         return [
-            'Croogo.bootstrapComplete' => [
-                'callable' => 'onCroogoBootstrapComplete',
+            'Vamshop.bootstrapComplete' => [
+                'callable' => 'onVamshopBootstrapComplete',
             ],
             'View.beforeRender' => [
                 'callable' => 'onBeforeRender',
@@ -29,7 +29,7 @@ class TranslateEventHandler implements EventListenerInterface
         ];
     }
 
-    public function onCroogoBootstrapComplete($event)
+    public function onVamshopBootstrapComplete($event)
     {
         Translations::translateModels();
     }
@@ -53,8 +53,8 @@ class TranslateEventHandler implements EventListenerInterface
         }
         $title = __d('croogo', 'Translate');
         $View->append('action-buttons');
-            echo $event->subject->Croogo->adminAction($title, [
-                'plugin' => 'Croogo/Translate',
+            echo $event->subject->Vamshop->adminAction($title, [
+                'plugin' => 'Vamshop/Translate',
                 'controller' => 'Translate',
                 'action' => 'index',
                 'id' => $entity->get('id'),

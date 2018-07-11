@@ -2,27 +2,27 @@
 
 use Cake\Core\Configure;
 use Cake\Cache\Cache;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 $cacheConfig = array_merge(
-    Configure::read('Croogo.Cache.defaultConfig'),
+    Configure::read('Vamshop.Cache.defaultConfig'),
     ['groups' => ['taxonomy']]
 );
 Cache::config('croogo_types', $cacheConfig);
 Cache::config('croogo_vocabularies', $cacheConfig);
 
-Croogo::hookComponent('*', 'Croogo/Taxonomy.Taxonomies');
+Vamshop::hookComponent('*', 'Vamshop/Taxonomy.Taxonomies');
 
-Croogo::hookHelper('*', 'Croogo/Taxonomy.Taxonomies');
+Vamshop::hookHelper('*', 'Vamshop/Taxonomy.Taxonomies');
 
-Croogo::translateModel('Croogo/Taxonomy.Terms', [
+Vamshop::translateModel('Vamshop/Taxonomy.Terms', [
     'fields' => [
         'title',
         'description',
     ],
 ]);
 
-Croogo::translateModel('Croogo/Taxonomy.Types', [
+Vamshop::translateModel('Vamshop/Taxonomy.Types', [
     'fields' => [
         'title',
         'description',

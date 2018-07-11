@@ -1,12 +1,12 @@
 <?php
 
-namespace Croogo\Core\Model\Behavior;
+namespace Vamshop\Core\Model\Behavior;
 
 use Cake\Event\Event;
 use Cake\ORM\Behavior;
 use Cake\ORM\Query;
 use Cake\Utility\Hash;
-use Croogo\Core\Status;
+use Vamshop\Core\Status;
 
 /**
  * Publishable Behavior
@@ -16,12 +16,12 @@ use Croogo\Core\Status;
  *   - `publish_start` datetime indicates the start of publishing period
  *   - `publish_end` datetime indicates the end of publishing period
  *
- * @category Croogo.Model.Behavior
- * @package  Croogo.Croogo.Model.Behavior
+ * @category Vamshop.Model.Behavior
+ * @package  Vamshop.Vamshop.Model.Behavior
  * @author   Rachman Chavik <rchavik@gmail.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
- * @see      CroogoStatus
+ * @see      VamshopStatus
  */
 class PublishableBehavior extends Behavior
 {
@@ -48,7 +48,7 @@ class PublishableBehavior extends Behavior
     {
         parent::initialize($config);
 
-        $this->_CroogoStatus = new Status();
+        $this->_VamshopStatus = new Status();
     }
 
 
@@ -59,7 +59,7 @@ class PublishableBehavior extends Behavior
      */
     public function status($roleId = null, $statusType = 'publishing', $accessType = 'public')
     {
-        return $this->_CroogoStatus->status($roleId, $statusType, $accessType);
+        return $this->_VamshopStatus->status($roleId, $statusType, $accessType);
     }
 
 /**

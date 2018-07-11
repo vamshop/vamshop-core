@@ -16,21 +16,21 @@
  * @since         CakePHP(tm) v 2.0
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace Croogo\Acl\Test\TestCase\Controller\Component\Auth;
+namespace Vamshop\Acl\Test\TestCase\Controller\Component\Auth;
 
 use Acl\Controller\Component\Auth\MultiColumnAuthenticate;
 use App\Controller\Component\AuthComponent;
 use App\Model\AppModel;
 use Cake\Network\Request;
 use Cake\Network\Response;
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 
 /**
  * Test case for FormAuthentication
  *
  * @package       Cake.Test.Case.Controller.Component.Auth
  */
-class MultiColumnAuthenticateTest extends CroogoTestCase
+class MultiColumnAuthenticateTest extends VamshopTestCase
 {
 
     public $fixtures = ['plugin.acl.multi_user'];

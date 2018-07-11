@@ -1,25 +1,25 @@
 <?php
 
-namespace Croogo\Menus\Model\Table;
+namespace Vamshop\Menus\Model\Table;
 
 use Cake\Event\Event;
 use Cake\ORM\Entity;
 use Cake\ORM\RulesChecker;
 use Cake\Validation\Validator;
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Core\Model\Table\VamshopTable;
 
 /**
  * Menu
  *
  * @property LinksTable Links
  * @category Model
- * @package  Croogo.Menus.Model
+ * @package  Vamshop.Menus.Model
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class MenusTable extends CroogoTable
+class MenusTable extends VamshopTable
 {
 
     public function validationDefault(Validator $validator)
@@ -43,13 +43,13 @@ class MenusTable extends CroogoTable
     {
         parent::initialize($config);
 
-		$this->addBehavior('Croogo/Core.Cached', [
+		$this->addBehavior('Vamshop/Core.Cached', [
 			'groups' => [
 				'menus',
 			],
 		]);
-        $this->addBehavior('Croogo/Core.Publishable');
-        $this->addBehavior('Croogo/Core.Trackable');
+        $this->addBehavior('Vamshop/Core.Publishable');
+        $this->addBehavior('Vamshop/Core.Trackable');
 
         $this->addBehavior('Timestamp', [
             'events' => [
@@ -62,7 +62,7 @@ class MenusTable extends CroogoTable
         $this->addBehavior('Search.Search');
 
         $this->hasMany('Links', [
-            'className' => 'Croogo/Menus.Links',
+            'className' => 'Vamshop/Menus.Links',
             'order' => [
                 'lft' => 'ASC'
             ],

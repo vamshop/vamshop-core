@@ -11,7 +11,7 @@ class ThingsTable extends Table
     {
         parent::initialize($config);
 
-        $this->addBehavior('Croogo/Core.Url', [
+        $this->addBehavior('Vamshop/Core.Url', [
             'url' => [
                 'controller' => 'Things',
                 'action' => 'view',

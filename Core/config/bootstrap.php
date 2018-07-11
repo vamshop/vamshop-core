@@ -5,9 +5,9 @@ use Cake\Core\Plugin;
 use Cake\Database\Type;
 use Cake\Datasource\ConnectionManager;
 use Cake\Utility\Security;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
-\Croogo\Core\timerStart('Croogo bootstrap');
+\Vamshop\Core\timerStart('Vamshop bootstrap');
 $dbConfigExists = false;
 $salted = Security::getSalt() !== '__SALT__';
 
@@ -25,41 +25,41 @@ try {
 }
 
 // Map our custom types
-Type::map('params', 'Croogo\Core\Database\Type\ParamsType');
-Type::map('encoded', 'Croogo\Core\Database\Type\EncodedType');
-Type::map('link', 'Croogo\Core\Database\Type\LinkType');
+Type::map('params', 'Vamshop\Core\Database\Type\ParamsType');
+Type::map('encoded', 'Vamshop\Core\Database\Type\EncodedType');
+Type::map('link', 'Vamshop\Core\Database\Type\LinkType');
 
 Configure::write(
     'DebugKit.panels',
     array_merge((array)Configure::read('DebugKit.panels'), [
-        'Croogo/Core.Plugins',
-        'Croogo/Core.ViewHelpers',
-        'Croogo/Core.Components',
+        'Vamshop/Core.Plugins',
+        'Vamshop/Core.ViewHelpers',
+        'Vamshop/Core.Components',
     ])
 );
 
-Croogo::hookComponent('*', [
-    'Croogo' => [
-        'className' => 'Croogo/Core.Croogo',
+Vamshop::hookComponent('*', [
+    'Vamshop' => [
+        'className' => 'Vamshop/Core.Vamshop',
         'priority' => 5
     ]
 ]);
-Croogo::hookComponent('*', 'Croogo/Acl.Filter');
-Croogo::hookComponent('*', 'Security');
-Croogo::hookComponent('*', 'Csrf');
-Croogo::hookComponent('*', 'Acl.Acl');
-Croogo::hookComponent('*', 'Auth');
-Croogo::hookComponent('*', 'Flash');
-Croogo::hookComponent('*', 'RequestHandler');
-Croogo::hookComponent('*', 'Croogo/Core.Theme');
+Vamshop::hookComponent('*', 'Vamshop/Acl.Filter');
+Vamshop::hookComponent('*', 'Security');
+Vamshop::hookComponent('*', 'Csrf');
+Vamshop::hookComponent('*', 'Acl.Acl');
+Vamshop::hookComponent('*', 'Auth');
+Vamshop::hookComponent('*', 'Flash');
+Vamshop::hookComponent('*', 'RequestHandler');
+Vamshop::hookComponent('*', 'Vamshop/Core.Theme');
 
 require_once __DIR__ . DS . 'croogo_bootstrap.php';
 
-Croogo::hookHelper('*', 'Croogo/Core.Js');
-Croogo::hookHelper('*', 'Croogo/Core.Layout');
-\Croogo\Core\timerStop('Croogo bootstrap');
+Vamshop::hookHelper('*', 'Vamshop/Core.Js');
+Vamshop::hookHelper('*', 'Vamshop/Core.Layout');
+\Vamshop\Core\timerStop('Vamshop bootstrap');
 
 // Load Install plugin
-if (!Configure::read('Croogo.installed') || !$salted) {
-    Plugin::load('Croogo/Install', ['routes' => true, 'bootstrap' => true]);
+if (!Configure::read('Vamshop.installed') || !$salted) {
+    Plugin::load('Vamshop/Install', ['routes' => true, 'bootstrap' => true]);
 }

@@ -1,12 +1,12 @@
 <?php
 
-namespace Croogo\Example\View\Cell;
+namespace Vamshop\Example\View\Cell;
 
 use Cake\Cache\Cache;
 use Cake\I18n\Time;
 use Cake\Utility\Xml;
 use Cake\View\Cell;
-use Croogo\Core\Link;
+use Vamshop\Core\Link;
 
 class ExampleDashboardCell extends Cell
 {

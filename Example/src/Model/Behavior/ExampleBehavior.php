@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Example\Model\Behavior;
+namespace Vamshop\Example\Model\Behavior;
 
 use Cake\Event\Event;
 use Cake\ORM\Behavior;
@@ -11,7 +11,7 @@ use Cake\ORM\Query;
  * Example Behavior
  *
  * @category Behavior
- * @package  Croogo
+ * @package  Vamshop
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com

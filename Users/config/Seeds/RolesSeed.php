@@ -48,7 +48,7 @@ class RolesSeed extends AbstractSeed
 
     public function run()
     {
-        $Roles = TableRegistry::get('Croogo/Users.Roles');
+        $Roles = TableRegistry::get('Vamshop/Users.Roles');
         $entities = $Roles->newEntities($this->records);
         $result = $Roles->saveMany($entities);
     }

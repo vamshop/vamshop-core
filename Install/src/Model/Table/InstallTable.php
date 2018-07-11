@@ -1,13 +1,13 @@
 <?php
 
-namespace Croogo\Install\Model\Table;
+namespace Vamshop\Install\Model\Table;
 
 use Cake\Core\Configure;
 use Cake\ORM\Table;
 use Cake\ORM\TableRegistry;
 use Cake\Utility\File;
 use Cake\Utility\Security;
-use Croogo\Core\Plugin;
+use Vamshop\Core\Plugin;
 
 class InstallTable extends Table
 {
@@ -28,9 +28,9 @@ class InstallTable extends Table
 
 /**
  *
- * @var CroogoPlugin
+ * @var VamshopPlugin
  */
-    protected $_CroogoPlugin = null;
+    protected $_VamshopPlugin = null;
 
 /**
  * Create admin user
@@ -40,10 +40,10 @@ class InstallTable extends Table
  */
     public function addAdminUser($user)
     {
-        $Users = TableRegistry::get('Croogo/Users.Users');
+        $Users = TableRegistry::get('Vamshop/Users.Users');
         $Users->removeBehavior('Cached');
-        $Roles = TableRegistry::get('Croogo/Users.Roles');
-        $Roles->addBehavior('Croogo/Core.Aliasable');
+        $Roles = TableRegistry::get('Vamshop/Users.Roles');
+        $Roles->addBehavior('Vamshop/Core.Aliasable');
         $Users->validator('default')->remove('email')->remove('password');
         $user['name'] = $user['username'];
         $user['email'] = '';

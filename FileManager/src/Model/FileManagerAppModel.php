@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\FileManager\Model;
+namespace Vamshop\FileManager\Model;
 
 use App\Model\AppModel;
 
@@ -8,7 +8,7 @@ use App\Model\AppModel;
  * FileManager App Model
  *
  * @category FileManager.Model
- * @package  Croogo.FileManager.Model
+ * @package  Vamshop.FileManager.Model
  * @version  1.4
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

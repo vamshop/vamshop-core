@@ -1,12 +1,12 @@
 <?php
-$this->Html->script('Croogo/Users.admin', ['block' => true]);
+$this->Html->script('Vamshop/Users.admin', ['block' => true]);
 
 use Cake\I18n\Time;
 
-$this->extend('Croogo/Core./Common/admin_edit');
+$this->extend('Vamshop/Core./Common/admin_edit');
 
 $this->Breadcrumbs->add(__d('croogo', 'Users'),
-        ['plugin' => 'Croogo/Users', 'controller' => 'Users', 'action' => 'index']);
+        ['plugin' => 'Vamshop/Users', 'controller' => 'Users', 'action' => 'index']);
 
 if ($this->request->param('action') == 'edit') {
     $this->Breadcrumbs->add($user->name, $this->request->getRequestTarget());
@@ -18,7 +18,7 @@ if ($this->request->param('action') == 'edit') {
 
 $this->start('action-buttons');
 if ($this->request->param('action') == 'edit'):
-    echo $this->Croogo->adminAction(__d('croogo', 'Reset password'), ['action' => 'reset_password', $user->id]);
+    echo $this->Vamshop->adminAction(__d('croogo', 'Reset password'), ['action' => 'reset_password', $user->id]);
 endif;
 $this->end();
 
@@ -30,7 +30,7 @@ $this->append('form-start', $this->Form->create($user, [
 ]));
 
 $this->append('tab-heading');
-echo $this->Croogo->adminTab(__d('croogo', 'User'), '#user-main');
+echo $this->Vamshop->adminTab(__d('croogo', 'User'), '#user-main');
 $this->end();
 
 $this->append('tab-content');
@@ -65,7 +65,7 @@ $this->end();
 
 $this->append('panels');
 echo $this->Html->beginBox(__d('croogo', 'Publishing'));
-echo $this->element('Croogo/Core.admin/buttons', ['type' => 'user']);
+echo $this->element('Vamshop/Core.admin/buttons', ['type' => 'user']);
 
 if ($this->request->param('action') == 'add'):
     echo $this->Form->input('notification', [
@@ -102,5 +102,5 @@ endif;
 
 echo $this->Html->endBox();
 
-echo $this->Croogo->adminBoxes();
+echo $this->Vamshop->adminBoxes();
 $this->end();

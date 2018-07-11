@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Listener;
+namespace Vamshop\Core\Listener;
 
 use Cake\Event\Event;
 use Crud\Listener\BaseListener;

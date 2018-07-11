@@ -3,7 +3,7 @@
  * Originally copyright FriendsOfCake from the friendsofcake/crud-view package.
  *
  */
-namespace Croogo\Core\View\Widget;
+namespace Vamshop\Core\View\Widget;
 
 use Cake\Core\Configure;
 use Cake\Database\Type;

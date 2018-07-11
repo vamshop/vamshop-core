@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Blocks\Controller\Admin;
+namespace Vamshop\Blocks\Controller\Admin;
 
 use Cake\Event\Event;
 
@@ -8,7 +8,7 @@ use Cake\Event\Event;
  * Regions Controller
  *
  * @category Blocks.Controller
- * @package  Croogo.Blocks.Controller
+ * @package  Vamshop.Blocks.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -16,7 +16,7 @@ use Cake\Event\Event;
  */
 class RegionsController extends AppController
 {
-    public $modelClass = 'Croogo/Blocks.Regions';
+    public $modelClass = 'Vamshop/Blocks.Regions';
 
     public function initialize()
     {

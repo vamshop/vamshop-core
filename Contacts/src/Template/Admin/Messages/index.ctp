@@ -1,8 +1,8 @@
 <?php
 
-$this->Croogo->adminScript('Croogo/Contacts.admin');
+$this->Vamshop->adminScript('Vamshop/Contacts.admin');
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
 $this->Breadcrumbs->add(__d('croogo', 'Contacts'), ['controller' => 'contacts', 'action' => 'index']);
 
@@ -26,13 +26,13 @@ $this->append('table-footer', $this->element('admin/modal', [
     ]));
 
 $this->append('action-buttons');
-echo $this->Croogo->adminAction(__d('croogo', 'Unread'), [
+echo $this->Vamshop->adminAction(__d('croogo', 'Unread'), [
     'action' => 'index',
     '?' => [
         'status' => '0',
     ],
 ]);
-echo $this->Croogo->adminAction(__d('croogo', 'Read'), [
+echo $this->Vamshop->adminAction(__d('croogo', 'Read'), [
     'action' => 'index',
     '?' => [
         'status' => '1',
@@ -64,17 +64,17 @@ $rows = [];
 foreach ($messages as $message) {
     $actions = [];
 
-    $actions[] = $this->Croogo->adminRowAction('', ['action' => 'view', $message->id],
+    $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'view', $message->id],
         ['icon' => $this->Theme->geticon('read'), 'tooltip' => __d('croogo', 'View this item')]);
-    $actions[] = $this->Croogo->adminRowAction('', ['action' => 'edit', $message->id],
+    $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'edit', $message->id],
         ['icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('croogo', 'Edit this item')]);
-    $actions[] = $this->Croogo->adminRowAction('', '#Message' . $message->id . 'Id', [
+    $actions[] = $this->Vamshop->adminRowAction('', '#Message' . $message->id . 'Id', [
         'icon' => $this->Theme->getIcon('delete'),
         'class' => 'delete',
         'tooltip' => __d('croogo', 'Remove this item'),
         'rowAction' => 'delete',
     ], __d('croogo', 'Are you sure?'));
-    $actions[] = $this->Croogo->adminRowActions($message->id);
+    $actions[] = $this->Vamshop->adminRowActions($message->id);
 
     $actions = $this->Html->div('item-actions', implode(' ', $actions));
 

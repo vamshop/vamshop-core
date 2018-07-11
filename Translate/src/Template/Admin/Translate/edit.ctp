@@ -14,7 +14,7 @@ $this->Breadcrumbs
     ->add(
         __d('croogo', 'Translations'),
         array(
-            'plugin' => 'Croogo/Translate',
+            'plugin' => 'Vamshop/Translate',
             'controller' => 'Translate',
             'action' => 'index',
             '?' => [
@@ -27,7 +27,7 @@ $this->Breadcrumbs
 
 $this->append('form-start', $this->Form->create($entity, array(
     'url' => array(
-        'plugin' => 'Croogo/Translate',
+        'plugin' => 'Vamshop/Translate',
         'controller' => 'Translate',
         'action' => 'edit',
         $id,
@@ -40,8 +40,8 @@ $this->append('form-start', $this->Form->create($entity, array(
 )));
 
 $this->append('tab-heading');
-    echo $this->Croogo->adminTab(__d('croogo', 'Translate'), '#translate-main');
-    echo $this->Croogo->adminTab(__d('croogo', 'Original'), '#translate-original');
+    echo $this->Vamshop->adminTab(__d('croogo', 'Translate'), '#translate-main');
+    echo $this->Vamshop->adminTab(__d('croogo', 'Original'), '#translate-original');
 $this->end();
 
 $this->append('tab-content');

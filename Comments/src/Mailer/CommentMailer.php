@@ -1,11 +1,11 @@
 <?php
 
-namespace Croogo\Comments\Mailer;
+namespace Vamshop\Comments\Mailer;
 
 use Cake\Core\Configure;
 use Cake\Event\Event;
 use Cake\Mailer\Mailer;
-use Croogo\Comments\Model\Entity\Comment;
+use Vamshop\Comments\Model\Entity\Comment;
 
 class CommentMailer extends Mailer
 {
@@ -36,6 +36,6 @@ class CommentMailer extends Mailer
             ->viewVars([
                 'comment' => $comment
             ])
-            ->template('Croogo/Comments.comment');
+            ->template('Vamshop/Comments.comment');
     }
 }

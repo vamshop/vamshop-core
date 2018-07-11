@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Controller\Component;
+namespace Vamshop\Core\Controller\Component;
 
 use Cake\Controller\Component;
 use Cake\Controller\Controller;
@@ -8,13 +8,13 @@ use Cake\Event\Event;
 use Cake\ORM\Table;
 use Cake\Utility\Hash;
 use Cake\Utility\Inflector;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 /**
  * BulkProcess Component
  *
  * @category Component
- * @package  Croogo.Croogo.Controller.Component
+ * @package  Vamshop.Vamshop.Controller.Component
  * @version  1.0
  * @author   Rachman Chavik
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -134,7 +134,7 @@ class BulkProcessComponent extends Component
         }
 
         if (!$table->hasBehavior('BulkProcess')) {
-            $table->addBehavior('Croogo/Core.BulkProcess');
+            $table->addBehavior('Vamshop/Core.BulkProcess');
         }
 
         $processed = $table->processAction($action, $ids);
@@ -147,7 +147,7 @@ class BulkProcessComponent extends Component
                 $message = __d('croogo', '%s processed', Inflector::humanize($table->alias()));
             }
             $flashMethod = 'success';
-            Croogo::dispatchEvent($eventName, $Controller, compact($ids));
+            Vamshop::dispatchEvent($eventName, $Controller, compact($ids));
         } else {
             $message = __d('croogo', 'An error occured');
             $flashMethod = 'error';

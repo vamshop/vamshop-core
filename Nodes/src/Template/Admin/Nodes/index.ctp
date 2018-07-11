@@ -1,19 +1,19 @@
 <?php
 
 use Cake\Utility\Hash;
-use Croogo\Core\Status;
+use Vamshop\Core\Status;
 
 $this->assign('title', __d('croogo', 'Contents'));
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
-$this->Croogo->adminScript('Croogo/Nodes.admin');
+$this->Vamshop->adminScript('Vamshop/Nodes.admin');
 
 $this->Breadcrumbs
     ->add(__d('croogo', 'Content'), $this->request->getUri()->getPath());
 
 $this->append('action-buttons');
-echo $this->Croogo->adminAction(__d('croogo', 'Create content'), ['action' => 'create'], ['button' => 'success']);
+echo $this->Vamshop->adminAction(__d('croogo', 'Create content'), ['action' => 'create'], ['button' => 'success']);
 $this->end();
 
 $this->append('search', $this->element('admin/nodes_search'));
@@ -79,7 +79,7 @@ $this->append('table-body');
             </td>
             <td>
                 <?php
-                echo $this->element('Croogo/Core.admin/toggle', [
+                echo $this->element('Vamshop/Core.admin/toggle', [
                     'id' => $node->id,
                     'status' => (int)$node->status,
                 ]);
@@ -88,31 +88,31 @@ $this->append('table-body');
             <td>
                 <div class="item-actions">
                     <?php
-                    echo $this->Croogo->adminRowActions($node->id);
+                    echo $this->Vamshop->adminRowActions($node->id);
 
                     if ($this->request->query('type')):
-                        echo ' ' . $this->Croogo->adminRowAction('', ['action' => 'move', $node->id, 'up'], [
+                        echo ' ' . $this->Vamshop->adminRowAction('', ['action' => 'move', $node->id, 'up'], [
                                 'method' => 'post',
                                 'icon' => $this->Theme->getIcon('move-up'),
                                 'tooltip' => __d('croogo', 'Move up'),
                             ]);
-                        echo ' ' . $this->Croogo->adminRowAction('', ['action' => 'move', $node->id, 'down'], [
+                        echo ' ' . $this->Vamshop->adminRowAction('', ['action' => 'move', $node->id, 'down'], [
                                 'method' => 'post',
                                 'icon' => $this->Theme->getIcon('move-down'),
                                 'tooltip' => __d('croogo', 'Move down'),
                             ]);
                     endif;
 
-                    echo ' ' . $this->Croogo->adminRowAction('', ['action' => 'edit', $node->id], [
+                    echo ' ' . $this->Vamshop->adminRowAction('', ['action' => 'edit', $node->id], [
                             'icon' => $this->Theme->getIcon('update'),
                             'tooltip' => __d('croogo', 'Edit this item'),
                         ]);
-                    echo ' ' . $this->Croogo->adminRowAction('', '#Nodes' . $node->id . 'Id', [
+                    echo ' ' . $this->Vamshop->adminRowAction('', '#Nodes' . $node->id . 'Id', [
                             'icon' => $this->Theme->getIcon('copy'),
                             'tooltip' => __d('croogo', 'Create a copy'),
                             'rowAction' => 'copy',
                         ]);
-                    echo ' ' . $this->Croogo->adminRowAction('', '#Nodes' . $node->id . 'Id', [
+                    echo ' ' . $this->Vamshop->adminRowAction('', '#Nodes' . $node->id . 'Id', [
                             'icon' => $this->Theme->getIcon('delete'),
                             'class' => 'delete',
                             'tooltip' => __d('croogo', 'Remove this item'),

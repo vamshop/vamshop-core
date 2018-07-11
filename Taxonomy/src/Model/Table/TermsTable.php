@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Taxonomy\Model\Table;
+namespace Vamshop\Taxonomy\Model\Table;
 
 use ArrayObject;
 use Cake\Event\Event;
@@ -10,7 +10,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\TableRegistry;
 use Cake\Validation\Validator;
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Core\Model\Table\VamshopTable;
 
 /**
  * Term
@@ -18,13 +18,13 @@ use Croogo\Core\Model\Table\CroogoTable;
  * @property VocabulariesTable Vocabularies
  * @property TaxonomiesTable Taxonomies
  * @category Taxonomy.Model
- * @package  Croogo.Taxonomy.Model
+ * @package  Vamshop.Taxonomy.Model
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class TermsTable extends CroogoTable
+class TermsTable extends VamshopTable
 {
 
     public function initialize(array $config)
@@ -39,14 +39,14 @@ class TermsTable extends CroogoTable
                 ]
             ]
         ]);
-        $this->addBehavior('Croogo/Core.Trackable');
+        $this->addBehavior('Vamshop/Core.Trackable');
 
-        $this->belongsToMany('Croogo/Taxonomy.Vocabularies', [
-            'through' => 'Croogo/Taxonomy.Taxonomies',
+        $this->belongsToMany('Vamshop/Taxonomy.Vocabularies', [
+            'through' => 'Vamshop/Taxonomy.Taxonomies',
             'foreignKey' => 'term_id',
             'targetForeignKey' => 'vocabulary_id',
         ]);
-        $this->hasMany('Croogo/Taxonomy.Taxonomies');
+        $this->hasMany('Vamshop/Taxonomy.Taxonomies');
     }
 
     /**
@@ -111,7 +111,7 @@ class TermsTable extends CroogoTable
  */
     public function beforeDelete(Event $event, EntityInterface $entity, ArrayObject $options)
     {
-        $Taxonomies = TableRegistry::get('Croogo/Taxonomy.Taxonomies');
+        $Taxonomies = TableRegistry::get('Vamshop/Taxonomy.Taxonomies');
         $count = $Taxonomies->find()
             ->where([
                 $Taxonomies->aliasField('term_id') => $entity->id,

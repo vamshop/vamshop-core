@@ -1,15 +1,15 @@
 <?php
-namespace Croogo\Users\Test\TestCase\Model;
+namespace Vamshop\Users\Test\TestCase\Model;
 
 use Cake\Controller\Component\AuthComponent;
-use Croogo\Core\TestSuite\CroogoTestCase;
-use Croogo\Users\Model\User;
+use Vamshop\Core\TestSuite\VamshopTestCase;
+use Vamshop\Users\Model\User;
 
 /**
  * TestUser
  *
  */
-class UserTest extends CroogoTestCase
+class UserTest extends VamshopTestCase
 {
 
 /**

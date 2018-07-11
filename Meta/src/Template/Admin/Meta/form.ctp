@@ -1,10 +1,10 @@
 <?php
 
-use Croogo\Core\Status;
+use Vamshop\Core\Status;
 
-$this->extend('Croogo/Core./Common/admin_edit');
+$this->extend('Vamshop/Core./Common/admin_edit');
 
-$this->Breadcrumbs->add(__d('croogo', 'Settings'), ['plugin' => 'Croogo/Settings', 'controller' => 'Settings', 'action' => 'index']);
+$this->Breadcrumbs->add(__d('croogo', 'Settings'), ['plugin' => 'Vamshop/Settings', 'controller' => 'Settings', 'action' => 'index']);
 $this->Breadcrumbs->add(__d('croogo', 'Meta'), ['action' => 'index']);
 
 if ($this->request->params['action'] == 'edit') {

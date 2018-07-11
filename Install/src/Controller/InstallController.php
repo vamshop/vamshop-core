@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Install\Controller;
+namespace Vamshop\Install\Controller;
 
 use App\Console\Installer;
 use Cake\Cache\Cache;
@@ -11,15 +11,15 @@ use Cake\Controller\Controller;
 use Cake\Datasource\ConnectionManager;
 use Cake\Event\Event;
 use Cake\Utility\File;
-use Croogo\Core\Router;
-use Croogo\Install\InstallManager;
+use Vamshop\Core\Router;
+use Vamshop\Install\InstallManager;
 use Composer\IO\BufferIO;
 
 /**
  * Install Controller
  *
  * @category Controller
- * @package  Croogo
+ * @package  Vamshop
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -36,12 +36,12 @@ class InstallController extends Controller
  */
 //    public $helpers = [
 //        'Html' => [
-//            'className' => 'CroogoHtml',
+//            'className' => 'VamshopHtml',
 //        ],
 //        'Form' => [
-//            'className' => 'CroogoForm',
+//            'className' => 'VamshopForm',
 //        ],
-//        'Croogo.Layout',
+//        'Vamshop.Layout',
 //    ];
 
     const STEPS = [
@@ -65,16 +65,16 @@ class InstallController extends Controller
     {
         parent::beforeFilter($event);
 
-        $this->viewBuilder()->theme('Croogo/Core');
+        $this->viewBuilder()->theme('Vamshop/Core');
         $this->viewBuilder()->setLayout('install');
-        $this->viewBuilder()->className('Croogo/Core.Croogo');
+        $this->viewBuilder()->className('Vamshop/Core.Vamshop');
         $this->viewBuilder()->helpers([
-            'Croogo/Core.Theme',
+            'Vamshop/Core.Theme',
             'Html' => [
-                'className' => 'Croogo/Core.CroogoHtml',
+                'className' => 'Vamshop/Core.VamshopHtml',
             ],
             'Form' => [
-                'className' => 'Croogo/Core.CroogoForm',
+                'className' => 'Vamshop/Core.VamshopForm',
             ],
         ]);
     }
@@ -86,7 +86,7 @@ class InstallController extends Controller
  */
     protected function _check()
     {
-        if (Configure::read('Croogo.installed') && Configure::read('Install.secured')) {
+        if (Configure::read('Vamshop.installed') && Configure::read('Install.secured')) {
             $this->Flash->error('Already Installed');
             return $this->redirect('/');
         }
@@ -121,7 +121,7 @@ class InstallController extends Controller
     {
         $this->_check();
 
-        if (Configure::read('Croogo.installed')) {
+        if (Configure::read('Vamshop.installed')) {
             return $this->redirect(['action' => 'adminuser']);
         }
 
@@ -192,7 +192,7 @@ class InstallController extends Controller
         $result = $install->setupDatabase();
 
         if ($result !== true) {
-            $this->Flash->error($result === false ? __d('croogo', 'There was a problem installing Croogo') : $result);
+            $this->Flash->error($result === false ? __d('croogo', 'There was a problem installing Vamshop') : $result);
 
             return $this->redirect(['action' => 'undo']);
         }
@@ -232,10 +232,10 @@ class InstallController extends Controller
     public function adminUser()
     {
         $this->_check();
-        if (!Plugin::loaded('Croogo/Users')) {
-            Plugin::load('Croogo/Users');
+        if (!Plugin::loaded('Vamshop/Users')) {
+            Plugin::load('Vamshop/Users');
         }
-        $this->loadModel('Croogo/Users.Users');
+        $this->loadModel('Vamshop/Users.Users');
 
         $user = $this->Users->newEntity();
 

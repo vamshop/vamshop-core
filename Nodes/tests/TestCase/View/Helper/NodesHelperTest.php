@@ -1,21 +1,21 @@
 <?php
 
-namespace Croogo\Nodes\Test\TestCase\View\Helper;
+namespace Vamshop\Nodes\Test\TestCase\View\Helper;
 
 use Cake\Controller\Controller;
 use Cake\Core\Configure;
 use Cake\ORM\TableRegistry;
 use Cake\View\View;
-use Croogo\Core\Croogo;
-use Croogo\Core\Event\EventManager;
-use Croogo\Core\Plugin;
-use Croogo\Core\TestSuite\TestCase;
-use Croogo\Nodes\View\Helper\NodesHelper;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\Event\EventManager;
+use Vamshop\Core\Plugin;
+use Vamshop\Core\TestSuite\TestCase;
+use Vamshop\Nodes\View\Helper\NodesHelper;
 
 /**
- * @property \Croogo\Nodes\View\Helper\NodesHelper helper
+ * @property \Vamshop\Nodes\View\Helper\NodesHelper helper
  * @property \Cake\View\View view
- * @property \Croogo\Nodes\Model\Table\NodesTable Nodes
+ * @property \Vamshop\Nodes\Model\Table\NodesTable Nodes
  */
 class NodesHelperTest extends TestCase
 {
@@ -55,7 +55,7 @@ class NodesHelperTest extends TestCase
 
         $this->view = new View;
         $this->helper = new NodesHelper($this->view);
-        $this->Nodes = TableRegistry::get('Croogo/Nodes.Nodes');
+        $this->Nodes = TableRegistry::get('Vamshop/Nodes.Nodes');
     }
 
     /**
@@ -67,7 +67,7 @@ class NodesHelperTest extends TestCase
         $this->view->viewVars['nodesForLayout']['recent_posts'] = [
             $this->Nodes->get(1),
         ];
-        Croogo::dispatchEvent('Helper.Layout.beforeFilter', $this->view, ['content' => &$content]);
+        Vamshop::dispatchEvent('Helper.Layout.beforeFilter', $this->view, ['content' => &$content]);
         $this->assertContains('node-list-recent_posts', $content);
         $this->assertContains('class="node-list"', $content);
     }

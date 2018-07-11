@@ -1,7 +1,7 @@
 <?php
 
 $this->extend('/Common/admin_index');
-$this->Croogo->adminScript(array('Nodes.admin'));
+$this->Vamshop->adminScript(array('Nodes.admin'));
 
 $this->Html
 	->add(__d('croogo', 'Content'), array(
@@ -66,7 +66,7 @@ $this->append('table-body');
 			<span class="badge badge-info"><?php echo __d('croogo', 'promoted'); ?></span>
 			<?php endif ?>
 
-			<?php if ($node['Node']['status'] == CroogoStatus::PREVIEW): ?>
+			<?php if ($node['Node']['status'] == VamshopStatus::PREVIEW): ?>
 			<span class="badge badge-warning"><?php echo __d('croogo', 'preview'); ?></span>
 			<?php endif ?>
 		</td>
@@ -87,21 +87,21 @@ $this->append('table-body');
 		<td>
 			<div class="item-actions">
 			<?php
-				echo $this->Croogo->adminRowActions($node['Node']['id']);
+				echo $this->Vamshop->adminRowActions($node['Node']['id']);
 
-				echo $this->Croogo->adminRowAction('',
+				echo $this->Vamshop->adminRowAction('',
 					array('controller' => 'nodes', 'action' => 'moveup', $node['Node']['id']),
 					array('icon' => $this->Theme->getIcon('move-up'), 'tooltip' => __d('croogo', 'Move up'),
 				));
-				echo $this->Croogo->adminRowAction('',
+				echo $this->Vamshop->adminRowAction('',
 					array('controller' => 'nodes', 'action' => 'movedown', $node['Node']['id']),
 					array('icon' => $this->Theme->getIcon('move-down'), 'tooltip' => __d('croogo', 'Move down'),
 				));
-				echo ' ' . $this->Croogo->adminRowAction('',
+				echo ' ' . $this->Vamshop->adminRowAction('',
 					array('action' => 'edit', $node['Node']['id']),
 					array('icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('croogo', 'Edit this item'))
 				);
-				echo ' ' . $this->Croogo->adminRowAction('',
+				echo ' ' . $this->Vamshop->adminRowAction('',
 					'#Node' . $node['Node']['id'] . 'Id',
 					array(
 						'icon' => $this->Theme->getIcon('delete'),

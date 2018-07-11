@@ -1,23 +1,23 @@
 <?php
 
-namespace Croogo\Menus\Controller\Admin;
+namespace Vamshop\Menus\Controller\Admin;
 
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
 use Cake\Datasource\Exception\RecordNotFoundException;
 use Cake\Event\Event;
-use Croogo\Core\Controller\Component\CroogoComponent;
-use Croogo\Core\Controller\CroogoAppController;
-use Croogo\Menus\Controller\MenusAppController;
-use Croogo\Menus\Model\Table\LinksTable;
+use Vamshop\Core\Controller\Component\VamshopComponent;
+use Vamshop\Core\Controller\VamshopAppController;
+use Vamshop\Menus\Controller\MenusAppController;
+use Vamshop\Menus\Model\Table\LinksTable;
 
 /**
  * Links Controller
  *
- * @property CroogoComponent Croogo
+ * @property VamshopComponent Vamshop
  * @property LinksTable Links
  * @category Controller
- * @package  Croogo.Menus.Controller
+ * @package  Vamshop.Menus.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -29,11 +29,11 @@ class LinksController extends AppController
     {
         parent::initialize();
 
-        $this->loadComponent('Croogo/Core.BulkProcess');
-        $this->loadModel('Croogo/Users.Roles');
+        $this->loadComponent('Vamshop/Core.BulkProcess');
+        $this->loadModel('Vamshop/Users.Roles');
 
         if ($this->request->param('action') == 'toggle') {
-            $this->Croogo->protectToggleAction();
+            $this->Vamshop->protectToggleAction();
         }
     }
 

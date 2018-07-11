@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Controller\Component;
+namespace Vamshop\Core\Controller\Component;
 
 use Cake\Controller\Controller;
 use Cake\Core\App;
@@ -12,23 +12,23 @@ use Cake\Event\Event;
 use Cake\Network\Exception\MethodNotAllowedException;
 use Cake\ORM\Table;
 
-use Croogo\Core\Exception\Exception;
-use Croogo\Core\Croogo;
-use Croogo\Core\Nav;
-use Croogo\Extensions\CroogoPlugin;
-use Croogo\Extensions\CroogoTheme;
+use Vamshop\Core\Exception\Exception;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\Nav;
+use Vamshop\Extensions\VamshopPlugin;
+use Vamshop\Extensions\VamshopTheme;
 
 /**
- * Croogo Component
+ * Vamshop Component
  *
  * @category Component
- * @package  Croogo.Croogo.Controller.Component
+ * @package  Vamshop.Vamshop.Controller.Component
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class CroogoComponent extends Component
+class VamshopComponent extends Component
 {
 
 /**
@@ -67,10 +67,10 @@ class CroogoComponent extends Component
     public function __get($name)
     {
         switch ($name) {
-            case '_CroogoPlugin':
-            case '_CroogoTheme':
+            case '_VamshopPlugin':
+            case '_VamshopTheme':
                 if (!isset($this->{$name})) {
-                    $class = 'Croogo\\Extensions\\' . substr($name, 1);
+                    $class = 'Vamshop\\Extensions\\' . substr($name, 1);
                     $this->{$name} = new $class();
                     if (method_exists($this->{$name}, 'setController')) {
                         $this->{$name}->setController($this->_controller);
@@ -108,16 +108,16 @@ class CroogoComponent extends Component
  */
     protected function _adminData()
     {
-        if (!Configure::read('Croogo.version')) {
+        if (!Configure::read('Vamshop.version')) {
             if (Plugin::loaded('Settings')) {
                 if ($this->_controller->Setting instanceof Model) {
                     if (file_exists(APP . 'VERSION.txt')) {
                         $file = APP . 'VERSION.txt';
                     } else {
-                        $file = dirname(Plugin::path('Croogo')) . DS . 'VERSION.txt';
+                        $file = dirname(Plugin::path('Vamshop')) . DS . 'VERSION.txt';
                     }
                     $version = trim(file_get_contents($file));
-                    $this->_controller->Setting->write('Croogo.version', $version);
+                    $this->_controller->Setting->write('Vamshop.version', $version);
                 }
             }
         }
@@ -154,7 +154,7 @@ class CroogoComponent extends Component
                     'icon' => 'user',
                     'url' => [
                         'prefix' => 'admin',
-                        'plugin' => 'Croogo/Users',
+                        'plugin' => 'Vamshop/Users',
                         'controller' => 'Users',
                         'action' => 'view',
                         $user['id'],
@@ -168,7 +168,7 @@ class CroogoComponent extends Component
                     'title' => __d('croogo', 'Logout'),
                     'url' => [
                         'prefix' => 'admin',
-                        'plugin' => 'Croogo/Users',
+                        'plugin' => 'Vamshop/Users',
                         'controller' => 'Users',
                         'action' => 'logout',
                     ],
@@ -213,11 +213,11 @@ class CroogoComponent extends Component
  *
  * @param array $url
  * @return array
- * @deprecated Use Croogo::getRelativePath
+ * @deprecated Use Vamshop::getRelativePath
  */
     public function getRelativePath($url = '/')
     {
-        return Croogo::getRelativePath($url);
+        return Vamshop::getRelativePath($url);
     }
 
 /**
@@ -231,7 +231,7 @@ class CroogoComponent extends Component
  */
     public function addAco($action, $allowRoles = [])
     {
-        $this->_controller->CroogoAccess->addAco($action, $allowRoles);
+        $this->_controller->VamshopAccess->addAco($action, $allowRoles);
     }
 
 /**
@@ -244,7 +244,7 @@ class CroogoComponent extends Component
  */
     public function removeAco($action)
     {
-        $this->_controller->CroogoAccess->removeAco($action);
+        $this->_controller->VamshopAccess->removeAco($action);
     }
 
 /**
@@ -253,7 +253,7 @@ class CroogoComponent extends Component
  * We need to know where were you, to get you back there
  *
  * @return void
- * @see CroogoComponent::redirect()
+ * @see VamshopComponent::redirect()
  * @deprecated Use Crud.beforeRedirect event and AppController::redirectToSelf
  */
     public function setReferer()
@@ -263,11 +263,11 @@ class CroogoComponent extends Component
             'action' => 'index',
         ];
         $referer = $this->_controller->referer($default, true);
-        $this->_controller->request->session()->write('Croogo.referer', ['url' => $referer]);
+        $this->_controller->request->session()->write('Vamshop.referer', ['url' => $referer]);
     }
 
 /**
- * Croogo flavored redirect
+ * Vamshop flavored redirect
  *
  * If 'save' pressed, redirect to referer or $indexUrl instead of 'edit'
  *
@@ -276,13 +276,13 @@ class CroogoComponent extends Component
  * @param bool $exit
  * @param array $indexUrl
  * @return void|\Cake\Network\Response
- * @see CroogoComponent::setReferer()
+ * @see VamshopComponent::setReferer()
  * @deprecated Use Crud.beforeRedirect event and AppController::redirectToSelf
  */
     public function redirect($url, $status = null, $exit = true, $indexUrl = [])
     {
-        $referer = $this->_controller->request->session()->read('Croogo.referer');
-        $this->_controller->request->session()->delete('Croogo.referer');
+        $referer = $this->_controller->request->session()->read('Vamshop.referer');
+        $this->_controller->request->session()->delete('Vamshop.referer');
         if (is_array($url)) {
             if (isset($url['action']) && $url['action'] === 'edit') {
                 if (!isset($this->_controller->request->data['_apply'])) {
@@ -317,7 +317,7 @@ class CroogoComponent extends Component
         $this->_controller->viewBuilder()->setLayout('ajax');
         if ($table->save($entity)) {
             $this->_controller->set(compact('id', 'status'));
-            $this->_controller->render('Croogo/Core./Common/admin_toggle');
+            $this->_controller->render('Vamshop/Core./Common/admin_toggle');
         } else {
             throw new Exception(__d('croogo', 'Failed toggling field %s to %s', $field, $status));
         }
@@ -328,11 +328,11 @@ class CroogoComponent extends Component
  *
  * @param string $plugin Plugin name (underscored)
  * @return void
- * @deprecated use CroogoPlugin::addBootstrap()
+ * @deprecated use VamshopPlugin::addBootstrap()
  */
     public function addPluginBootstrap($plugin)
     {
-        $this->_CroogoPlugin->addBootstrap($plugin);
+        $this->_VamshopPlugin->addBootstrap($plugin);
     }
 
 /**
@@ -340,22 +340,22 @@ class CroogoComponent extends Component
  *
  * @param string $plugin Plugin name (underscored)
  * @return void
- * @deprecated use CroogoPlugin::removeBootstrap()
+ * @deprecated use VamshopPlugin::removeBootstrap()
  */
     public function removePluginBootstrap($plugin)
     {
-        $this->_CroogoPlugin->removeBootstrap($plugin);
+        $this->_VamshopPlugin->removeBootstrap($plugin);
     }
 
 /**
  * Get theme aliases (folder names)
  *
  * @return array
- * @deprecated use CroogoTheme::getThemes()
+ * @deprecated use VamshopTheme::getThemes()
  */
     public function getThemes()
     {
-        return $this->_CroogoTheme->getThemes();
+        return $this->_VamshopTheme->getThemes();
     }
 
 /**
@@ -363,22 +363,22 @@ class CroogoComponent extends Component
  *
  * @param string $alias theme folder name
  * @return array
- * @deprecated use CroogoTheme::getData()
+ * @deprecated use VamshopTheme::getData()
  */
     public function getThemeData($alias = null)
     {
-        return $this->_CroogoTheme->getData($alias);
+        return $this->_VamshopTheme->getData($alias);
     }
 
 /**
  * Get plugin alises (folder names)
  *
  * @return array
- * @deprecated use CroogoPlugin::getPlugins()
+ * @deprecated use VamshopPlugin::getPlugins()
  */
     public function getPlugins()
     {
-        return $this->_CroogoPlugin->getPlugins();
+        return $this->_VamshopPlugin->getPlugins();
     }
 
 /**
@@ -386,11 +386,11 @@ class CroogoComponent extends Component
  *
  * @param string $alias plugin folder name
  * @return array
- * @deprecated use CroogoPlugin::getData
+ * @deprecated use VamshopPlugin::getData
  */
     public function getPluginData($alias = null)
     {
-        return $this->_CroogoPlugin->getData($alias);
+        return $this->_VamshopPlugin->getData($alias);
     }
 
 /**
@@ -399,11 +399,11 @@ class CroogoComponent extends Component
  *
  * @param  string $plugin plugin alias (underscrored)
  * @return boolean
- * @deprecated use CroogoPlugin::checkDependency()
+ * @deprecated use VamshopPlugin::checkDependency()
  */
     public function checkPluginDependency($plugin = null)
     {
-        return $this->_CroogoPlugin->checkDependency($plugin);
+        return $this->_VamshopPlugin->checkDependency($plugin);
     }
 
 /**
@@ -418,7 +418,7 @@ class CroogoComponent extends Component
  *   - APP/Themed/<Theme>/<Controller>
  *   - APP/Themed/<Theme>/Plugin/<Plugin>/<Controller>
  *   - APP/Plugin/<Plugin/View/<Controller>
- *   - APP/Vendor/croogo/croogo/Croogo/View
+ *   - APP/Vendor/croogo/croogo/Vamshop/View
  *
  * @param Controller $controller
  * @return array A list of view paths

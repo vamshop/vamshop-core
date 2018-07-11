@@ -1,10 +1,10 @@
 <?php
-namespace Croogo\Core\Test\TestCase\Model\Behavior;
+namespace Vamshop\Core\Test\TestCase\Model\Behavior;
 
-use Croogo\Core\TestSuite\CroogoTestCase;
+use Vamshop\Core\TestSuite\VamshopTestCase;
 use Taxonomy\Model\Type;
 
-class ParamsBehaviorTest extends CroogoTestCase
+class ParamsBehaviorTest extends VamshopTestCase
 {
 
     public $fixtures = [

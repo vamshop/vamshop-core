@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Example\Event;
+namespace Vamshop\Example\Event;
 
 use Cake\Event\EventListenerInterface;
 
@@ -8,7 +8,7 @@ use Cake\Event\EventListenerInterface;
  * Example Event Handler
  *
  * @category Event
- * @package  Croogo
+ * @package  Vamshop
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -50,7 +50,7 @@ class ExampleEventHandler implements EventListenerInterface
         $Controller->Flash->success($message);
         $Controller->redirect([
             'admin' => true,
-            'plugin' => 'Croogo/Example',
+            'plugin' => 'Vamshop/Example',
             'controller' => 'Example',
             'action' => 'index',
         ]);

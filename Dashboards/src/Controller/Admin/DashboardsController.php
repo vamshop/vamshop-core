@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Dashboards\Controller\Admin;
+namespace Vamshop\Dashboards\Controller\Admin;
 
 use Cake\Core\Exception\Exception;
 use Cake\Event\Event;
@@ -10,7 +10,7 @@ use Cake\Utility\Hash;
  * Dashboards Controller
  *
  * @category Controller
- * @package  Croogo.Dashboards.Controller
+ * @package  Vamshop.Dashboards.Controller
  * @version  2.2
  * @author   Walther Lalk <emailme@waltherlalk.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -39,7 +39,7 @@ class DashboardsController extends AppController
         parent::beforeRender($event);
 
         $this->viewBuilder()->helpers([
-            'Croogo/Dashboards.Dashboards',
+            'Vamshop/Dashboards.Dashboards',
         ]);
     }
 
@@ -136,7 +136,7 @@ class DashboardsController extends AppController
      */
     public function toggle($id = null, $status = null)
     {
-        $this->Croogo->fieldToggle($this->Dashboards, $id, $status);
+        $this->Vamshop->fieldToggle($this->Dashboards, $id, $status);
     }
 
     /**

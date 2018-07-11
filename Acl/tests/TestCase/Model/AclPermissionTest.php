@@ -1,11 +1,11 @@
 <?php
 
-namespace Croogo\Acl\Test\TestCase\Model;
+namespace Vamshop\Acl\Test\TestCase\Model;
 
 use Acl\Model\AclPermission;
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 
-class AclPermissionTest extends CroogoTestCase
+class AclPermissionTest extends VamshopTestCase
 {
 
     public $fixtures = [

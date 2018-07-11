@@ -10,7 +10,7 @@ use Cake\Core\Configure;
         <title><?= $this->fetch('title') ?> - <?= $_siteTitle ?></title>
         <?php
         echo $this->Html->css([
-            'Croogo/Core.core/croogo-admin',
+            'Vamshop/Core.core/croogo-admin',
         ]);
         echo $this->Layout->js();
         echo $this->Html->script([]);
@@ -34,6 +34,6 @@ use Cake\Core\Configure;
                 </div>
             </div>
         </div>
-        <?= $this->element('Croogo/Core.admin/footer') ?>
+        <?= $this->element('Vamshop/Core.admin/footer') ?>
     </body>
 </html>

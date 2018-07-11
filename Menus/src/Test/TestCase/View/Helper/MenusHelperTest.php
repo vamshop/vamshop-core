@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Menus\Test\TestCase\View\Helper;
+namespace Vamshop\Menus\Test\TestCase\View\Helper;
 
 use App\Controller\Component\SessionComponent;
 use Cake\Controller\Controller;
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 use Menus\View\Helper\MenusHelper;
 
 class TheMenuTestController extends Controller
@@ -15,7 +15,7 @@ class TheMenuTestController extends Controller
     public $uses = null;
 }
 
-class MenusHelperTest extends CroogoTestCase
+class MenusHelperTest extends VamshopTestCase
 {
 
     public $fixtures = [
@@ -67,7 +67,7 @@ class MenusHelperTest extends CroogoTestCase
             ],
             'threaded' => [],
         ];
-        Croogo::dispatchEvent('Helper.Layout.beforeFilter', $this->View, ['content' => &$content]);
+        Vamshop::dispatchEvent('Helper.Layout.beforeFilter', $this->View, ['content' => &$content]);
         $this->assertContains('menu-6', $content);
         $this->assertContains('class="menu"', $content);
     }

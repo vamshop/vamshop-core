@@ -14,7 +14,7 @@ $this->assign('title', __d('croogo', 'Step 2: Build database'));
 <div class="form-actions">
     <?php
     echo $this->Html->link(__d('croogo', 'Build database'), [
-        'plugin' => 'Croogo/Install',
+        'plugin' => 'Vamshop/Install',
         'controller' => 'install',
         'action' => 'data',
         '?' => ['run' => 1],

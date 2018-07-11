@@ -1,7 +1,7 @@
 <?php
 
-namespace Croogo\Suppliers\Config;
+namespace Vamshop\Suppliers\Config;
 
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
-Croogo::hookBehavior('Shops.Orders', 'Suppliers.SuppliersOrderMonitor');
+Vamshop::hookBehavior('Shops.Orders', 'Suppliers.SuppliersOrderMonitor');

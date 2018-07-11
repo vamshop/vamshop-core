@@ -1,29 +1,29 @@
 <?php
 
-namespace Croogo\Users\Model\Table;
+namespace Vamshop\Users\Model\Table;
 
 use Cake\Core\Exception\Exception;
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Core\Model\Table\VamshopTable;
 
 /**
  * RolesUsers
  *
  * @category Model
- * @package  Croogo.Users.Model
+ * @package  Vamshop.Users.Model
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class RolesUsersTable extends CroogoTable {
+class RolesUsersTable extends VamshopTable {
 
     public function initialize(array $config)
     {
         $this->belongsTo('Users', [
-            'className' => 'Croogo/Users.Users',
+            'className' => 'Vamshop/Users.Users',
         ]);
         $this->belongsTo('Roles', [
-            'className' => 'Croogo/Users.Roles',
+            'className' => 'Vamshop/Users.Roles',
         ]);
     }
 

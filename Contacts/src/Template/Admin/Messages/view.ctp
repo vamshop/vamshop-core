@@ -1,6 +1,6 @@
 <?php
 
-$this->extend('Croogo/Core./Common/admin_view');
+$this->extend('Vamshop/Core./Common/admin_view');
 
 $this->Breadcrumbs
     ->add(__d('croogo', 'Messages'), ['action' => 'index']);
@@ -8,7 +8,7 @@ $this->Breadcrumbs
     $this->Breadcrumbs->add($message->title, $this->request->getRequestTarget());
 
 $this->append('action-buttons');
-    echo $this->Croogo->adminAction(__d('croogo', 'List Messages'), ['action' => 'index']);
+    echo $this->Vamshop->adminAction(__d('croogo', 'List Messages'), ['action' => 'index']);
 $this->end();
 
 $this->append('main');

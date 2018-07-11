@@ -42,17 +42,17 @@ $this->Nodes->set($node);
     </div>
 <?php endif ?>    
 
-<?php if (Plugin::loaded('Croogo/Comments')): ?>
+<?php if (Plugin::loaded('Vamshop/Comments')): ?>
 <div id="comments" class="node-comments">
 <?php
     $type = $typesForLayout[$this->Nodes->field('type')];
 
     if ($type->comment_status > 0 && $this->Nodes->field('comment_status') > 0) {
-        echo $this->cell('Croogo/Comments.Comments::node', [$node->id]);
+        echo $this->cell('Vamshop/Comments.Comments::node', [$node->id]);
     }
 
     if ($type->comment_status == 2 && $this->Nodes->field('comment_status') == 2) {
-        echo $this->cell('Croogo/Comments.Comments::commentFormNode', [
+        echo $this->cell('Vamshop/Comments.Comments::commentFormNode', [
             'mode' => $node,
             'type' => $type
         ]);

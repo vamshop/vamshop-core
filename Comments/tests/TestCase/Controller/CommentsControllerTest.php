@@ -1,11 +1,11 @@
 <?php
-namespace Croogo\Comments\Test\TestCase\Controller;
+namespace Vamshop\Comments\Test\TestCase\Controller;
 
 use Comments\Controller\CommentsController;
-use Croogo\TestSuite\CroogoControllerTestCase;
-use Croogo\TestSuite\CroogoTestFixture;
+use Vamshop\TestSuite\VamshopControllerTestCase;
+use Vamshop\TestSuite\VamshopTestFixture;
 
-class CommentsControllerTest extends CroogoControllerTestCase
+class CommentsControllerTest extends VamshopControllerTestCase
 {
 
     public $fixtures = [
@@ -96,15 +96,15 @@ class CommentsControllerTest extends CroogoControllerTestCase
         $this->testAction('/admin/comments/comments/edit/1', [
             'data' => [
                 'Comment' => [
-                    'id' => 1, // Mr Croogo
-                    'name' => 'Mr Croogo [modified]',
+                    'id' => 1, // Mr Vamshop
+                    'name' => 'Mr Vamshop [modified]',
                     'email' => 'contact@example.com',
                     'body' => 'lots of text...',
                 ],
             ],
         ]);
         $result = $this->CommentsController->Comment->findById(1);
-        $this->assertEquals('Mr Croogo [modified]', $result['Comment']['name']);
+        $this->assertEquals('Mr Vamshop [modified]', $result['Comment']['name']);
     }
 
 /**
@@ -145,7 +145,7 @@ class CommentsControllerTest extends CroogoControllerTestCase
             ],
             'order' => 'Comment.lft ASC',
         ]);
-        $this->assertEqual($list, [2 => 'Mrs Croogo']);
+        $this->assertEqual($list, [2 => 'Mrs Vamshop']);
     }
 
 /**
@@ -190,7 +190,7 @@ class CommentsControllerTest extends CroogoControllerTestCase
             'order' => 'Comment.lft ASC',
         ]);
         $this->assertEqual($list, [
-            '1' => 'Mr Croogo',
+            '1' => 'Mr Vamshop',
         ]);
 
         $relevantNode = $this->CommentsController->Comment->Node->findById(1);
@@ -264,7 +264,7 @@ class CommentsControllerTest extends CroogoControllerTestCase
 
         $comments = $Comments->Comment->generateTreeList(['Comment.foreign_key' => $node['Node']['id'], 'Comment.model' => 'Node'], '{n}.Comment.id', '{n}.Comment.name');
         $commenters = array_values($comments);
-        $this->assertEqual($commenters, ['Mr Croogo', 'Mrs Croogo', 'John Smith']);
+        $this->assertEqual($commenters, ['Mr Vamshop', 'Mrs Vamshop', 'John Smith']);
 
         $Comments->testView = true;
         $model = 'Node';
@@ -302,11 +302,11 @@ class CommentsControllerTest extends CroogoControllerTestCase
         $node = $Comments->Comment->Node->findBySlug('hello-world');
 
         Configure::write('Comment.level', 2);
-        $Comments->add('Node', $node['Node']['id'], 1); // under the comment by Mr Croogo
+        $Comments->add('Node', $node['Node']['id'], 1); // under the comment by Mr Vamshop
 
         $comments = $Comments->Comment->generateTreeList(['Comment.foreign_key' => $node['Node']['id'], 'Comment.model' => 'Node'], '{n}.Comment.id', '{n}.Comment.name');
         $commenters = array_values($comments);
-        $this->assertEqual($commenters, ['Mr Croogo', '_John Smith', 'Mrs Croogo']);
+        $this->assertEqual($commenters, ['Mr Vamshop', '_John Smith', 'Mrs Vamshop']);
 
         $Comments->testView = true;
         $model = 'Node';
@@ -342,7 +342,7 @@ class CommentsControllerTest extends CroogoControllerTestCase
 
         $comments = $Comments->Comment->generateTreeList(['Comment.foreign_key' => $node['Node']['id'], 'Comment.model' => 'Node'], '{n}.Comment.id', '{n}.Comment.name');
         $commenters = array_values($comments);
-        $this->assertEqual($commenters, ['Mr Croogo', 'Mrs Croogo', 'John Smith']);
+        $this->assertEqual($commenters, ['Mr Vamshop', 'Mrs Vamshop', 'John Smith']);
 
         $Comments->testView = true;
         $model = 'Node';

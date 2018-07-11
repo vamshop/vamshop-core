@@ -1,22 +1,22 @@
 <?php
 
-namespace Croogo\Contacts\Model\Table;
+namespace Vamshop\Contacts\Model\Table;
 
 use Cake\ORM\RulesChecker;
 use Cake\Validation\Validator;
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Core\Model\Table\VamshopTable;
 
 /**
  * Contact
  *
  * @category Model
- * @package  Croogo.Contacts.Model
+ * @package  Vamshop.Contacts.Model
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class ContactsTable extends CroogoTable
+class ContactsTable extends VamshopTable
 {
 
     public function validationDefault(Validator $validator)
@@ -41,17 +41,17 @@ class ContactsTable extends CroogoTable
     {
         parent::initialize($config);
         $this->displayField('title');
-        $this->entityClass('Croogo/Contacts.Contact');
+        $this->entityClass('Vamshop/Contacts.Contact');
         $this->hasMany('Messages', [
-            'className' => 'Croogo/Contacts.Messages',
+            'className' => 'Vamshop/Contacts.Messages',
             'foreignKey' => 'contact_id',
             'dependent' => false,
             'limit' => '3',
         ]);
-        $this->addBehavior('Croogo/Core.Cached', [
+        $this->addBehavior('Vamshop/Core.Cached', [
             'groups' => ['contacts']
         ]);
-        $this->addBehavior('Croogo/Core.Trackable');
+        $this->addBehavior('Vamshop/Core.Trackable');
         $this->addBehavior('Timestamp', [
             'events' => [
                 'Model.beforeSave' => [

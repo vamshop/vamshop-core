@@ -1,11 +1,11 @@
 <?php
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
-$this->Croogo->adminScript('Croogo/Acl.acl_permissions');
+$this->Vamshop->adminScript('Vamshop/Acl.acl_permissions');
 
 $this->Breadcrumbs->add(__d('croogo', 'Users'),
-        ['plugin' => 'Croogo/Users', 'controller' => 'Users', 'action' => 'index'])
+        ['plugin' => 'Vamshop/Users', 'controller' => 'Users', 'action' => 'index'])
     ->add(__d('croogo', 'Permissions'), $this->request->getUri()->getPath());
 
 $this->append('action-buttons');
@@ -17,12 +17,12 @@ $toolsButton = $this->Html->link(__d('croogo', 'Tools'), '#', [
     ]);
 
 $generateUrl = [
-    'plugin' => 'Croogo/Acl',
+    'plugin' => 'Vamshop/Acl',
     'controller' => 'Actions',
     'action' => 'generate',
     'permissions' => 1,
 ];
-$out = $this->Croogo->adminAction(__d('croogo', 'Generate'), $generateUrl, [
+$out = $this->Vamshop->adminAction(__d('croogo', 'Generate'), $generateUrl, [
         'button' => false,
         'list' => true,
         'method' => 'post',
@@ -32,7 +32,7 @@ $out = $this->Croogo->adminAction(__d('croogo', 'Generate'), $generateUrl, [
             'data-placement' => 'left',
         ],
     ]);
-$out .= $this->Croogo->adminAction(__d('croogo', 'Synchronize'), $generateUrl + ['sync' => 1], [
+$out .= $this->Vamshop->adminAction(__d('croogo', 'Synchronize'), $generateUrl + ['sync' => 1], [
         'button' => false,
         'list' => true,
         'method' => 'post',
@@ -46,7 +46,7 @@ echo $this->Html->div('btn-group', $toolsButton . $this->Html->tag('ul', $out, [
     'class' => 'dropdown-menu dropdown-menu-right',
 ]));
 
-echo $this->Croogo->adminAction(__d('croogo', 'Edit Actions'),
+echo $this->Vamshop->adminAction(__d('croogo', 'Edit Actions'),
     ['controller' => 'Actions', 'action' => 'index', 'permissions' => 1]);
 $this->end();
 
@@ -58,12 +58,12 @@ $this->Js->buffer('AclPermissions.tabSwitcher();');
 
         <ul id="permissions-tab" class="nav nav-tabs">
         <?php
-            echo $this->Croogo->adminTabs();
+            echo $this->Vamshop->adminTabs();
         ?>
         </ul>
 
         <div class="tab-content">
-            <?= $this->Croogo->adminTabs() ?>
+            <?= $this->Vamshop->adminTabs() ?>
         </div>
 
     </div>

@@ -1,8 +1,8 @@
 <?php
 App::uses('FileManager', 'FileManager.Model');
-App::uses('CroogoTestCase', 'Croogo.TestSuite');
+App::uses('VamshopTestCase', 'Vamshop.TestSuite');
 
-class FileManagerTest extends CroogoTestCase
+class FileManagerTest extends VamshopTestCase
 {
 
     public $FileManager;

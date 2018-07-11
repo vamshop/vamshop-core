@@ -1,10 +1,10 @@
 <?php
 
-use Croogo\Core\Status;
+use Vamshop\Core\Status;
 
-$this->Croogo->adminScript('Croogo/Blocks.admin');
+$this->Vamshop->adminScript('Vamshop/Blocks.admin');
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
 $this->Breadcrumbs->add(__d('croogo', 'Blocks'), $this->request->getUri()->getPath());
 
@@ -31,25 +31,25 @@ $this->append('table-body');
 $rows = [];
 foreach ($blocks as $block) {
     $actions = [];
-    $actions[] = $this->Croogo->adminRowAction('', ['action' => 'moveUp', $block->id], [
+    $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'moveUp', $block->id], [
             'icon' => $this->Theme->getIcon('move-up'),
             'tooltip' => __d('croogo', 'Move up'),
             'method' => 'post',
         ]);
-    $actions[] = $this->Croogo->adminRowAction('', ['action' => 'moveDown', $block->id], [
+    $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'moveDown', $block->id], [
             'icon' => $this->Theme->getIcon('move-down'),
             'tooltip' => __d('croogo', 'Move down'),
             'method' => 'post',
         ]);
-    $actions[] = $this->Croogo->adminRowActions($block->id);
-    $actions[] = $this->Croogo->adminRowAction('', ['action' => 'edit', $block->id],
+    $actions[] = $this->Vamshop->adminRowActions($block->id);
+    $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'edit', $block->id],
         ['icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('croogo', 'Edit this item')]);
-    $actions[] = $this->Croogo->adminRowAction('', '#Blocks' . $block->id . 'Id', [
+    $actions[] = $this->Vamshop->adminRowAction('', '#Blocks' . $block->id . 'Id', [
             'icon' => $this->Theme->getIcon('copy'),
             'tooltip' => __d('croogo', 'Create a copy'),
             'rowAction' => 'copy',
         ], __d('croogo', 'Create a copy of this Block?'));
-    $actions[] = $this->Croogo->adminRowAction('', '#Blocks' . $block->id . 'Id', [
+    $actions[] = $this->Vamshop->adminRowAction('', '#Blocks' . $block->id . 'Id', [
             'icon' => $this->Theme->getIcon('delete'),
             'class' => 'delete',
             'tooltip' => __d('croogo', 'Remove this item'),
@@ -59,7 +59,7 @@ foreach ($blocks as $block) {
     if ($chooser) {
         $checkbox = null;
         $actions = [
-            $this->Croogo->adminRowAction(__d('croogo', 'Choose'), '#', [
+            $this->Vamshop->adminRowAction(__d('croogo', 'Choose'), '#', [
                 'class' => 'item-choose',
                 'data-chooser-type' => 'Block',
                 'data-chooser-id' => $block->id,
@@ -89,7 +89,7 @@ foreach ($blocks as $block) {
         $block->alias,
         $block->region->title,
         $block->updated,
-        $this->element('Croogo/Core.admin/toggle', [
+        $this->element('Vamshop/Core.admin/toggle', [
             'id' => $block->id,
             'status' => (int)$block->status,
         ]),

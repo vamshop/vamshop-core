@@ -5,7 +5,7 @@
  * This is deprecated and only here to easy migration from 2.x applications
  * that rely on the JsHelper buffer functionality.
  */
-namespace Croogo\Core\View\Helper;
+namespace Vamshop\Core\View\Helper;
 
 use Cake\View\Helper;
 

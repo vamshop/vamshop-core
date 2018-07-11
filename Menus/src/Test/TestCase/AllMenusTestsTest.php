@@ -1,7 +1,7 @@
 <?php
-namespace Croogo\Menus\Test\TestCase;
+namespace Vamshop\Menus\Test\TestCase;
 
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 
 class AllMenusTestsTest extends PHPUnit_Framework_TestSuite
 {

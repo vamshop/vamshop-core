@@ -1,19 +1,19 @@
 <?php
 
-namespace Croogo\Core\Model\Behavior;
+namespace Vamshop\Core\Model\Behavior;
 
 use Cake\Collection\CollectionInterface;
 use Cake\Event\Event;
 use Cake\ORM\Behavior;
 use Cake\ORM\Entity;
 use Cake\ORM\Query;
-use Croogo\Core\Link;
+use Vamshop\Core\Link;
 
 /**
  * Url Behavior
  *
  * @category Behavior
- * @package  Croogo.Croogo.Model.Behavior
+ * @package  Vamshop.Vamshop.Model.Behavior
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

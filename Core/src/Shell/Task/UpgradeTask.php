@@ -3,18 +3,18 @@
 /**
  * UpgradeTask
  *
- * @package  Croogo.Croogo.Console.Command.Task
+ * @package  Vamshop.Vamshop.Console.Command.Task
  * @since    1.5
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
 
-namespace Croogo\Core\Shell\Task;
+namespace Vamshop\Core\Shell\Task;
 
-use Croogo\Core\Shell\AppShell as CroogoAppShell;
+use Vamshop\Core\Shell\AppShell as VamshopAppShell;
 
-class UpgradeTask extends CroogoAppShell
+class UpgradeTask extends VamshopAppShell
 {
 
 /**
@@ -127,7 +127,7 @@ class UpgradeTask extends CroogoAppShell
             }
             $Setting->write('Hook.bootstraps', join(',', $defaultPlugins));
             if ($version = file_get_contents(APP . 'VERSION.txt')) {
-                $Setting->write('Croogo.version', $version);
+                $Setting->write('Vamshop.version', $version);
             }
             $Setting->write('Access Control.multiColumn', '', [
                 'title' => 'Allow login by username or email',
@@ -328,11 +328,11 @@ class UpgradeTask extends CroogoAppShell
  */
     public function migrations()
     {
-        $CroogoPlugin = new CroogoPlugin();
+        $VamshopPlugin = new VamshopPlugin();
         foreach ((array)Configure::read('Core.corePlugins') as $plugin) {
-            $result = $CroogoPlugin->migrate($plugin);
+            $result = $VamshopPlugin->migrate($plugin);
             if (!$result) {
-                $this->out($CroogoPlugin->migrationErrors);
+                $this->out($VamshopPlugin->migrationErrors);
             }
         }
     }

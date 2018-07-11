@@ -8,7 +8,7 @@
 		"tagline": "A CakePHP powered Content Management System.",
 		"theme": "",
 		"timezone": 0,
-		"title": "Croogo - Test"
+		"title": "Vamshop - Test"
 	},
 	"Hook": {
 		"bootstraps": "Settings,Comments,Contacts,Nodes,Meta,Menus,Users,Blocks,Taxonomy,FileManager,Example"
@@ -20,9 +20,9 @@
 		"level": 1
 	},
 	"Meta": {
-		"description": "Croogo - A CakePHP powered Content Management System",
-		"generator": "Croogo - Content Management System",
-		"keywords": "croogo, Croogo",
+		"description": "Vamshop - A CakePHP powered Content Management System",
+		"generator": "Vamshop - Content Management System",
+		"keywords": "croogo, Vamshop",
 		"robots": "index, follow"
 	},
 	"Reading": {

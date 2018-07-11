@@ -1,12 +1,12 @@
 <?php
 
-use Croogo\Dashboards\CroogoDashboard;
+use Vamshop\Dashboards\VamshopDashboard;
 
 $config = [
     'dashboards.blogfeed' => [
         'title' => __d('croogo', 'VamShop News'),
-        'cell' => 'Croogo/Dashboards.BlogFeed::dashboard',
-        'column' => CroogoDashboard::RIGHT,
+        'cell' => 'Vamshop/Dashboards.BlogFeed::dashboard',
+        'column' => VamshopDashboard::RIGHT,
         'access' => ['superadmin'],
     ],
 ];

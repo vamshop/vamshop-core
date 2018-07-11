@@ -4,7 +4,7 @@
  */
 $steps = [];
 
-foreach (\Croogo\Install\Controller\InstallController::STEPS as $key => $step) {
+foreach (\Vamshop\Install\Controller\InstallController::STEPS as $key => $step) {
     if ($onStep >= $key + 1) {
         $options = ['class' => 'btn btn-primary btn-circle'];
     } else {

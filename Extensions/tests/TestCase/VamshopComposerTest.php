@@ -1,21 +1,21 @@
 <?php
 
-namespace Croogo\Extensions\Test\TestCase;
+namespace Vamshop\Extensions\Test\TestCase;
 
-use Croogo\Lib\TestSuite\CroogoTestCase;
-use Extensions\Lib\CroogoComposer;
+use Vamshop\Lib\TestSuite\VamshopTestCase;
+use Extensions\Lib\VamshopComposer;
 
 /**
- * Croogo Composer Test
+ * Vamshop Composer Test
  *
  * @category Test
- * @package  Croogo
+ * @package  Vamshop
  * @version  1.4
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class CroogoComposerTest extends CroogoTestCase
+class VamshopComposerTest extends VamshopTestCase
 {
 
 /**
@@ -32,8 +32,8 @@ class CroogoComposerTest extends CroogoTestCase
         ], App::PREPEND);
         $this->testPlugin = Plugin::path('Extensions') . 'Test' . DS . 'test_files' . DS . 'example_plugin.zip';
         $this->testTheme = Plugin::path('Extensions') . 'Test' . DS . 'test_files' . DS . 'example_theme.zip';
-        $this->CroogoComposer = new CroogoComposer();
-        $this->CroogoComposer->appPath = Plugin::path('Extensions') . 'Test' . DS . 'test_app' . DS;
+        $this->VamshopComposer = new VamshopComposer();
+        $this->VamshopComposer->appPath = Plugin::path('Extensions') . 'Test' . DS . 'test_app' . DS;
     }
 
 /**
@@ -61,15 +61,15 @@ class CroogoComposerTest extends CroogoTestCase
  */
     public function testGetComposer()
     {
-        $CroogoComposer = $this->getMock('CroogoComposer', ['_shellExec']);
-        $CroogoComposer->appPath = $this->CroogoComposer->appPath;
-        $CroogoComposer->expects($this->any())
+        $VamshopComposer = $this->getMock('VamshopComposer', ['_shellExec']);
+        $VamshopComposer->appPath = $this->VamshopComposer->appPath;
+        $VamshopComposer->expects($this->any())
             ->method('_shellExec')
             ->with(
-                $this->equalTo('curl -s http://getcomposer.org/installer | php -- --install-dir=' . $CroogoComposer->appPath)
+                $this->equalTo('curl -s http://getcomposer.org/installer | php -- --install-dir=' . $VamshopComposer->appPath)
             )
             ->will($this->returnValue(true));
-        $CroogoComposer->getComposer();
+        $VamshopComposer->getComposer();
     }
 
 /**
@@ -79,16 +79,16 @@ class CroogoComposerTest extends CroogoTestCase
  */
     public function testRunComposer()
     {
-        $CroogoComposer = $this->getMock('CroogoComposer', ['_shellExec']);
-        $CroogoComposer->appPath = $this->CroogoComposer->appPath;
-        $CroogoComposer->getComposer();
-        $CroogoComposer->expects($this->once())
+        $VamshopComposer = $this->getMock('VamshopComposer', ['_shellExec']);
+        $VamshopComposer->appPath = $this->VamshopComposer->appPath;
+        $VamshopComposer->getComposer();
+        $VamshopComposer->expects($this->once())
             ->method('_shellExec')
             ->with(
-                $this->equalTo('php ' . $CroogoComposer->composerPath . ' install')
+                $this->equalTo('php ' . $VamshopComposer->composerPath . ' install')
             )
             ->will($this->returnValue(true));
-        $CroogoComposer->runComposer();
+        $VamshopComposer->runComposer();
     }
 
 /**
@@ -98,11 +98,11 @@ class CroogoComposerTest extends CroogoTestCase
  */
     public function testSetConfig()
     {
-        $result = $this->CroogoComposer->setConfig([
+        $result = $this->VamshopComposer->setConfig([
             'shama/ftp' => '*',
         ]);
         $this->assertTrue($result);
-        $File = new File($this->CroogoComposer->appPath . 'composer.json');
+        $File = new File($this->VamshopComposer->appPath . 'composer.json');
         $result = $File->read();
         $File->close();
         $expected = <<<END

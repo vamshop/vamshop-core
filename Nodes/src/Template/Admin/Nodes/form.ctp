@@ -4,8 +4,8 @@ use Cake\Routing\Router;
 
 $this->assign('title', $node->title);
 
-$this->extend('Croogo/Core./Common/admin_edit');
-$this->Html->script(array('Croogo/Nodes.admin'), ['block' => true]);
+$this->extend('Vamshop/Core./Common/admin_edit');
+$this->Html->script(array('Vamshop/Nodes.admin'), ['block' => true]);
 
 $this->Breadcrumbs->add(__d('croogo', 'Content'), ['action' => 'index']);
 
@@ -29,7 +29,7 @@ $this->append('form-start', $this->Form->create($node, [
 ]));
 
 $this->start('tab-heading');
-    echo $this->Croogo->adminTab(__d('croogo', $type->title), '#node-main');
+    echo $this->Vamshop->adminTab(__d('croogo', $type->title), '#node-main');
 $this->end();
 
 $this->start('tab-content');
@@ -66,8 +66,8 @@ $this->start('panels');
     $username = isset($node->user->username) ? $node->user->username : $this->request->session()
         ->read('Auth.User.username');
     echo $this->Html->beginBox(__d('croogo', 'Publishing'));
-    echo $this->element('Croogo/Core.admin/buttons', ['type' => $type->title]);
-    echo $this->element('Croogo/Core.admin/publishable');
+    echo $this->element('Vamshop/Core.admin/buttons', ['type' => $type->title]);
+    echo $this->element('Vamshop/Core.admin/publishable');
 
     echo $this->Form->input('promote', [
         'label' => __d('croogo', 'Promoted to front page'),
@@ -87,7 +87,7 @@ $this->start('panels');
                 'data-relatedElement' => '#user-id',
                 'data-url' => Router::url([
                     'prefix' => 'api/v10',
-                    'plugin' => 'Croogo/Users',
+                    'plugin' => 'Vamshop/Users',
                     'controller' => 'Users',
                     'action' => 'lookup',
                     '_ext' => 'json',
@@ -106,7 +106,7 @@ $this->start('panels');
                 'data-relatedElement' => '#parent-id',
                 'data-url' => $this->Url->build([
                     'prefix' => 'api/v10',
-                    'plugin' => 'Croogo/Nodes',
+                    'plugin' => 'Vamshop/Nodes',
                     'controller' => 'Nodes',
                     'action' => 'lookup',
                     'type' => $node->type,

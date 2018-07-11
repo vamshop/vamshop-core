@@ -1,18 +1,18 @@
 <?php
 
-namespace Croogo\Taxonomy\Controller\Admin;
+namespace Vamshop\Taxonomy\Controller\Admin;
 
 use Cake\Datasource\Exception\RecordNotFoundException;
 use Cake\Event\Event;
 use Cake\Network\Response;
-use Croogo\Taxonomy\Model\Table\TermsTable;
+use Vamshop\Taxonomy\Model\Table\TermsTable;
 
 /**
  * Terms Controller
  *
  * @property TermsTable Terms
  * @category Taxonomy.Controller
- * @package  Croogo
+ * @package  Vamshop
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -31,7 +31,7 @@ class TermsController extends AppController
 
     protected $_redirectUrl = [
         'prefix' => 'admin',
-        'plugin' => 'Croogo/Taxonomy',
+        'plugin' => 'Vamshop/Taxonomy',
         'controller' => 'Vocabularies',
         'action' => 'index',
     ];
@@ -52,10 +52,10 @@ class TermsController extends AppController
         parent::initialize();
 
         $this->Crud->config('actions.add', [
-            'className' => 'Croogo/Taxonomy.Admin/TermAdd',
+            'className' => 'Vamshop/Taxonomy.Admin/TermAdd',
         ]);
         $this->Crud->config('actions.edit', [
-            'className' => 'Croogo/Taxonomy.Admin/TermEdit',
+            'className' => 'Vamshop/Taxonomy.Admin/TermEdit',
         ]);
     }
 

@@ -1,8 +1,8 @@
 <?php
 /**
- * @var \Croogo\Core\View\CroogoView $this
+ * @var \Vamshop\Core\View\VamshopView $this
  */
-$this->Html->script('Croogo/FileManager.attachments/browse', ['block' => true]);
+$this->Html->script('Vamshop/FileManager.attachments/browse', ['block' => true]);
 ?>
 <div class="card-deck">
     <?php
@@ -13,7 +13,7 @@ $this->Html->script('Croogo/FileManager.attachments/browse', ['block' => true]);
         if ($mimeType == 'image' && in_array($imageType, $imagecreatefrom)) {
             $thumbnail = $this->Image->resize($attachment->path, 400, 200, [], ['class' => 'card-img-top']);
         } else {
-            $thumbnail = $this->Html->image('Croogo/Core./img/icons/page_white.png', [
+            $thumbnail = $this->Html->image('Vamshop/Core./img/icons/page_white.png', [
                 'class' => 'card-img-top',
             ]);
         }

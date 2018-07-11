@@ -1,12 +1,12 @@
 <?php
 
-namespace Croogo\Translate\Test\TestCase\Controller;
+namespace Vamshop\Translate\Test\TestCase\Controller;
 
-use Croogo\TestSuite\CroogoControllerTestCase;
+use Vamshop\TestSuite\VamshopControllerTestCase;
 use Translate\Event\TranslateEventHandler;
 use Translate\Lib\Translations;
 
-class TranslateControllerTest extends CroogoControllerTestCase
+class TranslateControllerTest extends VamshopControllerTestCase
 {
 
     public $fixtures = [

@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Model\Behavior;
+namespace Vamshop\Core\Model\Behavior;
 
 use Cake\ORM\Behavior;
 
@@ -9,7 +9,7 @@ use Cake\ORM\Behavior;
  *
  * Utility behavior to allow easy retrieval of records by id or its alias
  *
- * @package  Croogo.Croogo.Model.Behavior
+ * @package  Vamshop.Vamshop.Model.Behavior
  * @since    1.4
  * @author   Rachman Chavik <rchavik@xintesa.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Taxonomy\Routing\Route;
+namespace Vamshop\Taxonomy\Routing\Route;
 
 use Cake\ORM\TableRegistry;
 use Cake\Routing\Route\Route;
@@ -16,7 +16,7 @@ class TypeRoute extends Route
      */
     protected function _checkType($type)
     {
-        $typeCount = TableRegistry::get('Croogo/Taxonomy.Types')
+        $typeCount = TableRegistry::get('Vamshop/Taxonomy.Types')
             ->findByAlias($type)
             ->cache(sprintf('%s_count', $type), 'croogo_types')
             ->count();

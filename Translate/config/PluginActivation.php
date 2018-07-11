@@ -3,15 +3,15 @@
 /**
  * Translate Activation
  *
- * @package  Croogo.Translate
+ * @package  Vamshop.Translate
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-namespace Croogo\Translate\Config;
+namespace Vamshop\Translate\Config;
 
 use Cake\ORM\TableRegistry;
-use Croogo\Core\Plugin;
+use Vamshop\Core\Plugin;
 
 class PluginActivation
 {
@@ -35,12 +35,12 @@ class PluginActivation
  */
     public function onActivation(&$controller)
     {
-        $Acos = TableRegistry::get('Croogo/Acl.Acos');
-        $Acos->addAco('Croogo\Translate/Admin/Translate/index');
-        $Acos->addAco('Croogo\Translate/Admin/Translate/edit');
-        $Acos->addAco('Croogo\Translate/Admin/Translate/delete');
-        $CroogoPlugin = new Plugin();
-        $CroogoPlugin->migrate('Croogo/Translate');
+        $Acos = TableRegistry::get('Vamshop/Acl.Acos');
+        $Acos->addAco('Vamshop\Translate/Admin/Translate/index');
+        $Acos->addAco('Vamshop\Translate/Admin/Translate/edit');
+        $Acos->addAco('Vamshop\Translate/Admin/Translate/delete');
+        $VamshopPlugin = new Plugin();
+        $VamshopPlugin->migrate('Vamshop/Translate');
     }
 
 /**
@@ -62,7 +62,7 @@ class PluginActivation
  */
     public function onDeactivation(&$controller)
     {
-        $Acos = TableRegistry::get('Croogo/Acl.Acos');
-        $Acos->removeAco('Croogo\Translate');
+        $Acos = TableRegistry::get('Vamshop/Acl.Acos');
+        $Acos->removeAco('Vamshop\Translate');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Menus\Controller\Admin;
+namespace Vamshop\Menus\Controller\Admin;
 
 use Cake\Event\Event;
 
@@ -8,7 +8,7 @@ use Cake\Event\Event;
  * Menus Controller
  *
  * @category Controller
- * @package  Croogo.Menus.Controller
+ * @package  Vamshop.Menus.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -28,7 +28,7 @@ class MenusController extends AppController
     {
         parent::initialize();
         if ($this->request->param('action') === 'toggle') {
-            $this->Croogo->protectToggleAction();
+            $this->Vamshop->protectToggleAction();
         }
     }
 

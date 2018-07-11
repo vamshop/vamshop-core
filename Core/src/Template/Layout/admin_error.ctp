@@ -20,7 +20,7 @@
         </style>
     </head>
     <body>
-        <?= $this->element('Croogo/Core.admin/header') ?>
+        <?= $this->element('Vamshop/Core.admin/header') ?>
         <div id="wrap">
             <div id="content-container" class="content-container">
                 <div id="content" class="content">
@@ -31,9 +31,9 @@
                 </div>
             </div>
         </div>
-        <?= $this->element('Croogo/Core.admin/footer') ?>
+        <?= $this->element('Vamshop/Core.admin/footer') ?>
         <?php
-        echo $this->element('Croogo/Core.admin/initializers');
+        echo $this->element('Vamshop/Core.admin/initializers');
         echo $this->fetch('body-footer');
 
         echo $this->fetch('postLink');

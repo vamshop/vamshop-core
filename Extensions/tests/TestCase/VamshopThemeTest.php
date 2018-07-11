@@ -1,29 +1,29 @@
 <?php
 
-namespace Croogo\Extensions\Test\TestCase;
+namespace Vamshop\Extensions\Test\TestCase;
 
-use Croogo\Core\TestSuite\CroogoTestCase;
-use Croogo\Extensions\CroogoTheme;
+use Vamshop\Core\TestSuite\VamshopTestCase;
+use Vamshop\Extensions\VamshopTheme;
 
-class CroogoThemeTest extends CroogoTestCase
+class VamshopThemeTest extends VamshopTestCase
 {
 
 /**
- * CroogoTheme class
- * @var CroogoTheme
+ * VamshopTheme class
+ * @var VamshopTheme
  */
-    public $CroogoTheme;
+    public $VamshopTheme;
 
     public function setUp()
     {
         parent::setUp();
-        $this->CroogoTheme = $this->getMock('CroogoTheme', null);
+        $this->VamshopTheme = $this->getMock('VamshopTheme', null);
     }
 
     public function tearDown()
     {
         parent::tearDown();
-        unset($this->CroogoTheme);
+        unset($this->VamshopTheme);
     }
 
 /**
@@ -32,7 +32,7 @@ class CroogoThemeTest extends CroogoTestCase
  */
     public function testDeleteEmptyTheme()
     {
-        $this->CroogoTheme->delete(null);
+        $this->VamshopTheme->delete(null);
     }
 
 /**
@@ -41,7 +41,7 @@ class CroogoThemeTest extends CroogoTestCase
  */
     public function testDeleteBogusTheme()
     {
-        $this->CroogoTheme->delete('Bogus');
+        $this->VamshopTheme->delete('Bogus');
     }
 
 /**
@@ -49,7 +49,7 @@ class CroogoThemeTest extends CroogoTestCase
  */
     public function testGetThemes()
     {
-        $themes = $this->CroogoTheme->getThemes();
+        $themes = $this->VamshopTheme->getThemes();
         $this->assertTrue(array_key_exists('Mytheme', $themes));
     }
 
@@ -58,7 +58,7 @@ class CroogoThemeTest extends CroogoTestCase
  */
     public function testGetDataBogusTheme()
     {
-        $data = $this->CroogoTheme->getData('BogusTheme');
+        $data = $this->VamshopTheme->getData('BogusTheme');
         $this->assertSame([], $data);
     }
 
@@ -67,7 +67,7 @@ class CroogoThemeTest extends CroogoTestCase
  */
     public function testGetDataMixedManifest()
     {
-        $data = $this->CroogoTheme->getData('MixedManifest');
+        $data = $this->VamshopTheme->getData('MixedManifest');
 
         $keys = array_keys($data);
         sort($keys);

@@ -2,13 +2,13 @@
 
 use Cake\Core\Configure;
 use Cake\Cache\Cache;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 Cache::config('croogo_comments', array_merge(
-    Configure::read('Croogo.Cache.defaultConfig'),
+    Configure::read('Vamshop.Cache.defaultConfig'),
     ['groups' => ['comments']]
 ));
 
-Croogo::hookHelper('*', 'Croogo/Comments.Comments');
+Vamshop::hookHelper('*', 'Vamshop/Comments.Comments');
 
-Croogo::hookBehavior('Croogo/Nodes.Nodes', 'Croogo/Comments.Commentable');
+Vamshop::hookBehavior('Vamshop/Nodes.Nodes', 'Vamshop/Comments.Commentable');

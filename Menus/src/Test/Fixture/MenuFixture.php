@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Menus\Test\Fixture;
+namespace Vamshop\Menus\Test\Fixture;
 
-use Croogo\Core\TestSuite\CroogoTestFixture;
+use Vamshop\Core\TestSuite\VamshopTestFixture;
 
-class MenuFixture extends CroogoTestFixture
+class MenuFixture extends VamshopTestFixture
 {
 
     public $name = 'Menu';

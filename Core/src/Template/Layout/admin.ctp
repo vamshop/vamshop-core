@@ -18,15 +18,15 @@ $showActions = isset($showActions) ? $showActions : true;
         ?>
     </head>
     <body>
-        <?= $this->element('Croogo/Core.admin/header') ?>
+        <?= $this->element('Vamshop/Core.admin/header') ?>
         <div id="wrap">
             <div class="nav-sidebar">
-                <?= $this->element('Croogo/Core.admin/navigation') ?>
+                <?= $this->element('Vamshop/Core.admin/navigation') ?>
             </div>
             <div id="content-container" class="content-container <?= $this->Theme->getCssClass('containerFluid') ?>">
                 <div id="content" class="content">
                     <div class="col-12 d-flex justify-content-between align-items-center">
-                        <?= $this->element('Croogo/Core.admin/breadcrumb') ?>
+                        <?= $this->element('Vamshop/Core.admin/breadcrumb') ?>
                         <?php if ($showActions && $actionsBlock = $this->fetch('action-buttons')): ?>
                             <div class="actions ml-auto">
                                 <?= $actionsBlock ?>
@@ -40,9 +40,9 @@ $showActions = isset($showActions) ? $showActions : true;
                 </div>
             </div>
         </div>
-        <?= $this->element('Croogo/Core.admin/footer') ?>
+        <?= $this->element('Vamshop/Core.admin/footer') ?>
         <?php
-        echo $this->element('Croogo/Core.admin/initializers');
+        echo $this->element('Vamshop/Core.admin/initializers');
         echo $this->fetch('body-footer');
 
         echo $this->fetch('postLink');

@@ -1,11 +1,11 @@
 <?php
 
-$this->extend('Croogo/Core./Common/admin_edit');
+$this->extend('Vamshop/Core./Common/admin_edit');
 
 $this->Breadcrumbs->add(__d('croogo', 'Settings'),
-    ['plugin' => 'Croogo/Settings', 'controller' => 'settings', 'action' => 'prefix', 'Site'])
+    ['plugin' => 'Vamshop/Settings', 'controller' => 'settings', 'action' => 'prefix', 'Site'])
     ->add(__d('croogo', 'Language'),
-        ['plugin' => 'Croogo/Settings', 'controller' => 'languages', 'action' => 'index']);
+        ['plugin' => 'Vamshop/Settings', 'controller' => 'languages', 'action' => 'index']);
 
 if ($this->request->params['action'] == 'edit') {
     $this->Breadcrumbs->add($language->title);
@@ -18,7 +18,7 @@ if ($this->request->params['action'] == 'add') {
 $this->append('form-start', $this->Form->create($language));
 
 $this->start('tab-heading');
-echo $this->Croogo->adminTab(__d('croogo', 'Language'), '#language-main');
+echo $this->Vamshop->adminTab(__d('croogo', 'Language'), '#language-main');
 $this->end();
 
 $this->start('tab-content');
@@ -41,7 +41,7 @@ $this->end();
 
 $this->start('panels');
 echo $this->Html->beginBox(__d('croogo', 'Publishing'));
-echo $this->element('Croogo/Core.admin/buttons', ['type' => 'language']);
+echo $this->element('Vamshop/Core.admin/buttons', ['type' => 'language']);
 echo $this->Form->input('status', [
     'label' => __d('croogo', 'Status'),
 ]);

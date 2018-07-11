@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Controller;
+namespace Vamshop\Core\Controller;
 
 use Cake\Core\Configure;
 use Cake\Event\Event;
@@ -17,7 +17,7 @@ use Cake\Routing\Router;
  * - aware of Site.theme and Site.admin_theme
  *
  * @category Controllers
- * @package  Croogo.Croogo.Controller
+ * @package  Vamshop.Vamshop.Controller
  * @version  1.0
  * @author   Rachman Chavik <rchavik@xintesa.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -58,7 +58,7 @@ class ErrorController extends \Cake\Controller\ErrorController implements Hookab
             return;
         }
         $viewBuilder = $this->viewBuilder();
-        $viewBuilder->className('Croogo/Core.Croogo');
+        $viewBuilder->className('Vamshop/Core.Vamshop');
         if ($this->request->param('prefix') === 'admin') {
             $adminTheme = Configure::read('Site.admin_theme');
             if ($adminTheme) {

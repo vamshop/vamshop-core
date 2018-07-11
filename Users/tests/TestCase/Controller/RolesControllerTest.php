@@ -1,9 +1,9 @@
 <?php
-namespace Croogo\Users\Test\TestCase\Controller;
+namespace Vamshop\Users\Test\TestCase\Controller;
 
-use Croogo\Core\TestSuite\CroogoControllerTestCase;
+use Vamshop\Core\TestSuite\VamshopControllerTestCase;
 
-class RolesControllerTest extends CroogoControllerTestCase
+class RolesControllerTest extends VamshopControllerTestCase
 {
 
     public $fixtures = [

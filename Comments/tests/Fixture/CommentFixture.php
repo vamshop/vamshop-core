@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Comments\Test\Fixture;
+namespace Vamshop\Comments\Test\Fixture;
 
-use Croogo\Core\TestSuite\CroogoTestFixture;
+use Vamshop\Core\TestSuite\VamshopTestFixture;
 
-class CommentFixture extends CroogoTestFixture
+class CommentFixture extends VamshopTestFixture
 {
 
     public $name = 'Comment';
@@ -40,10 +40,10 @@ class CommentFixture extends CroogoTestFixture
         [
             'id' => 1,
             'parent_id' => null,
-            'model' => 'Croogo/Nodes.Nodes',
+            'model' => 'Vamshop/Nodes.Nodes',
             'foreign_key' => 1,
             'user_id' => 0,
-            'name' => 'Mr Croogo',
+            'name' => 'Mr Vamshop',
             'email' => 'email@example.com',
             'website' => 'http://www.vamshop.com',
             'ip' => '127.0.0.1',
@@ -62,10 +62,10 @@ class CommentFixture extends CroogoTestFixture
         [
             'id' => 2,
             'parent_id' => null,
-            'model' => 'Croogo/Nodes.Nodes',
+            'model' => 'Vamshop/Nodes.Nodes',
             'foreign_key' => 1,
             'user_id' => 0,
-            'name' => 'Mrs Croogo',
+            'name' => 'Mrs Vamshop',
             'email' => 'email@example.com',
             'website' => 'http://www.vamshop.com',
             'ip' => '127.0.0.1',

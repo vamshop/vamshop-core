@@ -19,7 +19,7 @@
  * @copyright      Alex Potsides, {@link http://www.achingbrain.net http://www.achingbrain.net}
  * @license        http://www.opensource.org/licenses/bsd-license.php BSD License
  */
-namespace Croogo\Core\Controller\Component;
+namespace Vamshop\Core\Controller\Component;
 
 use Cake\Controller\Component;
 use Cake\Core\Exception\Exception;
@@ -59,7 +59,7 @@ use Cake\Core\Configure;
  *   }
  * </code>
  *
- * @package    Croogo.Croogo.Controller.Component
+ * @package    Vamshop.Vamshop.Controller.Component
  * @name       Akismet
  * @version    0.4
  * @author     Alex Potsides
@@ -316,7 +316,7 @@ class AkismetComponent extends Component
  *
  *    N.B. It is not necessary to call this class directly to use the Akismet class.  This is included here mainly out of a sense of completeness.
  *
- * @package    Croogo.Croogo.Controller.Component
+ * @package    Vamshop.Vamshop.Controller.Component
  * @name       SocketWriteRead
  * @version    0.1
  * @author     Alex Potsides

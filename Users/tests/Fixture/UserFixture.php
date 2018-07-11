@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Users\Test\Fixture;
+namespace Vamshop\Users\Test\Fixture;
 
-use Croogo\Core\TestSuite\CroogoTestFixture;
+use Vamshop\Core\TestSuite\VamshopTestFixture;
 
-class UserFixture extends CroogoTestFixture
+class UserFixture extends VamshopTestFixture
 {
 
     public $name = 'User';

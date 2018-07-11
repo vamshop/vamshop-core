@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Blocks\Event;
+namespace Vamshop\Blocks\Event;
 
 use Cake\Cache\Cache;
 use Cake\Datasource\ModelAwareTrait;
@@ -8,13 +8,13 @@ use Cake\Event\Event;
 use Cake\Event\EventListenerInterface;
 use Cake\ORM\Locator\LocatorAwareTrait;
 use Cake\Utility\Hash;
-use Croogo\Core\Croogo;
-use Croogo\Core\Utility\StringConverter;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\Utility\StringConverter;
 
 /**
  * BlocksEventHandler
  *
- * @package  Croogo.Blocks.Event
+ * @package  Vamshop.Blocks.Event
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
@@ -72,7 +72,7 @@ class BlocksEventHandler implements EventListenerInterface
  */
     public function filterBlockShortcode(Event $event)
     {
-        $this->loadModel('Croogo/Blocks.Blocks');
+        $this->loadModel('Vamshop/Blocks.Blocks');
         static $converter = null;
         if (!$converter) {
             $converter = new StringConverter();
@@ -104,7 +104,7 @@ class BlocksEventHandler implements EventListenerInterface
             }
         }
 
-        Croogo::dispatchEvent('Helper.Layout.beforeFilter', $View, [
+        Vamshop::dispatchEvent('Helper.Layout.beforeFilter', $View, [
             'content' => &$body,
             'options' => [],
         ]);

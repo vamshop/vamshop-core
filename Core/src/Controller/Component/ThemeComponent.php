@@ -1,12 +1,12 @@
 <?php
 
-namespace Croogo\Core\Controller\Component;
+namespace Vamshop\Core\Controller\Component;
 
 use Cake\Controller\Component;
 use Cake\Controller\ComponentRegistry;
 use Cake\Core\Configure;
 use Cake\Event\Event;
-use Croogo\Extensions\CroogoTheme;
+use Vamshop\Extensions\VamshopTheme;
 
 class ThemeComponent extends Component
 {
@@ -30,14 +30,14 @@ class ThemeComponent extends Component
         $this->_controller = $event->subject();
         $theme = $this->config('theme');
         if (!$theme) {
-            $this->_controller->viewBuilder()->theme('Croogo/Core');
+            $this->_controller->viewBuilder()->theme('Vamshop/Core');
             return;
         }
 
         $this->_controller->viewBuilder()->theme($theme);
         $this->loadThemeSettings($theme);
 
-        $this->_controller->viewBuilder()->helpers(['Croogo/Core.Theme']);
+        $this->_controller->viewBuilder()->helpers(['Vamshop/Core.Theme']);
     }
 
     /**
@@ -48,7 +48,7 @@ class ThemeComponent extends Component
     public function loadThemeSettings($theme)
     {
         $prefix = $this->request->param('prefix');
-        $croogoTheme = new CroogoTheme();
+        $croogoTheme = new VamshopTheme();
         $settings = $croogoTheme->getData($theme)['settings'];
 
         $themePrefix = ($prefix) ? $prefix : '';

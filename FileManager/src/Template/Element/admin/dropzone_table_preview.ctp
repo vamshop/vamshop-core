@@ -1,6 +1,6 @@
 <?php
 /**
- * @var \Croogo\Core\View\CroogoView $this
+ * @var \Vamshop\Core\View\VamshopView $this
  */
 ?>
 <tr class="dz-preview">

@@ -1,23 +1,23 @@
 <?php
 
-namespace Croogo\Blocks\Model\Table;
+namespace Vamshop\Blocks\Model\Table;
 
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\Validation\Validator;
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Core\Model\Table\VamshopTable;
 
 /**
  * Region
  *
  * @category Blocks.Model
- * @package  Croogo.Blocks.Model
+ * @package  Vamshop.Blocks.Model
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class RegionsTable extends CroogoTable
+class RegionsTable extends VamshopTable
 {
 
     /**
@@ -58,11 +58,11 @@ class RegionsTable extends CroogoTable
     public function initialize(array $config)
     {
         parent::initialize($config);
-        $this->entityClass('Croogo/Blocks.Region');
+        $this->entityClass('Vamshop/Blocks.Region');
         $this->addAssociations([
             'hasMany' => [
                 'Blocks' => [
-                    'className' => 'Croogo/Blocks.Blocks',
+                    'className' => 'Vamshop/Blocks.Blocks',
                     'foreignKey' => 'region_id',
                     'dependent' => false,
                     'limit' => 3,
@@ -71,7 +71,7 @@ class RegionsTable extends CroogoTable
         ]);
 
         $this->addBehavior('Search.Search');
-//        $this->addBehavior('Croogo.Cached', [
+//        $this->addBehavior('Vamshop.Cached', [
 //            'groups' => [
 //                'blocks',
 //            ],
@@ -85,7 +85,7 @@ class RegionsTable extends CroogoTable
                 ],
             ],
         ]);
-        $this->addBehavior('Croogo/Core.Trackable');
+        $this->addBehavior('Vamshop/Core.Trackable');
         $this->addBehavior('Search.Search');
 
         $this->searchManager()

@@ -3,7 +3,7 @@
 
 use Cake\Datasource\ConnectionManager;
 use Cake\Routing\Router;
-use Croogo\Core\Plugin;
+use Vamshop\Core\Plugin;
 
 $findVendor = function () {
     $root = dirname(__DIR__);
@@ -109,18 +109,18 @@ ConnectionManager::config('test_migrations', [
     'timezone' => 'UTC'
 ]);
 
-$settingsFixture = new \Croogo\Core\Test\Fixture\SettingsFixture();
+$settingsFixture = new \Vamshop\Core\Test\Fixture\SettingsFixture();
 
 \Cake\Datasource\ConnectionManager::alias('test', 'default');
 $settingsFixture->create(\Cake\Datasource\ConnectionManager::get('default'));
 $settingsFixture->insert(\Cake\Datasource\ConnectionManager::get('default'));
 
-Plugin::load('Croogo/Core', ['bootstrap' => true, 'routes' => true]);
-Plugin::load('Croogo/Settings', ['bootstrap' => true, 'routes' => true]);
+Plugin::load('Vamshop/Core', ['bootstrap' => true, 'routes' => true]);
+Plugin::load('Vamshop/Settings', ['bootstrap' => true, 'routes' => true]);
 
 Cake\Routing\DispatcherFactory::add('Routing');
 Cake\Routing\DispatcherFactory::add('ControllerFactory');
 
-class_alias('Croogo\Core\TestSuite\TestCase', 'Croogo\Core\TestSuite\CroogoTestCase');
+class_alias('Vamshop\Core\TestSuite\TestCase', 'Vamshop\Core\TestSuite\VamshopTestCase');
 
 Plugin::routes();

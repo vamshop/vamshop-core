@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Acl\Auth;
+namespace Vamshop\Acl\Auth;
 
 use Acl\Auth\BaseAuthorize;
 use Cake\Cache\Cache;
@@ -19,7 +19,7 @@ use Psr\Log\LogLevel;
  * An authentication adapter for AuthComponent. Provides similar functionality
  * to ActionsAuthorize class from CakePHP core _with_ caching capability.
  *
- * @package  Croogo.Acl.Controller.Component.Auth
+ * @package  Vamshop.Acl.Controller.Component.Auth
  * @since    1.5
  * @author   Rachman Chavik <rchavik@xintesa.com>
  * @see      RowLevelAclComponent
@@ -68,8 +68,8 @@ class AclCachedAuthorize extends BaseAuthorize
         }
         if (empty($this->_adminRole)) {
             if (empty($Role)) {
-                $Role = TableRegistry::get('Croogo/Users.Roles');
-                $Role->addBehavior('Croogo/Core.Aliasable');
+                $Role = TableRegistry::get('Vamshop/Users.Roles');
+                $Role->addBehavior('Vamshop/Core.Aliasable');
             }
             $this->_adminRole = $Role->byAlias('superadmin');
         }
@@ -83,7 +83,7 @@ class AclCachedAuthorize extends BaseAuthorize
  */
     public function action(Request $request, $path = '/:plugin/:prefix/:controller/:action')
     {
-        $apiPath = Configure::read('Croogo.Api.path');
+        $apiPath = Configure::read('Vamshop.Api.path');
         if (!$request->is('api')) {
             return parent::action($request, $path);
         }

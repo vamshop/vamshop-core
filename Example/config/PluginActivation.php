@@ -6,12 +6,12 @@
  * Activation class for Example plugin.
  * This is optional, and is required only if you want to perform tasks when your plugin is activated/deactivated.
  *
- * @package  Croogo
+ * @package  Vamshop
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-namespace Croogo\Example\Config;
+namespace Vamshop\Example\Config;
 
 use Cake\ORM\TableRegistry;
 
@@ -38,11 +38,11 @@ class PluginActivation
     public function onActivation(&$controller)
     {
         // ACL: set ACOs with permissions
-        $Acos = TableRegistry::get('Croogo/Acl.Acos');
-        $Acos->addAco('Croogo\Example/Admin/Example/index'); // ExampleController::admin_index()
-        $Acos->addAco('Croogo\Example/Example/index', ['registered', 'public']); // ExampleController::index()
+        $Acos = TableRegistry::get('Vamshop/Acl.Acos');
+        $Acos->addAco('Vamshop\Example/Admin/Example/index'); // ExampleController::admin_index()
+        $Acos->addAco('Vamshop\Example/Example/index', ['registered', 'public']); // ExampleController::index()
 
-        $Links = TableRegistry::get('Croogo/Menus.Links');
+        $Links = TableRegistry::get('Vamshop/Menus.Links');
 
         // Main menu: add an Example link
         $mainMenu = $Links->Menus->findByAlias('main')->first();
@@ -57,7 +57,7 @@ class PluginActivation
             // Link caption
             'title' => 'Example',
             // The link
-            'link' => 'plugin:Croogo%2fExample/controller:Example/action:index',
+            'link' => 'plugin:Vamshop%2fExample/controller:Example/action:index',
             // Status : activated or not (0 or 1)
             'status' => 1,
             // Link class
@@ -87,15 +87,15 @@ class PluginActivation
     public function onDeactivation(&$controller)
     {
         // ACL: remove ACOs with permissions
-        $Acos = TableRegistry::get('Croogo/Acl.Acos');
-        $Acos->removeAco('Croogo\Example'); // Plugin ACOs and it's actions will be removed
+        $Acos = TableRegistry::get('Vamshop/Acl.Acos');
+        $Acos->removeAco('Vamshop\Example'); // Plugin ACOs and it's actions will be removed
 
-        $Links = TableRegistry::get('Croogo/Menus.Links');
+        $Links = TableRegistry::get('Vamshop/Menus.Links');
 
         // Main menu: delete Example link
         $link = $Links->find()
             ->where([
-                'Links.link' => 'plugin:Croogo%2fExample/controller:Example/action:index',
+                'Links.link' => 'plugin:Vamshop%2fExample/controller:Example/action:index',
             ])
             ->contain([
                 'Menus' => [

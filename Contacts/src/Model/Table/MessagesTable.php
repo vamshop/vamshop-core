@@ -1,42 +1,42 @@
 <?php
 
-namespace Croogo\Contacts\Model\Table;
+namespace Vamshop\Contacts\Model\Table;
 
 use Cake\Validation\Validator;
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Core\Model\Table\VamshopTable;
 
 /**
  * Message
  *
  * @category Model
- * @package  Croogo.Contacts.Model
+ * @package  Vamshop.Contacts.Model
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class MessagesTable extends CroogoTable
+class MessagesTable extends VamshopTable
 {
 
     public function initialize(array $config)
     {
         parent::initialize($config);
-        $this->entityClass('Croogo/Contacts.Message');
+        $this->entityClass('Vamshop/Contacts.Message');
         $this->belongsTo('Contacts', [
-            'className' => 'Croogo/Contacts.Contacts',
+            'className' => 'Vamshop/Contacts.Contacts',
             'foreignKey' => 'contact_id',
         ]);
         $this->addBehavior('CounterCache', [
             'Contacts' => ['message_count']
         ]);
 
-        $this->addBehavior('Croogo/Core.BulkProcess', [
+        $this->addBehavior('Vamshop/Core.BulkProcess', [
             'actionsMap' => [
                 'read' => 'bulkRead',
                 'unread' => 'bulkUnread',
             ],
         ]);
-        $this->addBehavior('Croogo/Core.Trackable');
+        $this->addBehavior('Vamshop/Core.Trackable');
         $this->addBehavior('Search.Search');
         $this->addBehavior('Timestamp', [
             'events' => [
@@ -49,7 +49,7 @@ class MessagesTable extends CroogoTable
 
         $this->searchManager()
             ->value('contact_id')
-            ->add('created', 'Croogo/Core.Date', [
+            ->add('created', 'Vamshop/Core.Date', [
                 'field' => 'Messages.created'
             ])
             ->add('search', 'Search.Like', [

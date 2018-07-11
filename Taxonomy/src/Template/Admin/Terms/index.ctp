@@ -2,16 +2,16 @@
 
 $this->assign('title', __d('croogo', 'Vocabulary: %s', $vocabulary->title));
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
 $this->Breadcrumbs->add(__d('croogo', 'Content'),
-        ['plugin' => 'Croogo/Nodes', 'controller' => 'Nodes', 'action' => 'index'])
+        ['plugin' => 'Vamshop/Nodes', 'controller' => 'Nodes', 'action' => 'index'])
     ->add(__d('croogo', 'Vocabularies'),
-        ['plugin' => 'Croogo/Taxonomy', 'controller' => 'Vocabularies', 'action' => 'index'])
+        ['plugin' => 'Vamshop/Taxonomy', 'controller' => 'Vocabularies', 'action' => 'index'])
     ->add($vocabulary->title, $this->request->getRequestTarget());
 
 $this->append('action-buttons');
-echo $this->Croogo->adminAction(__d('croogo', 'Create term'), [
+echo $this->Vamshop->adminAction(__d('croogo', 'Create term'), [
     'action' => 'add',
     'vocabulary_id' => $vocabulary->id,
 ], [
@@ -33,14 +33,14 @@ $rows = [];
 
 foreach ($terms as $term):
     $actions = [];
-    $actions[] = $this->Croogo->adminRowActions($term->id);
-    $actions[] = $this->Croogo->adminRowAction('', ['action' => 'moveUp', $term->id, $vocabulary->id],
+    $actions[] = $this->Vamshop->adminRowActions($term->id);
+    $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'moveUp', $term->id, $vocabulary->id],
         ['icon' => $this->Theme->getIcon('move-up'), 'tooltip' => __d('croogo', 'Move up'), 'method' => 'post']);
-    $actions[] = $this->Croogo->adminRowAction('', ['action' => 'moveDown', $term->id, $vocabulary->id],
+    $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'moveDown', $term->id, $vocabulary->id],
         ['icon' => $this->Theme->getIcon('move-down'), 'tooltip' => __d('croogo', 'Move down'), 'method' => 'post']);
-    $actions[] = $this->Croogo->adminRowAction('', ['action' => 'edit', $term->id, 'vocabulary_id' => $vocabulary->id],
+    $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'edit', $term->id, 'vocabulary_id' => $vocabulary->id],
         ['icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('croogo', 'Edit this item')]);
-    $actions[] = $this->Croogo->adminRowAction('', ['action' => 'delete', $term->id, $vocabulary->id],
+    $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'delete', $term->id, $vocabulary->id],
         ['icon' => $this->Theme->getIcon('delete'), 'tooltip' => __d('croogo', 'Remove this item')],
         __d('croogo', 'Are you sure?'));
     $actions = $this->Html->div('item-actions', implode(' ', $actions));
@@ -50,7 +50,7 @@ foreach ($terms as $term):
     if (isset($defaultType['alias'])) {
         $titleCol = $this->Html->link($term->title, [
             'prefix' => false,
-            'plugin' => 'Croogo/Nodes',
+            'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
             'action' => 'term',
             'type' => $defaultType->alias,

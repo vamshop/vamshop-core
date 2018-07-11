@@ -1,20 +1,20 @@
 {
     "name": "croogo/comments",
-    "description": "Croogo Comments Plugin",
+    "description": "Vamshop Comments Plugin",
     "require": {
         "croogo/core": "^3.0.1"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": "Croogo Development Team",
+            "name": "Vamshop Development Team",
             "email": "team@vamshop.com"
         }
     ],
     "type": "cakephp-plugin",
     "autoload": {
         "psr-4": {
-            "Croogo\\Comments\\": "src"
+            "Vamshop\\Comments\\": "src"
         }
     },
     "minimum-stability": "dev"

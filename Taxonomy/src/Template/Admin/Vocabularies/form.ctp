@@ -1,10 +1,10 @@
 <?php
-$this->Croogo->adminScript('Croogo/Taxonomy.vocabularies');
+$this->Vamshop->adminScript('Vamshop/Taxonomy.vocabularies');
 
-$this->extend('Croogo/Core./Common/admin_edit');
+$this->extend('Vamshop/Core./Common/admin_edit');
 
 $this->Breadcrumbs->add(__d('croogo', 'Content'),
-    ['plugin' => 'Croogo/Nodes', 'controller' => 'Nodes', 'action' => 'index']);
+    ['plugin' => 'Vamshop/Nodes', 'controller' => 'Nodes', 'action' => 'index']);
 
 if ($this->request->params['action'] == 'edit') {
     $this->assign('title', __d('croogo', 'Edit Vocabulary'));
@@ -25,7 +25,7 @@ $this->append('form-start', $this->Form->create($vocabulary, [
 ]));
 
 $this->start('tab-heading');
-echo $this->Croogo->adminTab(__d('croogo', 'Vocabulary'), '#vocabulary-basic');
+echo $this->Vamshop->adminTab(__d('croogo', 'Vocabulary'), '#vocabulary-basic');
 $this->end();
 
 $this->start('tab-content');
@@ -51,7 +51,7 @@ $this->end();
 
 $this->start('panels');
 echo $this->Html->beginBox();
-echo $this->element('Croogo/Core.admin/buttons', ['type' => __d('croogo', 'vocabulary')]);
+echo $this->element('Vamshop/Core.admin/buttons', ['type' => __d('croogo', 'vocabulary')]);
 echo $this->Html->endBox();
 
 echo $this->Html->beginBox(__d('croogo', 'Options'));

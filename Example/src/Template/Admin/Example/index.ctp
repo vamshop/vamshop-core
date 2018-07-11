@@ -1,15 +1,15 @@
 <?php
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 $this->Breadcrumbs
     ->add('Example', array('controller' => 'example', 'action' => 'index'));
 ?>
 <?php $this->start('actions') ?>
 <?php
-    echo $this->Croogo->adminAction(
+    echo $this->Vamshop->adminAction(
         'New Tab',
         array('action' => 'add')
     );
-    echo $this->Croogo->adminAction(
+    echo $this->Vamshop->adminAction(
         'Chooser Example',
         array('action' => 'chooser')
     );

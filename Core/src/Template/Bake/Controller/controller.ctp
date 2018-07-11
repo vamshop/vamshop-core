@@ -25,9 +25,9 @@ $defaultModel = $name;
 namespace <%= $namespace %>\Controller<%= $prefix %>;
 
 <% if (class_exists("$namespace\Controller\$prefix\AppController")): %>
-use <%= $namespace %>\Controller<%= $prefix %>\AppController as CroogoController;
+use <%= $namespace %>\Controller<%= $prefix %>\AppController as VamshopController;
 <% else: %>
-use Croogo\Core\Controller<%= $prefix %>\AppController as CroogoController;
+use Vamshop\Core\Controller<%= $prefix %>\AppController as VamshopController;
 <% endif; %>
 
 /**
@@ -41,7 +41,7 @@ foreach ($components as $component):
  * @property <%= $classInfo['fqn'] %> $<%= $classInfo['name'] %>
 <% endforeach; %>
  */
-class <%= $name %>Controller extends CroogoController
+class <%= $name %>Controller extends VamshopController
 {
 <%
 echo $this->Bake->arrayProperty('helpers', $helpers, ['indent' => false]);

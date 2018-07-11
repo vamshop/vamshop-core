@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Blocks\Test\Fixture;
+namespace Vamshop\Blocks\Test\Fixture;
 
-use Croogo\Core\TestSuite\CroogoTestFixture;
+use Vamshop\Core\TestSuite\VamshopTestFixture;
 
-class BlockFixture extends CroogoTestFixture
+class BlockFixture extends VamshopTestFixture
 {
 
     public $fields = [

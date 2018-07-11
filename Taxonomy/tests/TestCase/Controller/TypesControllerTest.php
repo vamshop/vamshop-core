@@ -1,10 +1,10 @@
 <?php
-namespace Croogo\Taxonomy\Test\TestCase\Controller;
+namespace Vamshop\Taxonomy\Test\TestCase\Controller;
 
-use Croogo\TestSuite\CroogoControllerTestCase;
+use Vamshop\TestSuite\VamshopControllerTestCase;
 use Taxonomy\Controller\TypesController;
 
-class TypesControllerTest extends CroogoControllerTestCase
+class TypesControllerTest extends VamshopControllerTestCase
 {
 
     public $fixtures = [

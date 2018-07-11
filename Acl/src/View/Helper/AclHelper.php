@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Acl\View\Helper;
+namespace Vamshop\Acl\View\Helper;
 
 use Acl\Controller\Component\AclComponent;
 use Cake\Core\Configure;
@@ -15,7 +15,7 @@ use Cake\View\View;
  * Acl Helper
  *
  * @category Helper
- * @package  Croogo.Acl
+ * @package  Vamshop.Acl
  * @version  1.4
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -46,7 +46,7 @@ class AclHelper extends Helper
             'pathWhitelist' => $this->_pathWhitelist
         ], $settings);
         parent::__construct($View, $settings);
-        $plugin = 'Croogo/Acl';
+        $plugin = 'Vamshop/Acl';
         /* TODO: App::uses('AclPermission', $plugin . '.Model'); */
         $this->Permissions = TableRegistry::get($plugin . '.Permissions');
 
@@ -102,10 +102,10 @@ class AclHelper extends Helper
 
         // FIXME: need to convert from plain string url to acl format
         if ($linkAction == '/') {
-            $linkAction = 'controllers/Croogo\\Nodes/Nodes/promoted';
+            $linkAction = 'controllers/Vamshop\\Nodes/Nodes/promoted';
         }
         if ($linkAction == '/admin') {
-            $linkAction = 'controllers/Croogo\\Dashboards/Admin/Dashboards/dashboard';
+            $linkAction = 'controllers/Vamshop\\Dashboards/Admin/Dashboards/dashboard';
         }
 
         $userAro = ['model' => 'Users', 'foreign_key' => $userId];

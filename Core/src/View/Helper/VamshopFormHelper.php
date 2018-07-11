@@ -1,27 +1,27 @@
 <?php
 
-namespace Croogo\Core\View\Helper;
+namespace Vamshop\Core\View\Helper;
 
 use BootstrapUI\View\Helper\FormHelper;
 use Cake\Utility\Inflector;
 use Cake\Utility\Hash;
 use Cake\View\View;
-use Croogo\Extensions\CroogoTheme;
+use Vamshop\Extensions\VamshopTheme;
 
 /**
- * Croogo Form Helper
+ * Vamshop Form Helper
  *
- * @package Croogo.Croogo.View.Helper
+ * @package Vamshop.Vamshop.View.Helper
  */
-class CroogoFormHelper extends FormHelper
+class VamshopFormHelper extends FormHelper
 {
 
     public $helpers = [
         'Html',
         'Url',
-        'Croogo/Core.Theme',
-        'Croogo/Core.Croogo',
-        'Croogo/Core.CroogoHtml',
+        'Vamshop/Core.Theme',
+        'Vamshop/Core.Vamshop',
+        'Vamshop/Core.VamshopHtml',
     ];
 
     /**
@@ -74,17 +74,17 @@ class CroogoFormHelper extends FormHelper
         $settings = Hash::merge([
             'widgets' => [
                 'stringlist' => [
-                    'Croogo/Core.StringList',
+                    'Vamshop/Core.StringList',
                     'textarea',
                     'label',
                 ],
-                'datetime' => ['Croogo/Core.DateTime', 'select'],
-                'button' => ['Croogo/Core.Button']
+                'datetime' => ['Vamshop/Core.DateTime', 'select'],
+                'button' => ['Vamshop/Core.Button']
             ],
         ], $settings);
 
         if ($View->theme) {
-            $themeConfig = CroogoTheme::config($View->theme);
+            $themeConfig = VamshopTheme::config($View->theme);
             $themeSettings = $themeConfig['settings'];
             $settings = Hash::merge($themeSettings, $settings);
         }
@@ -204,7 +204,7 @@ class CroogoFormHelper extends FormHelper
             }
 
             $target = '#' . $options['id'];
-            $options['append'] = [$this->Croogo->linkChooser($target)] + $append;
+            $options['append'] = [$this->Vamshop->linkChooser($target)] + $append;
         }
 
         return $options;
@@ -278,7 +278,7 @@ class CroogoFormHelper extends FormHelper
  * Try to guess autocomplete default values
  *
  * @param string $field field name
- * @param array $config setting passed to CroogoFormHelper::autocomplete()
+ * @param array $config setting passed to VamshopFormHelper::autocomplete()
  * @return array Array of id and display value
  */
     protected function _acDefaults($field, $config)

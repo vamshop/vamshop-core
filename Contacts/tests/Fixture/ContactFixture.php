@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Contacts\Test\Fixture;
+namespace Vamshop\Contacts\Test\Fixture;
 
-use Croogo\Core\TestSuite\CroogoTestFixture;
+use Vamshop\Core\TestSuite\VamshopTestFixture;
 
-class ContactFixture extends CroogoTestFixture
+class ContactFixture extends VamshopTestFixture
 {
 
     public $name = 'Contact';

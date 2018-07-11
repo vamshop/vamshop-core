@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Translate\Middleware;
+namespace Vamshop\Translate\Middleware;
 
 use Cake\Core\Configure;
 use Cake\Core\InstanceConfigTrait;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\TestSuite;
+namespace Vamshop\Core\TestSuite;
 
 use Cake\Core\App;
 use Cake\Core\Configure;
@@ -9,21 +9,21 @@ use Cake\Log\Log;
 use Cake\Network\Session;
 use Cake\TestSuite\TestCase;
 use Cake\Utility\Hash;
-use Croogo\Core\Configure\CroogoJsonReader;
-use Croogo\Core\TestSuite\CroogoTestFixture;
+use Vamshop\Core\Configure\VamshopJsonReader;
+use Vamshop\Core\TestSuite\VamshopTestFixture;
 
 /**
- * CroogoTestCase class
+ * VamshopTestCase class
  *
  * @category TestSuite
- * @package  Croogo
+ * @package  Vamshop
  * @version  1.4
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @author   Rachman Chavik <rchavik@gmail.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class CroogoControllerTestCase extends TestCase
+class VamshopControllerTestCase extends TestCase
 {
 
     public static function setUpBeforeClass()
@@ -40,7 +40,7 @@ class CroogoControllerTestCase extends TestCase
 
     protected static function _restoreSettings()
     {
-        $configDir = Plugin::path('Croogo/Core') . 'tests' . DS . 'test_app' . DS . 'config' . DS;
+        $configDir = Plugin::path('Vamshop/Core') . 'tests' . DS . 'test_app' . DS . 'config' . DS;
         $source = $configDir . 'settings.default';
         $target = $configDir . 'settings.json';
         copy($source, $target);
@@ -55,7 +55,7 @@ class CroogoControllerTestCase extends TestCase
     {
         parent::setUp();
 
-        $appDir = Plugin::path('Croogo/Core') . 'tests' . DS . 'test_app' . DS;
+        $appDir = Plugin::path('Vamshop/Core') . 'tests' . DS . 'test_app' . DS;
 
 //		App::build(array(
 //			'Plugin' => array($appDir . 'Plugin' . DS),
@@ -71,7 +71,7 @@ class CroogoControllerTestCase extends TestCase
         /**
          * Thease plugins are being loaded in the test bootstrap file
          */
-//		Plugin::load(array('Croogo/Users'), ['bootstrap' => true, 'path' => '../Users/', 'autoload' => true]);
+//		Plugin::load(array('Vamshop/Users'), ['bootstrap' => true, 'path' => '../Users/', 'autoload' => true]);
 //		Plugin::load('Example', ['path' => '../Example/', 'autoload' => true]);
 
         Configure::write('Acl.database', 'test');
@@ -79,7 +79,7 @@ class CroogoControllerTestCase extends TestCase
 //		$Setting = ClassRegistry::init('Settings.Setting');
 //		$Setting->settingsPath = $appDir . 'Config' . DS . 'settings.json';
 //		Configure::drop('settings');
-//		Configure::config('settings', new CroogoJsonReader(dirname($Setting->settingsPath) . DS ));
+//		Configure::config('settings', new VamshopJsonReader(dirname($Setting->settingsPath) . DS ));
         Log::drop('stdout');
         Log::drop('stderr');
 //		$Setting->writeConfiguration();

@@ -1,18 +1,18 @@
 <?php
 
-namespace Croogo\Extensions;
+namespace Vamshop\Extensions;
 
 use Cake\Core\App;
 use Cake\Filesystem\Folder;
-use Croogo\Core\Core\Exception\Exception;
-use Croogo\Extensions\CroogoComposer;
+use Vamshop\Core\Core\Exception\Exception;
+use Vamshop\Extensions\VamshopComposer;
 use ZipArchive;
 
 /**
  * Extensions Installer
  *
  * @category Extensions.Model
- * @package  Croogo.Extensions.Lib
+ * @package  Vamshop.Extensions.Lib
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -43,18 +43,18 @@ class ExtensionsInstaller
     protected $_rootPath = [];
 
 /**
- * Hold instance of CroogoComposer
+ * Hold instance of VamshopComposer
  *
- * @var CroogoComposer
+ * @var VamshopComposer
  */
-    protected $_CroogoComposer = null;
+    protected $_VamshopComposer = null;
 
 /**
  * __construct
  */
     public function __construct()
     {
-        $this->_CroogoComposer = new CroogoComposer();
+        $this->_VamshopComposer = new VamshopComposer();
     }
 
 /**
@@ -247,7 +247,7 @@ class ExtensionsInstaller
     }
 
 /**
- * Install packages with CroogoComposer
+ * Install packages with VamshopComposer
  *
  * @param array $data
  * @return boolean
@@ -266,10 +266,10 @@ class ExtensionsInstaller
         if ($data['type'] == 'theme') {
             throw new Exception(__d('croogo', 'Themes installed via composer are not yet supported.'));
         }
-        $this->_CroogoComposer->getComposer();
-        $this->_CroogoComposer->setConfig([
+        $this->_VamshopComposer->getComposer();
+        $this->_VamshopComposer->setConfig([
             $data['package'] => $data['version'],
         ]);
-        return $this->_CroogoComposer->runComposer();
+        return $this->_VamshopComposer->runComposer();
     }
 }

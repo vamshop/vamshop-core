@@ -1,20 +1,20 @@
 {
     "name": "croogo/settings",
-    "description": "Croogo Settings Plugin",
+    "description": "Vamshop Settings Plugin",
     "require": {
         "croogo/core": "^3.0.1"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": "Croogo Development Team",
+            "name": "Vamshop Development Team",
             "email": "team@vamshop.com"
         }
     ],
     "type": "cakephp-plugin",
     "autoload": {
         "psr-4": {
-            "Croogo\\Settings\\": "src"
+            "Vamshop\\Settings\\": "src"
         }
     },
     "minimum-stability": "dev"

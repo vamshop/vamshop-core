@@ -1,17 +1,17 @@
 <?php
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
-$this->Html->script('Croogo/Acl.acl_permissions', ['block' => true]);
+$this->Html->script('Vamshop/Acl.acl_permissions', ['block' => true]);
 
-$this->Croogo->adminScript('Croogo/Acl.acl_permissions');
+$this->Vamshop->adminScript('Vamshop/Acl.acl_permissions');
 
 $this->Breadcrumbs
-    ->add(__d('croogo', 'Users'), array('plugin' => 'Croogo/Users', 'controller' => 'Users', 'action' => 'index'))
+    ->add(__d('croogo', 'Users'), array('plugin' => 'Vamshop/Users', 'controller' => 'Users', 'action' => 'index'))
     ->add(__d('croogo', 'Permissions'), array(
-        'plugin' => 'Croogo/Acl', 'controller' => 'Permissions',
+        'plugin' => 'Vamshop/Acl', 'controller' => 'Permissions',
     ))
-    ->add(__d('croogo', 'Actions'), array('plugin' => 'Croogo/Acl', 'controller' => 'Actions', 'action' => 'index', 'permission' => 1));
+    ->add(__d('croogo', 'Actions'), array('plugin' => 'Vamshop/Acl', 'controller' => 'Actions', 'action' => 'index', 'permission' => 1));
 
 $this->append('action-buttons');
     $toolsButton = $this->Html->link(
@@ -26,12 +26,12 @@ $this->append('action-buttons');
     );
 
     $generateUrl = array(
-        'plugin' => 'Croogo/Acl',
+        'plugin' => 'Vamshop/Acl',
         'controller' => 'Actions',
         'action' => 'generate',
         'permissions' => 1
     );
-    $out = $this->Croogo->adminAction(__d('croogo', 'Generate'),
+    $out = $this->Vamshop->adminAction(__d('croogo', 'Generate'),
         $generateUrl,
         array(
             'button' => false,
@@ -44,7 +44,7 @@ $this->append('action-buttons');
             ),
         )
     );
-    $out .= $this->Croogo->adminAction(__d('croogo', 'Synchronize'),
+    $out .= $this->Vamshop->adminAction(__d('croogo', 'Synchronize'),
         $generateUrl + array('sync' => 1),
         array(
             'button' => false,
@@ -100,20 +100,20 @@ $this->append('table-body');
         }
 
         $actions = array();
-        $actions[] = $this->Croogo->adminRowAction('',
+        $actions[] = $this->Vamshop->adminRowAction('',
             array('action' => 'move', $id, 'up'),
             array('icon' => $this->Theme->getIcon('move-up'), 'tooltip' => __d('croogo', 'Move up'))
         );
-        $actions[] = $this->Croogo->adminRowAction('',
+        $actions[] = $this->Vamshop->adminRowAction('',
             array('action' => 'move', $id, 'down'),
             array('icon' => $this->Theme->getIcon('move-down'), 'tooltip' => __d('croogo', 'Move down'))
         );
 
-        $actions[] = $this->Croogo->adminRowAction('',
+        $actions[] = $this->Vamshop->adminRowAction('',
             array('action' => 'edit', $id),
             array('icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('croogo', 'Edit this item'))
         );
-        $actions[] = $this->Croogo->adminRowAction('',
+        $actions[] = $this->Vamshop->adminRowAction('',
             array('action' => 'delete', $id),
             array(
                 'icon' => $this->Theme->getIcon('delete'),

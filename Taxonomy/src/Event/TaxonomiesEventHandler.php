@@ -1,17 +1,17 @@
 <?php
 
-namespace Croogo\Taxonomy\Event;
+namespace Vamshop\Taxonomy\Event;
 
 use Cake\Event\EventListenerInterface;
 use Cake\ORM\TableRegistry;
-use Croogo\Core\Croogo;
-use Croogo\Core\Nav;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\Nav;
 
 /**
  * Taxonomy Event Handler
  *
  * @category Event
- * @package  Croogo.Taxonomy.Event
+ * @package  Vamshop.Taxonomy.Event
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
@@ -24,7 +24,7 @@ class TaxonomiesEventHandler implements EventListenerInterface
     public function implementedEvents()
     {
         return [
-            'Croogo.setupAdminData' => [
+            'Vamshop.setupAdminData' => [
                 'callable' => 'onSetupAdminData',
             ],
             'Controller.Links.setupLinkChooser' => [
@@ -51,7 +51,7 @@ class TaxonomiesEventHandler implements EventListenerInterface
                 'title' => $v->title,
                 'url' => [
                     'prefix' => 'admin',
-                    'plugin' => 'Croogo/Taxonomy',
+                    'plugin' => 'Vamshop/Taxonomy',
                     'controller' => 'Terms',
                     'action' => 'index',
                     '?' => [
@@ -70,7 +70,7 @@ class TaxonomiesEventHandler implements EventListenerInterface
  */
     public function onSetupLinkChooser($event)
     {
-        $vocabulariesTable = TableRegistry::get('Croogo/Taxonomy.Vocabularies');
+        $vocabulariesTable = TableRegistry::get('Vamshop/Taxonomy.Vocabularies');
         $vocabularies = $vocabulariesTable->find('all')->contain([
             'Types'
         ]);
@@ -83,7 +83,7 @@ class TaxonomiesEventHandler implements EventListenerInterface
                     'description' => $vocabulary->description,
                     'url' => [
                         'prefix' => 'admin',
-                        'plugin' => 'Croogo/Taxonomy',
+                        'plugin' => 'Vamshop/Taxonomy',
                         'controller' => 'Terms',
                         'action' => 'index',
                         $vocabulary->id,
@@ -95,6 +95,6 @@ class TaxonomiesEventHandler implements EventListenerInterface
                 ];
             }
         }
-        Croogo::mergeConfig('Croogo.linkChoosers', $linkChoosers);
+        Vamshop::mergeConfig('Vamshop.linkChoosers', $linkChoosers);
     }
 }

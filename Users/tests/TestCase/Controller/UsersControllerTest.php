@@ -1,12 +1,12 @@
 <?php
-namespace Croogo\Users\Test\TestCase\Controller;
+namespace Vamshop\Users\Test\TestCase\Controller;
 
-use Croogo\Core\TestSuite\CroogoControllerTestCase;
+use Vamshop\Core\TestSuite\VamshopControllerTestCase;
 
 /**
  * UsersController Test
  */
-class UsersControllerTest extends CroogoControllerTestCase
+class UsersControllerTest extends VamshopControllerTestCase
 {
 
 /**
@@ -61,7 +61,7 @@ class UsersControllerTest extends CroogoControllerTestCase
         ]);
         $this->controller->helpers = [
             'Html' => [
-                'className' => 'Croogo.CroogoHtml',
+                'className' => 'Vamshop.VamshopHtml',
             ],
         ];
 
@@ -462,7 +462,7 @@ class UsersControllerTest extends CroogoControllerTestCase
             ->will($this->returnCallback([$this, 'authIdentifyTrue']));
         $controller->expects($this->once())
             ->method('redirect')
-            ->with(Router::url(Configure::read('Croogo.dashboardUrl')));
+            ->with(Router::url(Configure::read('Vamshop.dashboardUrl')));
         $this->testAction(
             '/admin/users/users/login',
             [

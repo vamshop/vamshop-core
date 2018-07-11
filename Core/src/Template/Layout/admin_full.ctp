@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <?= $this->element('Croogo/Core.admin/header') ?>
+    <?= $this->element('Vamshop/Core.admin/header') ?>
     <div id="wrap">
         <div id="content-container" class="content-container <?= $this->Theme->getCssClass('containerFluid') ?>">
             <div id="content" class="content">
@@ -29,9 +29,9 @@
 
     </div>
 
-    <?= $this->element('Croogo/Core.admin/footer') ?>
+    <?= $this->element('Vamshop/Core.admin/footer') ?>
     <?php
-        echo $this->element('Croogo/Core.admin/initializers');
+        echo $this->element('Vamshop/Core.admin/initializers');
         echo $this->Blocks->get('scriptBottom');
         echo $this->Js->writeBuffer();
     ?>

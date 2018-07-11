@@ -1,20 +1,20 @@
 <?php
 
-namespace Croogo\Nodes\Event;
+namespace Vamshop\Nodes\Event;
 
 use Cake\Cache\Cache;
 use Cake\Core\Plugin;
 use Cake\Event\EventListenerInterface;
 use Cake\ORM\TableRegistry;
-use Croogo\Comments\Model\Comment;
-use Croogo\Core\Croogo;
-use Croogo\Core\Nav;
+use Vamshop\Comments\Model\Comment;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\Nav;
 
 /**
  * Nodes Event Handler
  *
  * @category Event
- * @package  Croogo.Nodes.Event
+ * @package  Vamshop.Nodes.Event
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
@@ -27,10 +27,10 @@ class NodesEventHandler implements EventListenerInterface
     public function implementedEvents()
     {
         return [
-            'Croogo.bootstrapComplete' => [
+            'Vamshop.bootstrapComplete' => [
                 'callable' => 'onBootstrapComplete',
             ],
-            'Croogo.setupAdminData' => [
+            'Vamshop.setupAdminData' => [
                 'callable' => 'onSetupAdminData',
             ],
             'Controller.Links.setupLinkChooser' => [
@@ -74,7 +74,7 @@ class NodesEventHandler implements EventListenerInterface
                 'title' => $type->title,
                 'url' => [
                     'prefix' => 'admin',
-                    'plugin' => 'Croogo/Nodes',
+                    'plugin' => 'Vamshop/Nodes',
                     'controller' => 'Nodes',
                     'action' => 'add',
                     $type->alias,
@@ -89,25 +89,25 @@ class NodesEventHandler implements EventListenerInterface
     public function onBootstrapComplete($event)
     {
         if (Plugin::loaded('Comments')) {
-            Croogo::hookBehavior('Croogo/Nodes.Nodes', 'Comments.Commentable');
-            Croogo::hookComponent('Croogo/Nodes.Nodes', 'Comments.Comments');
-            Croogo::hookModelProperty('Croogo/Comments.Comments', 'belongsTo', [
+            Vamshop::hookBehavior('Vamshop/Nodes.Nodes', 'Comments.Commentable');
+            Vamshop::hookComponent('Vamshop/Nodes.Nodes', 'Comments.Comments');
+            Vamshop::hookModelProperty('Vamshop/Comments.Comments', 'belongsTo', [
                 'Nodes' => [
-                    'className' => 'Croogo/Nodes.Nodes',
+                    'className' => 'Vamshop/Nodes.Nodes',
                     'foreignKey' => 'foreign_key',
                     'counterCache' => true,
                     'counterScope' => [
-                        'Comment.model' => 'Croogo/Nodes.Nodes',
+                        'Comment.model' => 'Vamshop/Nodes.Nodes',
                         'Comment.status' => Comment::STATUS_APPROVED,
                     ],
                 ],
             ]);
         }
-        if (Plugin::loaded('Croogo/Taxonomy')) {
-            Croogo::hookBehavior('Croogo/Nodes.Nodes', 'Croogo/Taxonomy.Taxonomizable');
+        if (Plugin::loaded('Vamshop/Taxonomy')) {
+            Vamshop::hookBehavior('Vamshop/Nodes.Nodes', 'Vamshop/Taxonomy.Taxonomizable');
         }
-        if (Plugin::loaded('Croogo/Meta')) {
-            Croogo::hookBehavior('Croogo/Nodes.Nodes', 'Croogo/Meta.Meta');
+        if (Plugin::loaded('Vamshop/Meta')) {
+            Vamshop::hookBehavior('Vamshop/Nodes.Nodes', 'Vamshop/Meta.Meta');
         }
     }
 
@@ -118,7 +118,7 @@ class NodesEventHandler implements EventListenerInterface
      */
     public function onSetupLinkChooser($event)
     {
-        $typesTable = TableRegistry::get('Croogo/Taxonomy.Types');
+        $typesTable = TableRegistry::get('Vamshop/Taxonomy.Types');
         $types = $typesTable->find('all', [
             'fields' => ['alias', 'title', 'description'],
         ]);
@@ -129,7 +129,7 @@ class NodesEventHandler implements EventListenerInterface
                 'description' => $type->description,
                 'url' => [
                     'prefix' => 'admin',
-                    'plugin' => 'Croogo/Nodes',
+                    'plugin' => 'Vamshop/Nodes',
                     'controller' => 'Nodes',
                     'action' => 'index',
                     '?' => [
@@ -139,7 +139,7 @@ class NodesEventHandler implements EventListenerInterface
                 ],
             ];
         }
-        Croogo::mergeConfig('Croogo.linkChoosers', $linkChoosers);
+        Vamshop::mergeConfig('Vamshop.linkChoosers', $linkChoosers);
     }
 
     /**

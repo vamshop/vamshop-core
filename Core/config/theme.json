@@ -1,9 +1,9 @@
 {
-    "name" : "Croogo/Core",
-    "description" : "Default theme for Croogo (Based on StartBootstrap Agency)",
+    "name" : "Vamshop/Core",
+    "description" : "Default theme for Vamshop (Based on StartBootstrap Agency)",
     "screenshot" : "img/screenshot.jpg",
 
-    "author" : "Croogo Dev Team",
+    "author" : "Vamshop Dev Team",
     "authorEmail" : "team@vamshop.com",
     "authorUrl" : "http://vamshop.com",
 

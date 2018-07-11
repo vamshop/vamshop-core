@@ -1,26 +1,26 @@
 <?php
 
-namespace Croogo\Blocks\Model\Table;
+namespace Vamshop\Blocks\Model\Table;
 
 use Cake\Cache\Cache;
 use Cake\Database\Schema\TableSchema;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\Validation\Validator;
-use Croogo\Core\Model\Table\CroogoTable;
-use Croogo\Core\Status;
+use Vamshop\Core\Model\Table\VamshopTable;
+use Vamshop\Core\Status;
 
 /**
  * Block
  *
  * @category Blocks.Model
- * @package  Croogo.Blocks.Model
+ * @package  Vamshop.Blocks.Model
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class BlocksTable extends CroogoTable
+class BlocksTable extends VamshopTable
 {
 
     /**
@@ -50,10 +50,10 @@ class BlocksTable extends CroogoTable
     public function initialize(array $config)
     {
         parent::initialize($config);
-        $this->entityClass('Croogo/Blocks.Block');
+        $this->entityClass('Vamshop/Blocks.Block');
 
         $this->belongsTo('Regions', [
-            'className' => 'Croogo/Blocks.Regions',
+            'className' => 'Vamshop/Blocks.Regions',
             'foreignKey' => 'region_id',
             'counterCache' => true,
             'counterScope' => ['Blocks.status >=' => Status::PUBLISHED],
@@ -62,13 +62,13 @@ class BlocksTable extends CroogoTable
         $this->addBehavior('CounterCache', [
             'Regions' => ['block_count'],
         ]);
-        $this->addBehavior('Croogo/Core.Publishable');
-        $this->addBehavior('Croogo/Core.Visibility');
+        $this->addBehavior('Vamshop/Core.Publishable');
+        $this->addBehavior('Vamshop/Core.Visibility');
         $this->addBehavior('ADmad/Sequence.Sequence', [
             'order' => 'weight',
             'scope' => ['region_id'],
         ]);
-        $this->addBehavior('Croogo/Core.Cached', [
+        $this->addBehavior('Vamshop/Core.Cached', [
             'groups' => [
                 'blocks',
             ],
@@ -82,7 +82,7 @@ class BlocksTable extends CroogoTable
                 ],
             ],
         ]);
-        $this->addBehavior('Croogo/Core.Trackable');
+        $this->addBehavior('Vamshop/Core.Trackable');
         $this->addBehavior('Search.Search');
 
         $this->searchManager()

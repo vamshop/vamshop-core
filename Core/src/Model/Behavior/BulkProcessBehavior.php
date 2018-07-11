@@ -1,13 +1,13 @@
 <?php
 
-namespace Croogo\Core\Model\Behavior;
+namespace Vamshop\Core\Model\Behavior;
 
 use Cake\Database\Exception;
 use Cake\Log\Log;
 use Cake\ORM\Behavior;
 use Cake\ORM\Table;
 use Cake\Utility\Hash;
-use Croogo\Core\Status;
+use Vamshop\Core\Status;
 use InvalidArgumentException;
 
 /**
@@ -24,7 +24,7 @@ use InvalidArgumentException;
  *   by implementing it in the model. These methods needs to accept one
  *   argument, containing an array of IDs.
  *
- * @package Croogo.Croogo.Model.Behavior
+ * @package Vamshop.Vamshop.Model.Behavior
  * @since 2.0
  * @author Rachman Chavik <rchavik@xintesa.com>
  * @license http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -192,7 +192,7 @@ class BulkProcessBehavior extends Behavior
     public function bulkCopy($ids)
     {
         if (!$this->_table->hasBehavior('Copyable')) {
-            $this->_table->addBehavior('Croogo/Core.Copyable');
+            $this->_table->addBehavior('Vamshop/Core.Copyable');
         }
 
         foreach ($ids as $id) {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Extensions\Exception;
+namespace Vamshop\Extensions\Exception;
 
 use Cake\Core\Exception\MissingPluginException;
 

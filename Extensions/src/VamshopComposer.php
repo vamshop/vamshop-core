@@ -1,22 +1,22 @@
 <?php
 
-namespace Croogo\Extensions;
+namespace Vamshop\Extensions;
 
 use App\Network\Http\Client;
 use Cake\Utility\File;
-use Croogo\Lib\CroogoJson;
+use Vamshop\Lib\VamshopJson;
 
 /**
- * Croogo Composer Wrapper
+ * Vamshop Composer Wrapper
  *
  * @category Lib
- * @package  Croogo.Extensions.Lib
+ * @package  Vamshop.Extensions.Lib
  * @since    1.4
  * @author   Kyle Robinson Young <kyle@dontkry.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class CroogoComposer
+class VamshopComposer
 {
 
 /**
@@ -110,7 +110,7 @@ class CroogoComposer
         if (version_compare(PHP_VERSION, '5.4.0', '>=')) {
             $options |= JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT;
         }
-        $json = CroogoJson::stringify($json, $options) . "\n";
+        $json = VamshopJson::stringify($json, $options) . "\n";
         $file->write($json);
         $file->close();
         return true;

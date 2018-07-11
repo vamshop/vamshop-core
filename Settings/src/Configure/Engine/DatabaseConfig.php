@@ -1,5 +1,5 @@
 <?php
-namespace Croogo\Settings\Configure\Engine;
+namespace Vamshop\Settings\Configure\Engine;
 
 use Cake\Cache\Cache;
 use Cake\Core\Configure\ConfigEngineInterface;
@@ -7,7 +7,7 @@ use Cake\Log\Log;
 use Cake\ORM\Table;
 use Cake\ORM\TableRegistry;
 use Cake\Utility\Hash;
-use Croogo\Settings\Model\Entity\Setting;
+use Vamshop\Settings\Model\Entity\Setting;
 
 class DatabaseConfig implements ConfigEngineInterface
 {
@@ -21,10 +21,10 @@ class DatabaseConfig implements ConfigEngineInterface
  */
     public function read($key)
     {
-        \Croogo\Core\timerStart('Loading settings from database');
+        \Vamshop\Core\timerStart('Loading settings from database');
 
         $values = Cache::remember('configure-settings-' . $key, function () use ($key) {
-            $settings = TableRegistry::get('Croogo/Settings.Settings')->find('list', [
+            $settings = TableRegistry::get('Vamshop/Settings.Settings')->find('list', [
                 'keyField' => 'key',
                 'valueField' => function (Setting $setting) {
                     if ($setting->type === 'integer') {
@@ -38,7 +38,7 @@ class DatabaseConfig implements ConfigEngineInterface
             $settings = Hash::expand($settings);
 
             if (empty($setting['Meta'])) {
-                $settings['Meta'] = TableRegistry::get('Croogo/Meta.Meta')
+                $settings['Meta'] = TableRegistry::get('Vamshop/Meta.Meta')
                     ->find('list', ['keyField' => 'key', 'valueField' => 'value'])
                     ->where(['model' => ''])
                     ->cache('configure-settings-query-' . $key . '-meta', 'cached_settings')
@@ -48,7 +48,7 @@ class DatabaseConfig implements ConfigEngineInterface
             return $settings;
         }, 'cached_settings');
 
-        \Croogo\Core\timerStop('Loading settings from database');
+        \Vamshop\Core\timerStop('Loading settings from database');
 
         return $values;
     }

@@ -2,6 +2,6 @@
 
 return [
     'EventHandlers' => [
-        'Croogo/FileManager.FileManagerEventHandler',
+        'Vamshop/FileManager.FileManagerEventHandler',
     ],
 ];

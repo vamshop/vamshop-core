@@ -1,24 +1,24 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase\Shell;
+namespace Vamshop\Core\Test\TestCase\Shell;
 
 use Cake\Console\Shell;
 use Cake\Console\ShellDispatcher;
 use Cake\Core\Plugin;
 use Cake\Filesystem\Folder;
-use Croogo\Core\TestSuite\CroogoTestCase;
+use Vamshop\Core\TestSuite\VamshopTestCase;
 
 /**
  * Ext Shell Test
  *
  * @category Test
- * @package  Croogo
+ * @package  Vamshop
  * @version  1.4
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class ExtShellTest extends CroogoTestCase
+class ExtShellTest extends VamshopTestCase
 {
 
 /**
@@ -57,7 +57,7 @@ class ExtShellTest extends CroogoTestCase
     {
         parent::setUp();
         $Folder = new Folder(APP . 'Plugin' . DS . 'Example');
-        $Folder->copy(Plugin::path('Croogo/Core') . 'tests' . DS . 'test_app' . DS . 'Plugin' . DS . 'Example');
+        $Folder->copy(Plugin::path('Vamshop/Core') . 'tests' . DS . 'test_app' . DS . 'Plugin' . DS . 'Example');
 //		$this->Setting = ClassRegistry::init('Settings.Setting');
     }
 
@@ -69,7 +69,7 @@ class ExtShellTest extends CroogoTestCase
     public function tearDown()
     {
         parent::tearDown();
-        $Folder = new Folder(Plugin::path('Croogo/Core') . 'tests' . DS . 'test_app' . DS . 'Plugin' . DS . 'Example');
+        $Folder = new Folder(Plugin::path('Vamshop/Core') . 'tests' . DS . 'test_app' . DS . 'Plugin' . DS . 'Example');
         $Folder->delete();
     }
 

@@ -1,16 +1,16 @@
 <?php
 
-namespace Croogo\Acl\Controller\Admin;
+namespace Vamshop\Acl\Controller\Admin;
 
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
-use Croogo\Acl\AclGenerator;
+use Vamshop\Acl\AclGenerator;
 
 /**
  * AclActions Controller
  *
  * @category Controller
- * @package  Croogo.Acl
+ * @package  Vamshop.Acl
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -25,7 +25,7 @@ class ActionsController extends AppController
     {
         parent::initialize();
 
-        $this->Acos = TableRegistry::get('Croogo/Acl.Acos');
+        $this->Acos = TableRegistry::get('Vamshop/Acl.Acos');
     }
 
     /**
@@ -74,7 +74,7 @@ class ActionsController extends AppController
 
             if ($this->Acos->save($aco)) {
                 $this->Flash->success(sprintf(__d('croogo', 'The %s has been saved'), $acoType));
-                return $this->Croogo->redirect(['action' => 'index']);
+                return $this->Vamshop->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(sprintf(__d('croogo', 'The %s could not be saved. Please, try again.'), $acoType));
             }
@@ -171,7 +171,7 @@ class ActionsController extends AppController
         }
 
         if (isset($this->request->query['permissions'])) {
-            return $this->redirect(['plugin' => 'Croogo/Acl', 'controller' => 'Permissions', 'action' => 'index']);
+            return $this->redirect(['plugin' => 'Vamshop/Acl', 'controller' => 'Permissions', 'action' => 'index']);
         } else {
             return $this->redirect(['action' => 'index']);
         }

@@ -1,18 +1,18 @@
 <?php
 
-namespace Croogo\Comments\View\Cell;
+namespace Vamshop\Comments\View\Cell;
 
 use Cake\ORM\Query;
 use Cake\View\Cell;
-use Croogo\Comments\Model\Entity\Comment;
-use Croogo\Nodes\Model\Entity\Node;
-use Croogo\Taxonomy\Model\Entity\Type;
+use Vamshop\Comments\Model\Entity\Comment;
+use Vamshop\Nodes\Model\Entity\Node;
+use Vamshop\Taxonomy\Model\Entity\Type;
 
 class CommentsCell extends Cell
 {
     public function node($nodeId)
     {
-        $this->loadModel('Croogo/Nodes.Nodes');
+        $this->loadModel('Vamshop/Nodes.Nodes');
 
         $node = $this->Nodes->get($nodeId, [
             'contain' => [
@@ -29,13 +29,13 @@ class CommentsCell extends Cell
 
     public function commentFormNode(Node $node, Type $type, Comment $comment = null)
     {
-        $this->loadModel('Croogo/Comments.Comments');
+        $this->loadModel('Vamshop/Comments.Comments');
 
         $formUrl = [
-            'plugin' => 'Croogo/Comments',
+            'plugin' => 'Vamshop/Comments',
             'controller' => 'Comments',
             'action' => 'add',
-            urlencode('Croogo/Nodes.Nodes'),
+            urlencode('Vamshop/Nodes.Nodes'),
             $node->id,
         ];
 

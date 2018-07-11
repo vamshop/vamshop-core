@@ -1,27 +1,27 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase;
+namespace Vamshop\Core\Test\TestCase;
 
 use Cake\Event\EventListenerInterface;
 use Cake\Event\EventManager;
-use Croogo\Core\Status;
-use Croogo\Core\TestSuite\CroogoTestCase;
+use Vamshop\Core\Status;
+use Vamshop\Core\TestSuite\VamshopTestCase;
 
-class CroogoStatusTest extends CroogoTestCase implements EventListenerInterface
+class VamshopStatusTest extends VamshopTestCase implements EventListenerInterface
 {
     public function implementedEvents()
     {
         return [
-            'Croogo.Status.setup' => [
-                'callable' => 'onCroogoStatusSetup',
+            'Vamshop.Status.setup' => [
+                'callable' => 'onVamshopStatusSetup',
             ],
         ];
     }
 
 /**
- * onCroogoStatusSetup
+ * onVamshopStatusSetup
  */
-    public function onCroogoStatusSetup($event)
+    public function onVamshopStatusSetup($event)
     {
         $event->data['publishing'][4] = 'Added by event handler';
     }
@@ -32,7 +32,7 @@ class CroogoStatusTest extends CroogoTestCase implements EventListenerInterface
     public function setUp()
     {
         EventManager::instance()->attach($this);
-        $this->CroogoStatus = new Status();
+        $this->VamshopStatus = new Status();
     }
 
 /**
@@ -41,7 +41,7 @@ class CroogoStatusTest extends CroogoTestCase implements EventListenerInterface
     public function tearDown()
     {
         EventManager::instance()->detach($this);
-        unset($this->CroogoStatus);
+        unset($this->VamshopStatus);
     }
 
 /**
@@ -49,7 +49,7 @@ class CroogoStatusTest extends CroogoTestCase implements EventListenerInterface
  */
     public function testByDescription()
     {
-        $result = $this->CroogoStatus->byDescription('Published');
+        $result = $this->VamshopStatus->byDescription('Published');
         $this->assertEquals(1, $result);
     }
 
@@ -58,7 +58,7 @@ class CroogoStatusTest extends CroogoTestCase implements EventListenerInterface
  */
     public function testById()
     {
-        $result = $this->CroogoStatus->byId(2);
+        $result = $this->VamshopStatus->byId(2);
         $this->assertEquals('Preview', $result);
     }
 
@@ -67,7 +67,7 @@ class CroogoStatusTest extends CroogoTestCase implements EventListenerInterface
  */
     public function testStatuses()
     {
-        $result = $this->CroogoStatus->statuses();
+        $result = $this->VamshopStatus->statuses();
         $this->assertTrue(count($result) >= 4);
     }
 
@@ -77,7 +77,7 @@ class CroogoStatusTest extends CroogoTestCase implements EventListenerInterface
     public function testStatus()
     {
         $expected = [Status::PUBLISHED];
-        $result = $this->CroogoStatus->status();
+        $result = $this->VamshopStatus->status();
         $this->assertEquals($expected, $result);
     }
 
@@ -105,20 +105,20 @@ class CroogoStatusTest extends CroogoTestCase implements EventListenerInterface
     {
         $callback = [$this, 'modifyStatus'];
         EventManager::instance()->on($this);
-        EventManager::instance()->on('Croogo.Status.status', $callback);
+        EventManager::instance()->on('Vamshop.Status.status', $callback);
 
         // test status is modified for 'webmaster' type by event handler
         $expected = [Status::PUBLISHED, Status::PREVIEW];
-        $this->CroogoStatus = new Status();
-        $result = $this->CroogoStatus->status(1, 'publishing', 'webmaster');
+        $this->VamshopStatus = new Status();
+        $result = $this->VamshopStatus->status(1, 'publishing', 'webmaster');
         $this->assertEquals($expected, $result);
 
         // test status is emptied for unknown type
         $expected = [null];
-        $result = $this->CroogoStatus->status(1, 'publishing', 'bogus');
+        $result = $this->VamshopStatus->status(1, 'publishing', 'bogus');
         $this->assertEquals($expected, $result);
 
-        EventManager::instance()->on('Croogo.Status.status', $callback);
+        EventManager::instance()->on('Vamshop.Status.status', $callback);
     }
 
 /**
@@ -127,11 +127,11 @@ class CroogoStatusTest extends CroogoTestCase implements EventListenerInterface
     public function testArrayAccessUsage()
     {
         $newIndex = 5;
-        $count = count($this->CroogoStatus->statuses());
-        $this->CroogoStatus['publishing'][$newIndex] = 'New status';
-        $this->assertEquals($count + 1, count($this->CroogoStatus->statuses()));
-        unset($this->CroogoStatus['publishing'][$newIndex]);
-        $this->assertEquals($count, count($this->CroogoStatus->statuses()));
-        $this->assertFalse(isset($this->CroogoStatus['publishing'][$newIndex]));
+        $count = count($this->VamshopStatus->statuses());
+        $this->VamshopStatus['publishing'][$newIndex] = 'New status';
+        $this->assertEquals($count + 1, count($this->VamshopStatus->statuses()));
+        unset($this->VamshopStatus['publishing'][$newIndex]);
+        $this->assertEquals($count, count($this->VamshopStatus->statuses()));
+        $this->assertFalse(isset($this->VamshopStatus['publishing'][$newIndex]));
     }
 }

@@ -1,20 +1,20 @@
 <?php
 
-namespace Croogo\Comments\Controller;
+namespace Vamshop\Comments\Controller;
 
 use App\Network\Email\Email;
 use Cake\Core\Configure;
 use Cake\Event\Event;
 use Cake\Routing\Router;
-use Croogo\Comments\Model\Entity\Comment;
-use Croogo\Core\Status;
+use Vamshop\Comments\Model\Entity\Comment;
+use Vamshop\Core\Status;
 use UnexpectedValueException;
 
 /**
  * Comments Controller
  *
  * @category Controller
- * @package  Croogo.Comments.Controller
+ * @package  Vamshop.Comments.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -33,7 +33,7 @@ class CommentsController extends AppController
     {
         parent::initialize();
 
-        $this->_loadCroogoComponents(['Akismet', 'BulkProcess', 'Recaptcha' => [
+        $this->_loadVamshopComponents(['Akismet', 'BulkProcess', 'Recaptcha' => [
             'actions' => ['add']
         ]]);
         $this->_setupPrg();
@@ -54,7 +54,7 @@ class CommentsController extends AppController
             return $this->redirect('/');
         }
 
-        $roleId = $this->Croogo->roleId();
+        $roleId = $this->Vamshop->roleId();
         $this->paginate = [
             'contain' => ['Nodes', 'Users'],
             'conditions' => [
@@ -93,7 +93,7 @@ class CommentsController extends AppController
             );
         }
 
-        $roleId = $this->Croogo->roleId();
+        $roleId = $this->Vamshop->roleId();
         $Model = $this->Comments->{$modelAlias};
         $entity = $Model->find()->where([
             $Model->aliasField($Model->primaryKey()) => $foreignKey,

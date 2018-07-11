@@ -1,19 +1,19 @@
 <?php
 
-namespace Croogo\Taxonomy\Controller\Admin;
+namespace Vamshop\Taxonomy\Controller\Admin;
 use Cake\Event\Event;
 
 /**
  * Vocabularies Controller
  *
  * @category Taxonomy.Controller
- * @package  Croogo
+ * @package  Vamshop
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  *
- * @property \Croogo\Taxonomy\Model\Table\VocabulariesTable Vocabularies
+ * @property \Vamshop\Taxonomy\Model\Table\VocabulariesTable Vocabularies
  */
 class VocabulariesController extends AppController
 {
@@ -22,10 +22,10 @@ class VocabulariesController extends AppController
         parent::initialize();
 
         $this->Crud->config('actions.moveUp', [
-            'className' => 'Croogo/Core.Admin/MoveUp'
+            'className' => 'Vamshop/Core.Admin/MoveUp'
         ]);
         $this->Crud->config('actions.moveDown', [
-            'className' => 'Croogo/Core.Admin/MoveDown'
+            'className' => 'Vamshop/Core.Admin/MoveDown'
         ]);
     }
 

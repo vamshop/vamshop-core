@@ -5,7 +5,7 @@
 <p>
 <?php
     $url = $this->Url->build([
-        'plugin' => 'Croogo/Users',
+        'plugin' => 'Vamshop/Users',
         'controller' => 'Users',
         'action' => 'reset',
         $user->username,

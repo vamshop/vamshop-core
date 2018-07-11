@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Translate\Config;
+namespace Vamshop\Translate\Config;
 
 return [
     'EventHandlers' => [
-        'Croogo/Translate.TranslateEventHandler' => [
+        'Vamshop/Translate.TranslateEventHandler' => [
             'options' => [
                 'priority' => 20,
             ],

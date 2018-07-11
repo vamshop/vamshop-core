@@ -1,6 +1,6 @@
 <?php
 
-use Croogo\Core\Nav;
+use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'dashboard', [
     'icon' => 'home',
@@ -12,7 +12,7 @@ Nav::add('sidebar', 'dashboard', [
 Nav::add('sidebar', 'settings.children.dashboard', [
     'title' => __d('croogo', 'Dashboard'),
     'url' => [
-        'plugin' => 'Croogo/Dashboards',
+        'plugin' => 'Vamshop/Dashboards',
         'controller' => 'Dashboards',
         'action' => 'index',
     ],

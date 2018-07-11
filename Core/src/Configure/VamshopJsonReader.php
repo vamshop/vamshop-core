@@ -1,22 +1,22 @@
 <?php
 
-namespace Croogo\Core\Configure;
+namespace Vamshop\Core\Configure;
 
 use Cake\Core\Configure\ConfigEngineInterface;
 use Cake\Core\Plugin;
-use Croogo\Core\CroogoJson;
-use Croogo\Core\Exception\Exception;
+use Vamshop\Core\VamshopJson;
+use Vamshop\Core\Exception\Exception;
 
 /**
- * CroogoJsonReader
+ * VamshopJsonReader
  *
- * @package  Croogo.Croogo.Configure
+ * @package  Vamshop.Vamshop.Configure
  * @since    1.5
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class CroogoJsonReader implements ConfigEngineInterface
+class VamshopJsonReader implements ConfigEngineInterface
 {
 
     /**
@@ -87,7 +87,7 @@ class CroogoJsonReader implements ConfigEngineInterface
         if (version_compare(PHP_VERSION, '5.4.0', '>=')) {
             $options |= JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT;
         }
-        $contents = CroogoJson::stringify($data, $options);
+        $contents = VamshopJson::stringify($data, $options);
         return $this->_writeFile($this->_path . $filename, $contents);
     }
 

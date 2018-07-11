@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Extensions\Config;
+namespace Vamshop\Extensions\Config;
 
-use Croogo\Core\Nav;
+use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'extensions', [
     'icon' => 'magic',
     'title' => __d('croogo', 'Extensions'),
     'url' => [
         'prefix' => 'admin',
-        'plugin' => 'Croogo/Extensions',
+        'plugin' => 'Vamshop/Extensions',
         'controller' => 'Plugins',
         'action' => 'index',
     ],
@@ -19,7 +19,7 @@ Nav::add('sidebar', 'extensions', [
             'title' => __d('croogo', 'Themes'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Extensions',
+                'plugin' => 'Vamshop/Extensions',
                 'controller' => 'Themes',
                 'action' => 'index',
             ],
@@ -29,7 +29,7 @@ Nav::add('sidebar', 'extensions', [
             'title' => __d('croogo', 'Locales'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Extensions',
+                'plugin' => 'Vamshop/Extensions',
                 'controller' => 'Locales',
                 'action' => 'index',
             ],
@@ -39,7 +39,7 @@ Nav::add('sidebar', 'extensions', [
             'title' => __d('croogo', 'Plugins'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Extensions',
+                'plugin' => 'Vamshop/Extensions',
                 'controller' => 'Plugins',
                 'action' => 'index',
             ],

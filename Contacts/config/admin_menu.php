@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Contacts\Config;
+namespace Vamshop\Contacts\Config;
 
-use Croogo\Core\Nav;
+use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'contacts', [
     'icon' => 'comments',
     'title' => __d('croogo', 'Contacts'),
     'url' => [
         'prefix' => 'admin',
-        'plugin' => 'Croogo/Contacts',
+        'plugin' => 'Vamshop/Contacts',
         'controller' => 'Contacts',
         'action' => 'index',
     ],
@@ -19,7 +19,7 @@ Nav::add('sidebar', 'contacts', [
             'title' => __d('croogo', 'Contacts'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Contacts',
+                'plugin' => 'Vamshop/Contacts',
                 'controller' => 'Contacts',
                 'action' => 'index',
             ],
@@ -28,7 +28,7 @@ Nav::add('sidebar', 'contacts', [
             'title' => __d('croogo', 'Messages'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Contacts',
+                'plugin' => 'Vamshop/Contacts',
                 'controller' => 'Messages',
                 'action' => 'index',
             ],

@@ -3,28 +3,28 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width">
-        <title><?= __d('croogo', 'Installation: %s', $this->fetch('title')) ?> - <?= __d('croogo', 'Croogo') ?></title>
+        <title><?= __d('croogo', 'Installation: %s', $this->fetch('title')) ?> - <?= __d('croogo', 'Vamshop') ?></title>
         <style>
             .fa { min-width: 16px; }
         </style>
         <?php
         echo $this->Html->css([
-            'Croogo/Core.core/croogo-admin',
-            'Croogo/Core.core/select2.min',
-            'Croogo/Core.core/select2-bootstrap.min',
+            'Vamshop/Core.core/croogo-admin',
+            'Vamshop/Core.core/select2.min',
+            'Vamshop/Core.core/select2-bootstrap.min',
         ]);
         echo $this->Html->script([
-            'Croogo/Core.jquery/jquery.min',
-            'Croogo/Core.core/croogo-bootstrap',
-            'Croogo/Core.core/select2.full.min',
-            'Croogo/Core.core/admin',
+            'Vamshop/Core.jquery/jquery.min',
+            'Vamshop/Core.core/croogo-bootstrap',
+            'Vamshop/Core.core/select2.full.min',
+            'Vamshop/Core.core/admin',
         ]);
         echo $this->fetch('script');
         ?>
     </head>
     <body class="installer">
         <header class="navbar navbar-dark bg-black navbar-fixed-top">
-            <span class="navbar-brand"><?= __d('croogo', 'Install Croogo') ?></span>
+            <span class="navbar-brand"><?= __d('croogo', 'Install Vamshop') ?></span>
         </header>
 
         <div id="wrap">

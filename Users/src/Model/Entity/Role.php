@@ -1,5 +1,5 @@
 <?php
-namespace Croogo\Users\Model\Entity;
+namespace Vamshop\Users\Model\Entity;
 
 use Cake\ORM\Entity;
 use Cake\ORM\TableRegistry;
@@ -17,7 +17,7 @@ class Role extends Entity
         if (!$this->id) {
             return null;
         } else {
-            $aro = TableRegistry::get('Croogo/Acl.Aros')->node('first', [
+            $aro = TableRegistry::get('Vamshop/Acl.Aros')->node('first', [
                 'conditions' => [
                     'model' => $this->alias,
                     'foreign_key' => $this->id,

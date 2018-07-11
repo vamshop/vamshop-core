@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Taxonomy\Model\Table;
+namespace Vamshop\Taxonomy\Model\Table;
 
 use Cake\ORM\RulesChecker;
 use Cake\Validation\Validator;
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Core\Model\Table\VamshopTable;
 
 /**
  * @property TaxonomiesTable Taxonomies
  */
-class VocabulariesTable extends CroogoTable
+class VocabulariesTable extends VamshopTable
 {
 
     public function initialize(array $config)
@@ -28,13 +28,13 @@ class VocabulariesTable extends CroogoTable
             ]
         ]);
         $this->addBehavior('Search.Search');
-        $this->addBehavior('Croogo/Core.Cached', [
+        $this->addBehavior('Vamshop/Core.Cached', [
             'groups' => ['taxonomy']
         ]);
-        $this->belongsToMany('Croogo/Taxonomy.Types', [
+        $this->belongsToMany('Vamshop/Taxonomy.Types', [
             'joinTable' => 'types_vocabularies',
         ]);
-        $this->hasMany('Croogo/Taxonomy.Taxonomies', [
+        $this->hasMany('Vamshop/Taxonomy.Taxonomies', [
             'dependent' => true,
         ]);
     }

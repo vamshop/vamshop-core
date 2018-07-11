@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Extensions\Test\Fixture;
+namespace Vamshop\Extensions\Test\Fixture;
 
-use Croogo\TestSuite\CroogoTestFixture;
+use Vamshop\TestSuite\VamshopTestFixture;
 
-class MovieFixture extends CroogoTestFixture
+class MovieFixture extends VamshopTestFixture
 {
 
 /**

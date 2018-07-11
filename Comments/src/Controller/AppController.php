@@ -1,20 +1,20 @@
 <?php
 
-namespace Croogo\Comments\Controller;
+namespace Vamshop\Comments\Controller;
 
-use Croogo\Core\Controller\AppController as CroogoController;
+use Vamshop\Core\Controller\AppController as VamshopController;
 
 /**
  * Comments Controller
  *
  * @category Comments.Controller
- * @package  Croogo.Comments.Controller
+ * @package  Vamshop.Comments.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class AppController extends CroogoController
+class AppController extends VamshopController
 {
 
 }

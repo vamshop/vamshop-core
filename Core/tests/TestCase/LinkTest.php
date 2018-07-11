@@ -1,17 +1,17 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase;
+namespace Vamshop\Core\Test\TestCase;
 
 use Cake\TestSuite\TestCase;
-use Croogo\Core\Link;
+use Vamshop\Core\Link;
 
 class LinkTest extends TestCase
 {
     public function testCreateFromLinkString()
     {
-        $link = Link::createFromLinkString('plugin:Croogo%2FNodes/controller:Nodes/action:promoted');
+        $link = Link::createFromLinkString('plugin:Vamshop%2FNodes/controller:Nodes/action:promoted');
 
-        $this->assertEquals('Croogo/Nodes', $link['plugin']);
+        $this->assertEquals('Vamshop/Nodes', $link['plugin']);
         $this->assertEquals('Nodes', $link['controller']);
         $this->assertEquals('promoted', $link['action']);
     }
@@ -19,24 +19,24 @@ class LinkTest extends TestCase
     public function testToLinkString()
     {
         $link = new Link([
-            'plugin' => 'Croogo/Nodes',
+            'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
             'action' => 'promoted'
         ]);
 
-        $this->assertEquals('plugin:Croogo%2FNodes/controller:Nodes/action:promoted', $link->toLinkString());
+        $this->assertEquals('plugin:Vamshop%2FNodes/controller:Nodes/action:promoted', $link->toLinkString());
     }
 
     public function testGetUrl()
     {
         $link = new Link([
-            'plugin' => 'Croogo/Nodes',
+            'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
             'action' => 'promoted'
         ]);
 
         $this->assertEquals([
-            'plugin' => 'Croogo/Nodes',
+            'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
             'action' => 'promoted'
         ], $link->getUrl());
@@ -49,12 +49,12 @@ class LinkTest extends TestCase
     public function testToString()
     {
         $link = new Link([
-            'plugin' => 'Croogo/Nodes',
+            'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
             'action' => 'promoted'
         ]);
 
-        $this->assertEquals('plugin:Croogo%2FNodes/controller:Nodes/action:promoted', (string)$link);
+        $this->assertEquals('plugin:Vamshop%2FNodes/controller:Nodes/action:promoted', (string)$link);
 
         $linkExample = new Link('http://example.com');
 
@@ -64,13 +64,13 @@ class LinkTest extends TestCase
     public function testObjectProperties()
     {
         $link = new Link([
-            'plugin' => 'Croogo/Nodes',
+            'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
             'action' => 'promoted'
         ]);
 
         $this->assertNull($link->prefix);
-        $this->assertEquals('Croogo/Nodes', $link->plugin);
+        $this->assertEquals('Vamshop/Nodes', $link->plugin);
         $this->assertEquals('Nodes', $link->controller);
         $this->assertEquals('promoted', $link->action);
     }

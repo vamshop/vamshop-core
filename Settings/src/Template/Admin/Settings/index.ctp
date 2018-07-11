@@ -1,11 +1,11 @@
 <?php
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
 $this->Breadcrumbs
     ->add(__d('croogo', 'Settings'), array(
         'prefix' => 'admin',
-        'plugin' => 'Croogo/Settings',
+        'plugin' => 'Vamshop/Settings',
         'controller' => 'Settings',
         'action' => 'index',
     ));
@@ -27,20 +27,20 @@ $this->append('table-body');
     $rows = array();
     foreach ($settings as $setting):
         $actions = array();
-        $actions[] = $this->Croogo->adminRowAction('',
+        $actions[] = $this->Vamshop->adminRowAction('',
             array('controller' => 'Settings', 'action' => 'moveup', $setting->id),
             array('icon' =>$this->Theme->getIcon('move-up'), 'tooltip' => __d('croogo', 'Move up'))
         );
-        $actions[] = $this->Croogo->adminRowAction('',
+        $actions[] = $this->Vamshop->adminRowAction('',
             array('controller' => 'Settings', 'action' => 'movedown', $setting->id),
             array('icon' => $this->Theme->getIcon('move-down'), 'tooltip' => __d('croogo', 'Move down'))
         );
-        $actions[] = $this->Croogo->adminRowAction('',
+        $actions[] = $this->Vamshop->adminRowAction('',
             array('controller' => 'Settings', 'action' => 'edit', $setting->id),
             array('icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('croogo', 'Edit this item'))
         );
-        $actions[] = $this->Croogo->adminRowActions($setting->id);
-        $actions[] = $this->Croogo->adminRowAction('',
+        $actions[] = $this->Vamshop->adminRowActions($setting->id);
+        $actions[] = $this->Vamshop->adminRowAction('',
             array('controller' => 'Settings', 'action' => 'delete', $setting->id),
             array('icon' => $this->Theme->getIcon('delete'), 'tooltip' => __d('croogo', 'Remove this item')),
             __d('croogo', 'Are you sure?'));

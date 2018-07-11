@@ -1,9 +1,9 @@
 <?php
 
-namespace Croogo\Wysiwyg;
+namespace Vamshop\Wysiwyg;
 
 use Cake\Core\Configure;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 class Wysiwyg {
 
@@ -26,7 +26,7 @@ class Wysiwyg {
      */
     public static function setActions(array $config)
     {
-        return Croogo::mergeConfig('Wysiwyg.actions', $config, true);
+        return Vamshop::mergeConfig('Wysiwyg.actions', $config, true);
     }
 
 }

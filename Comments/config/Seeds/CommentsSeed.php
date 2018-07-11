@@ -9,10 +9,10 @@ class CommentsSeed extends AbstractSeed
         [
             'id' => '1',
             'parent_id' => null,
-            'model' => 'Croogo/Nodes.Nodes',
+            'model' => 'Vamshop/Nodes.Nodes',
             'foreign_key' => '1',
             'user_id' => '0',
-            'name' => 'Mr Croogo',
+            'name' => 'Mr Vamshop',
             'email' => 'email@example.com',
             'website' => 'http://www.vamshop.com',
             'ip' => '127.0.0.1',

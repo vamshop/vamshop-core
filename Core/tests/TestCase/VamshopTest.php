@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase;
+namespace Vamshop\Core\Test\TestCase;
 
 use Cake\Core\Configure;
 use Cake\Core\Plugin;
 use Cake\ORM\TableRegistry;
-use Croogo\Core\Croogo;
-use Croogo\Core\TestSuite\CroogoTestCase;
-use Croogo\Core\TestSuite\TestCase;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\TestSuite\VamshopTestCase;
+use Vamshop\Core\TestSuite\TestCase;
 
-class CroogoTest extends TestCase
+class VamshopTest extends TestCase
 {
 
     public $fixtures = [
@@ -27,22 +27,22 @@ class CroogoTest extends TestCase
     }
 
 /**
- * test Croogo::hookApiComponent
+ * test Vamshop::hookApiComponent
  */
     public function testHookApiComponent()
     {
         $hooks = Configure::read('Hook.controller_properties');
         Configure::write('Hook.controller_properties', []);
 
-        Croogo::hookApiComponent('Croogo/Example.Example', 'Example.ExampleApi');
-        Croogo::hookApiComponent('Croogo/Example.Example', [
+        Vamshop::hookApiComponent('Vamshop/Example.Example', 'Example.ExampleApi');
+        Vamshop::hookApiComponent('Vamshop/Example.Example', [
             'Users.UserApi' => [
                 'priority' => 2,
             ],
         ]);
 
         $expected = [
-            'Croogo\Example\Controller\ExampleController' => [
+            'Vamshop\Example\Controller\ExampleController' => [
                 '_apiComponents' => [
                     'Example.ExampleApi' => [
                         'priority' => 8,

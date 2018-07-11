@@ -12,7 +12,7 @@ class AttachmentTypeSeed extends AbstractSeed
                 'id' => 3,
                 'title' => 'Attachment',
                 'alias' => 'attachment',
-                'plugin' => 'Croogo/FileManager',
+                'plugin' => 'Vamshop/FileManager',
                 'updated' => date('Y-m-d'),
                 'created' => date('Y-m-d'),
             ],

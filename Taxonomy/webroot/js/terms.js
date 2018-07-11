@@ -34,9 +34,9 @@ Terms.slug = function() {
  * @return void
  */
 $(document).ready(function() {
-	if (Croogo.params.controller == 'terms') {
+	if (Vamshop.params.controller == 'terms') {
 		Terms.documentReady();
-		if (Croogo.params.action == 'admin_add') {
+		if (Vamshop.params.action == 'admin_add') {
 			Terms.slug();
 		}
 	}

@@ -1,6 +1,6 @@
 <?php
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
 $this->assign('title', __d('croogo', 'File Manager'));
 $this->Breadcrumbs->add(__d('croogo', 'File Manager'), $this->request->getRequestTarget());
@@ -20,7 +20,7 @@ $this->Breadcrumbs->add(__d('croogo', 'File Manager'), $this->request->getReques
 </div>
 <?php $this->end() ?>
 
-<?= $this->element('Croogo/FileManager.admin/breadcrumbs') ?>
+<?= $this->element('Vamshop/FileManager.admin/breadcrumbs') ?>
 
 <div class="directory-content">
     <table class="table table-striped">
@@ -77,20 +77,20 @@ $this->Breadcrumbs->add(__d('croogo', 'File Manager'), $this->request->getReques
             else:
                 $linkFile = $this->FileManager->linkFile($file, $fullpath);
                 $actions[] = $this->FileManager->link(__d('croogo', 'Edit'), [
-                        'plugin' => 'Croogo/FileManager',
+                        'plugin' => 'Vamshop/FileManager',
                         'controller' => 'FileManager',
                         'action' => 'edit_file',
                     ], $fullpath);
             endif;
             if ($this->FileManager->inPath($deletablePaths, $fullpath)) {
                 $actions[] = $this->FileManager->link(__d('croogo', 'Delete'), [
-                    'plugin' => 'Croogo/FileManager',
+                    'plugin' => 'Vamshop/FileManager',
                     'controller' => 'FileManager',
                     'action' => 'delete_file',
                 ], $fullpath);
             }
             $actions[] = $this->FileManager->link(__d('croogo', 'Rename'), [
-                'plugin' => 'Croogo/FileManager',
+                'plugin' => 'Vamshop/FileManager',
                 'controller' => 'FileManager',
                 'action' => 'rename',
             ], $fullpath);

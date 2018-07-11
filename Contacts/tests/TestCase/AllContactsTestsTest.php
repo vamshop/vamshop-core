@@ -1,7 +1,7 @@
 <?php
-namespace Croogo\Contacts\Test\TestCase;
+namespace Vamshop\Contacts\Test\TestCase;
 
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 
 class AllContactsTestsTest extends PHPUnit_Framework_TestSuite
 {

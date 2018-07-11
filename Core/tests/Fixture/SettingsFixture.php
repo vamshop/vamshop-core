@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Core\Test\Fixture;
+namespace Vamshop\Core\Test\Fixture;
 
-use Croogo\Core\TestSuite\CroogoTestFixture;
+use Vamshop\Core\TestSuite\VamshopTestFixture;
 
-class SettingsFixture extends CroogoTestFixture
+class SettingsFixture extends VamshopTestFixture
 {
     public $fields = [
         'id' => ['type' => 'integer', 'null' => false, 'default' => null],
@@ -27,7 +27,7 @@ class SettingsFixture extends CroogoTestFixture
         [
             'id' => 6,
             'key' => 'Site.title',
-            'value' => 'Croogo - Test',
+            'value' => 'Vamshop - Test',
             'title' => '',
             'description' => '',
             'input_type' => '',
@@ -82,7 +82,7 @@ class SettingsFixture extends CroogoTestFixture
         [
             'id' => 13,
             'key' => 'Meta.keywords',
-            'value' => 'croogo, Croogo',
+            'value' => 'croogo, Vamshop',
             'title' => '',
             'description' => '',
             'input_type' => 'textarea',
@@ -93,7 +93,7 @@ class SettingsFixture extends CroogoTestFixture
         [
             'id' => 14,
             'key' => 'Meta.description',
-            'value' => 'Croogo - A CakePHP powered Content Management System',
+            'value' => 'Vamshop - A CakePHP powered Content Management System',
             'title' => '',
             'description' => '',
             'input_type' => 'textarea',
@@ -104,7 +104,7 @@ class SettingsFixture extends CroogoTestFixture
         [
             'id' => 15,
             'key' => 'Meta.generator',
-            'value' => 'Croogo - Content Management System',
+            'value' => 'Vamshop - Content Management System',
             'title' => '',
             'description' => '',
             'input_type' => '',
@@ -159,7 +159,7 @@ class SettingsFixture extends CroogoTestFixture
         [
             'id' => 20,
             'key' => 'Site.theme',
-            'value' => 'Croogo/Core',
+            'value' => 'Vamshop/Core',
             'title' => '',
             'description' => '',
             'input_type' => '',
@@ -269,7 +269,7 @@ class SettingsFixture extends CroogoTestFixture
         [
             'id' => 32,
             'key' => 'Hook.bootstraps',
-            'value' => 'Croogo/Settings,Croogo/Comments,Croogo/Contacts,Croogo/Nodes,Croogo/Meta,Croogo/Menus,Croogo/Users,Croogo/Blocks,Croogo/Taxonomy,Croogo/FileManager',
+            'value' => 'Vamshop/Settings,Vamshop/Comments,Vamshop/Contacts,Vamshop/Nodes,Vamshop/Meta,Vamshop/Menus,Vamshop/Users,Vamshop/Blocks,Vamshop/Taxonomy,Vamshop/FileManager',
             'title' => '',
             'description' => '',
             'input_type' => '',
@@ -291,7 +291,7 @@ class SettingsFixture extends CroogoTestFixture
         [
             'id' => 34,
             'key' => 'Site.acl_plugin',
-            'value' => 'Croogo/Acl',
+            'value' => 'Vamshop/Acl',
             'title' => 'Acl Plugin',
             'description' => '',
             'input_type' => '',
@@ -301,9 +301,9 @@ class SettingsFixture extends CroogoTestFixture
         ],
         [
             'id' => 35,
-            'key' => 'Croogo.installed',
+            'key' => 'Vamshop.installed',
             'value' => '1',
-            'title' => 'Whether Croogo is installed',
+            'title' => 'Whether Vamshop is installed',
             'description' => '',
             'input_type' => '',
             'editable' => 0,
@@ -313,7 +313,7 @@ class SettingsFixture extends CroogoTestFixture
         [
             'id' => 36,
             'key' => 'Site.admin_theme',
-            'value' => 'Croogo/Core',
+            'value' => 'Vamshop/Core',
             'title' => '',
             'description' => '',
             'input_type' => '',

@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core;
+namespace Vamshop\Core;
 
 use Cake\Core\Configure;
 use Cake\Database\Exception\MissingConnectionException;
@@ -18,7 +18,7 @@ use Cake\Utility\Inflector;
  * NOTE: Do not use this class as a substitute of Router class.
  * Use it only for Router::connect()
  *
- * @package  Croogo.Croogo.Lib
+ * @package  Vamshop.Vamshop.Lib
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -32,7 +32,7 @@ class Router extends CakeRouter
  */
     public static function build(RouteBuilder $builder, $path, $defaults, $options = [])
     {
-        if (Plugin::loaded('Croogo/Translate')) {
+        if (Plugin::loaded('Vamshop/Translate')) {
             $languages = Configure::read('I18n.languages');
             $i18nPath = '/:lang' . $path;
             $i18nOptions = array_merge($options, ['lang' => implode('|', $languages)]);
@@ -56,7 +56,7 @@ class Router extends CakeRouter
         if (empty($request['api']) || empty($request['prefix'])) {
             return false;
         }
-        if ($request['api'] !== Configure::read('Croogo.Api.path')) {
+        if ($request['api'] !== Configure::read('Vamshop.Api.path')) {
             return false;
         }
         return true;
@@ -94,7 +94,7 @@ class Router extends CakeRouter
     {
         $options = array_merge([
             'connectOptions' => [
-                'Croogo\Core\Routing\Route\ApiRoute',
+                'Vamshop\Core\Routing\Route\ApiRoute',
             ],
         ], $options);
 
@@ -109,7 +109,7 @@ class Router extends CakeRouter
  */
     public static function localize()
     {
-        if (Plugin::loaded('Croogo/Translate')) {
+        if (Plugin::loaded('Vamshop/Translate')) {
             static::connect('/:locale/:plugin/:controller/:action/*', [], ['locale' => '[a-z]{3}']);
             static::connect('/:locale/:controller/:action/*', [], ['locale' => '[a-z]{3}']);
         }
@@ -124,19 +124,19 @@ class Router extends CakeRouter
     public static function contentType($alias, $routeBuilder)
     {
         static::build($routeBuilder, '/' . $alias, [
-            'plugin' => 'Croogo/Nodes', 'controller' => 'Nodes',
+            'plugin' => 'Vamshop/Nodes', 'controller' => 'Nodes',
             'action' => 'index', 'type' => $alias
         ]);
         static::build($routeBuilder, '/' . $alias . '/archives/*', [
-            'plugin' => 'Croogo/Nodes', 'controller' => 'Nodes',
+            'plugin' => 'Vamshop/Nodes', 'controller' => 'Nodes',
             'action' => 'index', 'type' => $alias
         ]);
         static::build($routeBuilder, '/' . $alias . '/:slug', [
-            'plugin' => 'Croogo/Nodes', 'controller' => 'Nodes',
+            'plugin' => 'Vamshop/Nodes', 'controller' => 'Nodes',
             'action' => 'view', 'type' => $alias
         ]);
         static::build($routeBuilder, '/' . $alias . '/term/:slug/*', [
-            'plugin' => 'Croogo/Nodes', 'controller' => 'Nodes',
+            'plugin' => 'Vamshop/Nodes', 'controller' => 'Nodes',
             'action' => 'term', 'type' => $alias
         ]);
     }
@@ -149,7 +149,7 @@ class Router extends CakeRouter
     public static function routableContentTypes($routeBuilder)
     {
         try {
-            $types = TableRegistry::get('Croogo/Taxonomy.Types')->find('all', [
+            $types = TableRegistry::get('Vamshop/Taxonomy.Types')->find('all', [
                 'cache' => [
                     'name' => 'types',
                     'config' => 'croogo_types',

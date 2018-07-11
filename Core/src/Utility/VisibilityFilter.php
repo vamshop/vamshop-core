@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Utility;
+namespace Vamshop\Core\Utility;
 
 use Cake\Collection\CollectionInterface;
 use Cake\Datasource\ResultSetInterface;
@@ -10,14 +10,14 @@ use Cake\ORM\Entity;
 use Cake\ORM\Query;
 use Cake\Utility\Hash;
 use Cake\Routing\Router;
-use Croogo\Blocks\Model\Entity\Block;
+use Vamshop\Blocks\Model\Entity\Block;
 use Psr\Log\LogLevel;
 
 /**
  * VisibilityFilter
  *
  * @author   Rachman Chavik <rchavik@xintesa.com>
- * @package  Croogo.Croogo.Lib.Utility
+ * @package  Vamshop.Vamshop.Lib.Utility
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */

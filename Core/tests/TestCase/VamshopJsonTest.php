@@ -1,10 +1,10 @@
 <?php
-namespace Croogo\Core\Test\TestCase;
+namespace Vamshop\Core\Test\TestCase;
 
-use Croogo\Core\CroogoJson;
-use Croogo\Core\TestSuite\CroogoTestCase;
+use Vamshop\Core\VamshopJson;
+use Vamshop\Core\TestSuite\VamshopTestCase;
 
-class CroogoJsonTest extends CroogoTestCase
+class VamshopJsonTest extends VamshopTestCase
 {
 
     public $fixtures = [
@@ -34,7 +34,7 @@ class CroogoJsonTest extends CroogoTestCase
 \s+"spam": "eggs"
 }
 END;
-        $result = CroogoJson::stringify($data, $options);
+        $result = VamshopJson::stringify($data, $options);
         $this->assertRegExp($expected, $result);
 
         $data = [
@@ -70,7 +70,7 @@ END;
 \s+}
 }
 END;
-        $result = CroogoJson::stringify($data, $options);
+        $result = VamshopJson::stringify($data, $options);
         $this->assertRegExp($expected, $result);
     }
 }

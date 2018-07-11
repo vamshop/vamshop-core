@@ -1,13 +1,13 @@
 <?php
 
-namespace Croogo\Blocks\Test\TestCase\Controller;
+namespace Vamshop\Blocks\Test\TestCase\Controller;
 
 use Cake\ORM\TableRegistry;
-use Croogo\Core\Status;
-use Croogo\Core\TestSuite\IntegrationTestCase;
+use Vamshop\Core\Status;
+use Vamshop\Core\TestSuite\IntegrationTestCase;
 
 /**
- * @property \Croogo\Blocks\Model\Table\BlocksTable Blocks
+ * @property \Vamshop\Blocks\Model\Table\BlocksTable Blocks
  */
 class BlocksControllerTest extends IntegrationTestCase
 {
@@ -43,7 +43,7 @@ class BlocksControllerTest extends IntegrationTestCase
 
         $this->user('admin');
 
-        $this->Blocks = TableRegistry::get('Croogo/Blocks.Blocks');
+        $this->Blocks = TableRegistry::get('Vamshop/Blocks.Blocks');
     }
 
     public function testAdminIndex()

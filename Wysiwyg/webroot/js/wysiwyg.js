@@ -4,41 +4,41 @@
  *
  * This makes sure there is consistency among multiple RTE plugins.
  */
-if (typeof Croogo.Wysiwyg == 'undefined') {
-	// Croogo.uploadsPath and Croogo.attachmentsPath is set from Helper anyways
-	Croogo.Wysiwyg = {
-		uploadsPath: Croogo.basePath + 'uploads/',
-		attachmentsPath: Croogo.basePath + 'file_manager/attachments/browse'
+if (typeof Vamshop.Wysiwyg == 'undefined') {
+	// Vamshop.uploadsPath and Vamshop.attachmentsPath is set from Helper anyways
+	Vamshop.Wysiwyg = {
+		uploadsPath: Vamshop.basePath + 'uploads/',
+		attachmentsPath: Vamshop.basePath + 'file_manager/attachments/browse'
 	};
 }
 
 /**
  * This function is called when you select an image file to be inserted in your editor.
  */
-Croogo.Wysiwyg.choose = function(url, title, description) {
+Vamshop.Wysiwyg.choose = function(url, title, description) {
 
 };
 
 /**
  * Returns boolean value to indicate an editor within the page has been modified
  */
-Croogo.Wysiwyg.isDirty = function() {
+Vamshop.Wysiwyg.isDirty = function() {
 }
 
 /**
  * Reset dirty indicator for all editors in the page
  */
-Croogo.Wysiwyg.resetDirty = function() {
+Vamshop.Wysiwyg.resetDirty = function() {
 }
 
 /**
  * This function is responsible for integrating attachments/file browser in the editor.
  */
-Croogo.Wysiwyg.browser = function() {
+Vamshop.Wysiwyg.browser = function() {
 };
 
 if (typeof jQuery != 'undefined') {
 	$(document).ready(function() {
-		Croogo.Wysiwyg.browser();
+		Vamshop.Wysiwyg.browser();
 	});
 }

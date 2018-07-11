@@ -1,9 +1,9 @@
 <?php
 
-namespace Croogo\Menus\Test\TestCase\Controller\Component;
+namespace Vamshop\Menus\Test\TestCase\Controller\Component;
 
 use Cake\Controller\Controller;
-use Croogo\TestSuite\CroogoControllerTestCase;
+use Vamshop\TestSuite\VamshopControllerTestCase;
 
 class MenusTestController extends Controller
 {
@@ -11,7 +11,7 @@ class MenusTestController extends Controller
     public $components = [
         'Auth',
         'Session',
-        'Croogo.Croogo',
+        'Vamshop.Vamshop',
         'Blocks.Blocks',
         'Menus.Menus',
     ];
@@ -27,7 +27,7 @@ class MenusTestController extends Controller
     }
 }
 
-class MenusComponentTest extends CroogoControllerTestCase
+class MenusComponentTest extends VamshopControllerTestCase
 {
 
     public $fixtures = [

@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase\Controller\Component;
+namespace Vamshop\Core\Test\TestCase\Controller\Component;
 
 use App\Controller\AppController;
 use Cake\Controller\Component;
@@ -9,11 +9,11 @@ use Cake\Controller\Controller;
 use Cake\Event\Event;
 use Cake\Network\Request;
 use Cake\Network\Response;
-use Croogo\Core\Controller\Component\CroogoComponent;
-use Croogo\Core\TestSuite\CroogoTestCase;
-use Croogo\Core\TestSuite\TestCase;
+use Vamshop\Core\Controller\Component\VamshopComponent;
+use Vamshop\Core\TestSuite\VamshopTestCase;
+use Vamshop\Core\TestSuite\TestCase;
 
-class MockCroogoComponent extends CroogoComponent
+class MockVamshopComponent extends VamshopComponent
 {
 
     public function startup(Event $event)
@@ -22,7 +22,7 @@ class MockCroogoComponent extends CroogoComponent
     }
 }
 
-class CroogoComponentTest extends TestCase
+class VamshopComponentTest extends TestCase
 {
 
     public $fixtures = [
@@ -53,14 +53,14 @@ class CroogoComponentTest extends TestCase
             ->getMock();
 
         $registry = new ComponentRegistry($this->controller);
-        $this->component = new CroogoComponent($registry);
+        $this->component = new VamshopComponent($registry);
 
 //		$this->Controller = new Controller(new Request(), new Response());
 ////		$this->Controller->constructClasses();
-//		$this->Controller->Croogo = new MockCroogoComponent($this->Controller->components());
+//		$this->Controller->Vamshop = new MockVamshopComponent($this->Controller->components());
 //		$this->Controller->components()->unload('Blocks');
 //		$this->Controller->components()->unload('Menus');
-//		$this->Controller->components()->set('Croogo', $this->Controller->Croogo);
+//		$this->Controller->components()->set('Vamshop', $this->Controller->Vamshop);
 //		$this->Controller->startupProcess();
     }
 
@@ -70,20 +70,20 @@ class CroogoComponentTest extends TestCase
 
         $Aco = ClassRegistry::init('Aco');
 
-        $this->Controller->Croogo->addAco('CroogoTestController');
-        $parent = $Aco->findByAlias('CroogoTestController');
+        $this->Controller->Vamshop->addAco('VamshopTestController');
+        $parent = $Aco->findByAlias('VamshopTestController');
         $this->assertNotEmpty($parent);
 
-        $this->Controller->Croogo->addAco('CroogoTestController/index');
+        $this->Controller->Vamshop->addAco('VamshopTestController/index');
         $child = $Aco->findByParentId($parent['Aco']['id']);
         $this->assertNotEmpty($child);
 
-        $this->Controller->Croogo->removeAco('CroogoTestController/index');
+        $this->Controller->Vamshop->removeAco('VamshopTestController/index');
         $child = $Aco->findByParentId($parent['Aco']['id']);
         $this->assertEmpty($child);
 
-        $this->Controller->Croogo->removeAco('CroogoTestController');
-        $parent = $Aco->findByAlias('CroogoTestController');
+        $this->Controller->Vamshop->removeAco('VamshopTestController');
+        $parent = $Aco->findByAlias('VamshopTestController');
         $this->assertEmpty($parent);
     }
 
@@ -99,9 +99,9 @@ class CroogoComponentTest extends TestCase
         $this->controller->expects($this->once())
             ->method('redirect')
             ->with($this->equalTo($expected));
-        $CroogoComponent = new CroogoComponent(new ComponentRegistry());
-        $CroogoComponent->startup(new Event(null, $this->controller));
-        $CroogoComponent->redirect($url, null, true, $indexUrl);
+        $VamshopComponent = new VamshopComponent(new ComponentRegistry());
+        $VamshopComponent->startup(new Event(null, $this->controller));
+        $VamshopComponent->redirect($url, null, true, $indexUrl);
     }
 
 /**

@@ -39,7 +39,7 @@ require ROOT . '/vendor/autoload.php';
 require CORE_PATH . 'config/bootstrap.php';
 
 Cake\Core\Configure::write('App', [
-	'namespace' => 'Croogo\Core\Test\App',
+	'namespace' => 'Vamshop\Core\Test\App',
 	'paths' => [
 		'plugins' => [APP . 'plugins' . DS],
 	]
@@ -76,7 +76,7 @@ Cake\Core\Configure::write('Session', [
 	'defaults' => 'php'
 ]);
 
-Cake\Core\Plugin::load('Croogo/Core', ['path' => ROOT . DS, 'autoload' => true]);
+Cake\Core\Plugin::load('Vamshop/Core', ['path' => ROOT . DS, 'autoload' => true]);
 
 Cake\Routing\DispatcherFactory::add('Routing');
 Cake\Routing\DispatcherFactory::add('ControllerFactory');

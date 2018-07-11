@@ -1,13 +1,13 @@
 <?php
 
-namespace Croogo\Core\Shell;
+namespace Vamshop\Core\Shell;
 
 use Cake\Console\Shell;
 
 /**
- * Base class for Croogo Shell
+ * Base class for Vamshop Shell
  *
- * @package Croogo.Console
+ * @package Vamshop.Console
  */
 class AppShell extends Shell
 {

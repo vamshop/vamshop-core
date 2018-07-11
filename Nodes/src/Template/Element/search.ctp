@@ -5,7 +5,7 @@ $this->Form->unlockField('q');
 echo $this->Form->create(false, [
     'url' => [
         'prefix' => false,
-        'plugin' => 'Croogo/Nodes',
+        'plugin' => 'Vamshop/Nodes',
         'controller' => 'Nodes',
         'action' => 'search'
     ],

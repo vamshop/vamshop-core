@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\FileManager\Model\Table;
+namespace Vamshop\FileManager\Model\Table;
 
 use Cake\Core\Configure;
 use Cake\Datasource\EntityInterface;
@@ -8,13 +8,13 @@ use Cake\Log\LogTrait;
 use Cake\Utility\Hash;
 use Cake\Utility\Text;
 use Cake\Validation\Validator;
-use Croogo\Nodes\Model\Table\NodesTable;
+use Vamshop\Nodes\Model\Table\NodesTable;
 
 /**
  * Attachment Model
  *
  * @category FileManager.Model
- * @package  Croogo.FileManager.Model
+ * @package  Vamshop.FileManager.Model
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -42,7 +42,7 @@ class AttachmentsTable extends NodesTable
     public function initialize(array $config)
     {
         $this->table('nodes');
-        $this->addBehavior('Croogo/Core.Tree', [
+        $this->addBehavior('Vamshop/Core.Tree', [
             'scope' => [
                 'type' => $this->type,
             ],

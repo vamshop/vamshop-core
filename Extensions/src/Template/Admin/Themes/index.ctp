@@ -2,16 +2,16 @@
 
 use Cake\Core\Configure;
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
 $this->assign('title', __d('croogo', 'Themes'));
 
 $this->Breadcrumbs->add(__d('croogo', 'Extensions'),
-        ['plugin' => 'Croogo/Extensions', 'controller' => 'Plugins', 'action' => 'index'])
+        ['plugin' => 'Vamshop/Extensions', 'controller' => 'Plugins', 'action' => 'index'])
     ->add(__d('croogo', 'Themes'), $this->request->getUri()->getPath());
 
 $this->start('action-buttons');
-echo $this->Croogo->adminAction(__d('croogo', 'Upload'), ['action' => 'add'], ['class' => 'btn btn-success']);
+echo $this->Vamshop->adminAction(__d('croogo', 'Upload'), ['action' => 'add'], ['class' => 'btn btn-success']);
 $this->end() ?>
 
 <div class="<?= $this->Theme->getCssClass('row') ?>">
@@ -68,7 +68,7 @@ $this->end() ?>
                 endif;
                 echo '<div class="content ' . $this->Theme->getCssClass('row') . '">';
                 if (!empty($theme['screenshot'])):
-                    $dataUri = $this->Croogo->dataUri($themeName, $theme['screenshot']);
+                    $dataUri = $this->Vamshop->dataUri($themeName, $theme['screenshot']);
                     $thumbnail = '<img class="img-thumbnail" src="' . $dataUri . '">';
                     $image = sprintf('<a href="%s" %s>%s</a>',
                         $dataUri,

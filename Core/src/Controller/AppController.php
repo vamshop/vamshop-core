@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Controller;
+namespace Vamshop\Core\Controller;
 
 use Cake\Controller\ErrorController;
 use Cake\Controller\Exception\MissingActionException;
@@ -14,14 +14,14 @@ use Cake\Network\Response;
 use Cake\Utility\Hash;
 
 use Cake\View\Exception\MissingTemplateException;
-use Croogo\Core\Croogo;
-use Croogo\Extensions\CroogoTheme;
+use Vamshop\Core\Vamshop;
+use Vamshop\Extensions\VamshopTheme;
 
 /**
- * Croogo App Controller
+ * Vamshop App Controller
  *
- * @category Croogo.Controller
- * @package  Croogo.Croogo.Controller
+ * @category Vamshop.Controller
+ * @package  Vamshop.Vamshop.Controller
  * @version  1.5
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -36,7 +36,7 @@ class AppController extends \App\Controller\AppController implements HookableCom
      * List of registered API Components
      *
      * These components are typically hooked into the application during bootstrap.
-     * @see Croogo::hookApiComponent
+     * @see Vamshop::hookApiComponent
      */
     protected $_apiComponents = [];
 
@@ -68,10 +68,10 @@ class AppController extends \App\Controller\AppController implements HookableCom
         parent::__construct($request, $response, $name);
         if ($request) {
             $request->addDetector('api', [
-                'callback' => ['Croogo\\Core\\Router', 'isApiRequest'],
+                'callback' => ['Vamshop\\Core\\Router', 'isApiRequest'],
             ]);
             $request->addDetector('whitelisted', [
-                'Croogo\\Core\\Router', 'isWhitelistedRequest',
+                'Vamshop\\Core\\Router', 'isWhitelistedRequest',
             ]);
         }
     }
@@ -94,7 +94,7 @@ class AppController extends \App\Controller\AppController implements HookableCom
 
         if (empty($this->viewBuilder()->className()) || $this->viewBuilder()->className() === 'App\View\AjaxView') {
             unset($this->viewClass);
-            $this->viewBuilder()->className('Croogo/Core.Croogo');
+            $this->viewBuilder()->className('Vamshop/Core.Vamshop');
         }
     }
 
@@ -104,7 +104,7 @@ class AppController extends \App\Controller\AppController implements HookableCom
     public function render($view = null, $layout = null)
     {
         if ($this->request->param('prefix') === 'admin') {
-            Croogo::dispatchEvent('Croogo.setupAdminData', $this);
+            Vamshop::dispatchEvent('Vamshop.setupAdminData', $this);
         }
 
         // Just render normal when we aren't in a edit or add action
@@ -176,7 +176,7 @@ class AppController extends \App\Controller\AppController implements HookableCom
                 $this->response->statusCode(503);
                 $this->set('title_for_layout', __d('croogo', 'Site down for maintenance'));
                 $this->viewBuilder()->templatePath('Maintenance');
-                $this->render('Croogo/Core.blank');
+                $this->render('Vamshop/Core.blank');
             }
         }
 
@@ -238,7 +238,7 @@ class AppController extends \App\Controller\AppController implements HookableCom
                 return;
             }
             if ($this->request->param('controller')) {
-                $this->loadComponent('Croogo/Acl.RowLevelAcl');
+                $this->loadComponent('Vamshop/Acl.RowLevelAcl');
             }
         }
     }
@@ -250,14 +250,14 @@ class AppController extends \App\Controller\AppController implements HookableCom
         ]);
     }
 
-    public function _loadCroogoComponents(array $components)
+    public function _loadVamshopComponents(array $components)
     {
         foreach ($components as $component => $options) {
             if (is_string($options)) {
                 $component = $options;
                 $options = [];
             }
-            $this->loadComponent('Croogo/Core.' . $component, $options);
+            $this->loadComponent('Vamshop/Core.' . $component, $options);
         }
     }
 }

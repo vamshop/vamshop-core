@@ -45,7 +45,7 @@ Nodes.confirmProcess = function (event) {
  * @return void
  */
 $(function () {
-  if (Croogo.params.controller == 'Nodes') {
+  if (Vamshop.params.controller == 'Nodes') {
     Nodes.documentReady();
   }
 });

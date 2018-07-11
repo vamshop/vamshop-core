@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Taxonomy\Test\Fixture;
+namespace Vamshop\Taxonomy\Test\Fixture;
 
-use Croogo\Core\TestSuite\CroogoTestFixture;
+use Vamshop\Core\TestSuite\VamshopTestFixture;
 
-class TermFixture extends CroogoTestFixture
+class TermFixture extends VamshopTestFixture
 {
 
     public $name = 'Term';

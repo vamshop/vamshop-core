@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Settings\Setting;
+namespace Vamshop\Settings\Setting;
 
 /**
  * Class TimezonesSetting

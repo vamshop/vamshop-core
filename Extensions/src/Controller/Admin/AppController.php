@@ -1,21 +1,21 @@
 <?php
 
-namespace Croogo\Extensions\Controller\Admin;
+namespace Vamshop\Extensions\Controller\Admin;
 
 use Cake\Event\Event;
-use Croogo\Core\Controller\Admin\AppController as CroogoController;
+use Vamshop\Core\Controller\Admin\AppController as VamshopController;
 
 /**
  * Extensions Admin Controller
  *
  * @category Controller
- * @package  Croogo.Extensions.Controller
+ * @package  Vamshop.Extensions.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class AppController extends CroogoController
+class AppController extends VamshopController
 {
 /**
  * beforeFilter

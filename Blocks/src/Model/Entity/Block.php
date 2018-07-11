@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Blocks\Model\Entity;
+namespace Vamshop\Blocks\Model\Entity;
 
 use Cake\ORM\Behavior\Translate\TranslateTrait;
 use Cake\ORM\Entity;
-use Croogo\Acl\Traits\RowLevelAclTrait;
+use Vamshop\Acl\Traits\RowLevelAclTrait;
 
 class Block extends Entity
 {

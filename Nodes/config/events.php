@@ -1,9 +1,9 @@
 <?php
 
-namespace Croogo\Nodes\Config;
+namespace Vamshop\Nodes\Config;
 
 return [
     'EventHandlers' => [
-        'Croogo/Nodes.NodesEventHandler',
+        'Vamshop/Nodes.NodesEventHandler',
     ],
 ];

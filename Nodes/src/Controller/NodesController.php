@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Nodes\Controller;
+namespace Vamshop\Nodes\Controller;
 
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
@@ -10,14 +10,14 @@ use Cake\I18n\I18n;
 use Cake\Network\Exception\NotFoundException;
 use Cake\ORM\Query;
 use Cake\Utility\Inflector;
-use Croogo\Nodes\Model\Table\NodesTable;
+use Vamshop\Nodes\Model\Table\NodesTable;
 
 /**
  * Nodes Controller
  *
  * @property NodesTable Nodes
  * @category Nodes.Controller
- * @package  Croogo.Nodes
+ * @package  Vamshop.Nodes
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -41,8 +41,8 @@ class NodesController extends AppController
             'limit' => Configure::read('Reading.nodes_per_page'),
         ]);
         $this->loadComponent('Search.Prg');
-        $this->loadComponent('Croogo/Core.BulkProcess');
-        $this->loadComponent('Croogo/Core.Recaptcha', [
+        $this->loadComponent('Vamshop/Core.BulkProcess');
+        $this->loadComponent('Vamshop/Core.Recaptcha', [
             'actions' => ['view']
         ]);
 
@@ -63,7 +63,7 @@ class NodesController extends AppController
         }
 
         $query = $this->Nodes->find('view', [
-            'roleId' => $this->Croogo->roleId()
+            'roleId' => $this->Vamshop->roleId()
         ]);
 
         if (!$this->request->query('limit')) {
@@ -92,7 +92,7 @@ class NodesController extends AppController
         }
 
         if ($this->usePaginationCache) {
-            $cacheNamePrefix = 'nodes_index_' . $this->Croogo->roleId() . '_' . $locale;
+            $cacheNamePrefix = 'nodes_index_' . $this->Vamshop->roleId() . '_' . $locale;
             if (isset($type)) {
                 $cacheNamePrefix .= '_' . $type->alias;
             }
@@ -118,7 +118,7 @@ class NodesController extends AppController
         $nodes = $this->paginate($query);
         $this->set(compact('type', 'nodes'));
         if ($type) {
-            $this->Croogo->viewFallback([
+            $this->Vamshop->viewFallback([
                 Inflector::camelize($type->alias, '-') . '/index',
             ]);
         }
@@ -153,7 +153,7 @@ class NodesController extends AppController
             $limit = Configure::read('Reading.nodes_per_page');
         }
 
-        $query = $this->Nodes->find('view', ['roleId' => $this->Croogo->roleId()]);
+        $query = $this->Nodes->find('view', ['roleId' => $this->Vamshop->roleId()]);
 
         if ($this->request->param('type')) {
             $cacheKeys = ['type', $locale, $this->request->param('type')];
@@ -178,7 +178,7 @@ class NodesController extends AppController
 
         if ($this->usePaginationCache) {
             $cacheNamePrefix = 'nodes_term_' .
-                $this->Croogo->roleId() .
+                $this->Vamshop->roleId() .
                 '_' .
                 $this->request->param('slug') .
                 '_' .
@@ -205,7 +205,7 @@ class NodesController extends AppController
 
         $this->set(compact('term', 'type', 'nodes'));
         $camelizedType = Inflector::camelize($type->alias, '-');
-        $this->Croogo->viewFallback([
+        $this->Vamshop->viewFallback([
             'term_' . $term->id,
             'term_' . $term->slug,
             $camelizedType . '/term_' . $term['Term']['slug'],
@@ -227,7 +227,7 @@ class NodesController extends AppController
             ->find('published')
             ->find('promoted')
             ->find('byAccess', [
-                'roleId' => $this->Croogo->roleId(),
+                'roleId' => $this->Vamshop->roleId(),
             ])
             ->find('search', ['search' => $this->request->query]);
 
@@ -255,7 +255,7 @@ class NodesController extends AppController
 
         $this->paginate = [
             'published',
-            'roleId' => $this->Croogo->roleId(),
+            'roleId' => $this->Vamshop->roleId(),
         ];
 
         $q = null;
@@ -285,7 +285,7 @@ class NodesController extends AppController
         $this->set(compact('q', 'nodes'));
         if (isset($type)) {
             $camelizedType = Inflector::camelize($type->alias, '-');
-            $this->Croogo->viewFallback([
+            $this->Vamshop->viewFallback([
                 $camelizedType . '/search',
             ]);
         }
@@ -315,7 +315,7 @@ class NodesController extends AppController
             $node = $this->Nodes->find('viewBySlug', [
                 'slug' => $this->request->param('slug'),
                 'type' => $this->request->param('type'),
-                'roleId' => $this->Croogo->roleId(),
+                'roleId' => $this->Vamshop->roleId(),
             ])
                 ->firstOrFail();
         } elseif ($id == null) {
@@ -323,7 +323,7 @@ class NodesController extends AppController
         } else {
             $node = $this->Nodes->find('viewById', [
                 'id' => $id,
-                'roleId' => $this->Croogo->roleId(),
+                'roleId' => $this->Vamshop->roleId(),
             ])
             ->firstOrFail();
             $cacheKeys = ['type', $locale, $node->type];
@@ -346,7 +346,7 @@ class NodesController extends AppController
         $this->set(compact('node', 'type'));
 
         $camelizedType = Inflector::camelize($type->alias, '-');
-        $this->Croogo->viewFallback([
+        $this->Vamshop->viewFallback([
             'view/node_' . $node->id,
             'view/' . str_replace('-', '_', $node->slug),
             $camelizedType . '/view',
@@ -359,11 +359,11 @@ class NodesController extends AppController
      * @param mixed $views The fallback views
      * @return string
      * @access protected
-     * @deprecated Use CroogoComponent::viewFallback()
+     * @deprecated Use VamshopComponent::viewFallback()
      */
     protected function _viewFallback($views)
     {
-        return $this->Croogo->viewFallback($views);
+        return $this->Vamshop->viewFallback($views);
     }
 
     /**

@@ -1,17 +1,17 @@
 <?php
 
 /**
- * Croogo Json utility
+ * Vamshop Json utility
  *
- * @package  Croogo.Croogo.Lib
+ * @package  Vamshop.Vamshop.Lib
  * @since    1.4.2
  * @author   Rachman Chavik <rchavik@xintesa.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-namespace Croogo\Core;
+namespace Vamshop\Core;
 
-class CroogoJson
+class VamshopJson
 {
 
 /**

@@ -1,12 +1,12 @@
 <?php
 
-namespace Croogo\Acl\Test\TestCase\View\Helper;
+namespace Vamshop\Acl\Test\TestCase\View\Helper;
 
 use Acl\View\Helper\AclHelper;
 use Cake\View\View;
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 
-class AclHelperTest extends CroogoTestCase
+class AclHelperTest extends VamshopTestCase
 {
 
     public $fixtures = [

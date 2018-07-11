@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Extensions;
+namespace Vamshop\Extensions;
 
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
@@ -10,20 +10,20 @@ use Cake\Filesystem\Folder;
 use Cake\ORM\TableRegistry;
 use Cake\Routing\Router;
 use Cake\Utility\Hash;
-use Croogo\Extensions\Exception\MissingThemeException;
+use Vamshop\Extensions\Exception\MissingThemeException;
 
 /**
- * CroogoTheme class
+ * VamshopTheme class
  *
  * @category Component
- * @package  Croogo.Extensions.Lib
+ * @package  Vamshop.Extensions.Lib
  * @version  1.4
  * @since    1.4
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class CroogoTheme
+class VamshopTheme
 {
 
     /**
@@ -40,7 +40,7 @@ class CroogoTheme
      */
     public function getThemes()
     {
-        return CroogoPlugin::instance()
+        return VamshopPlugin::instance()
             ->getPlugins('theme');
     }
 
@@ -120,26 +120,26 @@ class CroogoTheme
                     '' => [
                         'helpers' => [
                             'Html' => [
-                                'className' => 'Croogo/Core.CroogoHtml',
+                                'className' => 'Vamshop/Core.VamshopHtml',
                             ],
                             'Form' => [
-                                'className' => 'Croogo/Core.CroogoForm',
+                                'className' => 'Vamshop/Core.VamshopForm',
                             ],
                             'Paginator' => [
-                                'className' => 'Croogo/Core.CroogoPaginator',
+                                'className' => 'Vamshop/Core.VamshopPaginator',
                             ],
                         ],
                     ],
                     'admin' => [
                         'helpers' => [
                             'Html' => [
-                                'className' => 'Croogo/Core.CroogoHtml',
+                                'className' => 'Vamshop/Core.VamshopHtml',
                             ],
                             'Form' => [
-                                'className' => 'Croogo/Core.CroogoForm',
+                                'className' => 'Vamshop/Core.VamshopForm',
                             ],
                             'Paginator' => [
-                                'className' => 'Croogo/Core.CroogoPaginator',
+                                'className' => 'Vamshop/Core.VamshopPaginator',
                             ],
                             'Breadcrumbs'
                         ],
@@ -229,7 +229,7 @@ class CroogoTheme
         }
 
         Cache::delete('file_map', '_cake_core_');
-        $settings = TableRegistry::get('Croogo/Settings.Settings');
+        $settings = TableRegistry::get('Vamshop/Settings.Settings');
 
         return $settings->write('Site.theme', $theme);
     }
@@ -280,7 +280,7 @@ class CroogoTheme
         static $croogoTheme = null;
         static $themeData = [];
         if ($croogoTheme === null) {
-            $croogoTheme = new CroogoTheme();
+            $croogoTheme = new VamshopTheme();
         }
 
         if (empty($themeData[$theme])) {

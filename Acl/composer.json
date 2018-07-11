@@ -1,6 +1,6 @@
 {
     "name": "croogo/acl",
-    "description": "Croogo Acl Plugin",
+    "description": "Vamshop Acl Plugin",
     "require": {
         "cakephp/acl": "dev-master",
         "croogo/core": "^3.0.1"
@@ -8,14 +8,14 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Croogo Development Team",
+            "name": "Vamshop Development Team",
             "email": "team@vamshop.com"
         }
     ],
     "type": "cakephp-plugin",
     "autoload": {
         "psr-4": {
-            "Croogo\\Acl\\": "src"
+            "Vamshop\\Acl\\": "src"
         }
     },
     "minimum-stability": "dev"

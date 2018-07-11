@@ -1,26 +1,26 @@
 <?php
 
-namespace Croogo\Core\View\Helper;
+namespace Vamshop\Core\View\Helper;
 
 use BootstrapUI\View\Helper\HtmlHelper;
 use Cake\Event\Event;
 use Cake\I18n\I18n;
 use Cake\Utility\Hash;
 use Cake\View\View;
-use Croogo\Core\Status;
-use Croogo\Extensions\CroogoTheme;
+use Vamshop\Core\Status;
+use Vamshop\Extensions\VamshopTheme;
 
 /**
- * Croogo Html Helper
+ * Vamshop Html Helper
  *
- * @package Croogo.Croogo.View.Helper
+ * @package Vamshop.Vamshop.View.Helper
  */
-class CroogoHtmlHelper extends HtmlHelper
+class VamshopHtmlHelper extends HtmlHelper
 {
 
     public $helpers = [
         'Url',
-        'Croogo/Core.Theme',
+        'Vamshop/Core.Theme',
     ];
 
     /**
@@ -29,7 +29,7 @@ class CroogoHtmlHelper extends HtmlHelper
     public function __construct(View $View, $settings = [])
     {
         if ($View->theme) {
-            $themeConfig = CroogoTheme::config($View->theme);
+            $themeConfig = VamshopTheme::config($View->theme);
             $themeSettings = $themeConfig['settings'];
             $settings = Hash::merge($themeSettings, $settings);
         }

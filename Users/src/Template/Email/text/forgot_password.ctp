@@ -5,7 +5,7 @@ echo __d('croogo', 'Hello %s', $user->name) ?>,
 
 <?php
     $url = $this->Url->build([
-        'plugin' => 'Croogo/Users',
+        'plugin' => 'Vamshop/Users',
         'controller' => 'Users',
         'action' => 'reset',
         $user->username,

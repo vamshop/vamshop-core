@@ -1,2 +1,2 @@
 <?php
-namespace Croogo\Editors\Config;
+namespace Vamshop\Editors\Config;

@@ -3,9 +3,9 @@
 use Cake\Core\Configure;
 use Cake\Utility\Inflector;
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
-$plugin = 'Croogo/Nodes'; $controller = 'Nodes';
+$plugin = 'Vamshop/Nodes'; $controller = 'Nodes';
 $modelPath = $this->request->query('model');
 list($plugin, $model) = pluginSplit($modelPath);
 $controller = $model;
@@ -36,7 +36,7 @@ $this->start('action-buttons');
     $translateButton = $this->Html->link(
         __d('croogo', 'Translate in a new language'),
         array(
-            'plugin' => 'Croogo/Settings',
+            'plugin' => 'Vamshop/Settings',
             'controller' => 'Languages',
             'action' => 'select',
             '?' => [
@@ -56,9 +56,9 @@ $this->start('action-buttons');
             if ($languageAlias == Configure::read('App.defaultLocale')):
                 continue;
             endif;
-            $out .= $this->Croogo->adminAction($languageDisplay, array(
+            $out .= $this->Vamshop->adminAction($languageDisplay, array(
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Translate',
+                'plugin' => 'Vamshop/Translate',
                 'controller' => 'Translate',
                 'action' => 'edit',
                 '?' => [
@@ -99,7 +99,7 @@ $this->append('table-body');
     $rows = array();
     foreach ($translations->_translations as $locale => $entity):
         $actions = array();
-        $actions[] = $this->Croogo->adminRowAction('', array(
+        $actions[] = $this->Vamshop->adminRowAction('', array(
             'action' => 'edit',
             '?' => [
                 'id' => $id,
@@ -110,7 +110,7 @@ $this->append('table-body');
             'icon' => $this->Theme->getIcon('update'),
             'tooltip' => __d('croogo', 'Edit this item'),
         ));
-        $actions[] = $this->Croogo->adminRowAction('', array(
+        $actions[] = $this->Vamshop->adminRowAction('', array(
             'action' => 'delete',
             $id,
             urlencode($modelAlias),

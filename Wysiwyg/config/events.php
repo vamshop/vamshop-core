@@ -1,9 +1,9 @@
 <?php
 
-namespace Croogo\Wysiwyg\Config;
+namespace Vamshop\Wysiwyg\Config;
 
 return [
     'EventHandlers' => [
-        'Croogo/Wysiwyg.WysiwygEventHandler',
+        'Vamshop/Wysiwyg.WysiwygEventHandler',
     ],
 ];

@@ -1,21 +1,21 @@
 <?php
 
 use Cake\Core\App;
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
 $clearUrl = [
     'prefix' => 'admin',
-    'plugin' => 'Croogo/Settings',
+    'plugin' => 'Vamshop/Settings',
     'controller' => 'Caches',
     'action' => 'clear',
 ];
 
 $this->Breadcrumbs->add(__d('croogo', 'Settings'),
-    ['plugin' => 'Croogo/Settings', 'controller' => 'Settings', 'action' => 'prefix', 'Site'])
+    ['plugin' => 'Vamshop/Settings', 'controller' => 'Settings', 'action' => 'prefix', 'Site'])
     ->add(__d('croogo', 'Caches'), $this->request->getUri()->getPath());
 
 $this->append('action-buttons');
-    echo $this->Croogo->adminAction(__d('croogo', 'Clear All'), array_merge(
+    echo $this->Vamshop->adminAction(__d('croogo', 'Clear All'), array_merge(
             $clearUrl, ['config' => 'all']
         ), [
         'method' => 'post',
@@ -37,7 +37,7 @@ $this->append('table-heading', $tableHeaders);
 $rows = [];
 foreach ($caches as $cache => $engine):
     $actions = [];
-    $actions[] = $this->Croogo->adminAction('',
+    $actions[] = $this->Vamshop->adminAction('',
         array_merge($clearUrl, ['config' => $cache]), [
         'button' => false,
         'class' => 'red',

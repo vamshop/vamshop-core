@@ -1,18 +1,18 @@
 <?php
 
-namespace Croogo\Taxonomy\Model\Table;
+namespace Vamshop\Taxonomy\Model\Table;
 
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Core\Model\Table\VamshopTable;
 
 /**
  * ModelTaxonomies
  *
  * @category Taxonomy.Model
- * @package  Croogo.Taxonomy.Model
+ * @package  Vamshop.Taxonomy.Model
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class ModelTaxonomiesTable extends CroogoTable
+class ModelTaxonomiesTable extends VamshopTable
 {
 
     public function initialize(array $config)

@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Controller\Api;
+namespace Vamshop\Core\Controller\Api;
 
 use Cake\Controller\Component\AuthComponent;
 use Cake\Controller\Controller;
@@ -21,7 +21,7 @@ class AppController extends Controller
         $authConfig = [
             'authenticate' => [
                 AuthComponent::ALL => [
-                    'userModel' => 'Croogo/Users.Users',
+                    'userModel' => 'Vamshop/Users.Users',
                     'fields' => [
                         'username' => 'username',
                         'password' => 'password',
@@ -39,9 +39,9 @@ class AppController extends Controller
             'authorize' => [
                 AuthComponent::ALL => [
                     'actionPath' => 'controllers',
-                    'userModel' => 'Croogo/Users.Users',
+                    'userModel' => 'Vamshop/Users.Users',
                 ],
-                'Croogo/Acl.AclCached' => [
+                'Vamshop/Acl.AclCached' => [
                     'actionPath' => 'controllers',
                 ]
             ],

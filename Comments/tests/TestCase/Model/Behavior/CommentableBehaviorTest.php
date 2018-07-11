@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Comments\Test\TestCase\Model\Behavior;
+namespace Vamshop\Comments\Test\TestCase\Model\Behavior;
 
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 
-class CommentableBehaviorTest extends CroogoTestCase
+class CommentableBehaviorTest extends VamshopTestCase
 {
 
     public $setupSettings = false;

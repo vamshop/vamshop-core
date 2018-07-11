@@ -2,17 +2,17 @@
 
 use Cake\Core\Configure;
 use Cake\Cache\Cache;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 Configure::write(
     'DebugKit.panels',
     array_merge((array)Configure::read('DebugKit.panels'), [
-        'Croogo/Settings.Settings',
+        'Vamshop/Settings.Settings',
     ])
 );
 
-Croogo::hookComponent('*', [
+Vamshop::hookComponent('*', [
     'SettingsComponent' => [
-        'className' => 'Croogo/Settings.Settings'
+        'className' => 'Vamshop/Settings.Settings'
     ]
 ]);

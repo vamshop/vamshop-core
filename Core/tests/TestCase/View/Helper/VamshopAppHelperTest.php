@@ -1,15 +1,15 @@
 <?php
-namespace Croogo\Core\Test\TestCase\View\Helper;
+namespace Vamshop\Core\Test\TestCase\View\Helper;
 
 use Cake\Core\Plugin;
 use Cake\Network\Request;
 use Cake\Network\Response;
 use Cake\Routing\Router;
 use Cake\View\View;
-use Croogo\Core\TestSuite\CroogoTestCase;
-use Croogo\Core\View\Helper\CroogoAppHelper;
+use Vamshop\Core\TestSuite\VamshopTestCase;
+use Vamshop\Core\View\Helper\VamshopAppHelper;
 
-class CroogoAppHelperTest extends CroogoTestCase
+class VamshopAppHelperTest extends VamshopTestCase
 {
 
 /**
@@ -22,7 +22,7 @@ class CroogoAppHelperTest extends CroogoTestCase
 /**
  * AppHelper instance
  *
- * @var CroogoAppHelper
+ * @var VamshopAppHelper
  */
     public $AppHelper;
 
@@ -37,11 +37,11 @@ class CroogoAppHelperTest extends CroogoTestCase
     {
         parent::setUp();
 
-        Plugin::load('Croogo/Translate', ['autoload' => true, 'path' => '../Translate/']);
+        Plugin::load('Vamshop/Translate', ['autoload' => true, 'path' => '../Translate/']);
 
         $request = new Request();
         $this->View = new View($request, new Response());
-        $this->AppHelper = new CroogoAppHelper($this->View);
+        $this->AppHelper = new VamshopAppHelper($this->View);
         $this->AppHelper->request = $request;
     }
 

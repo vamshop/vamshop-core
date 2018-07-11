@@ -2,6 +2,6 @@
 
 return [
     'EventHandlers' => [
-        'Croogo/Menus.MenusEventHandler',
+        'Vamshop/Menus.MenusEventHandler',
     ],
 ];

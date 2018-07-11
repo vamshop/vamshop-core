@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Settings\Controller\Admin;
+namespace Vamshop\Settings\Controller\Admin;
 
 use Cake\Cache\Cache;
-use Croogo\Core\Event\EventManager;
+use Vamshop\Core\Event\EventManager;
 
 /**
  * Caches Controller
  *
  * @category Settings.Controller
- * @package  Croogo.Settings
+ * @package  Vamshop.Settings
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

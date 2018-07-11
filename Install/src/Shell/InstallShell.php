@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Install\Shell;
+namespace Vamshop\Install\Shell;
 
 use App\Console\Installer;
 use App\Controller\Component\AuthComponent;
@@ -8,17 +8,17 @@ use Cake\Controller\ComponentRegistry;
 use Cake\Console\Shell;
 use Cake\Datasource\ConnectionManager;
 use Cake\ORM\TableRegistry;
-use Croogo\Acl\AclGenerator;
-use Croogo\Core\Plugin;
-use Croogo\Install\InstallManager;
-use Croogo\Install\Model\Table\InstallTable;
+use Vamshop\Acl\AclGenerator;
+use Vamshop\Core\Plugin;
+use Vamshop\Install\InstallManager;
+use Vamshop\Install\Model\Table\InstallTable;
 use Composer\IO\BufferIO;
 
 /**
  * Install Shell
  *
  * @category Shell
- * @package  Croogo.Install.Console.Command
+ * @package  Vamshop.Install.Console.Command
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -148,7 +148,7 @@ class InstallShell extends Shell
         $InstallManager->createDatabaseFile($install);
 
         $this->out('Setting up database objects. Please wait...');
-        $Install = TableRegistry::get('Croogo/Install.Install');
+        $Install = TableRegistry::get('Vamshop/Install.Install');
         try {
             $result = $InstallManager->setupDatabase();
             if ($result !== true) {

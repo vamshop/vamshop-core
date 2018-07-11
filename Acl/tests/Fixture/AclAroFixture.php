@@ -16,7 +16,7 @@
  * @since         CakePHP(tm) v 1.2.0.4667
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace Croogo\Acl\Test\Fixture;
+namespace Vamshop\Acl\Test\Fixture;
 
 use App\TestSuite\Fixture\CakeTestFixture;
 

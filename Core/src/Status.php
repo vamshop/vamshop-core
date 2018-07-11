@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core;
+namespace Vamshop\Core;
 
 use App\Model\Permission;
 use ArrayAccess;
@@ -11,7 +11,7 @@ use Cake\ORM\TableRegistry;
 /**
  * Status
  *
- * @package  Croogo.Croogo.Lib
+ * @package  Vamshop.Vamshop.Lib
  * @author   Rachman Chavik <rchavik@xintesa.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
@@ -51,7 +51,7 @@ class Status implements ArrayAccess
                 self::PENDING => __d('croogo', 'Pending'),
             ],
         ];
-        $event = Croogo::dispatchEvent('Croogo.Status.setup', null, $this);
+        $event = Vamshop::dispatchEvent('Vamshop.Status.setup', null, $this);
     }
 
     public function offsetExists($offset)
@@ -105,7 +105,7 @@ class Status implements ArrayAccess
     {
         $values = $this->_defaultStatus($roleId, $statusType);
         $data = compact('statusType', 'accessType', 'values');
-        $event = Croogo::dispatchEvent('Croogo.Status.status', null, $data);
+        $event = Vamshop::dispatchEvent('Vamshop.Status.status', null, $data);
         if (array_key_exists('values', $event->data)) {
             return $event->data['values'];
         } else {
@@ -124,7 +124,7 @@ class Status implements ArrayAccess
         if ($roleId && $roleId !== 1) {
             $Permission = TableRegistry::get('Acl.Permissions');
             try {
-                $allow = $Permission->check(['model' => 'Roles', 'foreign_key' => $roleId], 'controllers/Croogo\Nodes/Admin/Nodes/edit');
+                $allow = $Permission->check(['model' => 'Roles', 'foreign_key' => $roleId], 'controllers/Vamshop\Nodes/Admin/Nodes/edit');
             } catch (CakeException $e) {
                 Log::error($e->getMessage());
             }

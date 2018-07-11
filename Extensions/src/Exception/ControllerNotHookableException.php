@@ -1,8 +1,8 @@
 <?php
 
-namespace Croogo\Extensions\Exception;
+namespace Vamshop\Extensions\Exception;
 
-use Croogo\Core\Exception\Exception;
+use Vamshop\Core\Exception\Exception;
 
 class ControllerNotHookableException extends Exception
 {

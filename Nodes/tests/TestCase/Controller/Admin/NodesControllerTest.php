@@ -1,11 +1,11 @@
 <?php
-namespace Croogo\Nodes\Test\TestCase\Controller\Admin;
+namespace Vamshop\Nodes\Test\TestCase\Controller\Admin;
 
 use Cake\ORM\TableRegistry;
-use Croogo\Core\TestSuite\IntegrationTestCase;
+use Vamshop\Core\TestSuite\IntegrationTestCase;
 
 /**
- * @property \Croogo\Nodes\Model\Table\NodesTable Nodes
+ * @property \Vamshop\Nodes\Model\Table\NodesTable Nodes
  */
 class NodesControllerTest extends IntegrationTestCase
 {
@@ -42,7 +42,7 @@ class NodesControllerTest extends IntegrationTestCase
 
         $this->user('admin');
 
-        $this->Nodes = TableRegistry::get('Croogo/Nodes.Nodes');
+        $this->Nodes = TableRegistry::get('Vamshop/Nodes.Nodes');
     }
 
     public function testAdminIndex()

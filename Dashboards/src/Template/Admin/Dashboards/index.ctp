@@ -1,7 +1,7 @@
 <?php
 $this->assign('title', __d('croogo', 'Dashboards'));
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
 $this->Breadcrumbs
         ->add(__d('croogo', 'Dashboards'), array('action' => 'index'));
@@ -38,7 +38,7 @@ foreach ($dashboards as $dashboard):
         </td>
         <td>
             <?php
-                echo $this->element('Croogo/Core.admin/toggle', array(
+                echo $this->element('Vamshop/Core.admin/toggle', array(
                     'id' => $dashboard->id,
                     'status' => (int)$dashboard->status,
                 ));
@@ -49,21 +49,21 @@ foreach ($dashboards as $dashboard):
         <td class="item-actions">
         <?php
             $actions = array();
-            $actions[] = $this->Croogo->adminRowAction('',
+            $actions[] = $this->Vamshop->adminRowAction('',
                 array('controller' => 'Dashboards', 'action' => 'moveup', $dashboard->id),
                 array(
                     'icon' => $this->Theme->getIcon('move-up'),
                     'tooltip' => __d('croogo', 'Move up'),
                 )
             );
-            $actions[] = $this->Croogo->adminRowAction('',
+            $actions[] = $this->Vamshop->adminRowAction('',
                 array('controller' => 'Dashboards', 'action' => 'movedown', $dashboard->id),
                 array(
                     'icon' => $this->Theme->getIcon('move-down'),
                     'tooltip' => __d('croogo', 'Move down'),
                 )
             );
-            $actions[] = $this->Croogo->adminRowAction('',
+            $actions[] = $this->Vamshop->adminRowAction('',
                 array('action' => 'delete', $dashboard->id),
                 array(
                     'icon' => $this->Theme->getIcon('delete'),

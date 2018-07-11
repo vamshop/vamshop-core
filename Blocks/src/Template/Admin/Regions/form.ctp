@@ -1,6 +1,6 @@
 <?php
 
-$this->extend('Croogo/Core./Common/admin_edit');
+$this->extend('Vamshop/Core./Common/admin_edit');
 
 $this->Breadcrumbs->add(__d('croogo', 'Blocks'), [
         'controller' => 'blocks',
@@ -22,7 +22,7 @@ if ($this->request->params['action'] == 'add') {
 $this->append('form-start', $this->Form->create($region));
 
 $this->append('tab-heading');
-echo $this->Croogo->adminTab(__d('croogo', 'Region'), '#region-main');
+echo $this->Vamshop->adminTab(__d('croogo', 'Region'), '#region-main');
 $this->end();
 
 $this->append('tab-content');

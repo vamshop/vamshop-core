@@ -1,5 +1,5 @@
 <?php
-namespace Croogo\Example\View\Helper;
+namespace Vamshop\Example\View\Helper;
 
 use App\View\Helper\AppHelper;
 
@@ -9,7 +9,7 @@ use App\View\Helper\AppHelper;
  * An example hook helper for demonstrating hook system.
  *
  * @category Helper
- * @package  Croogo
+ * @package  Vamshop
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -26,8 +26,8 @@ class ExampleHelper extends AppHelper
  */
     public $helpers = [
         'Html',
-        'Croogo.Layout',
-        'Nodes' => ['className' => 'Croogo/Nodes.Nodes'],
+        'Vamshop.Layout',
+        'Nodes' => ['className' => 'Vamshop/Nodes.Nodes'],
     ];
 
 /**

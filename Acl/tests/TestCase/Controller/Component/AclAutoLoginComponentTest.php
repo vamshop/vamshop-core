@@ -3,7 +3,7 @@
  * AclAutoLoginComponent test
  *
  */
-namespace Croogo\Acl\Test\TestCase\Controller\Component;
+namespace Vamshop\Acl\Test\TestCase\Controller\Component;
 
 use Acl\Controller\Component\AclAutoLoginComponent;
 
@@ -82,7 +82,7 @@ class AclAutoLoginComponentTest extends CakeTestCase
         $compare = $this->autoLogin->cookie($request);
 
         $_SERVER['REQUEST_METHOD'] = 'POST';
-        Croogo::dispatchEvent('Controller.Users.adminLoginSuccessful', $subject);
+        Vamshop::dispatchEvent('Controller.Users.adminLoginSuccessful', $subject);
         $cookie = $this->autoLogin->readCookie('User');
         $this->assertNotNull($cookie);
         $this->assertEquals($compare, $cookie);

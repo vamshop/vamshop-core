@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Settings\Panel;
+namespace Vamshop\Settings\Panel;
 
 use Cake\Core\Configure;
 use DebugKit\DebugPanel;
@@ -8,7 +8,7 @@ use DebugKit\DebugPanel;
 class SettingsPanel extends DebugPanel
 {
 
-    public $plugin = 'Croogo/Settings';
+    public $plugin = 'Vamshop/Settings';
 
     public function data()
     {

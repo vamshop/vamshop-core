@@ -1,6 +1,6 @@
 {
     "name": "croogo/core",
-    "description": "Croogo Core Plugin",
+    "description": "Vamshop Core Plugin",
     "require": {
         "cakephp/cakephp": "^3.5.5"
     },
@@ -10,19 +10,19 @@
         "friendsofcake/cakephp-test-utilities": "dev-master"
     },
     "suggest": {
-        "croogo/example": "Example Croogo plugin"
+        "croogo/example": "Example Vamshop plugin"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": "Croogo Development Team",
+            "name": "Vamshop Development Team",
             "email": "team@vamshop.com"
         }
     ],
     "type": "cakephp-plugin",
     "autoload": {
         "psr-4": {
-            "Croogo\\Core\\": "src"
+            "Vamshop\\Core\\": "src"
         },
         "files": [
 			"src/functions.php"
@@ -30,8 +30,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Croogo\\Core\\Test\\": "tests",
-            "Croogo\\Core\\Test\\App\\": "tests/test_app/src",
+            "Vamshop\\Core\\Test\\": "tests",
+            "Vamshop\\Core\\Test\\App\\": "tests/test_app/src",
             "App\\": "tests/test_app/src",
             "Shops\\": "tests/test_app/plugins/Shops/src",
             "Suppliers\\": "tests/test_app/plugins/Suppliers/src"

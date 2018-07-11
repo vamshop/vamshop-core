@@ -1,13 +1,13 @@
 <?php
 
-namespace Croogo\Core\Model\Behavior;
+namespace Vamshop\Core\Model\Behavior;
 
 use Cake\Datasource\EntityInterface;
 use Cake\ORM\Behavior;
 use Cake\ORM\Table;
 use Cake\ORM\Entity;
 use Cake\Utility\Hash;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 /**
  * Copyable Behavior class file.
@@ -24,7 +24,7 @@ use Croogo\Core\Croogo;
  * From container: $this->MyModel->copy($id);
  *
  * @category Behavior
- * @package Croogo.Croogo.Model.Behavior
+ * @package Vamshop.Vamshop.Model.Behavior
  * @author Jamie Nay
  * @copyright Jamie Nay
  * @license     http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -250,7 +250,7 @@ class CopyableBehavior extends Behavior
         }
 
         $eventName = 'Behavior.Copyable.convertData';
-        $event = Croogo::dispatchEvent($eventName, $this->_table, [
+        $event = Vamshop::dispatchEvent($eventName, $this->_table, [
             'record' => $this->record,
         ]);
 

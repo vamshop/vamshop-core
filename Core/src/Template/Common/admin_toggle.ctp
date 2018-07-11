@@ -1,2 +1,2 @@
 <?php
-echo $this->element('Croogo/Core.admin/toggle', compact('id', 'status'));
+echo $this->element('Vamshop/Core.admin/toggle', compact('id', 'status'));

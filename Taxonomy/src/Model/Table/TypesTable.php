@@ -1,13 +1,13 @@
 <?php
 
-namespace Croogo\Taxonomy\Model\Table;
+namespace Vamshop\Taxonomy\Model\Table;
 
 use Cake\Database\Schema\TableSchema;
 use Cake\ORM\RulesChecker;
 use Cake\Validation\Validator;
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Core\Model\Table\VamshopTable;
 
-class TypesTable extends CroogoTable
+class TypesTable extends VamshopTable
 {
 
 /**
@@ -19,7 +19,7 @@ class TypesTable extends CroogoTable
         'title' => [
             'url' => [
                 'prefix' => false,
-                'plugin' => 'Croogo/Nodes',
+                'plugin' => 'Vamshop/Nodes',
                 'controller' => 'Nodes',
                 'action' => 'index',
                 'named' => [
@@ -41,9 +41,9 @@ class TypesTable extends CroogoTable
                 ]
             ]
         ]);
-        $this->addBehavior('Croogo/Core.Url', [
+        $this->addBehavior('Vamshop/Core.Url', [
             'url' => [
-                'plugin' => 'Croogo/Nodes',
+                'plugin' => 'Vamshop/Nodes',
                 'controller' => 'Nodes',
                 'action' => 'index'
             ],
@@ -52,11 +52,11 @@ class TypesTable extends CroogoTable
             ]
         ]);
         $this->addBehavior('Search.Search');
-        $this->addBehavior('Croogo/Core.Cached', [
+        $this->addBehavior('Vamshop/Core.Cached', [
             'groups' => ['nodes', 'taxonomy']
         ]);
-        $this->addBehavior('Croogo/Core.Trackable');
-        $this->belongsToMany('Croogo/Taxonomy.Vocabularies', [
+        $this->addBehavior('Vamshop/Core.Trackable');
+        $this->belongsToMany('Vamshop/Taxonomy.Vocabularies', [
             'joinTable' => 'types_vocabularies',
         ]);
     }

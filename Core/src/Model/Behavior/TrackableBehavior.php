@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Model\Behavior;
+namespace Vamshop\Core\Model\Behavior;
 
 use Cake\Core\Configure;
 use Cake\Event\Event;
@@ -14,7 +14,7 @@ use Cake\Utility\Hash;
  *
  * Populate `created_by` and `updated_by` fields from session data.
  *
- * @package  Croogo.Croogo.Model.Behavior
+ * @package  Vamshop.Vamshop.Model.Behavior
  * @since    1.6
  * @author   Rachman Chavik <rchavik@gmail.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -27,7 +27,7 @@ class TrackableBehavior extends Behavior
  * Default settings
  */
     protected $_defaults = [
-        'userModel' => 'Croogo/Users.Users',
+        'userModel' => 'Vamshop/Users.Users',
         'fields' => [
             'created_by' => 'created_by',
             'updated_by' => 'updated_by',

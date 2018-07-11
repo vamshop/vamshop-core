@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Acl\Event;
+namespace Vamshop\Acl\Event;
 
 use Cake\Core\Configure;
 use Cake\Event\EventListenerInterface;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 /**
  * AclEventHandler
  *
- * @package  Croogo.Acl.Event
+ * @package  Vamshop.Acl.Event
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */

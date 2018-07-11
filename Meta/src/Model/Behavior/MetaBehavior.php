@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Meta\Model\Behavior;
+namespace Vamshop\Meta\Model\Behavior;
 
 use Cake\Datasource\EntityInterface;
 use Cake\Event\Event;
@@ -15,7 +15,7 @@ use Cake\Utility\Hash;
  * Meta Behavior
  *
  * @category Behavior
- * @package  Croogo.Meta.Model.Behavior
+ * @package  Vamshop.Meta.Model.Behavior
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -36,7 +36,7 @@ class MetaBehavior extends Behavior
         parent::initialize($config);
 
         $this->_table->hasMany('Meta', [
-            'className' => 'Croogo/Meta.Meta',
+            'className' => 'Vamshop/Meta.Meta',
             'foreignKey' => 'foreign_key',
             'dependent' => true,
             'conditions' => [

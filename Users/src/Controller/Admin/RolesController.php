@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Users\Controller\Admin;
+namespace Vamshop\Users\Controller\Admin;
 
 use Cake\Event\Event;
 
@@ -8,7 +8,7 @@ use Cake\Event\Event;
  * Roles Controller
  *
  * @category Controller
- * @package  Croogo.Users.Controller
+ * @package  Vamshop.Users.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -16,7 +16,7 @@ use Cake\Event\Event;
  */
 class RolesController extends AppController
 {
-    public $modelClass = 'Croogo/Users.Roles';
+    public $modelClass = 'Vamshop/Users.Roles';
 
     public function initialize()
     {

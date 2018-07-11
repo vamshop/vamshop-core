@@ -1,20 +1,20 @@
 <?php
 
-namespace Croogo\Meta\Model\Table;
+namespace Vamshop\Meta\Model\Table;
 
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Core\Model\Table\VamshopTable;
 
 /**
  * Meta
  *
  * @category Meta.Model
- * @package  Croogo.Meta
+ * @package  Vamshop.Meta
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class MetaTable extends CroogoTable
+class MetaTable extends VamshopTable
 {
     protected $_quoted;
 
@@ -32,8 +32,8 @@ class MetaTable extends CroogoTable
     {
         $this->table('meta');
         $this->addBehavior('Timestamp');
-        $this->addBehavior('Croogo/Core.Trackable');
-        $this->addBehavior('Croogo/Core.Cached', [
+        $this->addBehavior('Vamshop/Core.Trackable');
+        $this->addBehavior('Vamshop/Core.Cached', [
             'groups' => [
                 'settings',
             ],

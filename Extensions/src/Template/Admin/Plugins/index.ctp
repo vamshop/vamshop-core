@@ -1,6 +1,6 @@
 <?php
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
 $this->assign('title', __d('croogo', 'Plugins'));
 
@@ -8,7 +8,7 @@ $this->Breadcrumbs->add(__d('croogo', 'Extensions'), $this->request->getUri()->g
     ->add(__d('croogo', 'Plugins'), $this->request->getUri()->getPath());
 
 $this->start('action-buttons');
-echo $this->Croogo->adminAction(__d('croogo', 'Upload'), ['action' => 'add'], ['class' => 'btn btn-success']);
+echo $this->Vamshop->adminAction(__d('croogo', 'Upload'), ['action' => 'add'], ['class' => 'btn btn-success']);
 $this->end() ?>
 
 <table class="table table-striped">
@@ -36,9 +36,9 @@ $this->end() ?>
         $queryString = ['name' => $pluginAlias];
         if (!in_array($pluginAlias, $bundledPlugins) && !in_array($pluginAlias, $corePlugins)):
             $icon = $pluginData['active'] ? $this->Theme->getIcon('power-off') : $this->Theme->getIcon('power-on');
-            $actions[] = $this->Croogo->adminRowAction('', ['action' => 'toggle', '?' => $queryString],
+            $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'toggle', '?' => $queryString],
                 ['icon' => $icon, 'tooltip' => $toggleText, 'method' => 'post']);
-            $actions[] = $this->Croogo->adminRowAction('', ['action' => 'delete', '?' => $queryString],
+            $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'delete', '?' => $queryString],
                 ['icon' => $this->Theme->getIcon('delete'), 'tooltip' => __d('croogo', 'Delete')],
                 __d('croogo', 'Are you sure?'));
         endif;
@@ -47,11 +47,11 @@ $this->end() ?>
             !in_array($pluginAlias, $bundledPlugins) &&
             !in_array($pluginAlias, $corePlugins)
         ) {
-            $actions[] = $this->Croogo->adminRowAction('', ['action' => 'moveup', '?' => $queryString],
+            $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'moveup', '?' => $queryString],
                 ['icon' => $this->Theme->getIcon('move-up'), 'tooltip' => __d('croogo', 'Move up'), 'method' => 'post'],
                 __d('croogo', 'Are you sure?'));
 
-            $actions[] = $this->Croogo->adminRowAction('', ['action' => 'movedown', '?' => $queryString], [
+            $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'movedown', '?' => $queryString], [
                     'icon' => $this->Theme->getIcon('move-down'),
                     'tooltip' => __d('croogo', 'Move down'),
                     'method' => 'post',
@@ -59,7 +59,7 @@ $this->end() ?>
         }
 
         if ($pluginData['needMigration']) {
-            $actions[] = $this->Croogo->adminRowAction(__d('croogo', 'Migrate'), [
+            $actions[] = $this->Vamshop->adminRowAction(__d('croogo', 'Migrate'), [
                 'action' => 'migrate',
                 '?' => $queryString,
             ], [], __d('croogo', 'Are you sure?'));

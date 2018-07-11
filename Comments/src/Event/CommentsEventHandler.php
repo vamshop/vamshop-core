@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Comments\Event;
+namespace Vamshop\Comments\Event;
 
 use Cake\Event\EventListenerInterface;
 
@@ -8,7 +8,7 @@ use Cake\Event\EventListenerInterface;
  * Comments Event Handler
  *
  * @category Event
- * @package  Croogo.Taxonomy.Event
+ * @package  Vamshop.Taxonomy.Event
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */

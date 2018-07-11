@@ -1,13 +1,13 @@
 <?php
 
-namespace Croogo\Acl\Test\TestCase\Controller;
+namespace Vamshop\Acl\Test\TestCase\Controller;
 
-use Croogo\TestSuite\CroogoControllerTestCase;
+use Vamshop\TestSuite\VamshopControllerTestCase;
 
 /**
  * AclActionsController Test
  */
-class AclActionsControllerTest extends CroogoControllerTestCase
+class AclActionsControllerTest extends VamshopControllerTestCase
 {
 
 /**

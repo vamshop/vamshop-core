@@ -1,11 +1,11 @@
 <?php
 
-namespace Croogo\Contacts\Controller;
+namespace Vamshop\Contacts\Controller;
 
 use Cake\Core\Configure;
 use Cake\Mailer\Email;
-use Croogo\Contacts\Model\Entity\Message;
-use Croogo\Core\Croogo;
+use Vamshop\Contacts\Model\Entity\Message;
+use Vamshop\Core\Vamshop;
 
 /**
  * Class ContactsController
@@ -17,7 +17,7 @@ class ContactsController extends AppController
     {
         parent::initialize();
 
-        $this->loadComponent('Croogo/Core.Recaptcha', [
+        $this->loadComponent('Vamshop/Core.Recaptcha', [
             'actions' => ['view']
         ]);
     }
@@ -50,7 +50,7 @@ class ContactsController extends AppController
         if ($this->request->is('post') && $continue === true) {
             $this->Contacts->Messages->patchEntity($message, $this->request->data);
             $message->contact_id = $contact->id;
-            Croogo::dispatchEvent('Controller.Contacts.beforeMessage', $this);
+            Vamshop::dispatchEvent('Controller.Contacts.beforeMessage', $this);
 
             $continue = $this->_spamProtection($continue, $contact, $message);
             $continue = $this->_captcha($continue, $contact, $message);
@@ -59,14 +59,14 @@ class ContactsController extends AppController
             $this->set(compact('continue'));
 
             if ($continue === true) {
-                Croogo::dispatchEvent('Controller.Contacts.afterMessage', $this);
+                Vamshop::dispatchEvent('Controller.Contacts.afterMessage', $this);
                 $this->Flash->success(__d('croogo', 'Your message has been received...'));
 
-                return $this->Croogo->redirect('/');
+                return $this->Vamshop->redirect('/');
             }
         }
 
-        $this->Croogo->viewFallback([
+        $this->Vamshop->viewFallback([
             'view_' . $contact->id,
             'view_' . $contact->alias,
         ]);
@@ -161,7 +161,7 @@ class ContactsController extends AppController
             $email->from($message->email)
                 ->to($contact->email)
                 ->subject(__d('croogo', '[%s] %s', $siteTitle, $contact->title))
-                ->template('Croogo/Contacts.contact')
+                ->template('Vamshop/Contacts.contact')
                 ->viewVars([
                     'contact' => $contact,
                     'message' => $message,

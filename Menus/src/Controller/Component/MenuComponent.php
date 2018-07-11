@@ -1,20 +1,20 @@
 <?php
 
-namespace Croogo\Menus\Controller\Component;
+namespace Vamshop\Menus\Controller\Component;
 
 use Cake\Controller\Component;
 use Cake\Core\Configure;
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
 use Cake\Utility\Hash;
-use Croogo\Core\Controller\Component\CroogoComponent;
-use Croogo\Extensions\CroogoTheme;
+use Vamshop\Core\Controller\Component\VamshopComponent;
+use Vamshop\Extensions\VamshopTheme;
 
 /**
  * Menus Component
  *
- * @property CroogoComponent Croogo
- * @package Croogo.Menus.Controller.Component
+ * @property VamshopComponent Vamshop
+ * @package Vamshop.Menus.Controller.Component
  */
 class MenuComponent extends Component
 {
@@ -26,7 +26,7 @@ class MenuComponent extends Component
  * @access public
  */
     public $components = [
-        'Croogo.Croogo',
+        'Vamshop.Vamshop',
     ];
 
 /**
@@ -49,7 +49,7 @@ class MenuComponent extends Component
         if (isset($this->controller->Link)) {
             $this->Links = $this->controller->Links;
         } else {
-            $this->Links = TableRegistry::get('Croogo/Menus.Links');
+            $this->Links = TableRegistry::get('Vamshop/Menus.Links');
         }
 
         $controller = $event->subject();
@@ -94,7 +94,7 @@ class MenuComponent extends Component
         $menus = ['main'];
 
         if (Configure::read('Site.theme')) {
-            $themeData = (new CroogoTheme)->getData(Configure::read('Site.theme'));
+            $themeData = (new VamshopTheme)->getData(Configure::read('Site.theme'));
             if (isset($themeData['menus']) && is_array($themeData['menus'])) {
                 $menus = Hash::merge($menus, $themeData['menus']);
             }
@@ -102,7 +102,7 @@ class MenuComponent extends Component
 
         $menus = Hash::merge($menus, array_keys($this->controller->BlocksHook->blocksData['menus']));
 
-        $roleId = $this->controller->Croogo->roleId();
+        $roleId = $this->controller->Vamshop->roleId();
         $status = $this->Links->status();
         foreach ($menus as $menuAlias) {
             $menu = $this->Links->Menus->find('all', [

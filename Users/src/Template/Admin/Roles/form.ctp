@@ -1,8 +1,8 @@
 <?php
-$this->extend('Croogo/Core./Common/admin_edit');
+$this->extend('Vamshop/Core./Common/admin_edit');
 $this->Breadcrumbs
-    ->add(__d('croogo', 'Users'), ['plugin' => 'Croogo/Users', 'controller' => 'Users', 'action' => 'index'])
-    ->add(__d('croogo', 'Roles'), ['plugin' => 'Croogo/Users', 'controller' => 'Roles', 'action' => 'index']);
+    ->add(__d('croogo', 'Users'), ['plugin' => 'Vamshop/Users', 'controller' => 'Users', 'action' => 'index'])
+    ->add(__d('croogo', 'Roles'), ['plugin' => 'Vamshop/Users', 'controller' => 'Roles', 'action' => 'index']);
 
 if ($this->request->param('action') == 'edit') {
     $this->Breadcrumbs->add($role->title, $this->request->getRequestTarget());
@@ -15,7 +15,7 @@ if ($this->request->param('action') == 'add') {
 $this->assign('form-start', $this->Form->create($role));
 
 $this->start('tab-heading');
-echo $this->Croogo->adminTab(__d('croogo', 'Role'), '#role-main');
+echo $this->Vamshop->adminTab(__d('croogo', 'Role'), '#role-main');
 $this->end();
 
 $this->start('tab-content');

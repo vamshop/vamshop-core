@@ -1,20 +1,20 @@
 <?php
 
-namespace Croogo\FileManager\Controller\Admin;
+namespace Vamshop\FileManager\Controller\Admin;
 
-use Croogo\Core\Controller\Admin\AppController as CroogoController;
+use Vamshop\Core\Controller\Admin\AppController as VamshopController;
 
 /**
  * FileManager Admin Controller
  *
  * @category FileManager.Controller
- * @package  Croogo.FileManager.Controller
+ * @package  Vamshop.FileManager.Controller
  * @version  1.4
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class AppController extends CroogoController
+class AppController extends VamshopController
 {
 
 }

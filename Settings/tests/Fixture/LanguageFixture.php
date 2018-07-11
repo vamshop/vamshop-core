@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Settings\Test\Fixture;
+namespace Vamshop\Settings\Test\Fixture;
 
-use Croogo\Core\TestSuite\CroogoTestFixture;
+use Vamshop\Core\TestSuite\VamshopTestFixture;
 
-class LanguageFixture extends CroogoTestFixture
+class LanguageFixture extends VamshopTestFixture
 {
 
     public $name = 'Language';

@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Comments\Model\Table;
+namespace Vamshop\Comments\Model\Table;
 
 use Cake\Core\Configure;
 use Cake\Database\Schema\TableSchema;
@@ -11,22 +11,22 @@ use Cake\ORM\ResultSet;
 use Cake\ORM\TableRegistry;
 use Cake\Utility\Hash;
 use Cake\Validation\Validator;
-use Croogo\Comments\Model\Entity\Comment;
-use Croogo\Core\Model\Table\CroogoTable;
-use Croogo\Core\Status;
+use Vamshop\Comments\Model\Entity\Comment;
+use Vamshop\Core\Model\Table\VamshopTable;
+use Vamshop\Core\Status;
 use UnexpectedValueException;
 
 /**
  * Comment
  *
  * @category Model
- * @package  Croogo.Comments.Model
+ * @package  Vamshop.Comments.Model
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class CommentsTable extends CroogoTable
+class CommentsTable extends VamshopTable
 {
     use MailerAwareTrait;
 
@@ -52,18 +52,18 @@ class CommentsTable extends CroogoTable
     public function initialize(array $config)
     {
         parent::initialize($config);
-        $this->entityClass('Croogo/Comments.Comment');
+        $this->entityClass('Vamshop/Comments.Comment');
 
         $this->belongsTo('Users', [
-            'className' => 'Croogo/Users.Users',
+            'className' => 'Vamshop/Users.Users',
             'foreignKey' => 'user_id',
         ]);
-        $this->addBehavior('Croogo/Core.Publishable');
-        $this->addBehavior('Croogo/Core.Trackable');
-        $this->addBehavior('Croogo/Core.LinkedModel');
+        $this->addBehavior('Vamshop/Core.Publishable');
+        $this->addBehavior('Vamshop/Core.Trackable');
+        $this->addBehavior('Vamshop/Core.LinkedModel');
         $this->addBehavior('Search.Search');
         $this->addBehavior('Tree');
-        $this->addBehavior('Croogo/Core.Cached', [
+        $this->addBehavior('Vamshop/Core.Cached', [
             'groups' => ['comments', 'nodes']
         ]);
         $this->addBehavior('Timestamp', [
@@ -80,7 +80,7 @@ class CommentsTable extends CroogoTable
                 'field' => 'status'
             ]);
 
-        $this->eventManager()->on($this->getMailer('Croogo/Comments.Comment'));
+        $this->eventManager()->on($this->getMailer('Vamshop/Comments.Comment'));
     }
 
     /**

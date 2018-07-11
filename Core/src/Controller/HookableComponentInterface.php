@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Controller;
+namespace Vamshop\Core\Controller;
 
 interface HookableComponentInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Acl\Adapter;
+namespace Vamshop\Acl\Adapter;
 
 use Acl\Adapter\CachedDbAcl;
 use Cake\Controller\Component;
@@ -11,7 +11,7 @@ use Cake\Utility\Hash;
  * HabtmDbAcl implements an ACL control system in the database like DbAcl with
  * User habtm Group checks
  *
- * @package Croogo.Acl.Controller.Component.Acl
+ * @package Vamshop.Acl.Controller.Component.Acl
  * @author Ceeram
  * @license MIT
  * @link http://github.com/ceeram/Authorize
@@ -20,7 +20,7 @@ class HabtmDbAcl extends CachedDbAcl
 {
 
     public $settings = [
-        'userModel' => 'Croogo/Users.Users',
+        'userModel' => 'Vamshop/Users.Users',
         'groupAlias' => 'Roles',
     ];
 

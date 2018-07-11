@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Core\Test\Fixture;
+namespace Vamshop\Core\Test\Fixture;
 
-use Croogo\Core\TestSuite\CroogoTestFixture;
+use Vamshop\Core\TestSuite\VamshopTestFixture;
 
-class TrackableFixture extends CroogoTestFixture
+class TrackableFixture extends VamshopTestFixture
 {
 
     public $fields = [

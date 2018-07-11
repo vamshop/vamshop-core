@@ -1,16 +1,16 @@
 <?php
 
-namespace Croogo\Core\View\Helper;
+namespace Vamshop\Core\View\Helper;
 
 use Cake\View\Helper\PaginatorHelper;
 use Cake\View\View;
 
 /**
- * Croogo Paginator Helper
+ * Vamshop Paginator Helper
  *
- * @package Croogo.Croogo.View.Helper
+ * @package Vamshop.Vamshop.View.Helper
  */
-class CroogoPaginatorHelper extends PaginatorHelper
+class VamshopPaginatorHelper extends PaginatorHelper
 {
 
     /**

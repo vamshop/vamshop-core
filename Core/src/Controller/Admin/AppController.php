@@ -1,19 +1,19 @@
 <?php
 
-namespace Croogo\Core\Controller\Admin;
+namespace Vamshop\Core\Controller\Admin;
 
 use Cake\Core\App;
 use Cake\Core\Configure;
 use Cake\Event\Event;
-use Croogo\Core\Croogo;
-use Croogo\Core\Controller\AppController as CroogoAppController;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\Controller\AppController as VamshopAppController;
 use Crud\Controller\ControllerTrait;
 
 /**
- * Croogo App Controller
+ * Vamshop App Controller
  *
- * @category Croogo.Controller
- * @package  Croogo.Croogo.Controller
+ * @category Vamshop.Controller
+ * @package  Vamshop.Vamshop.Controller
  * @version  1.5
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -21,7 +21,7 @@ use Crud\Controller\ControllerTrait;
  *
  * @property \Crud\Controller\Component\CrudComponent $Crud
  */
-class AppController extends CroogoAppController
+class AppController extends VamshopAppController
 {
     use ControllerTrait;
 
@@ -37,7 +37,7 @@ class AppController extends CroogoAppController
         $this->loadComponent('Crud.Crud', [
             'actions' => [
                 'index' => [
-                    'className' => 'Croogo/Core.Admin/Index'
+                    'className' => 'Vamshop/Core.Admin/Index'
                 ],
                 'lookup' => [
                     'className' => 'Crud.Lookup',
@@ -47,7 +47,7 @@ class AppController extends CroogoAppController
                     'className' => 'Crud.View'
                 ],
                 'add' => [
-                    'className' => 'Croogo/Core.Admin/Add',
+                    'className' => 'Vamshop/Core.Admin/Add',
                     'messages' => [
                         'success' => [
                             'params' => [
@@ -64,7 +64,7 @@ class AppController extends CroogoAppController
                     ]
                 ],
                 'edit' => [
-                    'className' => 'Croogo/Core.Admin/Edit',
+                    'className' => 'Vamshop/Core.Admin/Edit',
                     'messages' => [
                         'success' => [
                             'params' => [
@@ -81,7 +81,7 @@ class AppController extends CroogoAppController
                     ]
                 ],
                 'toggle' => [
-                    'className' => 'Croogo/Core.Admin/Toggle'
+                    'className' => 'Vamshop/Core.Admin/Toggle'
                 ],
                 'delete' => [
                     'className' => 'Crud.Delete'
@@ -90,7 +90,7 @@ class AppController extends CroogoAppController
             'listeners' => [
                 'Crud.Search',
                 'Crud.RelatedModels',
-                'Croogo/Core.Flash',
+                'Vamshop/Core.Flash',
             ]
         ]);
 
@@ -108,7 +108,7 @@ class AppController extends CroogoAppController
 
         parent::beforeFilter($event);
 
-        Croogo::dispatchEvent('Croogo.beforeSetupAdminData', $this);
+        Vamshop::dispatchEvent('Vamshop.beforeSetupAdminData', $this);
     }
 
     public function index()

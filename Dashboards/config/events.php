@@ -2,7 +2,7 @@
 
 return [
     'EventHandlers' => [
-        'Croogo/Dashboards.DashboardsEventHandler' => [
+        'Vamshop/Dashboards.DashboardsEventHandler' => [
             'options' => [
                 'priority' => 5,
             ],

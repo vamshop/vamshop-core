@@ -1,24 +1,24 @@
 <?php
-namespace Croogo\Test\TestCase;
+namespace Vamshop\Test\TestCase;
 
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 
 /**
- *  CroogoCorePluginsTest
+ *  VamshopCorePluginsTest
  *
  */
-class CroogoCorePluginsTest extends PHPUnit_Framework_TestSuite
+class VamshopCorePluginsTest extends PHPUnit_Framework_TestSuite
 {
 
     public static function suite()
     {
-        $suite = new CakeTestSuite('Croogo core plugins tests');
+        $suite = new CakeTestSuite('Vamshop core plugins tests');
         $plugins = [
             'Acl',
             'Blocks',
             'Comments',
             'Contacts',
-            'Croogo',
+            'Vamshop',
             'Nodes',
             'Extensions',
             'FileManager',

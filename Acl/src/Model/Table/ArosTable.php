@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Acl\Model\Table;
+namespace Vamshop\Acl\Model\Table;
 
 use Cake\Utility\Hash;
 
@@ -8,7 +8,7 @@ use Cake\Utility\Hash;
  * AclAro Model
  *
  * @category Model
- * @package  Croogo.Acl.Model
+ * @package  Vamshop.Acl.Model
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

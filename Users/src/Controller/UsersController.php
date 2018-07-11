@@ -1,19 +1,19 @@
 <?php
 
-namespace Croogo\Users\Controller;
+namespace Vamshop\Users\Controller;
 
 use Cake\Network\Email\Email;
 use Cake\Network\Exception\SocketException;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 use Cake\Core\Configure;
-use Croogo\Users\Model\Table\UsersTable;
+use Vamshop\Users\Model\Table\UsersTable;
 
 /**
  * Users Controller
  *
  * @property UsersTable Users
  * @category Controller
- * @package  Croogo.Users.Controller
+ * @package  Vamshop.Users.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -212,32 +212,32 @@ class UsersController extends AppController
         $session = $this->request->session();
         if (!$this->request->is('post')) {
             $redirectUrl = $this->Auth->redirectUrl();
-            if ($redirectUrl != '/' && !$session->check('Croogo.redirect')) {
-                $session->write('Croogo.redirect', $redirectUrl);
+            if ($redirectUrl != '/' && !$session->check('Vamshop.redirect')) {
+                $session->write('Vamshop.redirect', $redirectUrl);
             }
             return;
         }
 
-        Croogo::dispatchEvent('Controller.Users.beforeLogin', $this);
+        Vamshop::dispatchEvent('Controller.Users.beforeLogin', $this);
 
         $user = $this->Auth->identify();
         if (!$user) {
-            Croogo::dispatchEvent('Controller.Users.loginFailure', $this);
+            Vamshop::dispatchEvent('Controller.Users.loginFailure', $this);
 
             $this->Flash->error($this->Auth->config('authError'));
 
             return $this->redirect($this->Auth->loginAction);
         }
 
-        if ($session->check('Croogo.redirect')) {
-            $redirectUrl = $session->read('Croogo.redirect');
-            $session->delete('Croogo.redirect');
+        if ($session->check('Vamshop.redirect')) {
+            $redirectUrl = $session->read('Vamshop.redirect');
+            $session->delete('Vamshop.redirect');
         } else {
             $redirectUrl = $this->Auth->redirectUrl();
         }
 
         if (!$this->Access->isUrlAuthorized($user, $redirectUrl)) {
-            Croogo::dispatchEvent('Controller.Users.loginFailure', $this);
+            Vamshop::dispatchEvent('Controller.Users.loginFailure', $this);
             $this->Auth->config('authError', __d('croogo', 'Authorization error'));
             $this->Flash->error($this->Auth->config('authError'));
             return $this->redirect($this->Auth->loginRedirect);
@@ -245,7 +245,7 @@ class UsersController extends AppController
 
         $this->Auth->setUser($user);
 
-        Croogo::dispatchEvent('Controller.Users.loginSuccessful', $this);
+        Vamshop::dispatchEvent('Controller.Users.loginSuccessful', $this);
 
         return $this->redirect($redirectUrl);
     }
@@ -257,13 +257,13 @@ class UsersController extends AppController
  */
     public function logout()
     {
-        Croogo::dispatchEvent('Controller.Users.beforeLogout', $this);
-        $this->request->session()->delete('Croogo.redirect');
+        Vamshop::dispatchEvent('Controller.Users.beforeLogout', $this);
+        $this->request->session()->delete('Vamshop.redirect');
 
         $this->Flash->success(__d('croogo', 'Log out successful.'), 'auth');
 
         $logoutUrl = $this->Auth->logout();
-        Croogo::dispatchEvent('Controller.Users.afterLogout', $this);
+        Vamshop::dispatchEvent('Controller.Users.afterLogout', $this);
         return $this->redirect($logoutUrl);
     }
 

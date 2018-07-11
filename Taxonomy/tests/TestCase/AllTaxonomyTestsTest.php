@@ -1,7 +1,7 @@
 <?php
-namespace Croogo\Taxonomy\Test\TestCase;
+namespace Vamshop\Taxonomy\Test\TestCase;
 
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 
 class AllTaxonomyTestsTest extends PHPUnit_Framework_TestSuite
 {

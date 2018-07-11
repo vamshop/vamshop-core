@@ -1,11 +1,11 @@
 <?php
-namespace Croogo\Contacts\Test\TestCase\Controller;
+namespace Vamshop\Contacts\Test\TestCase\Controller;
 
 use Contacts\Controller\ContactsController;
-use Croogo\TestSuite\CroogoControllerTestCase;
-use Croogo\TestSuite\CroogoTestFixture;
+use Vamshop\TestSuite\VamshopControllerTestCase;
+use Vamshop\TestSuite\VamshopTestFixture;
 
-class ContactsControllerTest extends CroogoControllerTestCase
+class ContactsControllerTest extends VamshopControllerTestCase
 {
 
     public $fixtures = [

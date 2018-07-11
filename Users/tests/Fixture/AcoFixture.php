@@ -1,12 +1,12 @@
 <?php
 
-namespace Croogo\Users\Test\Fixture;
+namespace Vamshop\Users\Test\Fixture;
 
 use Cake\Datasource\ConnectionInterface;
-use Croogo\Acl\AclGenerator;
-use Croogo\Core\TestSuite\CroogoTestFixture;
+use Vamshop\Acl\AclGenerator;
+use Vamshop\Core\TestSuite\VamshopTestFixture;
 
-class AcoFixture extends CroogoTestFixture
+class AcoFixture extends VamshopTestFixture
 {
 
     public $fields = [

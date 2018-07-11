@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Error;
+namespace Vamshop\Core\Error;
 
 use Cake\Core\App;
 use Cake\Controller\Controller;
@@ -23,7 +23,7 @@ class ExceptionRenderer extends CakeExceptionRenderer
         $response = new Response();
 
         try {
-            $class = App::className('Croogo/Core.Error', 'Controller', 'Controller');
+            $class = App::className('Vamshop/Core.Error', 'Controller', 'Controller');
             $controller = new $class($request, $response);
             $controller->startupProcess();
             $startup = true;
@@ -43,7 +43,7 @@ class ExceptionRenderer extends CakeExceptionRenderer
         }
         if (empty($controller)) {
             $controller = new Controller($request, $response);
-            $controller->viewBuilder()->className('Croogo/Core.Croogo');
+            $controller->viewBuilder()->className('Vamshop/Core.Vamshop');
         }
 
         return $controller;

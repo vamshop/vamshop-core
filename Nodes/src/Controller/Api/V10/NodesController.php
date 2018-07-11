@@ -1,8 +1,8 @@
 <?php
 
-namespace Croogo\Nodes\Controller\Api\V10;
+namespace Vamshop\Nodes\Controller\Api\V10;
 
-use Croogo\Core\Controller\Api\AppController;
+use Vamshop\Core\Controller\Api\AppController;
 
 /**
  * Nodes Controller

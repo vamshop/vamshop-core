@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\TestSuite;
+namespace Vamshop\Core\TestSuite;
 
 use Cake\Core\App;
 use Cake\Core\Configure;
@@ -9,16 +9,16 @@ use Cake\Network\Request;
 use Cake\ORM\Query;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\IntegrationTestCase as CakeIntegrationTestCase;
-use Croogo\Core\Plugin;
-use Croogo\Core\Event\EventManager;
-use Croogo\Core\TestSuite\Constraint\EntityHasProperty;
+use Vamshop\Core\Plugin;
+use Vamshop\Core\Event\EventManager;
+use Vamshop\Core\TestSuite\Constraint\EntityHasProperty;
 use PHPUnit_Util_InvalidArgumentHelper;
 
 /**
- * CroogoTestCase class
+ * VamshopTestCase class
  *
  * @category TestSuite
- * @package  Croogo
+ * @package  Vamshop
  * @version  1.4
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @author   Rachman Chavik <rchavik@gmail.com>
@@ -51,8 +51,8 @@ class IntegrationTestCase extends CakeIntegrationTestCase
         EventManager::instance(new EventManager);
         Configure::write('EventHandlers', []);
 
-        Plugin::unload('Croogo/Install');
-        Plugin::load('Croogo/Example', ['autoload' => true, 'path' => '../Example/']);
+        Plugin::unload('Vamshop/Install');
+        Plugin::load('Vamshop/Example', ['autoload' => true, 'path' => '../Example/']);
         Configure::write('Acl.database', 'test');
 
         Plugin::routes();
@@ -78,18 +78,18 @@ class IntegrationTestCase extends CakeIntegrationTestCase
         $request = new Request();
         $request->addParams($params);
         $request->addDetector('api', [
-            'callback' => ['Croogo\\Core\\Router', 'isApiRequest'],
+            'callback' => ['Vamshop\\Core\\Router', 'isApiRequest'],
         ]);
         return $request;
     }
 
     /**
-     * @param \Croogo\Users\Model\Entity\User|\Cake\ORM\Query|string $user
+     * @param \Vamshop\Users\Model\Entity\User|\Cake\ORM\Query|string $user
      */
     public function user($user)
     {
         if (is_string($user)) {
-            $user = TableRegistry::get('Croogo/Users.Users')
+            $user = TableRegistry::get('Vamshop/Users.Users')
                 ->findByUsername($user);
         }
         if ($user instanceof Query) {

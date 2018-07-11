@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Acl\Model\Behavior;
+namespace Vamshop\Acl\Model\Behavior;
 
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
@@ -14,7 +14,7 @@ use Cake\ORM\TableRegistry;
  * UserAro Behavior
  *
  * @category Behavior
- * @package  Croogo.Acl.Model.Behavior
+ * @package  Vamshop.Acl.Model.Behavior
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -42,7 +42,7 @@ class UserAroBehavior extends Behavior
             return;
         }
         $model->belongsToMany('Roles', [
-            'className' => 'Croogo/Users.Roles',
+            'className' => 'Vamshop/Users.Roles',
             'saveStrategy' => 'replace',
         ]);
     }

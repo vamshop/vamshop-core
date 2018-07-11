@@ -94,6 +94,6 @@ Dashboard.collapsable = function (saveDashboard) {
 
 Dashboard.init = function() {
   var saveDashboard = _.debounce(Dashboard.saveDashboard, 300);
-  Dashboard.sortable('.' + Croogo.themeSettings.css['dashboardClass'], saveDashboard);
+  Dashboard.sortable('.' + Vamshop.themeSettings.css['dashboardClass'], saveDashboard);
   Dashboard.collapsable(saveDashboard);
 }

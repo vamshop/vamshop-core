@@ -1,14 +1,14 @@
 <?php
 
-namespace Croogo\Comments\Config;
+namespace Vamshop\Comments\Config;
 
-use Croogo\Core\Nav;
+use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'content.children.comments', [
     'title' => __d('croogo', 'Comments'),
     'url' => [
         'admin' => true,
-        'plugin' => 'Croogo/Comments',
+        'plugin' => 'Vamshop/Comments',
         'controller' => 'Comments',
         'action' => 'index',
     ],
@@ -17,7 +17,7 @@ Nav::add('sidebar', 'content.children.comments', [
             'title' => __d('croogo', 'Published'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Comments',
+                'plugin' => 'Vamshop/Comments',
                 'controller' => 'Comments',
                 'action' => 'index',
                 '?' => [
@@ -29,7 +29,7 @@ Nav::add('sidebar', 'content.children.comments', [
             'title' => __d('croogo', 'Approval'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Comments',
+                'plugin' => 'Vamshop/Comments',
                 'controller' => 'Comments',
                 'action' => 'index',
                 '?' => [

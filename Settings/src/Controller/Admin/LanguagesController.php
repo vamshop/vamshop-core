@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Settings\Controller\Admin;
+namespace Vamshop\Settings\Controller\Admin;
 
 use Cake\Event\Event;
-use Croogo\Core\Event\EventManager;
+use Vamshop\Core\Event\EventManager;
 
 /**
  * Languages Controller
  *
  * @category Settings.Controller
- * @package  Croogo.Settings
+ * @package  Vamshop.Settings
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -22,10 +22,10 @@ class LanguagesController extends AppController
         parent::initialize();
 
         $this->Crud->config('actions.moveUp', [
-            'className' => 'Croogo/Core.Admin/MoveUp'
+            'className' => 'Vamshop/Core.Admin/MoveUp'
         ]);
         $this->Crud->config('actions.moveDown', [
-            'className' => 'Croogo/Core.Admin/MoveDown'
+            'className' => 'Vamshop/Core.Admin/MoveDown'
         ]);
         $this->Crud->config('actions.index', [
             'searchFields' => [

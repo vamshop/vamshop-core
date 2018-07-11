@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Taxonomy\Action\Admin;
+namespace Vamshop\Taxonomy\Action\Admin;
 
 use Crud\Action\BaseAction;
 

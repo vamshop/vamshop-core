@@ -1,12 +1,12 @@
 <?php
-namespace Croogo\Core\Test\TestCase;
+namespace Vamshop\Core\Test\TestCase;
 
 use Cake\Utility\Hash;
-use Croogo\Core\Croogo;
-use Croogo\Core\Nav;
-use Croogo\Core\TestSuite\CroogoTestCase;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\Nav;
+use Vamshop\Core\TestSuite\VamshopTestCase;
 
-class CroogoNavTest extends CroogoTestCase
+class VamshopNavTest extends VamshopTestCase
 {
 
     public $setupSettings = false;
@@ -141,7 +141,7 @@ class CroogoNavTest extends CroogoTestCase
     {
         $this->markTestIncomplete('This test needs to be ported to CakePHP 3.0');
 
-        Croogo::dispatchEvent('Croogo.setupAdminData', null);
+        Vamshop::dispatchEvent('Vamshop.setupAdminData', null);
         $defaults = Nav::getDefaults();
 
         $items = Nav::items();

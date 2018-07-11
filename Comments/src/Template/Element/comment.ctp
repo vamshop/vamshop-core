@@ -17,7 +17,7 @@ use Cake\Core\Configure;
     <div class="comment-reply">
         <?php if ($level <= Configure::read('Comment.level')): ?>
             <?= $this->Html->link(__d('croogo', 'Reply'), array(
-                'plugin' => 'Croogo/Comments',
+                'plugin' => 'Vamshop/Comments',
                 'controller' => 'Comments',
                 'action' => 'add',
                 urlencode($comment->model),
@@ -28,6 +28,6 @@ use Cake\Core\Configure;
     </div>
 
     <?php foreach ($comment->children as $childComment): ?>
-        <?= $this->element('Croogo/Comments.comment', ['comment' => $childComment, 'level' => $level + 1]); ?>
+        <?= $this->element('Vamshop/Comments.comment', ['comment' => $childComment, 'level' => $level + 1]); ?>
     <?php endforeach; ?>
 </div>

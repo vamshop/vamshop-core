@@ -1,9 +1,9 @@
 <?php
 
 use Cake\Routing\RouteBuilder;
-use Croogo\Core\Router;
+use Vamshop\Core\Router;
 
-Router::plugin('Croogo/Comments', ['path' => '/'], function (RouteBuilder $route) {
+Router::plugin('Vamshop/Comments', ['path' => '/'], function (RouteBuilder $route) {
     $route->prefix('admin', function (RouteBuilder $route) {
         $route->extensions(['json']);
 

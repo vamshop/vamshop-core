@@ -1,11 +1,11 @@
 <?php
 
-namespace Croogo\Meta\Test\TestCase\Model\Behavior;
+namespace Vamshop\Meta\Test\TestCase\Model\Behavior;
 
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 use Nodes\Model\Node;
 
-class MetaBehaviorTest extends CroogoTestCase
+class MetaBehaviorTest extends VamshopTestCase
 {
 
     public $fixtures = [

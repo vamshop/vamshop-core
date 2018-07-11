@@ -1,9 +1,9 @@
 <?php
 
 use Cake\Routing\RouteBuilder;
-use Croogo\Core\Router;
+use Vamshop\Core\Router;
 
-Router::plugin('Croogo/Users', ['path' => '/'], function (RouteBuilder $route) {
+Router::plugin('Vamshop/Users', ['path' => '/'], function (RouteBuilder $route) {
     $route->prefix('admin', function (RouteBuilder $route) {
         $route->extensions(['json']);
 
@@ -19,7 +19,7 @@ Router::plugin('Croogo/Users', ['path' => '/'], function (RouteBuilder $route) {
     Router::build($route, '/users/:action/*', ['controller' => 'Users']);
 });
 
-Router::plugin('Croogo/Users', ['path' => '/'], function (RouteBuilder $route) {
+Router::plugin('Vamshop/Users', ['path' => '/'], function (RouteBuilder $route) {
     $route->prefix('api', function (RouteBuilder $route) {
         $route->prefix('v10', ['path' => '/v1.0'], function (RouteBuilder $route) {
             $route->extensions(['json']);

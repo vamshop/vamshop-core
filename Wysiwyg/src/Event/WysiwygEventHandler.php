@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Wysiwyg\Event;
+namespace Vamshop\Wysiwyg\Event;
 
 use Cake\Event\EventListenerInterface;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 /**
  * Wysiwyg Event Handler
  *
  * @category Event
- * @package  Croogo.Ckeditor
+ * @package  Vamshop.Ckeditor
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
@@ -24,7 +24,7 @@ class WysiwygEventHandler implements EventListenerInterface
     public function implementedEvents()
     {
         return [
-            'Croogo.bootstrapComplete' => [
+            'Vamshop.bootstrapComplete' => [
                 'callable' => 'onBootstrapComplete',
             ],
         ];
@@ -32,6 +32,6 @@ class WysiwygEventHandler implements EventListenerInterface
 
     public function onBootstrapComplete($event)
     {
-        Croogo::hookHelper('*', 'Croogo/Wysiwyg.Wysiwyg');
+        Vamshop::hookHelper('*', 'Vamshop/Wysiwyg.Wysiwyg');
     }
 }

@@ -9,10 +9,10 @@ class MoveSiteMeta extends AbstractMigration
     public function up()
     {
         if (Configure::check('Meta')) {
-            $settingsTable = TableRegistry::get('Croogo/Settings.Settings');
+            $settingsTable = TableRegistry::get('Vamshop/Settings.Settings');
             $meta = Configure::read('Meta');
-            $settingsTable = TableRegistry::get('Croogo/Settings.Settings');
-            $metaTable = TableRegistry::get('Croogo/Meta.Meta');
+            $settingsTable = TableRegistry::get('Vamshop/Settings.Settings');
+            $metaTable = TableRegistry::get('Vamshop/Meta.Meta');
 
             $newMetas = [];
             foreach ($meta as $key => $value) {

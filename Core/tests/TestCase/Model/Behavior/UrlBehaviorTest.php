@@ -1,12 +1,12 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase\Model\Behavior;
+namespace Vamshop\Core\Test\TestCase\Model\Behavior;
 
 use Cake\ORM\TableRegistry;
-use Croogo\Core\Link;
-use Croogo\Core\TestSuite\CroogoTestCase;
+use Vamshop\Core\Link;
+use Vamshop\Core\TestSuite\VamshopTestCase;
 
-class UrlBehaviorTest extends CroogoTestCase
+class UrlBehaviorTest extends VamshopTestCase
 {
 
     public $fixtures = [

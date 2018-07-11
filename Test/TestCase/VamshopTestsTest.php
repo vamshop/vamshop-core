@@ -1,9 +1,9 @@
 <?php
-namespace Croogo\Test\TestCase;
+namespace Vamshop\Test\TestCase;
 
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 
-class CroogoTestsTest extends PHPUnit_Framework_TestSuite
+class VamshopTestsTest extends PHPUnit_Framework_TestSuite
 {
 
 /**
@@ -13,17 +13,17 @@ class CroogoTestsTest extends PHPUnit_Framework_TestSuite
  */
     public static function suite()
     {
-        $suite = new CakeTestSuite('Croogo Tests');
+        $suite = new CakeTestSuite('Vamshop Tests');
         $path = TESTS . 'Case' . DS;
-        $suite->addTestFile($path . 'CroogoModelsTest.php');
-        $suite->addTestFile($path . 'CroogoBehaviorsTest.php');
-        $suite->addTestFile($path . 'CroogoHelpersTest.php');
-        $suite->addTestFile($path . 'CroogoControllersTest.php');
-        $suite->addTestFile($path . 'CroogoComponentsTest.php');
-        $suite->addTestFile($path . 'CroogoEventsTest.php');
-        $suite->addTestFile($path . 'CroogoLibsTest.php');
-        $suite->addTestFile($path . 'CroogoConsolesTest.php');
-        $suite->addTestFile($path . 'CroogoCorePluginsTest.php');
+        $suite->addTestFile($path . 'VamshopModelsTest.php');
+        $suite->addTestFile($path . 'VamshopBehaviorsTest.php');
+        $suite->addTestFile($path . 'VamshopHelpersTest.php');
+        $suite->addTestFile($path . 'VamshopControllersTest.php');
+        $suite->addTestFile($path . 'VamshopComponentsTest.php');
+        $suite->addTestFile($path . 'VamshopEventsTest.php');
+        $suite->addTestFile($path . 'VamshopLibsTest.php');
+        $suite->addTestFile($path . 'VamshopConsolesTest.php');
+        $suite->addTestFile($path . 'VamshopCorePluginsTest.php');
         return $suite;
     }
 }

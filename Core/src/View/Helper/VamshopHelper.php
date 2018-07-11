@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\View\Helper;
+namespace Vamshop\Core\View\Helper;
 
 use Cake\Controller\Component\AuthComponent;
 use Cake\Core\Configure;
@@ -10,40 +10,40 @@ use Cake\Utility\Inflector;
 use Cake\View\Helper;
 use Cake\View\Helper\HtmlHelper;
 use Cake\View\View;
-use Croogo\Core\Croogo;
-use Croogo\Core\Database\Type\ParamsType;
-use Croogo\Core\Plugin;
-use Croogo\Core\Status;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\Database\Type\ParamsType;
+use Vamshop\Core\Plugin;
+use Vamshop\Core\Status;
 
 /**
- * Croogo Helper
+ * Vamshop Helper
  *
  * @category Helper
- * @package  Croogo.Croogo.View.Helper
+ * @package  Vamshop.Vamshop.View.Helper
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class CroogoHelper extends Helper
+class VamshopHelper extends Helper
 {
 
     public $helpers = [
         'Form',
         'Html' => [
-            'className' => 'Croogo/Core.CroogoHtml'
+            'className' => 'Vamshop/Core.VamshopHtml'
         ],
         'Url',
-        'Croogo/Core.Layout',
-        'Croogo/Core.Theme',
-        'Croogo/Menus.Menus',
-        'Croogo/Acl.Acl',
+        'Vamshop/Core.Layout',
+        'Vamshop/Core.Theme',
+        'Vamshop/Menus.Menus',
+        'Vamshop/Acl.Acl',
     ];
 
     /**
      * ParamsType instance
      *
-     * @var Croogo\Core\Database\Type\ParamsType;
+     * @var Vamshop\Core\Database\Type\ParamsType;
      */
     protected $_ParamsType;
 
@@ -72,13 +72,13 @@ class CroogoHelper extends Helper
     {
         $this->helpers[] = Configure::read('Site.acl_plugin') . '.' . Configure::read('Site.acl_plugin');
         parent::__construct($View, $settings);
-        $this->_CroogoStatus = new Status();
+        $this->_VamshopStatus = new Status();
         $this->_ParamsType = new ParamsType;
     }
 
     public function statuses()
     {
-        return $this->_CroogoStatus->statuses();
+        return $this->_VamshopStatus->statuses();
     }
 
     /**
@@ -134,8 +134,8 @@ class CroogoHelper extends Helper
         $out = null;
         $sorted = Hash::sort($menus, '{s}.weight', 'ASC');
         if (empty($this->Role)) {
-            $this->Role = TableRegistry::get('Croogo/Users.Roles');
-            $this->Role->addBehavior('Croogo/Core.Aliasable');
+            $this->Role = TableRegistry::get('Vamshop/Users.Roles');
+            $this->Role->addBehavior('Vamshop/Core.Aliasable');
         }
         $currentRole = $this->Role->byId($this->Layout->getRoleId());
 
@@ -554,7 +554,7 @@ class CroogoHelper extends Helper
 
     public function linkChooser($target)
     {
-        $linkChooser = $this->_View->element('Croogo/Core.admin/modal', [
+        $linkChooser = $this->_View->element('Vamshop/Core.admin/modal', [
             'id' => 'link-chooser',
             'modalSize' => 'modal-lg'
         ]);
@@ -562,7 +562,7 @@ class CroogoHelper extends Helper
             $this->_View->append('page-footer', $linkChooser);
         }
 
-        return $this->_View->cell('Croogo/Core.Admin/LinkChooser', [$target]);
+        return $this->_View->cell('Vamshop/Core.Admin/LinkChooser', [$target]);
     }
 
     public function dataUri($theme, $path, $allowedMimeTypes = null)

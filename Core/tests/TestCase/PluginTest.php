@@ -1,18 +1,18 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase;
+namespace Vamshop\Core\Test\TestCase;
 
 use Cake\Cache\Cache;
 use Cake\Core\App;
 use Cake\Core\Configure;
 use Cake\Datasource\ConnectionManager;
-use Croogo\Core\Plugin;
-use Croogo\Core\TestSuite\TestCase;
+use Vamshop\Core\Plugin;
+use Vamshop\Core\TestSuite\TestCase;
 
 class PluginTest extends TestCase
 {
     /**
-     * @var \Croogo\Core\Plugin
+     * @var \Vamshop\Core\Plugin
      */
     public $plugin;
 
@@ -309,19 +309,19 @@ class PluginTest extends TestCase
  */
     public function testReorderBootstraps()
     {
-        $bootstraps = explode(',', 'Croogo/Settings,Croogo/Taxonomy,Sites,Croogo/Example');
+        $bootstraps = explode(',', 'Vamshop/Settings,Vamshop/Taxonomy,Sites,Vamshop/Example');
 
-        $expected = 'Croogo/Example is already at the last position';
-        $result = $this->plugin->move('down', 'Croogo/Example', $bootstraps);
+        $expected = 'Vamshop/Example is already at the last position';
+        $result = $this->plugin->move('down', 'Vamshop/Example', $bootstraps);
         $this->assertEquals($expected, $result);
 
         // core and bundled plugins must not be reordered
         $result = $this->plugin->move('up', 'Sites', $bootstraps);
         $this->assertEquals('Sites is already at the first position', $result);
 
-        $bootstraps = explode(',', 'Croogo/Example,Croogo/Settings,Croogo/Taxonomy,Sites');
-        $result = $this->plugin->move('up', 'Croogo/Example', $bootstraps);
-        $this->assertEquals('Croogo/Example is already at the first position', $result);
+        $bootstraps = explode(',', 'Vamshop/Example,Vamshop/Settings,Vamshop/Taxonomy,Sites');
+        $result = $this->plugin->move('up', 'Vamshop/Example', $bootstraps);
+        $this->assertEquals('Vamshop/Example is already at the first position', $result);
     }
 
 /**
@@ -423,9 +423,9 @@ class PluginTest extends TestCase
     public function pathDataProvider()
     {
         return [
-            // Internal Croogo plugins based on Croogo/Core path
-            ['Croogo/Core', CROOGO_INCLUDE_PATH  . 'Core' . DS],
-            ['Croogo/Nodes', CROOGO_INCLUDE_PATH . 'Nodes' . DS],
+            // Internal Vamshop plugins based on Vamshop/Core path
+            ['Vamshop/Core', CROOGO_INCLUDE_PATH  . 'Core' . DS],
+            ['Vamshop/Nodes', CROOGO_INCLUDE_PATH . 'Nodes' . DS],
             // Plugin paths from the 'plugins' Configure key
             ['BootstrapUI', VENDOR .  'friendsofcake' . DS . 'bootstrap-ui' . DS],
             // Plugin path from the plugins directory

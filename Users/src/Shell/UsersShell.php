@@ -1,14 +1,14 @@
 <?php
 
-namespace Croogo\Users\Shell;
+namespace Vamshop\Users\Shell;
 
 use Cake\Console\Shell;
-use Croogo\Users\Model\Entity\User;
+use Vamshop\Users\Model\Entity\User;
 
 /**
  * UsersShell
  *
- * @package Croogo.Users.Shell
+ * @package Vamshop.Users.Shell
  */
 class UsersShell extends Shell
 {
@@ -23,7 +23,7 @@ class UsersShell extends Shell
     public function initialize()
     {
         parent::initialize();
-        $this->loadModel('Croogo/Users.Users');
+        $this->loadModel('Vamshop/Users.Users');
     }
 
     /**

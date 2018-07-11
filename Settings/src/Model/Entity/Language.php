@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Settings\Model\Entity;
+namespace Vamshop\Settings\Model\Entity;
 
 use Cake\Core\App;
 use Cake\ORM\Entity;

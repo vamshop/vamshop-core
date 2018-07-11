@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Menus\Test\Fixture;
+namespace Vamshop\Menus\Test\Fixture;
 
-use Croogo\Core\TestSuite\CroogoTestFixture;
+use Vamshop\Core\TestSuite\VamshopTestFixture;
 
-class LinkFixture extends CroogoTestFixture
+class LinkFixture extends VamshopTestFixture
 {
 
     public $name = 'Link';
@@ -42,7 +42,7 @@ class LinkFixture extends CroogoTestFixture
             'title' => 'About',
             'class' => 'about',
             'description' => '',
-            'link' => 'plugin:Croogo/Nodes|controller:Nodes|action:view|type:page|slug:about',
+            'link' => 'plugin:Vamshop/Nodes|controller:Nodes|action:view|type:page|slug:about',
             'target' => '',
             'rel' => '',
             'status' => 1,
@@ -60,7 +60,7 @@ class LinkFixture extends CroogoTestFixture
             'title' => 'Contact',
             'class' => 'contact',
             'description' => '',
-            'link' => 'plugin:Croogo/Contacts|controller:Contacts|action:view|contact',
+            'link' => 'plugin:Vamshop/Contacts|controller:Contacts|action:view|contact',
             'target' => '',
             'rel' => '',
             'status' => 1,
@@ -165,7 +165,7 @@ class LinkFixture extends CroogoTestFixture
             'id' => 12,
             'parent_id' => null,
             'menu_id' => 6,
-            'title' => 'Croogo',
+            'title' => 'Vamshop',
             'class' => 'croogo',
             'description' => '',
             'link' => 'http://www.vamshop.com',

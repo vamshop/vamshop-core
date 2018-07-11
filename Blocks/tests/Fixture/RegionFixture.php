@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Blocks\Test\Fixture;
+namespace Vamshop\Blocks\Test\Fixture;
 
-use Croogo\Core\TestSuite\CroogoTestFixture;
+use Vamshop\Core\TestSuite\VamshopTestFixture;
 
-class RegionFixture extends CroogoTestFixture
+class RegionFixture extends VamshopTestFixture
 {
 
     public $name = 'Region';

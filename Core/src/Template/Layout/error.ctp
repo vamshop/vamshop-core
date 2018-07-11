@@ -1,6 +1,6 @@
 <?php
 /**
- * Default Error Layout for Croogo CMS
+ * Default Error Layout for Vamshop CMS
  *
  * @author Fahad Ibnay Heylaal <contact@fahad19.com>
  * @link http://www.vamshop.com
@@ -80,7 +80,7 @@ $siteTagline = Configure::read('Site.tagline');
                 <div class="col-md-4">
                     <ul class="list-inline">
                         <li class="list-inline-item">
-                            Powered by <a href="http://www.vamshop.com">Croogo</a>.
+                            Powered by <a href="http://www.vamshop.com">Vamshop</a>.
                         </li>
                         <li class="list-inline-item">
                             <a href="http://www.cakephp.org"><?= $this->Html->image('/img/cake.power.gif'); ?></a>

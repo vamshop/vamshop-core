@@ -2,9 +2,9 @@
 
 namespace Shops\Model\Table;
 
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Core\Model\Table\VamshopTable;
 
-class OrdersTable extends CroogoTable
+class OrdersTable extends VamshopTable
 {
 
     public $useTable = false;

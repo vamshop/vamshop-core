@@ -1,17 +1,17 @@
 <?php
 
-namespace Croogo\Extensions\Controller\Admin;
+namespace Vamshop\Extensions\Controller\Admin;
 
 use Cake\Core\Configure;
-use Croogo\Extensions\CroogoTheme;
-use Croogo\Extensions\Exception\MissingThemeException;
-use Croogo\Extensions\ExtensionsInstaller;
+use Vamshop\Extensions\VamshopTheme;
+use Vamshop\Extensions\Exception\MissingThemeException;
+use Vamshop\Extensions\ExtensionsInstaller;
 
 /**
  * Extensions Themes Controller
  *
  * @category Controller
- * @package  Croogo.Extensions.Controller
+ * @package  Vamshop.Extensions.Controller
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -21,10 +21,10 @@ class ThemesController extends AppController
 {
 
     /**
-     * CroogoTheme instance
-     * @var \Croogo\Extensions\CroogoTheme
+     * VamshopTheme instance
+     * @var \Vamshop\Extensions\VamshopTheme
      */
-    protected $_CroogoTheme = false;
+    protected $_VamshopTheme = false;
 
     /**
      * Constructor
@@ -32,7 +32,7 @@ class ThemesController extends AppController
     public function initialize(array $config = [])
     {
         parent::initialize($config);
-        $this->_CroogoTheme = new CroogoTheme();
+        $this->_VamshopTheme = new VamshopTheme();
     }
 
     /**
@@ -44,17 +44,17 @@ class ThemesController extends AppController
     {
         $this->set('title_for_layout', __d('croogo', 'Themes'));
 
-        $themes = $this->_CroogoTheme->getThemes();
+        $themes = $this->_VamshopTheme->getThemes();
         $themesData = [];
         foreach ($themes as $theme => $path) {
-            $themesData[$theme] = $this->_CroogoTheme->getData($theme, $path);
+            $themesData[$theme] = $this->_VamshopTheme->getData($theme, $path);
         }
 
         $activeTheme = Configure::read('Site.theme');
         if (empty($activeTheme)) {
-            $activeTheme = 'Croogo/Core';
+            $activeTheme = 'Vamshop/Core';
         }
-        $currentTheme = $this->_CroogoTheme->getData($activeTheme);
+        $currentTheme = $this->_VamshopTheme->getData($activeTheme);
         $this->set(compact('themes', 'themesData', 'currentTheme'));
     }
 
@@ -69,7 +69,7 @@ class ThemesController extends AppController
         $theme = urldecode($this->request->query('name'));
     	
         try {
-            $this->_CroogoTheme->activate($theme);
+            $this->_VamshopTheme->activate($theme);
 
             $this->Flash->success(__d('croogo', 'Theme activated.'));
         } catch (MissingThemeException $exception) {
@@ -137,7 +137,7 @@ class ThemesController extends AppController
             return $this->redirect(['action' => 'index']);
         }
 
-        if ($alias == 'Croogo/Core') {
+        if ($alias == 'Vamshop/Core') {
             $this->Flash->error(__d('croogo', 'Default theme cannot be deleted.'));
 
             return $this->redirect(['action' => 'index']);
@@ -147,7 +147,7 @@ class ThemesController extends AppController
             return $this->redirect(['action' => 'index']);
         }
 
-        $result = $this->_CroogoTheme->delete($alias);
+        $result = $this->_VamshopTheme->delete($alias);
 
         if ($result === true) {
             $this->Flash->success(__d('croogo', 'Theme deleted successfully.'));

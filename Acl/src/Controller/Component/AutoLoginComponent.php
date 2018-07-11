@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Acl\Controller\Component;
+namespace Vamshop\Acl\Controller\Component;
 
 use Cake\Controller\Component;
 use Cake\Controller\ComponentRegistry;
@@ -14,7 +14,7 @@ use Cake\Utility\Hash;
  * cookie.
  *
  * @category Component
- * @package  Croogo.Acl.Controller.Component
+ * @package  Vamshop.Acl.Controller.Component
  * @since    1.5
  * @author   Rachman Chavik <rchavik@xintesa.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

@@ -1,21 +1,21 @@
 <?php
 
-namespace Croogo\FileManager\Test\TestCase\Controller;
+namespace Vamshop\FileManager\Test\TestCase\Controller;
 
-use Croogo\TestSuite\CroogoControllerTestCase;
+use Vamshop\TestSuite\VamshopControllerTestCase;
 use FileManager\Controller\FileManagerController;
 
 /**
  * FileManager Controller Test
  *
  * @category Test
- * @package  Croogo
+ * @package  Vamshop
  * @version  1.4
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class FileManagerControllerTest extends CroogoControllerTestCase
+class FileManagerControllerTest extends VamshopControllerTestCase
 {
 
 /**
@@ -73,7 +73,7 @@ class FileManagerControllerTest extends CroogoControllerTestCase
             ],
         ]);
         $this->FileManager->constructClasses();
-        $this->FileManager->Components->unload('Croogo.Croogo');
+        $this->FileManager->Components->unload('Vamshop.Vamshop');
         $this->FileManager->Session->write('Auth.User', [
             'id' => 1,
             'role_id' => 1,
@@ -109,7 +109,7 @@ class FileManagerControllerTest extends CroogoControllerTestCase
             ],
         ]);
         $this->FileManager->constructClasses();
-        $this->FileManager->Components->unload('Croogo.Croogo');
+        $this->FileManager->Components->unload('Vamshop.Vamshop');
         $this->FileManager->Session->write('Auth.User', [
             'id' => 1,
             'role_id' => 1,
@@ -145,7 +145,7 @@ class FileManagerControllerTest extends CroogoControllerTestCase
             ],
         ]);
         $this->FileManager->constructClasses();
-        $this->FileManager->Components->unload('Croogo.Croogo');
+        $this->FileManager->Components->unload('Vamshop.Vamshop');
         $this->FileManager->Session->write('Auth.User', [
             'id' => 1,
             'role_id' => 1,
@@ -185,7 +185,7 @@ class FileManagerControllerTest extends CroogoControllerTestCase
             ],
         ]);
         $this->FileManager->constructClasses();
-        $this->FileManager->Components->unload('Croogo.Croogo');
+        $this->FileManager->Components->unload('Vamshop.Vamshop');
         $this->FileManager->Session->write('Auth.User', [
             'id' => 1,
             'role_id' => 1,
@@ -225,7 +225,7 @@ class FileManagerControllerTest extends CroogoControllerTestCase
             ],
         ]);
         $this->FileManager->constructClasses();
-        $this->FileManager->Components->unload('Croogo.Croogo');
+        $this->FileManager->Components->unload('Vamshop.Vamshop');
         $this->FileManager->Session->write('Auth.User', [
             'id' => 1,
             'role_id' => 1,
@@ -265,7 +265,7 @@ class FileManagerControllerTest extends CroogoControllerTestCase
             ],
         ]);
         $this->FileManager->constructClasses();
-        $this->FileManager->Components->unload('Croogo.Croogo');
+        $this->FileManager->Components->unload('Vamshop.Vamshop');
         $this->FileManager->Session->write('Auth.User', [
             'id' => 1,
             'role_id' => 1,
@@ -303,7 +303,7 @@ class FileManagerControllerTest extends CroogoControllerTestCase
         ]);
         $this->FileManager->request->data['path'] = APP . '../../..';
         $this->FileManager->constructClasses();
-        $this->FileManager->Components->unload('Croogo.Croogo');
+        $this->FileManager->Components->unload('Vamshop.Vamshop');
         $this->FileManager->Session->write('Auth.User', [
             'id' => 1,
             'role_id' => 1,

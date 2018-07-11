@@ -2,6 +2,6 @@
 
 return [
     'EventHandlers' => [
-        'Croogo/Acl.AclEventHandler',
+        'Vamshop/Acl.AclEventHandler',
     ],
 ];

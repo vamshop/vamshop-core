@@ -1,9 +1,9 @@
 <?php
-$this->extend('Croogo/Core./Common/admin_edit');
+$this->extend('Vamshop/Core./Common/admin_edit');
 
 $this->Breadcrumbs
     ->add(__d('croogo', 'Settings'), [
-        'plugin' => 'Croogo/Settings',
+        'plugin' => 'Vamshop/Settings',
         'controller' => 'Settings',
         'action' => 'index',
     ]);
@@ -21,8 +21,8 @@ $this->append('form-start', $this->Form->create($setting, [
 ]));
 
 $this->start('tab-heading');
-echo $this->Croogo->adminTab(__d('croogo', 'Settings'), '#setting-basic');
-echo $this->Croogo->adminTab(__d('croogo', 'Misc'), '#setting-misc');
+echo $this->Vamshop->adminTab(__d('croogo', 'Settings'), '#setting-basic');
+echo $this->Vamshop->adminTab(__d('croogo', 'Misc'), '#setting-misc');
 $this->end();
 
 $this->start('tab-content');

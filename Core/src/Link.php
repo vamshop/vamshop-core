@@ -1,9 +1,9 @@
 <?php
 
-namespace Croogo\Core;
+namespace Vamshop\Core;
 
 use ArrayObject;
-use Croogo\Core\Utility\StringConverter;
+use Vamshop\Core\Utility\StringConverter;
 
 class Link extends ArrayObject
 {

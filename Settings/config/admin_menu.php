@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Settings\Config;
+namespace Vamshop\Settings\Config;
 
-use Croogo\Core\Nav;
+use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'settings', [
     'icon' => 'cog',
     'title' => __d('croogo', 'Settings'),
     'url' => [
         'prefix' => 'admin',
-        'plugin' => 'Croogo/Settings',
+        'plugin' => 'Vamshop/Settings',
         'controller' => 'Settings',
         'action' => 'prefix',
         'Site',
@@ -20,7 +20,7 @@ Nav::add('sidebar', 'settings', [
             'title' => __d('croogo', 'Site'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Settings',
+                'plugin' => 'Vamshop/Settings',
                 'controller' => 'Settings',
                 'action' => 'prefix',
                 'Site',
@@ -32,7 +32,7 @@ Nav::add('sidebar', 'settings', [
             'title' => __d('croogo', 'Theme'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Settings',
+                'plugin' => 'Vamshop/Settings',
                 'controller' => 'Settings',
                 'action' => 'prefix',
                 'Theme',
@@ -44,7 +44,7 @@ Nav::add('sidebar', 'settings', [
             'title' => __d('croogo', 'Reading'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Settings',
+                'plugin' => 'Vamshop/Settings',
                 'controller' => 'Settings',
                 'action' => 'prefix',
                 'Reading',
@@ -56,7 +56,7 @@ Nav::add('sidebar', 'settings', [
             'title' => __d('croogo', 'Writing'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Settings',
+                'plugin' => 'Vamshop/Settings',
                 'controller' => 'Settings',
                 'action' => 'prefix',
                 'Writing',
@@ -68,7 +68,7 @@ Nav::add('sidebar', 'settings', [
             'title' => __d('croogo', 'Comment'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Settings',
+                'plugin' => 'Vamshop/Settings',
                 'controller' => 'Settings',
                 'action' => 'prefix',
                 'Comment',
@@ -80,7 +80,7 @@ Nav::add('sidebar', 'settings', [
             'title' => __d('croogo', 'Service'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Settings',
+                'plugin' => 'Vamshop/Settings',
                 'controller' => 'Settings',
                 'action' => 'prefix',
                 'Service',
@@ -92,7 +92,7 @@ Nav::add('sidebar', 'settings', [
             'title' => __d('croogo', 'Languages'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Settings',
+                'plugin' => 'Vamshop/Settings',
                 'controller' => 'Languages',
                 'action' => 'index',
             ],
@@ -103,7 +103,7 @@ Nav::add('sidebar', 'settings', [
             'title' => __d('croogo', 'Cache'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/Settings',
+                'plugin' => 'Vamshop/Settings',
                 'controller' => 'Caches',
                 'action' => 'index',
             ],

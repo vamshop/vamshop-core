@@ -1,12 +1,12 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase\Controller\Component;
+namespace Vamshop\Core\Test\TestCase\Controller\Component;
 
 use Cake\Controller\Controller;
 use Cake\Network\Request;
-use Croogo\Core\TestSuite\CroogoTestCase;
+use Vamshop\Core\TestSuite\VamshopTestCase;
 
-class BulkProcessComponentTest extends CroogoTestCase
+class BulkProcessComponentTest extends VamshopTestCase
 {
 
     public $setupSettings = false;
@@ -16,7 +16,7 @@ class BulkProcessComponentTest extends CroogoTestCase
         $request = new Request();
         $request->data = $data;
         $controller = new Controller($request);
-        $controller->loadComponent('Croogo/Core.BulkProcess');
+        $controller->loadComponent('Vamshop/Core.BulkProcess');
         $controller->startupProcess();
         return $controller;
     }

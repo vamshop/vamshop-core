@@ -3,7 +3,7 @@
 use Cake\Routing\RouteBuilder;
 use Cake\Routing\Router;
 
-Router::plugin('Croogo/Extensions', ['path' => '/'], function (RouteBuilder $route) {
+Router::plugin('Vamshop/Extensions', ['path' => '/'], function (RouteBuilder $route) {
     $route->prefix('admin', function (RouteBuilder $route) {
         $route->extensions(['json']);
 

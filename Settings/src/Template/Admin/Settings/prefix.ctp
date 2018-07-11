@@ -2,10 +2,10 @@
 
 use Cake\Utility\Inflector;
 
-$this->extend('Croogo/Core./Common/admin_edit');
+$this->extend('Vamshop/Core./Common/admin_edit');
 
 $this->Breadcrumbs->add(__d('croogo', 'Settings'),
-    ['plugin' => 'Croogo/Settings', 'controller' => 'Settings', 'action' => 'index'])
+    ['plugin' => 'Vamshop/Settings', 'controller' => 'Settings', 'action' => 'index'])
     ->add($prefix, $this->request->getRequestTarget());
 
 $this->assign('form-start', $this->Form->create(null, [
@@ -14,7 +14,7 @@ $this->assign('form-start', $this->Form->create(null, [
 ]));
 
 $this->append('tab-heading');
-echo $this->Croogo->adminTab($prefix, '#settings-main');
+echo $this->Vamshop->adminTab($prefix, '#settings-main');
 $this->end();
 
 $this->append('tab-content');
@@ -36,6 +36,6 @@ $this->end();
 
 $this->start('buttons');
     echo $this->Html->beginBox(__d('croogo', 'Publishing'));
-    echo $this->element('Croogo/Core.admin/buttons', ['applyText' => false]);
+    echo $this->element('Vamshop/Core.admin/buttons', ['applyText' => false]);
     echo $this->Html->endBox();
 $this->end();

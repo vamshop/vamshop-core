@@ -1,14 +1,14 @@
 <?php
 /**
- * @var \Croogo\Core\View\CroogoView $this
+ * @var \Vamshop\Core\View\VamshopView $this
  */
-use Croogo\Core\Status;
+use Vamshop\Core\Status;
 
 echo $this->Form->input('status', [
     'label' => __d('croogo', 'Status'),
     'class' => 'c-select',
     'default' => Status::UNPUBLISHED,
-    'options' => $this->Croogo->statuses(),
+    'options' => $this->Vamshop->statuses(),
 ]);
 
 echo $this->Html->div('input-daterange', $this->Form->input('publish_start', [

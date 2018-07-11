@@ -1,16 +1,16 @@
 <?php
 
-namespace Croogo\Settings\View\Helper;
+namespace Vamshop\Settings\View\Helper;
 
 use Cake\View\Helper;
 use Cake\Utility\Hash;
-use Croogo\Settings\Model\Entity\Setting;
+use Vamshop\Settings\Model\Entity\Setting;
 
 /**
  * SettingForms Helper
  *
  * @category Helper
- * @package  Croogo.Settings.View.Helper
+ * @package  Vamshop.Settings.View.Helper
  * @version  1.0
  * @author   Rachman Chavik <rchavik@xintesa.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -21,9 +21,9 @@ class SettingsFormHelper extends Helper
 
     public $helpers = [
         'Form' => [
-            'className' => 'Croogo/Core.CroogoForm'
+            'className' => 'Vamshop/Core.VamshopForm'
         ],
-        'Croogo/Core.Croogo',
+        'Vamshop/Core.Vamshop',
     ];
 
 /**

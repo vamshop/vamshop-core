@@ -1,16 +1,16 @@
 <?php
 
-namespace Croogo\Core\Database\Type;
+namespace Vamshop\Core\Database\Type;
 
 use Cake\Database\Driver;
 use Cake\Database\Type;
-use Croogo\Core\Utility\StringConverter;
+use Vamshop\Core\Utility\StringConverter;
 use PDO;
 
 /**
  * ParamsType
  *
- * @package  Croogo.Core.Database.Type
+ * @package  Vamshop.Core.Database.Type
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */

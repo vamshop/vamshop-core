@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Nodes\View\Helper;
+namespace Vamshop\Nodes\View\Helper;
 
 use Cake\Collection\Collection;
 use Cake\Core\Configure;
@@ -9,15 +9,15 @@ use Cake\Event\Event;
 use Cake\Utility\Hash;
 use Cake\View\Helper;
 use Cake\View\View;
-use Croogo\Core\Croogo;
-use Croogo\Core\Utility\StringConverter;
-use Croogo\Nodes\Model\Entity\Node;
+use Vamshop\Core\Vamshop;
+use Vamshop\Core\Utility\StringConverter;
+use Vamshop\Nodes\Model\Entity\Node;
 
 /**
  * Nodes Helper
  *
  * @category Helper
- * @package  Croogo.Nodes
+ * @package  Vamshop.Nodes
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -33,16 +33,16 @@ class NodesHelper extends Helper
  * @access public
  */
     public $helpers = [
-        'Croogo/Core.Url',
-        'Croogo/Core.Layout',
-        'Croogo/Core.Html',
+        'Vamshop/Core.Url',
+        'Vamshop/Core.Layout',
+        'Vamshop/Core.Html',
         'Time',
     ];
 
 /**
  * Current Node
  *
- * @var \Croogo\Nodes\Model\Entity\Node
+ * @var \Vamshop\Nodes\Model\Entity\Node
  * @access public
  */
     public $node = null;
@@ -94,7 +94,7 @@ class NodesHelper extends Helper
             'plugin' => 'nodes',
             'controller' => 'nodes',
             'action' => 'view',
-            'element' => 'Croogo/Nodes.node_list',
+            'element' => 'Vamshop/Nodes.node_list',
         ];
         $options = array_merge($_options, $options);
         $output = '';
@@ -142,12 +142,12 @@ class NodesHelper extends Helper
  */
     public function set($node)
     {
-        $event = Croogo::dispatchEvent('Helper.Nodes.beforeSetNode', $this->_View, [
+        $event = Vamshop::dispatchEvent('Helper.Nodes.beforeSetNode', $this->_View, [
             'node' => $node,
         ]);
         $this->node = $event->data['node'];
         $this->Layout->hook('afterSetNode');
-        Croogo::dispatchEvent('Helper.Nodes.afterSetNode', $this->_View, [
+        Vamshop::dispatchEvent('Helper.Nodes.afterSetNode', $this->_View, [
             'node' => $this->node
         ]);
     }
@@ -176,7 +176,7 @@ class NodesHelper extends Helper
     public function info($options = [])
     {
         $_options = [
-            'element' => 'Croogo/Nodes.node_info',
+            'element' => 'Vamshop/Nodes.node_info',
         ];
         $options = array_merge($_options, $options);
 
@@ -199,7 +199,7 @@ class NodesHelper extends Helper
     public function excerpt($options = [])
     {
         $_options = [
-            'element' => 'Croogo/Nodes.node_excerpt',
+            'element' => 'Vamshop/Nodes.node_excerpt',
             'body' => false,
         ];
         $options = array_merge($_options, $options);
@@ -229,7 +229,7 @@ class NodesHelper extends Helper
     public function body($options = [])
     {
         $_options = [
-            'element' => 'Croogo/Nodes.node_body',
+            'element' => 'Vamshop/Nodes.node_body',
         ];
         $options = array_merge($_options, $options);
 
@@ -248,7 +248,7 @@ class NodesHelper extends Helper
     public function moreInfo($options = [])
     {
         $_options = [
-            'element' => 'Croogo/Nodes.node_more_info',
+            'element' => 'Vamshop/Nodes.node_more_info',
         ];
         $options = array_merge($_options, $options);
 
@@ -261,7 +261,7 @@ class NodesHelper extends Helper
     /**
      * Convenience method to generate url to a node or current node
      *
-     * @param \Croogo\Nodes\Model\Entity\Node $node Node data
+     * @param \Vamshop\Nodes\Model\Entity\Node $node Node data
      * @param bool $full
      * @return string
      */
@@ -295,7 +295,7 @@ class NodesHelper extends Helper
     {
         return (new Collection($this->node->taxonomies))->map(function ($taxonomy) {
             return $this->Html->link($taxonomy->term->title, [
-                'plugin' => 'Croogo/Nodes',
+                'plugin' => 'Vamshop/Nodes',
                 'controller' => 'Nodes',
                 'action' => 'term',
                 'type' => $this->field('type'),
@@ -311,6 +311,6 @@ class NodesHelper extends Helper
      */
     public function commentsEnabled()
     {
-        return Plugin::loaded('Croogo/Comments');
+        return Plugin::loaded('Vamshop/Comments');
     }
 }

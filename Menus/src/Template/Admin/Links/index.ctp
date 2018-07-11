@@ -1,17 +1,17 @@
 <?php
 
 use Cake\Utility\Inflector;
-use Croogo\Core\Status;
+use Vamshop\Core\Status;
 
-$this->Croogo->adminscript('Croogo/Menus.admin');
+$this->Vamshop->adminscript('Vamshop/Menus.admin');
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
 $this->Breadcrumbs->add(__d('croogo', 'Menus'), ['controller' => 'Menus', 'action' => 'index'])
     ->add(__d('croogo', $menu->title), $this->request->getRequestTarget());
 
 $this->append('action-buttons');
-echo $this->Croogo->adminAction(__d('croogo', 'New link'), ['action' => 'add', 'menu_id' => $menu->id], ['button' => 'success']);
+echo $this->Vamshop->adminAction(__d('croogo', 'New link'), ['action' => 'add', 'menu_id' => $menu->id], ['button' => 'success']);
 $this->end();
 
 $this->append('form-start', $this->Form->create(null, [
@@ -36,34 +36,34 @@ $this->append('table-body');
 $rows = [];
 foreach ($linksTree as $linkId => $linkTitle):
     $actions = [];
-    $actions[] = $this->Croogo->adminRowAction('', [
+    $actions[] = $this->Vamshop->adminRowAction('', [
         'action' => 'moveUp',
         $linkId,
     ], [
         'icon' => $this->Theme->getIcon('move-up'),
         'tooltip' => __d('croogo', 'Move up'),
     ]);
-    $actions[] = $this->Croogo->adminRowAction('', [
+    $actions[] = $this->Vamshop->adminRowAction('', [
         'action' => 'moveDown',
         $linkId,
     ], [
         'icon' => $this->Theme->getIcon('move-down'),
         'tooltip' => __d('croogo', 'Move down'),
     ]);
-    $actions[] = $this->Croogo->adminRowActions($linkId);
-    $actions[] = $this->Croogo->adminRowAction('', [
+    $actions[] = $this->Vamshop->adminRowActions($linkId);
+    $actions[] = $this->Vamshop->adminRowAction('', [
         'action' => 'edit',
         $linkId,
     ], [
         'icon' => $this->Theme->getIcon('update'),
         'tooltip' => __d('croogo', 'Edit this item'),
     ]);
-    $actions[] = $this->Croogo->adminRowAction('', '#Link' . $linkId . 'Id', [
+    $actions[] = $this->Vamshop->adminRowAction('', '#Link' . $linkId . 'Id', [
         'icon' => $this->Theme->getIcon('copy'),
         'tooltip' => __d('croogo', 'Create a copy'),
         'rowAction' => 'copy',
     ], __d('croogo', 'Create a copy of this Link?'));
-    $actions[] = $this->Croogo->adminRowAction('', '#Link' . $linkId . 'Id', [
+    $actions[] = $this->Vamshop->adminRowAction('', '#Link' . $linkId . 'Id', [
         'icon' => $this->Theme->getIcon('delete'),
         'class' => 'delete',
         'tooltip' => __d('croogo', 'Delete this item'),
@@ -76,7 +76,7 @@ foreach ($linksTree as $linkId => $linkTitle):
     $rows[] = [
         $this->Form->checkbox('Links.' . $linkId . '.id', ['class' => 'row-select', 'id' => 'Link' . $linkId . 'Id']),
         $linkTitle,
-        $this->element('Croogo/Core.admin/toggle', [
+        $this->element('Vamshop/Core.admin/toggle', [
             'id' => $linkId,
             'status' => (int)$linksStatus[$linkId],
         ]),

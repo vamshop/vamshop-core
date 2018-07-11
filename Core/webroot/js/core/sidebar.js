@@ -20,10 +20,10 @@ Admin.navigation = function () {
     var selector = _.template('a.sidebar-item[href^="<%= basePath %>admin/' +
       '<%= params.plugin %>/' +
       '<%= params.controller %>"]:first');
-    if ($(selector(Croogo)).addClass('current').length == 0) {
+    if ($(selector(Vamshop)).addClass('current').length == 0) {
       var selector = _.template(
         'a.sidebar-item[href="<%= basePath %>admin/' + '<%= params.plugin %>"]');
-      $(selector(Croogo)).addClass('current');
+      $(selector(Vamshop)).addClass('current');
     }
   }
   // traverse parent elements and mark as current

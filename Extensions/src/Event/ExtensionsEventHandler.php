@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\Extensions\Event;
+namespace Vamshop\Extensions\Event;
 
 use Cake\Core\Plugin;
 use Cake\Event\EventListenerInterface;
-use Croogo\Extensions\CroogoPlugin;
+use Vamshop\Extensions\VamshopPlugin;
 
 /**
  * ExtensionsEventHandler
  *
- * @package  Croogo.Extensions.Event
+ * @package  Vamshop.Extensions.Event
  * @author   Rachman Chavik <rchavik@gmail.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
@@ -23,13 +23,13 @@ class ExtensionsEventHandler implements EventListenerInterface
     public function implementedEvents()
     {
         return [
-            'Croogo.bootstrapComplete' => [
+            'Vamshop.bootstrapComplete' => [
                 'callable' => 'onBootstrapComplete',
             ],
-            'Croogo.beforeSetupAdminData' => [
+            'Vamshop.beforeSetupAdminData' => [
                 'callable' => 'onBeforeSetupAdminData',
             ],
-            'Croogo.setupAdminData' => [
+            'Vamshop.setupAdminData' => [
                 'callable' => 'onSetupAdminData',
             ],
         ];
@@ -70,6 +70,6 @@ class ExtensionsEventHandler implements EventListenerInterface
  */
     public function onBootstrapComplete($event)
     {
-        CroogoPlugin::cacheDependencies();
+        VamshopPlugin::cacheDependencies();
     }
 }

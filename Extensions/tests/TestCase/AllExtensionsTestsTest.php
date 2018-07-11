@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Extensions\Test\TestCase;
+namespace Vamshop\Extensions\Test\TestCase;
 
 class AllExtensionsTestsTest extends PHPUnit_Framework_TestSuite
 {

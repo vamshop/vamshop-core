@@ -1,20 +1,20 @@
 <?php
 
-namespace Croogo\Dashboards\Model\Table;
+namespace Vamshop\Dashboards\Model\Table;
 
-use Croogo\Core\Model\Table\CroogoTable;
+use Vamshop\Core\Model\Table\VamshopTable;
 
 /**
  * Dashboard Model
  *
  * @category Dashboards.Model
- * @package  Croogo.Dashboards.Model
+ * @package  Vamshop.Dashboards.Model
  * @version  2.2
  * @author   Walther Lalk <emailme@waltherlalk.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class DashboardsTable extends CroogoTable
+class DashboardsTable extends VamshopTable
 {
 
     public function initialize(array $config)
@@ -28,7 +28,7 @@ class DashboardsTable extends CroogoTable
 			'scope' => ['user_id', 'column'],
 		]);
         $this->belongsTo('Users', [
-            'className' => 'Croogo/Users.Users'
+            'className' => 'Vamshop/Users.Users'
         ]);
         $this->connection()->getDriver()->enableAutoQuoting();
     }

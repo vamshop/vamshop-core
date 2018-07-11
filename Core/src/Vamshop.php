@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core;
+namespace Vamshop\Core;
 
 use Cake\Core\App;
 use Cake\Core\Configure;
@@ -11,15 +11,15 @@ use Cake\Utility\Hash;
 use Cake\Utility\Inflector;
 
 /**
- * Croogo
+ * Vamshop
  *
- * @package  Croogo.Croogo.Lib
+ * @package  Vamshop.Vamshop.Lib
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class Croogo
+class Vamshop
 {
 
     /**
@@ -194,7 +194,7 @@ class Croogo
      *
      * Useful when tables need to be associated to another one, setting Behaviors, disabling cache, etc.
      *
-     * @param string $tableName Table name (for e.g., Croogo/Nodes.Nodes)
+     * @param string $tableName Table name (for e.g., Vamshop/Nodes.Nodes)
      * @param string $property for e.g., actsAs
      * @param string|array $value
      */
@@ -212,7 +212,7 @@ class Croogo
     /**
      * Hook controller property
      *
-     * @param string $controllerName Controller name (for e.g., Croogo/Nodes.Nodes)
+     * @param string $controllerName Controller name (for e.g., Vamshop/Nodes.Nodes)
      * @param string $property for e.g., components
      * @param string|array $value
      */
@@ -410,7 +410,7 @@ class Croogo
 
     public static function translateModel($model, $config)
     {
-        Croogo::mergeConfig('Translate.models', [
+        Vamshop::mergeConfig('Translate.models', [
             $model => $config
         ], true);
     }

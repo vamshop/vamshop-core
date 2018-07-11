@@ -1,11 +1,11 @@
 <?php
-namespace Croogo\Settings\Test\TestCase\Model;
+namespace Vamshop\Settings\Test\TestCase\Model;
 
 use Cake\ORM\TableRegistry;
-use Croogo\Core\TestSuite\TestCase;
+use Vamshop\Core\TestSuite\TestCase;
 
 /**
- * @property \Croogo\Settings\Model\Table\SettingsTable Settings
+ * @property \Vamshop\Settings\Model\Table\SettingsTable Settings
  */
 class SettingsTableTest extends TestCase
 {
@@ -17,7 +17,7 @@ class SettingsTableTest extends TestCase
     {
         parent::setUp();
 
-        $this->Settings = TableRegistry::get('Croogo/Settings.Settings');
+        $this->Settings = TableRegistry::get('Vamshop/Settings.Settings');
     }
 
     public function testWriteNew()

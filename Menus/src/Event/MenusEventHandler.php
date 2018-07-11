@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Menus\Event;
+namespace Vamshop\Menus\Event;
 
 use Cake\Cache\Cache;
 use Cake\Event\Event;
@@ -9,7 +9,7 @@ use Cake\Event\EventListenerInterface;
 /**
  * MenusEventHandler
  *
- * @package  Croogo.Menus.Event
+ * @package  Vamshop.Menus.Event
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */

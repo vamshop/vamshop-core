@@ -32,7 +32,7 @@ if (empty($this->fetch('action-buttons'))) {
         $entityName = __($humanName);
     }
     $actionTitle = __d('croogo', 'New %s', $entityName);
-    $this->assign('action-buttons', $this->Croogo->adminAction($actionTitle, ['action' => 'add'], ['button' => 'btn btn-success']));
+    $this->assign('action-buttons', $this->Vamshop->adminAction($actionTitle, ['action' => 'add'], ['button' => 'btn btn-success']));
 }
 
 $tableHeaders = trim($this->fetch('table-heading'));
@@ -59,16 +59,16 @@ if (!$tableBody && isset($displayFields)):
 
             if (isset($this->request->query['chooser'])):
                 $title = isset($item->title) ? $item->title : null;
-                $actions[] = $this->Croogo->adminRowAction(__d('croogo', 'Choose'), '#', [
+                $actions[] = $this->Vamshop->adminRowAction(__d('croogo', 'Choose'), '#', [
                     'class' => 'item-choose',
                     'data-chooser-type' => $modelClass,
                     'data-chooser-id' => $item->id,
                 ]);
             else:
-                $actions[] = $this->Croogo->adminRowAction('', ['action' => 'edit', $item->id],
+                $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'edit', $item->id],
                     ['icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('croogo', 'Edit this item')]);
-                $actions[] = $this->Croogo->adminRowActions($item->id);
-                $actions[] = $this->Croogo->adminRowAction('', [
+                $actions[] = $this->Vamshop->adminRowActions($item->id);
+                $actions[] = $this->Vamshop->adminRowAction('', [
                     'action' => 'delete',
                     $item->id,
                 ], [
@@ -104,7 +104,7 @@ $tableFooters = trim($this->fetch('table-footer'));
             <?php
             $searchBlock = $this->fetch('search');
             if (!$searchBlock):
-                $searchBlock = $this->element('Croogo/Core.admin/search');
+                $searchBlock = $this->element('Vamshop/Core.admin/search');
             endif;
 
             if (!empty($searchBlock)) :
@@ -118,7 +118,7 @@ $tableFooters = trim($this->fetch('table-footer'));
             endif;
 
             if ($contentBlock = trim($this->fetch('content'))):
-                echo $this->element('Croogo/Core.admin/search');
+                echo $this->element('Vamshop/Core.admin/search');
                 echo $contentBlock;
             else:
                 if ($formStart = trim($this->fetch('form-start'))):
@@ -167,7 +167,7 @@ $tableFooters = trim($this->fetch('table-footer'));
                 echo $pagingBlock;
             else:
                 if (isset($this->Paginator) && isset($this->request['paging'])):
-                    echo $this->element('Croogo/Core.admin/pagination');
+                    echo $this->element('Vamshop/Core.admin/pagination');
                 endif;
             endif;
             ?>

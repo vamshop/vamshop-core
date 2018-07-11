@@ -3,13 +3,13 @@
 /**
  * Nav
  *
- * @package  Croogo.Croogo.Lib
+ * @package  Vamshop.Vamshop.Lib
  * @since    1.4
  * @author   Rachman Chavik <rchavik@xintesa.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-namespace Croogo\Core;
+namespace Vamshop\Core;
 
 use Cake\Log\Log;
 use Cake\Utility\Hash;
@@ -22,7 +22,7 @@ class Nav
 /**
  * Current active menu
  *
- * @see CroogoNav::activeMenu()
+ * @see VamshopNav::activeMenu()
  */
     protected static $_activeMenu = 'sidebar';
 

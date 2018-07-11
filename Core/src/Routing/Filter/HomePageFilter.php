@@ -1,11 +1,11 @@
 <?php
 
-namespace Croogo\Core\Routing\Filter;
+namespace Vamshop\Core\Routing\Filter;
 
 use Cake\Core\Configure;
 use Cake\Event\Event;
 use Cake\Routing\DispatcherFilter;
-use Croogo\Core\Utility\StringConverter;
+use Vamshop\Core\Utility\StringConverter;
 
 /**
  * Class HomePageFilter

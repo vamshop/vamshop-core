@@ -1,10 +1,10 @@
 <?php
-$this->extend('Croogo/Core./Common/admin_edit');
+$this->extend('Vamshop/Core./Common/admin_edit');
 
 $this->Breadcrumbs
-    ->add(__d('croogo', 'Users'), array('plugin' => 'Croogo/Users', 'controller' => 'Users', 'action' => 'index'))
-    ->add(__d('croogo', 'Permissions'), array('plugin' => 'Croogo/Acl', 'controller' => 'Permissions'))
-    ->add(__d('croogo', 'Actions'), array('plugin' => 'Croogo/Acl', 'controller' => 'Actions', 'action' => 'index'));
+    ->add(__d('croogo', 'Users'), array('plugin' => 'Vamshop/Users', 'controller' => 'Users', 'action' => 'index'))
+    ->add(__d('croogo', 'Permissions'), array('plugin' => 'Vamshop/Acl', 'controller' => 'Permissions'))
+    ->add(__d('croogo', 'Actions'), array('plugin' => 'Vamshop/Acl', 'controller' => 'Actions', 'action' => 'index'));
 
 if ($this->request->param('action') == 'edit') {
     $this->Breadcrumbs->add($aco->id . ': ' . $aco->alias, $this->request->getRequestTarget());
@@ -17,7 +17,7 @@ if ($this->request->param('action') == 'add') {
 $this->assign('form-start', $this->Form->create($aco));
 
 $this->append('tab-heading');
-    echo $this->Croogo->adminTab(__d('croogo', 'Action'), '#action-main');
+    echo $this->Vamshop->adminTab(__d('croogo', 'Action'), '#action-main');
 $this->end();
 
 $this->append('tab-content');

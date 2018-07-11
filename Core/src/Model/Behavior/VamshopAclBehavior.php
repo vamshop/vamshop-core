@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Model\Behavior;
+namespace Vamshop\Core\Model\Behavior;
 
 use Acl\Model\Behavior\AclBehavior;
 use Cake\ORM\Table;
@@ -8,16 +8,16 @@ use Cake\ORM\TableRegistry;
 use Cake\Utility\Inflector;
 
 /**
- * CroogoAcl Behavior
+ * VamshopAcl Behavior
  *
  * @category Behavior
- * @package  Croogo.Croogo.Model.Behavior
+ * @package  Vamshop.Vamshop.Model.Behavior
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */
-class CroogoAclBehavior extends AclBehavior
+class VamshopAclBehavior extends AclBehavior
 {
 
 /**

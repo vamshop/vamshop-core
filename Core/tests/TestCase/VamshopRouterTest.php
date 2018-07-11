@@ -1,16 +1,16 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase;
+namespace Vamshop\Core\Test\TestCase;
 
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
 use Cake\Network\Request;
 use Cake\ORM\TableRegistry;
-use Croogo\Core\Router;
-use Croogo\Core\Plugin;
-use Croogo\Core\TestSuite\TestCase;
+use Vamshop\Core\Router;
+use Vamshop\Core\Plugin;
+use Vamshop\Core\TestSuite\TestCase;
 
-class CroogoRouterTest extends TestCase
+class VamshopRouterTest extends TestCase
 {
 
     public $fixtures = [
@@ -34,7 +34,7 @@ class CroogoRouterTest extends TestCase
     public function testHomeRoute()
     {
         $promoted = [
-            'plugin' => 'Croogo/Nodes',
+            'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
             'action' => 'promoted',
         ];
@@ -48,7 +48,7 @@ class CroogoRouterTest extends TestCase
 
         // another route
         $index = [
-            'plugin' => 'Croogo/Nodes',
+            'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
             'action' => 'index',
         ];
@@ -58,7 +58,7 @@ class CroogoRouterTest extends TestCase
         $this->assertEquals($promoted, array_intersect_key($promoted, $reversed));
 
         $terms = [
-            'plugin' => 'Croogo/Nodes',
+            'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
             'action' => 'terms',
         ];
@@ -78,7 +78,7 @@ class CroogoRouterTest extends TestCase
 
         $params = [
             'url' => [],
-            'plugin' => 'Croogo/Nodes',
+            'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
             'action' => 'index',
             'type' => 'blog',
@@ -94,7 +94,7 @@ class CroogoRouterTest extends TestCase
         Router::contentType('page');
         $params = [
             'url' => [],
-            'plugin' => 'Croogo/Nodes',
+            'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
             'action' => 'index',
             'type' => 'page',
@@ -110,7 +110,7 @@ class CroogoRouterTest extends TestCase
         // Reload plugin routes
         Plugin::routes();
 
-        $table = TableRegistry::get('Croogo/Taxonomy.Types');
+        $table = TableRegistry::get('Vamshop/Taxonomy.Types');
         $type = $table->save($table->newEntity([
             'title' => 'Press Release',
             'alias' => 'press-release',
@@ -123,7 +123,7 @@ class CroogoRouterTest extends TestCase
 
         $params = [
             'url' => [],
-            'plugin' => 'Croogo/Nodes',
+            'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
             'action' => 'index',
             'type' => 'press-release',
@@ -151,7 +151,7 @@ class CroogoRouterTest extends TestCase
         $request = $this->getMockBuilder(Request::class)
             ->setMethods(['clientIp'])
             ->getMock();
-        $request->addDetector('whitelisted', ['Croogo\\Core\\Router', 'isWhitelistedRequest']);
+        $request->addDetector('whitelisted', ['Vamshop\\Core\\Router', 'isWhitelistedRequest']);
 
         Configure::write('Site.ipWhitelist', '127.0.0.2');
         $request->expects($this->once())
@@ -168,7 +168,7 @@ class CroogoRouterTest extends TestCase
         $request = $this->getMockBuilder(Request::class)
             ->setMethods(['clientIp'])
             ->getMock();
-        $request->addDetector('whitelisted', ['Croogo\\Core\\Router', 'isWhitelistedRequest']);
+        $request->addDetector('whitelisted', ['Vamshop\\Core\\Router', 'isWhitelistedRequest']);
 
         Configure::write('Site.ipWhitelist', '127.0.0.2');
         $request->expects($this->once())

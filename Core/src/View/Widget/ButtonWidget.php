@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\View\Widget;
+namespace Vamshop\Core\View\Widget;
 
 use BootstrapUI\View\Helper\OptionsAwareTrait;
 use Cake\View\Form\ContextInterface;

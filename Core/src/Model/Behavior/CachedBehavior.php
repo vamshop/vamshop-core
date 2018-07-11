@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Model\Behavior;
+namespace Vamshop\Core\Model\Behavior;
 
 use Cake\Cache\Cache;
 use Cake\ORM\Behavior;
@@ -9,7 +9,7 @@ use Cake\ORM\Behavior;
  * Cached Behavior
  *
  * @category Behavior
- * @package  Croogo.Croogo.Model.Behavior
+ * @package  Vamshop.Vamshop.Model.Behavior
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

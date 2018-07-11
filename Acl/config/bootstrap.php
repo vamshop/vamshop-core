@@ -3,19 +3,19 @@
 use Cake\Cache\Cache;
 use Cake\Core\App;
 use Cake\Core\Configure;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
-if (Configure::read('Site.acl_plugin') == 'Croogo/Acl') {
+if (Configure::read('Site.acl_plugin') == 'Vamshop/Acl') {
     // activate AclFilter component only until after a succesfull install
-    if (Configure::read('Croogo.installed')) {
-        Croogo::hookComponent('*', 'Croogo/Acl.Filter');
-        Croogo::hookComponent('*', 'Croogo/Acl.Access');
+    if (Configure::read('Vamshop.installed')) {
+        Vamshop::hookComponent('*', 'Vamshop/Acl.Filter');
+        Vamshop::hookComponent('*', 'Vamshop/Acl.Access');
     }
 
-    Croogo::hookBehavior('Croogo/Users.Users', 'Croogo/Acl.UserAro', ['priority' => 20]);
-    Croogo::hookBehavior('Croogo/Users.Roles', 'Croogo/Acl.RoleAro', ['priority' => 20]);
+    Vamshop::hookBehavior('Vamshop/Users.Users', 'Vamshop/Acl.UserAro', ['priority' => 20]);
+    Vamshop::hookBehavior('Vamshop/Users.Roles', 'Vamshop/Acl.RoleAro', ['priority' => 20]);
 
-    $defaultCacheConfig = Configure::read('Croogo.Cache.defaultConfig');
+    $defaultCacheConfig = Configure::read('Vamshop.Cache.defaultConfig');
     Cache::config('permissions', [
         'duration' => '+1 hour',
         'path' => CACHE . 'acl' . DS,
@@ -23,6 +23,6 @@ if (Configure::read('Site.acl_plugin') == 'Croogo/Acl') {
     ] + $defaultCacheConfig);
 
     if (Configure::read('Access Control.multiRole')) {
-        Configure::write('Acl.classname', App::className('Croogo/Acl.HabtmDbAcl', 'Adapter'));
+        Configure::write('Acl.classname', App::className('Vamshop/Acl.HabtmDbAcl', 'Adapter'));
     }
 }

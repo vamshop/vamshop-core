@@ -1,16 +1,16 @@
 <?php
 
-namespace Croogo\Comments\View\Helper;
+namespace Vamshop\Comments\View\Helper;
 
 use Cake\Utility\Inflector;
 use Cake\View\Helper;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 
 /**
  * Comments Helper
  *
  * @category Comments.View/Helper
- * @package  Croogo.Comments.View.Helper
+ * @package  Vamshop.Comments.View.Helper
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -39,8 +39,8 @@ class CommentsHelper extends Helper
             return;
         }
         $title = __d('croogo', 'Comments');
-        $element = 'Croogo/Comments.comments_tab';
-        Croogo::hookAdminTab('Admin/' . $controller . '/add', $title, $element);
-        Croogo::hookAdminTab('Admin/' . $controller . '/edit', $title, $element);
+        $element = 'Vamshop/Comments.comments_tab';
+        Vamshop::hookAdminTab('Admin/' . $controller . '/add', $title, $element);
+        Vamshop::hookAdminTab('Admin/' . $controller . '/edit', $title, $element);
     }
 }

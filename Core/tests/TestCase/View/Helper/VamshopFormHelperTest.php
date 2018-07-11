@@ -1,18 +1,18 @@
 <?php
-namespace Croogo\Core\Test\TestCase\View\Helper;
+namespace Vamshop\Core\Test\TestCase\View\Helper;
 
 use Cake\Controller\Controller;
 use Cake\View\View;
-use Croogo\Core\TestSuite\CroogoTestCase;
-use Croogo\Core\View\Helper\CroogoFormHelper;
+use Vamshop\Core\TestSuite\VamshopTestCase;
+use Vamshop\Core\View\Helper\VamshopFormHelper;
 
-class CroogoFormHelperTest extends CroogoTestCase
+class VamshopFormHelperTest extends VamshopTestCase
 {
 
     /**
-     * @var CroogoFormHelper
+     * @var VamshopFormHelper
      */
-    private $CroogoForm;
+    private $VamshopForm;
 
     public function setUp()
     {
@@ -20,7 +20,7 @@ class CroogoFormHelperTest extends CroogoTestCase
 
         $controller = null;
         $this->View = new View($controller);
-        $this->Form = new CroogoFormHelper($this->View);
+        $this->Form = new VamshopFormHelper($this->View);
     }
 
     public function tearDown()

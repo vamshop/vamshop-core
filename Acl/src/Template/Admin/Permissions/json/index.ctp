@@ -1,6 +1,6 @@
 <?php
 
-$this->loadHelper('Croogo/Core.Croogo');
+$this->loadHelper('Vamshop/Core.Vamshop');
 if (isset($this->request->query['urls'])) {
     foreach ($permissions as $acoId => &$aco) {
         $aco[key($aco)]['url'] = array(
@@ -16,7 +16,7 @@ if (isset($this->request->query['urls'])) {
                 array('controller' => 'Actions', 'action' => 'edit', $acoId),
                 array('icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('croogo', 'Edit this item'))
             ),
-            'del' => $this->Croogo->adminRowAction('',
+            'del' => $this->Vamshop->adminRowAction('',
                 array('controller' => 'Actions', 'action' => 'delete', $acoId),
                 array('icon' => $this->Theme->getIcon('delete'), 'tooltip' => __d('croogo', 'Remove this item')),
                 __d('croogo', 'Are you sure?')

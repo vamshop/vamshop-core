@@ -1,15 +1,15 @@
 <?php
 
-namespace Croogo\FileManager\Config;
+namespace Vamshop\FileManager\Config;
 
-use Croogo\Core\Nav;
+use Vamshop\Core\Nav;
 
 Nav::add('sidebar', 'media', [
     'icon' => 'picture-o',
     'title' => __d('croogo', 'Media'),
     'url' => [
         'prefix' => 'admin',
-        'plugin' => 'Croogo/FileManager',
+        'plugin' => 'Vamshop/FileManager',
         'controller' => 'Attachments',
         'action' => 'index',
     ],
@@ -19,7 +19,7 @@ Nav::add('sidebar', 'media', [
             'title' => __d('croogo', 'Attachments'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/FileManager',
+                'plugin' => 'Vamshop/FileManager',
                 'controller' => 'Attachments',
                 'action' => 'index',
             ],
@@ -28,7 +28,7 @@ Nav::add('sidebar', 'media', [
             'title' => __d('croogo', 'File Manager'),
             'url' => [
                 'prefix' => 'admin',
-                'plugin' => 'Croogo/FileManager',
+                'plugin' => 'Vamshop/FileManager',
                 'controller' => 'FileManager',
                 'action' => 'browse',
             ],

@@ -1,20 +1,20 @@
 {
     "name": "croogo/blocks",
-    "description": "Croogo Blocks Plugin",
+    "description": "Vamshop Blocks Plugin",
     "require": {
         "croogo/core": "^3.0.1"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": "Croogo Development Team",
+            "name": "Vamshop Development Team",
             "email": "team@vamshop.com"
         }
     ],
     "type": "cakephp-plugin",
     "autoload": {
         "psr-4": {
-            "Croogo\\Blocks\\": "src"
+            "Vamshop\\Blocks\\": "src"
         }
     },
     "minimum-stability": "dev"

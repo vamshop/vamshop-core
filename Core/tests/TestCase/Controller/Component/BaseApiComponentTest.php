@@ -1,11 +1,11 @@
 <?php
 
-namespace Croogo\Core\Test\TestCase\Controller\Component;
+namespace Vamshop\Core\Test\TestCase\Controller\Component;
 
 use Cake\Controller\Component;
 use Cake\Controller\Controller;
-use Croogo\Core\Controller\Component\BaseApiComponent;
-use Croogo\Core\TestSuite\CroogoTestCase;
+use Vamshop\Core\Controller\Component\BaseApiComponent;
+use Vamshop\Core\TestSuite\VamshopTestCase;
 
 class TestApiComponent extends BaseApiComponent
 {
@@ -37,7 +37,7 @@ class TestBaseApiController extends Controller
     }
 }
 
-class BaseApiComponentTest extends CroogoTestCase
+class BaseApiComponentTest extends VamshopTestCase
 {
 
     public $fixtures = [

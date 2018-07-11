@@ -1,10 +1,10 @@
 <?php
 
-namespace Croogo\Core\Database\Type;
+namespace Vamshop\Core\Database\Type;
 
 use Cake\Database\Driver;
 use Cake\Database\Type;
-use Croogo\Core\Utility\StringConverter;
+use Vamshop\Core\Utility\StringConverter;
 use PDO;
 
 class EncodedType extends Type

@@ -14,13 +14,13 @@ echo $this->Html->tag(
             'action' => 'add',
             'prefix' => 'admin',
             'controller' => 'Attachments',
-            'plugin' => 'Croogo/FileManager'
+            'plugin' => 'Vamshop/FileManager'
         ], true),
     ]
 );
 echo $this->Html->tag(
     'script',
-    $this->element('Croogo/FileManager.admin/dropzone_' . $type . '_preview'),
+    $this->element('Vamshop/FileManager.admin/dropzone_' . $type . '_preview'),
     ['id' => 'dropzone-preview', 'type' => 'text/html']
 );
 $this->Form->create(null, [
@@ -28,7 +28,7 @@ $this->Form->create(null, [
         'action' => 'add',
         'prefix' => 'admin',
         'controller' => 'Attachments',
-        'plugin' => 'Croogo/FileManager'
+        'plugin' => 'Vamshop/FileManager'
     ],
 ]);
 $this->Form->unlockField('file');

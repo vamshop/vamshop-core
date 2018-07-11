@@ -1,9 +1,9 @@
 <?php
 
-$this->extend('Croogo/Core./Common/admin_index');
+$this->extend('Vamshop/Core./Common/admin_index');
 
 $this->Breadcrumbs->add(__d('croogo', 'Settings'),
-    ['plugin' => 'Croogo/Settings', 'controller' => 'Settings', 'action' => 'prefix', 'Site'])
+    ['plugin' => 'Vamshop/Settings', 'controller' => 'Settings', 'action' => 'prefix', 'Site'])
     ->add(__d('croogo', 'Languages'), $this->request->getUri()->getPath());
 
 $tableHeaders = $this->Html->tableHeaders([
@@ -19,14 +19,14 @@ $this->append('table-heading', $tableHeaders);
 $rows = [];
 foreach ($languages as $language) {
     $actions = [];
-    $actions[] = $this->Croogo->adminRowActions($language->id);
-    $actions[] = $this->Croogo->adminRowAction('', ['action' => 'moveUp', $language->id],
+    $actions[] = $this->Vamshop->adminRowActions($language->id);
+    $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'moveUp', $language->id],
         ['icon' => $this->Theme->getIcon('move-up'), 'tooltip' => __d('croogo', 'Move up')]);
-    $actions[] = $this->Croogo->adminRowAction('', ['action' => 'moveDown', $language->id],
+    $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'moveDown', $language->id],
         ['icon' => $this->Theme->getIcon('move-down'), 'tooltip' => __d('croogo', 'Move down')]);
-    $actions[] = $this->Croogo->adminRowAction('', ['action' => 'edit', $language->id],
+    $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'edit', $language->id],
         ['icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('croogo', 'Edit this item')]);
-    $actions[] = $this->Croogo->adminRowAction('', ['action' => 'delete', $language->id],
+    $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'delete', $language->id],
         ['icon' => $this->Theme->getIcon('delete'), 'tooltip' => __d('croogo', 'Remove this item')],
         __d('croogo', 'Are you sure?'));
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\View\Helper;
+namespace Vamshop\Core\View\Helper;
 
 use Cake\ORM\Entity;
 use Cake\Routing\Exception\MissingRouteException;
@@ -8,14 +8,14 @@ use Cake\View\Helper;
 use Cake\Routing\Router;
 use Cake\Core\Configure;
 use Cake\Utility\Hash;
-use Croogo\Core\Croogo;
+use Vamshop\Core\Vamshop;
 use Cake\Utility\Inflector;
 
 /**
  * Layout Helper
  *
  * @category Helper
- * @package  Croogo.Croogo.View.Helper
+ * @package  Vamshop.Vamshop.View.Helper
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -31,8 +31,8 @@ class LayoutHelper extends Helper
  * @access public
  */
     public $helpers = [
-        'Croogo/Core.Croogo',
-        'Croogo/Core.Theme',
+        'Vamshop/Core.Vamshop',
+        'Vamshop/Core.Theme',
         'Html',
         'Form',
         'Flash'
@@ -59,7 +59,7 @@ class LayoutHelper extends Helper
         'Time',
         'Xml',
 
-        // Croogo
+        // Vamshop
         'Filemanager',
         'Image',
         'Layout',
@@ -71,9 +71,9 @@ class LayoutHelper extends Helper
  *
  * Shows croogo.js file along with useful information like the applications's basePath, etc.
  *
- * Also merges Configure::read('Js') with the Croogo js variable.
+ * Also merges Configure::read('Js') with the Vamshop js variable.
  * So you can set javascript info anywhere like Configure::write('Js.my_var', 'my value'),
- * and you can access it like 'Croogo.my_var' in your javascript.
+ * and you can access it like 'Vamshop.my_var' in your javascript.
  *
  * @return string
  */
@@ -99,13 +99,13 @@ class LayoutHelper extends Helper
         if (is_array(Configure::read('Js'))) {
             $croogo = Hash::merge($croogo, Configure::read('Js'));
         }
-        return $this->Html->scriptBlock('var Croogo = ' . json_encode($croogo) . ';');
+        return $this->Html->scriptBlock('var Vamshop = ' . json_encode($croogo) . ';');
     }
 
 /**
  * Merge helper and prefix specific settings
  *
- * @param array $croogoSetting Croogo JS settings
+ * @param array $croogoSetting Vamshop JS settings
  * @return array Merged settings
  */
     protected function _mergeThemeSettings($croogoSetting = [])
@@ -124,7 +124,7 @@ class LayoutHelper extends Helper
             $validKeys
         );
 
-        if ($this->_View->helpers()->has('CroogoHtml')) {
+        if ($this->_View->helpers()->has('VamshopHtml')) {
             unset($validKeys['css']);
             $croogoSetting['themeSettings'] = Hash::merge(
                 $croogoSetting['themeSettings'],
@@ -162,7 +162,7 @@ class LayoutHelper extends Helper
             return $this->Html->icon($icon, compact('class'));
         } else {
             if (empty($this->_View->Html)) {
-                $this->_View->Helpers->load('Croogo/Core.CroogoHtml');
+                $this->_View->Helpers->load('Vamshop/Core.VamshopHtml');
             }
             return $this->_View->Html->icon($icon, compact('class'));
         }
@@ -313,12 +313,12 @@ class LayoutHelper extends Helper
  */
     public function filter($content, $options = [])
     {
-        Croogo::dispatchEvent('Helper.Layout.beforeFilter', $this->_View, [
+        Vamshop::dispatchEvent('Helper.Layout.beforeFilter', $this->_View, [
             'content' => &$content,
             'options' => $options,
         ]);
         $content = $this->filterElements($content, $options);
-        Croogo::dispatchEvent('Helper.Layout.afterFilter', $this->_View, [
+        Vamshop::dispatchEvent('Helper.Layout.afterFilter', $this->_View, [
             'content' => &$content,
             'options' => $options,
         ]);

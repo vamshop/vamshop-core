@@ -4,7 +4,7 @@
  * InstallUserFixture
  *
  */
-namespace Croogo\Install\Test\Fixture;
+namespace Vamshop\Install\Test\Fixture;
 
 class InstallUserFixture extends CakeTestFixture
 {

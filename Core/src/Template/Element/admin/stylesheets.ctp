@@ -3,12 +3,12 @@
 if (!$this->request->is('ajax')):
 
     echo $this->Html->css([
-        'Croogo/Core.core/croogo-admin',
-        'Croogo/Core.core/bootstrap-datetimepicker.min',
-        'Croogo/Core.core/typeaheadjs',
-        'Croogo/Core.core/ekko-lightbox.min.css',
-        'Croogo/Core.core/select2.min.css',
-        'Croogo/Core.core/select2-bootstrap.min.css',
+        'Vamshop/Core.core/croogo-admin',
+        'Vamshop/Core.core/bootstrap-datetimepicker.min',
+        'Vamshop/Core.core/typeaheadjs',
+        'Vamshop/Core.core/ekko-lightbox.min.css',
+        'Vamshop/Core.core/select2.min.css',
+        'Vamshop/Core.core/select2-bootstrap.min.css',
     ]);
 
 endif;

@@ -1,9 +1,9 @@
 <?php
 
-namespace Croogo\Taxonomy\Test\TestCase\View\Helper;
+namespace Vamshop\Taxonomy\Test\TestCase\View\Helper;
 
 use Cake\Controller\Controller;
-use Croogo\TestSuite\CroogoTestCase;
+use Vamshop\TestSuite\VamshopTestCase;
 use Taxonomy\View\Helper\TaxonomiesHelper;
 
 class TheTaxonomyTestController extends Controller
@@ -12,7 +12,7 @@ class TheTaxonomyTestController extends Controller
     public $uses = null;
 }
 
-class TaxonomiesHelperTest extends CroogoTestCase
+class TaxonomiesHelperTest extends VamshopTestCase
 {
 
 /**
@@ -52,7 +52,7 @@ class TaxonomiesHelperTest extends CroogoTestCase
             ],
             'threaded' => [],
         ];
-        Croogo::dispatchEvent('Helper.Layout.beforeFilter', $this->View, ['content' => &$content]);
+        Vamshop::dispatchEvent('Helper.Layout.beforeFilter', $this->View, ['content' => &$content]);
         $this->assertContains('vocabulary-1', $content);
         $this->assertContains('class="vocabulary"', $content);
     }

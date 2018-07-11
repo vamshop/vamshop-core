@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Contacts\Model;
+namespace Vamshop\Contacts\Model;
 
 use App\Model\AppModel;
 
@@ -8,7 +8,7 @@ use App\Model\AppModel;
  * Contacts App Model
  *
  * @category Contacts.Model
- * @package  Croogo.Contacts.Model
+ * @package  Vamshop.Contacts.Model
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License

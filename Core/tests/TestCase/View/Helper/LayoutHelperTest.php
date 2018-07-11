@@ -1,5 +1,5 @@
 <?php
-namespace Croogo\Core\Test\TestCase\View\Helper;
+namespace Vamshop\Core\Test\TestCase\View\Helper;
 
 use Cake\Controller\ComponentRegistry;
 use Cake\Controller\Controller;
@@ -7,11 +7,11 @@ use Cake\Core\Configure;
 use Cake\Network\Request;
 use Cake\Network\Response;
 use Cake\View\View;
-use Croogo\Core\TestSuite\CroogoTestCase;
-use Croogo\Core\View\Helper\CroogoHtmlHelper;
-use Croogo\Core\View\Helper\LayoutHelper;
+use Vamshop\Core\TestSuite\VamshopTestCase;
+use Vamshop\Core\View\Helper\VamshopHtmlHelper;
+use Vamshop\Core\View\Helper\LayoutHelper;
 
-class LayoutHelperTest extends CroogoTestCase
+class LayoutHelperTest extends VamshopTestCase
 {
 
     public $fixtures = [
@@ -42,7 +42,7 @@ class LayoutHelperTest extends CroogoTestCase
         ];
         $view = new View($request, new Response());
         $this->Layout = new LayoutHelper($view);
-        $this->Html = new CroogoHtmlHelper($view);
+        $this->Html = new VamshopHtmlHelper($view);
         $this->_appEncoding = Configure::read('App.encoding');
         $this->_asset = Configure::read('Asset');
         $this->_debug = Configure::read('debug');
@@ -67,7 +67,7 @@ class LayoutHelperTest extends CroogoTestCase
     {
         $this->markTestIncomplete('This test needs to be ported to CakePHP 3.0');
 
-        $this->assertContains('var Croogo = {"basePath":"\/","params":{"plugin":null,"controller":"nodes","action":"index","named":[]}};', $f = $this->Layout->js());
+        $this->assertContains('var Vamshop = {"basePath":"\/","params":{"plugin":null,"controller":"nodes","action":"index","named":[]}};', $f = $this->Layout->js());
 
         $this->Layout->params['locale'] = 'eng';
         $this->assertContains('"basePath":"\/","params":{"plugin":null,"controller":"nodes","action":"index","named":[]', $f = $this->Layout->js());

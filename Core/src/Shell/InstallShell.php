@@ -1,13 +1,13 @@
 <?php
 
-namespace Croogo\Core\Shell;
+namespace Vamshop\Core\Shell;
 
 use Cake\Console\Exception\ConsoleException;
 use Cake\Utility\Inflector;
-use Croogo\Core\Shell\CroogoAppShell;
-use Croogo\Extensions\CroogoPlugin;
-use Croogo\Extensions\CroogoTheme;
-use Croogo\Extensions\ExtensionsInstaller;
+use Vamshop\Core\Shell\VamshopAppShell;
+use Vamshop\Extensions\VamshopPlugin;
+use Vamshop\Extensions\VamshopTheme;
+use Vamshop\Extensions\ExtensionsInstaller;
 
 /**
  * Install Shell
@@ -17,7 +17,7 @@ use Croogo\Extensions\ExtensionsInstaller;
  *  ./Console/croogo install plugin shama myplugin
  *
  * @category Shell
- * @package  Croogo.Croogo.Console.Command
+ * @package  Vamshop.Vamshop.Console.Command
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -41,21 +41,21 @@ class InstallShell extends AppShell
     protected $_ExtensionsInstaller = null;
 
 /**
- * CroogoPlugin class
+ * VamshopPlugin class
  *
- * @var CroogoPlugin
+ * @var VamshopPlugin
  */
-    protected $_CroogoPlugin = null;
+    protected $_VamshopPlugin = null;
 
 /**
- * CroogoTheme class
+ * VamshopTheme class
  *
- * @var CroogoTheme
+ * @var VamshopTheme
  */
-    protected $_CroogoTheme = null;
+    protected $_VamshopTheme = null;
 
 /**
- * Init ExtensionsInstaller, CroogoPlugin, CroogoTheme
+ * Init ExtensionsInstaller, VamshopPlugin, VamshopTheme
  *
  * @param type $stdout
  * @param type $stderr
@@ -65,8 +65,8 @@ class InstallShell extends AppShell
     {
         parent::__construct($stdout, $stderr, $stdin);
         $this->_ExtensionsInstaller = new ExtensionsInstaller();
-        $this->_CroogoPlugin = new CroogoPlugin();
-        $this->_CroogoTheme = new CroogoTheme();
+        $this->_VamshopPlugin = new VamshopPlugin();
+        $this->_VamshopTheme = new VamshopTheme();
     }
 
 /**
@@ -102,7 +102,7 @@ class InstallShell extends AppShell
                 }
                 $ext = substr($this->args[1], strpos($this->args[1], '/') + 1);
                 $ext = Inflector::camelize($ext);
-                $shouldActivate = $this->{'_Croogo' . ucfirst($type)}->getData($ext);
+                $shouldActivate = $this->{'_Vamshop' . ucfirst($type)}->getData($ext);
                 if ($shouldActivate !== false) {
                     $result = $this->dispatchShell('ext', 'activate', $type, $ext, '--quiet');
                     if ($result) {

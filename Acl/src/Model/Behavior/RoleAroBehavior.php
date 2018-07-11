@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Acl\Model\Behavior;
+namespace Vamshop\Acl\Model\Behavior;
 
 use Cake\Cache\Cache;
 use Cake\Event\Event;
@@ -15,7 +15,7 @@ use Cake\Utility\Inflector;
  * RoleAro Behavior
  *
  * @category Behavior
- * @package  Croogo.Acl.Model.Behavior
+ * @package  Vamshop.Acl.Model.Behavior
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -143,8 +143,8 @@ class RoleAroBehavior extends Behavior
  */
     public function allowedParents($id = null)
     {
-        if (!$this->_table->behaviors()->has('Croogo/Core.Aliasable')) {
-            $this->_table->addBehavior('Croogo/Core.Aliasable');
+        if (!$this->_table->behaviors()->has('Vamshop/Core.Aliasable')) {
+            $this->_table->addBehavior('Vamshop/Core.Aliasable');
         }
         if ($id == $this->_table->byAlias('public')) {
             return [];

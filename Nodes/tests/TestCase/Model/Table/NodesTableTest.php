@@ -1,12 +1,12 @@
 <?php
-namespace Croogo\Nodes\Test\TestCase\Model\Table;
+namespace Vamshop\Nodes\Test\TestCase\Model\Table;
 
 
 use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
-use Croogo\Core\Event\EventManager;
-use Croogo\Core\TestSuite\TestCase;
-use Croogo\Nodes\Model\Entity\Node;
+use Vamshop\Core\Event\EventManager;
+use Vamshop\Core\TestSuite\TestCase;
+use Vamshop\Nodes\Model\Entity\Node;
 
 class NodesTableTest extends TestCase
 {
@@ -40,7 +40,7 @@ class NodesTableTest extends TestCase
     ];
 
     /**
-     * @var \Croogo\Nodes\Model\Table\NodesTable
+     * @var \Vamshop\Nodes\Model\Table\NodesTable
      */
     public $Nodes;
 
@@ -48,7 +48,7 @@ class NodesTableTest extends TestCase
     {
         parent::setUp();
 
-        $this->Nodes = TableRegistry::get('Croogo/Nodes.Nodes');
+        $this->Nodes = TableRegistry::get('Vamshop/Nodes.Nodes');
     }
 
     public function testBeforeSave()
@@ -101,16 +101,16 @@ class NodesTableTest extends TestCase
     public function testNodeDeleteDependent()
     {
         // assert existing count
-        $commentQuery = TableRegistry::get('Croogo/Comments.Comments')
+        $commentQuery = TableRegistry::get('Vamshop/Comments.Comments')
             ->find()
             ->where([
-                'model' => 'Croogo/Nodes.Nodes',
+                'model' => 'Vamshop/Nodes.Nodes',
                 'foreign_key' => 1
             ]);
         $metaQuery = $this->Nodes->Meta
             ->find()
             ->where([
-                'model' => 'Croogo/Nodes.Nodes',
+                'model' => 'Vamshop/Nodes.Nodes',
                 'foreign_key' => 1
             ]);
         $this->assertQueryCount(2, $commentQuery);
@@ -119,16 +119,16 @@ class NodesTableTest extends TestCase
         // delete node
         $this->Nodes->delete($this->Nodes->get(1));
 
-        $commentQuery = TableRegistry::get('Croogo/Comments.Comments')
+        $commentQuery = TableRegistry::get('Vamshop/Comments.Comments')
             ->find()
             ->where([
-                'model' => 'Croogo/Nodes.Nodes',
+                'model' => 'Vamshop/Nodes.Nodes',
                 'foreign_key' => 1
             ]);
         $metaQuery = $this->Nodes->Meta
             ->find()
             ->where([
-                'model' => 'Croogo/Nodes.Nodes',
+                'model' => 'Vamshop/Nodes.Nodes',
                 'foreign_key' => 1
             ]);
         $this->assertQueryCount(0, $commentQuery);
@@ -386,7 +386,7 @@ class NodesTableTest extends TestCase
         $ids = [1, 2];
 
         $commentCount = $this->Nodes->Comments->find()->where([
-            'model' => 'Croogo/Nodes.Nodes',
+            'model' => 'Vamshop/Nodes.Nodes',
             'foreign_key IN' => $ids,
         ])->count();
         $this->assertTrue($commentCount > 0);
@@ -399,7 +399,7 @@ class NodesTableTest extends TestCase
 
         // verifies that related comments are deleted (by afterDelete callback)
         $commentCount = $this->Nodes->Comments->find()->where([
-            'model' => 'Croogo/Nodes.Nodes',
+            'model' => 'Vamshop/Nodes.Nodes',
             'foreign_key IN' => $ids,
         ])->count();
         $this->assertEquals(0, $commentCount);

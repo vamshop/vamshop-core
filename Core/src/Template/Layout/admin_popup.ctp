@@ -21,7 +21,7 @@ $showActions = isset($showActions) ? $showActions : true;
             <div class="<?= $this->Theme->getCssClass('row') ?>">
                 <div id="content" class="<?= $this->Theme->getCssClass('columnFull') ?>">
                     <div class="col-12 d-flex justify-content-between align-items-center">
-                        <?= $this->element('Croogo/Core.admin/breadcrumb') ?>
+                        <?= $this->element('Vamshop/Core.admin/breadcrumb') ?>
                         <?php if ($showActions && $actionsBlock = $this->fetch('action-buttons')): ?>
                             <div class="actions ml-auto">
                                 <?= $actionsBlock ?>
@@ -36,7 +36,7 @@ $showActions = isset($showActions) ? $showActions : true;
             </div>
         </div>
         <?php
-        echo $this->element('Croogo/Core.admin/initializers');
+        echo $this->element('Vamshop/Core.admin/initializers');
         echo $this->fetch('postLink');
         echo $this->fetch('scriptBottom');
         echo $this->Js->writeBuffer();

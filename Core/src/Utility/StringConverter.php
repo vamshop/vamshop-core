@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\Core\Utility;
+namespace Vamshop\Core\Utility;
 
 use Cake\Core\Configure;
 use Cake\Log\Log;
@@ -8,7 +8,7 @@ use Cake\Log\Log;
 /**
  * StringConverter
  *
- * @package  Croogo.Croogo.Lib.Utility
+ * @package  Vamshop.Vamshop.Lib.Utility
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     http://www.vamshop.com
  */

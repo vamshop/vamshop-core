@@ -1,6 +1,6 @@
 <?php
 
-namespace Croogo\FileManager\View\Helper;
+namespace Vamshop\FileManager\View\Helper;
 
 use Cake\View\Helper;
 use Cake\Routing\Router;
@@ -9,7 +9,7 @@ use Cake\Routing\Router;
  * FileManager Helper
  *
  * @category Helper
- * @package  Croogo.FileManager.View.Helper
+ * @package  Vamshop.FileManager.View.Helper
  * @version  1.0
  * @author   Fahad Ibnay Heylaal <contact@fahad19.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -178,7 +178,7 @@ class FileManagerHelper extends Helper
     public function linkDirectory($title, $path)
     {
         $output = $this->link($title, [
-            'plugin' => 'Croogo/FileManager',
+            'plugin' => 'Vamshop/FileManager',
             'controller' => 'FileManager',
             'action' => 'browse',
         ], $path);

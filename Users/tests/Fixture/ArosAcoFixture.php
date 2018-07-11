@@ -1,14 +1,14 @@
 <?php
 
-namespace Croogo\Users\Test\Fixture;
+namespace Vamshop\Users\Test\Fixture;
 
 use Acl\Controller\Component\AclComponent;
 use Cake\Controller\ComponentRegistry;
 use Cake\Datasource\ConnectionInterface;
 use Cake\ORM\TableRegistry;
-use Croogo\Core\TestSuite\CroogoTestFixture;
+use Vamshop\Core\TestSuite\VamshopTestFixture;
 
-class ArosAcoFixture extends CroogoTestFixture
+class ArosAcoFixture extends VamshopTestFixture
 {
 
     public $name = 'ArosAco';
@@ -29,7 +29,7 @@ class ArosAcoFixture extends CroogoTestFixture
 
     public function insert(ConnectionInterface $db)
     {
-        $roles = TableRegistry::get('Croogo/Users.Roles');
+        $roles = TableRegistry::get('Vamshop/Users.Roles');
         $admin = $roles->get(1);
         $registered = $roles->get(2);
         $public = $roles->get(3);
