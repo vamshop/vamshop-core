@@ -3,16 +3,16 @@
 use \Cake\Utility\Inflector;
 
 $this->extend('/Common/admin_edit');
-$this->assign('title', sprintf(__d('croogo', 'Translate content: %s (%s)'), $language->title, $language->native));
+$this->assign('title', sprintf(__d('vamshop', 'Translate content: %s (%s)'), $language->title, $language->native));
 $this->set('className', 'translate');
 
-$crumbLabel = $model == 'Nodes' ? __d('croogo', 'Content') : Inflector::pluralize($model);
+$crumbLabel = $model == 'Nodes' ? __d('vamshop', 'Content') : Inflector::pluralize($model);
 
 $this->Breadcrumbs
     ->add($crumbLabel)
     ->add($entity->get($displayField))
     ->add(
-        __d('croogo', 'Translations'),
+        __d('vamshop', 'Translations'),
         array(
             'plugin' => 'Vamshop/Translate',
             'controller' => 'Translate',
@@ -23,7 +23,7 @@ $this->Breadcrumbs
             ],
         )
     )
-    ->add(__d('croogo', 'Translate (%s)', $language->title), $this->request->getRequestTarget());
+    ->add(__d('vamshop', 'Translate (%s)', $language->title), $this->request->getRequestTarget());
 
 $this->append('form-start', $this->Form->create($entity, array(
     'url' => array(
@@ -40,8 +40,8 @@ $this->append('form-start', $this->Form->create($entity, array(
 )));
 
 $this->append('tab-heading');
-    echo $this->Vamshop->adminTab(__d('croogo', 'Translate'), '#translate-main');
-    echo $this->Vamshop->adminTab(__d('croogo', 'Original'), '#translate-original');
+    echo $this->Vamshop->adminTab(__d('vamshop', 'Translate'), '#translate-main');
+    echo $this->Vamshop->adminTab(__d('vamshop', 'Original'), '#translate-original');
 $this->end();
 
 $this->append('tab-content');
@@ -68,17 +68,17 @@ $this->append('tab-content');
 $this->end();
 
 $this->start('panels');
-    echo $this->Html->beginBox(__d('croogo', 'Publishing'));
+    echo $this->Html->beginBox(__d('vamshop', 'Publishing'));
 
     $out =
-        $this->Form->button(__d('croogo', 'Apply'), [
+        $this->Form->button(__d('vamshop', 'Apply'), [
             'name' => 'apply',
             'class' => 'btn-outline-primary',
         ]) .
-        $this->Form->button(__d('croogo', 'Save'), [
+        $this->Form->button(__d('vamshop', 'Save'), [
             'class' => 'btn-outline-success',
         ]) .
-        $this->Html->link(__d('croogo', 'Cancel'), ['action' => 'index',
+        $this->Html->link(__d('vamshop', 'Cancel'), ['action' => 'index',
             '?' => [
                 'id' => $this->request->query('id'),
                 'model' => urldecode($this->request->query('model')),

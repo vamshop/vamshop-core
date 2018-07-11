@@ -1,5 +1,5 @@
 <div class="users form">
-    <h2><?= __d('croogo', 'Login') ?></h2>
+    <h2><?= __d('vamshop', 'Login') ?></h2>
     <?= $this->Form->create(false, array('url' => array('action' => 'login')));?>
         <fieldset>
         <?php

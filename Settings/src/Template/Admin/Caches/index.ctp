@@ -10,27 +10,27 @@ $clearUrl = [
     'action' => 'clear',
 ];
 
-$this->Breadcrumbs->add(__d('croogo', 'Settings'),
+$this->Breadcrumbs->add(__d('vamshop', 'Settings'),
     ['plugin' => 'Vamshop/Settings', 'controller' => 'Settings', 'action' => 'prefix', 'Site'])
-    ->add(__d('croogo', 'Caches'), $this->request->getUri()->getPath());
+    ->add(__d('vamshop', 'Caches'), $this->request->getUri()->getPath());
 
 $this->append('action-buttons');
-    echo $this->Vamshop->adminAction(__d('croogo', 'Clear All'), array_merge(
+    echo $this->Vamshop->adminAction(__d('vamshop', 'Clear All'), array_merge(
             $clearUrl, ['config' => 'all']
         ), [
         'method' => 'post',
         'tooltip' => [
-            'data-title' => __d('croogo', 'Clear all cache'),
+            'data-title' => __d('vamshop', 'Clear all cache'),
             'data-placement' => 'left',
         ],
     ]);
 $this->end();
 
 $tableHeaders = $this->Html->tableHeaders([
-    $this->Paginator->sort('title', __d('croogo', 'Cache')),
-    __d('croogo', 'Engine'),
-    __d('croogo', 'Duration'),
-    __d('croogo', 'Actions')
+    $this->Paginator->sort('title', __d('vamshop', 'Cache')),
+    __d('vamshop', 'Engine'),
+    __d('vamshop', 'Duration'),
+    __d('vamshop', 'Actions')
 ]);
 $this->append('table-heading', $tableHeaders);
 
@@ -44,7 +44,7 @@ foreach ($caches as $cache => $engine):
         'icon' => 'delete',
         'method' => 'post',
         'tooltip' => [
-            'data-title' => __d('croogo', 'Clear cache: %s', $cache),
+            'data-title' => __d('vamshop', 'Clear cache: %s', $cache),
             'data-placement' => 'left',
         ],
     ]);

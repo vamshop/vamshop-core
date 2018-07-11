@@ -4,8 +4,8 @@
  */
 
 $cancelUrl = isset($cancelUrl) ? $cancelUrl : ['action' => 'index'];
-$saveText = isset($saveText) ? $saveText : '<i class="fa fa-save"></i> ' . __d('croogo', 'Save');
-$defaultApplyText = __d('croogo', 'Apply');
+$saveText = isset($saveText) ? $saveText : '<i class="fa fa-save"></i> ' . __d('vamshop', 'Save');
+$defaultApplyText = __d('vamshop', 'Apply');
 if (isset($applyText)):
     if ($applyText !== false):
         $applyText = $defaultApplyText;
@@ -25,7 +25,7 @@ endif;
                 'name' => '_apply',
             ]);
         endif;
-        echo $this->Html->link(__d('croogo', 'Cancel'), $cancelUrl, [
+        echo $this->Html->link(__d('vamshop', 'Cancel'), $cancelUrl, [
             'class' => 'cancel btn btn-outline-danger'
         ]);
     ?>

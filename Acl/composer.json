@@ -1,9 +1,9 @@
 {
-    "name": "croogo/acl",
+    "name": "vamshop/acl",
     "description": "Vamshop Acl Plugin",
     "require": {
         "cakephp/acl": "dev-master",
-        "croogo/core": "^3.0.1"
+        "vamshop/core": "^3.0.1"
     },
     "license": "MIT",
     "authors": [

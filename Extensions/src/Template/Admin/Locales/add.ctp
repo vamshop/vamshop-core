@@ -2,11 +2,11 @@
 
 $this->extend('/Common/admin_edit');
 
-$this->Breadcrumbs->add(__d('croogo', 'Extensions'),
+$this->Breadcrumbs->add(__d('vamshop', 'Extensions'),
     ['plugin' => 'Vamshop/Extensions', 'controller' => 'Plugins', 'action' => 'index'])
-    ->add(__d('croogo', 'Locales'),
+    ->add(__d('vamshop', 'Locales'),
         ['plugin' => 'Vamshop/Extensions', 'controller' => 'Locales', 'action' => 'index'])
-    ->add(__d('croogo', 'Upload'), $this->request->getRequestTarget());
+    ->add(__d('vamshop', 'Upload'), $this->request->getRequestTarget());
 
 $this->append('form-start', $this->Form->create(null, [
     'url' => [
@@ -18,7 +18,7 @@ $this->append('form-start', $this->Form->create(null, [
 ]));
 
 $this->append('tab-heading');
-echo $this->Vamshop->adminTab(__d('croogo', 'Upload'), '#locales-upload');
+echo $this->Vamshop->adminTab(__d('vamshop', 'Upload'), '#locales-upload');
 $this->end();
 
 $this->append('tab-content');
@@ -30,11 +30,11 @@ echo $this->Html->tabEnd();
 $this->end();
 
 $this->append('panels');
-echo $this->Html->beginBox(__d('croogo', 'Publishing')) .
+echo $this->Html->beginBox(__d('vamshop', 'Publishing')) .
     '<div class="clearfix"><div class="float-left">' .
-    $this->Form->button(__d('croogo', 'Upload'), ['button' => 'success']) .
+    $this->Form->button(__d('vamshop', 'Upload'), ['button' => 'success']) .
     '</div><div class="float-right">' .
-    $this->Html->link(__d('croogo', 'Cancel'), ['action' => 'index'], ['button' => 'danger']) .
+    $this->Html->link(__d('vamshop', 'Cancel'), ['action' => 'index'], ['button' => 'danger']) .
     '</div></div>';
 echo $this->Html->endBox();
 $this->end();

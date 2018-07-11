@@ -1,6 +1,6 @@
 <?php
 
-$this->assign('title', __d('croogo', 'Search Results: %s', h($q)));
+$this->assign('title', __d('vamshop', 'Search Results: %s', h($q)));
 
 ?>
 <div class="nodes search">
@@ -8,7 +8,7 @@ $this->assign('title', __d('croogo', 'Search Results: %s', h($q)));
 
     <?php
         if (count($nodes) == 0) {
-            echo __d('croogo', 'No items found.');
+            echo __d('vamshop', 'No items found.');
         }
     ?>
 

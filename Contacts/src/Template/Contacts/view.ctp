@@ -8,10 +8,10 @@
         <div class="contact-form">
             <?php
             echo $this->Form->create($message);
-            echo $this->Form->input('name', ['label' => __d('croogo', 'Your name')]);
-            echo $this->Form->input('email', ['label' => __d('croogo', 'Your email')]);
-            echo $this->Form->input('title', ['label' => __d('croogo', 'Subject')]);
-            echo $this->Form->input('body', ['label' => __d('croogo', 'Message')]);
+            echo $this->Form->input('name', ['label' => __d('vamshop', 'Your name')]);
+            echo $this->Form->input('email', ['label' => __d('vamshop', 'Your email')]);
+            echo $this->Form->input('title', ['label' => __d('vamshop', 'Subject')]);
+            echo $this->Form->input('body', ['label' => __d('vamshop', 'Message')]);
             if ($contact->message_captcha):
                 echo $this->Recaptcha->display();
             endif;

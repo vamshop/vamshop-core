@@ -1,10 +1,10 @@
 <div class="navbar navbar-light bg-light">
     <div class="float-left">
         <?php
-        echo __d('croogo', 'Sort by:');
-        echo ' ' . $this->Paginator->sort('id', __d('croogo', 'Id'), ['class' => 'sort']);
-        echo ', ' . $this->Paginator->sort('title', __d('croogo', 'Title'), ['class' => 'sort']);
-        echo ', ' . $this->Paginator->sort('created', __d('croogo', 'Created'), ['class' => 'sort']);
+        echo __d('vamshop', 'Sort by:');
+        echo ' ' . $this->Paginator->sort('id', __d('vamshop', 'Id'), ['class' => 'sort']);
+        echo ', ' . $this->Paginator->sort('title', __d('vamshop', 'Title'), ['class' => 'sort']);
+        echo ', ' . $this->Paginator->sort('created', __d('vamshop', 'Created'), ['class' => 'sort']);
         ?>
     </div>
     <div class="float-right">
@@ -17,7 +17,7 @@
         <?php if (isset($type)) : ?>
         <li>
             <?php
-            echo $this->Html->link(__d('croogo', '%s archive/index', $type->title), [
+            echo $this->Html->link(__d('vamshop', '%s archive/index', $type->title), [
                 'prefix' => 'admin',
                 'plugin' => 'Vamshop/Nodes',
                 'controller' => 'Nodes',
@@ -52,13 +52,13 @@
                 ]);
 
                 $popup = [];
-                $type = __d('croogo', $nodeTypes[$node->type]);
+                $type = __d('vamshop', $nodeTypes[$node->type]);
                 $popup[] = [
-                    __d('croogo', 'Promoted'),
+                    __d('vamshop', 'Promoted'),
                     $this->Layout->status($node->promote),
                 ];
-                $popup[] = [__d('croogo', 'Status'), $this->Layout->status($node->status)];
-                $popup[] = [__d('croogo', 'Created'), $node->created];
+                $popup[] = [__d('vamshop', 'Status'), $this->Layout->status($node->status)];
+                $popup[] = [__d('vamshop', 'Created'), $node->created];
                 $popup = $this->Html->tag('table', $this->Html->tableCells($popup));
                 $a = $this->Html->link('', '#', [
                     'class' => 'popovers action',

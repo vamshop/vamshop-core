@@ -4,7 +4,7 @@ use Cake\Utility\Inflector;
 
 $this->extend('Vamshop/Core./Common/admin_edit');
 
-$this->Breadcrumbs->add(__d('croogo', 'Settings'),
+$this->Breadcrumbs->add(__d('vamshop', 'Settings'),
     ['plugin' => 'Vamshop/Settings', 'controller' => 'Settings', 'action' => 'index'])
     ->add($prefix, $this->request->getRequestTarget());
 
@@ -35,7 +35,7 @@ echo $this->Html->tabEnd();
 $this->end();
 
 $this->start('buttons');
-    echo $this->Html->beginBox(__d('croogo', 'Publishing'));
+    echo $this->Html->beginBox(__d('vamshop', 'Publishing'));
     echo $this->element('Vamshop/Core.admin/buttons', ['applyText' => false]);
     echo $this->Html->endBox();
 $this->end();

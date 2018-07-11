@@ -2,24 +2,24 @@
 
 $this->extend('Vamshop/Core./Common/admin_index');
 
-$this->assign('title', __d('croogo', 'Plugins'));
+$this->assign('title', __d('vamshop', 'Plugins'));
 
-$this->Breadcrumbs->add(__d('croogo', 'Extensions'), $this->request->getUri()->getPath())
-    ->add(__d('croogo', 'Plugins'), $this->request->getUri()->getPath());
+$this->Breadcrumbs->add(__d('vamshop', 'Extensions'), $this->request->getUri()->getPath())
+    ->add(__d('vamshop', 'Plugins'), $this->request->getUri()->getPath());
 
 $this->start('action-buttons');
-echo $this->Vamshop->adminAction(__d('croogo', 'Upload'), ['action' => 'add'], ['class' => 'btn btn-success']);
+echo $this->Vamshop->adminAction(__d('vamshop', 'Upload'), ['action' => 'add'], ['class' => 'btn btn-success']);
 $this->end() ?>
 
 <table class="table table-striped">
     <?php
     $tableHeaders = $this->Html->tableHeaders([
         '',
-        __d('croogo', 'Alias'),
-        __d('croogo', 'Name'),
-        __d('croogo', 'Description'),
-        __d('croogo', 'Active'),
-        __d('croogo', 'Actions'),
+        __d('vamshop', 'Alias'),
+        __d('vamshop', 'Name'),
+        __d('vamshop', 'Description'),
+        __d('vamshop', 'Active'),
+        __d('vamshop', 'Actions'),
     ]);
     ?>
     <thead>
@@ -29,7 +29,7 @@ $this->end() ?>
     <?php
     $rows = [];
     foreach ($plugins as $pluginAlias => $pluginData):
-        $toggleText = $pluginData['active'] ? __d('croogo', 'Deactivate') : __d('croogo', 'Activate');
+        $toggleText = $pluginData['active'] ? __d('vamshop', 'Deactivate') : __d('vamshop', 'Activate');
         $statusIcon = $this->Html->status($pluginData['active']);
 
         $actions = [];
@@ -39,8 +39,8 @@ $this->end() ?>
             $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'toggle', '?' => $queryString],
                 ['icon' => $icon, 'tooltip' => $toggleText, 'method' => 'post']);
             $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'delete', '?' => $queryString],
-                ['icon' => $this->Theme->getIcon('delete'), 'tooltip' => __d('croogo', 'Delete')],
-                __d('croogo', 'Are you sure?'));
+                ['icon' => $this->Theme->getIcon('delete'), 'tooltip' => __d('vamshop', 'Delete')],
+                __d('vamshop', 'Are you sure?'));
         endif;
 
         if ($pluginData['active'] &&
@@ -48,21 +48,21 @@ $this->end() ?>
             !in_array($pluginAlias, $corePlugins)
         ) {
             $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'moveup', '?' => $queryString],
-                ['icon' => $this->Theme->getIcon('move-up'), 'tooltip' => __d('croogo', 'Move up'), 'method' => 'post'],
-                __d('croogo', 'Are you sure?'));
+                ['icon' => $this->Theme->getIcon('move-up'), 'tooltip' => __d('vamshop', 'Move up'), 'method' => 'post'],
+                __d('vamshop', 'Are you sure?'));
 
             $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'movedown', '?' => $queryString], [
                     'icon' => $this->Theme->getIcon('move-down'),
-                    'tooltip' => __d('croogo', 'Move down'),
+                    'tooltip' => __d('vamshop', 'Move down'),
                     'method' => 'post',
-                ], __d('croogo', 'Are you sure?'));
+                ], __d('vamshop', 'Are you sure?'));
         }
 
         if ($pluginData['needMigration']) {
-            $actions[] = $this->Vamshop->adminRowAction(__d('croogo', 'Migrate'), [
+            $actions[] = $this->Vamshop->adminRowAction(__d('vamshop', 'Migrate'), [
                 'action' => 'migrate',
                 '?' => $queryString,
-            ], [], __d('croogo', 'Are you sure?'));
+            ], [], __d('vamshop', 'Are you sure?'));
         }
 
         $actions = $this->Html->div('item-actions', implode(' ', $actions));

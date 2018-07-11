@@ -4,8 +4,8 @@
     $roleIds = array_keys($roles->toArray());
 
     $tableHeaders = array(
-        __d('croogo', 'Id'),
-        __d('croogo', 'Alias'),
+        __d('vamshop', 'Id'),
+        __d('vamshop', 'Alias'),
     );
     $tableHeaders = array_merge($tableHeaders, $roleTitles);
     $tableHeaders = $this->Html->tableHeaders($tableHeaders);

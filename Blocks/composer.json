@@ -1,8 +1,8 @@
 {
-    "name": "croogo/blocks",
+    "name": "vamshop/blocks",
     "description": "Vamshop Blocks Plugin",
     "require": {
-        "croogo/core": "^3.0.1"
+        "vamshop/core": "^3.0.1"
     },
     "license": "MIT",
     "authors": [

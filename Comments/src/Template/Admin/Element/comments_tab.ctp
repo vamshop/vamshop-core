@@ -2,9 +2,9 @@
 echo $this->Form->input('comment_status', array(
     'type' => 'radio',
     'options' => array(
-        '0' => __d('croogo', 'Disabled'),
-        '1' => __d('croogo', 'Read only'),
-        '2' => __d('croogo', 'Read/Write'),
+        '0' => __d('vamshop', 'Disabled'),
+        '1' => __d('vamshop', 'Read only'),
+        '2' => __d('vamshop', 'Read/Write'),
     ),
     'default' => $type->comment_status,
     'legend' => false,

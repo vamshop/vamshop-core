@@ -1,18 +1,18 @@
 <?php
 
-$this->assign('title', __d('croogo', 'Add Attachment'));
+$this->assign('title', __d('vamshop', 'Add Attachment'));
 $this->extend('Vamshop/Core./Common/admin_edit');
 
-$this->Breadcrumbs->add(__d('croogo', 'Attachments'),
+$this->Breadcrumbs->add(__d('vamshop', 'Attachments'),
         ['plugin' => 'Vamshop/FileManager', 'controller' => 'attachments', 'action' => 'index'])
-    ->add(__d('croogo', 'Upload'), $this->request->getRequestTarget());
+    ->add(__d('vamshop', 'Upload'), $this->request->getRequestTarget());
 
 $this->append('form-start', $this->Form->create($attachment, [
     'type' => 'file',
 ]));
 
 $this->append('tab-heading');
-echo $this->Vamshop->adminTab(__d('croogo', 'Upload'), '#attachment-upload');
+echo $this->Vamshop->adminTab(__d('vamshop', 'Upload'), '#attachment-upload');
 $this->end();
 
 $this->append('tab-content');
@@ -26,9 +26,9 @@ echo $this->Html->tabEnd();
 $this->end();
 
 $this->start('buttons');
-echo $this->Html->beginBox(__d('croogo', 'Publishing'));
+echo $this->Html->beginBox(__d('vamshop', 'Publishing'));
 echo $this->element('Vamshop/Core.admin/buttons', [
-    'saveText' => __d('croogo', 'Upload file'),
+    'saveText' => __d('vamshop', 'Upload file'),
     'applyText' => false,
 ]);
 echo $this->Html->endBox();

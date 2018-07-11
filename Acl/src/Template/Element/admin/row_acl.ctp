@@ -1,7 +1,7 @@
 <?php
 
 $rolePermissions = empty($rolePermissions) ? array() : $rolePermissions;
-$out = $this->Form->label('rolePermissions', __d('croogo', 'Edit Permissions'));
+$out = $this->Form->label('rolePermissions', __d('vamshop', 'Edit Permissions'));
 foreach ($rolePermissions as $role) {
     if ($role['id'] == 1) {
         continue;

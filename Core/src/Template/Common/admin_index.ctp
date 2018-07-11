@@ -8,7 +8,7 @@ if (!isset($className)) {
     $className = lcfirst($this->name);
 }
 $humanName = Inflector::humanize(Inflector::underscore($modelClass));
-$i18nDomain = $this->request->param('plugin') ? 'croogo' : $this->request->param('plugin');
+$i18nDomain = $this->request->param('plugin') ? 'vamshop' : $this->request->param('plugin');
 
 $rowClass = $this->Theme->getCssClass('row');
 $columnFull = $this->Theme->getCssClass('columnFull');
@@ -31,7 +31,7 @@ if (empty($this->fetch('action-buttons'))) {
     } else {
         $entityName = __($humanName);
     }
-    $actionTitle = __d('croogo', 'New %s', $entityName);
+    $actionTitle = __d('vamshop', 'New %s', $entityName);
     $this->assign('action-buttons', $this->Vamshop->adminAction($actionTitle, ['action' => 'add'], ['button' => 'btn btn-success']));
 }
 
@@ -45,7 +45,7 @@ if (!$tableHeaders && isset($displayFields)):
             $tableHeaders[] = __d($i18nDomain, $arr['label']);
         endif;
     endforeach;
-    $tableHeaders[] = __d('croogo', 'Actions');
+    $tableHeaders[] = __d('vamshop', 'Actions');
     $tableHeaders = $this->Html->tableHeaders($tableHeaders);
 endif;
 
@@ -59,22 +59,22 @@ if (!$tableBody && isset($displayFields)):
 
             if (isset($this->request->query['chooser'])):
                 $title = isset($item->title) ? $item->title : null;
-                $actions[] = $this->Vamshop->adminRowAction(__d('croogo', 'Choose'), '#', [
+                $actions[] = $this->Vamshop->adminRowAction(__d('vamshop', 'Choose'), '#', [
                     'class' => 'item-choose',
                     'data-chooser-type' => $modelClass,
                     'data-chooser-id' => $item->id,
                 ]);
             else:
                 $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'edit', $item->id],
-                    ['icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('croogo', 'Edit this item')]);
+                    ['icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('vamshop', 'Edit this item')]);
                 $actions[] = $this->Vamshop->adminRowActions($item->id);
                 $actions[] = $this->Vamshop->adminRowAction('', [
                     'action' => 'delete',
                     $item->id,
                 ], [
                     'icon' => $this->Theme->getIcon('delete'),
-                    'tooltip' => __d('croogo', 'Remove this item'),
-                ], __d('croogo', 'Are you sure?'));
+                    'tooltip' => __d('vamshop', 'Remove this item'),
+                ], __d('vamshop', 'Are you sure?'));
             endif;
             $actions = $this->Html->div('item-actions', implode(' ', $actions));
             $row = [];

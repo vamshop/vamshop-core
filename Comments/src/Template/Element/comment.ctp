@@ -11,12 +11,12 @@ use Cake\Core\Configure;
                 <?= h($comment->name); ?>
             <?php endif; ?>
         </span>
-        <span class="date"><?= h(__d('croogo', 'said on %s', $this->Time->i18nFormat($comment->created))); ?></span>
+        <span class="date"><?= h(__d('vamshop', 'said on %s', $this->Time->i18nFormat($comment->created))); ?></span>
     </div>
     <div class="comment-body"><?= $this->Text->autoParagraph($this->Text->autoLink($comment->body)); ?></div>
     <div class="comment-reply">
         <?php if ($level <= Configure::read('Comment.level')): ?>
-            <?= $this->Html->link(__d('croogo', 'Reply'), array(
+            <?= $this->Html->link(__d('vamshop', 'Reply'), array(
                 'plugin' => 'Vamshop/Comments',
                 'controller' => 'Comments',
                 'action' => 'add',

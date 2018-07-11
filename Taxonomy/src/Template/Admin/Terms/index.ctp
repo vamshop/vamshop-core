@@ -1,17 +1,17 @@
 <?php
 
-$this->assign('title', __d('croogo', 'Vocabulary: %s', $vocabulary->title));
+$this->assign('title', __d('vamshop', 'Vocabulary: %s', $vocabulary->title));
 
 $this->extend('Vamshop/Core./Common/admin_index');
 
-$this->Breadcrumbs->add(__d('croogo', 'Content'),
+$this->Breadcrumbs->add(__d('vamshop', 'Content'),
         ['plugin' => 'Vamshop/Nodes', 'controller' => 'Nodes', 'action' => 'index'])
-    ->add(__d('croogo', 'Vocabularies'),
+    ->add(__d('vamshop', 'Vocabularies'),
         ['plugin' => 'Vamshop/Taxonomy', 'controller' => 'Vocabularies', 'action' => 'index'])
     ->add($vocabulary->title, $this->request->getRequestTarget());
 
 $this->append('action-buttons');
-echo $this->Vamshop->adminAction(__d('croogo', 'Create term'), [
+echo $this->Vamshop->adminAction(__d('vamshop', 'Create term'), [
     'action' => 'add',
     'vocabulary_id' => $vocabulary->id,
 ], [
@@ -21,9 +21,9 @@ $this->end();
 
 $this->start('table-heading');
 $tableHeaders = $this->Html->tableHeaders([
-    __d('croogo', 'Title'),
-    __d('croogo', 'Slug'),
-    __d('croogo', 'Actions'),
+    __d('vamshop', 'Title'),
+    __d('vamshop', 'Slug'),
+    __d('vamshop', 'Actions'),
 ]);
 echo $this->Html->tag('thead', $tableHeaders);
 $this->end();
@@ -35,14 +35,14 @@ foreach ($terms as $term):
     $actions = [];
     $actions[] = $this->Vamshop->adminRowActions($term->id);
     $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'moveUp', $term->id, $vocabulary->id],
-        ['icon' => $this->Theme->getIcon('move-up'), 'tooltip' => __d('croogo', 'Move up'), 'method' => 'post']);
+        ['icon' => $this->Theme->getIcon('move-up'), 'tooltip' => __d('vamshop', 'Move up'), 'method' => 'post']);
     $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'moveDown', $term->id, $vocabulary->id],
-        ['icon' => $this->Theme->getIcon('move-down'), 'tooltip' => __d('croogo', 'Move down'), 'method' => 'post']);
+        ['icon' => $this->Theme->getIcon('move-down'), 'tooltip' => __d('vamshop', 'Move down'), 'method' => 'post']);
     $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'edit', $term->id, 'vocabulary_id' => $vocabulary->id],
-        ['icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('croogo', 'Edit this item')]);
+        ['icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('vamshop', 'Edit this item')]);
     $actions[] = $this->Vamshop->adminRowAction('', ['action' => 'delete', $term->id, $vocabulary->id],
-        ['icon' => $this->Theme->getIcon('delete'), 'tooltip' => __d('croogo', 'Remove this item')],
-        __d('croogo', 'Are you sure?'));
+        ['icon' => $this->Theme->getIcon('delete'), 'tooltip' => __d('vamshop', 'Remove this item')],
+        __d('vamshop', 'Are you sure?'));
     $actions = $this->Html->div('item-actions', implode(' ', $actions));
 
     // Title Column

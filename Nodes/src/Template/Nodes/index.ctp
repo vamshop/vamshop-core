@@ -6,7 +6,7 @@ endif;
 <div class="nodes">
     <?php
         if (count($nodes) == 0) {
-            echo __d('croogo', 'No items found.');
+            echo __d('vamshop', 'No items found.');
         }
     ?>
 

@@ -10,7 +10,7 @@ if (!isset($className)) {
 }
 
 $humanName = Inflector::humanize(Inflector::underscore($modelClass));
-$i18nDomain = $this->request->param('plugin') ? 'croogo' : $this->request->param('plugin');
+$i18nDomain = $this->request->param('plugin') ? 'vamshop' : $this->request->param('plugin');
 
 $rowClass = $this->Theme->getCssClass('row');
 $columnFull = $this->Theme->getCssClass('columnFull');
@@ -39,8 +39,8 @@ if (empty($this->fetch('action-buttons'))) {
     } else {
         $entityName = __($humanName);
     }
-    $actionTitle = __d('croogo', 'New %s', $entityName);
-    $this->assign('action-buttons', $this->Vamshop->adminAction(__d('croogo', 'New %s', __d('croogo', Inflector::singularize($this->name))), ['action' => 'add'], ['button' => 'success']));
+    $actionTitle = __d('vamshop', 'New %s', $entityName);
+    $this->assign('action-buttons', $this->Vamshop->adminAction(__d('vamshop', 'New %s', __d('vamshop', Inflector::singularize($this->name))), ['action' => 'add'], ['button' => 'success']));
 }
 ?>
 
@@ -60,7 +60,7 @@ if (empty($this->fetch('action-buttons'))) {
                         if ($tabHeading = $this->fetch('tab-heading')):
                             echo $tabHeading;
                         else:
-                            echo $this->Vamshop->adminTab(__d('croogo', $modelClass), "#$tabId");
+                            echo $this->Vamshop->adminTab(__d('vamshop', $modelClass), "#$tabId");
                         endif;
                         echo $this->Vamshop->adminTabs();
                         ?>

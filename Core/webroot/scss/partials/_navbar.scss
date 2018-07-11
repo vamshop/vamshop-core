@@ -1,10 +1,10 @@
 // Sidebar
 .nav-sidebar {
   font-family: $font-family-sans-serif;
-  width: $croogo-nav-width;
+  width: $vamshop-nav-width;
   //padding-top: $navbarHeight;
   margin-bottom: 10px;
-  margin-top: 30px + $croogo-navbar-height;
+  margin-top: 30px + $vamshop-navbar-height;
 
   .nav {
     margin-bottom: 0;
@@ -96,7 +96,7 @@
     }
   }
   .sub-nav {
-    width: $croogo-nav-width;
+    width: $vamshop-nav-width;
     margin-bottom: 0;
     display: none;
 
@@ -179,13 +179,13 @@
 
 @include media-breakpoint-down(sm) {
   .nav-sidebar {
-    width: $croogo-md-nav-width;
+    width: $vamshop-md-nav-width;
   }
 }
 
 #top-right-menu {
   .dropdown-menu {
-    left: -$croogo-md-nav-width;
+    left: -$vamshop-md-nav-width;
   }
 
   .dropdown-item {

@@ -3,10 +3,10 @@
  * @var \Vamshop\Core\View\VamshopView $this
  */
 
-$this->assign('title', __d('croogo', 'Attachments'));
+$this->assign('title', __d('vamshop', 'Attachments'));
 $this->extend('Vamshop/Core./Common/admin_index');
 
-$this->Breadcrumbs->add(__d('croogo', 'Attachments'), $this->request->getUri()->getPath());
+$this->Breadcrumbs->add(__d('vamshop', 'Attachments'), $this->request->getUri()->getPath());
 
 $this->Vamshop->adminScript('Vamshop/FileManager.admin');
 $this->Html->script([
@@ -26,11 +26,11 @@ $this->append('form-start', $this->Form->create(null, [
 $this->start('table-heading');
 $tableHeaders = $this->Html->tableHeaders([
     $this->Form->checkbox('checkAll', ['id' => 'AttachmentsCheckAll']),
-    $this->Paginator->sort('id', __d('croogo', 'Id')),
+    $this->Paginator->sort('id', __d('vamshop', 'Id')),
     '&nbsp;',
-    $this->Paginator->sort('title', __d('croogo', 'Title')),
-    __d('croogo', 'URL'),
-    __d('croogo', 'Actions'),
+    $this->Paginator->sort('title', __d('vamshop', 'Title')),
+    __d('vamshop', 'URL'),
+    __d('vamshop', 'Actions'),
 ]);
 echo $tableHeaders;
 $this->end();
@@ -41,15 +41,15 @@ foreach ($attachments as $attachment) {
     $actions = [];
     $actions[] = $this->Vamshop->adminRowActions($attachment->id);
     $actions[] = $this->Vamshop->adminRowAction('', ['controller' => 'Attachments', 'action' => 'edit', $attachment->id],
-        ['icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('croogo', 'Edit this item')]);
+        ['icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('vamshop', 'Edit this item')]);
     $actions[] = $this->Vamshop->adminRowAction('',
         ['controller' => 'attachments', 'action' => 'delete', $attachment->id],
         [
             'icon' => $this->Theme->getIcon('delete'),
-            'tooltip' => __d('croogo', 'Remove this item'),
+            'tooltip' => __d('vamshop', 'Remove this item'),
             'method' => 'post',
         ],
-        __d('croogo', 'Are you sure?'));
+        __d('vamshop', 'Are you sure?'));
 
     $mimeType = explode('/', $attachment->mime_type);
     $imageType = $mimeType['1'];
@@ -64,7 +64,7 @@ foreach ($attachments as $attachment) {
             'data-toggle' => 'lightbox',
         ]);
     } else {
-        $thumbnail = $this->Html->thumbnail('/croogo/core/img/icons/page_white.png', ['alt' => $attachment->mime_type]) .
+        $thumbnail = $this->Html->thumbnail('/vamshop/core/img/icons/page_white.png', ['alt' => $attachment->mime_type]) .
             ' ' .
             $attachment->mime_type .
             ' (' .
@@ -90,16 +90,16 @@ $this->end();
 
 $this->start('bulk-action');
 echo $this->Form->input('action', [
-    'label' => __d('croogo', 'Bulk actions'),
+    'label' => __d('vamshop', 'Bulk actions'),
     'class' => 'c-select',
     'options' => [
-        'delete' => __d('croogo', 'Delete'),
+        'delete' => __d('vamshop', 'Delete'),
     ],
     'empty' => 'Bulk actions',
 ]);
 
 $jsVarName = uniqid('confirmMessage_');
-echo $this->Form->button(__d('croogo', 'Apply'), [
+echo $this->Form->button(__d('vamshop', 'Apply'), [
     'type' => 'button',
     'class' => 'bulk-process btn-outline-primary',
     'data-relatedElement' => '#action',
@@ -107,7 +107,7 @@ echo $this->Form->button(__d('croogo', 'Apply'), [
     'escape' => true,
 ]);
 
-$this->Js->set($jsVarName, __d('croogo', '%s selected items?'));
+$this->Js->set($jsVarName, __d('vamshop', '%s selected items?'));
 $this->Js->buffer("$('.bulk-process').on('click', Attachments.confirmProcess);");
 
 $this->end();

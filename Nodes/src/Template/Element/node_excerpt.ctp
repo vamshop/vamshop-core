@@ -3,7 +3,7 @@
     <?= $excerpt ?>
     <div class="text-right">
     <?=
-        $this->Html->link(__d('croogo', 'Read'), [
+        $this->Html->link(__d('vamshop', 'Read'), [
             'action' => 'view',
             'type' => $node->type,
             'slug' => $node->slug,

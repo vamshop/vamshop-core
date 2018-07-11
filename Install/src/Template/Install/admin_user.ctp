@@ -5,25 +5,25 @@ $this->assign('before', $this->Form->create($user, [
 ?>
 <?php
 echo $this->Form->input('username', [
-    'placeholder' => __d('croogo', 'Username'),
+    'placeholder' => __d('vamshop', 'Username'),
     'prepend' => $this->Html->icon('user'),
-    'label' => __d('croogo', 'Username'),
+    'label' => __d('vamshop', 'Username'),
 ]);
 echo $this->Form->input('password', [
-    'placeholder' => __d('croogo', 'New Password'),
+    'placeholder' => __d('vamshop', 'New Password'),
     'value' => '',
     'prepend' => $this->Html->icon('key'),
-    'label' => __d('croogo', 'New Password'),
+    'label' => __d('vamshop', 'New Password'),
 ]);
 echo $this->Form->input('verify_password', [
-    'placeholder' => __d('croogo', 'Verify Password'),
+    'placeholder' => __d('vamshop', 'Verify Password'),
     'type' => 'password',
     'value' => '',
     'prepend' => $this->Html->icon('key'),
-    'label' => __d('croogo', 'Verify Password'),
+    'label' => __d('vamshop', 'Verify Password'),
 ]);
 ?>
 <?php
-$this->assign('buttons', $this->Form->button(__d('croogo', 'Finalize installation'), ['class' => 'success']));
+$this->assign('buttons', $this->Form->button(__d('vamshop', 'Finalize installation'), ['class' => 'success']));
 $this->assign('after', $this->Form->end());
 ?>

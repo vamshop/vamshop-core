@@ -3,12 +3,12 @@
 $this->extend('/Common/admin_index');
 
 $this->Breadcrumbs
-    ->add(__d('croogo', 'Settings'), [
+    ->add(__d('vamshop', 'Settings'), [
         'plugin' => 'Vamshop/Settings',
         'controller' => 'Settings',
         'action' => 'index',
     ])
-    ->add(__d('croogo', 'Languages'), [
+    ->add(__d('vamshop', 'Languages'), [
         'plugin' => 'Vamshop/Settings',
         'controller' => 'Languages',
         'action' => 'index'

@@ -35,14 +35,14 @@ $chooserType = isset($this->request->query['chooser_type']) ? $this->request->qu
         'filter',
         [
             'label' => false,
-            'title' => __d('croogo', 'Search'),
-            'placeholder' => __d('croogo', 'Search...'),
+            'title' => __d('vamshop', 'Search'),
+            'placeholder' => __d('vamshop', 'Search...'),
             'tooltip' => false,
         ]
     );
 
     echo $this->Form->input(
-        __d('croogo', 'Filter'),
+        __d('vamshop', 'Filter'),
         [
             'type' => 'submit',
         ]

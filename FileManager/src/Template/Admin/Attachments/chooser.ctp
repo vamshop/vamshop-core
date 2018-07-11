@@ -2,9 +2,9 @@
     <div class="d-flex justify-content-between">
         <div>
         <?php
-        echo __d('croogo', 'Sort by:');
-        echo ', ' . $this->Paginator->sort('title', __d('croogo', 'Title'), ['class' => 'sort']);
-        echo ', ' . $this->Paginator->sort('created', __d('croogo', 'Created'), ['class' => 'sort']);
+        echo __d('vamshop', 'Sort by:');
+        echo ', ' . $this->Paginator->sort('title', __d('vamshop', 'Title'), ['class' => 'sort']);
+        echo ', ' . $this->Paginator->sort('created', __d('vamshop', 'Created'), ['class' => 'sort']);
         ?>
         </div>
         <button type="button" class="btn btn-primary add-image">Add images</button>
@@ -22,7 +22,7 @@
             $thumbnail = $this->Image->resize($attachment->path, 500, 500, [], ['class' => 'card-img-bottom img-fluid']);
         } else {
             $thumbnail = $this->Html->image(
-                '/croogo/img/icons/page_white.png',
+                '/vamshop/img/icons/page_white.png',
                 ['class' => 'card-img-bottom img-fluid']
             );
         }

@@ -5,20 +5,20 @@ use Cake\I18n\Time;
 
 $this->extend('Vamshop/Core./Common/admin_edit');
 
-$this->Breadcrumbs->add(__d('croogo', 'Users'),
+$this->Breadcrumbs->add(__d('vamshop', 'Users'),
         ['plugin' => 'Vamshop/Users', 'controller' => 'Users', 'action' => 'index']);
 
 if ($this->request->param('action') == 'edit') {
     $this->Breadcrumbs->add($user->name, $this->request->getRequestTarget());
-    $this->assign('title', __d('croogo', 'Edit user %s', $user->username));
+    $this->assign('title', __d('vamshop', 'Edit user %s', $user->username));
 } else {
-    $this->assign('title', __d('croogo', 'New user'));
-    $this->Breadcrumbs->add(__d('croogo', 'New user'), $this->request->getRequestTarget());
+    $this->assign('title', __d('vamshop', 'New user'));
+    $this->Breadcrumbs->add(__d('vamshop', 'New user'), $this->request->getRequestTarget());
 }
 
 $this->start('action-buttons');
 if ($this->request->param('action') == 'edit'):
-    echo $this->Vamshop->adminAction(__d('croogo', 'Reset password'), ['action' => 'reset_password', $user->id]);
+    echo $this->Vamshop->adminAction(__d('vamshop', 'Reset password'), ['action' => 'reset_password', $user->id]);
 endif;
 $this->end();
 
@@ -30,33 +30,33 @@ $this->append('form-start', $this->Form->create($user, [
 ]));
 
 $this->append('tab-heading');
-echo $this->Vamshop->adminTab(__d('croogo', 'User'), '#user-main');
+echo $this->Vamshop->adminTab(__d('vamshop', 'User'), '#user-main');
 $this->end();
 
 $this->append('tab-content');
 
 echo $this->Html->tabStart('user-main');
 echo $this->Form->input('username', [
-    'label' => __d('croogo', 'Username'),
+    'label' => __d('vamshop', 'Username'),
 ]);
 echo $this->Form->input('name', [
-    'label' => __d('croogo', 'Name'),
+    'label' => __d('vamshop', 'Name'),
 ]);
 echo $this->Form->input('email', [
-    'label' => __d('croogo', 'Email'),
+    'label' => __d('vamshop', 'Email'),
 ]);
 echo $this->Form->input('website', [
-    'label' => __d('croogo', 'Website'),
+    'label' => __d('vamshop', 'Website'),
 ]);
 echo $this->Form->input('timezone', [
     'type' => 'select',
     'empty' => true,
     'options' => Time::listTimezones(),
-    'label' => __d('croogo', 'Timezone'),
+    'label' => __d('vamshop', 'Timezone'),
     'class' => 'c-select',
 ]);
 echo $this->Form->input('role_id', [
-    'label' => __d('croogo', 'Role'),
+    'label' => __d('vamshop', 'Role'),
     'class' => 'c-select',
     'empty' => true,
 ]);
@@ -64,29 +64,29 @@ echo $this->Html->tabEnd();
 $this->end();
 
 $this->append('panels');
-echo $this->Html->beginBox(__d('croogo', 'Publishing'));
+echo $this->Html->beginBox(__d('vamshop', 'Publishing'));
 echo $this->element('Vamshop/Core.admin/buttons', ['type' => 'user']);
 
 if ($this->request->param('action') == 'add'):
     echo $this->Form->input('notification', [
-        'label' => __d('croogo', 'Send Activation Email'),
+        'label' => __d('vamshop', 'Send Activation Email'),
         'type' => 'checkbox',
         'class' => false,
     ]);
 endif;
 
 echo $this->Form->input('status', [
-    'label' => __d('croogo', 'Active'),
+    'label' => __d('vamshop', 'Active'),
 ]);
 
 $showPassword = !empty($user->status);
 if ($this->request->param('action') == 'add'):
     $out = $this->Form->input('password', [
-        'label' => __d('croogo', 'Password'),
+        'label' => __d('vamshop', 'Password'),
         'disabled' => !$showPassword,
     ]);
     $out .= $this->Form->input('verify_password', [
-        'label' => __d('croogo', 'Verify Password'),
+        'label' => __d('vamshop', 'Verify Password'),
         'disabled' => !$showPassword,
         'type' => 'password',
     ]);

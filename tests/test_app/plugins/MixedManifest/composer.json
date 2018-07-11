@@ -1,5 +1,5 @@
 {
-	"name": "croogo/mixed-manifest-plugin-bogus",
+	"name": "vamshop/mixed-manifest-plugin-bogus",
 	"description": "test plugin with mixed composer json and plugin.json",
-	"type": "croogo-plugin"
+	"type": "vamshop-plugin"
 }

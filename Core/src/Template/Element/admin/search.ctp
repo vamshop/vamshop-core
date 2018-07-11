@@ -40,12 +40,12 @@ if (!empty($searchFields)):
         }
         $options['default'] = $this->request->query($field);
         $label = __(Inflector::humanize(Inflector::underscore($label)));
-        $options['placeholder'] = __d('croogo', $label);
+        $options['placeholder'] = __d('vamshop', $label);
         $this->Form->unlockField($field);
         echo $this->Form->input($field, $options);
     }
 
-    echo $this->Form->submit(__d('croogo', 'Filter'), ['type' => 'submit', 'class' => 'btn-outline-success']);
+    echo $this->Form->submit(__d('vamshop', 'Filter'), ['type' => 'submit', 'class' => 'btn-outline-success']);
     echo $this->Html->link('Reset', [
         'action' => 'index',
     ], [

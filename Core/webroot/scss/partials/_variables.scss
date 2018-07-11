@@ -17,16 +17,16 @@ $gray-lightest: lighten($gray-base, 93.5);
 $nearly-black: #1b1b1b;
 
 // Vamshop
-$croogo-general-margin: 10px;
-$croogo-content-padding: 10px;
-$croogo-background-color: lighten($gray-lighter, 5);
-$croogo-main-bg: $gray;
-$croogo-nav-width: 170px;
-$croogo-md-nav-width: 42px;
-$croogo-container-margin-top: 50px;
-$croogo-nav-border-color: darken($gray-light, 25);
-$croogo-breadcrumb-margin: 8px;
-$croogo-navbar-height: 56px;
+$vamshop-general-margin: 10px;
+$vamshop-content-padding: 10px;
+$vamshop-background-color: lighten($gray-lighter, 5);
+$vamshop-main-bg: $gray;
+$vamshop-nav-width: 170px;
+$vamshop-md-nav-width: 42px;
+$vamshop-container-margin-top: 50px;
+$vamshop-nav-border-color: darken($gray-light, 25);
+$vamshop-breadcrumb-margin: 8px;
+$vamshop-navbar-height: 56px;
 
 // Box
 $crBoxMarginVertical: 10px;
@@ -40,4 +40,4 @@ $actionsButtonsWidth: 70px; // ~= size of 2 buttons with only an icon inside (Fo
 $crFilterBackground: $crTableTheadBackground;
 
 // Login
-$croogo-login-box-width: 350px;
+$vamshop-login-box-width: 350px;

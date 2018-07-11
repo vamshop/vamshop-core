@@ -6,19 +6,19 @@ echo $this->Form->create($user);
 
     echo $this->Form->input('password', [
         'type' => 'password',
-        'placeholder' => __d('croogo', 'New password'),
+        'placeholder' => __d('vamshop', 'New password'),
         'label' => false,
         'value' => '',
     ]);
 
     echo $this->Form->input('verify_password', [
         'type' => 'password',
-        'placeholder' => __d('croogo', 'Verify Password'),
+        'placeholder' => __d('vamshop', 'Verify Password'),
         'label' => false,
         'value' => '',
     ]);
 
-    echo $this->Form->input(__d('croogo', 'Reset'), [
+    echo $this->Form->input(__d('vamshop', 'Reset'), [
         'type' => 'submit',
         'class' => 'btn btn-primary',
         'templates' => [

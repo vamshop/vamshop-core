@@ -1,9 +1,9 @@
 .content {
-  padding: 0 $croogo-content-padding;
-  margin-top: $croogo-container-margin-top; // For breadcrumb when it is fixed
+  padding: 0 $vamshop-content-padding;
+  margin-top: $vamshop-container-margin-top; // For breadcrumb when it is fixed
 
   table {
-    margin: $croogo-general-margin 0;
+    margin: $vamshop-general-margin 0;
   }
 }
 
@@ -45,7 +45,7 @@ h2.hidden-md-up {
   margin-bottom: $crBoxMarginVertical;
   @include border-radius(2px);
   .box-title {
-    padding-left: $croogo-content-padding;
+    padding-left: $vamshop-content-padding;
     font-weight: bold;
     color: lighten($gray, 2%);
     color: $black;
@@ -53,22 +53,22 @@ h2.hidden-md-up {
   }
 
   .box-content {
-    margin: $croogo-general-margin;
+    margin: $vamshop-general-margin;
     .submit {
       display: inline-block;
     }
 
     .input {
       clear: both;
-      margin-top: $croogo-general-margin;
+      margin-top: $vamshop-general-margin;
     }
   }
 }
 
 // Actions in admin_index
 #breadcrumb-container + .actions {
-  margin-top: -$croogo-breadcrumb-margin;
-  margin-left: -$croogo-breadcrumb-margin * 2 !important;
+  margin-top: -$vamshop-breadcrumb-margin;
+  margin-left: -$vamshop-breadcrumb-margin * 2 !important;
   padding: 5px 5px 6px;
   background-color: $gray-lightest;
   border-radius: 0.25rem;

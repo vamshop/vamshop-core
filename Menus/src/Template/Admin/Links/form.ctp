@@ -5,14 +5,14 @@ use Vamshop\Core\Status;
 $this->extend('Vamshop/Core./Common/admin_edit');
 $this->Vamshop->adminScript('Vamshop/Menus.admin');
 
-$this->Breadcrumbs->add(__d('croogo', 'Menus'), ['controller' => 'Menus', 'action' => 'index']);
+$this->Breadcrumbs->add(__d('vamshop', 'Menus'), ['controller' => 'Menus', 'action' => 'index']);
 
 if ($this->request->params['action'] == 'add') {
     $this->Breadcrumbs->add($menu->title, [
                 'action' => 'index',
                 '?' => ['menu_id' => $menu->id],
             ])
-        ->add(__d('croogo', 'Add'), $this->request->getRequestTarget());
+        ->add(__d('vamshop', 'Add'), $this->request->getRequestTarget());
     $formUrl = [
         'action' => 'add',
         $menu->id,
@@ -42,8 +42,8 @@ $inputDefaults = $this->Form->templates();
 $inputClass = isset($inputDefaults['class']) ? $inputDefaults['class'] : null;
 
 $this->append('tab-heading');
-    echo $this->Vamshop->adminTab(__d('croogo', 'Link'), '#link-basic');
-    echo $this->Vamshop->adminTab(__d('croogo', 'Misc.'), '#link-misc');
+    echo $this->Vamshop->adminTab(__d('vamshop', 'Link'), '#link-basic');
+    echo $this->Vamshop->adminTab(__d('vamshop', 'Misc.'), '#link-misc');
 $this->end();
 
 $this->append('tab-content');
@@ -54,13 +54,13 @@ $this->append('tab-content');
             'class' => 'c-select'
         ]);
         echo $this->Form->input('parent_id', [
-            'title' => __d('croogo', 'Parent'),
+            'title' => __d('vamshop', 'Parent'),
             'options' => $parentLinks,
-            'empty' => __d('croogo', '(no parent)'),
+            'empty' => __d('vamshop', '(no parent)'),
             'class' => 'c-select'
         ]);
         echo $this->Form->input('title', [
-            'label' => __d('croogo', 'Title'),
+            'label' => __d('vamshop', 'Title'),
         ]);
 
         $linkString = (string)$link->link;
@@ -87,7 +87,7 @@ $this->append('tab-content');
         endif;
 
         echo $this->Form->input('link', [
-            'label' => __d('croogo', 'Link'),
+            'label' => __d('vamshop', 'Link'),
             'linkChooser' => true,
             'class' => 'no-select2 link-chooser',
             'type' => 'select',
@@ -99,31 +99,31 @@ $this->append('tab-content');
 
     echo $this->Html->tabStart('link-misc');
         echo $this->Form->input('description', [
-            'label' => __d('croogo', 'Description'),
+            'label' => __d('vamshop', 'Description'),
         ]);
         echo $this->Form->input('class', [
-            'label' => __d('croogo', 'Class'),
+            'label' => __d('vamshop', 'Class'),
         ]);
         echo $this->Form->input('rel', [
-            'label' => __d('croogo', 'Rel'),
+            'label' => __d('vamshop', 'Rel'),
         ]);
         echo $this->Form->input('target', [
-            'label' => __d('croogo', 'Target'),
+            'label' => __d('vamshop', 'Target'),
         ]);
         echo $this->Form->input('params', [
-            'label' => __d('croogo', 'Params'),
+            'label' => __d('vamshop', 'Params'),
         ]);
     echo $this->Html->tabEnd();
 
 $this->end();
 
 $this->start('panels');
-    echo $this->Html->beginBox(__d('croogo', 'Publishing'));
+    echo $this->Html->beginBox(__d('vamshop', 'Publishing'));
         echo $this->element('Vamshop/Core.admin/buttons', ['type' => 'link']);
         echo $this->element('Vamshop/Core.admin/publishable');
     echo $this->Html->endBox();
 
-    echo $this->Html->beginBox(__d('croogo', 'Access control'));
+    echo $this->Html->beginBox(__d('vamshop', 'Access control'));
         echo $this->Form->input('visibility_roles', [
             'class' => 'c-select',
             'options' => $roles,

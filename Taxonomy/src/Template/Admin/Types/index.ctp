@@ -1,6 +1,6 @@
 <?php
-$this->Breadcrumbs->add(__d('croogo', 'Content'),
+$this->Breadcrumbs->add(__d('vamshop', 'Content'),
         ['plugin' => 'Vamshop/Nodes', 'controller' => 'Nodes', 'action' => 'index'])
-    ->add(__d('croogo', 'Types'), $this->request->getRequestTarget());
+    ->add(__d('vamshop', 'Types'), $this->request->getRequestTarget());
 
 $this->extend('Vamshop/Core./Common/admin_index');

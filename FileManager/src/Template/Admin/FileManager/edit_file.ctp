@@ -2,11 +2,11 @@
 
 use Cake\Routing\Router;
 
-$this->assign('title', __d('croogo', 'Edit file: %s', $path));
+$this->assign('title', __d('vamshop', 'Edit file: %s', $path));
 
 $this->extend('Vamshop/Core./Common/admin_edit');
 
-$this->Breadcrumbs->add(__d('croogo', 'File Manager'),
+$this->Breadcrumbs->add(__d('vamshop', 'File Manager'),
         ['plugin' => 'Vamshop/FileManager', 'controller' => 'fileManager', 'action' => 'browse'])
     ->add(basename($absolutefilepath), $this->request->getRequestTarget());
 
@@ -17,7 +17,7 @@ $this->end();
 $this->append('form-start', $this->Form->create(null));
 
 $this->append('tab-heading');
-echo $this->Vamshop->adminTab(__d('croogo', 'Edit'), '#filemanager-edit');
+echo $this->Vamshop->adminTab(__d('vamshop', 'Edit'), '#filemanager-edit');
 $this->end();
 
 $this->append('tab-content');
@@ -30,7 +30,7 @@ echo $this->Html->tabEnd();
 $this->end();
 
 $this->append('panels');
-echo $this->Html->beginBox(__d('croogo', 'Publishing'));
+echo $this->Html->beginBox(__d('vamshop', 'Publishing'));
 echo $this->element('Vamshop/Core.admin/buttons', [
     'applyText' => false,
 ]);

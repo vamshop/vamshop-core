@@ -16,9 +16,9 @@ if (isset(${Inflector::variable(Inflector::singularize($this->name))})):
     $entity = ${Inflector::variable(Inflector::singularize($this->name))};
 
     if (!is_array($entity)):
-        $what = !$entity->isNew() ? __d('croogo', 'Edit') : __d('croogo', 'Add');
+        $what = !$entity->isNew() ? __d('vamshop', 'Edit') : __d('vamshop', 'Add');
     else:
-        $what = __d('croogo', 'Edit');
+        $what = __d('vamshop', 'Edit');
     endif;
 endif;
 
@@ -56,7 +56,7 @@ $tabId = 'tabitem-' . Inflector::slug(strtolower($modelClass), '-');
 if (!$this->exists('left-column')):
     $tabHeading = $this->fetch('tab-heading');
     if (empty($tabHeading)):
-        $tabHeading = $this->Vamshop->adminTab(__d('croogo', $modelClass), "#$tabId");
+        $tabHeading = $this->Vamshop->adminTab(__d('vamshop', $modelClass), "#$tabId");
     endif;
     $tabHeading .= $this->Vamshop->adminTabs();
 
@@ -96,7 +96,7 @@ if (!$this->exists('right-column')):
         if ($buttonsBlock = $this->fetch('buttons')):
             echo $buttonsBlock;
         else :
-            echo $this->Html->beginBox(__d('croogo', 'Publishing'));
+            echo $this->Html->beginBox(__d('vamshop', 'Publishing'));
             echo $this->element('Vamshop/Core.admin/buttons', ['type' => $modelClass]);
             echo $this->Html->endBox();
         endif;

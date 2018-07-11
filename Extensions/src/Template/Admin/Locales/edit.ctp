@@ -3,8 +3,8 @@
 $this->extend('/Common/admin_edit');
 
 $this->Breadcrumbs
-    ->add(__d('croogo', 'Extensions'), array('plugin' => 'Vamshop/Extensions', 'controller' => 'Plugins', 'action' => 'index'))
-    ->add(__d('croogo', 'Locales'), array('plugin' => 'Vamshop/Extensions', 'controller' => 'Locales', 'action' => 'index'))
+    ->add(__d('vamshop', 'Extensions'), array('plugin' => 'Vamshop/Extensions', 'controller' => 'Plugins', 'action' => 'index'))
+    ->add(__d('vamshop', 'Locales'), array('plugin' => 'Vamshop/Extensions', 'controller' => 'Locales', 'action' => 'index'))
     ->add($this->request->params['pass'][0], $this->request->getRequestTarget());
 
 $this->append('form-start', $this->Form->create($locale, array(
@@ -17,13 +17,13 @@ $this->append('form-start', $this->Form->create($locale, array(
 )));
 
 $this->append('tab-heading');
-    echo $this->Vamshop->adminTab(__d('croogo', 'Content'), '#locale-content');
+    echo $this->Vamshop->adminTab(__d('vamshop', 'Content'), '#locale-content');
 $this->end();
 
 $this->append('tab-content');
     echo $this->Html->tabStart('locale-content') .
         $this->Form->input('content', array(
-            'label' => __d('croogo', 'Content'),
+            'label' => __d('vamshop', 'Content'),
             'data-placement' => 'top',
             'value' => $content,
             'type' => 'textarea',
@@ -33,9 +33,9 @@ $this->append('tab-content');
 $this->end();
 
 $this->append('panels');
-    echo $this->Html->beginBox(__d('croogo', 'Actions')) .
-        $this->Form->button(__d('croogo', 'Save')) .
-        $this->Html->link(__d('croogo', 'Cancel'),
+    echo $this->Html->beginBox(__d('vamshop', 'Actions')) .
+        $this->Form->button(__d('vamshop', 'Save')) .
+        $this->Html->link(__d('vamshop', 'Cancel'),
             array('action' => 'index'),
             array('button' => 'danger')
         );

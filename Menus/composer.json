@@ -1,8 +1,8 @@
 {
-    "name": "croogo/menus",
+    "name": "vamshop/menus",
     "description": "Vamshop Menus Plugin",
     "require": {
-        "croogo/core": "^3.0.1"
+        "vamshop/core": "^3.0.1"
     },
     "license": "MIT",
     "authors": [

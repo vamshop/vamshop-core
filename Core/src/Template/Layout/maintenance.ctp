@@ -12,7 +12,7 @@ a:hover { text-decoration: underline; color:#44E; }
 </style>
 </head>
 <body>
-<p><?= __d('croogo', 'Site down for maintenance.') ?></p>
+<p><?= __d('vamshop', 'Site down for maintenance.') ?></p>
 </body>
 </html>
 <?php Configure::write('debug', 0) ?>

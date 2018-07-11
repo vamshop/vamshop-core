@@ -1,8 +1,8 @@
 {
-    "name": "croogo/dashboards",
+    "name": "vamshop/dashboards",
     "description": "Vamshop Dashboards Plugin",
     "require": {
-        "croogo/core": "^3.0.1"
+        "vamshop/core": "^3.0.1"
     },
     "license": "MIT",
     "authors": [

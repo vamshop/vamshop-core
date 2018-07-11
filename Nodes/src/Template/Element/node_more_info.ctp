@@ -3,7 +3,7 @@
     $type = $typesForLayout[$this->Nodes->field('type')];
 
     if (!empty($this->Nodes->node->taxonomies)) {
-        echo __d('croogo', 'Posted in') . ' ' . implode(', ', $this->Nodes->nodeTermLinks());
+        echo __d('vamshop', 'Posted in') . ' ' . implode(', ', $this->Nodes->nodeTermLinks());
     }
 
     if ($this->Nodes->commentsEnabled() && $this->request->params['action'] !== 'view' && $type->comment_status) {
@@ -13,11 +13,11 @@
 
         $commentCount = '';
         if ($this->Nodes->field('comment_count') == 0) {
-            $commentCount = __d('croogo', 'Leave a comment');
+            $commentCount = __d('vamshop', 'Leave a comment');
         } elseif ($this->Nodes->field('comment_count') == 1) {
-            $commentCount = $this->Nodes->field('comment_count') . ' ' . __d('croogo', 'Comment');
+            $commentCount = $this->Nodes->field('comment_count') . ' ' . __d('vamshop', 'Comment');
         } else {
-            $commentCount = $this->Nodes->field('comment_count') . ' ' . __d('croogo', 'Comments');
+            $commentCount = $this->Nodes->field('comment_count') . ' ' . __d('vamshop', 'Comments');
         }
         echo $this->Html->link($commentCount, array_merge($this->Nodes->field('url')->getUrl()), ['#' => 'comments']);
     }

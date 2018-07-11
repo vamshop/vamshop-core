@@ -1,8 +1,8 @@
 {
-    "name": "croogo/taxonomy",
+    "name": "vamshop/taxonomy",
     "description": "Vamshop Taxonomy Plugin",
     "require": {
-        "croogo/core": "^3.0.1"
+        "vamshop/core": "^3.0.1"
     },
     "license": "MIT",
     "authors": [

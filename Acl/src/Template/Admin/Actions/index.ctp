@@ -7,15 +7,15 @@ $this->Html->script('Vamshop/Acl.acl_permissions', ['block' => true]);
 $this->Vamshop->adminScript('Vamshop/Acl.acl_permissions');
 
 $this->Breadcrumbs
-    ->add(__d('croogo', 'Users'), array('plugin' => 'Vamshop/Users', 'controller' => 'Users', 'action' => 'index'))
-    ->add(__d('croogo', 'Permissions'), array(
+    ->add(__d('vamshop', 'Users'), array('plugin' => 'Vamshop/Users', 'controller' => 'Users', 'action' => 'index'))
+    ->add(__d('vamshop', 'Permissions'), array(
         'plugin' => 'Vamshop/Acl', 'controller' => 'Permissions',
     ))
-    ->add(__d('croogo', 'Actions'), array('plugin' => 'Vamshop/Acl', 'controller' => 'Actions', 'action' => 'index', 'permission' => 1));
+    ->add(__d('vamshop', 'Actions'), array('plugin' => 'Vamshop/Acl', 'controller' => 'Actions', 'action' => 'index', 'permission' => 1));
 
 $this->append('action-buttons');
     $toolsButton = $this->Html->link(
-        __d('croogo', 'Tools'),
+        __d('vamshop', 'Tools'),
         '#',
         array(
             'button' => 'secondary',
@@ -31,7 +31,7 @@ $this->append('action-buttons');
         'action' => 'generate',
         'permissions' => 1
     );
-    $out = $this->Vamshop->adminAction(__d('croogo', 'Generate'),
+    $out = $this->Vamshop->adminAction(__d('vamshop', 'Generate'),
         $generateUrl,
         array(
             'button' => false,
@@ -39,12 +39,12 @@ $this->append('action-buttons');
             'method' => 'post',
             'class' => 'dropdown-item',
             'tooltip' => array(
-                'data-title' => __d('croogo', 'Create new actions (no removal)'),
+                'data-title' => __d('vamshop', 'Create new actions (no removal)'),
                 'data-placement' => 'left',
             ),
         )
     );
-    $out .= $this->Vamshop->adminAction(__d('croogo', 'Synchronize'),
+    $out .= $this->Vamshop->adminAction(__d('vamshop', 'Synchronize'),
         $generateUrl + array('sync' => 1),
         array(
             'button' => false,
@@ -52,7 +52,7 @@ $this->append('action-buttons');
             'method' => 'post',
             'class' => 'dropdown-item',
             'tooltip' => array(
-                'data-title' => __d('croogo', 'Create new & remove orphaned actions'),
+                'data-title' => __d('vamshop', 'Create new & remove orphaned actions'),
                 'data-placement' => 'left',
             ),
         )
@@ -68,9 +68,9 @@ $this->end();
 $this->set('tableClass', 'table permission-table');
 $this->start('table-heading');
     $tableHeaders = $this->Html->tableHeaders(array(
-        __d('croogo', 'Id'),
-        __d('croogo', 'Alias'),
-        __d('croogo', 'Actions'),
+        __d('vamshop', 'Id'),
+        __d('vamshop', 'Alias'),
+        __d('vamshop', 'Actions'),
     ));
     echo $this->Html->tag('thead', $tableHeaders);
 $this->end();
@@ -102,26 +102,26 @@ $this->append('table-body');
         $actions = array();
         $actions[] = $this->Vamshop->adminRowAction('',
             array('action' => 'move', $id, 'up'),
-            array('icon' => $this->Theme->getIcon('move-up'), 'tooltip' => __d('croogo', 'Move up'))
+            array('icon' => $this->Theme->getIcon('move-up'), 'tooltip' => __d('vamshop', 'Move up'))
         );
         $actions[] = $this->Vamshop->adminRowAction('',
             array('action' => 'move', $id, 'down'),
-            array('icon' => $this->Theme->getIcon('move-down'), 'tooltip' => __d('croogo', 'Move down'))
+            array('icon' => $this->Theme->getIcon('move-down'), 'tooltip' => __d('vamshop', 'Move down'))
         );
 
         $actions[] = $this->Vamshop->adminRowAction('',
             array('action' => 'edit', $id),
-            array('icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('croogo', 'Edit this item'))
+            array('icon' => $this->Theme->getIcon('update'), 'tooltip' => __d('vamshop', 'Edit this item'))
         );
         $actions[] = $this->Vamshop->adminRowAction('',
             array('action' => 'delete', $id),
             array(
                 'icon' => $this->Theme->getIcon('delete'),
-                'tooltip' => __d('croogo', 'Remove this item'),
+                'tooltip' => __d('vamshop', 'Remove this item'),
                 'escapeTitle' => false,
                 'escape' => true,
             ),
-            __d('croogo', 'Are you sure?')
+            __d('vamshop', 'Are you sure?')
         );
 
         $actions = $this->Html->div('item-actions', implode(' ', $actions));

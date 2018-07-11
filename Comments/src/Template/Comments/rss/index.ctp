@@ -4,7 +4,7 @@ use Cake\Core\Configure;
 use Cake\Routing\Router;
 
 $channel = [
-    'title' => __d('croogo', 'Comments') . ' - ' . Configure::read('Site.title'),
+    'title' => __d('vamshop', 'Comments') . ' - ' . Configure::read('Site.title'),
     'description' => Configure::read('Site.tagline'),
 ];
 $this->set('channel', $channel);
@@ -16,7 +16,7 @@ function rss_transform($item) {
     }
 
     return array(
-        'title' => __d('croogo', 'Comment on') . ' ' . $item->node->title . ' ' . __d('croogo', 'by') . ' ' . $name,
+        'title' => __d('vamshop', 'Comment on') . ' ' . $item->node->title . ' ' . __d('vamshop', 'by') . ' ' . $name,
         'link' => Router::url($item->node->url->getUrl(), true) . '#comment-' . $item->id,
         'guid' => Router::url($item->node->url->getUrl(), true) . '#comment-' . $item->id,
         'description' => $item->body,

@@ -10,7 +10,7 @@ $modelPath = $this->request->query('model');
 list($plugin, $model) = pluginSplit($modelPath);
 $controller = $model;
 
-$crumbLabel = $model == 'Nodes' ? __d('croogo', 'Content') : Inflector::pluralize($model);
+$crumbLabel = $model == 'Nodes' ? __d('vamshop', 'Content') : Inflector::pluralize($model);
 
 $this->Breadcrumbs
     ->add(
@@ -30,11 +30,11 @@ $this->Breadcrumbs
             $record->id,
         )
     )
-    ->add(__d('croogo', 'Translations'), $this->request->getRequestTarget());
+    ->add(__d('vamshop', 'Translations'), $this->request->getRequestTarget());
 
 $this->start('action-buttons');
     $translateButton = $this->Html->link(
-        __d('croogo', 'Translate in a new language'),
+        __d('vamshop', 'Translate in a new language'),
         array(
             'plugin' => 'Vamshop/Settings',
             'controller' => 'Languages',
@@ -80,17 +80,17 @@ $this->start('action-buttons');
 $this->end();
 
 if (count(array($translations)) == 0):
-    echo $this->Html->para(null, __d('croogo', 'No translations available.'));
+    echo $this->Html->para(null, __d('vamshop', 'No translations available.'));
     return;
 endif;
 
 $this->append('table-heading');
     $tableHeaders = $this->Html->tableHeaders(array(
         '',
-        __d('croogo', 'Original'),
-        __d('croogo', 'Title'),
-        __d('croogo', 'Locale'),
-        __d('croogo', 'Actions'),
+        __d('vamshop', 'Original'),
+        __d('vamshop', 'Title'),
+        __d('vamshop', 'Locale'),
+        __d('vamshop', 'Actions'),
     ));
     echo $this->Html->tag('thead', $tableHeaders);
 $this->end();
@@ -108,7 +108,7 @@ $this->append('table-body');
             ],
         ), array(
             'icon' => $this->Theme->getIcon('update'),
-            'tooltip' => __d('croogo', 'Edit this item'),
+            'tooltip' => __d('vamshop', 'Edit this item'),
         ));
         $actions[] = $this->Vamshop->adminRowAction('', array(
             'action' => 'delete',
@@ -117,9 +117,9 @@ $this->append('table-body');
             $locale,
         ), array(
             'icon' => $this->Theme->getIcon('delete'),
-            'tooltip' => __d('croogo', 'Remove this item'),
+            'tooltip' => __d('vamshop', 'Remove this item'),
             'method' => 'post',
-        ), __d('croogo', 'Are you sure?'));
+        ), __d('vamshop', 'Are you sure?'));
 
         $actions = $this->Html->div('item-actions', implode(' ', $actions));
         $rows[] = array(

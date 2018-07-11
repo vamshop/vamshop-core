@@ -1,5 +1,5 @@
 {
-    "name": "croogo/core",
+    "name": "vamshop/core",
     "description": "Vamshop Core Plugin",
     "require": {
         "cakephp/cakephp": "^3.5.5"
@@ -10,7 +10,7 @@
         "friendsofcake/cakephp-test-utilities": "dev-master"
     },
     "suggest": {
-        "croogo/example": "Example Vamshop plugin"
+        "vamshop/example": "Example Vamshop plugin"
     },
     "license": "MIT",
     "authors": [

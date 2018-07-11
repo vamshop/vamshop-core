@@ -10,7 +10,7 @@ use Cake\Core\Configure;
         <title><?= $this->fetch('title') ?> - <?= $_siteTitle ?></title>
         <?php
         echo $this->Html->css([
-            'Vamshop/Core.core/croogo-admin',
+            'Vamshop/Core.core/vamshop-admin',
         ]);
         echo $this->Layout->js();
         echo $this->Html->script([]);
@@ -21,7 +21,7 @@ use Cake\Core\Configure;
     </head>
     <body class="admin-login">
         <header class="navbar navbar-dark bg-black">
-            <?= $this->Html->link(__d('croogo', 'Back to') . ' ' . Configure::read('Site.title'), '/', ['class' => 'navbar-brand']) ?>
+            <?= $this->Html->link(__d('vamshop', 'Back to') . ' ' . Configure::read('Site.title'), '/', ['class' => 'navbar-brand']) ?>
         </header>
 
         <div id="wrap" class="d-flex justify-content-center align-items-center">

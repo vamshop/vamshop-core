@@ -1,6 +1,6 @@
 <?php
 
-$this->assign('title', __d('croogo', 'Forgot Password'));
+$this->assign('title', __d('vamshop', 'Forgot Password'));
 
 ?>
 <div class="users form">
@@ -8,10 +8,10 @@ $this->assign('title', __d('croogo', 'Forgot Password'));
     <?= $this->Form->create('User', ['url' => ['controller' => 'users', 'action' => 'forgot']]);?>
         <fieldset>
         <?= $this->Form->input('username', [
-            'label' => __d('croogo', 'Username'),
+            'label' => __d('vamshop', 'Username'),
             'required' => true,
         ]) ?>
         </fieldset>
-        <?= $this->Form->submit(__d('croogo', 'Submit')) ?>
+        <?= $this->Form->submit(__d('vamshop', 'Submit')) ?>
     <?= $this->Form->end() ?>
 </div>

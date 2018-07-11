@@ -25,7 +25,7 @@ echo $this->Form->create(false, [
 
     <span class="input-group-btn">
         <?=
-            $this->Form->button(__d('croogo', 'Search'), [
+            $this->Form->button(__d('vamshop', 'Search'), [
                 'class' => 'btn btn-secondary',
             ])
         ?>

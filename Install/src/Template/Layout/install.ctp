@@ -3,19 +3,19 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width">
-        <title><?= __d('croogo', 'Installation: %s', $this->fetch('title')) ?> - <?= __d('croogo', 'Vamshop') ?></title>
+        <title><?= __d('vamshop', 'Installation: %s', $this->fetch('title')) ?> - <?= __d('vamshop', 'Vamshop') ?></title>
         <style>
             .fa { min-width: 16px; }
         </style>
         <?php
         echo $this->Html->css([
-            'Vamshop/Core.core/croogo-admin',
+            'Vamshop/Core.core/vamshop-admin',
             'Vamshop/Core.core/select2.min',
             'Vamshop/Core.core/select2-bootstrap.min',
         ]);
         echo $this->Html->script([
             'Vamshop/Core.jquery/jquery.min',
-            'Vamshop/Core.core/croogo-bootstrap',
+            'Vamshop/Core.core/vamshop-bootstrap',
             'Vamshop/Core.core/select2.full.min',
             'Vamshop/Core.core/admin',
         ]);
@@ -24,14 +24,14 @@
     </head>
     <body class="installer">
         <header class="navbar navbar-dark bg-black navbar-fixed-top">
-            <span class="navbar-brand"><?= __d('croogo', 'Install Vamshop') ?></span>
+            <span class="navbar-brand"><?= __d('vamshop', 'Install Vamshop') ?></span>
         </header>
 
         <div id="wrap">
             <div class="card">
                 <?= $this->fetch('before') ?>
                 <h3 class="card-header">
-                    <?= __d('croogo', 'Installation: %s', $this->fetch('title')) ?>
+                    <?= __d('vamshop', 'Installation: %s', $this->fetch('title')) ?>
                 </h3>
                 <div class="card-body">
                     <?php

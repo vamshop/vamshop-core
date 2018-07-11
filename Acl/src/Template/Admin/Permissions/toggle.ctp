@@ -18,7 +18,7 @@ if ($success == 1) {
 
     }
 } else {
-    echo __d('croogo', 'error');
+    echo __d('vamshop', 'error');
 }
 
 Configure::write('debug', 0);

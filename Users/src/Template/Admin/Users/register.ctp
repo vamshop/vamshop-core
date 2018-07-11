@@ -1,6 +1,6 @@
 <?php
 
-$this->assign('title', __d('croogo', 'Registration'));
+$this->assign('title', __d('vamshop', 'Registration'));
 $this->setLayout('admin_login');
 
 ?>
@@ -16,7 +16,7 @@ $this->setLayout('admin_login');
             echo $this->Form->input('email');
             echo $this->Form->input('website');
 
-            echo $this->Form->submit(__d('croogo', 'Register'), [
+            echo $this->Form->submit(__d('vamshop', 'Register'), [
                 'class' => 'btn btn-success',
             ]);
         ?>

@@ -7,11 +7,11 @@ $this->Vamshop->adminscript('Vamshop/Menus.admin');
 
 $this->extend('Vamshop/Core./Common/admin_index');
 
-$this->Breadcrumbs->add(__d('croogo', 'Menus'), ['controller' => 'Menus', 'action' => 'index'])
-    ->add(__d('croogo', $menu->title), $this->request->getRequestTarget());
+$this->Breadcrumbs->add(__d('vamshop', 'Menus'), ['controller' => 'Menus', 'action' => 'index'])
+    ->add(__d('vamshop', $menu->title), $this->request->getRequestTarget());
 
 $this->append('action-buttons');
-echo $this->Vamshop->adminAction(__d('croogo', 'New link'), ['action' => 'add', 'menu_id' => $menu->id], ['button' => 'success']);
+echo $this->Vamshop->adminAction(__d('vamshop', 'New link'), ['action' => 'add', 'menu_id' => $menu->id], ['button' => 'success']);
 $this->end();
 
 $this->append('form-start', $this->Form->create(null, [
@@ -25,9 +25,9 @@ $this->append('form-start', $this->Form->create(null, [
 $this->start('table-heading');
 $tableHeaders = $this->Html->tableHeaders([
     $this->Form->checkbox('checkAll', ['id' => 'LinksCheckAll']),
-    __d('croogo', 'Title'),
-    __d('croogo', 'Status'),
-    __d('croogo', 'Actions'),
+    __d('vamshop', 'Title'),
+    __d('vamshop', 'Status'),
+    __d('vamshop', 'Actions'),
 ]);
 echo $this->Html->tag('thead', $tableHeaders);
 $this->end();
@@ -41,14 +41,14 @@ foreach ($linksTree as $linkId => $linkTitle):
         $linkId,
     ], [
         'icon' => $this->Theme->getIcon('move-up'),
-        'tooltip' => __d('croogo', 'Move up'),
+        'tooltip' => __d('vamshop', 'Move up'),
     ]);
     $actions[] = $this->Vamshop->adminRowAction('', [
         'action' => 'moveDown',
         $linkId,
     ], [
         'icon' => $this->Theme->getIcon('move-down'),
-        'tooltip' => __d('croogo', 'Move down'),
+        'tooltip' => __d('vamshop', 'Move down'),
     ]);
     $actions[] = $this->Vamshop->adminRowActions($linkId);
     $actions[] = $this->Vamshop->adminRowAction('', [
@@ -56,22 +56,22 @@ foreach ($linksTree as $linkId => $linkTitle):
         $linkId,
     ], [
         'icon' => $this->Theme->getIcon('update'),
-        'tooltip' => __d('croogo', 'Edit this item'),
+        'tooltip' => __d('vamshop', 'Edit this item'),
     ]);
     $actions[] = $this->Vamshop->adminRowAction('', '#Link' . $linkId . 'Id', [
         'icon' => $this->Theme->getIcon('copy'),
-        'tooltip' => __d('croogo', 'Create a copy'),
+        'tooltip' => __d('vamshop', 'Create a copy'),
         'rowAction' => 'copy',
-    ], __d('croogo', 'Create a copy of this Link?'));
+    ], __d('vamshop', 'Create a copy of this Link?'));
     $actions[] = $this->Vamshop->adminRowAction('', '#Link' . $linkId . 'Id', [
         'icon' => $this->Theme->getIcon('delete'),
         'class' => 'delete',
-        'tooltip' => __d('croogo', 'Delete this item'),
+        'tooltip' => __d('vamshop', 'Delete this item'),
         'rowAction' => 'delete',
-    ], __d('croogo', 'Are you sure?'));
+    ], __d('vamshop', 'Are you sure?'));
     $actions = $this->Html->div('item-actions', implode(' ', $actions));
     if ($linksStatus[$linkId] == Status::PREVIEW) {
-        $linkTitle .= ' ' . $this->Html->tag('span', __d('croogo', 'preview'), ['class' => 'label label-warning']);
+        $linkTitle .= ' ' . $this->Html->tag('span', __d('vamshop', 'preview'), ['class' => 'label label-warning']);
     }
     $rows[] = [
         $this->Form->checkbox('Links.' . $linkId . '.id', ['class' => 'row-select', 'id' => 'Link' . $linkId . 'Id']),
@@ -92,21 +92,21 @@ $this->start('bulk-action');
 
 echo $this->Form->input('action', [
     'class' => 'c-select',
-    'label' => __d('croogo', 'Bulk actions'),
+    'label' => __d('vamshop', 'Bulk actions'),
     'options' => [
-        'publish' => __d('croogo', 'Publish'),
-        'unpublish' => __d('croogo', 'Unpublish'),
-        'delete' => __d('croogo', 'Delete'),
+        'publish' => __d('vamshop', 'Publish'),
+        'unpublish' => __d('vamshop', 'Unpublish'),
+        'delete' => __d('vamshop', 'Delete'),
         [
             'value' => 'copy',
-            'text' => __d('croogo', 'Copy'),
+            'text' => __d('vamshop', 'Copy'),
             'hidden' => true,
         ],
     ],
-    'empty' => __d('croogo', 'Bulk actions'),
+    'empty' => __d('vamshop', 'Bulk actions'),
 ]);
 
-echo $this->Form->button(__d('croogo', 'Apply'), [
+echo $this->Form->button(__d('vamshop', 'Apply'), [
     'type' => 'submit',
     'value' => 'submit',
     'class' => 'btn-outline-primary'

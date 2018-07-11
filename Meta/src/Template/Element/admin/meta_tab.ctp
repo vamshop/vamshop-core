@@ -14,7 +14,7 @@
     ?>
 </div>
 <?php
-echo $this->Html->link(__d('croogo', 'Add another field'),
+echo $this->Html->link(__d('vamshop', 'Add another field'),
     ['plugin' => 'Vamshop/Meta', 'controller' => 'Meta', 'action' => 'addMeta'],
     ['class' => 'add-meta btn btn-secondary']
 );

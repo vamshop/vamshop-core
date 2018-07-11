@@ -72,7 +72,7 @@ notifications:
   email: false
   irc:
     channels:
-      - "chat.freenode.net#croogo"
+      - "chat.freenode.net#vamshop"
       - "chat.freenode.net#cvo-technologies"
     on_success: change
 

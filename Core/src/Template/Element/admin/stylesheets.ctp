@@ -3,7 +3,7 @@
 if (!$this->request->is('ajax')):
 
     echo $this->Html->css([
-        'Vamshop/Core.core/croogo-admin',
+        'Vamshop/Core.core/vamshop-admin',
         'Vamshop/Core.core/bootstrap-datetimepicker.min',
         'Vamshop/Core.core/typeaheadjs',
         'Vamshop/Core.core/ekko-lightbox.min.css',

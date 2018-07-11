@@ -2,9 +2,9 @@
     <?php
     $tableHeaders = $this->Html->tableHeaders([
         '',
-        __d('croogo', 'Id'),
-        __d('croogo', 'Title'),
-        __d('croogo', 'Slug'),
+        __d('vamshop', 'Id'),
+        __d('vamshop', 'Title'),
+        __d('vamshop', 'Slug'),
     ]);
     ?>
     <thead>

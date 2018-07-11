@@ -6,7 +6,7 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: $croogo-background-color;
+  background-color: $vamshop-background-color;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -28,11 +28,11 @@ body {
   flex: 1;
   display: flex;
   flex-direction: row;
-  background: $croogo-main-bg;
+  background: $vamshop-main-bg;
 
   .full {
     #content {
-      margin: 0 $croogo-general-margin;
+      margin: 0 $vamshop-general-margin;
     }
   }
 }
@@ -49,7 +49,7 @@ body {
   border: 1px solid #fff;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
-  margin-bottom: $croogo-general-margin;
+  margin-bottom: $vamshop-general-margin;
   padding: 20px;
   min-height: 90%;
 }
@@ -59,10 +59,10 @@ body {
 }
 
 .content {
-  padding: 0 $croogo-content-padding;
+  padding: 0 $vamshop-content-padding;
 
   table {
-    margin: $croogo-general-margin 0;
+    margin: $vamshop-general-margin 0;
   }
 }
 
@@ -70,7 +70,7 @@ header {
   border-bottom: 1px solid #707070;
 
   &.navbar {
-    height: $croogo-navbar-height;
+    height: $vamshop-navbar-height;
     flex-flow: row;
   }
 
@@ -166,16 +166,16 @@ footer {
   }
 
   #authMessage {
-    margin-bottom: $croogo-content-padding;
+    margin-bottom: $vamshop-content-padding;
   }
 
   .input-prepend {
-    margin-bottom: $croogo-content-padding;
+    margin-bottom: $vamshop-content-padding;
   }
 
   .forgot {
     vertical-align: middle;
-    margin: 0 $croogo-content-padding * 2;
+    margin: 0 $vamshop-content-padding * 2;
   }
 }
 

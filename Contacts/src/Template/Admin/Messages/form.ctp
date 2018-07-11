@@ -1,10 +1,10 @@
 <?php
-$this->assign('title', __d('croogo', 'Edit Message'));
+$this->assign('title', __d('vamshop', 'Edit Message'));
 $this->extend('/Common/admin_edit');
 
-$this->Breadcrumbs->add(__d('croogo', 'Contacts'),
+$this->Breadcrumbs->add(__d('vamshop', 'Contacts'),
     ['plugin' => 'Vamshop/Contacts', 'controller' => 'Contacts', 'action' => 'index'])
-    ->add(__d('croogo', 'Messages'),
+    ->add(__d('vamshop', 'Messages'),
         ['plugin' => 'Vamshop/Contacts', 'controller' => 'Messages', 'action' => 'index']);
 
 if ($this->request->params['action'] == 'edit') {
@@ -14,23 +14,23 @@ if ($this->request->params['action'] == 'edit') {
 $this->append('form-start', $this->Form->create($message));
 
 $this->append('tab-heading');
-echo $this->Vamshop->adminTab(__d('croogo', 'Message'), '#message-main');
+echo $this->Vamshop->adminTab(__d('vamshop', 'Message'), '#message-main');
 $this->end();
 
 $this->append('tab-content');
 
 echo $this->Html->tabStart('message-main') . $this->Form->input('name', [
-        'label' => __d('croogo', 'Name'),
+        'label' => __d('vamshop', 'Name'),
     ]) . $this->Form->input('email', [
-        'label' => __d('croogo', 'Email'),
+        'label' => __d('vamshop', 'Email'),
     ]) . $this->Form->input('title', [
-        'label' => __d('croogo', 'Title'),
+        'label' => __d('vamshop', 'Title'),
     ]) . $this->Form->input('body', [
-        'label' => __d('croogo', 'Body'),
+        'label' => __d('vamshop', 'Body'),
     ]) . $this->Form->input('phone', [
-        'label' => __d('croogo', 'Phone'),
+        'label' => __d('vamshop', 'Phone'),
     ]) . $this->Form->input('address', [
-        'label' => __d('croogo', 'Address'),
+        'label' => __d('vamshop', 'Address'),
     ]);
 echo $this->Html->tabEnd();
 $this->end();

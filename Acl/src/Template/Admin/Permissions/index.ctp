@@ -4,12 +4,12 @@ $this->extend('Vamshop/Core./Common/admin_index');
 
 $this->Vamshop->adminScript('Vamshop/Acl.acl_permissions');
 
-$this->Breadcrumbs->add(__d('croogo', 'Users'),
+$this->Breadcrumbs->add(__d('vamshop', 'Users'),
         ['plugin' => 'Vamshop/Users', 'controller' => 'Users', 'action' => 'index'])
-    ->add(__d('croogo', 'Permissions'), $this->request->getUri()->getPath());
+    ->add(__d('vamshop', 'Permissions'), $this->request->getUri()->getPath());
 
 $this->append('action-buttons');
-$toolsButton = $this->Html->link(__d('croogo', 'Tools'), '#', [
+$toolsButton = $this->Html->link(__d('vamshop', 'Tools'), '#', [
         'button' => 'secondary',
         'class' => 'dropdown-toggle',
         'data-toggle' => 'dropdown',
@@ -22,23 +22,23 @@ $generateUrl = [
     'action' => 'generate',
     'permissions' => 1,
 ];
-$out = $this->Vamshop->adminAction(__d('croogo', 'Generate'), $generateUrl, [
+$out = $this->Vamshop->adminAction(__d('vamshop', 'Generate'), $generateUrl, [
         'button' => false,
         'list' => true,
         'method' => 'post',
         'class' => 'dropdown-item',
         'tooltip' => [
-            'data-title' => __d('croogo', 'Create new actions (no removal)'),
+            'data-title' => __d('vamshop', 'Create new actions (no removal)'),
             'data-placement' => 'left',
         ],
     ]);
-$out .= $this->Vamshop->adminAction(__d('croogo', 'Synchronize'), $generateUrl + ['sync' => 1], [
+$out .= $this->Vamshop->adminAction(__d('vamshop', 'Synchronize'), $generateUrl + ['sync' => 1], [
         'button' => false,
         'list' => true,
         'method' => 'post',
         'class' => 'dropdown-item',
         'tooltip' => [
-            'data-title' => __d('croogo', 'Create new & remove orphaned actions'),
+            'data-title' => __d('vamshop', 'Create new & remove orphaned actions'),
             'data-placement' => 'left',
         ],
     ]);
@@ -46,7 +46,7 @@ echo $this->Html->div('btn-group', $toolsButton . $this->Html->tag('ul', $out, [
     'class' => 'dropdown-menu dropdown-menu-right',
 ]));
 
-echo $this->Vamshop->adminAction(__d('croogo', 'Edit Actions'),
+echo $this->Vamshop->adminAction(__d('vamshop', 'Edit Actions'),
     ['controller' => 'Actions', 'action' => 'index', 'permissions' => 1]);
 $this->end();
 

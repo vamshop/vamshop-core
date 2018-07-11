@@ -1,10 +1,10 @@
 <?php
-$this->assign('title', __d('croogo', 'Dashboards'));
+$this->assign('title', __d('vamshop', 'Dashboards'));
 
 $this->extend('Vamshop/Core./Common/admin_index');
 
 $this->Breadcrumbs
-        ->add(__d('croogo', 'Dashboards'), array('action' => 'index'));
+        ->add(__d('vamshop', 'Dashboards'), array('action' => 'index'));
 
 $this->set('showActions', false);
 
@@ -17,7 +17,7 @@ $this->append('table-heading');
         $this->Paginator->sort('status'),
         $this->Paginator->sort('updated'),
         $this->Paginator->sort('created'),
-        __d('croogo', 'Actions'),
+        __d('vamshop', 'Actions'),
     ));
     echo $this->Html->tag('thead', $tableHeaders);
 $this->end();
@@ -53,14 +53,14 @@ foreach ($dashboards as $dashboard):
                 array('controller' => 'Dashboards', 'action' => 'moveup', $dashboard->id),
                 array(
                     'icon' => $this->Theme->getIcon('move-up'),
-                    'tooltip' => __d('croogo', 'Move up'),
+                    'tooltip' => __d('vamshop', 'Move up'),
                 )
             );
             $actions[] = $this->Vamshop->adminRowAction('',
                 array('controller' => 'Dashboards', 'action' => 'movedown', $dashboard->id),
                 array(
                     'icon' => $this->Theme->getIcon('move-down'),
-                    'tooltip' => __d('croogo', 'Move down'),
+                    'tooltip' => __d('vamshop', 'Move down'),
                 )
             );
             $actions[] = $this->Vamshop->adminRowAction('',
@@ -70,7 +70,7 @@ foreach ($dashboards as $dashboard):
                     'escape' => true,
                     'method' => 'post',
                 ),
-                __d('croogo', 'Are you sure you want to delete # %s?', $dashboard->id)
+                __d('vamshop', 'Are you sure you want to delete # %s?', $dashboard->id)
             );
             echo implode(' ', $actions);
         ?>

@@ -1,8 +1,8 @@
 {
-    "name": "croogo/meta",
+    "name": "vamshop/meta",
     "description": "Vamshop Meta Plugin",
     "require": {
-        "croogo/core": "^3.0.1"
+        "vamshop/core": "^3.0.1"
     },
     "license": "MIT",
     "authors": [

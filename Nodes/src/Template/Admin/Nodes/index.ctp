@@ -3,17 +3,17 @@
 use Cake\Utility\Hash;
 use Vamshop\Core\Status;
 
-$this->assign('title', __d('croogo', 'Contents'));
+$this->assign('title', __d('vamshop', 'Contents'));
 
 $this->extend('Vamshop/Core./Common/admin_index');
 
 $this->Vamshop->adminScript('Vamshop/Nodes.admin');
 
 $this->Breadcrumbs
-    ->add(__d('croogo', 'Content'), $this->request->getUri()->getPath());
+    ->add(__d('vamshop', 'Content'), $this->request->getUri()->getPath());
 
 $this->append('action-buttons');
-echo $this->Vamshop->adminAction(__d('croogo', 'Create content'), ['action' => 'create'], ['button' => 'success']);
+echo $this->Vamshop->adminAction(__d('vamshop', 'Create content'), ['action' => 'create'], ['button' => 'success']);
 $this->end();
 
 $this->append('search', $this->element('admin/nodes_search'));
@@ -26,11 +26,11 @@ $this->append('form-start', $this->Form->create(null, [
 $this->start('table-heading');
 echo $this->Html->tableHeaders([
     $this->Form->checkbox('checkAll', ['id' => 'NodesCheckAll']),
-    $this->Paginator->sort('title', __d('croogo', 'Title')),
-    $this->Paginator->sort('type', __d('croogo', 'Type')),
-    $this->Paginator->sort('user_id', __d('croogo', 'User')),
-    $this->Paginator->sort('updated', __d('croogo', 'Updated')),
-    $this->Paginator->sort('status', __d('croogo', 'Status')),
+    $this->Paginator->sort('title', __d('vamshop', 'Title')),
+    $this->Paginator->sort('type', __d('vamshop', 'Type')),
+    $this->Paginator->sort('user_id', __d('vamshop', 'User')),
+    $this->Paginator->sort('updated', __d('vamshop', 'Updated')),
+    $this->Paginator->sort('status', __d('vamshop', 'Status')),
     '',
 ]);
 $this->end();
@@ -54,11 +54,11 @@ $this->append('table-body');
                 </span>
 
                 <?php if ($node->promote == 1): ?>
-                    <span class="badge badge-info"><?= __d('croogo', 'promoted') ?></span>
+                    <span class="badge badge-info"><?= __d('vamshop', 'promoted') ?></span>
                 <?php endif ?>
 
                 <?php if ($node->status == Status::PREVIEW): ?>
-                    <span class="badge badge-warning"><?= __d('croogo', 'preview') ?></span>
+                    <span class="badge badge-warning"><?= __d('vamshop', 'preview') ?></span>
                 <?php endif ?>
             </td>
             <td>
@@ -94,30 +94,30 @@ $this->append('table-body');
                         echo ' ' . $this->Vamshop->adminRowAction('', ['action' => 'move', $node->id, 'up'], [
                                 'method' => 'post',
                                 'icon' => $this->Theme->getIcon('move-up'),
-                                'tooltip' => __d('croogo', 'Move up'),
+                                'tooltip' => __d('vamshop', 'Move up'),
                             ]);
                         echo ' ' . $this->Vamshop->adminRowAction('', ['action' => 'move', $node->id, 'down'], [
                                 'method' => 'post',
                                 'icon' => $this->Theme->getIcon('move-down'),
-                                'tooltip' => __d('croogo', 'Move down'),
+                                'tooltip' => __d('vamshop', 'Move down'),
                             ]);
                     endif;
 
                     echo ' ' . $this->Vamshop->adminRowAction('', ['action' => 'edit', $node->id], [
                             'icon' => $this->Theme->getIcon('update'),
-                            'tooltip' => __d('croogo', 'Edit this item'),
+                            'tooltip' => __d('vamshop', 'Edit this item'),
                         ]);
                     echo ' ' . $this->Vamshop->adminRowAction('', '#Nodes' . $node->id . 'Id', [
                             'icon' => $this->Theme->getIcon('copy'),
-                            'tooltip' => __d('croogo', 'Create a copy'),
+                            'tooltip' => __d('vamshop', 'Create a copy'),
                             'rowAction' => 'copy',
                         ]);
                     echo ' ' . $this->Vamshop->adminRowAction('', '#Nodes' . $node->id . 'Id', [
                             'icon' => $this->Theme->getIcon('delete'),
                             'class' => 'delete',
-                            'tooltip' => __d('croogo', 'Remove this item'),
+                            'tooltip' => __d('vamshop', 'Remove this item'),
                             'rowAction' => 'delete',
-                        ], __d('croogo', 'Are you sure?'));
+                        ], __d('vamshop', 'Are you sure?'));
                     ?>
                 </div>
             </td>
@@ -128,17 +128,17 @@ $this->end();
 
 $this->start('bulk-action');
 echo $this->Form->input('action', [
-    'label' => __d('croogo', 'Bulk actions'),
+    'label' => __d('vamshop', 'Bulk actions'),
     'class' => 'c-select',
     'options' => [
-        'publish' => __d('croogo', 'Publish'),
-        'unpublish' => __d('croogo', 'Unpublish'),
-        'promote' => __d('croogo', 'Promote'),
-        'unpromote' => __d('croogo', 'Unpromote'),
-        'delete' => __d('croogo', 'Delete'),
+        'publish' => __d('vamshop', 'Publish'),
+        'unpublish' => __d('vamshop', 'Unpublish'),
+        'promote' => __d('vamshop', 'Promote'),
+        'unpromote' => __d('vamshop', 'Unpromote'),
+        'delete' => __d('vamshop', 'Delete'),
         [
             'value' => 'copy',
-            'text' => __d('croogo', 'Copy'),
+            'text' => __d('vamshop', 'Copy'),
             'hidden' => true,
         ],
     ],
@@ -146,7 +146,7 @@ echo $this->Form->input('action', [
 ]);
 
 $jsVarName = uniqid('confirmMessage_');
-echo $this->Form->button(__d('croogo', 'Apply'), [
+echo $this->Form->button(__d('vamshop', 'Apply'), [
     'type' => 'button',
     'class' => 'bulk-process btn-outline-primary',
     'data-relatedElement' => '#action',
@@ -154,7 +154,7 @@ echo $this->Form->button(__d('croogo', 'Apply'), [
     'escape' => true,
 ]);
 
-$this->Js->set($jsVarName, __d('croogo', '%s selected items?'));
+$this->Js->set($jsVarName, __d('vamshop', '%s selected items?'));
 $this->Js->buffer("$('.bulk-process').on('click', Nodes.confirmProcess);");
 
 $this->end();

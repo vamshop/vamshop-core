@@ -3,7 +3,7 @@ use Cake\Core\Configure;
 
 $this->setLayout('admin_login');
 
-$title = __d('croogo', 'Forgot Password');
+$title = __d('vamshop', 'Forgot Password');
 $this->assign('title', $title);
 echo $this->Form->create('Users', [
     'url' => [
@@ -14,11 +14,11 @@ echo $this->Form->create('Users', [
 
     echo $this->Form->input('username', [
         'label' => false,
-        'placeholder' => __d('croogo', 'Username/Email'),
+        'placeholder' => __d('vamshop', 'Username/Email'),
         'prepend' => $this->Html->icon('user', ['class' => 'fa-fw']),
         'required' => true,
     ]);
-    echo $this->Form->input(__d('croogo', 'Submit'), [
+    echo $this->Form->input(__d('vamshop', 'Submit'), [
         'type' => 'submit',
         'class' => 'btn btn-primary',
         'templates' => [

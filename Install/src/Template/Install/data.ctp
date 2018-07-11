@@ -1,5 +1,5 @@
 <?php
-$this->assign('title', __d('croogo', 'Step 2: Build database'));
+$this->assign('title', __d('vamshop', 'Step 2: Build database'));
 ?>
 
 <div class="install">
@@ -7,20 +7,20 @@ $this->assign('title', __d('croogo', 'Step 2: Build database'));
 
     <p>
         <?php
-        echo __d('croogo', 'Create tables and load initial data');
+        echo __d('vamshop', 'Create tables and load initial data');
         ?>
     </p>
 </div>
 <div class="form-actions">
     <?php
-    echo $this->Html->link(__d('croogo', 'Build database'), [
+    echo $this->Html->link(__d('vamshop', 'Build database'), [
         'plugin' => 'Vamshop/Install',
         'controller' => 'install',
         'action' => 'data',
         '?' => ['run' => 1],
     ], [
         'tooltip' => [
-            'data-title' => __d('croogo', 'Click here to build your database'),
+            'data-title' => __d('vamshop', 'Click here to build your database'),
             'data-placement' => 'left',
         ],
         'button' => 'success',

@@ -43,7 +43,7 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
 $this->extend('Vamshop/Core./Common/admin_view');
 
 $this->Breadcrumbs
-    ->add(__d('croogo', '<%= $pluralHumanName %>'), ['action' => 'index']);
+    ->add(__d('vamshop', '<%= $pluralHumanName %>'), ['action' => 'index']);
 
 <% if (isset($displayField)): %>
     $this->Breadcrumbs->add($<%= $singularVar %>-><%= $displayField %>, $this->request->here());

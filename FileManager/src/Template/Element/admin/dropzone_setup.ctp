@@ -5,7 +5,7 @@
 
 echo $this->Html->tag(
     'div',
-    $this->Html->tag('p', __d('croogo', 'Drop files here to upload')),
+    $this->Html->tag('p', __d('vamshop', 'Drop files here to upload')),
     [
         'id' => 'dropzone-target',
         'data-base-url' => $this->Url->build('/', true),

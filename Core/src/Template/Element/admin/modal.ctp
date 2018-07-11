@@ -32,7 +32,7 @@ if (!isset($footer)) {
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal" aria-hidden="true">
-                    <?= __d('croogo', 'Close') ?>
+                    <?= __d('vamshop', 'Close') ?>
                 </button>
                 <?= $footer ?>
             </div>

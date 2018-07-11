@@ -2,4 +2,4 @@
 
 $this->extend('Vamshop/Core./Common/admin_index');
 
-$this->Breadcrumbs->add(__d('croogo', 'Users'), $this->request->getUri()->getPath());
+$this->Breadcrumbs->add(__d('vamshop', 'Users'), $this->request->getUri()->getPath());

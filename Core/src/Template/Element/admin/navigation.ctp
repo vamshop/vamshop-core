@@ -10,6 +10,6 @@
                 'id' => 'sidebar-menu',
             ],
         ]);
-    }, 'croogo_menus');
+    }, 'vamshop_menus');
     ?>
 </nav>

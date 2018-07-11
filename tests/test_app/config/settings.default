@@ -22,7 +22,7 @@
 	"Meta": {
 		"description": "Vamshop - A CakePHP powered Content Management System",
 		"generator": "Vamshop - Content Management System",
-		"keywords": "croogo, Vamshop",
+		"keywords": "vamshop, Vamshop",
 		"robots": "index, follow"
 	},
 	"Reading": {

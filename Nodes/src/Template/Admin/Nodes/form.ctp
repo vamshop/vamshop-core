@@ -7,12 +7,12 @@ $this->assign('title', $node->title);
 $this->extend('Vamshop/Core./Common/admin_edit');
 $this->Html->script(array('Vamshop/Nodes.admin'), ['block' => true]);
 
-$this->Breadcrumbs->add(__d('croogo', 'Content'), ['action' => 'index']);
+$this->Breadcrumbs->add(__d('vamshop', 'Content'), ['action' => 'index']);
 
 if ($this->request->params['action'] == 'add') {
-    $this->assign('title', __d('croogo', 'Create content: %s', $type->title));
+    $this->assign('title', __d('vamshop', 'Create content: %s', $type->title));
 
-    $this->Breadcrumbs->add(__d('croogo', 'Create'), ['action' => 'create'])
+    $this->Breadcrumbs->add(__d('vamshop', 'Create'), ['action' => 'create'])
         ->add($type->title, $this->request->getRequestTarget());
 }
 
@@ -29,21 +29,21 @@ $this->append('form-start', $this->Form->create($node, [
 ]));
 
 $this->start('tab-heading');
-    echo $this->Vamshop->adminTab(__d('croogo', $type->title), '#node-main');
+    echo $this->Vamshop->adminTab(__d('vamshop', $type->title), '#node-main');
 $this->end();
 
 $this->start('tab-content');
     echo $this->Html->tabStart('node-main');
         echo $this->Form->input('title', [
             'label' => false,
-            'placeholder' => __d('croogo', '%s title', $type->title),
+            'placeholder' => __d('vamshop', '%s title', $type->title),
             'data-slug' => '#slug',
             'data-slug-editable' => true,
             'data-slug-edit-class' => 'btn btn-secondary btn-sm',
         ]);
         echo $this->Form->input('slug', [
             'class' => 'slug',
-            'label' => __d('croogo', 'Permalink'),
+            'label' => __d('vamshop', 'Permalink'),
             'prepend' => str_replace('_placeholder', '', $this->Url->build([
                 'prefix' => false,
                 'action' => 'view',
@@ -52,12 +52,12 @@ $this->start('tab-content');
             ], ['fullbase' => true]))
         ]);
         echo $this->Form->input('body', [
-            'label' => __d('croogo', 'Body'),
+            'label' => __d('vamshop', 'Body'),
             'id' => 'NodeBody',
             'class' => !$type->format_use_wysiwyg ? 'no-wysiwyg' : ''
         ]);
         echo $this->Form->input('excerpt', [
-            'label' => __d('croogo', 'Excerpt'),
+            'label' => __d('vamshop', 'Excerpt'),
         ]);
     echo $this->Html->tabEnd();
 $this->end();
@@ -65,19 +65,19 @@ $this->end();
 $this->start('panels');
     $username = isset($node->user->username) ? $node->user->username : $this->request->session()
         ->read('Auth.User.username');
-    echo $this->Html->beginBox(__d('croogo', 'Publishing'));
+    echo $this->Html->beginBox(__d('vamshop', 'Publishing'));
     echo $this->element('Vamshop/Core.admin/buttons', ['type' => $type->title]);
     echo $this->element('Vamshop/Core.admin/publishable');
 
     echo $this->Form->input('promote', [
-        'label' => __d('croogo', 'Promoted to front page'),
+        'label' => __d('vamshop', 'Promoted to front page'),
         'class' => false,
     ]);
     echo $this->Html->endBox();
 
-    echo $this->Html->beginBox(__d('croogo', '%s attributes', $type->title));
+    echo $this->Html->beginBox(__d('vamshop', '%s attributes', $type->title));
         echo $this->Form->autocomplete('user_id', [
-            'label' => __d('croogo', 'Author'),
+            'label' => __d('vamshop', 'Author'),
             'options' => $users,
             'default' => $loggedInUser['id'],
             'autocomplete' => [
@@ -96,7 +96,7 @@ $this->start('panels');
         ]);
 
         echo $this->Form->autocomplete('parent_id', [
-            'label' => __d('croogo', 'Parent'),
+            'label' => __d('vamshop', 'Parent'),
             'options' => $parents,
             'default' => $node->parent_id,
             'autocomplete' => [
@@ -117,7 +117,7 @@ $this->start('panels');
 
     echo $this->Html->endBox();
 
-    echo $this->Html->beginBox(__d('croogo', 'Access control'));
+    echo $this->Html->beginBox(__d('vamshop', 'Access control'));
     echo $this->Form->input('visibility_roles', [
         'class' => 'c-select',
         'options' => $roles,

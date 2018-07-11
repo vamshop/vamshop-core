@@ -1,5 +1,5 @@
 <?php
-$this->assign('title', __d('croogo', 'Database'));
+$this->assign('title', __d('vamshop', 'Database'));
 
 $this->start('before');
 echo $this->Form->create($context, [
@@ -9,32 +9,32 @@ $this->end();
 ?>
 <?php if ($currentConfiguration['exists']): ?>
     <div class="alert alert-warning">
-        <strong><?= __d('croogo', 'Warning') ?>:</strong>
-        <?= __d('croogo', 'A database configuration already exists.') ?>
+        <strong><?= __d('vamshop', 'Warning') ?>:</strong>
+        <?= __d('vamshop', 'A database configuration already exists.') ?>
         <?php
         if ($currentConfiguration['valid']):
-            $valid = __d('croogo', 'Valid');
+            $valid = __d('vamshop', 'Valid');
             $class = 'text-success';
         else:
-            $valid = __d('croogo', 'Invalid');
+            $valid = __d('vamshop', 'Invalid');
             $class = 'text-error';
         endif;
-        echo __d('croogo', 'The configuration is %s.', $this->Html->tag('span', $valid, compact('class')));
+        echo __d('vamshop', 'The configuration is %s.', $this->Html->tag('span', $valid, compact('class')));
         ?>
         <?php if ($currentConfiguration['valid']): ?>
             <?php
-            echo $this->Html->link(__d('croogo', 'Reuse this configuration and proceed'), ['action' => 'data']);
+            echo $this->Html->link(__d('vamshop', 'Reuse this configuration and proceed'), ['action' => 'data']);
             ?>
             or complete the form below to replace it.
         <?php else: ?>
-            <?= __d('croogo', 'This configuration will be replaced.') ?>
+            <?= __d('vamshop', 'This configuration will be replaced.') ?>
         <?php endif ?>
     </div>
 <?php endif ?>
 
 <?php
 echo $this->Form->input('driver', [
-    'placeholder' => __d('croogo', 'Database'),
+    'placeholder' => __d('vamshop', 'Database'),
     'empty' => false,
     'options' => [
         Cake\Database\Driver\Mysql::class => 'MySQL',
@@ -44,34 +44,34 @@ echo $this->Form->input('driver', [
     ],
 ]);
 echo $this->Form->input('host', [
-    'placeholder' => __d('croogo', 'Host'),
-    'tooltip' => __d('croogo', 'Database hostname or IP Address'),
+    'placeholder' => __d('vamshop', 'Host'),
+    'tooltip' => __d('vamshop', 'Database hostname or IP Address'),
     'prepend' => $this->Html->icon('home'),
-    'label' => __d('croogo', 'Host'),
+    'label' => __d('vamshop', 'Host'),
 ]);
 echo $this->Form->input('username', [
-    'placeholder' => __d('croogo', 'Login'),
-    'tooltip' => __d('croogo', 'Database login/username'),
+    'placeholder' => __d('vamshop', 'Login'),
+    'tooltip' => __d('vamshop', 'Database login/username'),
     'prepend' => $this->Html->icon('user'),
-    'label' => __d('croogo', 'Login'),
+    'label' => __d('vamshop', 'Login'),
 ]);
 echo $this->Form->input('password', [
-    'placeholder' => __d('croogo', 'Password'),
-    'tooltip' => __d('croogo', 'Database password'),
+    'placeholder' => __d('vamshop', 'Password'),
+    'tooltip' => __d('vamshop', 'Database password'),
     'prepend' => $this->Html->icon('key'),
-    'label' => __d('croogo', 'Password'),
+    'label' => __d('vamshop', 'Password'),
 ]);
 echo $this->Form->input('database', [
-    'placeholder' => __d('croogo', 'Name'),
-    'tooltip' => __d('croogo', 'Database name'),
+    'placeholder' => __d('vamshop', 'Name'),
+    'tooltip' => __d('vamshop', 'Database name'),
     'prepend' => $this->Html->icon('briefcase'),
-    'label' => __d('croogo', 'Name'),
+    'label' => __d('vamshop', 'Name'),
 ]);
 echo $this->Form->input('port', [
-    'placeholder' => __d('croogo', 'Port'),
-    'tooltip' => __d('croogo', 'Database port (leave blank if unknown)'),
+    'placeholder' => __d('vamshop', 'Port'),
+    'tooltip' => __d('vamshop', 'Database port (leave blank if unknown)'),
     'prepend' => $this->Html->icon('asterisk'),
-    'label' => __d('croogo', 'Port'),
+    'label' => __d('vamshop', 'Port'),
 ]);
 ?>
 <?php

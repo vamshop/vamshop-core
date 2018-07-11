@@ -2,12 +2,12 @@
 
 There are several ways to help out:
 
-* Submit bug reports in Github [Issues](https://github.com/croogo/croogo/issues). Search for existing tickets first.
+* Submit bug reports in Github [Issues](https://github.com/vamshop/vamshop/issues). Search for existing tickets first.
   * Clearly describe the issue including steps to reproduce when it is a bug.
   * Make sure you fill in the earliest version that you know has the issue.
 * Write testcases for open tickets
 * Write patches for open bug/feature tickets, preferably with testcases included
-* Contribute to the [documentation](https://github.com/croogo/docs)
+* Contribute to the [documentation](https://github.com/vamshop/docs)
 
 ## Making Changes
 
@@ -37,7 +37,7 @@ There are several ways to help out:
 
 * Add new remote for upstream, and fetch changes:
 
-	`git remote add upstream git://github.com/croogo/croogo.git`
+	`git remote add upstream git://github.com/vamshop/vamshop.git`
 
 * Fetch latest changes and apply it in your local branch:
 
@@ -77,7 +77,7 @@ for the sniff and phpcs.
 # Additional Resources
 
 * [CakePHP coding standards](http://book.cakephp.org/2.0/en/contributing/cakephp-coding-conventions.html)
-* [Bug tracker](http://github.com/croogo/croogo/issues)
+* [Bug tracker](http://github.com/vamshop/vamshop/issues)
 * [General GitHub documentation](http://help.github.com/)
 * [GitHub pull request documentation](http://help.github.com/send-pull-requests/)
-* [#croogo](irc://irc.freenode.net/#croogo) IRC channel on freenode.org
+* [#vamshop](irc://irc.freenode.net/#vamshop) IRC channel on freenode.org

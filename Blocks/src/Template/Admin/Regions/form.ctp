@@ -2,11 +2,11 @@
 
 $this->extend('Vamshop/Core./Common/admin_edit');
 
-$this->Breadcrumbs->add(__d('croogo', 'Blocks'), [
+$this->Breadcrumbs->add(__d('vamshop', 'Blocks'), [
         'controller' => 'blocks',
         'action' => 'index',
     ])
-    ->add(__d('croogo', 'Regions'), [
+    ->add(__d('vamshop', 'Regions'), [
         'controller' => 'regions',
         'action' => 'index',
     ]);
@@ -16,22 +16,22 @@ if ($this->request->params['action'] == 'edit') {
 }
 
 if ($this->request->params['action'] == 'add') {
-    $this->Breadcrumbs->add(__d('croogo', 'Add'), $this->request->getRequestTarget());
+    $this->Breadcrumbs->add(__d('vamshop', 'Add'), $this->request->getRequestTarget());
 }
 
 $this->append('form-start', $this->Form->create($region));
 
 $this->append('tab-heading');
-echo $this->Vamshop->adminTab(__d('croogo', 'Region'), '#region-main');
+echo $this->Vamshop->adminTab(__d('vamshop', 'Region'), '#region-main');
 $this->end();
 
 $this->append('tab-content');
 
 echo $this->Html->tabStart('region-main') . $this->Form->input('title', [
-        'label' => __d('croogo', 'Title'),
+        'label' => __d('vamshop', 'Title'),
         'data-slug' => '#alias'
     ]) . $this->Form->input('alias', [
-        'label' => __d('croogo', 'Alias'),
+        'label' => __d('vamshop', 'Alias'),
     ]);
 echo $this->Html->tabEnd();
 $this->end();
