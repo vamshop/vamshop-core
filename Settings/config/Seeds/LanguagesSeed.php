@@ -45,8 +45,8 @@ class LanguagesSeed extends AbstractSeed
             I18n::setLocale('en_US');
             $parsed = Locale::parseLocale($locale);
             $status = in_array($locale, [
-                'ar', 'bg', 'cs', 'de', 'el', 'en', 'es', 'fa', 'fr', 'hu', 'ua', 'kz',
-                'id', 'it', 'ja', 'nl', 'pl', 'pt', 'pt-BR', 'ru', 'sk', 'zh', 'be', 'uz',
+                'ar', 'bg', 'cs', 'de', 'el', 'en', 'es', 'fa', 'fr', 'hu', 'ua', 'kz', 'az',
+                'id', 'it', 'ja', 'nl', 'pl', 'pt', 'pt-BR', 'ru', 'sk', 'zh', 'be', 'uz', 'ge',
             ]);
             $data = [
                 'title' => Locale::getDisplayName($locale),
