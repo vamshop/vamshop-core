@@ -8,7 +8,7 @@ if (typeof Vamshop.Wysiwyg == 'undefined') {
 	// Vamshop.uploadsPath and Vamshop.attachmentsPath is set from Helper anyways
 	Vamshop.Wysiwyg = {
 		uploadsPath: Vamshop.basePath + 'uploads/',
-		attachmentsPath: Vamshop.basePath + 'file_manager/attachments/browse'
+		attachmentsPath: Vamshop.basePath + 'file-manager/attachments/browse'
 	};
 }
 
