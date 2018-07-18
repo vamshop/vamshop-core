@@ -14,10 +14,9 @@ $this->Nodes->set($node);
 </div>
 
 <?php if (Plugin::loaded('Assets')): ?>
-<h1>Assets</h1>
-
+<?php if (isset($node->linked_assets['DefaultAsset'])): ?>
     <?php
-        foreach ($this->Nodes->field('linked_assets.DefaultAsset') as $assets):
+        foreach ($node->linked_assets['DefaultAsset'] as $assets):
     ?>
 
 
@@ -31,15 +30,29 @@ $this->Nodes->set($node);
     <?php
         endforeach;
     ?>
+<?php endif ?>  
     
+<?php if (isset($node->linked_assets['FeaturedImage'])): ?>
 <h1>Featured Assets</h1>
+
+    <?php
+        foreach ($node->linked_assets['FeaturedImage'] as $featured):
+    ?>
+
 
     <div id="node-<?= $this->Nodes->field('id') ?>" class="node node-type-<?= $this->Nodes->field('type') ?>">
 
         <?php
-            echo $this->Html->image($this->Nodes->field('linked_assets.FeaturedImage.path'));
+            echo $this->Html->image($featured['path']);
         ?>
     </div>
+
+    <?php
+        endforeach;
+    ?>
+
+<?php endif ?>  
+
 <?php endif ?>    
 
 <?php if (Plugin::loaded('Vamshop/Comments')): ?>
