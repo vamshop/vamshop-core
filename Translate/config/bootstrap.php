@@ -8,7 +8,8 @@ use Cake\ORM\TableRegistry;
 use Vamshop\Translate\Middleware\I18nMiddleware;
 
 // Uncomment if to enable locale detection via Accept-Language header
-// DispatcherFactory::add('Vamshop/Translate.LocaleSelector');
+ DispatcherFactory::add('Vamshop/Translate.LocaleSelector');
+ 
 $Languages = TableRegistry::get('Vamshop/Settings.Languages');
 $languages = $Languages->find('active')->toArray();
 Configure::write('I18n.languages', array_keys($languages));
