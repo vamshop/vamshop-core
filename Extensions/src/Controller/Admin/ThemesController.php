@@ -66,7 +66,7 @@ class ThemesController extends AppController
     public function activate($theme = null)
     {
         try {
-        		$theme = base64_decode(urldecode($theme));
+            $theme = base64_decode(urldecode($theme));
             $this->_VamshopTheme->activate($theme);
 
             $this->Flash->success(__d('vamshop', 'Theme activated.'));
