@@ -98,7 +98,7 @@ $this->end() ?>
                 endif;
                 $out .= $this->Html->tag('div', $this->Form->postLink(__d('vamshop', 'Activate'), [
                         'action' => 'activate',
-                        'name' => urlencode($themeName),
+                        urlencode(base64_encode($themeName)),
                     ], [
                         'button' => 'secondary',
                         'icon' => $this->Theme->getIcon('power-on'),
