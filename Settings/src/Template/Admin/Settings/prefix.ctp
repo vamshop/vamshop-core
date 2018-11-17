@@ -28,7 +28,7 @@ foreach ($settings as $setting) :
 
     $label = ($setting->title != null) ? $setting->title : $keyTitle;
 
-    echo $this->SettingsForm->input($setting, $label);
+    echo $this->SettingsForm->input($setting, __d('vamshop', $label));
 endforeach;
 
 echo $this->Html->tabEnd();
