@@ -36,20 +36,20 @@ class SettingsFormHelper extends Helper
         $tooltip = [
             'data-trigger' => 'hover',
             'data-placement' => 'right',
-            'data-title' => $setting->description,
+            'data-title' => __d('vamshop',$setting->description),
         ];
         if ($setting->value == 1) {
             $output = $this->Form->input('setting-' . $setting->id, [
                 'type' => $setting->input_type,
                 'checked' => 'checked',
                 'tooltip' => $tooltip,
-                'label' => $label
+                'label' => __d('vamshop',$label)
             ]);
         } else {
             $output = $this->Form->input('setting-' . $setting->id, [
                 'type' => $setting->input_type,
                 'tooltip' => $tooltip,
-                'label' => $label
+                'label' => __d('vamshop',$label)
             ]);
         }
         return $output;
@@ -75,7 +75,7 @@ class SettingsFormHelper extends Helper
 
             $options = $setting->options;
             $output = $this->Form->input('setting-' . $setting->id, [
-                'label' => $setting->title,
+                'label' => __d('vamshop',$setting->title),
                 'multiple' => $multiple,
                 'options' => $options,
                 'default' => $selected,
@@ -85,14 +85,14 @@ class SettingsFormHelper extends Helper
         } elseif ($setting->input_type == 'radio') {
             $options = $setting->options;
             $output = $this->Form->input('setting-' . $setting->id, [
-                'label' => $setting->title,
+                'label' => __d('vamshop',$setting->title),
                 'type' => 'radio',
                 'options' => $options,
                 'value' => $setting->value,
             ]);
         } elseif ($setting->input_type == 'file') {
             $output = $this->Form->input('setting-' . $setting->id, [
-                'label' => $setting->title,
+                'label' => __d('vamshop',$setting->title),
                 'type' => 'file',
             ]);
             if (!empty($setting->value)) {
@@ -111,8 +111,8 @@ class SettingsFormHelper extends Helper
                 'type' => $inputType,
                 'id' => 'setting-' . $setting->id,
                 'value' => $setting->value,
-                'help' => $setting->description,
-                'label' => $label,
+                'help' => __d('vamshop',$setting->description),
+                'label' => __d('vamshop',$label),
             ];
 
             if ($inputType === 'link') {
