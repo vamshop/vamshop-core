@@ -2,6 +2,8 @@
 
 $this->extend('Vamshop/Core./Common/admin_index');
 
+$this->assign('title', __d('vamshop', 'Settings'));
+
 $this->Breadcrumbs
     ->add(__d('vamshop', 'Settings'), array(
         'prefix' => 'admin',

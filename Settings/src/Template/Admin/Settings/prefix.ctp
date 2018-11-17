@@ -4,6 +4,8 @@ use Cake\Utility\Inflector;
 
 $this->extend('Vamshop/Core./Common/admin_edit');
 
+$this->assign('title', __d('vamshop', 'Settings'));
+
 $this->Breadcrumbs->add(__d('vamshop', 'Settings'),
     ['plugin' => 'Vamshop/Settings', 'controller' => 'Settings', 'action' => 'index'])
     ->add(__d('vamshop',$prefix), $this->request->getRequestTarget());
