@@ -6,7 +6,7 @@ $this->extend('Vamshop/Core./Common/admin_edit');
 
 $this->Breadcrumbs->add(__d('vamshop', 'Settings'),
     ['plugin' => 'Vamshop/Settings', 'controller' => 'Settings', 'action' => 'index'])
-    ->add($prefix, $this->request->getRequestTarget());
+    ->add(__d('vamshop',$prefix), $this->request->getRequestTarget());
 
 $this->assign('form-start', $this->Form->create(null, [
     'class' => 'protected-form',
@@ -14,7 +14,7 @@ $this->assign('form-start', $this->Form->create(null, [
 ]));
 
 $this->append('tab-heading');
-echo $this->Vamshop->adminTab($prefix, '#settings-main');
+echo $this->Vamshop->adminTab(__d('vamshop',$prefix), '#settings-main');
 $this->end();
 
 $this->append('tab-content');
