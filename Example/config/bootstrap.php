@@ -37,6 +37,7 @@ Vamshop::hookHelper('Nodes', 'Example.Example');
  * Admin menu (navigation)
  */
 VamshopNav::add('sidebar', 'extensions.children.example', [
+    'icon' => 'bolt',
     'title' => 'Example',
     'url' => '#',
     'children' => [
@@ -50,6 +51,7 @@ VamshopNav::add('sidebar', 'extensions.children.example', [
             ],
         ],
         'example2' => [
+            'icon' => 'bookmark',
             'title' => 'Example 2 with a title that won\'t fit in the sidebar',
             'url' => '#',
             'children' => [
