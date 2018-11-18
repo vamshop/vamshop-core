@@ -50,6 +50,10 @@ $this->end() ?>
                     <p class="regions"><?= __d('vamshop', 'Regions supported: ') .
                             implode(', ', $currentTheme['regions']) ?></p>
                 <?php endif ?>
+                <?php if (isset($currentTheme['menus'])): ?>
+                    <p class="menus"><?= __d('vamshop', 'Menus supported: ') .
+                            implode(', ', $currentTheme['menus']) ?></p>
+                <?php endif ?>
             </div>
         </div>
 
@@ -95,6 +99,11 @@ $this->end() ?>
                     $out .= $this->Html->tag('p',
                         __d('vamshop', 'Regions supported: ') . implode(', ', $theme['regions']),
                         ['class' => 'regions']);
+                endif;
+                if (isset($theme['menus'])):
+                    $out .= $this->Html->tag('p',
+                        __d('vamshop', 'Menus supported: ') . implode(', ', $theme['menus']),
+                        ['class' => 'menus']);
                 endif;
                 $out .= $this->Html->tag('div', $this->Form->postLink(__d('vamshop', 'Activate'), [
                         'action' => 'activate',
