@@ -95,7 +95,7 @@ echo $this->Form->input('action', [
     'options' => [
         'delete' => __d('vamshop', 'Delete'),
     ],
-    'empty' => 'Bulk actions',
+    'empty' => __d('vamshop', 'Bulk actions'),
 ]);
 
 $jsVarName = uniqid('confirmMessage_');

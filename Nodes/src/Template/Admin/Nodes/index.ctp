@@ -142,7 +142,7 @@ echo $this->Form->input('action', [
             'hidden' => true,
         ],
     ],
-    'empty' => 'Bulk actions',
+    'empty' => __d('vamshop', 'Bulk actions'),
 ]);
 
 $jsVarName = uniqid('confirmMessage_');
