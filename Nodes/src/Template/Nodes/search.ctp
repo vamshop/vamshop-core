@@ -25,6 +25,7 @@ $this->assign('title', __d('vamshop', 'Search Results: %s', h($q)));
                 $q,
                 [
                     'format' => '<span class="text-info">\1</span>',
+                    'html' => true,
                 ]);
             echo $this->Nodes->moreInfo();
         ?>
