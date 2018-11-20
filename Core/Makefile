@@ -4,13 +4,13 @@ FONTAWESOME_TAG=v4.7.0
 REPO_FONTAWESOME=git://github.com/FortAwesome/Font-Awesome.git
 REPO_BOOTSTRAP=git://github.com/twbs/bootstrap
 
-CROOGO_SASS = ./webroot/scss/croogo-admin.scss
+VAMSHOP_SASS = ./webroot/scss/vamshop-admin.scss
 
 CSS_DIR=$(CURDIR)/webroot/css/core
 JS_DIR=$(CURDIR)/webroot/js/core
 FONT_DIR=$(CURDIR)/webroot/font
 
-CROOGO_CSS=croogo-admin.css
+VAMSHOP_CSS=vamshop-admin.css
 BOOTSTRAP_JS=admin.js
 
 DATE=$(shell date +%I:%M%p)
@@ -43,8 +43,8 @@ css: deps
 	@[ "$$?" -eq 0 ] && echo "bootstrap branch/tag: ${BOOTSTRAP_TAG} ${CHECK}"
 	@echo "${HR}"
 	@echo "Compiling..."
-	@${COMPILE} ${CROOGO_SASS} > "${CSS_DIR}"/"${CROOGO_CSS}"
-	@DIR=${CSS_DIR} && echo "File: $${DIR#${CURDIR}/}/${CROOGO_CSS} ${CHECK}"
+	@${COMPILE} ${VAMSHOP_SASS} > "${CSS_DIR}"/"${VAMSHOP_CSS}"
+	@DIR=${CSS_DIR} && echo "File: $${DIR#${CURDIR}/}/${VAMSHOP_CSS} ${CHECK}"
 
 assets:
 	@echo "${HR}"
@@ -61,7 +61,7 @@ assets:
 	@echo "Copied: webroot/js/core/bootstrap.min.js ${CHECK}"
 
 clean:
-	@rm -f "${CSS_DIR}"/"${CROOGO_CSS}" "${CSS_DIR}"/"${CROOGO_RESPONSIVE_CSS}"
+	@rm -f "${CSS_DIR}"/"${VAMSHOP_CSS}" "${CSS_DIR}"/"${VAMSHOP_RESPONSIVE_CSS}"
 	@rm -rf "${FONT_DIR}"
 	@echo "Generated files deleted: ${CHECK}"
 
