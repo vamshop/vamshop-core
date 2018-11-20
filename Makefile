@@ -12,9 +12,9 @@ CURRENT_BRANCH=$(shell git branch | grep '*' | tr -d '* ')
 # Github settings
 UPLOAD_HOST=https://uploads.github.com
 API_HOST=https://api.github.com
-OWNER=cvo-technologies
+OWNER=vamshop
 REMOTE=origin
-GITHUB_ROOT=git@github.com:croogo
+GITHUB_ROOT=git@github.com:vamshop
 
 ifdef GITHUB_TOKEN
 	AUTH=-H 'Authorization: token $(GITHUB_TOKEN)'
@@ -28,7 +28,7 @@ ALL: help
 .PHONY: help install test need-version bump-version tag-version
 
 help:
-	@echo "Croogo Makefile"
+	@echo "Vamshop Makefile"
 	@echo "================"
 	@echo ""
 	@echo "release"
