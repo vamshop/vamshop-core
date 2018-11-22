@@ -49,8 +49,9 @@ class LanguagesSeed extends AbstractSeed
                 'it', 'nl', 'pl', 'pt', 'pt-BR', 'ru', 'zh',
                 'uk', 'kk', 'bb', 'ro', 'lt', 'lv', 'et', 'ka', 'hy', 'uz', 'ky',
             ]);
+            if (!$status) continue;
             $data = [
-                'title' => Locale::getDisplayName($locale),
+                'title' => Locale::getDisplayName($locale, 'en'),
                 'alias' => $parsed['language'],
                 'locale' => $locale,
                 'status' => intval($status),
@@ -59,7 +60,7 @@ class LanguagesSeed extends AbstractSeed
                 'updated' => $now->format('Y-m-d H:i:s'),
             ];
             I18n::setLocale($locale);
-            $data['native'] = Locale::getDisplayRegion($locale);
+            $data['native'] = Locale::getDisplayLanguage($locale);
             $records[] = $data;
         }
 

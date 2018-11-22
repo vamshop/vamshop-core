@@ -38,7 +38,7 @@ class InstallManager
         'port' => null,
         'schema' => null,
         'prefix' => null,
-        'encoding' => 'utf8',
+        'encoding' => 'utf8mb4',
         'timezone' => 'UTC',
         'cacheMetadata' => true,
         'log' => false,
@@ -101,7 +101,7 @@ class InstallManager
         }
 
         $configPath = ROOT . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'app.php';
-        foreach (['host', 'username', 'password', 'database', 'driver'] as $field) {
+        foreach (['host', 'username', 'password', 'database', 'driver', 'encoding'] as $field) {
             if (isset($config[$field]) && (!empty($config[$field] || $field == 'password'))) {
                 $this->_updateDatasourceConfig($configPath, $field, $config[$field]);
             }
