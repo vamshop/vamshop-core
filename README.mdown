@@ -21,7 +21,7 @@ The preferred way to install Vamshop is by using [composer](http://getcomposer.o
 
     composer create-project vamshop/vamshop-app ./
     
-    bin/cake Vamshop/Install.install
+    bin/cake vamshop/install.install
 
 !!!! Empty MySQL database must be created before installation.
 
