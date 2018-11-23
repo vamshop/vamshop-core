@@ -29,6 +29,8 @@ The preferred way to install Vamshop is by using [composer](http://getcomposer.o
 
 !!!! Empty MySQL database must be created before installation.
 
+Youtube video: VamShop installation from scratch:
+
 [![VamShop installation from scratch. CakePHP, Composer, Github, Vagrant, EC2, AWS, AZURE, Docker
 ](http://img.youtube.com/vi/deRTZh8HqT0/0.jpg)](https://www.youtube.com/watch?v=deRTZh8HqT0)
 
