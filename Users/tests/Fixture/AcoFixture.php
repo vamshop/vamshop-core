@@ -4,6 +4,7 @@ namespace Vamshop\Users\Test\Fixture;
 
 use Cake\Datasource\ConnectionInterface;
 use Vamshop\Acl\AclGenerator;
+use Cake\Log\LogTrait;
 use Vamshop\Core\TestSuite\VamshopTestFixture;
 
 class AcoFixture extends VamshopTestFixture
@@ -25,8 +26,24 @@ class AcoFixture extends VamshopTestFixture
 
     public function insert(ConnectionInterface $db)
     {
+        //$generator = new AclGenerator();
+
+        //return $generator->insertAcos($db);
+
         $generator = new AclGenerator();
 
+            $dummyShell = new DummyShell();
+            $generator->Shell = $dummyShell;
+
         return $generator->insertAcos($db);
+
+    }
+}
+
+class DummyShell {
+    use LogTrait;
+    function out($msg, $newlines = 1, $level = 1) {
+        $msg = preg_replace('/\<\/?\w+\>/', null, $msg);
+        $this->log($msg);
     }
 }
