@@ -70,7 +70,7 @@ class MenusComponentTest extends VamshopControllerTestCase
             $vars['menusForLayout'],
             'footer.threaded.{n}.Link[title=Public Link Only]'
         );
-        $this->assertNotEmpty($result);
+        $this->assertResponseNotEmpty($result);
     }
 
 /**

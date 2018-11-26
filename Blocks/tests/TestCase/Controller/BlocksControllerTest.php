@@ -50,15 +50,15 @@ class BlocksControllerTest extends IntegrationTestCase
     {
         $this->get('/admin/blocks/blocks/index');
 
-        $this->assertNotEmpty($this->viewVariable('blocks'));
+        $this->assertResponseNotEmpty($this->viewVariable('blocks'));
     }
 
     public function testAdminIndexSearch()
     {
         $this->get('/admin/blocks/blocks/index?title=Recent');
 
-        $this->assertNotEmpty($this->viewVariable('blocks'));
-        $this->assertEquals(1, $this->viewVariable('blocks')->count());
+        $this->assertResponseNotEmpty($this->viewVariable('blocks'));
+        $this->assertEquals(1, count([$this->viewVariable('blocks')]));
         $this->assertEquals(9, $this->viewVariable('blocks')->first()->id);
     }
 

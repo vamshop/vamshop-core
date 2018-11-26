@@ -49,8 +49,8 @@ class NodesControllerTest extends IntegrationTestCase
     {
         $this->get('/admin/nodes/index');
 
-        $this->assertNotEmpty($this->viewVariable('nodes')->toArray());
-        $this->assertEquals(3, $this->viewVariable('nodes')->count());
+        $this->assertResponseNotEmpty($this->viewVariable('nodes')->toArray());
+        $this->assertEquals(3, count([$this->viewVariable('nodes')]));
         $this->assertEntityHasProperty('user', $this->viewVariable('nodes')->first());
         $this->assertEntityHasProperty('custom_fields', $this->viewVariable('nodes')->first());
     }
@@ -59,7 +59,7 @@ class NodesControllerTest extends IntegrationTestCase
     {
         $this->get('/admin/nodes/index?filter=about');
 
-        $this->assertEquals(1, $this->viewVariable('nodes')->count());
+        $this->assertEquals(1, count([$this->viewVariable('nodes')]));
         $this->assertEquals(2, $this->viewVariable('nodes')->first()->id);
         $this->assertEntityHasProperty('custom_fields', $this->viewVariable('nodes')->first());
     }
@@ -68,7 +68,7 @@ class NodesControllerTest extends IntegrationTestCase
     {
         $this->get('/admin/nodes/index?links=1&filter=about');
         $this->assertLayout('admin_popup');
-        $this->assertNotEmpty($this->viewVariable('nodes')->toArray());
+        $this->assertResponseNotEmpty($this->viewVariable('nodes')->toArray());
 
         $about = $this->viewVariable('nodes')->first();
         $this->assertEquals('about', $about->slug);
@@ -97,7 +97,7 @@ class NodesControllerTest extends IntegrationTestCase
             ->first();
         $this->assertEquals('New Node', $newBlog->title);
         $this->assertEquals('node', $newBlog->type);
-        $this->assertNotEmpty($newBlog->created);
+        $this->assertResponseNotEmpty($newBlog->created);
         $this->assertNotEquals('0', $newBlog->created->toUnixString());
     }
 
@@ -122,7 +122,7 @@ class NodesControllerTest extends IntegrationTestCase
             ->first();
         $this->assertEquals('New Blog', $newBlog->title);
         $this->assertEquals('blog', $newBlog->type);
-        $this->assertNotEmpty($newBlog->created);
+        $this->assertResponseNotEmpty($newBlog->created);
         $this->assertNotEquals('0', $newBlog->created->toUnixString());
     }
 
@@ -152,7 +152,7 @@ class NodesControllerTest extends IntegrationTestCase
             ])
             ->first();
         $this->assertEquals($title, $newBlog->title);
-        $this->assertNotEmpty($newBlog->created);
+        $this->assertResponseNotEmpty($newBlog->created);
     }
 
     /**

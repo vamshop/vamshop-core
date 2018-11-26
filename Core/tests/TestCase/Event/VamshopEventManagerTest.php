@@ -63,7 +63,7 @@ class EventManagerTest extends TestCase
     public function testDetachPluginSubscribers()
     {
         $loaded = Plugin::loaded('Shops');
-        $this->assertNotEmpty($loaded);
+        $this->assertResponseNotEmpty($loaded);
 
         $eventName = 'Controller.Users.activationFailure';
         $event = Vamshop::dispatchEvent($eventName, $this->Users);

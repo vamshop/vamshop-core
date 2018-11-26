@@ -72,7 +72,7 @@ class NodesTableTest extends TestCase
     public function testBeforeFind()
     {
         $node = $this->Nodes->find()->where(['DATE(created)' => '2009-12-25'])->first();
-        $this->assertNotEmpty($node);
+        $this->assertResponseNotEmpty($node);
 
         $this->assertEquals(1, $node->id);
         $this->assertEquals('blog', $node->type);
@@ -356,7 +356,7 @@ class NodesTableTest extends TestCase
             'filter' => 'Hello'
         ])->first();
 
-        $this->assertNotEmpty($node);
+        $this->assertResponseNotEmpty($node);
         $this->assertEquals(1, $node->id);
     }
 
@@ -366,7 +366,7 @@ class NodesTableTest extends TestCase
             'filter' => 'example'
         ])->first();
 
-        $this->assertNotEmpty($node);
+        $this->assertResponseNotEmpty($node);
         $this->assertEquals(2, $node->id);
     }
 

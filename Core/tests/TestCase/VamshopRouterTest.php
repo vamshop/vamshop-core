@@ -36,12 +36,12 @@ class VamshopRouterTest extends TestCase
         $promoted = [
             'plugin' => 'Vamshop/Nodes',
             'controller' => 'Nodes',
-            'action' => 'promoted',
+            'action' => '/promoted/*',
         ];
         $result = Router::connect('/', $promoted);
 
-        $this->assertEquals(1, count($result));
-        $this->assertNotEmpty($result[0]);
+        $this->assertEquals(1, count([$result]));
+        $this->assertResponseNotEmpty($result[0]);
         $this->assertInstanceOf('Cake\\Routing\\Route\\Route', $result[0]);
         $reversed = Router::parse('/');
         $this->assertEquals($promoted, array_intersect_key($promoted, $reversed));

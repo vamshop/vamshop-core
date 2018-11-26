@@ -60,8 +60,8 @@ class RegionsControllerTest extends IntegrationTestCase
     {
         $this->get('/admin/blocks/regions/index');
 
-        $this->assertNotEmpty($this->viewVariable('displayFields'));
-        $this->assertNotEmpty($this->viewVariable('regions'));
+        $this->assertResponseNotEmpty($this->viewVariable('displayFields'));
+        $this->assertResponseNotEmpty($this->viewVariable('regions'));
     }
 
     public function testAdminAdd()

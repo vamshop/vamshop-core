@@ -84,7 +84,7 @@ class VocabulariesControllerTest extends VamshopControllerTestCase
     public function testAdminIndex()
     {
         $this->testAction('/admin/taxonomy/vocabularies/index');
-        $this->assertNotEmpty($this->vars['vocabularies']);
+        $this->assertResponseNotEmpty($this->vars['vocabularies']);
     }
 
 /**

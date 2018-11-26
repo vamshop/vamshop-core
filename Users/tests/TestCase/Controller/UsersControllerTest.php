@@ -109,8 +109,8 @@ class UsersControllerTest extends VamshopControllerTestCase
     {
         $this->_setupAuthUser();
         $this->testAction('/admin/users/users/index');
-        $this->assertNotEmpty($this->vars['displayFields']);
-        $this->assertNotEmpty($this->vars['users']);
+        $this->assertResponseNotEmpty($this->vars['displayFields']);
+        $this->assertResponseNotEmpty($this->vars['users']);
         $this->assertEquals(3, count($this->vars['users']));
     }
 

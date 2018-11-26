@@ -82,7 +82,7 @@ class CommentsControllerTest extends VamshopControllerTestCase
     public function testAdminIndex()
     {
         $this->testAction('/admin/comments/index');
-        $this->assertNotEmpty($this->vars['comments']);
+        $this->assertResponseNotEmpty($this->vars['comments']);
     }
 
 /**

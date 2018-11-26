@@ -139,7 +139,7 @@ class TermTest extends VamshopTestCase
         $this->Term->add($newTermData, 1);
         $newTerm = $this->Term->find('first', ['conditions' => ['slug' => 'bazinga']]);
 
-        $this->assertNotEmpty($newTerm);
+        $this->assertResponseNotEmpty($newTerm);
     }
 
     public function testHasSlugChangedShouldReturnTrueIfSlugChanged()

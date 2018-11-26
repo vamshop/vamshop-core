@@ -76,8 +76,8 @@ class RolesControllerTest extends VamshopControllerTestCase
     public function testAdminIndex()
     {
         $this->testAction('/admin/users/roles/index');
-        $this->assertNotEmpty($this->vars['displayFields']);
-        $this->assertNotEmpty($this->vars['roles']);
+        $this->assertResponseNotEmpty($this->vars['displayFields']);
+        $this->assertResponseNotEmpty($this->vars['roles']);
     }
 
 /**

@@ -73,7 +73,7 @@ class TrackableBehaviorTest extends VamshopTestCase
         $this->model->create(['id' => 1, 'title' => 'foobar']);
         $result = $this->model->save();
         $data = $result['TestModel'];
-        $this->assertNotEmpty($data['created_by']);
+        $this->assertResponseNotEmpty($data['created_by']);
         $this->assertEquals($data['created_by'], $data['updated_by']);
 
         unset($data['created_by']);
@@ -125,7 +125,7 @@ class TrackableBehaviorTest extends VamshopTestCase
         $this->model->save();
         $result = $this->model->findById(1);
         $data = $result['TestModel'];
-        $this->assertNotEmpty($data['created_by']);
+        $this->assertResponseNotEmpty($data['created_by']);
         $this->assertEquals($data['created_by'], $data['updated_by']);
         $this->assertEquals('yvonne', $result['TrackableCreator']['username']);
     }

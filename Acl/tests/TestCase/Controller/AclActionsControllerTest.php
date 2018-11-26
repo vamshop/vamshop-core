@@ -63,7 +63,7 @@ class AclActionsControllerTest extends VamshopControllerTestCase
             ->expects($this->once())
             ->method('redirect');
         $node = $AclActions->Acl->Aco->node('controllers/Nodes');
-        $this->assertNotEmpty($node);
+        $this->assertResponseNotEmpty($node);
         $AclActions->Acl->Aco->removeFromTree($node[0]['Aco']['id']);
         $this->testAction('/admin/acl/acl_actions/generate');
     }
