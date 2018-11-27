@@ -101,4 +101,5 @@ Cake\Routing\DispatcherFactory::add('ControllerFactory');
 
 class_alias('Vamshop\Core\TestSuite\TestCase', 'Vamshop\Core\TestSuite\VamshopTestCase');
 
+Router::defaultRouteClass(DashedRoute::class);
 Plugin::routes();
