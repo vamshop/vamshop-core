@@ -3,6 +3,8 @@
 use Cake\Utility\Hash;
 use Vamshop\Core\Status;
 
+echo var_dump($_SESSION['Flash']['flash'][0]);
+
 $this->assign('title', __d('vamshop', 'Contents'));
 
 $this->extend('Vamshop/Core./Common/admin_index');

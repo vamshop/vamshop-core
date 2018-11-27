@@ -59,7 +59,9 @@ class BlocksControllerTest extends IntegrationTestCase
 
         $this->assertResponseNotEmpty($this->viewVariable('blocks'));
         $this->assertEquals(1, count([$this->viewVariable('blocks')]));
-        $this->assertEquals(9, $this->viewVariable('blocks')->first()->id);
+        $this->assertResponseNotEmpty(collection([$this->viewVariable('blocks')])->match([
+            'id' => 9
+        ])->toArray());
     }
 
     public function testAdminAdd()
