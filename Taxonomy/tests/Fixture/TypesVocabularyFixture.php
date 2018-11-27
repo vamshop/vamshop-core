@@ -7,16 +7,22 @@ use Vamshop\Core\TestSuite\VamshopTestFixture;
 class TypesVocabularyFixture extends VamshopTestFixture
 {
 
-    public $name = 'TypesVocabulary';
-
+    // @codingStandardsIgnoreStart
     public $fields = [
-        'id' => ['type' => 'integer', 'null' => false, 'default' => null, 'length' => 10],
-        'type_id' => ['type' => 'integer', 'null' => false, 'default' => null, 'length' => 10],
-        'vocabulary_id' => ['type' => 'integer', 'null' => false, 'default' => null, 'length' => 10],
-        'weight' => ['type' => 'integer', 'null' => true, 'default' => null],
-        '_constraints' => ['primary' => ['type' => 'primary', 'columns' => ['id']], 'PRIMARY' => ['type' => 'unique', 'columns' => 'id']],
-        '_options' => ['charset' => 'utf8', 'collate' => 'utf8_unicode_ci', 'engine' => 'InnoDB']
+        'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
+        'type_id' => ['type' => 'integer', 'length' => 20, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'vocabulary_id' => ['type' => 'integer', 'length' => 20, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'weight' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        '_constraints' => [
+            'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
+            'type_id' => ['type' => 'unique', 'columns' => ['type_id', 'vocabulary_id'], 'length' => []],
+        ],
+        '_options' => [
+            'engine' => 'InnoDB',
+            'collation' => 'utf8mb4_general_ci'
+        ],
     ];
+    // @codingStandardsIgnoreEnd
 
     public $records = [
         [

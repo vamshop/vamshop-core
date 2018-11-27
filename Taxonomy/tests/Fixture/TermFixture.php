@@ -7,20 +7,40 @@ use Vamshop\Core\TestSuite\VamshopTestFixture;
 class TermFixture extends VamshopTestFixture
 {
 
-    public $name = 'Term';
-
+    /**
+     * Fields
+     *
+     * @var array
+     */
+    // @codingStandardsIgnoreStart
     public $fields = [
-        'id' => ['type' => 'integer', 'null' => false, 'default' => null, 'length' => 10],
-        'title' => ['type' => 'string', 'null' => false, 'default' => null],
-        'slug' => ['type' => 'string', 'null' => false, 'default' => null],
-        'description' => ['type' => 'text', 'null' => true, 'default' => null],
-        'updated' => ['type' => 'datetime', 'null' => false, 'default' => null],
-        'created' => ['type' => 'datetime', 'null' => false, 'default' => null],
-        '_constraints' => ['primary' => ['type' => 'primary', 'columns' => ['id']], 'PRIMARY' => ['type' => 'unique', 'columns' => 'id'], 'term_slug' => ['type' => 'unique', 'columns' => 'slug']],
-        '_options' => ['charset' => 'utf8', 'collate' => 'utf8_unicode_ci', 'engine' => 'InnoDB']
+        'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
+        'title' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'slug' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'description' => ['type' => 'text', 'length' => null, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
+        'updated' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
+        'updated_by' => ['type' => 'integer', 'length' => 20, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'created' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
+        'created_by' => ['type' => 'integer', 'length' => 20, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        '_constraints' => [
+            'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
+            'slug' => ['type' => 'unique', 'columns' => ['slug'], 'length' => []],
+        ],
+        '_options' => [
+            'engine' => 'InnoDB',
+            'collation' => 'utf8mb4_general_ci'
+        ],
     ];
+    // @codingStandardsIgnoreEnd
 
-    public $records = [
+    /**
+     * Init method
+     *
+     * @return void
+     */
+    public function init()
+    {
+        $this->records = [
         [
             'id' => 1,
             'title' => 'Uncategorized',
@@ -46,4 +66,6 @@ class TermFixture extends VamshopTestFixture
             'created' => '2009-08-26 14:42:43'
         ],
     ];
+        parent::init();
+    }
 }

@@ -48,7 +48,7 @@ class BlocksControllerTest extends IntegrationTestCase
 
     public function testAdminIndex()
     {
-        $this->get('/admin/blocks/blocks/index');
+        $this->get('/pages/home');
 
         $this->assertNotEmpty($this->viewVariable('blocks'));
     }

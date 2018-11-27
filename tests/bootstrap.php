@@ -2,7 +2,7 @@
 // @codingStandardsIgnoreFile
 
 use Cake\Datasource\ConnectionManager;
-use Cake\Routing\Router;
+use Vamshop\Core\Router;
 use Vamshop\Core\Plugin;
 
 $findVendor = function () {

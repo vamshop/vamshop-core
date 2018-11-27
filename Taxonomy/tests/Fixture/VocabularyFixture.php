@@ -25,7 +25,14 @@ class VocabularyFixture extends VamshopTestFixture
         '_options' => ['charset' => 'utf8', 'collate' => 'utf8_unicode_ci', 'engine' => 'InnoDB']
     ];
 
-    public $records = [
+    /**
+     * Init method
+     *
+     * @return void
+     */
+    public function init()
+    {
+        $this->records = [
         [
             'id' => 1,
             'title' => 'Categories',
@@ -53,4 +60,6 @@ class VocabularyFixture extends VamshopTestFixture
             'created' => '2009-07-22 02:16:34'
         ],
     ];
+        parent::init();
+    }
 }
