@@ -24,7 +24,7 @@ class TypeFixture extends VamshopTestFixture
         'plugin' => ['type' => 'string', 'null' => true, 'default' => null],
         'updated' => ['type' => 'datetime', 'null' => false, 'default' => null],
         'created' => ['type' => 'datetime', 'null' => false, 'default' => null],
-        '_constraints' => ['primary' => ['type' => 'primary', 'columns' => ['id']], 'PRIMARY' => ['type' => 'unique', 'columns' => 'id'], 'type_alias' => ['type' => 'unique', 'columns' => 'alias']],
+        '_constraints' => ['primary' => ['type' => 'primary', 'columns' => ['id']], 'type_alias' => ['type' => 'unique', 'columns' => 'alias']],
         '_options' => ['charset' => 'utf8', 'collate' => 'utf8_unicode_ci', 'engine' => 'InnoDB']
     ];
 

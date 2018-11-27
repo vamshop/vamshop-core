@@ -75,8 +75,8 @@ class TypesControllerTest extends VamshopControllerTestCase
     public function testAdminIndex()
     {
         $this->testAction('/admin/types/index');
-        $this->assertResponseNotEmpty($this->vars['displayFields']);
-        $this->assertResponseNotEmpty($this->vars['types']);
+        $this->assertNotEmpty($this->vars['displayFields']);
+        $this->assertNotEmpty($this->vars['types']);
     }
 
 /**

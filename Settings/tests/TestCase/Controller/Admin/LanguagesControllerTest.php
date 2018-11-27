@@ -43,7 +43,7 @@ class LanguagesControllerTest extends IntegrationTestCase
     {
         $this->get('/admin/settings/Languages/index');
 
-        $this->assertResponseNotEmpty($this->viewVariable('languages'));
+        $this->assertNotEmpty($this->viewVariable('languages'));
     }
 
     public function testAdminAdd()

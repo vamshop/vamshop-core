@@ -75,7 +75,7 @@ class MenusControllerTest extends VamshopControllerTestCase
     public function testAdminIndex()
     {
         $this->testAction('/admin/menus/menus/index');
-        $this->assertResponseNotEmpty($this->vars['menus']);
+        $this->assertNotEmpty($this->vars['menus']);
     }
 
 /**

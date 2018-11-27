@@ -97,6 +97,7 @@ ConnectionManager::config('test', [
     'database' => getenv('db_database'),
     'username' => getenv('db_login'),
     'password' => getenv('db_password'),
+    'quoteIdentifiers' => true,
     'timezone' => 'UTC'
 ]);
 ConnectionManager::config('test_migrations', [
@@ -106,6 +107,7 @@ ConnectionManager::config('test_migrations', [
     'database' => getenv('db_database'),
     'username' => getenv('db_login'),
     'password' => getenv('db_password'),
+    'quoteIdentifiers' => true,
     'timezone' => 'UTC'
 ]);
 

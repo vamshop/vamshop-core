@@ -55,7 +55,7 @@ class NodesControllerTest extends IntegrationTestCase
 
         $this->get('/promoted');
 
-        $this->assertEquals(2, count([$this->viewVariable('nodes')]));
+        $this->assertEquals(2, $this->viewVariable('nodes')->count());
     }
 
     public function testIndexWithVisibilityRole()
@@ -64,7 +64,7 @@ class NodesControllerTest extends IntegrationTestCase
 
         $this->get('/node?type=page');
 
-        $this->assertEquals(2, count([$this->viewVariable('nodes')]));
+        $this->assertEquals(2, $this->viewVariable('nodes')->count());
     }
 
     public function testViewFallback()

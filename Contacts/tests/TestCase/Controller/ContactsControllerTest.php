@@ -78,7 +78,7 @@ class ContactsControllerTest extends VamshopControllerTestCase
     public function testAdminIndex()
     {
         $this->testAction('/admin/contacts/contacts/index');
-        $this->assertResponseNotEmpty($this->vars['contacts']);
+        $this->assertNotEmpty($this->vars['contacts']);
     }
 
 /**

@@ -72,11 +72,11 @@ class VamshopComponentTest extends TestCase
 
         $this->Controller->Vamshop->addAco('VamshopTestController');
         $parent = $Aco->findByAlias('VamshopTestController');
-        $this->assertResponseNotEmpty($parent);
+        $this->assertNotEmpty($parent);
 
         $this->Controller->Vamshop->addAco('VamshopTestController/index');
         $child = $Aco->findByParentId($parent['Aco']['id']);
-        $this->assertResponseNotEmpty($child);
+        $this->assertNotEmpty($child);
 
         $this->Controller->Vamshop->removeAco('VamshopTestController/index');
         $child = $Aco->findByParentId($parent['Aco']['id']);

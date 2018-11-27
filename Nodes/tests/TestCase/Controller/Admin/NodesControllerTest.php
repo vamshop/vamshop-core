@@ -47,30 +47,28 @@ class NodesControllerTest extends IntegrationTestCase
 
     public function testAdminIndex()
     {
-        $this->get('/admin/nodes/nodes');
+        $this->get('/admin/nodes/index');
 
-        $this->assertResponseNotEmpty($this->viewVariable('nodes'));
-        $this->assertEquals(1, count([$this->viewVariable('nodes')]));
+        $this->assertNotEmpty($this->viewVariable('nodes')->toArray());
+        $this->assertEquals(3, $this->viewVariable('nodes')->count());
         $this->assertEntityHasProperty('user', $this->viewVariable('nodes')->first());
         $this->assertEntityHasProperty('custom_fields', $this->viewVariable('nodes')->first());
     }
 
     public function testAdminIndexSearch()
     {
-        $this->get('/admin/nodes/nodes?filter=about');
+        $this->get('/admin/nodes/index?filter=about');
 
-        $this->assertEquals(1, count([$this->viewVariable('nodes')]));
-        $this->assertResponseNotEmpty(collection([$this->viewVariable('nodes')])->match([
-            'id' => 2
-        ])->toArray());
-        //$this->assertEntityHasProperty('custom_fields', $this->viewVariable('nodes')->first());
+        $this->assertEquals(1, $this->viewVariable('nodes')->count());
+        $this->assertEquals(2, $this->viewVariable('nodes')->first()->id);
+        $this->assertEntityHasProperty('custom_fields', $this->viewVariable('nodes')->first());
     }
 
     public function testAdminLinks()
     {
-        $this->get('/admin/nodes/nodes/?links=1&filter=about');
-        //$this->assertLayout('admin_popup');
-        $this->assertResponseNotEmpty($this->viewVariable('nodes')->toArray());
+        $this->get('/admin/nodes/index?links=1&filter=about');
+        $this->assertLayout('admin_popup');
+        $this->assertNotEmpty($this->viewVariable('nodes')->toArray());
 
         $about = $this->viewVariable('nodes')->first();
         $this->assertEquals('about', $about->slug);
@@ -82,7 +80,7 @@ class NodesControllerTest extends IntegrationTestCase
     {
         $this->enableCsrfToken();
         $this->enableSecurityToken();
-        $this->post('/admin/nodes/nodes/add', [
+        $this->post('/admin/nodes/add', [
             'title' => 'New Node',
             'slug' => 'new-node',
             'body' => '',
@@ -99,7 +97,7 @@ class NodesControllerTest extends IntegrationTestCase
             ->first();
         $this->assertEquals('New Node', $newBlog->title);
         $this->assertEquals('node', $newBlog->type);
-        $this->assertResponseNotEmpty($newBlog->created);
+        $this->assertNotEmpty($newBlog->created);
         $this->assertNotEquals('0', $newBlog->created->toUnixString());
     }
 
@@ -107,7 +105,7 @@ class NodesControllerTest extends IntegrationTestCase
     {
         $this->enableCsrfToken();
         $this->enableSecurityToken();
-        $this->post('/admin/nodes/nodes/add/blog', [
+        $this->post('/admin/nodes/add/blog', [
             'title' => 'New Blog',
             'slug' => 'new-blog',
             'body' => '',
@@ -124,7 +122,7 @@ class NodesControllerTest extends IntegrationTestCase
             ->first();
         $this->assertEquals('New Blog', $newBlog->title);
         $this->assertEquals('blog', $newBlog->type);
-        $this->assertResponseNotEmpty($newBlog->created);
+        $this->assertNotEmpty($newBlog->created);
         $this->assertNotEquals('0', $newBlog->created->toUnixString());
     }
 
@@ -136,7 +134,7 @@ class NodesControllerTest extends IntegrationTestCase
         $title = 'New Blog (custom created value)';
         $slug = 'new-blog-custom-created-value';
 
-        $this->post('/admin/nodes/nodes/add', [
+        $this->post('/admin/nodes/add', [
             'title' => $title,
             'slug' => $slug,
             'type' => 'blog',
@@ -154,7 +152,7 @@ class NodesControllerTest extends IntegrationTestCase
             ])
             ->first();
         $this->assertEquals($title, $newBlog->title);
-        $this->assertResponseNotEmpty($newBlog->created);
+        $this->assertNotEmpty($newBlog->created);
     }
 
     /**

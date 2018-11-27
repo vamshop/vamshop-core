@@ -79,7 +79,7 @@ class TermsControllerTest extends VamshopControllerTestCase
     public function testAdminIndex()
     {
         $this->testAction('/admin/taxonomy/terms/index/1');
-        $this->assertResponseNotEmpty($this->vars['terms']);
+        $this->assertNotEmpty($this->vars['terms']);
         $expected = [
             '1' => 'Uncategorized',
             '2' => 'Announcements',
