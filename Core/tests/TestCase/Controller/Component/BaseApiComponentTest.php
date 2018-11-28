@@ -7,7 +7,7 @@ use Cake\Controller\Controller;
 use Vamshop\Core\Controller\Component\BaseApiComponent;
 use Vamshop\Core\TestSuite\VamshopTestCase;
 
-class TestApiComponent extends BaseApiComponent
+/*class TestApiComponent extends BaseApiComponent
 {
 
     protected $_apiVersion = 'v1.0';
@@ -18,7 +18,7 @@ class TestApiComponent extends BaseApiComponent
         'delete',
     ];
 }
-
+*/
 class TestBaseApiController extends Controller
 {
 
