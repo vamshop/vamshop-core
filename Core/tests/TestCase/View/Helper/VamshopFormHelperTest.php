@@ -356,7 +356,7 @@ class VamshopFormHelperTest extends VamshopTestCase
         $result = $this->Form->autocomplete('user_id', [
             'autocomplete' => [
                 'data-relatedField' => '#user_id',
-                'data-url' => 'http://vamshop.com',
+                'data-url' => 'http://vamshop.org',
             ],
         ]);
         $expected = [
@@ -377,7 +377,7 @@ class VamshopFormHelperTest extends VamshopTestCase
                 'input' => [
                     'name' => 'data[autocomplete_user_id]',
                     'data-relatedField' => '#user_id',
-                    'data-url' => 'http://vamshop.com',
+                    'data-url' => 'http://vamshop.org',
                     'class' => 'typeahead-autocomplete',
                     'autocomplete' => 'off',
                     'type' => 'text',
@@ -402,7 +402,7 @@ class VamshopFormHelperTest extends VamshopTestCase
             'autocomplete' => [
                 'default' => 'yvonne',
                 'data-relatedField' => '#user_id',
-                'data-url' => 'http://vamshop.com',
+                'data-url' => 'http://vamshop.org',
             ],
         ]);
         $expected = [
@@ -424,7 +424,7 @@ class VamshopFormHelperTest extends VamshopTestCase
                 'input' => [
                     'name' => 'data[autocomplete_user_id]',
                     'data-relatedField' => '#user_id',
-                    'data-url' => 'http://vamshop.com',
+                    'data-url' => 'http://vamshop.org',
                     'class' => 'typeahead-autocomplete',
                     'autocomplete' => 'off',
                     'type' => 'text',
@@ -459,7 +459,7 @@ class VamshopFormHelperTest extends VamshopTestCase
             'autocomplete' => [
                 'data-relatedField' => '#NodeUserId',
                 'data-displayField' => 'username',
-                'data-url' => 'http://vamshop.com',
+                'data-url' => 'http://vamshop.org',
             ],
         ]);
         $expected = [
@@ -482,7 +482,7 @@ class VamshopFormHelperTest extends VamshopTestCase
                     'name' => 'data[autocomplete_user_id]',
                     'value' => 'yvonne',
                     'data-displayField' => 'username',
-                    'data-url' => 'http://vamshop.com',
+                    'data-url' => 'http://vamshop.org',
                     'data-relatedField',
                     'class',
                     'autocomplete',

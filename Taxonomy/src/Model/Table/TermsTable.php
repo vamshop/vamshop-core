@@ -56,15 +56,15 @@ class TermsTable extends VamshopTable
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->notBlank('title', __d('croogo', 'The title cannot be empty'))
-            ->notBlank('slug', __d('croogo', 'The slug cannot be empty'))
+            ->notBlank('title', __d('vamshop', 'The title cannot be empty'))
+            ->notBlank('slug', __d('vamshop', 'The slug cannot be empty'))
             ->add(
                 'slug',
                 [
                 'unique' => [
                     'rule' => 'validateUnique',
                     'provider' => 'table',
-                    'message' => __d('croogo', 'This slug has already been taken.')
+                    'message' => __d('vamshop', 'This slug has already been taken.')
                     ]
                 ]
             );

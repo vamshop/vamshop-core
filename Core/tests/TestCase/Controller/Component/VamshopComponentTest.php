@@ -112,7 +112,7 @@ class VamshopComponentTest extends TestCase
     public function redirectData()
     {
         return [
-            ['vamshop.com', 'vamshop.com'],
+            ['vamshop.org', 'vamshop.org'],
             [['action' => 'index'], ['action' => 'edit', 1]],
             [['action' => 'edit', 1], ['action' => 'edit', 1], ['apply' => 'Apply']],
             [['action' => 'index', 1], ['action' => 'edit', 1], [], ['action' => 'index', 1]],

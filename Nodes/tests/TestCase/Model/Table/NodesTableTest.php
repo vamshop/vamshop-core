@@ -71,7 +71,7 @@ class NodesTableTest extends TestCase
 
     public function testBeforeFind()
     {
-        $node = $this->Nodes->find()->where(['DATE(created)' => '2018-12-25'])->first();
+        $node = $this->Nodes->find()->where(['DATE(created)' => '2009-12-25'])->first();
         $this->assertNotEmpty($node);
 
         $this->assertEquals(1, $node->id);

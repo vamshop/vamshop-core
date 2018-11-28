@@ -36,7 +36,7 @@ $this->assign('title', __d('vamshop', 'Successful'));
     <ul class="bullet">
         <li><?= $this->Html->link('http://vamshop.com') ?></li>
         <li><?= $this->Html->link('http://wiki.vamshop.com/') ?></li>
-        <li><?= $this->Html->link('http://github.com/vamshop/vamshop') ?></li>
+        <li><?= $this->Html->link('http://github.com/vamshop/vamshop-core') ?></li>
         <li><?= $this->Html->link('Vamshop Google Group',
                 'https://groups.google.com/forum/#!forum/vamshop') ?></li>
     </ul>

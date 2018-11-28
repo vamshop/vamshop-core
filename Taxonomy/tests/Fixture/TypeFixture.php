@@ -42,8 +42,8 @@ class TypeFixture extends VamshopTestFixture
             'comment_captcha' => 0,
             'params' => '',
             'plugin' => '',
-            'updated' => '2018-09-09 00:23:24',
-            'created' => '2018-09-02 18:06:27'
+            'updated' => '2009-09-09 00:23:24',
+            'created' => '2009-09-02 18:06:27'
         ],
         [
             'id' => 2,
@@ -58,8 +58,8 @@ class TypeFixture extends VamshopTestFixture
             'comment_captcha' => 0,
             'params' => '',
             'plugin' => '',
-            'updated' => '2018-09-15 12:15:43',
-            'created' => '2018-09-02 18:20:44'
+            'updated' => '2009-09-15 12:15:43',
+            'created' => '2009-09-02 18:20:44'
         ],
         [
             'id' => 4,
@@ -74,8 +74,8 @@ class TypeFixture extends VamshopTestFixture
             'comment_captcha' => 0,
             'params' => '',
             'plugin' => '',
-            'updated' => '2018-10-06 21:53:15',
-            'created' => '2018-09-05 23:51:56'
+            'updated' => '2009-10-06 21:53:15',
+            'created' => '2009-09-05 23:51:56'
         ],
     ];
 }

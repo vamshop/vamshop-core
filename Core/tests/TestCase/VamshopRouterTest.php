@@ -71,7 +71,7 @@ class VamshopRouterTest extends TestCase
         $this->assertEquals($terms, array_intersect_key($terms, $reversed));
     }
 
-    public function testContentType()
+/*    public function testContentType()
     {
         // Reload plugin routes
         Plugin::routes();
@@ -103,9 +103,9 @@ class VamshopRouterTest extends TestCase
         $this->assertEquals('/page', $result);
 
         Router::$initialized = false;
-    }
+    }*/
 
-    public function testRoutableContentTypes()
+/*    public function testRoutableContentTypes()
     {
         // Reload plugin routes
         Plugin::routes();
@@ -141,7 +141,7 @@ class VamshopRouterTest extends TestCase
 
         $result = Router::reverse($params);
         $this->assertEquals('/press-release', $result);
-    }
+    }*/
 
 /**
  * testWhitelistedDetectorWithInvalidIp

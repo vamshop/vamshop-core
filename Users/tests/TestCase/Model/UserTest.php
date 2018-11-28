@@ -66,9 +66,9 @@ class UserTest extends VamshopTestCase
             'username' => 'new_user',
             'name' => 'New User',
             'role_id' => 3,
-            'email' => 'contact@vamshop.com',
+            'email' => 'contact@vamshop.org',
             'password' => 'password',
-            'website' => 'http://vamshop.com',
+            'website' => 'http://vamshop.org',
             'activation_key' => md5(uniqid()),
         ]);
         $this->User->save();
@@ -119,9 +119,9 @@ class UserTest extends VamshopTestCase
             'username' => 'new_user',
             'name' => 'Admin User',
             'role_id' => 1,
-            'email' => 'contact@vamshop.com',
+            'email' => 'contact@vamshop.org',
             'password' => 'password',
-            'website' => 'http://vamshop.com',
+            'website' => 'http://vamshop.org',
             'activation_key' => md5(uniqid()),
             'status' => true,
         ]);
@@ -142,9 +142,9 @@ class UserTest extends VamshopTestCase
             'username' => 'admin_user',
             'name' => 'Admin User',
             'role_id' => 1,
-            'email' => 'contact@vamshop.com',
+            'email' => 'contact@vamshop.org',
             'password' => 'password',
-            'website' => 'http://vamshop.com',
+            'website' => 'http://vamshop.org',
             'activation_key' => md5(uniqid()),
             'status' => true,
         ]);
@@ -154,9 +154,9 @@ class UserTest extends VamshopTestCase
             'username' => 'another_adm',
             'name' => 'Another Admin',
             'role_id' => 1,
-            'email' => 'another_adm@vamshop.com',
+            'email' => 'another_adm@vamshop.org',
             'password' => 'password',
-            'website' => 'http://vamshop.com',
+            'website' => 'http://vamshop.org',
             'activation_key' => md5(uniqid()),
             'status' => true,
         ]);

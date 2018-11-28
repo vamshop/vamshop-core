@@ -213,6 +213,6 @@ class InstallShell extends Shell
         }
 
         $this->out();
-        $this->success('Congratulations, VamShop has been installed successfully.');
+        $this->success('Congratulations, Vamshop has been installed successfully.');
     }
 }

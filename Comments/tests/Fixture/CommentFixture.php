@@ -45,7 +45,7 @@ class CommentFixture extends VamshopTestFixture
             'user_id' => 0,
             'name' => 'Mr Vamshop',
             'email' => 'email@example.com',
-            'website' => 'http://www.vamshop.com',
+            'website' => 'http://www.vamshop.org',
             'ip' => '127.0.0.1',
             'title' => '',
             'body' => 'Hi, this is the first comment.',
@@ -56,8 +56,8 @@ class CommentFixture extends VamshopTestFixture
             'comment_type' => 'comment',
             'lft' => 1,
             'rght' => 2,
-            'updated' => '2018-12-25 12:00:00',
-            'created' => '2018-12-25 12:00:00'
+            'updated' => '2009-12-25 12:00:00',
+            'created' => '2009-12-25 12:00:00'
         ],
         [
             'id' => 2,
@@ -67,7 +67,7 @@ class CommentFixture extends VamshopTestFixture
             'user_id' => 0,
             'name' => 'Mrs Vamshop',
             'email' => 'email@example.com',
-            'website' => 'http://www.vamshop.com',
+            'website' => 'http://www.vamshop.org',
             'ip' => '127.0.0.1',
             'title' => '',
             'body' => 'Hi, this is the second comment.',
@@ -78,8 +78,8 @@ class CommentFixture extends VamshopTestFixture
             'comment_type' => 'comment',
             'lft' => 3,
             'rght' => 4,
-            'updated' => '2018-12-25 12:00:00',
-            'created' => '2018-12-25 12:00:00'
+            'updated' => '2009-12-25 12:00:00',
+            'created' => '2009-12-25 12:00:00'
         ],
     ];
 }

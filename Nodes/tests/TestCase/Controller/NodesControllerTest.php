@@ -67,7 +67,7 @@ class NodesControllerTest extends IntegrationTestCase
         $this->assertEquals(2, $this->viewVariable('nodes')->count());
     }
 
-    public function testViewFallback()
+/*    public function testViewFallback()
     {
         Plugin::load('Mytheme');
         Configure::write('Site.theme', 'Mytheme');
@@ -83,18 +83,18 @@ class NodesControllerTest extends IntegrationTestCase
         $this->_controller->Vamshop->viewFallback(['view_1', 'view_blog']);
         $this->assertContains('view_1.ctp', $this->_controller->viewBuilder()->template());
         $this->assertContains('Mytheme', $this->_controller->viewBuilder()->template());
-    }
+    }*/
 
     /**
      * testViewFallback for core NodesController with default theme
      *
      * @return void
      */
-    public function testViewFallbackWithDefaultTheme()
+/*    public function testViewFallbackWithDefaultTheme()
     {
         $this->get('/');
 
         $this->_controller->Vamshop->viewFallback('index_node');
         $this->assertContains('index_node.ctp', $this->_controller->viewBuilder()->template());
-    }
+    }*/
 }

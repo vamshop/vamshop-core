@@ -61,8 +61,8 @@ class NodeFixture extends VamshopTestFixture
             'rght' => 2,
             'visibility_roles' => null,
             'type' => 'blog',
-            'updated' => '2018-12-25 11:00:00',
-            'created' => '2018-12-25 11:00:00'
+            'updated' => '2009-12-25 11:00:00',
+            'created' => '2009-12-25 11:00:00'
         ],
         [
             'id' => 2,
@@ -84,8 +84,8 @@ class NodeFixture extends VamshopTestFixture
             'rght' => 2,
             'visibility_roles' => null,
             'type' => 'page',
-            'updated' => '2018-12-25 22:00:00',
-            'created' => '2018-12-25 22:00:00'
+            'updated' => '2009-12-25 22:00:00',
+            'created' => '2009-12-25 22:00:00'
         ],
         [
             'id' => 3,
@@ -107,8 +107,8 @@ class NodeFixture extends VamshopTestFixture
             'rght' => 4,
             'visibility_roles' => '["1"]',
             'type' => 'page',
-            'updated' => '2018-09-12 20:00:00',
-            'created' => '2018-09-12 20:00:00'
+            'updated' => '2013-09-12 20:00:00',
+            'created' => '2013-09-12 20:00:00'
         ],
     ];
 }

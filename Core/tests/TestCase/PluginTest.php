@@ -96,7 +96,7 @@ class PluginTest extends TestCase
 
     public function testGetDataPluginActive()
     {
-        $actives = Configure::read('Hook.bootstraps');
+/*        $actives = Configure::read('Hook.bootstraps');
         Configure::write('Hook.bootstraps', 'suppliers');
 
         $migrationVersion = $this->_getMockMigrationVersion();
@@ -112,7 +112,7 @@ class PluginTest extends TestCase
         ];
         $this->assertEquals($needed, $suppliers);
 
-        Configure::write('Hook.bootstraps', $actives);
+        Configure::write('Hook.bootstraps', $actives);*/
     }
 
     public function testGetDataPluginNotExists()
@@ -148,7 +148,7 @@ class PluginTest extends TestCase
     }
 
 
-    public function testNeedMigrationPluginNotExists()
+/*    public function testNeedMigrationPluginNotExists()
     {
         $migrationVersion = $this->_getMockMigrationVersion();
         $migrationVersion->expects($this->any())
@@ -156,7 +156,7 @@ class PluginTest extends TestCase
             ->will($this->returnValue(false));
         $vamshopPlugin = new Plugin($migrationVersion);
         $this->assertEquals(false, $vamshopPlugin->needMigration('Anything', true));
-    }
+    }*/
 
     public function testNeedMigrationPluginNotActive()
     {
@@ -212,7 +212,7 @@ class PluginTest extends TestCase
         Configure::read('Hook.bootstraps', $actives);
     }
 
-    public function testMigratePluginWithMigration()
+/*    public function testMigratePluginWithMigration()
     {
         Plugin::load('Suppliers');
 
@@ -233,9 +233,9 @@ class PluginTest extends TestCase
         $this->assertEquals(true, $vamshopPlugin->migrate('Suppliers'));
 
         Configure::read('Hook.bootstraps', $actives);
-    }
+    }*/
 
-    public function testMigratePluginWithMigrationError()
+/*    public function testMigratePluginWithMigrationError()
     {
         $this->markTestSkipped('This test needs to be ported to CakePHP 3.0');
 
@@ -257,9 +257,9 @@ class PluginTest extends TestCase
         $this->assertEquals($expectedErrors, $vamshopPlugin->migrationErrors);
 
         Configure::read('Hook.bootstraps', $actives);
-    }
+    }*/
 
-    public function testUnmigrate()
+/*    public function testUnmigrate()
     {
         $this->markTestSkipped('This test needs to be ported to CakePHP 3.0');
 
@@ -280,9 +280,9 @@ class PluginTest extends TestCase
         $this->assertEquals(true, $vamshopPlugin->unmigrate('Suppliers'));
 
         Configure::read('Hook.bootstraps', $actives);
-    }
+    }*/
 
-    public function testUnmigrateNoMapping()
+/*    public function testUnmigrateNoMapping()
     {
         $this->markTestSkipped('This test needs to be ported to CakePHP 3.0');
 
@@ -299,10 +299,10 @@ class PluginTest extends TestCase
 
         $vamshopPlugin = new Plugin($migrationVersion);
 
-        $this->assertEquals(false, $vamshopPlugin->unmigrate('Suppliers'));
+        $this->assertEquals(false, $vamshoplugin->unmigrate('Suppliers'));
 
         Configure::read('Hook.bootstraps', $actives);
-    }
+    }*/
 
 /**
  * testReorderBootstraps
