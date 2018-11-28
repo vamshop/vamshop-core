@@ -1,0 +1,4 @@
+2018-11-27 16:59:28 Error: SQLSTATE[HY000] [1045] Access denied for user 'my_app'@'localhost' (using password: YES)
+2018-11-27 16:59:28 Error: You can ignore the above error during installation
+2018-11-27 17:22:02 Error: SQLSTATE[HY000] [1045] Access denied for user 'my_app'@'localhost' (using password: YES)
+2018-11-27 17:22:02 Error: You can ignore the above error during installation

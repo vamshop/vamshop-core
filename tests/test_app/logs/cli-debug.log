@@ -1,0 +1,30 @@
+2018-11-27 17:26:01 Notice: Notice (8): date_default_timezone_set(): Timezone ID '' is invalid in [/home/vamshop-en/www/vendor/vamshop/vamshop-core/tests/bootstrap.php, line 105]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+date_default_timezone_set - [internal], line ??
+include_once - /home/vamshop-en/www/vendor/vamshop/vamshop-core/tests/bootstrap.php, line 105
+PHPUnit_Util_Fileloader::load() - /home/vamshop-en/www/vendor/phpunit/phpunit/src/Util/Fileloader.php, line 52
+PHPUnit_Util_Fileloader::checkAndLoad() - /home/vamshop-en/www/vendor/phpunit/phpunit/src/Util/Fileloader.php, line 36
+PHPUnit_TextUI_Command::handleBootstrap() - /home/vamshop-en/www/vendor/phpunit/phpunit/src/TextUI/Command.php, line 914
+PHPUnit_TextUI_Command::handleArguments() - /home/vamshop-en/www/vendor/phpunit/phpunit/src/TextUI/Command.php, line 739
+PHPUnit_TextUI_Command::run() - /home/vamshop-en/www/vendor/phpunit/phpunit/src/TextUI/Command.php, line 127
+PHPUnit_TextUI_Command::main() - /home/vamshop-en/www/vendor/phpunit/phpunit/src/TextUI/Command.php, line 116
+[main] - /home/vamshop-en/www/vendor/phpunit/phpunit/phpunit, line 52
+
+
+
+2018-11-27 17:26:58 Notice: Notice (8): date_default_timezone_set(): Timezone ID '' is invalid in [/home/vamshop-en/www/vendor/vamshop/vamshop-core/tests/bootstrap.php, line 105]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 153
+date_default_timezone_set - [internal], line ??
+include_once - /home/vamshop-en/www/vendor/vamshop/vamshop-core/tests/bootstrap.php, line 105
+PHPUnit_Util_Fileloader::load() - /home/vamshop-en/www/vendor/phpunit/phpunit/src/Util/Fileloader.php, line 52
+PHPUnit_Util_Fileloader::checkAndLoad() - /home/vamshop-en/www/vendor/phpunit/phpunit/src/Util/Fileloader.php, line 36
+PHPUnit_TextUI_Command::handleBootstrap() - /home/vamshop-en/www/vendor/phpunit/phpunit/src/TextUI/Command.php, line 914
+PHPUnit_TextUI_Command::handleArguments() - /home/vamshop-en/www/vendor/phpunit/phpunit/src/TextUI/Command.php, line 739
+PHPUnit_TextUI_Command::run() - /home/vamshop-en/www/vendor/phpunit/phpunit/src/TextUI/Command.php, line 127
+PHPUnit_TextUI_Command::main() - /home/vamshop-en/www/vendor/phpunit/phpunit/src/TextUI/Command.php, line 116
+[main] - /home/vamshop-en/www/vendor/phpunit/phpunit/phpunit, line 52
+
+
+
