@@ -229,8 +229,8 @@ class Plugin extends CakePlugin
         }
         if (file_exists($composerFile) && !$this->_isVamshopTheme($pluginDir, $path)) {
             $pluginData = json_decode(file_get_contents($composerFile), true);
-            if (isset($pluginData['require']['vamshop/core']) ||
-                isset($pluginData['require']['vamshop/vamshop'])
+            if (isset($pluginData['require']['vamshop/vamshop-core']) ||
+                isset($pluginData['require']['vamshop/vamshop-app'])
             ) {
                 return true;
             }
