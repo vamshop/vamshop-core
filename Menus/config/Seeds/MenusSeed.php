@@ -16,8 +16,8 @@ class MenusSeed extends AbstractSeed
             'weight' => null,
             'link_count' => '4',
             'params' => '',
-            'updated' => '2018-08-19 12:21:06',
-            'created' => '2018-07-22 01:49:53'
+            'updated' => '2009-08-19 12:21:06',
+            'created' => '2009-07-22 01:49:53'
         ],
         [
             'id' => '4',
@@ -29,8 +29,8 @@ class MenusSeed extends AbstractSeed
             'weight' => null,
             'link_count' => '2',
             'params' => '',
-            'updated' => '2018-08-19 12:22:42',
-            'created' => '2018-08-19 12:22:42'
+            'updated' => '2009-08-19 12:22:42',
+            'created' => '2009-08-19 12:22:42'
         ],
         [
             'id' => '5',
@@ -42,8 +42,8 @@ class MenusSeed extends AbstractSeed
             'weight' => null,
             'link_count' => '4',
             'params' => '',
-            'updated' => '2018-09-12 06:33:29',
-            'created' => '2018-09-12 06:33:29'
+            'updated' => '2009-09-12 06:33:29',
+            'created' => '2009-09-12 06:33:29'
         ],
         [
             'id' => '6',
@@ -55,8 +55,8 @@ class MenusSeed extends AbstractSeed
             'weight' => null,
             'link_count' => '2',
             'params' => '',
-            'updated' => '2018-09-12 23:30:24',
-            'created' => '2018-09-12 23:30:24'
+            'updated' => '2009-09-12 23:30:24',
+            'created' => '2009-09-12 23:30:24'
         ],
     ];
 

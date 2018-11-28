@@ -39,14 +39,14 @@ class LanguagesControllerTest extends IntegrationTestCase
         ]);
     }
 
-/*    public function testAdminIndex()
+    public function testAdminIndex()
     {
         $this->get('/admin/settings/Languages/index');
 
         $this->assertNotEmpty($this->viewVariable('languages'));
-    }*/
+    }
 
-/*    public function testAdminAdd()
+    public function testAdminAdd()
     {
         $this->enableCsrfToken();
         $this->enableSecurityToken();
@@ -97,13 +97,13 @@ class LanguagesControllerTest extends IntegrationTestCase
             ->count();
         $this->assertFalse($language);
     }
-*/
+
 /**
  * testAdminMoveUp
  *
  * @return void
  */
-/*    public function testAdminMoveUp()
+    public function testAdminMoveUp()
     {
         $id = $this->_addLanguages();
 
@@ -170,13 +170,13 @@ class LanguagesControllerTest extends IntegrationTestCase
             1 => 'English',
         ], $list);
     }
-*/
+
 /**
  * testAdminSelect
  *
  * @return void
  */
-/*    public function testAdminSelect()
+    public function testAdminSelect()
     {
         $this->markTestIncomplete('Still being ported');
 
@@ -190,14 +190,14 @@ class LanguagesControllerTest extends IntegrationTestCase
         $this->assertEqual('Node', $this->vars['modelAlias']);
         $this->assertEqual('English', $this->vars['languages']['0']['Language']['title']);
         $this->assertEqual('eng', $this->vars['languages']['0']['Language']['alias']);
-    }*/
+    }
 
     /**
      * Helper for adding languages
      *
      * @return int id of last added
      */
-/*    protected function _addLanguages()
+    protected function _addLanguages()
     {
         $languages = TableRegistry::get('Vamshop/Settings.Languages');
         $languages->save($languages->newEntity([
@@ -212,5 +212,5 @@ class LanguagesControllerTest extends IntegrationTestCase
 
         $languages->save($german);
         return $german->id;
-    }*/
+    }
 }

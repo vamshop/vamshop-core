@@ -9,8 +9,6 @@ use Cake\Network\Request;
 use Cake\ORM\Query;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\IntegrationTestCase as CakeIntegrationTestCase;
-//use Cake\TestSuite\IntegrationTestCase;
-//use Cake\TestSuite\IntegrationTestCase;
 use Vamshop\Core\Plugin;
 use Vamshop\Core\Event\EventManager;
 use Vamshop\Core\TestSuite\Constraint\EntityHasProperty;
@@ -50,16 +48,16 @@ class IntegrationTestCase extends CakeIntegrationTestCase
     {
         parent::setUp();
 
-        //EventManager::instance(new EventManager);
-        //Configure::write('EventHandlers', []);
+        EventManager::instance(new EventManager);
+        Configure::write('EventHandlers', []);
 
         Plugin::unload('Vamshop/Install');
         Plugin::load('Vamshop/Example', ['autoload' => true, 'path' => '../Example/']);
         Configure::write('Acl.database', 'test');
 
         Plugin::routes();
-        //Plugin::events();
-        //EventManager::loadListeners();
+        Plugin::events();
+        EventManager::loadListeners();
 
         $this->previousPlugins = Plugin::loaded();
     }

@@ -1,46 +1,24 @@
 <?php
+
 namespace Vamshop\Taxonomy\Test\Fixture;
 
 use Vamshop\Core\TestSuite\VamshopTestFixture;
 
-/**
- * ModelTaxonomyFixture
- *
- */
-
 class ModelTaxonomyFixture extends VamshopTestFixture
 {
 
-    /**
-     * Fields
-     *
-     * @var array
-     */
-    // @codingStandardsIgnoreStart
-    public $fields = [
-        'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
-        'model' => ['type' => 'string', 'length' => 50, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
-        'foreign_key' => ['type' => 'integer', 'length' => 20, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'taxonomy_id' => ['type' => 'integer', 'length' => 20, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        '_constraints' => [
-            'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
-            'model' => ['type' => 'unique', 'columns' => ['model', 'foreign_key', 'taxonomy_id'], 'length' => []],
-        ],
-        '_options' => [
-            'engine' => 'InnoDB',
-            'collation' => 'utf8mb4_general_ci'
-        ],
-    ];
-    // @codingStandardsIgnoreEnd
+    public $name = 'ModelTaxonomy';
 
-    /**
-     * Init method
-     *
-     * @return void
-     */
-    public function init()
-    {
-    $this->records = [
+    public $fields = [
+        'id' => ['type' => 'integer', 'null' => false, 'default' => null, 'length' => 20],
+        'model' => ['type' => 'string', 'null' => false, 'default' => 'Node', 'length' => 50],
+        'foreign_key' => ['type' => 'integer', 'null' => false, 'default' => '0', 'length' => 20],
+        'taxonomy_id' => ['type' => 'integer', 'null' => false, 'default' => null, 'length' => 20],
+        '_constraints' => ['primary' => ['type' => 'primary', 'columns' => ['id']], 'PRIMARY' => ['type' => 'unique', 'columns' => 'id']],
+        '_options' => ['charset' => 'utf8', 'collate' => 'utf8_unicode_ci', 'engine' => 'InnoDB']
+    ];
+
+    public $records = [
         [
             'id' => 1,
             'model' => 'Node',
@@ -48,6 +26,4 @@ class ModelTaxonomyFixture extends VamshopTestFixture
             'taxonomy_id' => 1
         ],
     ];
-        parent::init();
-    }
 }

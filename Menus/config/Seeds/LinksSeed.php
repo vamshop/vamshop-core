@@ -21,8 +21,8 @@ class LinksSeed extends AbstractSeed
             'rght' => '4',
             'visibility_roles' => '',
             'params' => '',
-            'updated' => '2018-10-06 23:14:21',
-            'created' => '2018-08-19 12:23:33'
+            'updated' => '2009-10-06 23:14:21',
+            'created' => '2009-08-19 12:23:33'
         ],
         [
             'id' => '6',
@@ -39,8 +39,8 @@ class LinksSeed extends AbstractSeed
             'rght' => '6',
             'visibility_roles' => '',
             'params' => '',
-            'updated' => '2018-10-06 23:14:45',
-            'created' => '2018-08-19 12:34:56'
+            'updated' => '2009-10-06 23:14:45',
+            'created' => '2009-08-19 12:34:56'
         ],
         [
             'id' => '7',
@@ -57,8 +57,8 @@ class LinksSeed extends AbstractSeed
             'rght' => '6',
             'visibility_roles' => '',
             'params' => '',
-            'updated' => '2018-10-06 21:17:06',
-            'created' => '2018-09-06 21:32:54'
+            'updated' => '2009-10-06 21:17:06',
+            'created' => '2009-09-06 21:32:54'
         ],
         [
             'id' => '8',
@@ -75,8 +75,8 @@ class LinksSeed extends AbstractSeed
             'rght' => '10',
             'visibility_roles' => '',
             'params' => '',
-            'updated' => '2018-09-12 03:45:53',
-            'created' => '2018-09-06 21:34:57'
+            'updated' => '2009-09-12 03:45:53',
+            'created' => '2009-09-06 21:34:57'
         ],
         [
             'id' => '9',
@@ -93,8 +93,8 @@ class LinksSeed extends AbstractSeed
             'rght' => '9',
             'visibility_roles' => '',
             'params' => '',
-            'updated' => '2018-10-06 23:13:06',
-            'created' => '2018-09-12 03:52:23'
+            'updated' => '2009-10-06 23:13:06',
+            'created' => '2009-09-12 03:52:23'
         ],
         [
             'id' => '10',
@@ -111,8 +111,8 @@ class LinksSeed extends AbstractSeed
             'rght' => '2',
             'visibility_roles' => '',
             'params' => '',
-            'updated' => '2018-09-12 06:34:09',
-            'created' => '2018-09-12 06:34:09'
+            'updated' => '2009-09-12 06:34:09',
+            'created' => '2009-09-12 06:34:09'
         ],
         [
             'id' => '11',
@@ -129,8 +129,8 @@ class LinksSeed extends AbstractSeed
             'rght' => '8',
             'visibility_roles' => '["1","2"]',
             'params' => '',
-            'updated' => '2018-09-12 06:35:22',
-            'created' => '2018-09-12 06:34:41'
+            'updated' => '2009-09-12 06:35:22',
+            'created' => '2009-09-12 06:34:41'
         ],
         [
             'id' => '12',
@@ -147,8 +147,8 @@ class LinksSeed extends AbstractSeed
             'rght' => '4',
             'visibility_roles' => '',
             'params' => '',
-            'updated' => '2018-09-12 23:31:59',
-            'created' => '2018-09-12 23:31:59'
+            'updated' => '2009-09-12 23:31:59',
+            'created' => '2009-09-12 23:31:59'
         ],
         [
             'id' => '14',
@@ -165,8 +165,8 @@ class LinksSeed extends AbstractSeed
             'rght' => '2',
             'visibility_roles' => '',
             'params' => '',
-            'updated' => '2018-10-07 03:25:25',
-            'created' => '2018-09-12 23:38:43'
+            'updated' => '2009-10-07 03:25:25',
+            'created' => '2009-09-12 23:38:43'
         ],
         [
             'id' => '15',
@@ -183,8 +183,8 @@ class LinksSeed extends AbstractSeed
             'rght' => '12',
             'visibility_roles' => '',
             'params' => '',
-            'updated' => '2018-09-16 07:54:13',
-            'created' => '2018-09-16 07:53:33'
+            'updated' => '2009-09-16 07:54:13',
+            'created' => '2009-09-16 07:53:33'
         ],
         [
             'id' => '16',
@@ -201,8 +201,8 @@ class LinksSeed extends AbstractSeed
             'rght' => '4',
             'visibility_roles' => '',
             'params' => '',
-            'updated' => '2018-10-27 17:46:22',
-            'created' => '2018-10-27 17:46:22'
+            'updated' => '2009-10-27 17:46:22',
+            'created' => '2009-10-27 17:46:22'
         ],
         [
             'id' => '17',
@@ -219,8 +219,8 @@ class LinksSeed extends AbstractSeed
             'rght' => '6',
             'visibility_roles' => '',
             'params' => '',
-            'updated' => '2018-10-27 17:46:54',
-            'created' => '2018-10-27 17:46:54'
+            'updated' => '2009-10-27 17:46:54',
+            'created' => '2009-10-27 17:46:54'
         ],
     ];
 

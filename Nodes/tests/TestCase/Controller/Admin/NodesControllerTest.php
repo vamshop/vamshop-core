@@ -47,10 +47,10 @@ class NodesControllerTest extends IntegrationTestCase
 
     public function testAdminIndex()
     {
-        $this->get('/admin/nodes/nodes/index');
+        $this->get('/admin/nodes/index');
 
-        $this->assertNotEmpty([$this->viewVariable('nodes')]);
-        $this->assertEquals(3, count([$this->viewVariable('nodes')]));
+        $this->assertNotEmpty($this->viewVariable('nodes')->toArray());
+        $this->assertEquals(3, $this->viewVariable('nodes')->count());
         $this->assertEntityHasProperty('user', $this->viewVariable('nodes')->first());
         $this->assertEntityHasProperty('custom_fields', $this->viewVariable('nodes')->first());
     }
@@ -59,7 +59,7 @@ class NodesControllerTest extends IntegrationTestCase
     {
         $this->get('/admin/nodes/index?filter=about');
 
-        $this->assertEquals(1, count([$this->viewVariable('nodes')]));
+        $this->assertEquals(1, $this->viewVariable('nodes')->count());
         $this->assertEquals(2, $this->viewVariable('nodes')->first()->id);
         $this->assertEntityHasProperty('custom_fields', $this->viewVariable('nodes')->first());
     }

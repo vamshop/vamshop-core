@@ -10,7 +10,7 @@ use Vamshop\Core\TestSuite\TestCase;
 class SettingsTableTest extends TestCase
 {
     public $fixtures = [
-        //'plugin.vamshop/core.settings',
+        'plugin.vamshop/core.settings',
     ];
 
     public function setUp()

@@ -85,19 +85,28 @@ Cake\Core\Configure::write('Session', [
     'defaults' => 'php'
 ]);
 
-Cake\Datasource\ConnectionManager::config('test', [
-            'className' => 'Cake\Database\Connection',
-            'driver' => 'Cake\Database\Driver\Mysql',
-            'persistent' => false,
-            'host' => 'localhost',
-            //'port' => 'non_standard_port_number',
-            'username' => 'root',
-            'password' => 'Rfetigb4s;',
-            'database' => 'test_vamshopen',
-            'encoding' => 'utf8mb4',
-            'timezone' => 'UTC',
-            'cacheMetadata' => true,
-            'quoteIdentifiers' => true
+// Ensure default test connection is defined
+if (!getenv('db_class')) {
+    putenv('db_class=Cake\Database\Driver\Sqlite');
+    putenv('db_dsn=sqlite::memory:');
+}
+ConnectionManager::config('test', [
+    'className' => 'Cake\Database\Connection',
+    'driver' => getenv('db_class'),
+    'dsn' => getenv('db_dsn'),
+    'database' => getenv('db_database'),
+    'username' => getenv('db_login'),
+    'password' => getenv('db_password'),
+    'timezone' => 'UTC'
+]);
+ConnectionManager::config('test_migrations', [
+    'className' => 'Cake\Database\Connection',
+    'driver' => getenv('db_class'),
+    'dsn' => getenv('db_dsn'),
+    'database' => getenv('db_database'),
+    'username' => getenv('db_login'),
+    'password' => getenv('db_password'),
+    'timezone' => 'UTC'
 ]);
 
 $settingsFixture = new \Vamshop\Core\Test\Fixture\SettingsFixture();
@@ -109,9 +118,9 @@ $settingsFixture->insert(\Cake\Datasource\ConnectionManager::get('default'));
 Plugin::load('Vamshop/Core', ['bootstrap' => true, 'routes' => true]);
 Plugin::load('Vamshop/Settings', ['bootstrap' => true, 'routes' => true]);
 
-//Cake\Routing\DispatcherFactory::add('Routing');
-//Cake\Routing\DispatcherFactory::add('ControllerFactory');
+Cake\Routing\DispatcherFactory::add('Routing');
+Cake\Routing\DispatcherFactory::add('ControllerFactory');
 
-//class_alias('Vamshop\Core\TestSuite\TestCase', 'Vamshop\Core\TestSuite\VamshopTestCase');
-Router::defaultRouteClass(DashedRoute::class);
+class_alias('Vamshop\Core\TestSuite\TestCase', 'Vamshop\Core\TestSuite\VamshopTestCase');
+
 Plugin::routes();

@@ -27,8 +27,8 @@ class AclGenerator extends AclExtras
     public function out($msg)
     {
 
-            $dummyShell = new DummyShell();
-            $this->Shell = $dummyShell;
+        $dummyShell = new DummyShell();
+        $this->Shell = $dummyShell;
 
         if (!isset($this->Shell)) {
             $msg = preg_replace('/\<\/?\w+\>/', null, $msg);

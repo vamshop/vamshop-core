@@ -370,9 +370,9 @@ class PluginTest extends TestCase
     /**
      * @dataProvider pathDataProvider
      */
-    public function testPath($plugin, $path, $expectedException = 'expectException')
+    public function testPath($plugin, $path, $expectedException = null)
     {
-        $this->expectException($expectedException);
+        $this->setExpectedException($expectedException);
 
         $this->assertEquals($path, Plugin::path($plugin));
     }
@@ -424,8 +424,8 @@ class PluginTest extends TestCase
     {
         return [
             // Internal Vamshop plugins based on Vamshop/Core path
-            ['Vamshop/Core', VAMSHOP_INCLUDE_PATH  . 'Core' . DS],
-            ['Vamshop/Nodes', VAMSHOP_INCLUDE_PATH . 'Nodes' . DS],
+            ['Vamshop/Core', CROOGO_INCLUDE_PATH  . 'Core' . DS],
+            ['Vamshop/Nodes', CROOGO_INCLUDE_PATH . 'Nodes' . DS],
             // Plugin paths from the 'plugins' Configure key
             ['BootstrapUI', VENDOR .  'friendsofcake' . DS . 'bootstrap-ui' . DS],
             // Plugin path from the plugins directory

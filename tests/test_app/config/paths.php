@@ -79,7 +79,7 @@ define('CACHE', TMP . 'cache' . DS);
  * CakePHP should always be installed with composer, so look there.
  */
 define('CAKE_CORE_INCLUDE_PATH', VENDOR . 'cakephp' . DS . 'cakephp');
-define('VAMSHOP_INCLUDE_PATH', dirname(dirname(dirname(__DIR__))) . DS);
+define('CROOGO_INCLUDE_PATH', dirname(dirname(dirname(__DIR__))) . DS);
 
 /**
  * Path to the cake directory.

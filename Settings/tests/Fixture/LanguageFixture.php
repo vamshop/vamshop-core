@@ -16,8 +16,8 @@ class LanguageFixture extends VamshopTestFixture
         'alias' => ['type' => 'string', 'null' => false, 'default' => null],
         'status' => ['type' => 'boolean', 'null' => false, 'default' => '1'],
         'weight' => ['type' => 'integer', 'null' => true, 'default' => null],
-        'modified' => ['type' => 'datetime', 'null' => false, 'default' => null],
-        'created' => ['type' => 'datetime', 'null' => false, 'default' => null],
+        'modified' => ['type' => 'timestamp', 'null' => false, 'default' => null],
+        'created' => ['type' => 'timestamp', 'null' => false, 'default' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id']],
         ],

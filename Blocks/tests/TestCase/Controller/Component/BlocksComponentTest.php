@@ -2,16 +2,7 @@
 
 namespace Vamshop\Blocks\Test\TestCase\Controller\Component;
 
-use App\Controller\PagesController;
-use Cake\Core\App;
-use Cake\Core\Configure;
-use Cake\Http\Response;
-use Cake\Http\ServerRequest;
-//use Cake\TestSuite\IntegrationTestCase;
-//use Vamshop\Core\TestSuite\IntegrationTestCase;
 use Vamshop\Core\TestSuite\IntegrationTestCase;
-use Cake\View\Exception\MissingTemplateException;
-
 
 class BlocksComponentTest extends IntegrationTestCase
 {
@@ -43,11 +34,11 @@ class BlocksComponentTest extends IntegrationTestCase
         $this->user('yvonne');
         $this->get('/');
 
-        $this->assertEmpty(collection([$this->viewVariable('blocksForLayout')['right']])->match([
+        $this->assertEmpty(collection($this->viewVariable('blocksForLayout')['right'])->match([
             'title' => 'Block Visible by Admin or Registered'
         ])->toArray(), '\'Block Visible by Admin or Registered\' should not be visible for public role');
 
-        $this->assertNotEmpty(collection([$this->viewVariable('blocksForLayout')['right']])->match([
+        $this->assertNotEmpty(collection($this->viewVariable('blocksForLayout')['right'])->match([
             'title' => 'Block Visible by Public'
         ])->toArray(), '\'Block Visible by Public\' should be visible for public role');
     }
@@ -61,11 +52,11 @@ class BlocksComponentTest extends IntegrationTestCase
 
         $this->get('/');
 
-        $this->assertEmpty(collection([$this->viewVariable('blocksForLayout')['right']])->match([
+        $this->assertEmpty(collection($this->viewVariable('blocksForLayout')['right'])->match([
             'title' => 'Block Visible by Public'
         ])->toArray(), '\'Block Visible by Public\' should not be visible for registered role');
 
-        $this->assertNotEmpty(collection([$this->viewVariable('blocksForLayout')['right']])->match([
+        $this->assertNotEmpty(collection($this->viewVariable('blocksForLayout')['right'])->match([
             'title' => 'Block Visible by Admin or Registered'
         ])->toArray(), '\'Block Visible by Admin or Registered\' should be visible for registered role');
     }
@@ -79,11 +70,11 @@ class BlocksComponentTest extends IntegrationTestCase
 
         $this->get('/');
 
-        $this->assertEmpty(collection([$this->viewVariable('blocksForLayout')['right']])->match([
+        $this->assertEmpty(collection($this->viewVariable('blocksForLayout')['right'])->match([
             'title' => 'Block Visible by Public'
         ])->toArray(), '\'Block Visible by Public\' should not be visible for registered role');
 
-        $this->assertNotEmpty(collection([$this->viewVariable('blocksForLayout')['right']])->match([
+        $this->assertNotEmpty(collection($this->viewVariable('blocksForLayout')['right'])->match([
             'title' => 'Block Visible by Admin or Registered'
         ])->toArray(), '\'Block Visible by Admin or Registered\' should be visible for registered role');
     }
