@@ -6,6 +6,7 @@ use Acl\AclExtras;
 use Cake\Core\Configure;
 use Cake\Database\Exception;
 use Cake\Datasource\ConnectionInterface;
+use Cake\Log\LogTrait;
 use Cake\ORM\TableRegistry;
 use Vamshop\Core\Plugin;
 
@@ -25,9 +26,14 @@ class AclGenerator extends AclExtras
 
     public function out($msg)
     {
+
+            $dummyShell = new DummyShell();
+            $this->Shell = $dummyShell;
+
         if (!isset($this->Shell)) {
             $msg = preg_replace('/\<\/?\w+\>/', null, $msg);
         }
+        
         return parent::out($msg);
     }
 
@@ -46,8 +52,14 @@ class AclGenerator extends AclExtras
         $models = Configure::read('Access Control.models');
         if (!$models) {
             $message = 'No models are configured for row level access control';
+
+        if ($this->controller) {
+            $dummyShell = new DummyShell();
+            $this->Shell = $dummyShell;
+        }            
+            
             if (isset($this->Shell) || isset($this->controller)) {
-                $this->out($message);
+                $this->Shell->out($message);
             } else {
                 \Cake\Log\Log::warning($message);
             }
@@ -86,4 +98,12 @@ class AclGenerator extends AclExtras
         }
     }
 
+}
+
+class DummyShell {
+    use LogTrait;
+    function out($msg, $newlines = 1, $level = 1) {
+        $msg = preg_replace('/\<\/?\w+\>/', null, $msg);
+        $this->log($msg);
+    }
 }

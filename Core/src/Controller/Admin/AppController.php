@@ -94,7 +94,7 @@ class AppController extends VamshopAppController
             ]
         ]);
 
-        $this->Theme->config('theme', Configure::read('Site.admin_theme'));
+        //$this->Theme->config('theme', Configure::read('Site.admin_theme'));
     }
 
 /**

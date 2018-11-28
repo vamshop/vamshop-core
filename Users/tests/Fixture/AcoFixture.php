@@ -26,9 +26,9 @@ class AcoFixture extends VamshopTestFixture
 
     public function insert(ConnectionInterface $db)
     {
-        //$generator = new AclGenerator();
+        $generator = new AclGenerator();
 
-        //return $generator->insertAcos($db);
+        return $generator->insertAcos($db);
 
         $generator = new AclGenerator();
 

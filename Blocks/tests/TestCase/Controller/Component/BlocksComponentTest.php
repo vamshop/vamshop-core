@@ -2,7 +2,16 @@
 
 namespace Vamshop\Blocks\Test\TestCase\Controller\Component;
 
+use App\Controller\PagesController;
+use Cake\Core\App;
+use Cake\Core\Configure;
+use Cake\Http\Response;
+use Cake\Http\ServerRequest;
+//use Cake\TestSuite\IntegrationTestCase;
+//use Vamshop\Core\TestSuite\IntegrationTestCase;
 use Vamshop\Core\TestSuite\IntegrationTestCase;
+use Cake\View\Exception\MissingTemplateException;
+
 
 class BlocksComponentTest extends IntegrationTestCase
 {

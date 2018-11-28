@@ -109,9 +109,9 @@ $settingsFixture->insert(\Cake\Datasource\ConnectionManager::get('default'));
 Plugin::load('Vamshop/Core', ['bootstrap' => true, 'routes' => true]);
 Plugin::load('Vamshop/Settings', ['bootstrap' => true, 'routes' => true]);
 
-Cake\Routing\DispatcherFactory::add('Routing');
-Cake\Routing\DispatcherFactory::add('ControllerFactory');
+//Cake\Routing\DispatcherFactory::add('Routing');
+//Cake\Routing\DispatcherFactory::add('ControllerFactory');
 
-class_alias('Vamshop\Core\TestSuite\TestCase', 'Vamshop\Core\TestSuite\VamshopTestCase');
+//class_alias('Vamshop\Core\TestSuite\TestCase', 'Vamshop\Core\TestSuite\VamshopTestCase');
 Router::defaultRouteClass(DashedRoute::class);
 Plugin::routes();

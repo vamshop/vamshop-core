@@ -4,7 +4,6 @@ namespace Vamshop\Blocks\Test\TestCase\Controller;
 
 use Cake\ORM\TableRegistry;
 use Vamshop\Core\Status;
-use Vamshop\Core\Plugin;
 use Vamshop\Core\TestSuite\IntegrationTestCase;
 
 /**
@@ -42,8 +41,6 @@ class BlocksControllerTest extends IntegrationTestCase
     {
         parent::setUp();
 
-        Plugin::routes();
-
         $this->user('admin');
 
         $this->Blocks = TableRegistry::get('Vamshop/Blocks.Blocks');
@@ -51,7 +48,7 @@ class BlocksControllerTest extends IntegrationTestCase
 
     public function testAdminIndex()
     {
-        $this->get('/admin/blocks/blocks');
+        $this->get('/admin/blocks/blocks/index');
 
         $this->assertNotEmpty($this->viewVariable('blocks'));
     }
