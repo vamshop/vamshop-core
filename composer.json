@@ -32,6 +32,7 @@
         "cakephp/migrations": "~1.6",
         "cakephp/acl": "^0.2.6",
         "cakephp/plugin-installer": "~1.0",
+        "sinergi/browser-detector": "^6.1",
         "admad/cakephp-sequence": "^2.1",
         "friendsofcake/crud": "^5.2",
         "friendsofcake/search": "^4.0",
