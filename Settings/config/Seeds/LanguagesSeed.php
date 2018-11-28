@@ -15,8 +15,8 @@ class LanguagesSeed extends AbstractSeed
             'locale' => 'en_US',
             'status' => '1',
             'weight' => '1',
-            'updated' => '2009-11-02 21:37:38',
-            'created' => '2009-11-02 20:52:00'
+            'updated' => '2018-11-02 21:37:38',
+            'created' => '2018-11-02 20:52:00'
         ],
         [
             'id' => '2',
@@ -26,8 +26,8 @@ class LanguagesSeed extends AbstractSeed
             'locale' => 'ru',
             'status' => '1',
             'weight' => '2',
-            'updated' => '2017-03-29 00:00:00',
-            'created' => '2017-03-29 00:00:00',
+            'updated' => '2018-03-29 00:00:00',
+            'created' => '2018-03-29 00:00:00',
         ],
     ];
 

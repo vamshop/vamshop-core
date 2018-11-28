@@ -32,8 +32,8 @@ class LanguageFixture extends VamshopTestFixture
             'alias' => 'eng',
             'status' => 1,
             'weight' => 1,
-            'modified' => '2009-11-02 21:37:38',
-            'created' => '2009-11-02 20:52:00'
+            'modified' => '2018-11-02 21:37:38',
+            'created' => '2018-11-02 20:52:00'
         ],
     ];
 }

@@ -26,24 +26,24 @@ class TermFixture extends VamshopTestFixture
             'title' => 'Uncategorized',
             'slug' => 'uncategorized',
             'description' => '',
-            'updated' => '2009-07-22 03:38:43',
-            'created' => '2009-07-22 03:34:56'
+            'updated' => '2018-07-22 03:38:43',
+            'created' => '2018-07-22 03:34:56'
         ],
         [
             'id' => 2,
             'title' => 'Announcements',
             'slug' => 'announcements',
             'description' => '',
-            'updated' => '2010-05-16 23:57:06',
-            'created' => '2009-07-22 03:45:37'
+            'updated' => '2018-05-16 23:57:06',
+            'created' => '2018-07-22 03:45:37'
         ],
         [
             'id' => 3,
             'title' => 'mytag',
             'slug' => 'mytag',
             'description' => '',
-            'updated' => '2009-08-26 14:42:43',
-            'created' => '2009-08-26 14:42:43'
+            'updated' => '2018-08-26 14:42:43',
+            'created' => '2018-08-26 14:42:43'
         ],
     ];
 }

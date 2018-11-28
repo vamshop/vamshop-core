@@ -36,8 +36,8 @@ class VocabularyFixture extends VamshopTestFixture
             'tags' => 0,
             'plugin' => '',
             'weight' => 1,
-            'updated' => '2010-05-17 20:03:11',
-            'created' => '2009-07-22 02:16:21'
+            'updated' => '2018-05-17 20:03:11',
+            'created' => '2018-07-22 02:16:21'
         ],
         [
             'id' => 2,
@@ -49,8 +49,8 @@ class VocabularyFixture extends VamshopTestFixture
             'tags' => 0,
             'plugin' => '',
             'weight' => 2,
-            'updated' => '2010-05-17 20:03:11',
-            'created' => '2009-07-22 02:16:34'
+            'updated' => '2018-05-17 20:03:11',
+            'created' => '2018-07-22 02:16:34'
         ],
     ];
 }

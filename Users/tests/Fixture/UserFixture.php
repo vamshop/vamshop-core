@@ -46,8 +46,8 @@ class UserFixture extends VamshopTestFixture
             'bio' => '',
             'timezone' => '0',
             'status' => 1,
-            'updated' => '2009-10-07 22:23:27',
-            'created' => '2009-04-05 00:20:34'
+            'updated' => '2018-10-07 22:23:27',
+            'created' => '2018-04-05 00:20:34'
         ],
         [
             'id' => 2,
@@ -62,8 +62,8 @@ class UserFixture extends VamshopTestFixture
             'bio' => '',
             'timezone' => '0',
             'status' => 1,
-            'updated' => '2010-01-07 22:23:27',
-            'created' => '2010-01-05 00:00:00'
+            'updated' => '2018-01-07 22:23:27',
+            'created' => '2018-01-05 00:00:00'
         ],
         [
             'id' => 3,
@@ -78,8 +78,8 @@ class UserFixture extends VamshopTestFixture
             'bio' => '',
             'timezone' => '0',
             'status' => 1,
-            'updated' => '2011-04-25 18:50:27',
-            'created' => '2011-04-25 18:50:27'
+            'updated' => '2018-04-25 18:50:27',
+            'created' => '2018-04-25 18:50:27'
         ],
         [
             'id' => 4,
@@ -94,8 +94,8 @@ class UserFixture extends VamshopTestFixture
             'bio' => '',
             'timezone' => '0',
             'status' => 1,
-            'updated' => '2016-08-02 22:30:51',
-            'created' => '2016-08-02 22:30:51'
+            'updated' => '2018-08-02 22:30:51',
+            'created' => '2018-08-02 22:30:51'
         ],
     ];
 }
