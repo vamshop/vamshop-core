@@ -36,8 +36,7 @@
         "friendsofcake/crud": "4.3",
         "friendsofcake/search": "1.2",
         "friendsofcake/bootstrap-ui": "0.6",
-        "phpunit/phpunit": "6.1",
-        "sinergi/browser-detector": "6.1"
+        "phpunit/phpunit": "6.1"
     },
     "require-dev": {
         "cakephp/cakephp-codesniffer": "2.1.3",
