@@ -22,7 +22,7 @@ echo $this->Vamshop->adminTab(__d('vamshop', 'Upload'), '#locales-upload');
 $this->end();
 
 $this->append('tab-content');
-echo $this->Html->tabStart('locales-upload') . $this->Form->input('file', [
+echo $this->Html->tabStart('locales-upload') . $this->Form->input('Locale.file', [
         'type' => 'file',
         'class' => 'c-file'
     ]);
