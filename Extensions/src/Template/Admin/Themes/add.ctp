@@ -22,7 +22,7 @@ echo $this->Vamshop->adminTab(__d('vamshop', 'Upload'), '#themes-upload');
 $this->end();
 
 $this->append('tab-content');
-echo $this->Html->tabStart('themes-upload') . $this->Form->input('file', [
+echo $this->Html->tabStart('themes-upload') . $this->Form->input('Theme.file', [
         'type' => 'file',
         'class' => 'c-file'
     ]);
