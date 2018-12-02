@@ -4,7 +4,7 @@ namespace Vamshop\Extensions;
 
 use Cake\Core\App;
 use Cake\Filesystem\Folder;
-use Vamshop\Core\Core\Exception\Exception;
+use Vamshop\Core\Exception\Exception;
 use Vamshop\Extensions\VamshopComposer;
 use ZipArchive;
 
