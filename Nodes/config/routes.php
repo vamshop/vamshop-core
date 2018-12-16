@@ -13,6 +13,7 @@ Router::plugin('Vamshop/Nodes', ['path' => '/'], function (RouteBuilder $route) 
     });
 
     $route->extensions(['rss']);
+    $route->extensions(['json']);
 
     Router::build($route, '/', ['controller' => 'Nodes', 'action' => 'promoted']);
     Router::build($route, '/promoted/*', ['controller' => 'Nodes', 'action' => 'promoted']);
